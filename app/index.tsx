@@ -1,17 +1,43 @@
+import * as LocalAuthentication from "expo-local-authentication";
 import { Redirect } from "expo-router";
-import * as SecureStore from "expo-secure-store";
 import { useEffect, useState } from "react";
-import { ActivityIndicator, View } from "react-native";
+import { ActivityIndicator, Platform, View } from "react-native";
+import { getStoredItem } from "../lib/storage";
 
 export default function Index() {
   const [route, setRoute] = useState<string | null>(null);
 
   useEffect(() => {
-    const check = async () => {
-      const token = await SecureStore.getItemAsync("token");
-      setRoute(token ? "/(tabs)" : "/login");
+    const checkAuth = async () => {
+      const token = await getStoredItem("token");
+      const biometricEnabled = await getStoredItem("biometricEnabled");
+
+      if (!token) {
+        setRoute("/login");
+        return;
+      }
+
+      if (Platform.OS !== "web" && biometricEnabled === "true") {
+        const hasHardware = await LocalAuthentication.hasHardwareAsync();
+        const isEnrolled = await LocalAuthentication.isEnrolledAsync();
+
+        if (hasHardware && isEnrolled) {
+          const result = await LocalAuthentication.authenticateAsync({
+            promptMessage: "Unlock Kitchen Daily Checks",
+            fallbackLabel: "Use Passcode",
+          });
+
+          if (!result.success) {
+            setRoute("/login");
+            return;
+          }
+        }
+      }
+
+      setRoute("/(tabs)");
     };
-    check();
+
+    checkAuth();
   }, []);
 
   if (!route) {

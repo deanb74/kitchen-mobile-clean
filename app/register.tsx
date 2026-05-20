@@ -1,8 +1,9 @@
 import axios from "axios";
 import { router } from "expo-router";
-import * as SecureStore from "expo-secure-store";
 import { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { registerForPushNotificationsAsync } from "../lib/notifications";
+import { setStoredItem } from "../lib/storage";
 
 const API = "https://kitchen-daily-checks-backend.up.railway.app";
 
@@ -11,18 +12,44 @@ export default function RegisterScreen() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const register = async () => {
+const register = async () => {
+  try {
+    setLoading(true);
+
+    const res = await axios.post(`${API}/register`, { email, password });
+
+    await setStoredItem("token", res.data.token);
+    await setStoredItem("role", res.data.user.role);
+    await setStoredItem("siteId", String(res.data.user.siteId || ""));
+    await setStoredItem("siteName", res.data.user.siteName || "");
+    await setStoredItem("biometricEnabled", "true");
+
     try {
-      setLoading(true);
-      const res = await axios.post(`${API}/register`, { email, password });
-      await SecureStore.setItemAsync("token", res.data.token);
-      router.replace("/(tabs)");
-    } catch (err: any) {
-      alert(err?.response?.data?.error || "Registration failed");
-    } finally {
-      setLoading(false);
+      const pushToken = await registerForPushNotificationsAsync();
+
+      if (pushToken) {
+        await axios.post(
+          `${API}/push-token`,
+          { pushToken },
+          {
+            headers: {
+              Authorization: `Bearer ${res.data.token}`,
+            },
+          }
+        );
+      }
+    } catch (pushError) {
+      console.log("Push registration skipped:", pushError);
     }
-  };
+
+    router.replace("/(tabs)");
+  } catch (err: any) {
+    console.log("REGISTER ERROR:", err?.response?.data || err.message || err);
+    alert(err?.response?.data?.error || "Registration failed");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <View style={styles.container}>
