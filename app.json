@@ -59,7 +59,8 @@
           "faceIDPermission": "Allow Kitchen Daily Checks to access your Face ID biometric data."
         }
       ],
-      "expo-notifications"
+      "expo-notifications",
+      "expo-speech-recognition"
     ],
     "experiments": {
       "typedRoutes": true,

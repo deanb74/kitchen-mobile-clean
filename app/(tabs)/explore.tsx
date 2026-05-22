@@ -121,7 +121,13 @@ export default function TemperaturesScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Temperatures</Text>
+      <View style={styles.topBar}>
+        <Text style={styles.topBarTitle}>Kitchen Daily Checks</Text>
+
+        <Pressable onPress={logout}>
+          <Text style={styles.logoutIcon}>⎋</Text>
+        </Pressable>
+      </View>
 
       {syncStatus === "syncing" && (
         <View style={styles.syncBanner}>
@@ -174,10 +180,6 @@ export default function TemperaturesScreen() {
         <Button title="Log Temperature" onPress={submitTemperature} />
       </View>
 
-      <View style={styles.logoutWrap}>
-        <Button title="Logout" onPress={logout} color="#dc2626" />
-      </View>
-
       <View style={styles.logs}>
         {logs.map((log) => (
           <View key={log.id} style={styles.card}>
@@ -218,6 +220,20 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     marginBottom: 20,
   },
+  topBar: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 12,
+  },
+  topBarTitle: {
+    fontSize: 22,
+    fontWeight: "700",
+  },
+  logoutIcon: {
+    fontSize: 26,
+    fontWeight: "700",
+  },
   section: {
     backgroundColor: "#f2f2f2",
     padding: 16,
@@ -248,9 +264,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     fontSize: 14,
     color: "#444",
-  },
-  logoutWrap: {
-    marginBottom: 20,
   },
   logs: {
     gap: 12,

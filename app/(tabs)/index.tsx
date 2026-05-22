@@ -1,8 +1,9 @@
+import VoiceNoteInput from "@/components/VoiceNoteInput";
 import NetInfo from "@react-native-community/netinfo";
 import axios from "axios";
 import { router } from "expo-router";
 import { useEffect, useState } from "react";
-import { Button, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Alert, Button, Modal, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { addToOfflineQueue, getOfflineQueueCount } from "../../lib/offlineQueue";
 import { deleteStoredItem, getStoredItem } from "../../lib/storage";
 import { getSyncStatus, subscribeToSyncStatus } from "../../lib/syncStatus";
@@ -16,6 +17,10 @@ export default function TasksScreen() {
   const [queueCount, setQueueCount] = useState(0);
   const [syncStatus, setSyncStatusState] = useState(getSyncStatus());
   const [selectedDepartment, setSelectedDepartment] = useState("all");
+  const [taskFilter, setTaskFilter] = useState("all");
+  const [selectedTask, setSelectedTask] = useState<any>(null);
+  const [staffSection, setStaffSection] = useState("home");
+  const [handoverNotes, setHandoverNotes] = useState("");
 
   const departments = [
     "all",
@@ -27,10 +32,43 @@ export default function TasksScreen() {
     "management",
   ];
 
-  const filteredTasks =
-    selectedDepartment === "all"
-      ? tasks
-      : tasks.filter((task) => task.department === selectedDepartment);
+  const filteredTasks = tasks.filter((task) => {
+    if (taskFilter === "overdue") {
+      return (
+        !task.completed &&
+        task.dueAt &&
+        new Date(task.dueAt) < new Date()
+      );
+    }
+
+    if (taskFilter === "open") {
+      return !task.completed;
+    }
+
+    if (taskFilter === "completed") {
+      return task.completed;
+    }
+
+    return true;
+  });
+  const overdueTaskCount = dashboard?.overdueTaskCount || 0;
+
+  const getTaskStatusColor = (task: any) => {
+    if (task.completed) return "#16a34a";
+
+    if (task.dueAt) {
+      const due = new Date(task.dueAt).getTime();
+      const now = Date.now();
+
+      if (due < now) return "#dc2626";
+
+      const oneHour = 1000 * 60 * 60;
+
+      if (due - now < oneHour) return "#f59e0b";
+    }
+
+    return "#6b7280";
+  };
 
   const handleUnauthorized = async () => {
     await deleteStoredItem("token");
@@ -113,6 +151,39 @@ export default function TasksScreen() {
     }
   };
 
+  const endShift = async () => {
+    try {
+      const headers = await getAuthHeaders();
+      if (!headers) return;
+
+      const res = await axios.post(
+        `${API}/shift/end`,
+        { handoverNotes },
+        { headers }
+      );
+
+      Alert.alert(
+        "Shift ended",
+        `Open tasks: ${res.data.summary.openTaskCount}\nOverdue: ${res.data.summary.overdueTaskCount}\nEscalated: ${res.data.summary.escalatedTaskCount}`
+      );
+
+      setHandoverNotes("");
+      loadDashboard();
+    } catch (err: any) {
+      console.log("END SHIFT ERROR:", err?.response?.data || err.message);
+      Alert.alert("Could not end shift");
+    }
+  };
+
+  const logout = async () => {
+    await deleteStoredItem("token");
+    await deleteStoredItem("role");
+    await deleteStoredItem("biometricEnabled");
+    await deleteStoredItem("siteId");
+    await deleteStoredItem("siteName");
+    router.replace("/login");
+  };
+
   useEffect(() => {
     loadTasks();
 
@@ -127,7 +198,13 @@ export default function TasksScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>My Tasks</Text>
+      <View style={styles.topBar}>
+        <Text style={styles.topBarTitle}>Kitchen Daily Checks</Text>
+
+        <Pressable onPress={logout}>
+          <Text style={styles.logoutIcon}>⎋</Text>
+        </Pressable>
+      </View>
 
       {syncStatus === "syncing" && (
         <View style={styles.syncBanner}>
@@ -151,103 +228,242 @@ export default function TasksScreen() {
         </Pressable>
       )}
 
-      {!dashboard ? (
-        <Text style={styles.emptyText}>Loading dashboard...</Text>
-      ) : (
+      <View style={styles.tileGrid}>
+        <Pressable style={styles.tile} onPress={() => setStaffSection("tasks")}>
+          <Text style={styles.tileIcon}>✅</Text>
+          <Text style={styles.tileText}>My Tasks</Text>
+        </Pressable>
+
+        <Pressable style={styles.tile} onPress={() => setStaffSection("shift")}>
+          <Text style={styles.tileIcon}>🕒</Text>
+          <Text style={styles.tileText}>Shift</Text>
+        </Pressable>
+
+        <Pressable style={styles.tile} onPress={() => setStaffSection("temps")}>
+          <Text style={styles.tileIcon}>🌡</Text>
+          <Text style={styles.tileText}>Temperatures</Text>
+        </Pressable>
+
+        <Pressable style={styles.tile} onPress={() => setStaffSection("handover")}>
+          <Text style={styles.tileIcon}>📝</Text>
+          <Text style={styles.tileText}>Handover</Text>
+        </Pressable>
+      </View>
+
+      {staffSection === "shift" && (
         <>
-          <View style={styles.card}>
-            <Text style={styles.dashboardTitle}>
-              Site: {dashboard.site?.name || "No Site"}
-            </Text>
-            <Text style={styles.timeText}>
-              Next reset:{" "}
-              {dashboard.site?.resetEnabled
-                ? `${String(dashboard.site?.resetHour).padStart(2, "0")}:${String(
-                    dashboard.site?.resetMinute
-                  ).padStart(2, "0")}`
-                : "Disabled"}
-            </Text>
+          {!dashboard ? (
+            <Text style={styles.emptyText}>Loading dashboard...</Text>
+          ) : (
+            <>
+              <View style={styles.card}>
+                <Text style={styles.dashboardTitle}>
+                  Site: {dashboard.site?.name || "No Site"}
+                </Text>
+                <Text style={styles.timeText}>
+                  Next reset:{" "}
+                  {dashboard.site?.resetEnabled
+                    ? `${String(dashboard.site?.resetHour).padStart(2, "0")}:${String(
+                        dashboard.site?.resetMinute
+                      ).padStart(2, "0")}`
+                    : "Disabled"}
+                </Text>
+              </View>
+
+              <View style={styles.card}>
+                <Text style={styles.dashboardTitle}>
+                  Completed Today: {dashboard.completedToday}
+                </Text>
+                <Text style={styles.dashboardTitle}>
+                  Remaining Tasks: {dashboard.remainingTasks}
+                </Text>
+                <Pressable
+                  onPress={() => {
+                    setTaskFilter("overdue");
+                    setStaffSection("tasks");
+                  }}
+                >
+                  <Text style={styles.statusWarning}>{overdueTaskCount} overdue</Text>
+                </Pressable>
+              </View>
+            </>
+          )}
+        </>
+      )}
+
+      {staffSection === "temps" && (
+        <>
+          {!dashboard ? (
+            <Text style={styles.emptyText}>Loading dashboard...</Text>
+          ) : (
+            <View style={styles.card}>
+              <Text style={styles.sectionTitle}>Latest Site Temperatures</Text>
+              {dashboard.latestTemps.length === 0 ? (
+                <Text style={styles.emptyText}>No temperature logs yet</Text>
+              ) : (
+                dashboard.latestTemps.map((log: any) => (
+                  <View key={log.id} style={styles.tempItem}>
+                    <Text style={styles.taskText}>
+                      {log.fridge} ({log.type}): {log.value}°C
+                    </Text>
+                    <Text
+                      style={[
+                        styles.statusText,
+                        log.status === "green"
+                          ? styles.green
+                          : log.status === "amber"
+                          ? styles.amber
+                          : styles.red,
+                      ]}
+                    >
+                      {log.status.toUpperCase()}
+                    </Text>
+                    <Text style={styles.timeText}>
+                      {new Date(log.createdAt).toLocaleString()}
+                    </Text>
+                  </View>
+                ))
+              )}
+            </View>
+          )}
+        </>
+      )}
+
+      {staffSection === "tasks" && (
+        <>
+          <Button
+            title={loading ? "Loading..." : "Reload Tasks"}
+            onPress={loadTasks}
+          />
+
+          <View style={styles.deptFilterRow}>
+            <Pressable
+              style={[styles.deptBtn, taskFilter === "open" && styles.deptBtnActive]}
+              onPress={() => setTaskFilter("open")}
+            >
+              <Text style={styles.deptBtnText}>Open</Text>
+            </Pressable>
+            <Pressable
+              style={[styles.deptBtn, taskFilter === "overdue" && styles.deptBtnActive]}
+              onPress={() => setTaskFilter("overdue")}
+            >
+              <Text style={styles.deptBtnText}>Overdue</Text>
+            </Pressable>
+            <Pressable
+              style={[styles.deptBtn, taskFilter === "completed" && styles.deptBtnActive]}
+              onPress={() => setTaskFilter("completed")}
+            >
+              <Text style={styles.deptBtnText}>Completed</Text>
+            </Pressable>
+            <Pressable
+              style={[styles.deptBtn, taskFilter === "all" && styles.deptBtnActive]}
+              onPress={() => setTaskFilter("all")}
+            >
+              <Text style={styles.deptBtnText}>All</Text>
+            </Pressable>
           </View>
 
-          <View style={styles.card}>
-            <Text style={styles.dashboardTitle}>
-              Completed Today: {dashboard.completedToday}
-            </Text>
-            <Text style={styles.dashboardTitle}>
-              Remaining Tasks: {dashboard.remainingTasks}
-            </Text>
+          <View style={styles.deptFilterRow}>
+            {departments.map((d) => (
+              <Pressable
+                key={d}
+                style={[styles.deptBtn, selectedDepartment === d && styles.deptBtnActive]}
+                onPress={() => setSelectedDepartment(d)}
+              >
+                <Text style={styles.deptBtnText}>
+                  {d === "all" ? "All" : d.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}
+                </Text>
+              </Pressable>
+            ))}
           </View>
 
-          <View style={styles.card}>
-            <Text style={styles.sectionTitle}>Latest Site Temperatures</Text>
-            {dashboard.latestTemps.length === 0 ? (
-              <Text style={styles.emptyText}>No temperature logs yet</Text>
-            ) : (
-              dashboard.latestTemps.map((log: any) => (
-                <View key={log.id} style={styles.tempItem}>
-                  <Text style={styles.taskText}>
-                    {log.fridge} ({log.type}): {log.value}°C
-                  </Text>
-                  <Text
-                    style={[
-                      styles.statusText,
-                      log.status === "green"
-                        ? styles.green
-                        : log.status === "amber"
-                        ? styles.amber
-                        : styles.red,
-                    ]}
-                  >
-                    {log.status.toUpperCase()}
-                  </Text>
+          <View style={styles.list}>
+            {filteredTasks.map((task) => (
+              <Pressable
+                key={task.id}
+                onPress={() => setSelectedTask(task)}
+                style={[
+                  styles.card,
+                  {
+                    borderLeftWidth: 6,
+                    borderLeftColor: getTaskStatusColor(task),
+                  },
+                ]}
+              >
+                <Text style={[styles.taskText, { color: getTaskStatusColor(task) }]}>
+                  {task.completed ? "✅" : "•"} {task.name}
+                </Text>
+
+                {task.completedAt && (
                   <Text style={styles.timeText}>
-                    {new Date(log.createdAt).toLocaleString()}
+                    Completed: {new Date(task.completedAt).toLocaleString()}
                   </Text>
-                </View>
-              ))
-            )}
+                )}
+
+                {!task.completed && (
+                  <Button title="Complete" onPress={() => completeTask(task.id)} />
+                )}
+              </Pressable>
+            ))}
           </View>
         </>
       )}
 
-      <Button
-        title={loading ? "Loading..." : "Reload Tasks"}
-        onPress={loadTasks}
-      />
+      {staffSection === "handover" && (
+        <>
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>End Shift / Handover</Text>
 
-      <View style={styles.deptFilterRow}>
-        {departments.map((d) => (
-          <Pressable
-            key={d}
-            style={[styles.deptBtn, selectedDepartment === d && styles.deptBtnActive]}
-            onPress={() => setSelectedDepartment(d)}
-          >
-            <Text style={styles.deptBtnText}>
-              {d === "all" ? "All" : d.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}
-            </Text>
-          </Pressable>
-        ))}
-      </View>
+            <VoiceNoteInput
+              value={handoverNotes}
+              onChangeText={setHandoverNotes}
+              placeholder="Handover notes"
+            />
 
-      <View style={styles.list}>
-        {filteredTasks.map((task) => (
-          <View key={task.id} style={styles.card}>
-            <Text style={styles.taskText}>
-              {task.completed ? "✅" : "•"} {task.name}
-            </Text>
-
-            {task.completedAt && (
-              <Text style={styles.timeText}>
-                Completed: {new Date(task.completedAt).toLocaleString()}
-              </Text>
-            )}
-
-            {!task.completed && (
-              <Button title="Complete" onPress={() => completeTask(task.id)} />
-            )}
+            <Button title="End Shift" onPress={endShift} />
           </View>
-        ))}
-      </View>
+        </>
+      )}
+
+      <Modal
+        visible={!!selectedTask}
+        animationType="slide"
+        transparent
+        onRequestClose={() => setSelectedTask(null)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalCard}>
+            <Text style={styles.sectionTitle}>
+              {selectedTask?.name}
+            </Text>
+
+            <Text>Department: {selectedTask?.department || "None"}</Text>
+            <Text>
+              Due:{" "}
+              {selectedTask?.dueAt
+                ? new Date(selectedTask.dueAt).toLocaleString()
+                : "No due time"}
+            </Text>
+            <Text>
+              Escalation Level: {selectedTask?.escalationLevel || 0}
+            </Text>
+
+            <Button
+              title="Complete Task"
+              onPress={async () => {
+                if (!selectedTask) return;
+                await completeTask(selectedTask.id);
+                setSelectedTask(null);
+              }}
+            />
+
+            <Button
+              title="Close"
+              onPress={() => setSelectedTask(null)}
+            />
+          </View>
+        </View>
+      </Modal>
     </ScrollView>
   );
 }
@@ -262,10 +478,60 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     marginBottom: 20,
   },
+  topBar: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 12,
+  },
+  topBarTitle: {
+    fontSize: 22,
+    fontWeight: "700",
+  },
+  logoutIcon: {
+    fontSize: 26,
+    fontWeight: "700",
+  },
+  section: {
+    backgroundColor: "#f2f2f2",
+    padding: 16,
+    borderRadius: 10,
+    marginTop: 16,
+    marginBottom: 8,
+  },
   sectionTitle: {
     fontSize: 18,
     fontWeight: "700",
     marginBottom: 8,
+  },
+  input: {
+    backgroundColor: "#fff",
+    borderWidth: 1,
+    borderColor: "#ddd",
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 10,
+    minHeight: 80,
+    textAlignVertical: "top",
+  },
+  voiceInputRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  voiceInput: {
+    flex: 1,
+  },
+  micButton: {
+    width: 46,
+    height: 46,
+    borderRadius: 23,
+    backgroundColor: "#e5e7eb",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  micButtonText: {
+    fontSize: 22,
   },
   list: {
     marginTop: 20,
@@ -276,6 +542,26 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 10,
     marginBottom: 12,
+  },
+  tileGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
+    marginVertical: 12,
+  },
+  tile: {
+    width: "47%",
+    padding: 16,
+    borderRadius: 14,
+    backgroundColor: "#f3f4f6",
+    alignItems: "center",
+  },
+  tileIcon: {
+    fontSize: 28,
+  },
+  tileText: {
+    fontWeight: "700",
+    marginTop: 6,
   },
   taskText: {
     fontSize: 18,
@@ -302,6 +588,10 @@ const styles = StyleSheet.create({
     marginTop: 4,
     fontSize: 14,
     fontWeight: "700",
+  },
+  statusWarning: {
+    fontWeight: "700",
+    color: "#dc2626",
   },
   green: {
     color: "green",
@@ -370,5 +660,16 @@ const styles = StyleSheet.create({
   deptBtnText: {
     fontSize: 13,
     color: "#111",
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.4)",
+    justifyContent: "center",
+    padding: 20,
+  },
+  modalCard: {
+    backgroundColor: "white",
+    borderRadius: 16,
+    padding: 20,
   },
 });

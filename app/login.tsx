@@ -1,7 +1,7 @@
 import axios from "axios";
 import { router } from "expo-router";
 import { useState } from "react";
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { Alert, Button, StyleSheet, Text, TextInput, View } from "react-native";
 import { registerForPushNotificationsAsync } from "../lib/notifications";
 import { setStoredItem } from "../lib/storage";
 
@@ -49,7 +49,37 @@ export default function LoginScreen() {
       console.log("Push registration skipped:", pushError);
     }
 
-    router.replace("/(tabs)");
+    Alert.alert(
+      "Start shift?",
+      "Are you starting your shift now?",
+      [
+        {
+          text: "No",
+          style: "cancel",
+          onPress: () => router.replace("/(tabs)"),
+        },
+        {
+          text: "Yes",
+          onPress: async () => {
+            try {
+              await axios.post(
+                `${API}/shift/start`,
+                {},
+                {
+                  headers: {
+                    Authorization: `Bearer ${res.data.token}`,
+                  },
+                }
+              );
+            } catch (err: any) {
+              console.log("SHIFT START ERROR:", err?.response?.data || err.message);
+            }
+
+            router.replace("/(tabs)");
+          },
+        },
+      ]
+    );
   } catch (err: any) {
     console.log("LOGIN ERROR FULL:", err);
     console.log("LOGIN ERROR RESPONSE:", err?.response?.data);

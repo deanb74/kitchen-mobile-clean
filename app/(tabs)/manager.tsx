@@ -1,6 +1,7 @@
 import axios from "axios";
 import * as FileSystem from "expo-file-system/legacy";
 import * as Print from "expo-print";
+import * as SecureStore from "expo-secure-store";
 import * as Sharing from "expo-sharing";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -34,11 +35,24 @@ export default function ManagerScreen() {
   const [departmentName, setDepartmentName] = useState("kitchen");
   const [templates, setTemplates] = useState<any[]>([]);
   const [templateName, setTemplateName] = useState("");
+  const [templateApplyUserId, setTemplateApplyUserId] = useState("");
   const [selectedTemplateId, setSelectedTemplateId] = useState("");
   const [templateDepartment, setTemplateDepartment] = useState("kitchen");
   const [templateFrequency, setTemplateFrequency] = useState("daily");
   const [templateSchedule, setTemplateSchedule] = useState("daily");
+  const [templateAreaId, setTemplateAreaId] = useState("");
+  const [templateEquipmentId, setTemplateEquipmentId] = useState("");
+  const [templateVerificationRequired, setTemplateVerificationRequired] = useState(false);
+  const [templateManagerSignoffRequired, setTemplateManagerSignoffRequired] = useState(false);
+  const [templateCorrectiveActionPrompt, setTemplateCorrectiveActionPrompt] = useState("");
   const [siteName, setSiteName] = useState("");
+  const [areas, setAreas] = useState<any[]>([]);
+  const [equipment, setEquipment] = useState<any[]>([]);
+  const [areaName, setAreaName] = useState("");
+  const [areaCategory, setAreaCategory] = useState("");
+  const [equipmentName, setEquipmentName] = useState("");
+  const [equipmentType, setEquipmentType] = useState("");
+  const [equipmentAreaId, setEquipmentAreaId] = useState("");
   const [assignUserId, setAssignUserId] = useState("");
   const [resetSiteId, setResetSiteId] = useState("");
   const [resetHour, setResetHour] = useState("");
@@ -58,8 +72,32 @@ export default function ManagerScreen() {
   const [analytics, setAnalytics] = useState<any>(null);
   const [analyticsRange, setAnalyticsRange] = useState("7d");
   const [trendData, setTrendData] = useState<any>(null);
+  const [complianceDashboard, setComplianceDashboard] = useState<any>(null);
+  const [priorityQueue, setPriorityQueue] = useState<any[]>([]);
+  const [shifts, setShifts] = useState<any[]>([]);
+  const [staffPerformance, setStaffPerformance] = useState<any[]>([]);
+  const [riskInsights, setRiskInsights] = useState<any[]>([]);
+  const [executiveReport, setExecutiveReport] = useState<any>(null);
+  const [drilldownItems, setDrilldownItems] = useState<any[]>([]);
+  const [drilldownTitle, setDrilldownTitle] = useState("");
+  const [managerSection, setManagerSection] = useState<string>("home");
+  const [themeName, setThemeName] = useState("default");
   const [isOfflineMode, setIsOfflineMode] = useState(false);
   const hasShownOfflineWarningRef = useRef(false);
+
+  const THEMES: any = {
+    default: { background: "#ffffff", card: "#f3f4f6", text: "#111827" },
+    dyslexia_blue: { background: "#dbeafe", card: "#bfdbfe", text: "#111827" },
+    dyslexia_yellow: { background: "#fef9c3", card: "#fef08a", text: "#111827" },
+    high_contrast: { background: "#000000", card: "#111827", text: "#ffffff" },
+  };
+
+  const activeTheme = THEMES[themeName] || THEMES.default;
+
+  const saveTheme = async (name: string) => {
+    setThemeName(name);
+    await SecureStore.setItemAsync("themeName", name);
+  };
 
   const showOfflineWarningOnce = () => {
     hasShownOfflineWarningRef.current = true;
@@ -94,12 +132,11 @@ export default function ManagerScreen() {
       const res = await axios.get(`${API}/manager/users`, { headers });
       setUsers(res.data);
     } catch (err: any) {
-      console.log(err?.response?.data || err.message);
+      console.log("LOAD ERROR:", err?.response?.data || err.message);
       if (isOfflineError(err)) {
         showOfflineWarningOnce();
         return;
       }
-      Alert.alert("Could not load users");
     }
   };
 
@@ -150,11 +187,21 @@ export default function ManagerScreen() {
           department: templateDepartment,
           frequency: templateFrequency,
           schedule: templateSchedule,
+          areaId: templateAreaId,
+          equipmentId: templateEquipmentId,
+          verificationRequired: templateVerificationRequired,
+          managerSignoffRequired: templateManagerSignoffRequired,
+          correctiveActionPrompt: templateCorrectiveActionPrompt,
         },
         { headers }
       );
 
       setTemplateName("");
+      setTemplateAreaId("");
+      setTemplateEquipmentId("");
+      setTemplateVerificationRequired(false);
+      setTemplateManagerSignoffRequired(false);
+      setTemplateCorrectiveActionPrompt("");
 
       await loadTemplates();
 
@@ -167,24 +214,35 @@ export default function ManagerScreen() {
 
   const applyTemplate = async (templateId: number) => {
     try {
+      if (!templateApplyUserId) {
+        Alert.alert(
+          "Select a user first",
+          "Choose a staff member in the template section before applying a template."
+        );
+        return;
+      }
+
       const headers = await getAuthHeaders();
 
       await axios.post(
         `${API}/manager/task-templates/apply`,
         {
           templateId,
-          assignedUserId,
-          siteId: selectedSiteId,
+          assignedUserId: Number(templateApplyUserId),
         },
         { headers }
       );
 
       Alert.alert("Template applied");
-
-      await loadTasks?.();
-    } catch (err) {
-      console.log(err);
-      Alert.alert("Could not apply template");
+      await refreshSelectedSiteData();
+    } catch (err: any) {
+      Alert.alert(
+        "Could not apply template",
+        err?.response?.data?.details ||
+          err?.response?.data?.error ||
+          err.message ||
+          "Unknown error"
+      );
     }
   };
 
@@ -194,12 +252,11 @@ export default function ManagerScreen() {
       const res = await axios.get(`${API}/manager/sites`, { headers });
       setSites(res.data);
     } catch (err: any) {
-      console.log(err?.response?.data || err.message);
+      console.log("LOAD ERROR:", err?.response?.data || err.message);
       if (isOfflineError(err)) {
         showOfflineWarningOnce();
         return;
       }
-      Alert.alert("Could not load sites");
     }
   };
 
@@ -229,12 +286,11 @@ export default function ManagerScreen() {
       );
       setAnalytics(res.data);
     } catch (err: any) {
-      console.log(err?.response?.data || err.message);
+      console.log("LOAD ERROR:", err?.response?.data || err.message);
       if (isOfflineError(err)) {
         showOfflineWarningOnce();
         return;
       }
-      Alert.alert("Could not load analytics");
     }
   };
 
@@ -247,12 +303,137 @@ export default function ManagerScreen() {
       );
       setTrendData(res.data);
     } catch (err: any) {
-      console.log(err?.response?.data || err.message);
+      console.log("LOAD ERROR:", err?.response?.data || err.message);
       if (isOfflineError(err)) {
         showOfflineWarningOnce();
         return;
       }
-      Alert.alert("Could not load trend data");
+    }
+  };
+
+  const loadPriorityQueue = async () => {
+    try {
+      const headers = await getAuthHeaders();
+
+      const res = await axios.get(`${API}/manager/priority-queue`, { headers });
+
+      setPriorityQueue(res.data);
+    } catch (err: any) {
+      console.log("LOAD PRIORITY QUEUE ERROR:", err?.response?.data || err.message);
+    }
+  };
+
+  const loadShifts = async () => {
+    try {
+      const headers = await getAuthHeaders();
+
+      const res = await axios.get(`${API}/manager/shifts`, { headers });
+
+      setShifts(res.data);
+    } catch (err: any) {
+      console.log("LOAD SHIFTS ERROR:", err?.response?.data || err.message);
+    }
+  };
+
+  const loadStaffPerformance = async () => {
+    try {
+      const headers = await getAuthHeaders();
+
+      const res = await axios.get(`${API}/manager/staff-performance`, { headers });
+
+      setStaffPerformance(res.data);
+    } catch (err: any) {
+      console.log("LOAD STAFF PERFORMANCE ERROR:", err?.response?.data || err.message);
+    }
+  };
+
+  const loadRiskInsights = async () => {
+    try {
+      const headers = await getAuthHeaders();
+
+      const res = await axios.get(`${API}/manager/risk-insights`, { headers });
+
+      setRiskInsights(res.data.risks || []);
+    } catch (err: any) {
+      console.log("LOAD RISK INSIGHTS ERROR:", err?.response?.data || err.message);
+    }
+  };
+
+  const loadExecutiveReport = async () => {
+    try {
+      const headers = await getAuthHeaders();
+
+      const res = await axios.get(`${API}/manager/executive-report`, { headers });
+
+      setExecutiveReport(res.data);
+    } catch (err: any) {
+      console.log("LOAD EXECUTIVE REPORT ERROR:", err?.response?.data || err.message);
+    }
+  };
+
+  const loadAreas = async () => {
+    const headers = await getAuthHeaders();
+    const res = await axios.get(`${API}/manager/areas`, { headers });
+    setAreas(res.data);
+  };
+
+  const loadEquipment = async () => {
+    const headers = await getAuthHeaders();
+    const res = await axios.get(`${API}/manager/equipment`, { headers });
+    setEquipment(res.data);
+  };
+
+  const createArea = async () => {
+    const headers = await getAuthHeaders();
+    await axios.post(`${API}/manager/areas`, { name: areaName, category: areaCategory }, { headers });
+    setAreaName("");
+    setAreaCategory("");
+    loadAreas();
+  };
+
+  const createEquipment = async () => {
+    const headers = await getAuthHeaders();
+    await axios.post(
+      `${API}/manager/equipment`,
+      { name: equipmentName, type: equipmentType, areaId: equipmentAreaId },
+      { headers }
+    );
+    setEquipmentName("");
+    setEquipmentType("");
+    setEquipmentAreaId("");
+    loadEquipment();
+  };
+
+  const loadComplianceDashboard = async () => {
+    try {
+      const headers = await getAuthHeaders();
+
+      const res = await axios.get(
+        `${API}/manager/compliance-dashboard`,
+        { headers }
+      );
+
+      setComplianceDashboard(res.data);
+    } catch (error) {
+      console.error("LOAD DASHBOARD ERROR", error);
+    }
+  };
+
+  const loadDrilldown = async (department: string, type: string) => {
+    try {
+      const headers = await getAuthHeaders();
+
+      const res = await axios.get(
+        `${API}/manager/compliance-dashboard/details?department=${department}&type=${type}`,
+        { headers }
+      );
+
+      console.log("DRILLDOWN ITEMS:", res.data);
+
+      setDrilldownTitle(`${department} — ${type}`);
+      setDrilldownItems(res.data);
+    } catch (err: any) {
+      console.log("DRILLDOWN ERROR:", err?.response?.data || err.message);
     }
   };
 
@@ -262,12 +443,11 @@ export default function ManagerScreen() {
       const res = await axios.get(`${API}/manager/reset-logs?${siteQuery}`, { headers });
       setResetLogs(res.data);
     } catch (err: any) {
-      console.log(err?.response?.data || err.message);
+      console.log("LOAD ERROR:", err?.response?.data || err.message);
       if (isOfflineError(err)) {
         showOfflineWarningOnce();
         return;
       }
-      Alert.alert("Could not load reset logs");
     }
   };
 
@@ -283,6 +463,10 @@ export default function ManagerScreen() {
         loadTrendData(analyticsRange),
         loadTemperatureReports(range),
         loadTaskReports(range),
+        loadShifts(),
+        loadStaffPerformance(),
+        loadRiskInsights(),
+        loadExecutiveReport(),
         loadResetLogs(),
       ]);
 
@@ -398,12 +582,11 @@ export default function ManagerScreen() {
       const res = await axios.get(`${API}/manager/alerts?${siteQuery}`, { headers });
       setAlerts(res.data);
     } catch (err: any) {
-      console.log(err?.response?.data || err.message);
+      console.log("LOAD ERROR:", err?.response?.data || err.message);
       if (isOfflineError(err)) {
         showOfflineWarningOnce();
         return;
       }
-      Alert.alert("Could not load alerts");
     }
   };
 
@@ -413,12 +596,11 @@ export default function ManagerScreen() {
       const res = await axios.get(`${API}/manager/alerts/history?${siteQuery}`, { headers });
       setAlertHistory(res.data);
     } catch (err: any) {
-      console.log(err?.response?.data || err.message);
+      console.log("LOAD ERROR:", err?.response?.data || err.message);
       if (isOfflineError(err)) {
         showOfflineWarningOnce();
         return;
       }
-      Alert.alert("Could not load alert history");
     }
   };
 
@@ -428,12 +610,11 @@ export default function ManagerScreen() {
       const res = await axios.get(`${API}/manager/reports/temperatures?range=${selectedRange}&${siteQuery}`, { headers });
       setTemperatureReports(res.data);
     } catch (err: any) {
-      console.log(err?.response?.data || err.message);
+      console.log("LOAD ERROR:", err?.response?.data || err.message);
       if (isOfflineError(err)) {
         showOfflineWarningOnce();
         return;
       }
-      Alert.alert("Could not load temperature reports");
     }
   };
 
@@ -443,12 +624,11 @@ export default function ManagerScreen() {
       const res = await axios.get(`${API}/manager/reports/tasks?range=${selectedRange}&${siteQuery}`, { headers });
       setTaskReports(res.data);
     } catch (err: any) {
-      console.log(err?.response?.data || err.message);
+      console.log("LOAD ERROR:", err?.response?.data || err.message);
       if (isOfflineError(err)) {
         showOfflineWarningOnce();
         return;
       }
-      Alert.alert("Could not load task reports");
     }
   };
 
@@ -736,6 +916,51 @@ export default function ManagerScreen() {
     }
   };
 
+  const downloadExecutivePdf = async () => {
+    try {
+      const token = await SecureStore.getItemAsync("token");
+
+      if (!token) {
+        Alert.alert("Not logged in");
+        return;
+      }
+
+      const fileUri =
+        FileSystem.documentDirectory + "executive-operations-report.pdf";
+
+      const result = await FileSystem.downloadAsync(
+        `${API}/manager/executive-report/pdf`,
+        fileUri,
+        {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+      );
+
+      if (result.status !== 200) {
+        Alert.alert("Could not download PDF");
+        return;
+      }
+
+      const canShare = await Sharing.isAvailableAsync();
+
+      if (!canShare) {
+        Alert.alert("PDF downloaded", fileUri);
+        return;
+      }
+
+      await Sharing.shareAsync(result.uri, {
+        mimeType: "application/pdf",
+        dialogTitle: "Share Executive Operations Report",
+        UTI: "com.adobe.pdf",
+      });
+    } catch (err: any) {
+      console.log("PDF DOWNLOAD ERROR:", err?.message || err);
+      Alert.alert("Could not download/share PDF");
+    }
+  };
+
   useEffect(() => {
     const loadSavedSite = async () => {
       const savedSiteId = await getStoredItem("siteId");
@@ -745,9 +970,20 @@ export default function ManagerScreen() {
     };
 
     loadSavedSite();
+    SecureStore.getItemAsync("themeName").then((saved) => {
+      if (saved) setThemeName(saved);
+    });
     loadUsers();
     loadSites();
     loadTemplates();
+    loadAreas();
+    loadEquipment();
+    loadComplianceDashboard();
+    loadPriorityQueue();
+    loadShifts();
+    loadStaffPerformance();
+    loadRiskInsights();
+    loadExecutiveReport();
   }, []);
 
   useEffect(() => {
@@ -812,6 +1048,12 @@ export default function ManagerScreen() {
   const getTrendBarWidth = (value: number, max: number): `${number}%` => {
     if (!max || max <= 0) return "0%";
     return `${Math.max((value / max) * 100, 4)}%`;
+  };
+
+  const getRagStyle = (rate: number) => {
+    if (rate === 100) return styles.ragGreen;
+    if (rate < 50) return styles.ragRed;
+    return styles.ragAmber;
   };
 
   const maxAlertTrend =
@@ -930,14 +1172,228 @@ export default function ManagerScreen() {
     }
   };
 
+  const activeShiftCount = shifts.filter((shift) => !shift.endedAt).length;
+  const overdueCount = complianceDashboard?.overdueTasks || 0;
+  const escalationCount = complianceDashboard?.escalatedTasks || 0;
+  const templateCount = templates.length;
+  const staffCount = users.filter((user) => user.role === "staff").length;
+  const themedText = { color: activeTheme.text };
+  const themedSection = { backgroundColor: activeTheme.card };
+  const themedCard = { backgroundColor: activeTheme.card };
+  const themedTile = { backgroundColor: activeTheme.card };
+  const themedInput = {
+    backgroundColor: activeTheme.card,
+    color: activeTheme.text,
+    borderColor: activeTheme.text,
+  };
+  const themedBadge = {
+    backgroundColor: activeTheme.text,
+    color: activeTheme.background,
+  };
+
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Manager</Text>
+    <ScrollView
+      style={[styles.container, { backgroundColor: activeTheme.background }]}
+      contentContainerStyle={styles.container}
+    >
+      <Text style={[styles.title, { color: activeTheme.text }]}>Manager</Text>
       {managerMessage ? (
-        <Text style={styles.filterText}>{managerMessage}</Text>
+        <Text style={[styles.filterText, { color: activeTheme.text }]}>{managerMessage}</Text>
       ) : null}
 
-        <Text style={styles.label}>Selected Site</Text>
+      <View style={styles.tileGrid}>
+        <Pressable style={[styles.tile, themedTile]} onPress={() => setManagerSection("dashboard")}>
+          <Text style={[styles.tileIcon, { color: activeTheme.text }]}>📊</Text>
+          <Text style={[styles.tileText, { color: activeTheme.text }]}>Dashboard</Text>
+          <Text style={[styles.tileBadge, themedBadge]}>{overdueCount} overdue</Text>
+        </Pressable>
+
+        <Pressable style={[styles.tile, themedTile]} onPress={() => setManagerSection("templates")}>
+          <Text style={[styles.tileIcon, { color: activeTheme.text }]}>📋</Text>
+          <Text style={[styles.tileText, { color: activeTheme.text }]}>Templates</Text>
+          <Text style={[styles.tileBadge, themedBadge]}>{templateCount}</Text>
+        </Pressable>
+
+        <Pressable style={[styles.tile, themedTile]} onPress={() => setManagerSection("staff")}>
+          <Text style={[styles.tileIcon, { color: activeTheme.text }]}>👥</Text>
+          <Text style={[styles.tileText, { color: activeTheme.text }]}>Staff</Text>
+          <Text style={[styles.tileBadge, themedBadge]}>{staffCount} staff</Text>
+        </Pressable>
+
+        <Pressable style={[styles.tile, themedTile]} onPress={() => setManagerSection("shifts")}>
+          <Text style={[styles.tileIcon, { color: activeTheme.text }]}>🕒</Text>
+          <Text style={[styles.tileText, { color: activeTheme.text }]}>Shifts</Text>
+          <Text style={[styles.tileBadge, themedBadge]}>{activeShiftCount} active</Text>
+        </Pressable>
+      </View>
+
+      {managerSection === "dashboard" && (
+        <>
+
+      {complianceDashboard && (
+        <View
+          style={[
+            styles.card,
+            getRagStyle(complianceDashboard.completionRate),
+          ]}
+        >
+          <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Compliance Dashboard</Text>
+
+          <Text style={[styles.text, themedText]}>Total Tasks: {complianceDashboard.totalTasks}</Text>
+          <Text style={[styles.text, themedText]}>Completed: {complianceDashboard.completedTasks}</Text>
+          <Text style={[styles.text, themedText]}>Overdue: {complianceDashboard.overdueTasks}</Text>
+          <Text style={[styles.text, themedText]}>Escalated: {complianceDashboard.escalatedTasks}</Text>
+          <Text style={[styles.text, themedText]}>
+            Completion Rate: {complianceDashboard.completionRate}%
+          </Text>
+          <View style={styles.reloadWrap}>
+            <Button title="View All Overdue" onPress={() => loadDrilldown("all", "overdue")} />
+          </View>
+          <View style={styles.reloadWrap}>
+            <Button title="View Escalated" onPress={() => loadDrilldown("all", "escalated")} />
+          </View>
+          <View style={styles.reloadWrap}>
+            <Button title="View Open" onPress={() => loadDrilldown("all", "open")} />
+          </View>
+        </View>
+      )}
+
+      {(drilldownTitle || drilldownItems.length > 0) && (
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>{drilldownTitle || "Drilldown"}</Text>
+
+          {drilldownItems.length === 0 ? (
+            <Text style={[styles.emptyText, { color: activeTheme.text }]}>No matching tasks</Text>
+          ) : (
+            drilldownItems.map((task) => (
+              <View key={task.id} style={[styles.card, { backgroundColor: activeTheme.card }]}>
+                <Text style={[styles.logText, { color: activeTheme.text }]}>{task.name}</Text>
+                <Text style={[styles.timeText, { color: activeTheme.text }]}>
+                  {task.department} - {task.assignedUser?.email || "Unassigned"}
+                </Text>
+                <Text style={[styles.timeText, { color: activeTheme.text }]}>
+                  Due: {task.dueAt ? new Date(task.dueAt).toLocaleString() : "No due time"}
+                </Text>
+                <Text style={[styles.timeText, { color: activeTheme.text }]}>Escalation: {task.escalationLevel || 0}</Text>
+              </View>
+            ))
+          )}
+        </View>
+      )}
+
+      <View style={styles.section}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Risk Insights</Text>
+
+        {riskInsights.length === 0 ? (
+          <Text style={[styles.emptyText, { color: activeTheme.text }]}>No current risk insights</Text>
+        ) : (
+          riskInsights.map((risk, index) => (
+            <View
+              key={`${risk.type}-${index}`}
+              style={[
+                styles.card,
+                risk.level === "high" ? styles.ragRed : styles.ragAmber,
+              ]}
+            >
+              <Text style={[styles.logText, { color: activeTheme.text }]}>{risk.title}</Text>
+              <Text style={[styles.timeText, { color: activeTheme.text }]}>{risk.message}</Text>
+            </View>
+          ))
+        )}
+      </View>
+
+      <View style={styles.section}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Executive Operations Report</Text>
+
+        {!executiveReport ? (
+          <Text style={[styles.emptyText, { color: activeTheme.text }]}>No executive report loaded</Text>
+        ) : (
+          <>
+            <Text style={[styles.text, themedText]}>Total Tasks: {executiveReport.summary.totalTasks}</Text>
+            <Text style={[styles.text, themedText]}>Completed: {executiveReport.summary.completedTasks}</Text>
+            <Text style={[styles.text, themedText]}>Overdue: {executiveReport.summary.overdueTasks}</Text>
+            <Text style={[styles.text, themedText]}>Escalated: {executiveReport.summary.escalatedTasks}</Text>
+            <Text style={[styles.text, themedText]}>Completion Rate: {executiveReport.summary.completionRate}%</Text>
+          </>
+        )}
+
+        <View style={styles.reloadWrap}>
+          <Button title="Download Executive PDF" onPress={downloadExecutivePdf} />
+        </View>
+      </View>
+
+      {complianceDashboard?.departmentBreakdown &&
+        Object.entries(complianceDashboard.departmentBreakdown).map(
+          ([department, stats]: any) => {
+            const completionRate =
+              stats.total === 0
+                ? 0
+                : Math.round((stats.completed / stats.total) * 100);
+
+            return (
+              <View
+                key={department}
+                style={[styles.card, getRagStyle(completionRate)]}
+              >
+                <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>
+                  {department.replace(/_/g, " ").toUpperCase()}
+                </Text>
+
+                <Text style={[styles.text, themedText]}>Total: {stats.total}</Text>
+                <Text style={[styles.text, themedText]}>Completed: {stats.completed}</Text>
+                <Text style={[styles.text, themedText]}>Overdue: {stats.overdue}</Text>
+                <Text style={[styles.text, themedText]}>Escalated: {stats.escalated}</Text>
+                <Text style={[styles.text, themedText]}>Completion Rate: {completionRate}%</Text>
+              </View>
+            );
+          }
+        )}
+
+      <View style={styles.section}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Live Priority Queue</Text>
+
+        {priorityQueue.length === 0 ? (
+          <Text style={[styles.emptyText, { color: activeTheme.text }]}>No open priority tasks</Text>
+        ) : (
+          priorityQueue.map((task) => (
+            <View key={task.id} style={[styles.card, { backgroundColor: activeTheme.card }]}>
+              <Text style={[styles.logText, { color: activeTheme.text }]}>
+                {task.priority.toUpperCase()} — {task.name}
+              </Text>
+              <Text style={[styles.timeText, { color: activeTheme.text }]}>
+                {task.department} — {task.assignedUser?.email || "Unassigned"}
+              </Text>
+              <Text style={[styles.timeText, { color: activeTheme.text }]}>
+                Due: {task.dueAt ? new Date(task.dueAt).toLocaleString() : "No due time"}
+              </Text>
+            </View>
+          ))
+        )}
+      </View>
+
+      <View style={styles.section}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Staff Performance</Text>
+
+        {staffPerformance.length === 0 ? (
+          <Text style={[styles.emptyText, { color: activeTheme.text }]}>No staff performance data yet</Text>
+        ) : (
+          staffPerformance.map((staff) => (
+            <View key={staff.userId} style={[styles.card, getRagStyle(staff.completionRate)]}>
+              <Text style={[styles.logText, { color: activeTheme.text }]}>{staff.email}</Text>
+              <Text style={[styles.timeText, { color: activeTheme.text }]}>
+                {staff.role} - {staff.department || "No department"}
+              </Text>
+              <Text style={[styles.text, themedText]}>Total: {staff.totalTasks}</Text>
+              <Text style={[styles.text, themedText]}>Completed: {staff.completedTasks}</Text>
+              <Text style={[styles.text, themedText]}>Overdue: {staff.overdueTasks}</Text>
+              <Text style={[styles.text, themedText]}>Escalated: {staff.escalatedTasks}</Text>
+              <Text style={[styles.text, themedText]}>Completion Rate: {staff.completionRate}%</Text>
+            </View>
+          ))
+        )}
+      </View>
+
+        <Text style={[styles.label, { color: activeTheme.text }]}>Selected Site</Text>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <View style={{ flexDirection: "row", gap: 8 }}>
             {sites.map((site) => (
@@ -970,17 +1426,17 @@ export default function ManagerScreen() {
         </View>
 
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Dashboard</Text>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Dashboard</Text>
 
         {!dashboard ? (
-          <Text style={styles.emptyText}>Loading dashboard...</Text>
+          <Text style={[styles.emptyText, { color: activeTheme.text }]}>Loading dashboard...</Text>
         ) : (
           <>
-            <View style={styles.card}>
-              <Text style={styles.logText}>
+            <View style={[styles.card, { backgroundColor: activeTheme.card }]}>
+              <Text style={[styles.logText, { color: activeTheme.text }]}>
                 Site: {dashboard.site?.name || "No Site"}
               </Text>
-              <Text style={styles.timeText}>
+              <Text style={[styles.timeText, { color: activeTheme.text }]}>
                 Next reset: {" "}
                 {dashboard.site?.resetEnabled
                   ? `${String(dashboard.site?.resetHour).padStart(2, "0")}:${String(dashboard.site?.resetMinute).padStart(2, "0")}`
@@ -988,19 +1444,19 @@ export default function ManagerScreen() {
               </Text>
             </View>
 
-            <View style={styles.card}>
-              <Text style={styles.logText}>Active Alerts: {dashboard.activeAlerts}</Text>
-              <Text style={styles.logText}>Completed Today: {dashboard.completedToday}</Text>
-              <Text style={styles.logText}>Incomplete Tasks: {dashboard.incompleteTasks}</Text>
+            <View style={[styles.card, { backgroundColor: activeTheme.card }]}>
+              <Text style={[styles.logText, { color: activeTheme.text }]}>Active Alerts: {dashboard.activeAlerts}</Text>
+              <Text style={[styles.logText, { color: activeTheme.text }]}>Completed Today: {dashboard.completedToday}</Text>
+              <Text style={[styles.logText, { color: activeTheme.text }]}>Incomplete Tasks: {dashboard.incompleteTasks}</Text>
             </View>
 
-            <Text style={styles.subTitle}>Latest Temperatures</Text>
+            <Text style={[styles.subTitle, { color: activeTheme.text }]}>Latest Temperatures</Text>
             {dashboard.latestTemps.length === 0 ? (
-              <Text style={styles.emptyText}>No temperature logs yet</Text>
+              <Text style={[styles.emptyText, { color: activeTheme.text }]}>No temperature logs yet</Text>
             ) : (
               dashboard.latestTemps.map((log: any) => (
-                <View key={log.id} style={styles.card}>
-                  <Text style={styles.logText}>
+                <View key={log.id} style={[styles.card, { backgroundColor: activeTheme.card }]}>
+                  <Text style={[styles.logText, { color: activeTheme.text }]}>
                     {log.fridge} ({log.type}): {log.value}°C
                   </Text>
                   <Text
@@ -1015,7 +1471,7 @@ export default function ManagerScreen() {
                   >
                     {log.status.toUpperCase()}
                   </Text>
-                  <Text style={styles.timeText}>
+                  <Text style={[styles.timeText, { color: activeTheme.text }]}>
                     {new Date(log.createdAt).toLocaleString()}
                   </Text>
                 </View>
@@ -1030,7 +1486,7 @@ export default function ManagerScreen() {
       </View>
 
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Analytics</Text>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Analytics</Text>
 
         <View style={styles.filterRow}>
           <Button title="Today" onPress={() => changeAnalyticsRange("today")} />
@@ -1050,7 +1506,7 @@ export default function ManagerScreen() {
           <Text style={styles.emptyText}>Loading analytics...</Text>
         ) : (
           <>
-            <View style={styles.card}>
+            <View style={[styles.card, { backgroundColor: activeTheme.card }]}>
               <Text style={styles.logText}>Alerts by Severity</Text>
 
               <View style={styles.chartRow}>
@@ -1082,7 +1538,7 @@ export default function ManagerScreen() {
               </View>
             </View>
 
-            <View style={styles.card}>
+            <View style={[styles.card, { backgroundColor: activeTheme.card }]}>
               <Text style={styles.logText}>Task Completion Summary</Text>
 
               <View style={styles.chartRow}>
@@ -1124,7 +1580,7 @@ export default function ManagerScreen() {
               </View>
             </View>
 
-            <View style={styles.card}>
+            <View style={[styles.card, { backgroundColor: activeTheme.card }]}>
               <Text style={styles.logText}>Latest Reset</Text>
               {analytics.latestResetLog ? (
                 <>
@@ -1140,7 +1596,7 @@ export default function ManagerScreen() {
               )}
             </View>
 
-            <View style={styles.card}>
+            <View style={[styles.card, { backgroundColor: activeTheme.card }]}>
               <Text style={styles.logText}>Most Problematic Units</Text>
               {analytics.problemUnits.length === 0 ? (
                 <Text style={styles.emptyText}>No alert-prone units in this range</Text>
@@ -1170,13 +1626,13 @@ export default function ManagerScreen() {
       </View>
 
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Trend Charts</Text>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Trend Charts</Text>
 
         {!trendData ? (
           <Text style={styles.emptyText}>Loading trends...</Text>
         ) : (
           <>
-            <View style={styles.card}>
+            <View style={[styles.card, { backgroundColor: activeTheme.card }]}>
               <Text style={styles.logText}>Alerts by Day</Text>
               {trendData.alertTrends.length === 0 ? (
                 <Text style={styles.emptyText}>No alert data in this range</Text>
@@ -1199,7 +1655,7 @@ export default function ManagerScreen() {
               )}
             </View>
 
-            <View style={styles.card}>
+            <View style={[styles.card, { backgroundColor: activeTheme.card }]}>
               <Text style={styles.logText}>Completed Tasks by Day</Text>
               {trendData.completedTaskTrends.length === 0 ? (
                 <Text style={styles.emptyText}>No completed task data in this range</Text>
@@ -1222,7 +1678,7 @@ export default function ManagerScreen() {
               )}
             </View>
 
-            <View style={styles.card}>
+            <View style={[styles.card, { backgroundColor: activeTheme.card }]}>
               <Text style={styles.logText}>Resets by Day</Text>
               {trendData.resetTrends.length === 0 ? (
                 <Text style={styles.emptyText}>No reset data in this range</Text>
@@ -1252,11 +1708,43 @@ export default function ManagerScreen() {
         </View>
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>User Management</Text>
+        </>
+      )}
+
+      {managerSection === "shifts" && (
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Shift Handovers</Text>
+
+          {shifts.length === 0 ? (
+            <Text style={styles.emptyText}>No shifts recorded yet</Text>
+          ) : (
+            shifts.map((shift) => (
+              <View key={shift.id} style={[styles.card, { backgroundColor: activeTheme.card }]}>
+                <Text style={styles.logText}>
+                  User {shift.userId} - {shift.department || "No department"}
+                </Text>
+                <Text style={styles.timeText}>
+                  Started: {new Date(shift.startedAt).toLocaleString()}
+                </Text>
+                <Text style={styles.timeText}>
+                  Ended: {shift.endedAt ? new Date(shift.endedAt).toLocaleString() : "Still open"}
+                </Text>
+                <Text style={styles.timeText}>
+                  Notes: {shift.handoverNotes || "No handover notes"}
+                </Text>
+              </View>
+            ))
+          )}
+        </View>
+      )}
+
+      {managerSection === "staff" && (
+        <>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>User Management</Text>
 
         <TextInput
-          style={styles.input}
+          style={[styles.input, themedInput]}
           value={roleUserId}
           onChangeText={setRoleUserId}
           placeholder="User ID"
@@ -1276,7 +1764,7 @@ export default function ManagerScreen() {
         <View style={styles.spacer} />
 
         <TextInput
-          style={styles.input}
+          style={[styles.input, themedInput]}
           value={departmentUserId}
           onChangeText={setDepartmentUserId}
           placeholder="User ID for department"
@@ -1302,11 +1790,25 @@ export default function ManagerScreen() {
         <Button title="Update User Department" onPress={updateUserDepartment} />
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Site Management</Text>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Display Preferences</Text>
+
+        <Button title="Default" onPress={() => saveTheme("default")} />
+        <Button title="Blue background" onPress={() => saveTheme("dyslexia_blue")} />
+        <Button title="Yellow background" onPress={() => saveTheme("dyslexia_yellow")} />
+        <Button title="High contrast" onPress={() => saveTheme("high_contrast")} />
+      </View>
+
+        </>
+      )}
+
+      {managerSection === "site" && (
+        <>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Site Management</Text>
 
         <TextInput
-          style={styles.input}
+          style={[styles.input, themedInput]}
           value={siteName}
           onChangeText={setSiteName}
           placeholder="New site name"
@@ -1316,7 +1818,7 @@ export default function ManagerScreen() {
         <View style={styles.spacer} />
 
         <TextInput
-          style={styles.input}
+          style={[styles.input, themedInput]}
           value={assignUserId}
           onChangeText={setAssignUserId}
           placeholder="User ID"
@@ -1371,15 +1873,47 @@ export default function ManagerScreen() {
         )}
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Report Settings</Text>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Site Configuration</Text>
+
+        <TextInput style={[styles.input, themedInput]} placeholder="Area name e.g. Kitchen" value={areaName} onChangeText={setAreaName} />
+        <TextInput style={[styles.input, themedInput]} placeholder="Area category e.g. boh" value={areaCategory} onChangeText={setAreaCategory} />
+        <Button title="Add Area" onPress={createArea} />
+
+        {areas.map((area) => (
+          <Text key={area.id}>
+            ID {area.id}: {area.name} — {area.category || "No category"}
+          </Text>
+        ))}
+
+        <TextInput style={[styles.input, themedInput]} placeholder="Equipment name e.g. Fryer" value={equipmentName} onChangeText={setEquipmentName} />
+        <TextInput style={[styles.input, themedInput]} placeholder="Equipment type e.g. fryer" value={equipmentType} onChangeText={setEquipmentType} />
+        <TextInput style={[styles.input, themedInput]} placeholder="Area ID" value={equipmentAreaId} onChangeText={setEquipmentAreaId} keyboardType="numeric" />
+        <Text>Assign equipment to area:</Text>
+
+        {areas.map((area) => (
+          <Button
+            key={area.id}
+            title={`${area.name} (${area.id})`}
+            onPress={() => setEquipmentAreaId(String(area.id))}
+          />
+        ))}
+        <Button title="Add Equipment" onPress={createEquipment} />
+
+        {equipment.map((item) => (
+          <Text key={item.id}>{item.name} — {item.type || "No type"} — {item.area?.name || "No area"}</Text>
+        ))}
+      </View>
+
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Report Settings</Text>
 
         <Text style={styles.filterText}>
           Using selected site: {selectedSite?.name || "None selected"}
         </Text>
 
         <TextInput
-          style={styles.input}
+          style={[styles.input, themedInput]}
           value={reportEmail}
           onChangeText={setReportEmail}
           placeholder="Recipient email"
@@ -1387,7 +1921,7 @@ export default function ManagerScreen() {
         />
 
         <TextInput
-          style={styles.input}
+          style={[styles.input, themedInput]}
           value={reportHour}
           onChangeText={setReportHour}
           placeholder="Report Hour (0-23)"
@@ -1395,7 +1929,7 @@ export default function ManagerScreen() {
         />
 
         <TextInput
-          style={styles.input}
+          style={[styles.input, themedInput]}
           value={reportMinute}
           onChangeText={setReportMinute}
           placeholder="Report Minute (0-59)"
@@ -1416,7 +1950,7 @@ export default function ManagerScreen() {
         <Text style={styles.subTitle}>Current Site Report Settings</Text>
 
         {sites.map((site) => (
-          <View key={site.id} style={styles.card}>
+          <View key={site.id} style={[styles.card, { backgroundColor: activeTheme.card }]}>
             <Text style={styles.userText}>
               {site.id} — {site.name}
             </Text>
@@ -1432,15 +1966,15 @@ export default function ManagerScreen() {
         ))}
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Site Reset Settings</Text>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Site Reset Settings</Text>
 
         <Text style={styles.filterText}>
           Using selected site: {selectedSite?.name || "None selected"}
         </Text>
 
         <TextInput
-          style={styles.input}
+          style={[styles.input, themedInput]}
           value={resetHour}
           onChangeText={setResetHour}
           placeholder="Reset Hour (0-23)"
@@ -1448,7 +1982,7 @@ export default function ManagerScreen() {
         />
 
         <TextInput
-          style={styles.input}
+          style={[styles.input, themedInput]}
           value={resetMinute}
           onChangeText={setResetMinute}
           placeholder="Reset Minute (0-59)"
@@ -1468,7 +2002,7 @@ export default function ManagerScreen() {
         <View style={styles.spacer} />
         <Text style={styles.subTitle}>Current Site Reset Settings</Text>
         {sites.map((site) => (
-          <View key={site.id} style={styles.card}>
+          <View key={site.id} style={[styles.card, { backgroundColor: activeTheme.card }]}>
             <Text style={styles.userText}>
               {site.id} — {site.name}
             </Text>
@@ -1480,8 +2014,13 @@ export default function ManagerScreen() {
         ))}
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Report Filters</Text>
+        </>
+      )}
+
+      {managerSection === "templates" && (
+        <>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Report Filters</Text>
         <View style={styles.filterRow}>
           <Button title="Today" onPress={() => changeRange("today")} />
           <View style={styles.filterGap} />
@@ -1495,20 +2034,20 @@ export default function ManagerScreen() {
         <Text style={styles.filterText}>Current range: {range}</Text>
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Export Report</Text>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Export Report</Text>
         <Button title="Export PDF Report" onPress={exportPdfReport} />
         <View style={styles.spacer} />
         <Button title="Export CSV Report" onPress={exportCsv} />
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Active Alerts</Text>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Active Alerts</Text>
         {alerts.length === 0 ? (
           <Text style={styles.emptyText}>No active amber or red alerts</Text>
         ) : (
           alerts.map((log) => (
-            <View key={log.id} style={styles.card}>
+            <View key={log.id} style={[styles.card, { backgroundColor: activeTheme.card }]}>
               <Text style={styles.logText}>
                 {log.fridge} ({log.type}): {log.value}°C
               </Text>
@@ -1534,13 +2073,13 @@ export default function ManagerScreen() {
         </View>
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Resolved Alerts</Text>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Resolved Alerts</Text>
         {alertHistory.length === 0 ? (
           <Text style={styles.emptyText}>No resolved alerts yet</Text>
         ) : (
           alertHistory.map((log) => (
-            <View key={log.id} style={styles.card}>
+            <View key={log.id} style={[styles.card, { backgroundColor: activeTheme.card }]}>
               <Text style={styles.logText}>
                 {log.fridge} ({log.type}): {log.value}°C
               </Text>
@@ -1563,13 +2102,13 @@ export default function ManagerScreen() {
         </View>
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Temperature Report</Text>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Temperature Report</Text>
         {temperatureReports.length === 0 ? (
           <Text style={styles.emptyText}>No temperature logs yet</Text>
         ) : (
           temperatureReports.map((log) => (
-            <View key={log.id} style={styles.card}>
+            <View key={log.id} style={[styles.card, { backgroundColor: activeTheme.card }]}>
               <Text style={styles.logText}>
                 {log.fridge} ({log.type}): {log.value}°C
               </Text>
@@ -1596,13 +2135,13 @@ export default function ManagerScreen() {
         </View>
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Completed Tasks Report</Text>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Completed Tasks Report</Text>
         {taskReports.length === 0 ? (
           <Text style={styles.emptyText}>No completed tasks yet</Text>
         ) : (
           taskReports.map((task) => (
-            <View key={task.id} style={styles.card}>
+            <View key={task.id} style={[styles.card, { backgroundColor: activeTheme.card }]}>
               <Text style={styles.logText}>{task.name}</Text>
               <Text style={styles.timeText}>
                 Assigned to: {task.assignedUser?.email || "Unassigned"}
@@ -1618,14 +2157,14 @@ export default function ManagerScreen() {
         </View>
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Reset Audit Log</Text>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Reset Audit Log</Text>
 
         {resetLogs.length === 0 ? (
           <Text style={styles.emptyText}>No reset logs yet</Text>
         ) : (
           resetLogs.map((log) => (
-            <View key={log.id} style={styles.card}>
+            <View key={log.id} style={[styles.card, { backgroundColor: activeTheme.card }]}>
               <Text style={styles.logText}>
                 {log.site?.name || "Unknown Site"}
               </Text>
@@ -1644,16 +2183,16 @@ export default function ManagerScreen() {
         </View>
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Assign Task</Text>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Assign Task</Text>
         <TextInput
-          style={styles.input}
+          style={[styles.input, themedInput]}
           value={taskName}
           onChangeText={setTaskName}
           placeholder="Task name"
         />
         <TextInput
-          style={styles.input}
+          style={[styles.input, themedInput]}
           value={assignedUserId}
           onChangeText={setAssignedUserId}
           placeholder="Assign to user ID"
@@ -1686,11 +2225,11 @@ export default function ManagerScreen() {
         <Button title="Assign Task" onPress={createTask} />
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Task Templates</Text>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Task Templates</Text>
 
         <TextInput
-          style={styles.input}
+          style={[styles.input, themedInput]}
           value={templateName}
           onChangeText={setTemplateName}
           placeholder="Template name"
@@ -1730,18 +2269,84 @@ export default function ManagerScreen() {
           <Button title="Monthly 1st" onPress={() => setTemplateSchedule("monthly_1st")} />
         </View>
 
+        <Text style={styles.filterText}>Template Area: {templateAreaId || "None"}</Text>
+        {areas.map((area) => (
+          <Button
+            key={area.id}
+            title={area.name}
+            onPress={() => setTemplateAreaId(String(area.id))}
+          />
+        ))}
+
+        <Text style={styles.filterText}>Template Equipment: {templateEquipmentId || "None"}</Text>
+        {equipment.map((item) => (
+          <Button
+            key={item.id}
+            title={item.name}
+            onPress={() => setTemplateEquipmentId(String(item.id))}
+          />
+        ))}
+
+        <Button
+          title={`Verification Required: ${templateVerificationRequired ? "Yes" : "No"}`}
+          onPress={() => setTemplateVerificationRequired(!templateVerificationRequired)}
+        />
+
+        <Button
+          title={`Manager Signoff Required: ${templateManagerSignoffRequired ? "Yes" : "No"}`}
+          onPress={() => setTemplateManagerSignoffRequired(!templateManagerSignoffRequired)}
+        />
+
+        <TextInput
+          style={[styles.input, themedInput]}
+          placeholder="Corrective action prompt"
+          value={templateCorrectiveActionPrompt}
+          onChangeText={setTemplateCorrectiveActionPrompt}
+        />
+
         <Button title="Create Template" onPress={createTemplate} />
 
         <View style={styles.spacer} />
 
+        <Text>Apply template to staff member:</Text>
+
+        {users
+          .filter((user) => user.role === "staff")
+          .filter((user) =>
+            selectedSiteId ? String(user.siteId) === String(selectedSiteId) : true
+          )
+          .map((user) => (
+            <Button
+              key={user.id}
+              title={`${user.email} — ${user.department || "No department"}`}
+              onPress={() => setTemplateApplyUserId(String(user.id))}
+            />
+          ))}
+
+        <Text>
+          Selected staff ID: {templateApplyUserId || "None"}
+        </Text>
+        <Text>
+          Selected template user:{" "}
+          {users.find((u) => String(u.id) === String(templateApplyUserId))?.email || "None"}
+        </Text>
+
         {templates.map((template) => (
-          <View key={template.id} style={styles.card}>
+          <View key={template.id} style={[styles.card, { backgroundColor: activeTheme.card }]}>
             <Text style={styles.logText}>{template.name}</Text>
             <Text style={styles.timeText}>
               {template.department} — {template.frequency}
             </Text>
             <Text style={styles.timeText}>
               Schedule: {template.schedule || "daily"}
+            </Text>
+            <Text style={styles.timeText}>Area ID: {template.areaId || "None"}</Text>
+            <Text style={styles.timeText}>Equipment ID: {template.equipmentId || "None"}</Text>
+            <Text style={styles.timeText}>
+              Verification: {template.verificationRequired ? "Yes" : "No"}
+            </Text>
+            <Text style={styles.timeText}>
+              Manager Signoff: {template.managerSignoffRequired ? "Yes" : "No"}
             </Text>
             <Button
               title="Apply Template"
@@ -1751,21 +2356,29 @@ export default function ManagerScreen() {
         ))}
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Daily Reset</Text>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Daily Reset</Text>
         <Button title="Reset All Tasks" onPress={resetTasks} color="#dc2626" />
       </View>
 
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Users</Text>
+        </>
+      )}
+
+      {managerSection === "staff" && (
+        <>
+      <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Users</Text>
         {users.map((user) => (
-          <View key={user.id} style={styles.card}>
+          <View key={user.id} style={[styles.card, { backgroundColor: activeTheme.card }]}>
             <Text style={styles.userText}>
               {user.id} — {user.email} ({user.role}) — {user.site?.name || "No Site"}
             </Text>
           </View>
         ))}
       </View>
+
+        </>
+      )}
     </ScrollView>
   );
 }
@@ -1780,6 +2393,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     marginBottom: 20,
   },
+  text: {},
   section: {
     backgroundColor: "#f2f2f2",
     padding: 16,
@@ -1809,6 +2423,36 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 8,
     marginBottom: 8,
+  },
+  tileGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
+    marginVertical: 12,
+  },
+  tile: {
+    width: "47%",
+    padding: 16,
+    borderRadius: 14,
+    backgroundColor: "#f3f4f6",
+    alignItems: "center",
+  },
+  tileIcon: {
+    fontSize: 28,
+  },
+  tileText: {
+    fontWeight: "700",
+    marginTop: 6,
+  },
+  tileBadge: {
+    marginTop: 6,
+    backgroundColor: "#dc2626",
+    color: "white",
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 999,
+    overflow: "hidden",
+    fontWeight: "700",
   },
   cardSelected: {
     borderWidth: 2,
@@ -1966,5 +2610,20 @@ const styles = StyleSheet.create({
   quickBtnText: {
     fontSize: 13,
     color: "#111",
+  },
+  ragGreen: {
+    backgroundColor: "#dcfce7",
+    borderColor: "#16a34a",
+    borderWidth: 2,
+  },
+  ragAmber: {
+    backgroundColor: "#fef3c7",
+    borderColor: "#f59e0b",
+    borderWidth: 2,
+  },
+  ragRed: {
+    backgroundColor: "#fee2e2",
+    borderColor: "#dc2626",
+    borderWidth: 2,
   },
 });
