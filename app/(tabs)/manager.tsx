@@ -78,6 +78,7 @@ export default function ManagerScreen() {
   const [complianceRecords, setComplianceRecords] = useState<any[]>([]);
   const [shifts, setShifts] = useState<any[]>([]);
   const [staffPerformance, setStaffPerformance] = useState<any[]>([]);
+  const [trainingInsights, setTrainingInsights] = useState<any>(null);
   const [riskInsights, setRiskInsights] = useState<any[]>([]);
   const [executiveReport, setExecutiveReport] = useState<any>(null);
   const [drilldownItems, setDrilldownItems] = useState<any[]>([]);
@@ -371,6 +372,21 @@ export default function ManagerScreen() {
       setExecutiveReport(res.data);
     } catch (err: any) {
       console.log("LOAD EXECUTIVE REPORT ERROR:", err?.response?.data || err.message);
+    }
+  };
+
+  const loadTrainingInsights = async () => {
+    try {
+      const headers = await getAuthHeaders();
+      const res = await axios.get(`${API}/manager/training-insights`, {
+        headers,
+      });
+      setTrainingInsights(res.data);
+    } catch (err: any) {
+      console.log(
+        "LOAD TRAINING INSIGHTS ERROR:",
+        err?.response?.data || err.message
+      );
     }
   };
 
@@ -1056,6 +1072,7 @@ export default function ManagerScreen() {
     loadStaffPerformance();
     loadRiskInsights();
     loadExecutiveReport();
+    loadTrainingInsights();
   }, []);
 
   useEffect(() => {
@@ -1296,6 +1313,11 @@ export default function ManagerScreen() {
           <Text style={[styles.tileIcon, { color: activeTheme.text }]}>🕒</Text>
           <Text style={[styles.tileText, { color: activeTheme.text }]}>Shifts</Text>
           <Text style={[styles.tileBadge, themedBadge]}>{activeShiftCount} active</Text>
+        </Pressable>
+        <Pressable style={[styles.tile, themedTile]} onPress={() => setManagerSection("training")}> 
+          <Text style={[styles.tileIcon, { color: activeTheme.text }]}>🎓</Text>
+          <Text style={[styles.tileText, { color: activeTheme.text }]}>Training</Text>
+          <Text style={[styles.tileBadge, themedBadge]}>{trainingInsights?.recommendationCount || 0}</Text>
         </Pressable>
 
         <Pressable style={[styles.tile, themedTile]} onPress={() => setManagerSection("complianceEvidence")}>
@@ -1861,6 +1883,7 @@ export default function ManagerScreen() {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Compliance Evidence</Text>
 
+
           {complianceRecords.map((record) => (
             <View key={record.id} style={styles.card}>
               <Text>Type: {record.type}</Text>
@@ -1869,52 +1892,8 @@ export default function ManagerScreen() {
               <Text>User ID: {record.userId}</Text>
               <Text>Verified: {record.verified ? "Yes" : "No"}</Text>
               <Text>{new Date(record.createdAt).toLocaleString()}</Text>
-
-              <TextInput
-                style={styles.input}
-                placeholder="Corrective action required"
-                value={correctiveActionText}
-                onChangeText={setCorrectiveActionText}
-              />
-
-              <Button
-                title="Request Corrective Action"
-                onPress={() => requestCorrectiveAction(record.id)}
-              />
-
-              {!record.verified && (
-                <Button
-                  title="Verify Evidence"
-                  onPress={() => verifyComplianceRecord(record.id)}
-                />
-              )}
             </View>
           ))}
-        </View>
-      )}
-
-      {managerSection === "staff" && (
-        <>
-      <View style={[styles.section, themedSection]}>
-        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>User Management</Text>
-
-        <TextInput
-          style={[styles.input, themedInput]}
-          value={roleUserId}
-          onChangeText={setRoleUserId}
-          placeholder="User ID"
-          keyboardType="numeric"
-        />
-
-        <View style={styles.filterRow}>
-          <Button title="Make Staff" onPress={() => setNewRole("staff")} />
-          <View style={styles.filterGap} />
-          <Button title="Make Manager" onPress={() => setNewRole("manager")} />
-        </View>
-
-        <Text style={styles.filterText}>Selected role: {newRole}</Text>
-
-        <Button title="Update User Role" onPress={updateUserRole} />
 
         <View style={styles.spacer} />
 
@@ -1944,6 +1923,40 @@ export default function ManagerScreen() {
 
         <Button title="Update User Department" onPress={updateUserDepartment} />
       </View>
+      )}
+
+      {managerSection === "training" && (
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Staff Coaching & Training Insights</Text>
+          {!trainingInsights ? (
+            <Text style={[styles.text, themedText]}>No training insights loaded</Text>
+          ) : (
+            <>
+              <Text style={[styles.text, themedText]}>
+                Total corrective actions: {trainingInsights.totalCorrectiveActions}
+              </Text>
+              <Text style={[styles.text, themedText]}>
+                Recommendations: {trainingInsights.recommendationCount}
+              </Text>
+              {trainingInsights.recommendations?.map((item: any, index: number) => (
+                <View
+                  key={index}
+                  style={[
+                    styles.card,
+                    {
+                      borderLeftWidth: 6,
+                      borderLeftColor: item.severity === "high" ? "#dc2626" : "#f59e0b",
+                    },
+                  ]}
+                >
+                  <Text style={[styles.text, themedText]}>{item.title}</Text>
+                  <Text style={[styles.text, themedText]}>{item.message}</Text>
+                </View>
+              ))}
+            </>
+          )}
+        </View>
+      )}
 
       <View style={[styles.section, themedSection]}>
         <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Display Preferences</Text>
@@ -1953,9 +1966,6 @@ export default function ManagerScreen() {
         <Button title="Yellow background" onPress={() => saveTheme("dyslexia_yellow")} />
         <Button title="High contrast" onPress={() => saveTheme("high_contrast")} />
       </View>
-
-        </>
-      )}
 
       {managerSection === "site" && (
         <>

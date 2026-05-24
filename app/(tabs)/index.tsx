@@ -25,6 +25,7 @@ export default function TasksScreen() {
   const [taskNote, setTaskNote] = useState("");
   const [taskPhoto, setTaskPhoto] = useState<string | null>(null);
   const [correctiveActions, setCorrectiveActions] = useState<any[]>([]);
+  const [correctionResponseNote, setCorrectionResponseNote] = useState("");
 
   const departments = [
     "all",
@@ -149,7 +150,11 @@ export default function TasksScreen() {
     }
   };
 
-  const completeTask = async (id: number, note?: string) => {
+  const completeTask = async (
+    id: number,
+    note?: string,
+    correctionResponse?: string
+  ) => {
     try {
       const net = await NetInfo.fetch();
 
@@ -171,7 +176,10 @@ export default function TasksScreen() {
 
       await axios.post(
         `${API}/tasks/${id}/complete`,
-        { note },
+        {
+          note,
+          correctionResponse,
+        },
         { headers }
       );
 
@@ -567,8 +575,9 @@ export default function TasksScreen() {
               title="Complete Task"
               onPress={async () => {
                 if (!selectedTask) return;
-                await completeTask(selectedTask.id, taskNote);
+                await completeTask(selectedTask.id, taskNote, correctionResponseNote);
                 setTaskNote("");
+                setCorrectionResponseNote("");
                 setSelectedTask(null);
               }}
             />
