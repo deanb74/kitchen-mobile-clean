@@ -1,9 +1,10 @@
 import VoiceNoteInput from "@/components/VoiceNoteInput";
 import NetInfo from "@react-native-community/netinfo";
 import axios from "axios";
+// import * as ImagePicker from "expo-image-picker";
 import { router } from "expo-router";
 import { useEffect, useState } from "react";
-import { Alert, Button, Modal, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Alert, Button, Image, Modal, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { addToOfflineQueue, getOfflineQueueCount } from "../../lib/offlineQueue";
 import { deleteStoredItem, getStoredItem } from "../../lib/storage";
 import { getSyncStatus, subscribeToSyncStatus } from "../../lib/syncStatus";
@@ -21,6 +22,9 @@ export default function TasksScreen() {
   const [selectedTask, setSelectedTask] = useState<any>(null);
   const [staffSection, setStaffSection] = useState("home");
   const [handoverNotes, setHandoverNotes] = useState("");
+  const [taskNote, setTaskNote] = useState("");
+  const [taskPhoto, setTaskPhoto] = useState<string | null>(null);
+  const [correctiveActions, setCorrectiveActions] = useState<any[]>([]);
 
   const departments = [
     "all",
@@ -52,22 +56,29 @@ export default function TasksScreen() {
     return true;
   });
   const overdueTaskCount = dashboard?.overdueTaskCount || 0;
+  const activeTheme = { card: "#f2f2f2", text: "#111827" };
+  const themedText = { color: activeTheme.text };
 
   const getTaskStatusColor = (task: any) => {
-    if (task.completed) return "#16a34a";
+    const hasCorrective = correctiveActions.some(
+      (record) => record.taskId === task.id
+    );
+
+    if (task.escalationLevel >= 2) return "#9333ea"; // repeated/escalated issue
+    if (hasCorrective) return "#facc15"; // corrective action
+    if (task.completed) return "#16a34a"; // completed
 
     if (task.dueAt) {
       const due = new Date(task.dueAt).getTime();
       const now = Date.now();
 
-      if (due < now) return "#dc2626";
+      if (due < now) return "#dc2626"; // overdue
 
       const oneHour = 1000 * 60 * 60;
-
-      if (due - now < oneHour) return "#f59e0b";
+      if (due - now < oneHour) return "#f59e0b"; // due soon
     }
 
-    return "#6b7280";
+    return "#6b7280"; // normal
   };
 
   const handleUnauthorized = async () => {
@@ -122,7 +133,23 @@ export default function TasksScreen() {
     setQueueCount(count);
   };
 
-  const completeTask = async (id: number) => {
+  const loadCorrectiveActions = async () => {
+    try {
+      const headers = await getAuthHeaders();
+
+      if (!headers) return;
+
+      const res = await axios.get(`${API}/staff/corrective-actions`, {
+        headers,
+      });
+
+      setCorrectiveActions(res.data);
+    } catch (err: any) {
+      console.log("LOAD CORRECTIVE ACTIONS ERROR:", err?.response?.data || err.message);
+    }
+  };
+
+  const completeTask = async (id: number, note?: string) => {
     try {
       const net = await NetInfo.fetch();
 
@@ -142,13 +169,25 @@ export default function TasksScreen() {
       const headers = await getAuthHeaders();
       if (!headers) return;
 
-      await axios.post(`${API}/tasks/${id}/complete`, {}, { headers });
-      await loadDashboard();
-      await loadQueueCount();
+      await axios.post(
+        `${API}/tasks/${id}/complete`,
+        { note },
+        { headers }
+      );
+
+      await loadTasks();
+      await loadCorrectiveActions();
     } catch (err: any) {
       if (err?.response?.status === 401) return handleUnauthorized();
       alert("Could not complete task");
     }
+  };
+
+  const addTaskPhoto = async () => {
+    Alert.alert(
+      "Photo evidence",
+      "Photo capture will be enabled in the production/dev build. For now, add a written note."
+    );
   };
 
   const endShift = async () => {
@@ -186,6 +225,7 @@ export default function TasksScreen() {
 
   useEffect(() => {
     loadTasks();
+    loadCorrectiveActions();
 
     const unsubscribe = subscribeToSyncStatus((status) => {
       setSyncStatusState(status);
@@ -195,6 +235,12 @@ export default function TasksScreen() {
 
     return unsubscribe;
   }, [selectedDepartment]);
+
+  useEffect(() => {
+    if (staffSection === "corrective") {
+      loadCorrectiveActions();
+    }
+  }, [staffSection]);
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -247,6 +293,27 @@ export default function TasksScreen() {
         <Pressable style={styles.tile} onPress={() => setStaffSection("handover")}>
           <Text style={styles.tileIcon}>📝</Text>
           <Text style={styles.tileText}>Handover</Text>
+        </Pressable>
+
+        <Pressable
+          style={[
+            styles.tile,
+            styles.warningTile,
+          ]}
+          onPress={async () => {
+            await loadCorrectiveActions();
+            setStaffSection("corrective");
+          }}
+        >
+          <Text style={styles.warningTileIcon}>⚠️</Text>
+
+          <Text style={styles.warningTileText}>
+            Corrective Actions
+          </Text>
+
+          <Text style={styles.warningTileBadge}>
+            {correctiveActions.length}
+          </Text>
         </Pressable>
       </View>
 
@@ -377,6 +444,12 @@ export default function TasksScreen() {
             ))}
           </View>
 
+          <View style={styles.legendRow}>
+            <Text style={styles.legendText}>🟡 Corrective</Text>
+            <Text style={styles.legendText}>🔴 Overdue</Text>
+            <Text style={styles.legendText}>🟣 Escalated</Text>
+          </View>
+
           <View style={styles.list}>
             {filteredTasks.map((task) => (
               <Pressable
@@ -425,6 +498,33 @@ export default function TasksScreen() {
         </>
       )}
 
+      {staffSection === "corrective" && (
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, themedText]}>
+            Corrective Actions
+          </Text>
+
+          {correctiveActions.map((record) => (
+            <Pressable
+              key={record.id}
+              style={[styles.card, { borderLeftWidth: 6, borderLeftColor: "#facc15" }]}
+              onPress={() => {
+                const linkedTask = tasks.find((task) => task.id === record.taskId);
+
+                if (linkedTask) {
+                  setSelectedTask(linkedTask);
+                  setStaffSection("tasks");
+                }
+              }}
+            >
+              <Text>⚠ Corrective Action Required</Text>
+              <Text>Task: {record.task?.name || `Task ID ${record.taskId}`}</Text>
+              <Text>Manager note: {record.correctiveAction}</Text>
+            </Pressable>
+          ))}
+        </View>
+      )}
+
       <Modal
         visible={!!selectedTask}
         animationType="slide"
@@ -448,11 +548,27 @@ export default function TasksScreen() {
               Escalation Level: {selectedTask?.escalationLevel || 0}
             </Text>
 
+            <Button title="Add Photo Evidence" onPress={addTaskPhoto} />
+
+            {taskPhoto && (
+              <Image
+                source={{ uri: taskPhoto }}
+                style={styles.photoPreview}
+              />
+            )}
+
+            <VoiceNoteInput
+              value={taskNote}
+              onChangeText={setTaskNote}
+              placeholder="Completion note / corrective action"
+            />
+
             <Button
               title="Complete Task"
               onPress={async () => {
                 if (!selectedTask) return;
-                await completeTask(selectedTask.id);
+                await completeTask(selectedTask.id, taskNote);
+                setTaskNote("");
                 setSelectedTask(null);
               }}
             />
@@ -537,11 +653,25 @@ const styles = StyleSheet.create({
     marginTop: 20,
     gap: 12,
   },
+  legendRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 8,
+    marginBottom: 8,
+  },
+  legendText: {
+    fontWeight: "700",
+  },
   card: {
     backgroundColor: "#f2f2f2",
     padding: 16,
     borderRadius: 10,
     marginBottom: 12,
+  },
+  cardTitle: {
+    fontSize: 16,
+    fontWeight: "700",
+    marginBottom: 6,
   },
   tileGrid: {
     flexDirection: "row",
@@ -563,8 +693,35 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     marginTop: 6,
   },
+  warningTile: {
+    backgroundColor: "#facc15",
+    borderWidth: 2,
+    borderColor: "#111827",
+  },
+  warningTileIcon: {
+    fontSize: 28,
+  },
+  warningTileText: {
+    fontWeight: "800",
+    color: "#111827",
+    marginTop: 6,
+  },
+  warningTileBadge: {
+    marginTop: 6,
+    backgroundColor: "#111827",
+    color: "#facc15",
+    paddingHorizontal: 10,
+    paddingVertical: 2,
+    borderRadius: 999,
+    overflow: "hidden",
+    fontWeight: "800",
+  },
   taskText: {
     fontSize: 18,
+    marginBottom: 8,
+  },
+  text: {
+    fontSize: 14,
     marginBottom: 8,
   },
   dashboardTitle: {
@@ -671,5 +828,11 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 16,
     padding: 20,
+  },
+  photoPreview: {
+    width: "100%",
+    height: 180,
+    borderRadius: 12,
+    marginVertical: 10,
   },
 });

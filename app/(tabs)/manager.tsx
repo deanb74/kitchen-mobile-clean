@@ -73,13 +73,16 @@ export default function ManagerScreen() {
   const [analyticsRange, setAnalyticsRange] = useState("7d");
   const [trendData, setTrendData] = useState<any>(null);
   const [complianceDashboard, setComplianceDashboard] = useState<any>(null);
+  const [correctiveDashboard, setCorrectiveDashboard] = useState<any>(null);
   const [priorityQueue, setPriorityQueue] = useState<any[]>([]);
+  const [complianceRecords, setComplianceRecords] = useState<any[]>([]);
   const [shifts, setShifts] = useState<any[]>([]);
   const [staffPerformance, setStaffPerformance] = useState<any[]>([]);
   const [riskInsights, setRiskInsights] = useState<any[]>([]);
   const [executiveReport, setExecutiveReport] = useState<any>(null);
   const [drilldownItems, setDrilldownItems] = useState<any[]>([]);
   const [drilldownTitle, setDrilldownTitle] = useState("");
+  const [correctiveActionText, setCorrectiveActionText] = useState("");
   const [managerSection, setManagerSection] = useState<string>("home");
   const [themeName, setThemeName] = useState("default");
   const [isOfflineMode, setIsOfflineMode] = useState(false);
@@ -416,6 +419,73 @@ export default function ManagerScreen() {
       setComplianceDashboard(res.data);
     } catch (error) {
       console.error("LOAD DASHBOARD ERROR", error);
+    }
+  };
+
+  const loadCorrectiveDashboard = async () => {
+    try {
+      const headers = await getAuthHeaders();
+
+      const res = await axios.get(`${API}/manager/corrective-dashboard`, {
+        headers,
+      });
+
+      console.log("CORRECTIVE DASHBOARD:", res.data); // TEMP LOG
+      setCorrectiveDashboard(res.data);
+    } catch (err: any) {
+      console.log("LOAD CORRECTIVE DASHBOARD ERROR:", err?.response?.data || err.message);
+    }
+  };
+
+  const loadComplianceRecords = async () => {
+    const headers = await getAuthHeaders();
+    const res = await axios.get(`${API}/manager/compliance-records`, { headers });
+    setComplianceRecords(res.data);
+  };
+
+  const verifyComplianceRecord = async (recordId: number) => {
+    try {
+      const headers = await getAuthHeaders();
+
+      await axios.post(
+        `${API}/manager/compliance-records/${recordId}/verify`,
+        {},
+        { headers }
+      );
+
+      Alert.alert("Evidence verified");
+      await loadComplianceRecords();
+    } catch (err: any) {
+      Alert.alert(
+        "Could not verify evidence",
+        err?.response?.data?.error || err.message
+      );
+    }
+  };
+
+  const requestCorrectiveAction = async (recordId: number) => {
+    try {
+      if (!correctiveActionText.trim()) {
+        Alert.alert("Enter corrective action first");
+        return;
+      }
+
+      const headers = await getAuthHeaders();
+
+      await axios.post(
+        `${API}/manager/compliance-records/${recordId}/corrective-action`,
+        { correctiveAction: correctiveActionText },
+        { headers }
+      );
+
+      Alert.alert("Corrective action requested");
+      setCorrectiveActionText("");
+      await loadComplianceRecords();
+    } catch (err: any) {
+      Alert.alert(
+        "Could not request corrective action",
+        err?.response?.data?.error || err.message
+      );
     }
   };
 
@@ -979,6 +1049,8 @@ export default function ManagerScreen() {
     loadAreas();
     loadEquipment();
     loadComplianceDashboard();
+    loadCorrectiveDashboard();
+    loadComplianceRecords();
     loadPriorityQueue();
     loadShifts();
     loadStaffPerformance();
@@ -1225,6 +1297,12 @@ export default function ManagerScreen() {
           <Text style={[styles.tileText, { color: activeTheme.text }]}>Shifts</Text>
           <Text style={[styles.tileBadge, themedBadge]}>{activeShiftCount} active</Text>
         </Pressable>
+
+        <Pressable style={[styles.tile, themedTile]} onPress={() => setManagerSection("complianceEvidence")}>
+          <Text style={[styles.tileIcon, { color: activeTheme.text }]}>🧾</Text>
+          <Text style={[styles.tileText, { color: activeTheme.text }]}>Evidence</Text>
+          <Text style={[styles.tileBadge, themedBadge]}>{complianceRecords.length}</Text>
+        </Pressable>
       </View>
 
       {managerSection === "dashboard" && (
@@ -1321,6 +1399,47 @@ export default function ManagerScreen() {
           <Button title="Download Executive PDF" onPress={downloadExecutivePdf} />
         </View>
       </View>
+
+        {/* Corrective Action Dashboard Section */}
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Corrective Action Dashboard</Text>
+
+          {!correctiveDashboard ? (
+            <Text style={[styles.emptyText, { color: activeTheme.text }]}>No corrective dashboard loaded</Text>
+          ) : (
+            <>
+              <Text style={[styles.text, themedText]}>Open: {correctiveDashboard.openCount}</Text>
+              <Text style={[styles.text, themedText]}>Resolved: {correctiveDashboard.resolvedCount}</Text>
+              <Text style={[styles.text, themedText]}>Total: {correctiveDashboard.total}</Text>
+
+              {/* Top Failing Tasks */}
+              <Text style={styles.sectionTitle}>Top Failing Tasks</Text>
+              {correctiveDashboard?.topFailingTasks?.map((task: any, index: number) => (
+                <View key={index} style={styles.card}>
+                  <Text style={[styles.text, themedText]}>{task.name}</Text>
+                  <Text style={[styles.text, themedText]}>Corrective actions: {task.count}</Text>
+                </View>
+              ))}
+
+              {/* Staff Requiring Most Corrections */}
+              <Text style={styles.sectionTitle}>Staff Requiring Most Corrections</Text>
+              {correctiveDashboard?.topStaffCorrectiveActions?.map((staff: any, index: number) => (
+                <View key={index} style={styles.card}>
+                  <Text style={[styles.text, themedText]}>User ID: {staff.userId}</Text>
+                  <Text style={[styles.text, themedText]}>Corrective actions: {staff.count}</Text>
+                </View>
+              ))}
+              {/* Highest Risk Departments */}
+              <Text style={styles.sectionTitle}>Highest Risk Departments</Text>
+              {correctiveDashboard?.topDepartments?.map((dept: any, index: number) => (
+                <View key={index} style={styles.card}>
+                  <Text style={[styles.text, themedText]}>{dept.department}</Text>
+                  <Text style={[styles.text, themedText]}>Corrective actions: {dept.count}</Text>
+                </View>
+              ))}
+            </>
+          )}
+        </View>
 
       {complianceDashboard?.departmentBreakdown &&
         Object.entries(complianceDashboard.departmentBreakdown).map(
@@ -1735,6 +1854,42 @@ export default function ManagerScreen() {
               </View>
             ))
           )}
+        </View>
+      )}
+
+      {managerSection === "complianceEvidence" && (
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Compliance Evidence</Text>
+
+          {complianceRecords.map((record) => (
+            <View key={record.id} style={styles.card}>
+              <Text>Type: {record.type}</Text>
+              <Text>Notes: {record.notes || "None"}</Text>
+              <Text>Task ID: {record.taskId || "None"}</Text>
+              <Text>User ID: {record.userId}</Text>
+              <Text>Verified: {record.verified ? "Yes" : "No"}</Text>
+              <Text>{new Date(record.createdAt).toLocaleString()}</Text>
+
+              <TextInput
+                style={styles.input}
+                placeholder="Corrective action required"
+                value={correctiveActionText}
+                onChangeText={setCorrectiveActionText}
+              />
+
+              <Button
+                title="Request Corrective Action"
+                onPress={() => requestCorrectiveAction(record.id)}
+              />
+
+              {!record.verified && (
+                <Button
+                  title="Verify Evidence"
+                  onPress={() => verifyComplianceRecord(record.id)}
+                />
+              )}
+            </View>
+          ))}
         </View>
       )}
 
