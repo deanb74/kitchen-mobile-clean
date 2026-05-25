@@ -1,26 +1,3 @@
-  // Report equipment fault
-  const reportEquipmentFault = async (equipmentId: number) => {
-    try {
-      const headers = await getAuthHeaders();
-
-      if (!headers) return;
-
-      await axios.post(
-        `${API}/equipment/${equipmentId}/report-fault`,
-        { notes: equipmentFaultNotes },
-        { headers }
-      );
-
-      Alert.alert("Equipment fault reported");
-      setEquipmentFaultNotes("");
-      await loadTasks();
-    } catch (err: any) {
-      Alert.alert(
-        "Could not report equipment fault",
-        err?.response?.data?.error || err.message
-      );
-    }
-  };
 import VoiceNoteInput from "@/components/VoiceNoteInput";
 import NetInfo from "@react-native-community/netinfo";
 import axios from "axios";
@@ -171,6 +148,29 @@ export default function TasksScreen() {
       setCorrectiveActions(res.data);
     } catch (err: any) {
       console.log("LOAD CORRECTIVE ACTIONS ERROR:", err?.response?.data || err.message);
+    }
+  };
+
+  const reportEquipmentFault = async (equipmentId: number) => {
+    try {
+      const headers = await getAuthHeaders();
+
+      if (!headers) return;
+
+      await axios.post(
+        `${API}/equipment/${equipmentId}/report-fault`,
+        { notes: equipmentFaultNotes },
+        { headers }
+      );
+
+      Alert.alert("Equipment fault reported");
+      setEquipmentFaultNotes("");
+      await loadTasks();
+    } catch (err: any) {
+      Alert.alert(
+        "Could not report equipment fault",
+        err?.response?.data?.error || err.message
+      );
     }
   };
 
