@@ -68,7 +68,7 @@ export default function ManagerScreen() {
   const [siteName, setSiteName] = useState("");
   const [areas, setAreas] = useState<any[]>([]);
   const [equipment, setEquipment] = useState<any[]>([]);
-  const [equipmentStatus, setEquipmentStatus] = useState<any[]>([]);
+  const [equipmentStatus, setEquipmentStatus] = useState<any>(null);
   const [areaName, setAreaName] = useState("");
   const [areaCategory, setAreaCategory] = useState("");
   const [equipmentName, setEquipmentName] = useState("");
@@ -105,10 +105,32 @@ export default function ManagerScreen() {
   const [drilldownItems, setDrilldownItems] = useState<any[]>([]);
   const [drilldownTitle, setDrilldownTitle] = useState("");
   const [correctiveActionText, setCorrectiveActionText] = useState("");
+  const [equipmentFaultNotes, setEquipmentFaultNotes] = useState("");
   const [managerSection, setManagerSection] = useState<string>("home");
   const [themeName, setThemeName] = useState("default");
   const [isOfflineMode, setIsOfflineMode] = useState(false);
   const hasShownOfflineWarningRef = useRef(false);
+  // Report equipment fault
+  const reportEquipmentFault = async (equipmentId: number) => {
+    try {
+      const headers = await getAuthHeaders();
+
+      await axios.post(
+        `${API}/equipment/${equipmentId}/report-fault`,
+        { notes: equipmentFaultNotes },
+        { headers }
+      );
+
+      Alert.alert("Equipment fault reported");
+      setEquipmentFaultNotes("");
+      await loadTasks?.();
+    } catch (err: any) {
+      Alert.alert(
+        "Could not report equipment fault",
+        err?.response?.data?.error || err.message
+      );
+    }
+  };
 
   const THEMES: any = {
     default: { background: "#ffffff", card: "#f3f4f6", text: "#111827" },
