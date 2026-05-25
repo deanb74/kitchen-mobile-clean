@@ -20,6 +20,25 @@ import { getStoredItem, setStoredItem } from "../../lib/storage";
 const API = "https://kitchen-daily-checks-backend.up.railway.app";
 
 export default function ManagerScreen() {
+    const importTemplatePack = async (packId: string) => {
+      try {
+        const headers = await getAuthHeaders();
+
+        await axios.post(
+          `${API}/manager/template-packs/${packId}/import`,
+          {},
+          { headers }
+        );
+
+        Alert.alert("Template pack imported");
+        await loadTemplates();
+      } catch (err: any) {
+        Alert.alert(
+          "Could not import pack",
+          err?.response?.data?.error || err.message
+        );
+      }
+    };
   const [users, setUsers] = useState<any[]>([]);
   const [sites, setSites] = useState<any[]>([]);
   const [alerts, setAlerts] = useState<any[]>([]);
@@ -34,6 +53,7 @@ export default function ManagerScreen() {
   const [departmentUserId, setDepartmentUserId] = useState("");
   const [departmentName, setDepartmentName] = useState("kitchen");
   const [templates, setTemplates] = useState<any[]>([]);
+  const [templatePacks, setTemplatePacks] = useState<any[]>([]);
   const [templateName, setTemplateName] = useState("");
   const [templateApplyUserId, setTemplateApplyUserId] = useState("");
   const [selectedTemplateId, setSelectedTemplateId] = useState("");
@@ -48,6 +68,7 @@ export default function ManagerScreen() {
   const [siteName, setSiteName] = useState("");
   const [areas, setAreas] = useState<any[]>([]);
   const [equipment, setEquipment] = useState<any[]>([]);
+  const [equipmentStatus, setEquipmentStatus] = useState<any[]>([]);
   const [areaName, setAreaName] = useState("");
   const [areaCategory, setAreaCategory] = useState("");
   const [equipmentName, setEquipmentName] = useState("");
@@ -174,9 +195,26 @@ export default function ManagerScreen() {
         { headers }
       );
 
+      console.log("TEMPLATES:", res.data);
       setTemplates(res.data);
     } catch (err) {
       console.log(err);
+    }
+  };
+
+  // Loader for template packs
+  const loadTemplatePacks = async () => {
+    try {
+      const headers = await getAuthHeaders();
+
+      const res = await axios.get(`${API}/manager/template-packs`, {
+        headers,
+      });
+
+      console.log("TEMPLATE PACKS:", res.data);
+      setTemplatePacks(res.data);
+    } catch (err: any) {
+      console.log("LOAD TEMPLATE PACKS ERROR:", err?.response?.data || err.message);
     }
   };
 
@@ -1062,6 +1100,7 @@ export default function ManagerScreen() {
     loadUsers();
     loadSites();
     loadTemplates();
+    loadTemplatePacks();
     loadAreas();
     loadEquipment();
     loadComplianceDashboard();
@@ -1297,7 +1336,14 @@ export default function ManagerScreen() {
           <Text style={[styles.tileBadge, themedBadge]}>{overdueCount} overdue</Text>
         </Pressable>
 
-        <Pressable style={[styles.tile, themedTile]} onPress={() => setManagerSection("templates")}>
+        <Pressable
+          style={styles.tile}
+          onPress={async () => {
+            await loadTemplates();
+            await loadTemplatePacks();
+            setManagerSection("templates");
+          }}
+        >
           <Text style={[styles.tileIcon, { color: activeTheme.text }]}>📋</Text>
           <Text style={[styles.tileText, { color: activeTheme.text }]}>Templates</Text>
           <Text style={[styles.tileBadge, themedBadge]}>{templateCount}</Text>
@@ -1326,6 +1372,82 @@ export default function ManagerScreen() {
           <Text style={[styles.tileBadge, themedBadge]}>{complianceRecords.length}</Text>
         </Pressable>
       </View>
+
+
+      <View style={styles.section}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Equipment Manager</Text>
+        <Pressable
+          style={[styles.tile, themedTile]}
+          onPress={() => setManagerSection("equipment")}
+        >
+          <Text style={[styles.tileIcon, { color: activeTheme.text }]}>🛠</Text>
+          <Text style={[styles.tileText, { color: activeTheme.text }]}>Equipment</Text>
+          <Text style={[styles.tileBadge, themedBadge]}>
+            {/* Show count of outOfService equipment as badge */}
+            {Array.isArray(equipmentStatus) ? equipmentStatus.filter((e: any) => e.outOfService).length : 0}
+          </Text>
+        </Pressable>
+      </View>
+
+      {managerSection === "equipment" && (
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Equipment Status</Text>
+          {equipmentStatus?.equipment?.length === 0 ? (
+            <Text style={styles.emptyText}>No equipment found</Text>
+          ) : (
+            equipmentStatus?.equipment?.map((item: any) => {
+              // Determine border color
+              let borderLeftColor = "#d1d5db"; // default gray
+              let dueText = "";
+              const now = new Date();
+              // Out of service: red
+              if (item.outOfService) {
+                borderLeftColor = "#dc2626";
+              } else {
+                // Maintenance due: amber if due within 3 days or overdue
+                if (item.nextMaintenanceDueAt) {
+                  const due = new Date(item.nextMaintenanceDueAt);
+                  if (due < now) {
+                    borderLeftColor = "#dc2626"; // overdue = red
+                  } else if ((due.getTime() - now.getTime())/(1000*60*60*24) <= 3) {
+                    borderLeftColor = "#f59e0b"; // due soon = amber
+                  }
+                  dueText += `Maintenance due: ${due.toLocaleDateString()}\n`;
+                }
+                // Cleaning due: amber if due within 3 days or overdue
+                if (item.nextCleaningDueAt) {
+                  const due = new Date(item.nextCleaningDueAt);
+                  if (due < now) {
+                    borderLeftColor = "#dc2626"; // overdue = red
+                  } else if ((due.getTime() - now.getTime())/(1000*60*60*24) <= 3) {
+                    borderLeftColor = "#f59e0b"; // due soon = amber
+                  }
+                  dueText += `Cleaning due: ${due.toLocaleDateString()}\n`;
+                }
+              }
+              return (
+                <View
+                  key={item.id}
+                  style={[
+                    styles.card,
+                    { borderLeftWidth: 6, borderLeftColor, backgroundColor: activeTheme.card },
+                  ]}
+                >
+                  <Text style={[styles.logText, { color: activeTheme.text }]}>{item.name}</Text>
+                  <Text style={[styles.timeText, { color: activeTheme.text }]}>{item.type || "No type"}</Text>
+                  <Text style={[styles.timeText, { color: activeTheme.text }]}>{item.area?.name || "No area"}</Text>
+                  {item.outOfService && (
+                    <Text style={[styles.timeText, { color: "#dc2626", fontWeight: "bold" }]}>OUT OF SERVICE</Text>
+                  )}
+                  {dueText ? (
+                    <Text style={[styles.timeText, { color: borderLeftColor, fontWeight: "bold" }]}>{dueText.trim()}</Text>
+                  ) : null}
+                </View>
+              );
+            })
+          )}
+        </View>
+      )}
 
       {managerSection === "dashboard" && (
         <>
@@ -2184,6 +2306,32 @@ export default function ManagerScreen() {
 
       {managerSection === "templates" && (
         <>
+          <View style={[styles.section, themedSection]}>
+            <Text style={[styles.text, themedText]}>
+              Templates loaded: {templates.length}
+            </Text>
+
+            {templates.map((template) => (
+              <View key={template.id} style={[styles.card, themedCard]}>
+                <Text style={[styles.text, themedText]}>
+                  {template.name}
+                </Text>
+
+                <Text style={[styles.text, themedText]}>
+                  Department: {template.department || "None"}
+                </Text>
+
+                <Text style={[styles.text, themedText]}>
+                  Schedule: {template.schedule || "None"}
+                </Text>
+
+                <Button
+                  title="Apply Template"
+                  onPress={() => applyTemplate(template.id)}
+                />
+              </View>
+            ))}
+          </View>
       <View style={[styles.section, themedSection]}>
         <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Report Filters</Text>
         <View style={styles.filterRow}>
@@ -2391,6 +2539,27 @@ export default function ManagerScreen() {
       </View>
 
       <View style={[styles.section, themedSection]}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Starter Template Packs</Text>
+
+        {templatePacks.map((pack) => (
+          <View key={pack.id} style={[styles.card, themedCard]}>
+            <Text style={[styles.text, themedText]}>
+              {pack.name}
+            </Text>
+
+            <Text style={[styles.text, themedText]}>
+              {pack.templates?.length || 0} templates
+            </Text>
+
+            <Button
+              title="Import Pack"
+              onPress={() => importTemplatePack(pack.id)}
+            />
+          </View>
+        ))}
+      </View>
+
+      <View style={[styles.section, themedSection]}>
         <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Task Templates</Text>
 
         <TextInput
@@ -2434,23 +2603,22 @@ export default function ManagerScreen() {
           <Button title="Monthly 1st" onPress={() => setTemplateSchedule("monthly_1st")} />
         </View>
 
-        <Text style={styles.filterText}>Template Area: {templateAreaId || "None"}</Text>
-        {areas.map((area) => (
-          <Button
-            key={area.id}
-            title={area.name}
-            onPress={() => setTemplateAreaId(String(area.id))}
-          />
-        ))}
+        <Text style={[styles.text, themedText]}>
+          Link template to equipment:
+        </Text>
 
-        <Text style={styles.filterText}>Template Equipment: {templateEquipmentId || "None"}</Text>
         {equipment.map((item) => (
           <Button
             key={item.id}
-            title={item.name}
+            title={`${item.name} — ${item.area?.name || "No area"}`}
             onPress={() => setTemplateEquipmentId(String(item.id))}
           />
         ))}
+
+
+        <Text style={[styles.text, themedText]}>
+          Selected equipment ID: {templateEquipmentId || "None"}
+        </Text>
 
         <Button
           title={`Verification Required: ${templateVerificationRequired ? "Yes" : "No"}`}

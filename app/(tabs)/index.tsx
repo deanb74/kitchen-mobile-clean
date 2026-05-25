@@ -26,6 +26,7 @@ export default function TasksScreen() {
   const [taskPhoto, setTaskPhoto] = useState<string | null>(null);
   const [correctiveActions, setCorrectiveActions] = useState<any[]>([]);
   const [correctionResponseNote, setCorrectionResponseNote] = useState("");
+  const [equipmentFaultNotes, setEquipmentFaultNotes] = useState("");
 
   const departments = [
     "all",
@@ -530,6 +531,27 @@ export default function TasksScreen() {
               <Text>Manager note: {record.correctiveAction}</Text>
             </Pressable>
           ))}
+        </View>
+      )}
+
+      {selectedTask?.equipmentId && (
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>
+            Report Equipment Fault
+          </Text>
+
+          <VoiceNoteInput
+            value={equipmentFaultNotes}
+            onChangeText={setEquipmentFaultNotes}
+            placeholder="Describe the equipment fault"
+          />
+
+          <Button
+            title="Report Fault & Mark Out Of Service"
+            onPress={() =>
+              reportEquipmentFault(selectedTask.equipmentId)
+            }
+          />
         </View>
       )}
 
