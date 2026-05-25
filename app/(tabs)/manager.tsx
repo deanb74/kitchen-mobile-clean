@@ -123,7 +123,6 @@ export default function ManagerScreen() {
 
       Alert.alert("Equipment fault reported");
       setEquipmentFaultNotes("");
-      await loadTasks?.();
     } catch (err: any) {
       Alert.alert(
         "Could not report equipment fault",
