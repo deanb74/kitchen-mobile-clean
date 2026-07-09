@@ -34,7 +34,14 @@ export default function Index() {
         }
       }
 
-      setRoute("/(tabs)");
+      const hasMetAnnie = await getStoredItem("hasMetAnnie");
+
+      if (hasMetAnnie === "true") {
+        setRoute("/(tabs)");
+        return;
+      }
+
+      setRoute("/annie/welcome");
     };
 
     checkAuth();
@@ -48,5 +55,5 @@ export default function Index() {
     );
   }
 
-  return <Redirect href={route as "/login" | "/(tabs)"} />;
+  return <Redirect href={route as any} />;
 }

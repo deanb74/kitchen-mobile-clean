@@ -5,7 +5,7 @@ import { Alert, Button, StyleSheet, Text, TextInput, View } from "react-native";
 import { registerForPushNotificationsAsync } from "../lib/notifications";
 import { setStoredItem } from "../lib/storage";
 
-const API = "https://kitchen-daily-checks-backend.up.railway.app";
+const API = "http://192.168.0.183:3001";
 
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
@@ -56,7 +56,7 @@ export default function LoginScreen() {
         {
           text: "No",
           style: "cancel",
-          onPress: () => router.replace("/(tabs)"),
+          onPress: () => router.replace("/(tabs)" as any),
         },
         {
           text: "Yes",
@@ -75,7 +75,7 @@ export default function LoginScreen() {
               console.log("SHIFT START ERROR:", err?.response?.data || err.message);
             }
 
-            router.replace("/(tabs)");
+            router.replace("/(tabs)" as any);
           },
         },
       ]

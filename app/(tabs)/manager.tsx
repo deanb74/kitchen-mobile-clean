@@ -1,5 +1,9 @@
+import EvidenceGallery from "@/components/EvidenceGallery";
+import EvidenceViewer from "@/components/EvidenceViewer";
 import axios from "axios";
 import * as FileSystem from "expo-file-system/legacy";
+// import * as ImagePicker from "expo-image-picker";
+import * as Linking from "expo-linking";
 import * as Print from "expo-print";
 import * as SecureStore from "expo-secure-store";
 import * as Sharing from "expo-sharing";
@@ -17,9 +21,13 @@ import {
 } from "react-native";
 import { getStoredItem, setStoredItem } from "../../lib/storage";
 
-const API = "https://kitchen-daily-checks-backend.up.railway.app";
+const API = "http://192.168.0.183:3001";
 
 export default function ManagerScreen() {
+  const [venuePresets, setVenuePresets] = useState<any[]>([]);
+  const [selectedPresetId, setSelectedPresetId] = useState("");
+  const [importingPreset, setImportingPreset] = useState(false);
+  const [importSummary, setImportSummary] = useState<any>(null);
     const importTemplatePack = async (packId: string) => {
       try {
         const headers = await getAuthHeaders();
@@ -90,6 +98,7 @@ export default function ManagerScreen() {
   const [newRole, setNewRole] = useState("staff");
   const [range, setRange] = useState("today");
   const [dashboard, setDashboard] = useState<any>(null);
+  const [healthScore, setHealthScore] = useState<any | null>(null);
   const [analytics, setAnalytics] = useState<any>(null);
   const [analyticsRange, setAnalyticsRange] = useState("7d");
   const [trendData, setTrendData] = useState<any>(null);
@@ -97,6 +106,12 @@ export default function ManagerScreen() {
   const [correctiveDashboard, setCorrectiveDashboard] = useState<any>(null);
   const [priorityQueue, setPriorityQueue] = useState<any[]>([]);
   const [complianceRecords, setComplianceRecords] = useState<any[]>([]);
+  const [expandedActionLogs, setExpandedActionLogs] = useState<Record<number, boolean>>({});
+  const [expandedPhotos, setExpandedPhotos] = useState<Record<number, boolean>>({});
+  const [selectedPhoto, setSelectedPhoto] = useState<any | null>(null);
+  const [selectedPhotoList, setSelectedPhotoList] = useState<any[]>([]);
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState<number>(0);
+  const [supplierContacts, setSupplierContacts] = useState<any[]>([]);
   const [shifts, setShifts] = useState<any[]>([]);
   const [staffPerformance, setStaffPerformance] = useState<any[]>([]);
   const [trainingInsights, setTrainingInsights] = useState<any>(null);
@@ -122,10 +137,37 @@ export default function ManagerScreen() {
       );
 
       Alert.alert("Equipment fault reported");
-      setEquipmentFaultNotes("");
+        setEquipmentFaultNotes("");
+        await loadEquipment();
     } catch (err: any) {
       Alert.alert(
         "Could not report equipment fault",
+        err?.response?.data?.error || err.message
+      );
+    }
+
+  };
+
+  const returnEquipmentToService = async (equipmentId: number) => {
+    try {
+      if (!equipmentId || Number(equipmentId) <= 0) {
+        Alert.alert("Invalid equipment", "This equipment item has no valid ID.");
+        return;
+      }
+
+      const headers = await getAuthHeaders();
+
+      await axios.post(
+        `${API}/equipment/${equipmentId}/return-to-service`,
+        { notes: "Returned to service by manager" },
+        { headers }
+      );
+
+      Alert.alert("Equipment returned to service");
+      await loadEquipment();
+    } catch (err: any) {
+      Alert.alert(
+        "Could not return equipment to service",
         err?.response?.data?.error || err.message
       );
     }
@@ -309,6 +351,7 @@ export default function ManagerScreen() {
     }
   };
 
+
   const loadSites = async () => {
     try {
       const headers = await getAuthHeaders();
@@ -320,6 +363,68 @@ export default function ManagerScreen() {
         showOfflineWarningOnce();
         return;
       }
+    }
+  };
+
+  // --- Venue Presets ---
+  const loadVenuePresets = async () => {
+    try {
+      const headers = await getAuthHeaders();
+      const res = await axios.get(`${API}/manager/venue-presets`, { headers });
+
+
+      setVenuePresets(res.data || []);
+      console.log("VENUE PRESETS:", res.data);
+
+      if (!selectedPresetId && res.data?.length > 0) {
+        setSelectedPresetId(res.data[0].id);
+      }
+    } catch (err: any) {
+      console.log("LOAD VENUE PRESETS ERROR:", err?.response?.data || err.message);
+
+      if (isOfflineError(err)) {
+        showOfflineWarningOnce();
+        return;
+      }
+    }
+  };
+
+  const importVenuePreset = async () => {
+    try {
+      if (!selectedPresetId) {
+        Alert.alert("Select a venue type first");
+        return;
+      }
+
+      setImportingPreset(true);
+      setImportSummary(null);
+
+      const headers = await getAuthHeaders();
+
+      const res = await axios.post(
+        `${API}/manager/venue-presets/${selectedPresetId}/import`,
+        {},
+        { headers }
+      );
+
+      setImportSummary(res.data);
+
+      Alert.alert(
+        "Venue setup complete",
+        `Created ${res.data?.created?.areas || 0} areas, ${res.data?.created?.equipment || 0} equipment items and ${res.data?.created?.tasks || 0} tasks.`
+      );
+
+      await loadSites();
+      await loadVenuePresets();
+      await loadEquipment();
+    } catch (err: any) {
+      console.log("IMPORT VENUE PRESET ERROR:", err?.response?.data || err.message);
+      Alert.alert(
+        "Could not import venue preset",
+        err?.response?.data?.error || err.message || "Unknown error"
+      );
+    } finally {
+      setImportingPreset(false);
     }
   };
 
@@ -339,6 +444,24 @@ export default function ManagerScreen() {
       return;
     }
   };
+
+  async function loadHealthScore(siteId: number) {
+    try {
+      console.log("LOADING HEALTH SCORE FOR SITE", siteId);
+
+      const token = await SecureStore.getItemAsync("token");
+
+      const res = await axios.get(`${API}/manager/sites/${siteId}/health-score`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      console.log("HEALTH SCORE RESULT", res.data);
+
+      setHealthScore(res.data);
+    } catch (err: any) {
+      console.log("HEALTH SCORE ERROR", err?.response?.data || err.message);
+    }
+  }
 
   const loadAnalytics = async (selectedRange = analyticsRange) => {
     try {
@@ -457,8 +580,8 @@ export default function ManagerScreen() {
 
   const loadEquipment = async () => {
     const headers = await getAuthHeaders();
-    const res = await axios.get(`${API}/manager/equipment`, { headers });
-    setEquipment(res.data);
+    const res = await axios.get(`${API}/manager/equipment-status`, { headers });
+    setEquipmentStatus(res.data);
   };
 
   const createArea = async () => {
@@ -515,7 +638,221 @@ export default function ManagerScreen() {
   const loadComplianceRecords = async () => {
     const headers = await getAuthHeaders();
     const res = await axios.get(`${API}/manager/compliance-records`, { headers });
+    console.log("COMPLIANCE RECORDS:", res.data);
     setComplianceRecords(res.data);
+  };
+
+  /*
+  async function takeCompliancePhoto(
+    recordId: number,
+    stage: "before" | "during" | "after" = "before"
+  ) {
+    try {
+      const token = await SecureStore.getItemAsync("token");
+
+      const permission = await ImagePicker.requestCameraPermissionsAsync();
+
+      if (!permission.granted) {
+        Alert.alert("Camera permission needed", "Please allow camera access to take evidence photos.");
+        return;
+      }
+
+      const result = await ImagePicker.launchCameraAsync({
+        quality: 0.6,
+        allowsEditing: false,
+      });
+
+      if (result.canceled || !result.assets?.[0]?.uri) return;
+
+      const photoUri = result.assets[0].uri;
+
+      await axios.post(
+        `${API}/manager/compliance-records/${recordId}/photos`,
+        {
+          fileUrl: photoUri,
+          stage,
+          caption: "Photo evidence",
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      Alert.alert("Photo saved", "Photo evidence has been added.");
+
+      await loadComplianceRecords?.();
+    } catch (err: any) {
+      console.log("PHOTO ERROR", err?.response?.data || err.message);
+      Alert.alert("Photo failed", "Could not save photo evidence.");
+    }
+  }
+  */
+
+  const takeCompliancePhoto = async (
+    recordId: number,
+    stage: "before" | "during" | "after"
+  ) => {
+    console.log("Compliance photo temporarily disabled", recordId, stage);
+  };
+
+  const formatPhotoStage = (stage?: string) => {
+    const normalizedStage = String(stage || "").toLowerCase();
+
+    switch (normalizedStage) {
+      case "before":
+        return "📷 Before";
+      case "during":
+        return "🔧 During Repair";
+      case "after":
+        return "✅ After Repair";
+      default:
+        return "📷 Evidence";
+    }
+  };
+
+  function formatPhotoDate(date?: string) {
+    if (!date) return "";
+    return new Date(date).toLocaleString("en-GB");
+  }
+
+  function openPhotoViewer(photos: any[], index: number) {
+    setSelectedPhotoList(photos || []);
+    setSelectedPhotoIndex(index);
+    setSelectedPhoto((photos || [])[index] || null);
+  }
+
+  function showPreviousPhoto() {
+    const nextIndex =
+      selectedPhotoIndex <= 0 ? selectedPhotoList.length - 1 : selectedPhotoIndex - 1;
+
+    setSelectedPhotoIndex(nextIndex);
+    setSelectedPhoto(selectedPhotoList[nextIndex]);
+  }
+
+  function showNextPhoto() {
+    const nextIndex =
+      selectedPhotoIndex >= selectedPhotoList.length - 1 ? 0 : selectedPhotoIndex + 1;
+
+    setSelectedPhotoIndex(nextIndex);
+    setSelectedPhoto(selectedPhotoList[nextIndex]);
+  }
+
+  const updateRiskStatus = async (
+    recordId: number,
+    status: "actioned" | "timetabled" | "resolved",
+    note: string
+  ) => {
+    try {
+      const token = await getStoredItem("token");
+
+      await axios.post(
+        `${API}/manager/compliance-records/${recordId}/status`,
+        { status, note },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      await loadComplianceRecords();
+    } catch (err: any) {
+      console.log("UPDATE RISK STATUS ERROR:", err?.response?.data || err.message);
+      Alert.alert("Could not update risk");
+    }
+  };
+
+  const callSupplier = async (record: any, contact: any) => {
+    try {
+      if (!contact?.phone) {
+        Alert.alert("No phone number found");
+        return;
+      }
+
+      const token = await getStoredItem("token");
+
+      await axios.post(
+        `${API}/manager/compliance-records/${record.id}/call`,
+        {
+          contactName: contact.company || contact.name,
+          notes: `Call initiated to ${contact.phone}`,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      await Linking.openURL(`tel:${contact.phone}`);
+
+      await loadComplianceRecords();
+    } catch (err: any) {
+      console.log(err?.response?.data || err.message);
+    }
+  };
+
+  const emailSupplier = async (record: any, contact: any) => {
+    try {
+      if (!contact?.email) {
+        Alert.alert("No email address found");
+        return;
+      }
+
+      const token = await getStoredItem("token");
+
+      const subject = `Equipment Fault Report - ${record.notes || "Issue"}`;
+
+      const body = `
+Site: First Test Site
+
+Issue:
+${record.notes || "No details"}
+
+Task ID:
+${record.taskId || "N/A"}
+
+Reported:
+${new Date(record.createdAt).toLocaleString()}
+
+Please advise attendance date and next steps.
+`;
+
+      await axios.post(
+        `${API}/manager/compliance-records/${record.id}/email`,
+        {
+          contactName: contact.company || contact.name,
+          notes: `Email initiated to ${contact.email}`,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      const mailtoUrl = `mailto:${contact.email}?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+
+      await Linking.openURL(mailtoUrl);
+
+      await loadComplianceRecords();
+    } catch (err: any) {
+      console.log("EMAIL SUPPLIER ERROR:", err?.response?.data || err.message);
+    }
+  };
+
+  const loadSupplierContacts = async () => {
+    try {
+      const token = await getStoredItem("token");
+
+      const res = await axios.get(`${API}/manager/supplier-contacts`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      setSupplierContacts(res.data || []);
+    } catch (err: any) {
+      console.log("LOAD SUPPLIER CONTACTS ERROR:", err?.response?.data || err.message);
+    }
   };
 
   const verifyComplianceRecord = async (recordId: number) => {
@@ -615,6 +952,10 @@ export default function ManagerScreen() {
         loadResetLogs(),
       ]);
 
+      if (selectedSiteId) {
+        await loadHealthScore(Number(selectedSiteId));
+      }
+
       hasShownOfflineWarningRef.current = false;
       setIsOfflineMode(false);
     } catch {
@@ -629,6 +970,10 @@ export default function ManagerScreen() {
 
   const selectSite = async (site: any) => {
     setSelectedSiteId(site.id);
+
+    if (site?.id) {
+      loadHealthScore(Number(site.id));
+    }
 
     await setStoredItem("siteId", String(site.id));
     await setStoredItem("siteName", site.name);
@@ -879,6 +1224,10 @@ export default function ManagerScreen() {
       await loadUsers();
       await loadSites();
       await loadDashboard();
+
+      if (selectedSiteId) {
+        await loadHealthScore(Number(selectedSiteId));
+      }
     } catch (err: any) {
       console.log(err?.response?.data || err.message);
       if (isOfflineError(err)) {
@@ -1120,6 +1469,7 @@ export default function ManagerScreen() {
     });
     loadUsers();
     loadSites();
+    loadVenuePresets();
     loadTemplates();
     loadTemplatePacks();
     loadAreas();
@@ -1127,6 +1477,7 @@ export default function ManagerScreen() {
     loadComplianceDashboard();
     loadCorrectiveDashboard();
     loadComplianceRecords();
+    loadSupplierContacts();
     loadPriorityQueue();
     loadShifts();
     loadStaffPerformance();
@@ -1136,9 +1487,15 @@ export default function ManagerScreen() {
   }, []);
 
   useEffect(() => {
-    if (selectedSiteId) {
-      loadDashboard();
-    }
+    (async () => {
+      if (selectedSiteId) {
+        await loadDashboard();
+      }
+
+      if (selectedSiteId) {
+        loadHealthScore(Number(selectedSiteId));
+      }
+    })();
   }, [selectedSiteId]);
 
   useEffect(() => {
@@ -1340,21 +1697,242 @@ export default function ManagerScreen() {
     color: activeTheme.background,
   };
 
+  const visibleComplianceRecords = complianceRecords.filter(
+    (record) => !["call_log", "email_log"].includes(record.type)
+  );
+
+  const getRiskStatusLabel = (record: any) => {
+    if (record.verified) return "🟢 RESOLVED";
+    if (record.value === "yellow") return "🟡 TIMETABLED";
+    if (record.value === "amber") return "🟠 ACTIONED";
+    if (record.value === "red" || record.type === "urgent_check_note") return "🔴 OPEN";
+    return "⚪ UNKNOWN";
+  };
+
+  const getRiskCardStyle = (record: any) => {
+    if (record.verified || record.value === "green") return styles.ragGreen;
+    if (record.value === "yellow") return styles.riskCardYellow;
+    if (record.value === "amber") return styles.riskCardAmber;
+    return styles.riskCardRed;
+  };
+
+  const aliasMap: Record<string, string[]> = {
+    glasswasher: ["glass washer", "glasswasher", "glass-washer"],
+    dishwasher: ["dish washer", "dishwasher", "dish-washer", "wash machine"],
+
+    sink: ["sink", "basin", "wash basin", "wash sink"],
+    taps: ["tap", "taps", "hot tap", "cold tap", "mixer tap", "faucet"],
+
+    oven: ["oven", "combination oven", "combi oven", "rational"],
+    hob: ["hob", "burner", "hotplate", "cooktop"],
+    cooker: ["cooker", "range", "range cooker"],
+
+    mixer: ["mixer", "food mixer", "planetary mixer", "kitchen aid", "kitchenaid"],
+
+    fridge: ["fridge", "refrigerator", "upright fridge", "display fridge"],
+    freezer: ["freezer", "upright freezer", "chest freezer"],
+    coldroom: ["cold room", "coldroom", "walk in fridge", "walk-in fridge"],
+
+    refrigeration: [
+      "fridge",
+      "fridges",
+      "freezer",
+      "freezers",
+      "chiller",
+      "chillers",
+      "cooler",
+      "coolers",
+      "cold room",
+      "walk in fridge",
+      "walk in freezer",
+      "temperature",
+      "not maintaining temperature",
+    ],
+
+    icemachine: ["ice machine", "ice maker", "icemachine"],
+    extraction: ["extractor", "canopy", "extraction", "hood"],
+    fryer: ["fryer", "deep fryer", "chip fryer"],
+    salamander: ["salamander", "grill"],
+    microwave: ["microwave"],
+
+    cellarcooling: [
+      "cellar",
+      "beer cellar",
+      "cellar cooling",
+      "cellar cooler",
+      "beer cooler",
+      "cooling",
+      "temperature",
+      "not maintaining temperature",
+    ],
+
+    pestcontrol: ["mouse", "mice", "rat", "rats", "rodent", "wasp", "wasps", "pest"],
+    firesafety: ["fire escape", "fire door", "fire alarm", "fire extinguisher", "blocked exit"],
+    electrical: ["electric", "electrical", "socket", "consumer unit", "fuse board"],
+    plumbing: ["leak", "leaking", "water leak", "pipe", "drain", "blocked drain", "toilet"],
+    gas: ["gas", "gas leak", "smell gas"],
+    security: ["alarm", "cctv", "lock", "door lock"],
+    buildingmaintenance: ["roof", "ceiling", "wall", "floor", "door", "window"],
+  };
+
+  const normaliseText = (value: string) =>
+    value.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+  const normaliseVoiceText = (value: string) =>
+    value
+      .toLowerCase()
+      .replace(/pay cellar/g, "beer cellar")
+      .replace(/celery/g, "cellar")
+      .replace(/beer seller/g, "beer cellar")
+      .replace(/glass washer/g, "glasswasher");
+
+  const detectAliasCategory = (text: string) => {
+    const normalisedText = normaliseText(normaliseVoiceText(text));
+
+    for (const [category, aliases] of Object.entries(aliasMap)) {
+      const matched = aliases.some((alias) =>
+        normalisedText.includes(normaliseText(normaliseVoiceText(alias)))
+      );
+
+      if (matched) return category;
+    }
+
+    return null;
+  };
+
+  const findSuggestedContact = (record: any) => {
+    const rawText = normaliseVoiceText(
+      `${record.notes || ""} ${record.correctiveAction || ""}`
+    );
+    const detectedCategory = detectAliasCategory(rawText);
+    const text = normaliseText(rawText);
+
+    return supplierContacts.find((contact) => {
+      const category = normaliseText(String(contact.category || ""));
+      const equipmentType = normaliseText(String(contact.equipmentType || ""));
+      const role = normaliseText(String(contact.role || ""));
+
+      return (
+        (detectedCategory &&
+          (category === detectedCategory || equipmentType === detectedCategory || role === detectedCategory)) ||
+        (category && text.includes(category)) ||
+        (equipmentType && text.includes(equipmentType)) ||
+        (role && text.includes(role))
+      );
+    });
+  };
+
   return (
     <ScrollView
       style={[styles.container, { backgroundColor: activeTheme.background }]}
       contentContainerStyle={styles.container}
     >
       <Text style={[styles.title, { color: activeTheme.text }]}>Manager</Text>
+
       {managerMessage ? (
         <Text style={[styles.filterText, { color: activeTheme.text }]}>{managerMessage}</Text>
       ) : null}
+
+      {/* Venue Setup Wizard Card */}
+      <View style={styles.card}>
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Venue Setup Wizard</Text>
+
+        {venuePresets.map((preset: any) => (
+          <Pressable
+            key={preset.id}
+            style={[
+              styles.tile,
+              selectedPresetId === preset.id && styles.selectedTile,
+            ]}
+            onPress={() => setSelectedPresetId(preset.id)}
+          >
+            <Text style={[styles.tileText, { color: activeTheme.text }]}>
+              {preset.name}
+            </Text>
+          </Pressable>
+        ))}
+
+        <Pressable
+          style={[styles.button, importingPreset && styles.disabledButton]}
+          disabled={importingPreset}
+          onPress={importVenuePreset}
+        >
+          <Text style={styles.buttonText}>
+            {importingPreset ? "Importing..." : "Import Venue Setup"}
+          </Text>
+        </Pressable>
+
+        {importSummary ? (
+          <Text style={[styles.filterText, { color: activeTheme.text }]}>Areas: {importSummary?.created?.areas || 0} | Equipment: {importSummary?.created?.equipment || 0} | Tasks: {importSummary?.created?.tasks || 0}</Text>
+        ) : null}
+      </View>
+
+      {managerSection === "dashboard" && healthScore && (
+        <View style={styles.card}>
+          <Text style={styles.cardTitle}>Operational Health</Text>
+          <Text style={styles.bigScore}>
+            {healthScore.overall >= 85 ? "🟢" : healthScore.overall >= 65 ? "🟠" : "🔴"}{" "}
+            {healthScore.overall}%
+          </Text>
+          <Text style={styles.smallText}>Compliance: {healthScore.scores.compliance}%</Text>
+          <Text style={styles.smallText}>Maintenance: {healthScore.scores.maintenance}%</Text>
+          <Text style={styles.smallText}>Evidence: {healthScore.scores.evidence}%</Text>
+          <Text style={styles.smallText}>Documentation: {healthScore.scores.documentation}%</Text>
+        </View>
+      )}
 
       <View style={styles.tileGrid}>
         <Pressable style={[styles.tile, themedTile]} onPress={() => setManagerSection("dashboard")}>
           <Text style={[styles.tileIcon, { color: activeTheme.text }]}>📊</Text>
           <Text style={[styles.tileText, { color: activeTheme.text }]}>Dashboard</Text>
           <Text style={[styles.tileBadge, themedBadge]}>{overdueCount} overdue</Text>
+        </Pressable>
+
+        {(() => {
+          const openRedRisks = visibleComplianceRecords.filter(
+            (record) =>
+              (record.value === "red" || record.type === "urgent_check_note") &&
+              !record.verified
+          );
+
+          return (
+            <Pressable
+              style={[
+                styles.tile,
+                themedTile,
+                openRedRisks.length > 0 && styles.riskCardRed,
+                managerSection === "risks" && styles.selectedTile,
+              ]}
+              onPress={() => setManagerSection("risks")}
+            >
+              <Text style={[styles.tileIcon, { color: activeTheme.text }]}>🚨</Text>
+              <Text style={[styles.tileText, { color: activeTheme.text }]}>Risks</Text>
+              <Text style={[styles.tileBadge, themedBadge]}>
+                {openRedRisks.length} open
+              </Text>
+            </Pressable>
+          );
+        })()}
+
+        <Pressable
+          style={[
+            styles.tile,
+            themedTile,
+            managerSection === "riskHistory" && styles.selectedTile,
+          ]}
+          onPress={() => setManagerSection("riskHistory")}
+        >
+          <Text style={[styles.tileIcon, { color: activeTheme.text }]}>📁</Text>
+          <Text style={[styles.tileText, { color: activeTheme.text }]}>Risk History</Text>
+          <Text style={[styles.tileBadge, themedBadge]}>
+            {
+              visibleComplianceRecords.filter(
+                (record) =>
+                  (record.value === "green" || record.verified) &&
+                  record.type === "urgent_check_note"
+              ).length
+            } resolved
+          </Text>
         </Pressable>
 
         <Pressable
@@ -1390,25 +1968,57 @@ export default function ManagerScreen() {
         <Pressable style={[styles.tile, themedTile]} onPress={() => setManagerSection("complianceEvidence")}>
           <Text style={[styles.tileIcon, { color: activeTheme.text }]}>🧾</Text>
           <Text style={[styles.tileText, { color: activeTheme.text }]}>Evidence</Text>
-          <Text style={[styles.tileBadge, themedBadge]}>{complianceRecords.length}</Text>
+          <Text style={[styles.tileBadge, themedBadge]}>{visibleComplianceRecords.length}</Text>
         </Pressable>
-      </View>
 
-
-      <View style={styles.section}>
-        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Equipment Manager</Text>
         <Pressable
-          style={[styles.tile, themedTile]}
+          style={[
+            styles.tile,
+            themedTile,
+            managerSection === "contacts" && styles.selectedTile,
+          ]}
+          onPress={async () => {
+            await loadSupplierContacts();
+            setManagerSection("contacts");
+          }}
+        >
+          <Text style={[styles.tileIcon, { color: activeTheme.text }]}>📞</Text>
+          <Text style={[styles.tileText, { color: activeTheme.text }]}>Contacts</Text>
+          <Text style={[styles.tileBadge, themedBadge]}>
+            {supplierContacts.length}
+          </Text>
+        </Pressable>
+
+        <Pressable
+          style={[
+            styles.tile,
+            themedTile,
+            managerSection === "equipment" && styles.selectedTile,
+          ]}
           onPress={() => setManagerSection("equipment")}
         >
           <Text style={[styles.tileIcon, { color: activeTheme.text }]}>🛠</Text>
           <Text style={[styles.tileText, { color: activeTheme.text }]}>Equipment</Text>
           <Text style={[styles.tileBadge, themedBadge]}>
-            {/* Show count of outOfService equipment as badge */}
-            {Array.isArray(equipmentStatus) ? equipmentStatus.filter((e: any) => e.outOfService).length : 0}
+            {equipmentStatus?.summary?.total || 0}
           </Text>
         </Pressable>
       </View>
+
+      {managerSection !== "home" && (
+        <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>
+          {managerSection === "dashboard" && "Dashboard"}
+          {managerSection === "risks" && "Open Compliance Risks"}
+          {managerSection === "templates" && "Templates"}
+          {managerSection === "staff" && "Staff"}
+          {managerSection === "shifts" && "Shifts"}
+          {managerSection === "training" && "Training"}
+          {managerSection === "complianceEvidence" && "Compliance Evidence"}
+          {managerSection === "riskHistory" && "Risk History"}
+          {managerSection === "equipment" && "Equipment"}
+          {managerSection === "contacts" && "Contacts"}
+        </Text>
+      )}
 
       {managerSection === "equipment" && (
         <View style={styles.section}>
@@ -1447,12 +2057,32 @@ export default function ManagerScreen() {
                 }
               }
               return (
-                <View
+                <Pressable
                   key={item.id}
                   style={[
                     styles.card,
                     { borderLeftWidth: 6, borderLeftColor, backgroundColor: activeTheme.card },
                   ]}
+                  onPress={() => {
+                    Alert.alert(
+                      item.name,
+                      item.outOfService
+                        ? "This equipment is currently out of service."
+                        : "This equipment is currently active.",
+                      [
+                        { text: "Cancel", style: "cancel" },
+                        item.outOfService
+                          ? {
+                              text: "Return to Service",
+                              onPress: () => returnEquipmentToService(Number(item.id)),
+                            }
+                          : {
+                              text: "Report Fault",
+                              onPress: () => reportEquipmentFault(Number(item.id)),
+                            },
+                      ]
+                    );
+                  }}
                 >
                   <Text style={[styles.logText, { color: activeTheme.text }]}>{item.name}</Text>
                   <Text style={[styles.timeText, { color: activeTheme.text }]}>{item.type || "No type"}</Text>
@@ -1463,15 +2093,128 @@ export default function ManagerScreen() {
                   {dueText ? (
                     <Text style={[styles.timeText, { color: borderLeftColor, fontWeight: "bold" }]}>{dueText.trim()}</Text>
                   ) : null}
-                </View>
+                </Pressable>
               );
             })
           )}
         </View>
       )}
 
+      {managerSection === "contacts" && (
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: activeTheme.text }]}> 
+            Supplier Contacts
+          </Text>
+
+          {supplierContacts.length === 0 ? (
+            <Text style={[styles.emptyText, { color: activeTheme.text }]}> 
+              No contacts found
+            </Text>
+          ) : (
+            supplierContacts.map((contact) => (
+              <View key={contact.id} style={[styles.card, { backgroundColor: activeTheme.card }]}>
+                <Text style={[styles.logText, { color: activeTheme.text }]}> 
+                  {contact.company || contact.name}
+                </Text>
+
+                <Text style={[styles.timeText, { color: activeTheme.text }]}> 
+                  Contact: {contact.name}
+                </Text>
+
+                <Text style={[styles.timeText, { color: activeTheme.text }]}> 
+                  Category: {contact.category || "None"}
+                </Text>
+
+                {contact.email ? (
+                  <Text style={[styles.timeText, { color: activeTheme.text }]}> 
+                    Email: {contact.email}
+                  </Text>
+                ) : null}
+
+                {contact.phone ? (
+                  <Text style={[styles.timeText, { color: activeTheme.text }]}> 
+                    Phone: {contact.phone}
+                  </Text>
+                ) : null}
+
+                {contact.preferred ? (
+                  <Text style={[styles.timeText, { color: activeTheme.text }]}> 
+                    ⭐ Preferred Supplier
+                  </Text>
+                ) : null}
+
+                {contact.warranty ? (
+                  <Text style={[styles.timeText, { color: activeTheme.text }]}> 
+                    🛡 Warranty Contact
+                  </Text>
+                ) : null}
+              </View>
+            ))
+          )}
+        </View>
+      )}
+
       {managerSection === "dashboard" && (
         <>
+
+      {(() => {
+        const openRedRisks = visibleComplianceRecords.filter(
+          (record) =>
+            (record.value === "red" || record.type === "urgent_check_note") &&
+            !record.verified
+        );
+
+        if (openRedRisks.length === 0) return null;
+
+        return (
+          <View style={[styles.card, styles.riskCardRed]}>
+            <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>
+              🔴 Open Compliance Risks ({openRedRisks.length})
+            </Text>
+
+            {openRedRisks.slice(0, 5).map((record) => (
+              <View key={record.id} style={styles.riskItem}>
+                <Text style={[styles.riskLabel, { color: activeTheme.text }]}>
+                  {record.notes || "Urgent compliance issue"}
+                </Text>
+                <Text style={[styles.timeText, { color: activeTheme.text }]}>
+                  Task ID: {record.taskId || "None"} ·{" "}
+                  {record.createdAt ? formatPhotoDate(record.createdAt) : ""}
+                </Text>
+                <View style={styles.photoButtonRow}>
+                  <Button
+                    title="📷 Before"
+                    onPress={() => takeCompliancePhoto(record.id, "before")}
+                  />
+
+                  <Button
+                    title="🔧 During"
+                    onPress={() => takeCompliancePhoto(record.id, "during")}
+                  />
+
+                  <Button
+                    title="✅ After"
+                    onPress={() => takeCompliancePhoto(record.id, "after")}
+                  />
+                </View>
+                <EvidenceGallery
+                  record={record}
+                  expanded={!!expandedPhotos[record.id]}
+                  onToggle={() =>
+                    setExpandedPhotos((prev) => ({
+                      ...prev,
+                      [record.id]: !prev[record.id],
+                    }))
+                  }
+                  onOpenPhoto={openPhotoViewer}
+                  formatPhotoStage={formatPhotoStage}
+                  formatPhotoDate={formatPhotoDate}
+                />
+              </View>
+            ))}
+          </View>
+        );
+      })()}
 
       {complianceDashboard && (
         <View
@@ -2022,19 +2765,386 @@ export default function ManagerScreen() {
         </View>
       )}
 
+      {managerSection === "risks" && (
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Open Compliance Risks</Text>
+
+          {visibleComplianceRecords.filter(
+            (record) =>
+              (record.value === "red" ||
+                record.value === "amber" ||
+                record.value === "yellow" ||
+                record.type === "urgent_check_note") &&
+              !record.verified
+          ).length === 0 ? (
+            <Text style={styles.emptyText}>No open compliance risks</Text>
+          ) : (
+            visibleComplianceRecords
+              .filter(
+                (record) =>
+                  (record.value === "red" ||
+                    record.value === "amber" ||
+                    record.value === "yellow" ||
+                    record.type === "urgent_check_note") &&
+                  !record.verified
+              )
+              .map((record) => (
+                <View key={record.id} style={[styles.card, getRiskCardStyle(record)]}>
+                  <Text style={styles.riskLabel}>{getRiskStatusLabel(record)}</Text>
+                  <Text>Notes: {record.notes || "None"}</Text>
+                  <Text>Task ID: {record.taskId || "None"}</Text>
+                  <Text>User ID: {record.userId}</Text>
+                  <Text>{formatPhotoDate(record.createdAt)}</Text>
+                  <View style={styles.photoButtonRow}>
+                    <Button
+                      title="📷 Before"
+                      onPress={() => takeCompliancePhoto(record.id, "before")}
+                    />
+
+                    <Button
+                      title="🔧 During"
+                      onPress={() => takeCompliancePhoto(record.id, "during")}
+                    />
+
+                    <Button
+                      title="✅ After"
+                      onPress={() => takeCompliancePhoto(record.id, "after")}
+                    />
+                  </View>
+                  <EvidenceGallery
+                    record={record}
+                    expanded={!!expandedPhotos[record.id]}
+                    onToggle={() =>
+                      setExpandedPhotos((prev) => ({
+                        ...prev,
+                        [record.id]: !prev[record.id],
+                      }))
+                    }
+                    onOpenPhoto={openPhotoViewer}
+                    formatPhotoStage={formatPhotoStage}
+                    formatPhotoDate={formatPhotoDate}
+                  />
+                  {record.correctiveAction ? (
+                    <Text style={[styles.timeText, { color: activeTheme.text }]}>
+                      Action: {record.correctiveAction}
+                    </Text>
+                  ) : null}
+
+                  {record.actionLogs?.length > 0 && (
+                    <View style={{ marginTop: 8 }}>
+                      <Pressable
+                        onPress={() =>
+                          setExpandedActionLogs((prev) => ({
+                            ...prev,
+                            [record.id]: !prev[record.id],
+                          }))
+                        }
+                      >
+                        <Text
+                          style={[
+                            styles.riskLabel,
+                            {
+                              color: activeTheme.tint,
+                              marginTop: 6,
+                            },
+                          ]}
+                        >
+                          {expandedActionLogs[record.id]
+                            ? `▲ Hide Action History (${record.actionLogs.length})`
+                            : `▼ Show Action History (${record.actionLogs.length})`}
+                        </Text>
+                      </Pressable>
+
+                      {expandedActionLogs[record.id]
+                        ? record.actionLogs.map((log: any) => (
+                            <View key={log.id} style={{ marginTop: 6 }}>
+                              <Text>
+                                {log.type === "call_log" ? "📞 Call" : "📧 Email"} ·{" "}
+                                {new Date(log.createdAt).toLocaleString()}
+                              </Text>
+                              <Text>{log.notes}</Text>
+                            </View>
+                          ))
+                        : null}
+                    </View>
+                  )}
+
+                  {(() => {
+                    const contact = findSuggestedContact(record);
+
+                    if (!contact) {
+                      return (
+                        <Text style={[styles.timeText, { color: activeTheme.text }]}>
+                          Suggested Contact: None found
+                        </Text>
+                      );
+                    }
+
+                    return (
+                      <View style={styles.contactBox}>
+                        <Text style={[styles.riskLabel, { color: activeTheme.text }]}>
+                          Suggested Contact
+                        </Text>
+
+                        <Text style={[styles.timeText, { color: activeTheme.text }]}>
+                          {contact.company || contact.name}
+                        </Text>
+
+                        <Text style={[styles.timeText, { color: activeTheme.text }]}>
+                          {contact.name}
+                        </Text>
+
+                        {contact.email ? (
+                          <Text style={[styles.timeText, { color: activeTheme.text }]}>
+                            Email: {contact.email}
+                          </Text>
+                        ) : null}
+
+                        {contact.phone ? (
+                          <Text style={[styles.timeText, { color: activeTheme.text }]}>
+                            Phone: {contact.phone}
+                          </Text>
+                        ) : null}
+
+                        <View style={{ flexDirection: "row", gap: 8, marginTop: 8 }}>
+                          <Button
+                            title="📞 Call"
+                            onPress={() => callSupplier(record, contact)}
+                          />
+
+                          <Button
+                            title="📧 Email"
+                            onPress={() => emailSupplier(record, contact)}
+                          />
+                        </View>
+                      </View>
+                    );
+                  })()}
+
+                  <View style={styles.riskButtonRow}>
+                    <Button
+                      title="Actioned"
+                      onPress={() =>
+                        updateRiskStatus(record.id, "actioned", "Reported for repair")
+                      }
+                    />
+
+                    <Button
+                      title="Timetabled"
+                      onPress={() =>
+                        updateRiskStatus(record.id, "timetabled", "Repair date/time received")
+                      }
+                    />
+
+                    <Button
+                      title="Resolved"
+                      onPress={() =>
+                        updateRiskStatus(record.id, "resolved", "Issue fixed and verified")
+                      }
+                    />
+                  </View>
+                </View>
+              ))
+          )}
+        </View>
+      )}
+
+      {managerSection === "riskHistory" && (
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Resolved Risk History</Text>
+
+          {visibleComplianceRecords.filter(
+            (record) =>
+              (record.value === "green" || record.verified) &&
+              record.type === "urgent_check_note"
+          ).length === 0 ? (
+            <Text style={styles.emptyText}>No resolved risks found</Text>
+          ) : (
+            visibleComplianceRecords
+              .filter(
+                (record) =>
+                  (record.value === "green" || record.verified) &&
+                  record.type === "urgent_check_note"
+              )
+              .map((record) => (
+                <View key={record.id} style={[styles.card, styles.ragGreen]}>
+                  <Text style={styles.riskLabel}>🟢 RESOLVED</Text>
+
+                  <Text>Issue: {record.notes || "None"}</Text>
+                  <Text>Resolution: {record.correctiveAction || "No resolution note"}</Text>
+                  <Text>Task ID: {record.taskId || "None"}</Text>
+                  <Text>Raised: {new Date(record.createdAt).toLocaleString()}</Text>
+                  <Text>
+                    Resolved:{" "}
+                    {record.verifiedAt
+                      ? new Date(record.verifiedAt).toLocaleString()
+                      : "Unknown"}
+                  </Text>
+                  <View style={styles.photoButtonRow}>
+                    <Button
+                      title="📷 Before"
+                      onPress={() => takeCompliancePhoto(record.id, "before")}
+                    />
+
+                    <Button
+                      title="🔧 During"
+                      onPress={() => takeCompliancePhoto(record.id, "during")}
+                    />
+
+                    <Button
+                      title="✅ After"
+                      onPress={() => takeCompliancePhoto(record.id, "after")}
+                    />
+                  </View>
+                  <EvidenceGallery
+                    record={record}
+                    expanded={!!expandedPhotos[record.id]}
+                    onToggle={() =>
+                      setExpandedPhotos((prev) => ({
+                        ...prev,
+                        [record.id]: !prev[record.id],
+                      }))
+                    }
+                    onOpenPhoto={openPhotoViewer}
+                    formatPhotoStage={formatPhotoStage}
+                    formatPhotoDate={formatPhotoDate}
+                  />
+
+                  {record.actionLogs?.length > 0 && (
+                    <Pressable
+                      onPress={() =>
+                        setExpandedActionLogs((prev) => ({
+                          ...prev,
+                          [record.id]: !prev[record.id],
+                        }))
+                      }
+                    >
+                      <Text
+                        style={[
+                          styles.riskLabel,
+                          {
+                            color: activeTheme.tint,
+                            marginTop: 6,
+                          },
+                        ]}
+                      >
+                        {expandedActionLogs[record.id]
+                          ? `▲ Hide Action History (${record.actionLogs.length})`
+                          : `▼ Show Action History (${record.actionLogs.length})`}
+                      </Text>
+                    </Pressable>
+                  )}
+
+                  {expandedActionLogs[record.id]
+                    ? record.actionLogs.map((log: any) => (
+                        <View key={log.id} style={{ marginTop: 6 }}>
+                          <Text>
+                            {log.type === "call_log" ? "📞 Call" : "📧 Email"} ·{" "}
+                            {new Date(log.createdAt).toLocaleString()}
+                          </Text>
+                          <Text>{log.notes}</Text>
+                        </View>
+                      ))
+                    : null}
+                </View>
+              ))
+          )}
+        </View>
+      )}
+
       {managerSection === "complianceEvidence" && (
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Compliance Evidence</Text>
 
 
-          {complianceRecords.map((record) => (
-            <View key={record.id} style={styles.card}>
+          {visibleComplianceRecords.map((record) => (
+            <View
+              key={record.id}
+              style={[
+                styles.card,
+                record.value === "red" && styles.riskCardRed,
+                record.value === "amber" && styles.riskCardAmber,
+              ]}
+            >
               <Text>Type: {record.type}</Text>
+              {record.value ? (
+                <Text style={styles.riskLabel}>
+                  {String(record.value).toUpperCase()} RISK
+                </Text>
+              ) : null}
               <Text>Notes: {record.notes || "None"}</Text>
               <Text>Task ID: {record.taskId || "None"}</Text>
               <Text>User ID: {record.userId}</Text>
               <Text>Verified: {record.verified ? "Yes" : "No"}</Text>
               <Text>{new Date(record.createdAt).toLocaleString()}</Text>
+              <View style={styles.photoButtonRow}>
+                <Button
+                  title="📷 Before"
+                  onPress={() => takeCompliancePhoto(record.id, "before")}
+                />
+
+                <Button
+                  title="🔧 During"
+                  onPress={() => takeCompliancePhoto(record.id, "during")}
+                />
+
+                <Button
+                  title="✅ After"
+                  onPress={() => takeCompliancePhoto(record.id, "after")}
+                />
+              </View>
+              <EvidenceGallery
+                record={record}
+                expanded={!!expandedPhotos[record.id]}
+                onToggle={() =>
+                  setExpandedPhotos((prev) => ({
+                    ...prev,
+                    [record.id]: !prev[record.id],
+                  }))
+                }
+                onOpenPhoto={openPhotoViewer}
+                formatPhotoStage={formatPhotoStage}
+                formatPhotoDate={formatPhotoDate}
+              />
+
+              {record.actionLogs?.length > 0 && (
+                <View style={{ marginTop: 8 }}>
+                  <Pressable
+                    onPress={() =>
+                      setExpandedActionLogs((prev) => ({
+                        ...prev,
+                        [record.id]: !prev[record.id],
+                      }))
+                    }
+                  >
+                    <Text
+                      style={[
+                        styles.riskLabel,
+                        {
+                          color: activeTheme.tint,
+                          marginTop: 6,
+                        },
+                      ]}
+                    >
+                      {expandedActionLogs[record.id]
+                        ? `▲ Hide Action History (${record.actionLogs.length})`
+                        : `▼ Show Action History (${record.actionLogs.length})`}
+                    </Text>
+                  </Pressable>
+
+                  {expandedActionLogs[record.id]
+                    ? record.actionLogs.map((log: any) => (
+                        <View key={log.id} style={{ marginTop: 6 }}>
+                          <Text>
+                            {log.type === "call_log" ? "📞 Call" : "📧 Email"} ·{" "}
+                            {new Date(log.createdAt).toLocaleString()}
+                          </Text>
+                          <Text>{log.notes}</Text>
+                        </View>
+                      ))
+                    : null}
+                </View>
+              )}
             </View>
           ))}
 
@@ -2733,11 +3843,43 @@ export default function ManagerScreen() {
 
         </>
       )}
+      <EvidenceViewer
+        visible={!!selectedPhoto}
+        photos={selectedPhotoList}
+        currentIndex={selectedPhotoIndex}
+        onPrevious={showPreviousPhoto}
+        onNext={showNextPhoto}
+        onClose={() => setSelectedPhoto(null)}
+        formatPhotoStage={formatPhotoStage}
+        formatPhotoDate={formatPhotoDate}
+      />
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+    selectedTile: {
+      borderWidth: 3,
+      borderColor: "#2563eb",
+      transform: [{ scale: 0.98 }],
+    },
+
+    button: {
+      backgroundColor: "#2563eb",
+      padding: 14,
+      borderRadius: 10,
+      alignItems: "center",
+      marginTop: 12,
+    },
+
+    disabledButton: {
+      opacity: 0.6,
+    },
+
+    buttonText: {
+      color: "#ffffff",
+      fontWeight: "700",
+    },
   container: {
     padding: 24,
     paddingTop: 60,
@@ -2777,6 +3919,110 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 8,
     marginBottom: 8,
+  },
+  riskCardRed: {
+    backgroundColor: "#fee2e2",
+    borderColor: "#dc2626",
+    borderWidth: 2,
+  },
+  riskCardAmber: {
+    backgroundColor: "#fef3c7",
+    borderColor: "#f59e0b",
+    borderWidth: 2,
+  },
+  riskCardYellow: {
+    backgroundColor: "#fef9c3",
+    borderColor: "#ca8a04",
+    borderWidth: 2,
+  },
+  riskLabel: {
+    fontWeight: "700",
+    marginBottom: 6,
+  },
+  riskItem: {
+    marginTop: 8,
+    paddingTop: 8,
+    borderTopWidth: 1,
+    borderTopColor: "#fecaca",
+  },
+  photoEvidenceBox: {
+    marginTop: 8,
+    paddingTop: 8,
+    borderTopWidth: 1,
+    borderTopColor: "#e5e5e5",
+  },
+  photoButtonRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 8,
+    marginTop: 8,
+  },
+  photoRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    marginTop: 8,
+  },
+  photoThumbnail: {
+    width: 80,
+    height: 80,
+    borderRadius: 8,
+    backgroundColor: "#eee",
+  },
+  photoStage: {
+    fontWeight: "600",
+  },
+  linkText: {
+    color: "#007AFF",
+    fontWeight: "600",
+  },
+  smallText: {
+    marginTop: 2,
+    color: "#666",
+    fontSize: 12,
+  },
+  photoModalOverlay: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.85)",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 16,
+  },
+  photoModalCard: {
+    width: "100%",
+    maxHeight: "90%",
+    backgroundColor: "#fff",
+    borderRadius: 12,
+    padding: 12,
+  },
+  photoModalTitle: {
+    fontSize: 18,
+    fontWeight: "700",
+    marginBottom: 4,
+  },
+  photoModalImage: {
+    width: "100%",
+    height: 420,
+    marginVertical: 12,
+    backgroundColor: "#000",
+    borderRadius: 8,
+  },
+  photoNavRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 8,
+    marginBottom: 8,
+  },
+  contactBox: {
+    marginTop: 10,
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: "#ffffff",
+  },
+  riskButtonRow: {
+    gap: 8,
+    marginTop: 12,
   },
   tileGrid: {
     flexDirection: "row",
@@ -2830,6 +4076,16 @@ const styles = StyleSheet.create({
   logText: {
     fontSize: 16,
     fontWeight: "600",
+  },
+  cardTitle: {
+    fontSize: 18,
+    fontWeight: "700",
+    marginBottom: 6,
+  },
+  bigScore: {
+    fontSize: 32,
+    fontWeight: "800",
+    marginVertical: 8,
   },
   statusText: {
     marginTop: 6,

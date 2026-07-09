@@ -3,7 +3,7 @@ import { getOfflineQueue, replaceOfflineQueue } from "./offlineQueue";
 import { getStoredItem } from "./storage";
 import { setSyncStatus } from "./syncStatus";
 
-const API = "https://kitchen-daily-checks-backend.up.railway.app";
+const API = "http://192.168.0.183:3001";
 
 export async function syncOfflineQueue() {
   const token = await getStoredItem("token");

@@ -60,7 +60,9 @@
         }
       ],
       "expo-notifications",
-      "expo-speech-recognition"
+      "expo-speech-recognition",
+      "expo-font",
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true,

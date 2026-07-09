@@ -5,7 +5,7 @@ import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import { registerForPushNotificationsAsync } from "../lib/notifications";
 import { setStoredItem } from "../lib/storage";
 
-const API = "https://kitchen-daily-checks-backend.up.railway.app";
+const API = "http://192.168.0.183:3001";
 
 export default function RegisterScreen() {
   const [email, setEmail] = useState("");
@@ -42,7 +42,7 @@ const register = async () => {
       console.log("Push registration skipped:", pushError);
     }
 
-    router.replace("/(tabs)");
+    router.replace("/(tabs)" as any);
   } catch (err: any) {
     console.log("REGISTER ERROR:", err?.response?.data || err.message || err);
     alert(err?.response?.data?.error || "Registration failed");

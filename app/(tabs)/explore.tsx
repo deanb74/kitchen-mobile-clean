@@ -7,7 +7,7 @@ import { addToOfflineQueue, getOfflineQueueCount } from "../../lib/offlineQueue"
 import { deleteStoredItem, getStoredItem } from "../../lib/storage";
 import { getSyncStatus, subscribeToSyncStatus } from "../../lib/syncStatus";
 
-const API = "https://kitchen-daily-checks-backend.up.railway.app";
+const API = "http://192.168.0.183:3001";
 
 export default function TemperaturesScreen() {
   const [fridge, setFridge] = useState("Fridge 1");

@@ -5,7 +5,7 @@ import * as Notifications from "expo-notifications";
 import { Platform } from "react-native";
 import { getStoredItem } from "./storage";
 
-const API = "https://kitchen-daily-checks-backend.up.railway.app";
+const API = "http://192.168.0.183:3001";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
