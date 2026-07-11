@@ -222,22 +222,44 @@ These decisions are expected to influence every future volume.
 
 ---
 
+# The Engineering Library
+
+During Volume III, the repository evolved beyond a source code repository.
+
+It became the Helping Hand Engineering Library.
+
+The Engineering Library serves two purposes:
+
+- It preserves the long-term knowledge of the project.
+- It provides the structured knowledge that Helping Hand will eventually use to understand and explain its own architecture.
+
+Rather than expecting engineers to remember where information is stored, the long-term vision is that they simply ask Helping Hand.
+
+Helping Hand will locate the relevant architectural records, engineering decisions and documentation, presenting them together with the appropriate context.
+
+The library is therefore organised for understanding rather than navigation.
+
+This represents an important architectural principle:
+
+> The repository is not only where Helping Hand is built.
+>
+> It is also where Helping Hand learns about itself.
+
+---
+
 # Looking Ahead
 
-Volume III concludes with COS capable of:
+Volume IV begins with Living Memory.
 
-- Behaviour
-- Governance
-- Pollination
-- Shared engineering discipline
+The primary question becomes:
 
-The next subsystem will be:
+> Of everything experienced today, what is worth remembering?
 
-## Living Memory
+Living Memory will become the first subsystem responsible for determining what experiences deserve to become long-term knowledge.
 
-The opening question for Volume IV is:
+As the Engineering Library grows, Helping Hand itself will increasingly use that knowledge to explain its own behaviour, architecture and evolution.
 
-> **Of everything experienced today... what is worth remembering?**
+Volume IV therefore begins the journey from documented understanding to operational understanding.
 
 ---
 
