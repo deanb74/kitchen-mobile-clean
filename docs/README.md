@@ -154,13 +154,21 @@ Together these volumes become the engineering history of Helping Hand.
 
 ---
 
-## Philosophy
+## Philosophy Library
 
-Not every important idea belongs in code.
+The Philosophy Library bridges the Constitution and the Companion Operating System.
 
-The Philosophy section captures the behavioural thinking behind Helping Hand.
+It explores the human reasoning that informs Helping Hand's architecture.
 
-It explains how Helping Hand should think before describing how Helping Hand should work.
+Unlike the Constitution, which defines enduring principles, the Philosophy Library is expected to grow alongside Helping Hand's understanding.
+
+Every significant behavioural capability should be traceable to one or more philosophical documents.
+
+Technology should emerge from philosophy.
+
+Architecture should emerge from understanding.
+
+Implementation should emerge from architecture.
 
 ---
 

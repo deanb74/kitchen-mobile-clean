@@ -47,3 +47,37 @@ Every commit should leave COS healthier than it was found.
 Technology serves people.
 
 People never serve technology.
+
+---
+
+## Philosophy Before Architecture
+
+Helping Hand does not begin by designing software.
+
+Where a capability affects human behaviour, judgement or relationships, Helping Hand should first express the underlying philosophy.
+
+Only once understanding has been documented should architecture be designed.
+
+Only once architecture is understood should implementation begin.
+
+Humanity
+
+↓
+
+Constitution
+
+↓
+
+Philosophy
+
+↓
+
+Architecture
+
+↓
+
+Behaviour
+
+↓
+
+Implementation
