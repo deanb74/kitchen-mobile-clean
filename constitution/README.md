@@ -1,23 +1,89 @@
 # Helping Hand Constitution
 
+> *"We plant wisely today so others may flourish tomorrow."*
+
 Welcome to Helping Hand.
 
 If you are reading this, you are now a custodian of something much larger than software.
 
-Before reading the architecture…
+Before reading the architecture...
 
-Before reading the platform…
+Before reading the platform...
 
-Before writing a single line of code…
+Before writing a single line of code...
 
-Read the Constitution.
+**Read the Constitution.**
 
 Everything else grows from these principles.
 
-```
+---
+
+## Purpose
+
+The Constitution preserves the enduring principles of Helping Hand.
+
+Technology will change.
+
+Programming languages will change.
+
+Artificial Intelligence will change.
+
+Helping Hand will change.
+
+The Constitution should evolve only when humanity teaches us a better way.
+
+Never change the Constitution to suit the software.
+
+Change the software to honour the Constitution.
+
+---
+
+## Reading Order
+
+Read the constitutional documents in this order:
+
+1. `00-PREAMBLE.md`
+2. `01-THE-ACORN-EDITION.md`
+3. `02-CONSTITUTION.md`
+4. `03-FOUNDERS-OATH.md`
+5. `04-ENGINEERING-OATH.md`
+
+---
+
+## Constitutional Structure
+
+### The Preamble
+
+Explains why Helping Hand exists and establishes the responsibility carried by its founders and future custodians.
+
+### The Acorn Edition
+
+Preserves the original founding expression of Helping Hand.
+
+It is the seed from which the Constitution, Philosophy Library, Companion Operating System and every future Digital Colleague grew.
+
+### The Constitution
+
+Defines the enduring principles that govern Helping Hand, Companion Intelligence, the Companion Operating System and every future Digital Colleague.
+
+### The Founder's Oath
+
+Records the founder's commitment to protect Helping Hand's purpose, principles and future.
+
+### The Engineering Oath
+
+Defines the responsibility accepted by every engineer and custodian who contributes to Helping Hand.
+
+---
+
+## The Order of Understanding
+
+```text
 Constitution
         ↓
 Philosophy
+        ↓
+Governance
         ↓
 Architecture
         ↓
@@ -28,38 +94,42 @@ Digital Colleagues
 Human Experience
 ```
 
-Technology will change.
+The Constitution defines what must endure.
 
-Programming languages will change.
+The Philosophy Library explores how those principles should be understood.
 
-Artificial Intelligence will change.
+Governance determines what understanding earns a permanent place.
 
-The Constitution should only change when humanity teaches us a better way.
+Architecture gives that understanding structure.
 
-Welcome to Helping Hand.
+The platform brings that structure to life.
 
-Seek first to understand.
+Digital Colleagues express it through their relationships with people.
 
-Always.
+---
 
-Helping Hand Constitution
+## Custodianship
 
-Version: 1.0
-Status: Founding Document
+Every contributor becomes a custodian of Helping Hand.
 
-This document should evolve only when we have genuinely become wiser.
+Custodians should preserve understanding rather than merely preserve code.
 
-Never change it to suit the software.
+They should question changes that weaken character, trust or human purpose.
 
-Change the software to honour the Constitution.
+They should leave Helping Hand wiser than they found it.
 
-──────────────────────────────────────────────
+---
 
-Helping Hand Constitution
-The Acorn Edition
+## Status
 
-Established: 2026
+**Version:** 1.0
 
-"We plant wisely today so others may flourish tomorrow."
+**Status:** Founding Documents
 
-──────────────────────────────────────────────
+**Established:** 2026
+
+---
+
+> **Seek first to understand.**
+
+> **Always.**
