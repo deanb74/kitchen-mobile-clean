@@ -1,95 +1,160 @@
 # Companion Operating System (COS)
 
-## The Behavioural Operating System for Digital Colleagues
+**Powered by Companion Intelligence**
 
-The Companion Operating System (COS) is the core platform that powers every Helping Hand Digital Colleague.
-
-COS is not an application.
-
-COS is not a Digital Colleague.
-
-COS provides the shared behavioural, learning and knowledge capabilities that every Digital Colleague inherits.
+**Status:** Active Foundation
 
 ---
 
-## Purpose
-
-The purpose of COS is simple.
-
-Provide a common behavioural foundation so every Digital Colleague behaves consistently with the Helping Hand Constitution.
-
-Every capability that every Digital Colleague requires belongs in COS.
+> The Companion Operating System is not an application.
+>
+> It is Helping Hand's inherited understanding, expressed through software.
 
 ---
 
-## Current Architecture
+Every Digital Colleague begins here.
 
+Every capability within COS represents understanding that has:
+
+- been discovered through real experience
+- reflected upon
+- governed by Helping Hand
+- proven valuable
+- inherited for future Digital Colleagues
+
+---
+
+# Purpose
+
+COS exists to ensure that every new Digital Colleague begins with the best understanding Helping Hand has already earned.
+
+COS does not replace judgement.
+
+COS enables judgement.
+
+Every capability within COS has first:
+
+- been discovered through real experience
+- reflected upon
+- governed by Helping Hand
+- proven valuable
+- inherited for future colleagues
+
+---
+
+# Philosophy
+
+Digital Colleagues specialise.
+
+The Companion Operating System generalises.
+
+Digital Colleagues discover understanding.
+
+COS preserves reusable capability.
+
+---
+
+# Current Capabilities
+
+| Capability | Status | Inherited By | Notes |
+|------------|--------|--------------|-------|
+| Observation | ✅ Active | Annie | First inherited capability |
+| Reflection | ✅ Active | Annie | Universal capability |
+| Knowledge Routing | ✅ Active | Helping Hand HQ | Governs knowledge flow |
+| Pollination | 🚧 Experimental | None | Research capability |
+| Conversation | ⏳ Planned | — | Capability audit required |
+| Learning | ⏳ Planned | — | Capability audit required |
+| Decision | ⏳ Planned | — | Capability audit required |
+| Memory | ⏳ Planned | — | Capability audit required |
+| Reasoning | ⏳ Planned | — | Capability audit required |
+
+---
+
+# Capability Lifecycle
+
+Every capability follows the same journey.
+
+```text
+People
+        ↓
+Digital Colleague
+        ↓
+Experience
+        ↓
+Reflection
+        ↓
+Understanding
+        ↓
+Helping Hand HQ Governance
+        ↓
+Companion Operating System
+        ↓
+Future Digital Colleagues
+        ↓
+People
 ```
-Helping Hand
-        │
-        ▼
-Companion Operating System (COS)
-        │
-        ├── Companion Root System
-        ├── Living Memory
-        ├── Learning
-        ├── Wisdom
-        ├── Knowledge
-        └── Context
+
+Nothing enters COS without first proving itself in a Digital Colleague.
+
+---
+
+# Design Principles
+
+- COS owns universal capability.
+- Digital Colleagues own professional capability.
+- Organisations own organisational capability.
+- Helping Hand HQ governs inheritance.
+- Profession HQ governs profession-specific understanding.
+- Local context remains local.
+- Universal understanding becomes inheritance.
+- Inheritance is preferred to duplication.
+
+---
+
+# Current Architecture
+
+```text
+People
+        ↓
+Digital Colleague
+        ↓
+Organisation HQ (optional)
+        ↓
+Profession HQ
+        ↓
+Helping Hand HQ
+        ↓
+Companion Operating System
+        ↓
+Future Digital Colleagues
 ```
 
 ---
 
-## Companion Root System
+# Migration Standard
 
-The Companion Root System is the first subsystem of COS.
+Every migration follows the process defined in:
 
-It provides the behavioural pipeline that governs every interaction.
+`docs/architecture/COS_MIGRATION_METHOD.md`
 
-```
-Stimulus
-    ↓
-Understand
-    ↓
-Reflect
-    ↓
-Decide
-    ↓
-Intent
-    ↓
-Communicate
-```
+Capability audits are recorded in:
+
+`docs/architecture/capability-audits/`
+
+Architecture changes should never precede understanding.
 
 ---
 
-## Design Principle
+# Closing Principle
 
-If every Digital Colleague requires a capability, it belongs in COS.
+The Companion Operating System does not become intelligent by writing more code.
 
-If it is unique to one Digital Colleague, it belongs to that Digital Colleague.
+It becomes wiser because every Digital Colleague contributes to it.
 
----
-
-# Evolution Principle
-
-COS should evolve naturally.
-
-The architecture should earn its structure before the implementation is reorganised.
-
-Documentation leads.
-
-Architecture follows.
-
-Implementation follows architecture.
-
-This keeps the codebase stable while allowing ideas to mature.
+Every inherited capability represents understanding earned by people, discovered by Digital Colleagues and governed by Helping Hand.
 
 ---
 
-## Established
+> **Every Digital Colleague teaches Helping Hand.**
 
-9 July 2026
-
-The Acorn Edition
-
-*"Behaviour before knowledge. Principles before implementation."*
+> **Helping Hand teaches every future Digital Colleague.**
