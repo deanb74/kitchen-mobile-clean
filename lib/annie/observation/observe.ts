@@ -1,42 +1,31 @@
+import type { Observation } from "../../../platform/cos/observation";
+
+export type { Observation } from "../../../platform/cos/observation";
+
 /**
  * Annie's Eyes
  *
- * Annie observes.
+ * COS defines what an observation is.
+ * Annie supplies hospitality observations from her world.
  *
- * She never guesses.
+ * Annie never guesses.
  * She describes what she believes she can see.
  */
-
-export interface Observation {
-
-  id: string;
-
-  category: string;
-
-  description: string;
-
-  confidence: number;
-
-}
-
 export function observe(): Observation[] {
-
   return [
-
     {
       id: "bar",
       category: "area",
       description: "I can see what looks like a bar.",
       confidence: 0.92,
+      source: "vision",
     },
-
     {
       id: "tables",
       category: "furniture",
       description: "I can see several tables.",
       confidence: 0.89,
+      source: "vision",
     },
-
   ];
-
 }

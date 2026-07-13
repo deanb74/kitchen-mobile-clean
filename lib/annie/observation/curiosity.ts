@@ -1,28 +1,20 @@
-import type { Observation } from "./observe";
+import type {
+  CuriosityRule,
+  Observation,
+  ObservationQuestion,
+} from "../../../platform/cos/observation";
+
+export type { ObservationQuestion } from "../../../platform/cos/observation";
 
 /**
- * Annie's Curiosity
+ * Annie's Hospitality Curiosity
  *
- * Observation tells Annie what she believes she can see.
- *
- * Curiosity asks:
- *
- * "What don't I understand yet?"
- *
- * Annie does not ask questions to collect data.
- * Annie asks questions so she can become more helpful.
+ * COS provides the universal curiosity mechanism.
+ * Annie supplies the questions that require hospitality understanding.
  */
-
-export interface ObservationQuestion {
-  observationId: string;
-  question: string;
-  reason: string;
-  priority: "low" | "medium" | "high";
-}
-
-export function getCuriosityFromObservation(
+export const hospitalityCuriosityRule: CuriosityRule = (
   observation: Observation
-): ObservationQuestion | null {
+): ObservationQuestion | null => {
   if (observation.id === "tables") {
     return {
       observationId: observation.id,
@@ -44,12 +36,8 @@ export function getCuriosityFromObservation(
   }
 
   return null;
-}
+};
 
-export function getCuriosityFromObservations(
-  observations: Observation[]
-): ObservationQuestion[] {
-  return observations
-    .map(getCuriosityFromObservation)
-    .filter((question): question is ObservationQuestion => question !== null);
-}
+export const hospitalityCuriosityRules: CuriosityRule[] = [
+  hospitalityCuriosityRule,
+];
