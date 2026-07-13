@@ -129,6 +129,16 @@ Reuse it everywhere.
 
 ---
 
+# Inheritance Before Duplication
+
+If a capability could reasonably belong to every Digital Colleague, it should first be considered for inheritance through the Companion Operating System before being implemented independently.
+
+Digital Colleagues should specialise.
+
+The Companion Operating System should generalise.
+
+---
+
 # Technology Serves People
 
 Technology is never Helping Hand's purpose.
