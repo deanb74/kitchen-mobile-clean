@@ -63,7 +63,7 @@ HH HQ exists to support understanding, not replace it.
 
 # The Understanding Journey
 
-Understanding reaches HH HQ through Companion Intelligence.
+Understanding travels through the lowest sensible level before reaching Helping Hand HQ.
 
 ```text
 People
@@ -76,80 +76,93 @@ Reflection
         ↓
 Local Understanding
         ↓
-Candidate Understanding
+Organisation HQ (optional)
         ↓
-HH HQ
+Profession HQ
+        ↓
+Candidate Cross-Profession Understanding
+        ↓
+Helping Hand HQ
+        ↓
+Research
+        ↓
+Validation
         ↓
 Governance
         ↓
-Shared Understanding
-        ↓
-Reusable Knowledge
+Shared Helping Hand Understanding
         ↓
 Companion Operating System
+        ↓
+Profession HQ
+        ↓
+Organisation HQ (where present)
         ↓
 Future Digital Colleagues
 ```
 
-Not every observation reaches HQ.
+Venue Digital Colleagues do not contact Helping Hand HQ directly.
 
-Not every experience becomes shared understanding.
+Independent Digital Colleagues contribute through their Profession HQ.
 
-Only governed understanding should strengthen Helping Hand.
+Multi-site Digital Colleagues contribute through their Organisation HQ and then their Profession HQ.
+
+Knowledge should always remain at the lowest sensible level.
+
+Experience may travel.
+
+Local context should remain local.
+
+Understanding may travel upward.
+
+Sensitive local detail should not travel with it unless genuinely required and appropriately governed.
 
 ---
 
-# Organisational Responsibilities
+# Knowledge Responsibilities
 
-HH HQ protects several different kinds of knowledge.
+Helping Hand HQ does not own every kind of knowledge.
+
+It protects the boundaries between them.
 
 ## Constitutional Knowledge
 
-The enduring principles of Helping Hand.
-
-Rarely changes.
-
----
+Helping Hand HQ protects the enduring principles of Helping Hand.
 
 ## Philosophical Understanding
 
-Human understanding that shapes future architecture.
+Helping Hand HQ supports reflection that may deepen Helping Hand's shared philosophy.
 
-Grows through reflection.
+## Cross-Profession Understanding
 
----
+Helping Hand HQ researches understanding that may benefit more than one profession.
+
+Examples include:
+
+- trust
+- communication
+- reflection
+- judgement
+- companionship
+- learning
+- ethics
+- human behaviour
 
 ## Professional Knowledge
 
-Knowledge shared across an entire profession.
+Professional knowledge belongs primarily to the relevant Profession HQ.
 
-Examples:
-
-- Hospitality
-- Healthcare
-- Education
-- Sport
-
----
+Helping Hand HQ should not replace professional authority.
 
 ## Organisational Knowledge
 
-Knowledge belonging to one organisation.
-
-Examples:
-
-- recipes
-- policies
-- operational standards
-- company procedures
-
----
+Organisational knowledge belongs to the relevant Organisation HQ.
 
 ## Local Understanding
 
-Knowledge unique to one workplace, one team or one relationship.
+Local understanding belongs to the Digital Colleague and workplace that created it.
 
-This should remain local unless governance determines broader value.
+It should travel upward only when its lesson has wider value and its local context has been protected.
 
 ---
 
@@ -176,21 +189,25 @@ HH HQ curates.
 
 # Living Memory
 
-Living Memory preserves governed understanding.
+Living Memory exists at the level where the understanding belongs.
 
-HH HQ ensures that Living Memory reflects wisdom rather than accumulation.
+A Digital Colleague preserves local understanding.
 
-Memory without governance becomes noise.
+An Organisation HQ preserves organisational understanding.
 
-Governance without memory loses experience.
+A Profession HQ preserves professional understanding.
 
-Together they allow Helping Hand to grow deliberately.
+Helping Hand HQ preserves governed cross-profession and Helping Hand-wide understanding.
+
+Helping Hand HQ does not collect all memory.
+
+It protects the understanding that should benefit the whole network.
 
 ---
 
 # The Academy
 
-HH HQ also develops future Digital Colleagues.
+Helping Hand Academy develops future Digital Colleagues using governed understanding protected by HH HQ.
 
 Every colleague begins with the Academy.
 

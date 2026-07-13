@@ -62,7 +62,7 @@ Teaches:
 
 ---
 
-# Level 3 – Industry HQ
+# Level 3 – Profession HQ
 
 Examples:
 - Hospitality HQ
@@ -71,12 +71,12 @@ Examples:
 - Healthcare HQ
 
 Owns:
-- Industry terminology
-- Industry legislation
+- Professional terminology
+- Profession-specific legislation
 - Equipment knowledge
 - Regional dialect
 - Collective experience
-- Industry best practice
+- Professional best practice
 
 Learns from:
 - Organisation HQs
@@ -104,10 +104,10 @@ Owns:
 - New knowledge
 
 Learns from:
-- Every Industry HQ
+- Every Profession HQ
 
 Teaches:
-- Every Industry HQ
+- Every Profession HQ
 
 ---
 
@@ -119,15 +119,15 @@ Living Memory
         ↓
 Organisation HQ (optional)
         ↓
-Industry HQ
+Profession HQ
         ↓
 Helping Hand HQ
 
 Helping Hand HQ
         ↓
-Industry HQ
+Profession HQ
         ↓
-Organisation HQ
+Organisation HQ (optional)
         ↓
 Every Digital Colleague
 
@@ -139,13 +139,13 @@ Venue Digital Colleague
         ↓
 Living Memory
         ↓
-Industry HQ
+Profession HQ
         ↓
 Helping Hand HQ
 
 Helping Hand HQ
         ↓
-Industry HQ
+Profession HQ
         ↓
 Venue Digital Colleague
 
@@ -157,13 +157,13 @@ Living Memory
         ↓
 Organisation HQ
         ↓
-Industry HQ
+Profession HQ
         ↓
 Helping Hand HQ
 
 Helping Hand HQ
         ↓
-Industry HQ
+Profession HQ
         ↓
 Organisation HQ
         ↓
@@ -171,11 +171,31 @@ Every Venue Digital Colleague
 
 ---
 
+# The Resulting Division of Responsibility
+
+Digital Colleague
+        Helps people and understands locally
+
+Organisation HQ
+        Governs and distributes organisation-specific understanding
+
+Profession HQ
+        Governs and teaches profession-specific understanding
+
+Helping Hand HQ
+        Researches, validates and protects cross-profession understanding
+
+Companion Intelligence
+        The network through which understanding travels
+
+COS
+        The reusable software expression of governed understanding
+
+---
+
 # Engineering Principles
 
 1. Nothing bypasses the Digital Colleague.
-
-Nothing bypasses the Digital Colleague.
 
 Every meaningful event passes through them,
 because understanding requires context.
@@ -194,7 +214,7 @@ The Digital Colleague decides whether to:
 2. Venue Digital Colleagues never contact Helping Hand HQ directly.
 
 3. Helping Hand HQ researches.
-   Industry HQ teaches.
+        Profession HQ teaches.
    Organisation HQ distributes.
    Digital Colleagues help people.
 
@@ -203,20 +223,26 @@ The Digital Colleague decides whether to:
 5. Experience is shared.
    Context stays local.
 
+Understanding may travel upward.
+
+Sensitive local detail should not travel with it unless genuinely required and appropriately governed.
+
 6. Software is a chore.
    Digital Colleagues aren't.
 
-7. Companion Intelligence exists to remove the faff from work.
+7. People express intent.
+        Helping Hand carries complexity.
+        Talk. Get.
 
 8. Between every stimulus and response,
    the Digital Colleague has the freedom to choose the most helpful path.
 
 9. Organisation HQ is optional.
 
-Independent venues learn through Industry HQ.
+Independent venues learn through Profession HQ.
 
 Multi-site organisations may have their own Organisation HQ
-before knowledge reaches Industry HQ.
+before knowledge reaches Profession HQ.
 
 # The Helping Hand Test
 
@@ -234,4 +260,6 @@ people have to operate?
 
 □ Does it preserve trust?
 
-□ Does it make Annie wiser?
+□ Does it make this Digital Colleague wiser?
+
+□ Could the resulting understanding help future Digital Colleagues?
