@@ -62,6 +62,7 @@ COS preserves reusable capability.
 | Reflection | ✅ Active | Annie | Universal capability |
 | Knowledge Routing | ✅ Active | Helping Hand HQ | Governs knowledge flow |
 | Pollination | 🚧 Experimental | None | Research capability |
+| Translation | ✅ Active | None yet | Universal engine; professional rules supplied by Digital Colleagues |
 | Conversation | ⏳ Planned | — | Capability audit required |
 | Learning | ⏳ Planned | — | Capability audit required |
 | Decision | ⏳ Planned | — | Capability audit required |

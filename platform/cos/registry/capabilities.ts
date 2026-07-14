@@ -37,4 +37,13 @@ export const capabilities: Capability[] = [
       "Explores governed sharing of understanding.",
     inheritedBy: [],
   },
+  {
+    id: "translation",
+    name: "Translation",
+    classification: "universal+professional",
+    status: "active",
+    description:
+      "Turns observations into explainable meaning using contextual rules.",
+    inheritedBy: [],
+  },
 ];

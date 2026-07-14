@@ -16,6 +16,12 @@ describe("Capability Registry", () => {
       .toBe("universal");
   });
 
+  it("contains translation", () => {
+    expect(getCapability("translation")?.classification).toBe(
+      "universal+professional"
+    );
+  });
+
   it("returns every capability", () => {
     expect(getCapabilities().length).toBeGreaterThanOrEqual(4);
   });
