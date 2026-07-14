@@ -23,9 +23,11 @@ import { createLivingMemory } from "../memory/livingMemory";
 import { beginObservation } from "../observation";
 import { discoverOpportunities } from "../opportunity";
 import { reflect } from "../reflection";
+import { translateHospitalityObservations } from "../translation";
 
 export interface AnnieBrainResult {
   observations: ReturnType<typeof beginObservation>;
+  translations: ReturnType<typeof translateHospitalityObservations>;
   memory: ReturnType<typeof createLivingMemory>;
   reasoning: typeof CompanionReasoningFlow;
   opportunities: ReturnType<typeof discoverOpportunities>;
@@ -36,6 +38,9 @@ export interface AnnieBrainResult {
 export function think(): AnnieBrainResult {
 
   const observations = beginObservation();
+  const translations = translateHospitalityObservations(
+    observations.observations
+  );
 
   const memory = createLivingMemory({
     id: "first-venue-observation",
@@ -49,7 +54,7 @@ export function think(): AnnieBrainResult {
   const opportunities = discoverOpportunities();
 
   const decision = decide({
-    understandsSituation: observations.observations.length > 0,
+    understandsSituation: translations.length > 0,
     hasEnoughInformation: opportunities.length > 0,
     confidence: 0.9,
   });
@@ -62,6 +67,7 @@ export function think(): AnnieBrainResult {
 
   return {
     observations,
+    translations,
     memory,
     reasoning: CompanionReasoningFlow,
     opportunities,
