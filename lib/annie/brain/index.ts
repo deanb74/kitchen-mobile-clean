@@ -17,6 +17,7 @@
  * Learn.
  */
 
+import { chooseNextRoute } from "../../../platform/ci";
 import { CompanionReasoningFlow } from "../companion-intelligence/reasoning";
 import { decide } from "../decision/decisionEngine";
 import { createLivingMemory } from "../memory/livingMemory";
@@ -28,6 +29,7 @@ import { translateHospitalityObservations } from "../translation";
 export interface AnnieBrainResult {
   observations: ReturnType<typeof beginObservation>;
   translations: ReturnType<typeof translateHospitalityObservations>;
+  navigation: ReturnType<typeof chooseNextRoute>;
   memory: ReturnType<typeof createLivingMemory>;
   reasoning: typeof CompanionReasoningFlow;
   opportunities: ReturnType<typeof discoverOpportunities>;
@@ -36,11 +38,18 @@ export interface AnnieBrainResult {
 }
 
 export function think(): AnnieBrainResult {
-
   const observations = beginObservation();
   const translations = translateHospitalityObservations(
     observations.observations
   );
+
+  const navigation = chooseNextRoute({
+    hasObservations: observations.observations.length > 0,
+    hasTranslations: translations.length > 0,
+    needsReflection: false,
+    needsClarification:
+      observations.questions.length > 0 && translations.length === 0,
+  });
 
   const memory = createLivingMemory({
     id: "first-venue-observation",
@@ -68,6 +77,7 @@ export function think(): AnnieBrainResult {
   return {
     observations,
     translations,
+    navigation,
     memory,
     reasoning: CompanionReasoningFlow,
     opportunities,

@@ -32,4 +32,13 @@ describe("Annie hospitality translation", () => {
     expect(result.translations).toHaveLength(2);
     expect(result.decision).not.toBe("observe");
   });
+
+  it("uses the CI Navigator after translation", () => {
+    const result = think();
+
+    expect(result.navigation).toEqual({
+      next: "complete",
+      reason: "No further capability is currently required.",
+    });
+  });
 });
