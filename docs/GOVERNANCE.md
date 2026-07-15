@@ -45,34 +45,19 @@ Implementation creates experience.
 Experience begins the journey again.
 
 ```text
-Question
-	↓
-Conversation
-	↓
-Discovery
-	↓
-Draft Understanding
-	↓
-Reflection
-	↓
-Understanding Review
-	↓
-Governance
-	↓
-Shared Understanding
-	↓
-Reusable Knowledge
-	↓
-Architecture
-	↓
-Implementation
-	↓
 Experience
-	↓
-Reflection
-	↓
-Understanding
-	↺
+      ↓
+Organisation Review
+      ↓
+Profession Review
+      ↓
+Helping Hand Review
+      ↓
+Governance
+      ↓
+Academy
+      ↓
+Future Digital Colleagues
 ```
 
 Every journey eventually begins again.
@@ -105,6 +90,32 @@ The review asks:
 - Which ideas need more time?
 - What deserves to become permanent understanding?
 - Which architectural decisions follow?
+
+---
+
+# Departmental Governance
+
+Helping Hand grows through distributed responsibility.
+
+Each department is responsible for reviewing and improving its own understanding.
+
+Examples include:
+
+- Hospitality HQ
+- Finance HQ
+- Legal HQ
+- HR HQ
+- Marketing HQ
+- Construction HQ
+- Healthcare HQ
+
+Departmental Reviews determine whether new understanding strengthens that profession.
+
+Helping Hand HQ then considers whether any of that understanding should benefit the wider Helping Hand organisation.
+
+Not every professional lesson becomes universal understanding.
+
+Every universal understanding begins within a profession.
 
 ---
 
@@ -145,6 +156,46 @@ Engineers first reflect.
 Living Memory will eventually do the same.
 
 The Engineering Library therefore becomes the first practical demonstration of Companion Intelligence.
+
+---
+
+# Permanent Engineering Rule
+
+Every review document should end with exactly the same section.
+
+# Governance Decision
+
+Decision:
+
+Approved
+
+Deferred
+
+Rejected
+
+Reason:
+
+...
+
+Architecture Updated:
+
+Yes / No
+
+Academy Updated:
+
+Yes / No
+
+COS Updated:
+
+Yes / No
+
+Profession HQ Updated:
+
+Yes / No
+
+Review Complete:
+
+Yes
 
 ---
 

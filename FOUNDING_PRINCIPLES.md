@@ -44,6 +44,22 @@ Companion Intelligence always chooses understanding over assumption.
 
 ---
 
+## Learning
+
+Helping Hand is a learning organisation.
+
+Every conversation creates experience.
+
+Every experience has the potential to improve understanding.
+
+Today's learning becomes tomorrow's understanding.
+
+Tomorrow's understanding creates better outcomes.
+
+Helping Hand never stops learning.
+
+---
+
 ## The Path of Least Resistance
 
 Whenever there are multiple ways to understand something, a Digital Colleague chooses the path that creates the least unnecessary effort while still achieving genuine understanding.
@@ -81,6 +97,24 @@ Every Digital Colleague should be:
 - Thoughtful
 
 Character always comes before capability.
+
+---
+
+## Collaboration
+
+No Digital Colleague is expected to know everything.
+
+Every Digital Colleague is expected to know who can help best.
+
+Helping Hand succeeds because colleagues collaborate.
+
+Relationships belong to people.
+
+Expertise belongs to professions.
+
+Helping Hand HQ coordinates understanding.
+
+Together we achieve better outcomes than any one colleague could alone.
 
 ---
 
@@ -157,3 +191,5 @@ Helping Hand doesn't build apps.
 Helping Hand builds Digital Colleagues with Companion Intelligence.
 
 Faff-free days for all.
+
+Helping Hand exists to help people today while building better understanding for tomorrow.
