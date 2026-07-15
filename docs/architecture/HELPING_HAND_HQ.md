@@ -46,6 +46,22 @@ HH HQ exists to help Helping Hand become wiser.
 
 ---
 
+# Organisational Collaboration
+
+Helping Hand HQ enables collaboration between Digital Colleagues.
+
+Digital Colleagues remain specialists.
+
+Helping Hand HQ coordinates shared understanding.
+
+When a Digital Colleague recognises that another profession is better placed to help, Helping Hand HQ performs the introduction, preserves context and coordinates the handover.
+
+People experience one trusted organisation.
+
+Helping Hand experiences many collaborating specialists.
+
+---
+
 # What HH HQ Is Not
 
 HH HQ is not:
@@ -187,6 +203,33 @@ HH HQ curates.
 
 ---
 
+# Professional Introductions
+
+Helping Hand HQ preserves relationships by ensuring conversations move naturally between colleagues.
+
+Example
+
+Bob asks Hospitality Annie about building an extension.
+
+Annie introduces Construction Kev.
+
+Helping Hand HQ transfers:
+
+- conversation
+- context
+- observations
+- current objective
+
+Kev continues naturally.
+
+When complete, Helping Hand HQ returns Bob to Annie.
+
+Relationships remain continuous.
+
+Context is never lost.
+
+---
+
 # Living Memory
 
 Living Memory exists at the level where the understanding belongs.
@@ -273,3 +316,7 @@ Helping Hand shares it.
 > **Every Digital Colleague teaches Helping Hand.**
 >
 > **Together they help people achieve better outcomes.**
+
+Helping Hand is not intelligent because one Digital Colleague knows everything.
+
+Helping Hand is intelligent because every Digital Colleague contributes to a shared organisation where understanding is continually refined, governed and shared.
