@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { Pressable, SafeAreaView, ScrollView, Text } from "react-native";
 import { onboardingPrompts } from "../lib/onboarding/onboardingPrompts";
 
@@ -62,7 +63,7 @@ export default function AnnieScreen() {
             alignItems: "center",
           }}
           onPress={() => {
-            console.log("Let's get to know each other.");
+            router.push("/academy");
           }}
         >
           <Text
