@@ -3,14 +3,49 @@ import { OnboardingEngine } from "./onboardingEngine";
 export function runOnboardingEngineDemo() {
   const engine = new OnboardingEngine();
 
-  console.log("Initial state:", engine.getState());
-  console.log("Welcome prompt:", engine.getCurrentPrompt());
+  console.log("==================================");
+  console.log("ANNIE ARRIVES AT A NEW VENUE");
+  console.log("==================================");
 
-  engine.next();
-  console.log("After next:", engine.getState());
+  console.log("\nWelcome");
+  console.log(engine.getCurrentPrompt());
 
-  engine.next();
-  console.log("After next again:", engine.getState());
+  console.log("\nAnnie notices a cellar...");
 
-  return engine.getState();
+  const result = engine.processObservation(
+    {
+      dimension: "area",
+      value: "cellar",
+      source: "walkaround",
+    },
+    {
+      situationIntensity: "calm",
+      personAvailable: true,
+    },
+    {
+      personName: "Dean",
+      relationship: "new",
+      role: "manager",
+    },
+  );
+
+  console.log("\nObservation");
+  console.log(result.observation);
+
+  console.log("\nContext");
+  console.log(engine.getContextStore().getEntries());
+
+  console.log("\nDiscovery prompts");
+  console.log(result.discoveredPrompts);
+
+  console.log("\nMissing understanding");
+  console.log(engine.getMissingCogQueue().getOpenCogs());
+
+  console.log("\nJudgement");
+  console.log(result.judgement);
+
+  console.log("\nAnnie says");
+  console.log(result.spokenResponse);
+
+  return result;
 }

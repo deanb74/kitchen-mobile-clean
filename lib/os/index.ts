@@ -4,3 +4,6 @@ export * from "./knowledge/knowledgeStore";
 export * from "./routing/knowledgeRouter";
 export * from "./knowledge/testing/inMemoryKnowledgeStore";
 export * from "./hq/testing/mockHospitalityHQ";
+export * from "./knowledge/applicability";
+export * from "./knowledge/packages";
+export * from "./context";

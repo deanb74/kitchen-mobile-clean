@@ -1,7 +1,7 @@
 export const AnnieLifecycle = [
   "Interviewed",
   "Hired",
-  "Downloaded",
+  "Arrived",
   "Inducted",
   "First day",
   "Starts helping",

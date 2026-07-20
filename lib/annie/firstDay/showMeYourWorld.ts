@@ -1,7 +1,10 @@
 /**
  * Before I ask questions,
- * I'd love to see your world.
+ * I'd love to see your venue.
  *
  * Every walk around helps me
- * understand your business better.
+ * understand how your venue works.
+ *
+ * The more I understand your venue,
+ * the more useful I can become.
  */

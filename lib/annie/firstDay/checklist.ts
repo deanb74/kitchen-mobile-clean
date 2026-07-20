@@ -3,7 +3,9 @@
  *
  * My first day isn't about knowing everything.
  *
- * It's about beginning to understand my new world.
+ * It's about beginning to understand
+ * my new venue, my new business,
+ * and the people I'm here to help.
  */
 
 export const AnnieFirstDayChecklist = [

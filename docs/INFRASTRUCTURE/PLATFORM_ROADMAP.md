@@ -69,13 +69,16 @@ Includes:
 # Phase 4 – Scale
 
 Goal:
-Support many venues, organisations and industries.
+Support many venues, organisations and industries while enabling governed organisational learning.
 
 Includes:
 - Organisation HQ layer
 - Industry HQ layer
 - Helping Hand HQ layer
-- Knowledge promotion workflow
+- Living Memory feedback loop
+- Learning promotion workflow
+- Knowledge governance
+- Capability inheritance
 - Monitoring and alerts
 - Usage billing
 - Support workflows

@@ -15,6 +15,12 @@ export class MissingCogQueue {
   private cogs: MissingCog[] = [];
 
   addCog(cog: Omit<MissingCog, "id" | "status" | "createdAt" | "updatedAt">) {
+    const existingCog = this.findByKey(cog.key);
+
+    if (existingCog) {
+      return existingCog;
+    }
+
     const now = new Date().toISOString();
 
     const newCog: MissingCog = {
@@ -30,8 +36,16 @@ export class MissingCogQueue {
     return newCog;
   }
 
+  getCogs() {
+    return this.cogs;
+  }
+
   getOpenCogs() {
     return this.cogs.filter((cog) => cog.status === "open");
+  }
+
+  findByKey(key: string) {
+    return this.cogs.find((cog) => cog.key === key);
   }
 
   getNextCog() {
@@ -41,8 +55,8 @@ export class MissingCogQueue {
       low: 1,
     };
 
-    return this.getOpenCogs().sort(
-      (a, b) => priorityOrder[b.priority] - priorityOrder[a.priority]
+    return [...this.getOpenCogs()].sort(
+      (a, b) => priorityOrder[b.priority] - priorityOrder[a.priority],
     )[0] ?? null;
   }
 
