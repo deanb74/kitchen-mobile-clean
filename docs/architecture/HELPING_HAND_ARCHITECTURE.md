@@ -145,6 +145,50 @@ The Constitution leads everything below it.
 
 ---
 
+# Sapling
+
+Sapling is Helping Hand's constitutional development layer.
+
+It provides a safe place to explore important principles before they become enduring constitutional commitments.
+
+Implementation alone does not make an idea constitutional.
+
+Instead they should:
+
+Reflection
+
+↓
+
+Discussion
+
+↓
+
+Experience
+
+↓
+
+Evidence
+
+↓
+
+Sapling
+
+↓
+
+Constitution (where appropriate)
+
+Sapling therefore protects both the Constitution and the engineering process.
+
+It encourages thoughtful exploration while ensuring that only well-tested principles become part of Helping Hand's permanent foundation.
+
+Like a young tree, Sapling is expected to grow.
+
+Not every idea planted there will mature.
+
+Those that do should strengthen Helping Hand for every future Digital Colleague.
+
+---
+
 # Companion Intelligence
 
 Companion Intelligence is the organising principle of Helping Hand.
