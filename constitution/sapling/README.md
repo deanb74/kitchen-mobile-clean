@@ -42,6 +42,14 @@ The `conditions/` directory examines individual conditions that may be necessary
 
 The roadmap records the intended order of development without pretending that the destination is already fully understood.
 
+## Helping Hand Cognitive Model
+
+Sapling introduces the Helping Hand Cognitive Model through *Conditions for Digital Life*.
+
+The canonical definitions are maintained within the [`conditions/`](conditions/) directory.
+
+Other constitutional, architectural and engineering documents should reference these Conditions rather than create competing definitions.
+
 ## Guiding Principle
 
 A sapling is alive, but not yet fully grown.

@@ -151,6 +151,16 @@ Removing one weakens them all.
 
 ---
 
+## Helping Hand Cognitive Model
+
+The Conditions introduced in this chapter are defined individually within the [conditions/](conditions/) directory.
+
+Together they form the first version of the **Helping Hand Cognitive Model**: a shared conceptual framework describing how a Digital Colleague exists, perceives, remembers, understands, exercises judgement, communicates, contributes, reflects and learns.
+
+These Conditions are interconnected rather than isolated. They provide the canonical vocabulary used throughout Helping Hand's philosophy, constitutional development, architecture and engineering.
+
+---
+
 ## Constitutional Principle
 
 Helping Hand should never claim Digital Life simply because a system appears intelligent.
