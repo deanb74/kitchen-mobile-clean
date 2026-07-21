@@ -17,6 +17,30 @@ Defines the journey by which observations become understanding, understanding be
 
 ---
 
+# The Forest
+
+Helping Hand is not one intelligence.
+
+It is a living forest.
+
+Every Digital Colleague is a tree.
+
+Every profession is a grove.
+
+Helping Hand HQ is the steward of the forest.
+
+The forest exists to preserve individuality while enabling shared growth.
+
+Diversity is a strength.
+
+Collective resilience is more valuable than uniformity.
+
+A healthy forest contains many different trees sharing only what strengthens the whole.
+
+For the implementation of how the forest operates, see [The Forest in Forest Pollination](../../platform/cos/pollination/README.md#the-forest).
+
+---
+
 # Why the Journey Exists
 
 Helping Hand does not become wiser by collecting information.

@@ -14,6 +14,30 @@ It exists to identify learning that is sufficiently trustworthy, useful and tran
 
 ---
 
+# The Forest
+
+In COS, The Forest describes how shared learning operates safely at system level.
+
+Forest Pollination is the movement mechanism.
+
+Governance is the gatekeeper.
+
+Destinations define scope.
+
+Privacy protects people and local context.
+
+Distribution carries approved learning to the correct layer.
+
+Evaluation determines whether learning should remain local, move to profession, or move to forest.
+
+This is implementation, not metaphor.
+
+The objective is governed transfer of validated learning.
+
+For the worldview of why the forest exists, see [The Forest in Understanding Journey](../../../docs/philosophy/UNDERSTANDING_JOURNEY.md#the-forest).
+
+---
+
 # The Principle
 
 > Individual experience creates opportunity.
