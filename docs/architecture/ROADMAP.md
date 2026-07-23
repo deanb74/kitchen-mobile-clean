@@ -12,7 +12,7 @@
 
 ## Governance
 
-- [ ] Architecture Principles
+- [x] HH-ARCH-001 Architecture Principles
 - [ ] Versioning Policy
 - [ ] Cross Referencing Standard
 - [ ] Change Control

@@ -18,6 +18,11 @@ Professional capability is added after the foundational architecture has been in
 6. Companion Operating System
 7. Living Memory
 
+## Current Released Standards
+
+- HH-ARCH-001 - Architecture Principles
+- HH-CB-001 - Companion Behaviour
+
 Together these documents describe what every Helping Hand Digital Colleague is, how it behaves, how it thinks and how it learns.
 
 See **DOCUMENT_REGISTER.md** for the authoritative list of architecture documents.
