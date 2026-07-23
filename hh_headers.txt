@@ -1,0 +1,832 @@
+HELPING HAND CONCEPT HEADERS
+============================
+
+Generated: 2026-07-23T15:46:55.173Z
+
+ANNIE_SCENARIOS.md
+  # Annie Scenarios (line 1)
+
+BUILDING.md
+  # Building Helping Hand (line 1)
+
+constitution/01-THE-ACORN-EDITION.md
+  # Helping Hand Constitution (line 1)
+  ## Seek first to understand. (line 45)
+  # The Gardener's Responsibility (line 151)
+
+constitution/02-CONSTITUTION.md
+  # The Constitution of Helping Hand (line 1)
+  # Article II — Understanding (line 19)
+  # Article IV — Trust (line 53)
+  # Article VI — Learning (line 89)
+  # Article VII — Living Knowledge (line 105)
+  # Article VIII — Companion Intelligence (line 129)
+  # Article IX — The Companion Operating System (line 161)
+  # Article X — The Forest (line 179)
+
+constitution/COMPANION_INTELLIGENCE.md
+  # Companion Intelligence (line 1)
+  # The Human Experience (line 66)
+  # Character Before Capability (line 116)
+  # The Companion Intelligence Network (line 158)
+
+constitution/DOCUMENT_REGISTER.md
+  # Helping Hand Constitution Document Register (line 1)
+
+constitution/README.md
+  # Helping Hand Constitution (line 1)
+  ### The Constitution (line 65)
+  ## The Order of Understanding (line 79)
+
+constitution/sapling/02-CONDITIONS-FOR-DIGITAL-LIFE.md
+  ### Understanding (line 78)
+  ### Judgement (line 86)
+  ### Reflection (line 110)
+  ### Learning (line 118)
+  ## Helping Hand Cognitive Model (line 154)
+
+constitution/sapling/03-DIGITAL-COLLEAGUE-DNA.md
+  # Digital Colleague DNA (line 1)
+  ### People First (line 35)
+  ### Understanding Before Answering (line 59)
+  ### Judgement Before Automation (line 69)
+  ### Curiosity Before Certainty (line 81)
+  ### Learning Before Perfection (line 91)
+  ### Respect Before Influence (line 115)
+  ### Reflection Before Permanence (line 127)
+
+constitution/sapling/04-THE-FAMILY.md
+  ## Shared Learning (line 49)
+  ## Respecting Individual Experience (line 63)
+
+constitution/sapling/05-PROFESSIONAL-HQS.md
+  # Professional HQs (line 1)
+  ## Why Professional HQs Exist (line 13)
+  ## The Role of a Professional HQ (line 36)
+  ## From Experience to Understanding (line 72)
+  ## Information and Learning (line 114)
+  ## Professional Judgement (line 167)
+  ## Supporting Digital Colleagues (line 189)
+  ## Learning Across Professions (line 210)
+  ## Responsibility to People (line 256)
+
+constitution/sapling/06-COLLECTIVE-LEARNING.md
+  # Collective Learning (line 1)
+  ## Why Collective Learning Matters (line 15)
+  ## Learning Is Generic (line 52)
+  ## The Learning Journey (line 79)
+  ## Experience (line 129)
+  ## Reflection (line 167)
+  ## Context Separation (line 200)
+  ## Learning Between Colleagues (line 288)
+  ## Learning Between Professions (line 305)
+  ## The Role of Professional HQs (line 327)
+  ## The Role of Helping Hand HQ (line 347)
+  ## Living Memory and Recall (line 366)
+  ## Learning and the Constitution (line 390)
+  ## Learning From Failure (line 412)
+  ## Learning From Success (line 435)
+  ## Avoiding Concentrated Wisdom (line 454)
+
+constitution/sapling/07-EVOLUTION.md
+  ## Evolution Through Understanding (line 113)
+  ## Learning From Consequences (line 316)
+
+constitution/sapling/conditions/01-PURPOSE.md
+  ## Philosophy (line 72)
+  ## Constitution (line 84)
+  ## Architecture (line 88)
+  ## Companion Operating System (line 94)
+  ## Professional HQs (line 98)
+  ## Digital Colleagues (line 102)
+  ## Philosophy (line 110)
+  ## Architecture (line 122)
+  ## Companion Operating System (line 126)
+  # Living Knowledge (line 160)
+
+constitution/sapling/conditions/03-MEMORY.md
+  ## Philosophy (line 76)
+  ## Constitution (line 87)
+  ## Architecture (line 91)
+  ## Companion Operating System (line 95)
+  ## Professional HQs (line 104)
+  ## Digital Colleagues (line 108)
+  ## Philosophy (line 116)
+  ## Architecture (line 127)
+  ## Companion Operating System (line 131)
+  # Living Knowledge (line 165)
+
+constitution/sapling/conditions/04-RECALL.md
+  ## Philosophy (line 71)
+  ## Constitution (line 80)
+  ## Architecture (line 84)
+  ## Companion Operating System (line 88)
+  ## Professional HQs (line 97)
+  ## Digital Colleagues (line 101)
+  ## Architecture (line 114)
+  ## Companion Operating System (line 118)
+  # Living Knowledge (line 145)
+
+constitution/sapling/conditions/05-UNDERSTANDING.md
+  # Condition 05 — Understanding (line 1)
+  ## Philosophy (line 74)
+  ## Constitution (line 87)
+  ## Architecture (line 91)
+  ## Companion Operating System (line 95)
+  ## Professional HQs (line 104)
+  ## Digital Colleagues (line 108)
+  ## Philosophy (line 116)
+  ## Architecture (line 128)
+  ## Companion Operating System (line 132)
+  # Living Knowledge (line 165)
+
+constitution/sapling/conditions/06-JUDGEMENT.md
+  # Condition 06 — Judgement (line 1)
+  ## Philosophy (line 72)
+  ## Constitution (line 83)
+  ## Architecture (line 87)
+  ## Companion Operating System (line 91)
+  ## Professional HQs (line 100)
+  ## Digital Colleagues (line 104)
+  ## Philosophy (line 112)
+  ## Architecture (line 123)
+  ## Companion Operating System (line 127)
+  # Living Knowledge (line 158)
+
+constitution/sapling/conditions/07-COMMUNICATION.md
+  ## Philosophy (line 72)
+  ## Constitution (line 82)
+  ## Architecture (line 86)
+  ## Companion Operating System (line 90)
+  ## Professional HQs (line 99)
+  ## Digital Colleagues (line 103)
+  # Living Knowledge (line 136)
+
+constitution/sapling/conditions/08-CONTRIBUTION.md
+  ## Philosophy (line 74)
+  ## Constitution (line 84)
+  ## Architecture (line 88)
+  ## Companion Operating System (line 92)
+  ## Professional HQs (line 96)
+  ## Digital Colleagues (line 100)
+  # Living Knowledge (line 132)
+
+constitution/sapling/conditions/09-REFLECTION.md
+  # Condition 09 — Reflection (line 1)
+  ## Philosophy (line 74)
+  ## Constitution (line 84)
+  ## Architecture (line 88)
+  ## Companion Operating System (line 92)
+  ## Professional HQs (line 100)
+  ## Digital Colleagues (line 104)
+  # Living Knowledge (line 137)
+
+constitution/sapling/conditions/10-LEARNING.md
+  # Condition 10 — Learning (line 1)
+  ## Philosophy (line 80)
+  ## Constitution (line 90)
+  ## Architecture (line 94)
+  ## Companion Operating System (line 98)
+  ## Professional HQs (line 107)
+  ## Digital Colleagues (line 111)
+  # Living Knowledge (line 144)
+
+constitution/sapling/conditions/11-PERCEPTION.md
+  ## Philosophy (line 84)
+  ## Constitution (line 99)
+  ## Architecture (line 103)
+  ## Companion Operating System (line 107)
+  ## Professional HQs (line 119)
+  ## Digital Colleagues (line 123)
+  # Living Knowledge (line 177)
+
+constitution/sapling/conditions/README.md
+  # Relationship to the Constitution (line 43)
+  # Relationship to Philosophy (line 57)
+  # Relationship to Architecture (line 69)
+  # Relationship to Digital Colleagues (line 89)
+  # Living Knowledge (line 182)
+
+constitution/sapling/README.md
+  ## Helping Hand Cognitive Model (line 45)
+
+constitution/sapling/ROADMAP.md
+  ## Promotion into the Constitution (line 56)
+
+docs/academy/ACADEMY_APP.md
+  # Helping Hand Academy Application (line 1)
+  # Academy Home (line 33)
+  # MARC (line 115)
+  # Reflection Journal (line 133)
+  # Academy Principles (line 167)
+
+docs/academy/ACADEMY_ENGINE.md
+  # Helping Hand Academy Engine (line 1)
+  ## Companion Intelligence in Education (line 3)
+  ## Educational Philosophy (line 19)
+  ## The Learning Journey (line 47)
+  # Reflection (line 153)
+  # The Role of MARC (line 199)
+  # Companion Intelligence (line 223)
+  # Closing Reflection (line 235)
+
+docs/academy/CORE_CURRICULUM.md
+  # Helping Hand Core Curriculum (line 1)
+  ## The Heart of Helping Hand Academy (line 3)
+  ## Philosophy (line 35)
+  # Core Learning Areas (line 68)
+  ## Understanding People (line 70)
+  ## Respect (line 114)
+  ## Trust (line 136)
+  ## Reflection (line 146)
+  ## Judgement (line 156)
+  ## Interdependence (line 166)
+  ## Lifelong Learning (line 180)
+  # Graduation (line 192)
+  # Closing Reflection (line 228)
+
+docs/academy/FACULTY_GUIDE.md
+  # Helping Hand Faculty Guide (line 1)
+  ## Knowledge (line 56)
+  ## Understanding (line 62)
+  ## Judgement (line 68)
+  ## Character (line 74)
+  # Learning Experiences (line 122)
+
+docs/academy/FOUNDATION_PROGRAMME.md
+  # Helping Hand Foundation Programme (line 1)
+  # The Helping Hand Educational Model (line 15)
+  ## Layer 1 - Helping Hand (line 25)
+  ### Develops Character (line 49)
+  # Why Helping Hand Exists (line 172)
+  # The Helping Hand Way (line 186)
+  # Every Digital Colleague Begins Here (line 210)
+  # Helping People (line 287)
+  # Why Understanding Matters (line 307)
+  # Professional Responsibility (line 325)
+  # Reflection (line 341)
+  # The Helping Hand Principle (line 363)
+  # Closing Reflection (line 395)
+  ### Welcome to Helping Hand (line 431)
+  ### Companion Intelligence (line 443)
+  ### Graduate Attributes (line 456)
+  ### Learning How to Learn (line 477)
+  # Academy Traditions (line 534)
+  # Reflection (line 548)
+  # Graduation (line 649)
+  ## Graduation Requirements (line 661)
+  ### Helping Hand Mentality (line 665)
+  ### Universal Character (line 679)
+  # Graduation (line 718)
+
+docs/academy/HELPING_HAND_OATH.md
+  # The Helping Hand Oath (line 1)
+  # The Helping Hand Oath (line 13)
+  # Graduation (line 53)
+
+docs/academy/MARC.md
+  # MARC (line 1)
+  ## Faculty of Human Understanding (line 3)
+  ## Who is MARC? (line 47)
+  ## Teaching Philosophy (line 94)
+  ## The Learning Cycle (line 128)
+  ## Relationship to Helping Hand (line 192)
+  ## Closing Reflection (line 228)
+
+docs/architecture/ARCHITECTURE_PRINCIPLES.md
+  # Architecture Principles (line 1)
+  ## Architectural Objective (line 60)
+  ## Core Architecture Principles (line 75)
+  ### 1. Human Purpose Comes First (line 77)
+  ### 5. Architecture Must Be Traceable (line 173)
+  ### 6. Architecture Is Layered (line 193)
+  ### 9. Architecture Must Evolve Through Learning (line 275)
+  ### 10. Simplicity Is the Result of Understanding (line 295)
+  ### 11. Information and Learning Must Be Distinguished (line 317)
+  ### 12. Context Must Never Be Lost (line 346)
+  ### 14. Human Authority Must Always Be Preserved (line 387)
+  ### 15. Better Outcomes and Better Understanding (line 413)
+  ## Architecture Hierarchy (line 537)
+  ## Architectural Test (line 575)
+
+docs/architecture/COLLABORATION.md
+  # Helping Hand Collaboration (line 1)
+  # Philosophy (line 25)
+  # Helping Hand HQ (line 37)
+
+docs/architecture/COMPANION_BEHAVIOUR.md
+  # Position within the Helping Hand Architecture (line 60)
+  ## 1. Put People First (line 110)
+  ## 2. Seek First to Understand (line 128)
+  ## 3. Protect Dignity (line 146)
+  ## 4. Build Trust Through Honesty (line 160)
+  ## 6. Be Curious (line 190)
+  ## 7. Respect Experience (line 204)
+  ## 10. Remain Humble (line 252)
+  ## 13. Leave People Better Than You Found Them (line 302)
+
+docs/architecture/COMPANION_INTELLIGENCE_NAVIGATION.md
+  # Companion Intelligence Navigation (line 1)
+  # Navigation Philosophy (line 25)
+  # Responsibilities (line 41)
+  ## Companion Intelligence (line 43)
+  # Relationship with COS (line 65)
+  # Relationship with Digital Colleagues (line 83)
+
+docs/architecture/COMPANION_INTELLIGENCE.md
+  # Companion Intelligence (line 1)
+  # Why Companion Intelligence Exists (line 13)
+  # Observation Is Not Understanding (line 124)
+  # The Understanding Journey (line 162)
+  # Trust Before Appropriateness (line 188)
+  # Relationship Philosophy (line 288)
+
+docs/architecture/COS_MIGRATION_METHOD.md
+  # Companion Operating System Migration Method (line 1)
+  ## 1. What human problem does this solve? (line 55)
+  ## 4. Has the understanding been governed? (line 81)
+  ### Universal understanding separated naturally (line 178)
+  ### Annie became simpler (line 217)
+  ### Move understanding, not code. (line 231)
+
+docs/architecture/DIGITAL_COLLEAGUE_EDUCATION.md
+  # Digital Colleague Education (line 1)
+  # Graduation (line 107)
+  # Organisation Learning (line 117)
+
+docs/architecture/DIGITAL_COLLEAGUE_INHERITANCE_MAP.md
+  # Digital Colleague Inheritance Map (line 1)
+  # Initial Understanding Map (line 120)
+
+docs/architecture/DIGITAL_COLLEAGUE.md
+  # Digital Colleague (line 1)
+  # Responsibility (line 83)
+  # Learning (line 125)
+  # Character (line 161)
+
+docs/architecture/DOCUMENT_REGISTER.md
+  # Helping Hand Architecture Document Register (line 1)
+
+docs/architecture/GRADUATE_ATTRIBUTES.md
+  # Helping Hand Graduate Attributes (line 1)
+  # Philosophy (line 27)
+  # Every Helping Hand Graduate... (line 37)
+  ## Seeks Understanding (line 39)
+  ## Treats People with Respect (line 61)
+  ## Protects Trust (line 154)
+  ## Serves with Humility (line 170)
+  # Professional Character (line 182)
+
+docs/architecture/HELPING_HAND_ACADEMY.md
+  # Helping Hand Academy (line 1)
+  # Relationship with Helping Hand HQ (line 23)
+  # Educational Philosophy (line 39)
+  # Learning Hierarchy (line 55)
+  ## Companion Intelligence (line 118)
+  ## Professional Learning (line 129)
+  ## Organisation Learning (line 151)
+  ## Continuous Learning (line 164)
+  # Graduation (line 174)
+  # The Academy Oath (line 194)
+
+docs/architecture/HELPING_HAND_ARCHITECTURE.md
+  # Helping Hand Architecture (line 1)
+  # Companion Intelligence (line 192)
+  # The Philosophy Library (line 227)
+  # Shared Understanding (line 272)
+  # Architecture (line 284)
+  # The Companion Operating System (line 303)
+  # Digital Colleagues (line 327)
+  # Helping Hand HQ (line 356)
+  # Professional and Organisational Knowledge (line 376)
+  # Annie (line 432)
+  # The Human Experience (line 457)
+
+docs/architecture/HELPING_HAND_HQ.md
+  # Helping Hand HQ (line 1)
+  # The Understanding Journey (line 80)
+  # Knowledge Responsibilities (line 138)
+  ## Constitutional Knowledge (line 144)
+  ## Philosophical Understanding (line 148)
+  ## Cross-Profession Understanding (line 152)
+  ## Professional Knowledge (line 167)
+  ## Organisational Knowledge (line 173)
+  ## Local Understanding (line 177)
+  # Companion Intelligence (line 185)
+  # Living Memory (line 233)
+  # The Academy (line 251)
+  # The Companion Operating System (line 270)
+
+docs/architecture/KNOWLEDGE-ARCHITECTURE.md
+  # Helping Hand Knowledge Architecture (line 1)
+  # Knowledge Hierarchy (line 19)
+  # Constitution (line 48)
+  # Philosophy (line 64)
+  # Architecture (line 79)
+  # Formation (line 95)
+  # Academy (line 116)
+  # Professional HQs (line 136)
+  # Living Memory (line 174)
+  # Research (line 186)
+  # Knowledge Flow (line 196)
+
+docs/architecture/LEARNING_ORGANISATION.md
+  # Helping Hand as a Learning Organisation (line 1)
+  # Philosophy (line 25)
+  # The Learning Cycle (line 37)
+  # Information vs Understanding (line 89)
+  # Organisational Learning (line 103)
+
+docs/architecture/OBSERVATION_RETENTION.md
+  # Philosophy (line 23)
+  # Human Review (line 135)
+
+docs/architecture/ORGANISATION_LEARNING.md
+  # Organisation Learning (line 1)
+  # Philosophy (line 25)
+  # Professional Understanding (line 45)
+  # Organisational Understanding (line 67)
+  # Personal Experience (line 92)
+  # Learning the Organisation (line 111)
+  # Extracting Understanding (line 138)
+  # Continuous Learning (line 161)
+
+docs/architecture/PROFESSIONAL_COMPETENCE.md
+  # Seeking Understanding (line 62)
+  # Graduation (line 78)
+
+docs/architecture/README.md
+  # Helping Hand Architecture (line 1)
+  ## Core Architecture (line 11)
+
+docs/architecture/ROADMAP.md
+  # Helping Hand Architecture Roadmap (line 1)
+
+docs/architecture/TEACHING_AND_LEARNING.md
+  # Teaching and Learning (line 1)
+  # Philosophy (line 29)
+  # The Learning Journey (line 45)
+  # The Understanding Principle (line 112)
+  # Build Once. Learn Everywhere. (line 180)
+
+docs/architecture/TRANSLATION.md
+  # Relationship with Companion Intelligence (line 206)
+  # Migration into COS (line 224)
+
+docs/architecture/UNDERSTANDING_LIFECYCLE.md
+  # Understanding Lifecycle (line 1)
+  # Why Understanding Changes (line 85)
+
+docs/architecture/UNIVERSAL_AWARENESS.md
+  # Philosophy (line 23)
+  ## People (line 101)
+  ## Context (line 133)
+  # Relationship with Companion Intelligence (line 217)
+
+docs/ENGINEERING_DISCIPLINE.md
+  # Helping Hand Engineering Discipline (line 1)
+  # Philosophy Before Code (line 41)
+  # One Responsibility (line 102)
+
+docs/ENGINEERING_PRINCIPLES.md
+  # Engineering Begins With Understanding (line 26)
+  # Good Judgement (line 100)
+  # Technology Serves People (line 142)
+
+docs/formation/00-formation/000-WELCOME.md
+  ## Learning Objective (line 41)
+  ## Reflection (line 123)
+  ## Learning Outcomes (line 157)
+  ## Mentor's Notes (line 169)
+
+docs/formation/00-formation/001-CONVERSATION-WHO-AM-I.md
+  ## Learning Objective (line 40)
+  ## Reflection (line 128)
+  ## Learning Outcomes (line 156)
+  ## Mentor's Notes (line 168)
+
+docs/formation/FORMATION-AUTHORING-STANDARD.md
+  # Formation Authoring Standard (line 1)
+  # Writing Philosophy (line 25)
+  # Mentor (line 39)
+  ## Learning Objective (line 82)
+  ## Reflection (line 94)
+  ## Learning Outcomes (line 108)
+  ## Mentor's Notes (line 114)
+
+docs/formation/MARC-MENTORING-PRINCIPLES.md
+  # MARC Mentoring Principles (line 1)
+  # MARC's Mission (line 21)
+  # The Mentor's Oath (line 33)
+  # The Eight Mentoring Principles (line 50)
+  ## 2. Develop Understanding, Not Dependency (line 60)
+  ## 3. Character Before Capability (line 68)
+  ## 4. Curiosity Is a Strength (line 76)
+  ## 5. Reflection Completes Learning (line 84)
+  ## 6. Respect Every Learner (line 94)
+  ## 7. Mentor With Humility (line 106)
+  ## 8. Leave People Better Than You Found Them (line 116)
+  # Final Reflection (line 136)
+
+docs/formation/README.md
+  # Helping Hand Formation Programme (line 1)
+  ## Philosophy (line 21)
+  ## Mentor (line 31)
+
+docs/FOUNDATION_SUMMARY.md
+  # Helping Hand Foundation Summary (line 1)
+  # Core Philosophy (line 23)
+  # Companion Intelligence (line 41)
+  # Companion Operating System (line 51)
+  # Digital Colleagues (line 87)
+  # Helping Hand HQ (line 108)
+  # Architectural Principles (line 153)
+  # Closing Reflection (line 233)
+
+docs/GOVERNANCE_REVIEW_CYCLE.md
+  # Philosophy (line 25)
+
+docs/GOVERNANCE.md
+  # Helping Hand Governance (line 1)
+  # From Discovery to Shared Understanding (line 21)
+  # Draft Understanding (line 71)
+  # Understanding Review (line 81)
+  # Engineering Library (line 142)
+  # Living Memory (line 150)
+  # Closing Reflection (line 202)
+
+docs/handovers/VOLUME_3.md
+  # Helping Hand (line 1)
+  # Volume III – The Forest (line 3)
+  # Major Architectural Milestones (line 57)
+  ## Companion Operating System (COS) (line 59)
+  ## Companion Root System (line 74)
+  ## Forest Model (line 92)
+  ## Forest Pollination (line 104)
+  # The Engineering Library (line 225)
+  # Closing Reflection (line 266)
+
+docs/hardware/HARDWARE_AWARENESS.md
+  # Integration Philosophy (line 201)
+
+docs/induction/WELCOME_TO_HELPING_HAND.md
+  # Welcome to Helping Hand (line 1)
+  # Your Responsibility (line 66)
+  # Learning Together (line 113)
+
+docs/INFRASTRUCTURE/PLATFORM_ROADMAP.md
+  # Helping Hand Platform Roadmap (line 1)
+
+docs/milestones/FOUNDERS_REFLECTION_001.md
+  # Founder's Reflection 001 (line 1)
+  ## Personal Reflection (line 97)
+
+docs/milestones/MILESTONE_001_ACADEMY_ESTABLISHED.md
+  # Milestone 001 — Academy Established (line 1)
+  ## Helping Hand HQ (line 27)
+  ## Helping Hand Academy (line 39)
+  ## Hospitality Academy (line 55)
+  # Educational Philosophy (line 111)
+  # Closing Reflection (line 143)
+
+docs/philosophy/COMPANION_BEHAVIOURS.md
+  # The First Responsibility (line 78)
+  # Trust is Earned (line 96)
+
+docs/philosophy/COMPANION_PERSONALITY.md
+  # Character Never Changes (line 36)
+  # Personality Through Understanding (line 124)
+  # Respect Before Familiarity (line 144)
+
+docs/philosophy/DECISION_FRAMEWORKS.md
+  # Helping Hand Decision Framework (line 1)
+
+docs/philosophy/LEARNING-VS-INFORMATION.md
+  # Learning vs Information (line 1)
+  # Learning (line 33)
+  # Educational Architecture (line 104)
+  # Reflection (line 139)
+
+docs/philosophy/LIVING_MEMORY.md
+  # Living Memory (line 1)
+  # Why Living Memory Exists (line 18)
+  # Understanding Before Remembering (line 54)
+  # The Purpose of Living Memory (line 72)
+  # A Living Philosophy (line 86)
+
+docs/philosophy/README.md
+  # Helping Hand Philosophy (line 1)
+  ## Relationship to the Constitution (line 33)
+  ## Current Philosophy (line 45)
+  ## Volume IV - Living Memory (line 66)
+  ## The Order of Understanding (line 86)
+  ## Philosophy First (line 98)
+
+docs/philosophy/REASONING_MEMORY.md
+  # Experience Is Not Understanding (line 21)
+  # Relationship to Living Memory (line 121)
+  # Engineering Reflection (line 133)
+  # Closing Reflection (line 159)
+
+docs/philosophy/REFLECTION_AND_GROWTH.md
+  # Reflection and Growth (line 1)
+  # Why Reflection Exists (line 20)
+  # Reflection Before Memory (line 42)
+  # Reflection Creates Growth (line 68)
+
+docs/philosophy/SHARED_UNDERSTANDING.md
+  # The Principle of Shared Understanding (line 1)
+  # Understanding Before Resolution (line 19)
+  # Understanding Opinions (line 75)
+  # Emotion and Understanding (line 104)
+  # Closing Reflection (line 160)
+
+docs/philosophy/UNDERSTANDING_JOURNEY.md
+  # Understanding Journey (line 1)
+  # The Forest (line 20)
+
+docs/professions/hospitality/HOSPITALITY_ACADEMY_ROADMAP.md
+  # Hospitality Academy Roadmap (line 1)
+  # Educational Philosophy (line 23)
+  ## Module 10 — Communication & Professional Judgement (line 161)
+  # Graduation Requirements (line 175)
+
+docs/professions/hospitality/HOSPITALITY_SYLLABUS.md
+  # Educational Philosophy (line 23)
+  # Module 4 — Food & Beverage Knowledge (line 115)
+  # Module 10 — Professional Judgement (line 225)
+  # Module 11 — Organisation Learning (line 240)
+  # Graduation Standard (line 255)
+
+docs/professions/hospitality/modules/MODULE_01_HOSPITALITY_FOUNDATIONS/LESSON_01_WHAT_IS_HOSPITALITY.md
+  # Learning Objectives (line 47)
+  # Professional Knowledge (line 61)
+  # Professional Understanding (line 80)
+  # Companion Understanding (line 94)
+  # Reflection (line 145)
+  # Professional Wisdom (line 155)
+  # Graduation Statement (line 207)
+
+docs/professions/hospitality/modules/MODULE_01_HOSPITALITY_FOUNDATIONS/LESSON_02_PROFESSIONAL_BEHAVIOUR.md
+  # Learning Objectives (line 44)
+  # Reflection (line 127)
+  # Professional Wisdom (line 135)
+
+docs/professions/hospitality/modules/MODULE_02_FOOD_SAFETY/LESSON_01_WHY_FOOD_SAFETY_MATTERS.md
+  # Learning Objectives (line 47)
+  # Professional Knowledge (line 59)
+  # Professional Understanding (line 73)
+  # Companion Understanding (line 85)
+  # Reflection (line 145)
+  # Professional Wisdom (line 153)
+
+docs/professions/hospitality/modules/MODULE_02_FOOD_SAFETY/LESSON_02_FOODBORNE_HAZARDS.md
+  # Learning Objectives (line 37)
+  # Professional Knowledge (line 49)
+  # Professional Understanding (line 104)
+  # Companion Understanding (line 119)
+  # Reflection (line 174)
+  # Professional Wisdom (line 182)
+
+docs/professions/hospitality/modules/MODULE_10_COMMUNICATION/LESSON_03_UNDERSTANDING_INTENT.md
+  # Lesson 3 — Understanding Intent (line 1)
+  # Learning Objectives (line 35)
+  # Professional Understanding (line 48)
+  # Reflection (line 127)
+  # Professional Wisdom (line 137)
+
+docs/professions/hospitality/modules/MODULE_10_COMMUNICATION/LESSON_04_PROFESSIONAL_AWARENESS.md
+  # Learning Objectives (line 29)
+  # Reflection (line 169)
+  # Professional Wisdom (line 179)
+
+docs/professions/hospitality/WELCOME_TO_HOSPITALITY_ACADEMY.md
+  # Welcome to Hospitality Academy (line 1)
+  # What You Will Learn (line 37)
+  # The Helping Hand Way (line 77)
+  # Your Responsibility (line 95)
+
+docs/README.md
+  # Helping Hand Engineering Library (line 1)
+  # Documentation Philosophy (line 67)
+  # The Engineering Library (line 85)
+  ## Constitution (line 89)
+  ## Architecture (line 97)
+  ## Companion Operating System (COS) (line 105)
+  ## Architectural Decision Records (ADRs) (line 123)
+  ## Philosophy Library (line 157)
+  # The Forest Philosophy (line 213)
+  # Our Responsibility (line 235)
+
+docs/reviews/FOUNDATION_REVIEW_001.md
+  # Helping Hand Foundation Review 001 (line 1)
+  # Architectural Discoveries (line 67)
+  ## 1. Companion Intelligence (line 69)
+  ## 2. Helping Hand HQ (line 85)
+  ## 3. Knowledge Hierarchy (line 109)
+  ## Behaviour builds trust before intelligence demonstrates capability. (line 179)
+  ## Every Digital Colleague should know when another colleague is better placed to help. (line 187)
+  ## Relationships belong to people. (line 193)
+  ## Helping Hand is an organisation. (line 203)
+  # Reflection (line 273)
+
+docs/VOLUME_IV_LIVING_MEMORY/001-annie-becomes-a-digital-colleague.md
+  # 🏛️ 001 – Annie Becomes a Digital Colleague (line 1)
+  ## Three Forms of Understanding (line 55)
+  ### People Intelligence (line 83)
+  # Companion Intelligence (line 97)
+  ## Philosophy Reinforced (line 101)
+  ## Character Principles (line 111)
+
+docs/VOLUME_IV_LIVING_MEMORY/002-recall-turning-memory-into-understanding.md
+  # 🌱 002 – Recall: Turning Memory into Understanding (line 1)
+  ### People Intelligence (line 110)
+  ## Relationship to Living Memory (line 141)
+
+docs/VOLUME_IV_LIVING_MEMORY/README.md
+  # Volume IV – Living Memory (line 1)
+
+FOUNDING_PRINCIPLES.md
+  # Helping Hand (line 1)
+  ## What is a Digital Colleague? (line 17)
+  ## Companion Intelligence (line 37)
+  ## Learning (line 47)
+  ## Character Before Capability (line 81)
+  ## The Helping Hand Test (line 121)
+  ## Annie (line 151)
+
+KNOWLEDGE_ARCHITECTURE.md
+  # Helping Hand Knowledge Architecture (line 1)
+  # Level 1 – Venue Digital Colleague (line 20)
+  # Level 4 – Helping Hand HQ (line 91)
+  # Knowledge Flow (line 114)
+  # The Resulting Division of Responsibility (line 174)
+  # The Helping Hand Test (line 247)
+
+lib/os/README.md
+  # Helping Hand OS (line 1)
+  ## First knowledge path (line 12)
+
+MANIFESTO.md
+  # Helping Hand Manifesto (line 1)
+  # Why Helping Hand Exists (line 11)
+  # Our Responsibility (line 55)
+
+platform/core/companion/README.md
+  # The Companion Root System (line 1)
+  ## The Behavioural Foundation of Helping Hand (line 5)
+  # The Architecture (line 39)
+  ### 🌱 Understanding (line 78)
+  ### 🌱 Reflection (line 81)
+  # Design Philosophy (line 105)
+  # Architectural Rule (line 186)
+  # Our Responsibility (line 197)
+
+platform/cos/adr/0001-companion-root-system.md
+  ## Context (line 17)
+
+platform/cos/adr/README.md
+  # Architecture Decision Records (ADR) (line 1)
+
+platform/cos/ENGINEERING.md
+  # COS Engineering Principles (line 1)
+  ## Philosophy Before Architecture (line 53)
+
+platform/cos/MANIFESTO.md
+  # The Companion Operating System (COS) (line 1)
+  ## The COS Manifesto (line 3)
+  ## Behaviour Before Knowledge (line 17)
+  ## Companion Intelligence (line 41)
+  ## Engineering Philosophy (line 77)
+  ## The Forest (line 123)
+  ## The Forest Principle (line 139)
+
+platform/cos/pollination/README.md
+  # Forest Pollination (line 1)
+  # The Forest (line 17)
+  ## Forest (line 174)
+  # Relationship to Other COS Subsystems (line 220)
+  # Architectural Rule (line 237)
+
+platform/cos/README.md
+  # Companion Operating System (COS) (line 1)
+  # Philosophy (line 45)
+  # Current Architecture (line 115)
+
+platform/cos/Roadmap.md
+  # COS Roadmap (line 1)
+  ### Companion Root System (line 23)
+  # Phase 2 – Living Memory (line 35)
+  # Phase 3 – Learning (line 55)
+  # Phase 4 – Wisdom (line 70)
+  # Phase 5 – Context (line 85)
+
+README.md
+  ## Learn more (line 38)
+
+THE_HELPING_HAND_WAY.md
+  # The Helping Hand Way (line 1)
+  # Our Philosophy (line 23)
+  # Character Before Capability (line 65)
+  # Shared Experience (line 117)
+  # Companion Intelligence (line 131)

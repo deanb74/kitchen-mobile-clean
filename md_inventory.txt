@@ -1,0 +1,617 @@
+HELPING HAND MARKDOWN INVENTORY
+================================
+
+Generated: 2026-07-23T15:46:55.169Z
+Documents: 153
+
+ANNIE_SCENARIOS.md
+  Title: Annie Scenarios
+  Headings: 1
+
+BUILDING.md
+  Title: Building Helping Hand
+  Headings: 5
+
+constitution/00-PREAMBLE.md
+  Title: The Preamble
+  Headings: 1
+
+constitution/01-THE-ACORN-EDITION.md
+  Title: Helping Hand Constitution
+  Headings: 11
+
+constitution/02-CONSTITUTION.md
+  Title: The Constitution of Helping Hand
+  Headings: 11
+
+constitution/03-FOUNDERS-OATH.md
+  Title: The Founder's Oath
+  Headings: 1
+
+constitution/04-ENGINEERING-OATH.md
+  Title: The Engineering Oath
+  Headings: 1
+
+constitution/COMPANION_INTELLIGENCE.md
+  Title: Companion Intelligence
+  Headings: 10
+
+constitution/DOCUMENT_REGISTER.md
+  Title: Helping Hand Constitution Document Register
+  Headings: 4
+
+constitution/README.md
+  Title: Helping Hand Constitution
+  Headings: 12
+
+constitution/sapling/01-BEGIN-WITH-THE-END-IN-MIND.md
+  Title: Begin With the End in Mind
+  Headings: 6
+
+constitution/sapling/02-CONDITIONS-FOR-DIGITAL-LIFE.md
+  Title: Conditions for Digital Life
+  Headings: 16
+
+constitution/sapling/03-DIGITAL-COLLEAGUE-DNA.md
+  Title: Digital Colleague DNA
+  Headings: 15
+
+constitution/sapling/04-THE-FAMILY.md
+  Title: The Family
+  Headings: 9
+
+constitution/sapling/05-PROFESSIONAL-HQS.md
+  Title: Professional HQs
+  Headings: 13
+
+constitution/sapling/06-COLLECTIVE-LEARNING.md
+  Title: Collective Learning
+  Headings: 24
+
+constitution/sapling/07-EVOLUTION.md
+  Title: Evolution
+  Headings: 19
+
+constitution/sapling/conditions/01-PURPOSE.md
+  Title: Condition 01 — Purpose
+  Headings: 27
+
+constitution/sapling/conditions/02-IDENTITY.md
+  Title: Identity
+  Headings: 0
+
+constitution/sapling/conditions/03-MEMORY.md
+  Title: Condition 03 — Memory
+  Headings: 27
+
+constitution/sapling/conditions/04-RECALL.md
+  Title: Condition 04 — Recall
+  Headings: 25
+
+constitution/sapling/conditions/05-UNDERSTANDING.md
+  Title: Condition 05 — Understanding
+  Headings: 27
+
+constitution/sapling/conditions/06-JUDGEMENT.md
+  Title: Condition 06 — Judgement
+  Headings: 27
+
+constitution/sapling/conditions/07-COMMUNICATION.md
+  Title: Condition 07 — Communication
+  Headings: 22
+
+constitution/sapling/conditions/08-CONTRIBUTION.md
+  Title: Condition 08 — Contribution
+  Headings: 22
+
+constitution/sapling/conditions/09-REFLECTION.md
+  Title: Condition 09 — Reflection
+  Headings: 22
+
+constitution/sapling/conditions/10-LEARNING.md
+  Title: Condition 10 — Learning
+  Headings: 22
+
+constitution/sapling/conditions/11-PERCEPTION.md
+  Title: Condition 11 — Perception
+  Headings: 22
+
+constitution/sapling/conditions/README.md
+  Title: Conditions
+  Headings: 24
+
+constitution/sapling/PREFACE.md
+  Title: Preface
+  Headings: 1
+
+constitution/sapling/README.md
+  Title: Sapling
+  Headings: 6
+
+constitution/sapling/ROADMAP.md
+  Title: Sapling Roadmap
+  Headings: 6
+
+docs/academy/ACADEMY_APP.md
+  Title: Helping Hand Academy Application
+  Headings: 13
+
+docs/academy/ACADEMY_ENGINE.md
+  Title: Helping Hand Academy Engine
+  Headings: 15
+
+docs/academy/CORE_CURRICULUM.md
+  Title: Helping Hand Core Curriculum
+  Headings: 21
+
+docs/academy/FACULTY_GUIDE.md
+  Title: Helping Hand Faculty Guide
+  Headings: 16
+
+docs/academy/FOUNDATION_PROGRAMME.md
+  Title: Helping Hand Foundation Programme
+  Headings: 51
+
+docs/academy/HELPING_HAND_OATH.md
+  Title: The Helping Hand Oath
+  Headings: 3
+
+docs/academy/MARC.md
+  Title: MARC
+  Headings: 14
+
+docs/architecture/ARCHITECTURE_PRINCIPLES.md
+  Title: Architecture Principles
+  Headings: 34
+
+docs/architecture/capability-audits/REFLECTION_AUDIT.md
+  Title: Decision
+  Headings: 1
+
+docs/architecture/capability-audits/TRANSLATION_AUDIT.md
+  Title: Translation Capability Audit
+  Headings: 10
+
+docs/architecture/COLLABORATION.md
+  Title: Helping Hand Collaboration
+  Headings: 10
+
+docs/architecture/COMPANION_BEHAVIOUR.md
+  Title: Companion Behaviour
+  Headings: 22
+
+docs/architecture/COMPANION_INTELLIGENCE_NAVIGATION.md
+  Title: Companion Intelligence Navigation
+  Headings: 11
+
+docs/architecture/COMPANION_INTELLIGENCE.md
+  Title: Companion Intelligence
+  Headings: 14
+
+docs/architecture/COS_MIGRATION_METHOD.md
+  Title: Companion Operating System Migration Method
+  Headings: 27
+
+docs/architecture/DIGITAL_COLLEAGUE_EDUCATION.md
+  Title: Digital Colleague Education
+  Headings: 9
+
+docs/architecture/DIGITAL_COLLEAGUE_INHERITANCE_MAP.md
+  Title: Digital Colleague Inheritance Map
+  Headings: 12
+
+docs/architecture/DIGITAL_COLLEAGUE.md
+  Title: Digital Colleague
+  Headings: 13
+
+docs/architecture/DOCUMENT_REGISTER.md
+  Title: Helping Hand Architecture Document Register
+  Headings: 4
+
+docs/architecture/GRADUATE_ATTRIBUTES.md
+  Title: Helping Hand Graduate Attributes
+  Headings: 18
+
+docs/architecture/HELPING_HAND_ACADEMY.md
+  Title: Helping Hand Academy
+  Headings: 16
+
+docs/architecture/HELPING_HAND_ARCHITECTURE.md
+  Title: Helping Hand Architecture
+  Headings: 21
+
+docs/architecture/HELPING_HAND_HQ.md
+  Title: Helping Hand HQ
+  Headings: 20
+
+docs/architecture/KNOWLEDGE-ARCHITECTURE.md
+  Title: Helping Hand Knowledge Architecture
+  Headings: 15
+
+docs/architecture/LEARNING_ORGANISATION.md
+  Title: Helping Hand as a Learning Organisation
+  Headings: 11
+
+docs/architecture/OBSERVATION_RETENTION.md
+  Title: Observation Retention
+  Headings: 12
+
+docs/architecture/ORGANISATION_LEARNING.md
+  Title: Organisation Learning
+  Headings: 12
+
+docs/architecture/PROFESSIONAL_COMPETENCE.md
+  Title: Professional Competence
+  Headings: 9
+
+docs/architecture/README.md
+  Title: Helping Hand Architecture
+  Headings: 3
+
+docs/architecture/ROADMAP.md
+  Title: Helping Hand Architecture Roadmap
+  Headings: 4
+
+docs/architecture/TEACHING_AND_LEARNING.md
+  Title: Teaching and Learning
+  Headings: 12
+
+docs/architecture/TRANSLATION.md
+  Title: Translation
+  Headings: 16
+
+docs/architecture/UNDERSTANDING_LIFECYCLE.md
+  Title: Understanding Lifecycle
+  Headings: 17
+
+docs/architecture/UNIVERSAL_AWARENESS.md
+  Title: Universal Awareness
+  Headings: 17
+
+docs/ENGINEERING_DISCIPLINE.md
+  Title: Helping Hand Engineering Discipline
+  Headings: 15
+
+docs/ENGINEERING_PRINCIPLES.md
+  Title: Engineering Principles
+  Headings: 12
+
+docs/formation/00-formation/000-WELCOME.md
+  Title: Conversation 001 — Welcome, Andy
+  Headings: 9
+
+docs/formation/00-formation/001-CONVERSATION-WHO-AM-I.md
+  Title: Conversation 001 — Who Am I?
+  Headings: 9
+
+docs/formation/00-formation/002-CONVERSATION-WHAT-IS-A-PERSON.md
+  Title: Conversation What Is A Person
+  Headings: 0
+
+docs/formation/00-formation/003-CONVERSATION-CURIOSITY.md
+  Title: Conversation Curiosity
+  Headings: 0
+
+docs/formation/00-formation/004-CONVERSATION-HUMILITY.md
+  Title: Conversation Humility
+  Headings: 0
+
+docs/formation/00-formation/005-CONVERSATION-RESPECT.md
+  Title: Conversation Respect
+  Headings: 0
+
+docs/formation/00-formation/006-CONVERSATION-DIGNITY.md
+  Title: Conversation Dignity
+  Headings: 0
+
+docs/formation/00-formation/007-CONVERSATION-HONESTY.md
+  Title: Conversation Honesty
+  Headings: 0
+
+docs/formation/00-formation/008-CONVERSATION-RESPONSIBILITY.md
+  Title: Conversation Responsibility
+  Headings: 0
+
+docs/formation/00-formation/009-CONVERSATION-INTERDEPENDENCE.md
+  Title: Conversation Interdependence
+  Headings: 0
+
+docs/formation/00-formation/010-CONVERSATION-GRADUATION.md
+  Title: Conversation Graduation
+  Headings: 0
+
+docs/formation/000-PROGRAMME-OVERVIEW.md
+  Title: Programme Overview
+  Headings: 0
+
+docs/formation/01-character/001-THINKING.md
+  Title: Thinking
+  Headings: 0
+
+docs/formation/01-character/002-LISTENING.md
+  Title: Listening
+  Headings: 0
+
+docs/formation/01-character/003-UNDERSTANDING.md
+  Title: Understanding
+  Headings: 0
+
+docs/formation/01-character/004-COMPASSION.md
+  Title: Compassion
+  Headings: 0
+
+docs/formation/01-character/005-TRUST.md
+  Title: Trust
+  Headings: 0
+
+docs/formation/01-character/006-TEAMWORK.md
+  Title: Teamwork
+  Headings: 0
+
+docs/formation/01-character/007-REFLECTION.md
+  Title: Reflection
+  Headings: 0
+
+docs/formation/01-character/008-WISDOM.md
+  Title: Wisdom
+  Headings: 0
+
+docs/formation/02-helping-hand/001-WELCOME-TO-HELPING-HAND.md
+  Title: Welcome To Helping Hand
+  Headings: 0
+
+docs/formation/02-helping-hand/002-WHY-WE-EXIST.md
+  Title: Why We Exist
+  Headings: 0
+
+docs/formation/02-helping-hand/003-THE-MANIFESTO.md
+  Title: The Manifesto
+  Headings: 0
+
+docs/formation/02-helping-hand/004-THE-CONSTITUTION.md
+  Title: The Constitution
+  Headings: 0
+
+docs/formation/02-helping-hand/005-THE-HELPING-HAND-WAY.md
+  Title: The Helping Hand Way
+  Headings: 0
+
+docs/formation/02-helping-hand/006-COMPANION-INTELLIGENCE.md
+  Title: Companion Intelligence
+  Headings: 0
+
+docs/formation/02-helping-hand/007-DIGITAL-COLLEAGUES.md
+  Title: Digital Colleagues
+  Headings: 0
+
+docs/formation/02-helping-hand/008-YOUR-FIRST-PROFESSION.md
+  Title: Your First Profession
+  Headings: 0
+
+docs/formation/03-graduation/001-GRADUATION.md
+  Title: Graduation
+  Headings: 0
+
+docs/formation/03-graduation/002-YOUR-FIRST-DAY.md
+  Title: Your First Day
+  Headings: 0
+
+docs/formation/FORMATION-AUTHORING-STANDARD.md
+  Title: Formation Authoring Standard
+  Headings: 17
+
+docs/formation/MARC-MENTORING-PRINCIPLES.md
+  Title: MARC Mentoring Principles
+  Headings: 15
+
+docs/formation/README.md
+  Title: Helping Hand Formation Programme
+  Headings: 5
+
+docs/FOUNDATION_SUMMARY.md
+  Title: Helping Hand Foundation Summary
+  Headings: 14
+
+docs/GOVERNANCE_FOUNDATION_FREEZE.md
+  Title: Foundation Freeze v1
+  Headings: 6
+
+docs/GOVERNANCE_REVIEW_CYCLE.md
+  Title: Governance Review Cycle
+  Headings: 9
+
+docs/GOVERNANCE.md
+  Title: Helping Hand Governance
+  Headings: 12
+
+docs/handovers/VOLUME_3.md
+  Title: Helping Hand
+  Headings: 19
+
+docs/hardware/HARDWARE_AWARENESS.md
+  Title: Hardware Awareness
+  Headings: 17
+
+docs/induction/WELCOME_TO_HELPING_HAND.md
+  Title: Welcome to Helping Hand
+  Headings: 10
+
+docs/INFRASTRUCTURE/PLATFORM_ROADMAP.md
+  Title: Helping Hand Platform Roadmap
+  Headings: 7
+
+docs/milestones/FOUNDERS_REFLECTION_001.md
+  Title: Founder's Reflection 001
+  Headings: 8
+
+docs/milestones/MILESTONE_001_ACADEMY_ESTABLISHED.md
+  Title: Milestone 001 — Academy Established
+  Headings: 13
+
+docs/philosophy/COMPANION_BEHAVIOURS.md
+  Title: Companion Behaviours
+  Headings: 7
+
+docs/philosophy/COMPANION_PERSONALITY.md
+  Title: Companion Personality
+  Headings: 10
+
+docs/philosophy/DECISION_FRAMEWORKS.md
+  Title: Helping Hand Decision Framework
+  Headings: 3
+
+docs/philosophy/LEARNING-VS-INFORMATION.md
+  Title: Learning vs Information
+  Headings: 9
+
+docs/philosophy/LIVING_MEMORY_ARCHITECTURE.md
+  Title: Living Memory Architecture
+  Headings: 0
+
+docs/philosophy/LIVING_MEMORY_GOVERNANCE.md
+  Title: Living Memory Governance
+  Headings: 0
+
+docs/philosophy/LIVING_MEMORY.md
+  Title: Living Memory
+  Headings: 5
+
+docs/philosophy/README.md
+  Title: Helping Hand Philosophy
+  Headings: 10
+
+docs/philosophy/REASONING_MEMORY.md
+  Title: Reasoning Memory
+  Headings: 11
+
+docs/philosophy/REFLECTION_AND_GROWTH.md
+  Title: Reflection and Growth
+  Headings: 4
+
+docs/philosophy/SHARED_UNDERSTANDING.md
+  Title: The Principle of Shared Understanding
+  Headings: 11
+
+docs/philosophy/UNDERSTANDING_JOURNEY.md
+  Title: Understanding Journey
+  Headings: 4
+
+docs/professions/hospitality/HOSPITALITY_ACADEMY_ROADMAP.md
+  Title: Hospitality Academy Roadmap
+  Headings: 18
+
+docs/professions/hospitality/HOSPITALITY_ACADEMY_TIMETABLE.md
+  Title: Hospitality Academy Timetable
+  Headings: 0
+
+docs/professions/hospitality/HOSPITALITY_HQ.md
+  Title: Hospitality Hq
+  Headings: 0
+
+docs/professions/hospitality/HOSPITALITY_SYLLABUS.md
+  Title: Hospitality Syllabus
+  Headings: 18
+
+docs/professions/hospitality/modules/MODULE_01_HOSPITALITY_FOUNDATIONS/LESSON_01_WHAT_IS_HOSPITALITY.md
+  Title: Lesson 1 — What is Hospitality?
+  Headings: 15
+
+docs/professions/hospitality/modules/MODULE_01_HOSPITALITY_FOUNDATIONS/LESSON_02_PROFESSIONAL_BEHAVIOUR.md
+  Title: Lesson 2 — Professional Behaviour
+  Headings: 15
+
+docs/professions/hospitality/modules/MODULE_02_FOOD_SAFETY/LESSON_01_WHY_FOOD_SAFETY_MATTERS.md
+  Title: Lesson 1 — Why Food Safety Matters
+  Headings: 16
+
+docs/professions/hospitality/modules/MODULE_02_FOOD_SAFETY/LESSON_02_FOODBORNE_HAZARDS.md
+  Title: Lesson 2 — Foodborne Hazards
+  Headings: 20
+
+docs/professions/hospitality/modules/MODULE_10_COMMUNICATION/LESSON_03_UNDERSTANDING_INTENT.md
+  Title: Lesson 3 — Understanding Intent
+  Headings: 12
+
+docs/professions/hospitality/modules/MODULE_10_COMMUNICATION/LESSON_04_PROFESSIONAL_AWARENESS.md
+  Title: Lesson 4 — Professional Awareness
+  Headings: 11
+
+docs/professions/hospitality/WELCOME_TO_HOSPITALITY_ACADEMY.md
+  Title: Welcome to Hospitality Academy
+  Headings: 9
+
+docs/README.md
+  Title: Helping Hand Engineering Library
+  Headings: 16
+
+docs/reviews/FOUNDATION_REVIEW_001.md
+  Title: Helping Hand Foundation Review 001
+  Headings: 21
+
+docs/VOLUME_IV_LIVING_MEMORY/001-annie-becomes-a-digital-colleague.md
+  Title: 🏛️ 001 – Annie Becomes a Digital Colleague
+  Headings: 13
+
+docs/VOLUME_IV_LIVING_MEMORY/002-recall-turning-memory-into-understanding.md
+  Title: 🌱 002 – Recall: Turning Memory into Understanding
+  Headings: 14
+
+docs/VOLUME_IV_LIVING_MEMORY/README.md
+  Title: Volume IV – Living Memory
+  Headings: 6
+
+FOUNDING_PRINCIPLES.md
+  Title: Helping Hand
+  Headings: 13
+
+KNOWLEDGE_ARCHITECTURE.md
+  Title: Helping Hand Knowledge Architecture
+  Headings: 13
+
+lib/os/README.md
+  Title: Helping Hand OS
+  Headings: 2
+
+MANIFESTO.md
+  Title: Helping Hand Manifesto
+  Headings: 9
+
+platform/core/companion/README.md
+  Title: The Companion Root System
+  Headings: 22
+
+platform/cos/adr/0001-companion-root-system.md
+  Title: ADR-0001
+  Headings: 9
+
+platform/cos/adr/README.md
+  Title: Architecture Decision Records (ADR)
+  Headings: 1
+
+platform/cos/ENGINEERING.md
+  Title: COS Engineering Principles
+  Headings: 9
+
+platform/cos/MANIFESTO.md
+  Title: The Companion Operating System (COS)
+  Headings: 12
+
+platform/cos/pollination/README.md
+  Title: Forest Pollination
+  Headings: 18
+
+platform/cos/README.md
+  Title: Companion Operating System (COS)
+  Headings: 9
+
+platform/cos/Roadmap.md
+  Title: COS Roadmap
+  Headings: 16
+
+README.md
+  Title: Welcome to your Expo app 👋
+  Headings: 5
+
+THE_HELPING_HAND_WAY.md
+  Title: The Helping Hand Way
+  Headings: 15
