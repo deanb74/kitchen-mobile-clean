@@ -22,6 +22,7 @@ Professional capability is added after the foundational architecture has been in
 
 - HH-ARCH-001 - Architecture Principles
 - HH-CB-001 - Companion Behaviour
+- [Understanding Engine](UNDERSTANDING_ENGINE.md) — defines how Helping Hand transforms organised knowledge into contextual understanding that supports Companion Intelligence.
 
 Together these documents describe what every Helping Hand Digital Colleague is, how it behaves, how it thinks and how it learns.
 

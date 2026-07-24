@@ -1,8 +1,8 @@
 HELPING HAND MARKDOWN INVENTORY
 ================================
 
-Generated: 2026-07-23T15:46:55.169Z
-Documents: 153
+Generated: 2026-07-24T11:58:13.401Z
+Documents: 154
 
 ANNIE_SCENARIOS.md
   Title: Annie Scenarios
@@ -206,7 +206,7 @@ docs/architecture/DIGITAL_COLLEAGUE.md
 
 docs/architecture/DOCUMENT_REGISTER.md
   Title: Helping Hand Architecture Document Register
-  Headings: 4
+  Headings: 5
 
 docs/architecture/GRADUATE_ATTRIBUTES.md
   Title: Helping Hand Graduate Attributes
@@ -259,6 +259,10 @@ docs/architecture/TEACHING_AND_LEARNING.md
 docs/architecture/TRANSLATION.md
   Title: Translation
   Headings: 16
+
+docs/architecture/UNDERSTANDING_ENGINE.md
+  Title: Understanding Engine
+  Headings: 51
 
 docs/architecture/UNDERSTANDING_LIFECYCLE.md
   Title: Understanding Lifecycle

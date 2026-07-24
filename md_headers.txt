@@ -1,7 +1,7 @@
 HELPING HAND MARKDOWN HEADERS
 ===============================
 
-Generated: 2026-07-23T15:46:55.171Z
+Generated: 2026-07-24T11:58:13.402Z
 
 ANNIE_SCENARIOS.md
   # Annie Scenarios (line 1)
@@ -841,9 +841,10 @@ docs/architecture/DIGITAL_COLLEAGUE.md
 
 docs/architecture/DOCUMENT_REGISTER.md
   # Helping Hand Architecture Document Register (line 1)
-    ## Status Definitions (line 30)
-    ## Numbering Policy (line 42)
-    ## Versioning (line 56)
+    ## Proposed Documents (line 30)
+    ## Status Definitions (line 38)
+    ## Numbering Policy (line 50)
+    ## Versioning (line 64)
 
 docs/architecture/GRADUATE_ATTRIBUTES.md
   # Helping Hand Graduate Attributes (line 1)
@@ -1039,6 +1040,59 @@ docs/architecture/TRANSLATION.md
   # Relationship with Companion Intelligence (line 206)
   # Migration into COS (line 224)
   # Closing Principle (line 244)
+
+docs/architecture/UNDERSTANDING_ENGINE.md
+  # Understanding Engine (line 1)
+  # Purpose (line 16)
+  # Core Principle (line 27)
+  # Position within Helping Hand (line 48)
+  # Responsibility (line 82)
+  # The Helping Hand Understanding Cycle (line 101)
+  # Four Levels of Reasoning (line 144)
+    ## 1. Information (line 146)
+    ## 2. Knowledge (line 158)
+    ## 3. Understanding (line 170)
+    ## 4. Judgement (line 188)
+  # Inputs (line 207)
+  # Understanding Process (line 233)
+    ## 1. Identify the Purpose (line 235)
+    ## 2. Establish the Context (line 242)
+    ## 3. Locate Relevant Knowledge (line 257)
+    ## 4. Connect the Knowledge (line 266)
+    ## 5. Identify Uncertainty (line 279)
+    ## 6. Form an Understanding (line 292)
+    ## 7. Support Judgement (line 299)
+    ## 8. Learn from the Outcome (line 312)
+  # Outputs (line 327)
+  # Relationship with the Knowledge Index (line 347)
+  # Relationship with Companion Intelligence (line 368)
+    ## Understanding Engine (line 371)
+    ## Companion Intelligence (line 380)
+  # Relationship with the Companion Operating System (line 394)
+  # Relationship with Living Memory (line 416)
+  # Relationship with Professional HQs (line 433)
+  # Learning and Information (line 465)
+  # Architectural Principles (line 485)
+    ## Understand Before Answering (line 487)
+    ## Connect Before Concluding (line 492)
+    ## Context Before Generalisation (line 497)
+    ## Purpose Before Process (line 502)
+    ## Explain Before Recommending (line 507)
+    ## Question Before Assuming (line 512)
+    ## Evidence Before Confidence (line 517)
+    ## Reflection Before Learning (line 522)
+    ## Governance Before Inheritance (line 527)
+    ## People Before Technology (line 532)
+  # Explainability (line 539)
+  # Confidence and Uncertainty (line 554)
+  # Conflicting Knowledge (line 574)
+  # Authority (line 600)
+  # Boundaries (line 635)
+  # Initial Implementation Direction (line 652)
+  # Future Development (line 682)
+  # Measures of Success (line 702)
+  # Long-Term Vision (line 718)
+  # Closing Reflection (line 740)
 
 docs/architecture/UNDERSTANDING_LIFECYCLE.md
   # Understanding Lifecycle (line 1)

@@ -27,6 +27,14 @@ The identifier remains constant.
 
 ---
 
+## Proposed Documents
+
+| Title | File | Status | Description |
+|-------|------|--------|-------------|
+| Understanding Engine | `UNDERSTANDING_ENGINE.md` | Proposed | Defines how Helping Hand connects knowledge, context and experience to support judgement |
+
+---
+
 ## Status Definitions
 
 | Status | Meaning |

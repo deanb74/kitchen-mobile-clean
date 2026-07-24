@@ -23,3 +23,4 @@
 - Digital Colleague Specifications
 - Industry Frameworks
 - Learning Frameworks
+- Define the Understanding Engine that connects the Engineering Library, Knowledge Index, context and experience to support Companion Intelligence.

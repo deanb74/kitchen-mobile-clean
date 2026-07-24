@@ -1,7 +1,7 @@
 HELPING HAND CONCEPT HEADERS
 ============================
 
-Generated: 2026-07-23T15:46:55.173Z
+Generated: 2026-07-24T11:58:13.404Z
 
 ANNIE_SCENARIOS.md
   # Annie Scenarios (line 1)
@@ -472,6 +472,37 @@ docs/architecture/TEACHING_AND_LEARNING.md
 docs/architecture/TRANSLATION.md
   # Relationship with Companion Intelligence (line 206)
   # Migration into COS (line 224)
+
+docs/architecture/UNDERSTANDING_ENGINE.md
+  # Understanding Engine (line 1)
+  # Position within Helping Hand (line 48)
+  # Responsibility (line 82)
+  # The Helping Hand Understanding Cycle (line 101)
+  ## 2. Knowledge (line 158)
+  ## 3. Understanding (line 170)
+  ## 4. Judgement (line 188)
+  # Understanding Process (line 233)
+  ## 2. Establish the Context (line 242)
+  ## 3. Locate Relevant Knowledge (line 257)
+  ## 4. Connect the Knowledge (line 266)
+  ## 6. Form an Understanding (line 292)
+  ## 7. Support Judgement (line 299)
+  ## 8. Learn from the Outcome (line 312)
+  # Relationship with the Knowledge Index (line 347)
+  # Relationship with Companion Intelligence (line 368)
+  ## Understanding Engine (line 371)
+  ## Companion Intelligence (line 380)
+  # Relationship with the Companion Operating System (line 394)
+  # Relationship with Living Memory (line 416)
+  # Relationship with Professional HQs (line 433)
+  # Learning and Information (line 465)
+  # Architectural Principles (line 485)
+  ## Understand Before Answering (line 487)
+  ## Context Before Generalisation (line 497)
+  ## Reflection Before Learning (line 522)
+  ## People Before Technology (line 532)
+  # Conflicting Knowledge (line 574)
+  # Closing Reflection (line 740)
 
 docs/architecture/UNDERSTANDING_LIFECYCLE.md
   # Understanding Lifecycle (line 1)
