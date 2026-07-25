@@ -10,7 +10,9 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "test": "jest",
-    "knowledge": "node scripts/knowledge/build-knowledge.mjs"
+    "knowledge": "node scripts/knowledge/build-knowledge.mjs",
+    "knowledge:test-graph": "tsx scripts/test-knowledge-graph.ts",
+    "academy": "tsx scripts/academy/run-academy.ts"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
@@ -62,6 +64,7 @@
     "eslint-config-expo": "~10.0.0",
     "jest": "~29.7.0",
     "jest-expo": "~54.0.17",
+    "tsx": "^4.23.1",
     "typescript": "~5.9.2"
   },
   "private": true,
