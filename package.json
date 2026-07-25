@@ -16,6 +16,7 @@
     "knowledge:test-judgement": "tsx scripts/test-judgement-engine.ts",
     "knowledge:test-authority": "tsx scripts/test-authority-engine.ts",
     "knowledge:test-action": "tsx scripts/test-action-engine.ts",
+    "knowledge:test-execution": "tsx scripts/test-execution-engine.ts",
     "academy": "tsx scripts/academy/run-academy.ts"
   },
   "dependencies": {
