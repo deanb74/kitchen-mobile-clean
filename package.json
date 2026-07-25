@@ -12,6 +12,7 @@
     "test": "jest",
     "knowledge": "node scripts/knowledge/build-knowledge.mjs",
     "knowledge:test-graph": "tsx scripts/test-knowledge-graph.ts",
+    "knowledge:test-understanding": "tsx scripts/test-understanding-engine.ts",
     "academy": "tsx scripts/academy/run-academy.ts"
   },
   "dependencies": {
