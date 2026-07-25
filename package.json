@@ -14,6 +14,7 @@
     "knowledge:test-graph": "tsx scripts/test-knowledge-graph.ts",
     "knowledge:test-understanding": "tsx scripts/test-understanding-engine.ts",
     "knowledge:test-judgement": "tsx scripts/test-judgement-engine.ts",
+    "knowledge:test-authority": "tsx scripts/test-authority-engine.ts",
     "academy": "tsx scripts/academy/run-academy.ts"
   },
   "dependencies": {
