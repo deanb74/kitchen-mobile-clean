@@ -19,6 +19,7 @@ const register = async () => {
     const res = await axios.post(`${API}/register`, { email, password });
 
     await setStoredItem("token", res.data.token);
+    await setStoredItem("userId", String(res.data.user?.id || ""));
     await setStoredItem("role", res.data.user.role);
     await setStoredItem("siteId", String(res.data.user.siteId || ""));
     await setStoredItem("siteName", res.data.user.siteName || "");

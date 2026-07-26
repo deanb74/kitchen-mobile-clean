@@ -2,6 +2,89 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+## Companion Intelligence Core
+
+Companion Intelligence is the governed cognitive foundation of Helping Hand.
+
+Rather than optimising for autonomous decision making, Companion Intelligence optimises for trustworthy assistance through explicit understanding, judgement, authority, action, execution, reflection and learning.
+
+Every Digital Colleague inherits this cognitive foundation.
+
+New developers should read [docs/architecture/COMPANION-INTELLIGENCE-CORE.md](docs/architecture/COMPANION-INTELLIGENCE-CORE.md) first.
+
+The complete architectural reference is contained in [docs/architecture/COMPANION-INTELLIGENCE-CORE.md](docs/architecture/COMPANION-INTELLIGENCE-CORE.md).
+
+### Cognitive Responsibilities
+
+| Layer | Responsibility |
+| --- | --- |
+| Understanding | Explain |
+| Judgement | Choose |
+| Authority | Permit |
+| Action | Govern |
+| Execution | Record |
+| Reflection | Interpret |
+| Learning | Propose |
+| Knowledge Governance | Approve |
+| Knowledge | Remember |
+
+### Repository Structure
+
+```text
+docs/
+│
+├── architecture/
+│   ├── COMPANION-INTELLIGENCE-CORE.md
+│   ├── KNOWLEDGE-ARCHITECTURE.md
+│   ├── SYSTEM-ARCHITECTURE.md
+│   └── ...
+│
+├── philosophy/
+│   ├── MANIFESTO.md
+│   ├── CONSTITUTION.md
+│   ├── LEARNING-VS-INFORMATION.md
+│   └── ...
+│
+├── formation/
+│   ├── ...
+│
+└── engineering/
+   ├── ENGINEERING-LIBRARY.md
+   └── ...
+```
+
+```mermaid
+flowchart TD
+   E[Experience]
+
+   K[Knowledge]
+   U[Understanding]
+   J[Judgement]
+   AU[Authority]
+   AC[Action]
+   EX[Execution]
+   R[Reflection]
+   L[Learning]
+   GV[Knowledge<br/>Governance]
+   AK[Approved Knowledge]
+
+   T[Better understanding<br/>for tomorrow]
+
+   E --> K
+   E --> U
+   K --> U
+   U --> J
+   J --> AU
+   AU --> AC
+   AC --> EX
+   EX --> R
+   R --> L
+   L --> GV
+   GV --> AK
+   AK --> K
+   K --> T
+```
+
 ## Get started
 
 1. Install dependencies

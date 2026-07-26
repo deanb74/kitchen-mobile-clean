@@ -1,8 +1,8 @@
 HELPING HAND MARKDOWN INVENTORY
 ================================
 
-Generated: 2026-07-24T11:58:13.401Z
-Documents: 154
+Generated: 2026-07-24T13:14:40.015Z
+Documents: 157
 
 ANNIE_SCENARIOS.md
   Title: Annie Scenarios
@@ -496,9 +496,9 @@ docs/philosophy/SHARED_UNDERSTANDING.md
   Title: The Principle of Shared Understanding
   Headings: 11
 
-docs/philosophy/UNDERSTANDING_JOURNEY.md
-  Title: Understanding Journey
-  Headings: 4
+docs/philosophy/UNDERSTANDING_LIFECYCLE.md
+  Title: Understanding Lifecycle
+  Headings: 9
 
 docs/professions/hospitality/HOSPITALITY_ACADEMY_ROADMAP.md
   Title: Hospitality Academy Roadmap
@@ -552,6 +552,18 @@ docs/reviews/FOUNDATION_REVIEW_001.md
   Title: Helping Hand Foundation Review 001
   Headings: 21
 
+docs/understanding-journeys/001-WHY-DIGITAL-COLLEAGUES.md
+  Title: Understanding Journey 001
+  Headings: 49
+
+docs/understanding-journeys/README.md
+  Title: Understanding Journeys
+  Headings: 11
+
+docs/understanding-journeys/TEMPLATE.md
+  Title: Understanding Journey Template
+  Headings: 13
+
 docs/VOLUME_IV_LIVING_MEMORY/001-annie-becomes-a-digital-colleague.md
   Title: 🏛️ 001 – Annie Becomes a Digital Colleague
   Headings: 13
@@ -570,7 +582,7 @@ FOUNDING_PRINCIPLES.md
 
 KNOWLEDGE_ARCHITECTURE.md
   Title: Helping Hand Knowledge Architecture
-  Headings: 13
+  Headings: 11
 
 lib/os/README.md
   Title: Helping Hand OS

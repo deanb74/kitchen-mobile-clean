@@ -21,6 +21,7 @@ export default function LoginScreen() {
     console.log("LOGIN RESPONSE:", res.data); // 👈 debug
 
     await setStoredItem("token", res.data.token);
+    await setStoredItem("userId", String(res.data.user?.id || ""));
 
     // ✅ SAFE ROLE HANDLING
     const role = res.data.user?.role || "staff";

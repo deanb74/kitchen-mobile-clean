@@ -1,7 +1,7 @@
 HELPING HAND CONCEPT HEADERS
 ============================
 
-Generated: 2026-07-24T11:58:13.404Z
+Generated: 2026-07-24T13:14:40.019Z
 
 ANNIE_SCENARIOS.md
   # Annie Scenarios (line 1)
@@ -672,9 +672,12 @@ docs/philosophy/SHARED_UNDERSTANDING.md
   # Emotion and Understanding (line 104)
   # Closing Reflection (line 160)
 
-docs/philosophy/UNDERSTANDING_JOURNEY.md
-  # Understanding Journey (line 1)
-  # The Forest (line 20)
+docs/philosophy/UNDERSTANDING_LIFECYCLE.md
+  # Understanding Lifecycle (line 1)
+  # Relationship to Understanding Journeys (line 20)
+  # The Forest (line 44)
+  # Where Understanding Lives (line 192)
+  # Concurrent Experience (line 234)
 
 docs/professions/hospitality/HOSPITALITY_ACADEMY_ROADMAP.md
   # Hospitality Academy Roadmap (line 1)
@@ -761,6 +764,56 @@ docs/reviews/FOUNDATION_REVIEW_001.md
   ## Helping Hand is an organisation. (line 203)
   # Reflection (line 273)
 
+docs/understanding-journeys/001-WHY-DIGITAL-COLLEAGUES.md
+  # Understanding Journey 001 (line 1)
+  ## Why Digital Colleagues? (line 3)
+  # 2. Context (line 53)
+  # 3. Relevant Knowledge (line 90)
+  ## Helping Hand (line 93)
+  ## People Before Technology (line 98)
+  ## Digital Colleague (line 103)
+  ## Companion Intelligence (line 119)
+  ## Companion Operating System (line 129)
+  ## Character Before Capability (line 132)
+  ## Formation (line 137)
+  ## Living Memory (line 149)
+  ## Professional HQ (line 154)
+  ## Reflection (line 159)
+  # 4. Knowledge Connections (line 166)
+  ## Connection 1: People and Technology (line 169)
+  ## Connection 2: Capability and Character (line 180)
+  ## Connection 4: Answers and Understanding (line 216)
+  ## Connection 5: Features and Responsibilities (line 235)
+  ## Connection 6: Configuration and Formation (line 253)
+  ## Responsibility (line 309)
+  # 6. Understanding Formed (line 326)
+  # 7. Judgement Supported (line 365)
+  ## Architecture Decisions (line 373)
+  # 10. Reflection (line 428)
+  # 11. Learning Captured (line 456)
+  ## Generic Learning (line 458)
+  ## Helping Hand Learning (line 461)
+  ## Engineering Learning (line 466)
+  ## Governance Learning (line 469)
+  ## Communication Learning (line 472)
+
+docs/understanding-journeys/README.md
+  # Understanding Journeys (line 1)
+  ## Formation (line 39)
+  ## Academy (line 47)
+  ## Understanding Journeys (line 55)
+  # Relationship to the Engineering Library (line 92)
+
+docs/understanding-journeys/TEMPLATE.md
+  # Understanding Journey Template (line 1)
+  ## Context (line 17)
+  ## Relevant Knowledge (line 21)
+  ## Knowledge Connections (line 25)
+  ## Understanding Formed (line 33)
+  ## Judgement Supported (line 37)
+  ## Reflection (line 45)
+  ## Learning Captured (line 49)
+
 docs/VOLUME_IV_LIVING_MEMORY/001-annie-becomes-a-digital-colleague.md
   # 🏛️ 001 – Annie Becomes a Digital Colleague (line 1)
   ## Three Forms of Understanding (line 55)
@@ -788,11 +841,11 @@ FOUNDING_PRINCIPLES.md
 
 KNOWLEDGE_ARCHITECTURE.md
   # Helping Hand Knowledge Architecture (line 1)
-  # Level 1 – Venue Digital Colleague (line 20)
-  # Level 4 – Helping Hand HQ (line 91)
-  # Knowledge Flow (line 114)
-  # The Resulting Division of Responsibility (line 174)
-  # The Helping Hand Test (line 247)
+  # Level 4 – Helping Hand HQ (line 89)
+  # Knowledge Flow (line 112)
+  # The Resulting Division of Responsibility (line 133)
+  # The Helping Hand Test (line 206)
+  # Ownership of Understanding (line 228)
 
 lib/os/README.md
   # Helping Hand OS (line 1)

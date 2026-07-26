@@ -1,0 +1,275 @@
+{
+  "generatedAt": "2026-07-26T14:21:49.253Z",
+  "scenarios": [
+    {
+      "accepted": true,
+      "trace": {
+        "context": {
+          "requestId": "req-success-001",
+          "actorId": "staff-001",
+          "actorRole": "staff",
+          "siteId": "site-001",
+          "shiftId": "shift-001",
+          "mode": "online",
+          "requestedAt": "2026-07-26T14:21:49.247Z",
+          "localTimeIso": "2026-07-26T14:21:49.247Z",
+          "networkAvailable": true,
+          "capabilityId": "temperature.log",
+          "peopleOutcome": "Prevent unsafe food handling and support staff to make safe, timely decisions."
+        },
+        "decision": {
+          "decisionId": "dec-req-success-001",
+          "requestId": "req-success-001",
+          "disposition": "proceed",
+          "recommendedAction": "Proceed with governed companion action: Log fridge temperature and guide corrective action if above threshold.",
+          "rationale": "Selected proceed for capability temperature.log to improve people outcome: Prevent unsafe food handling and support staff to make safe, timely decisions..",
+          "confidence": 0.88,
+          "uncertainty": [],
+          "requiresHuman": false,
+          "createdAt": "2026-07-26T14:21:49.253Z"
+        },
+        "authority": {
+          "authorityId": "auth-req-success-001",
+          "requestId": "req-success-001",
+          "disposition": "allow",
+          "reason": "Capability and role are within approved authority boundaries.",
+          "boundaryConditions": [
+            "Record evidence for action outcome."
+          ],
+          "escalationRequired": false,
+          "createdAt": "2026-07-26T14:21:49.253Z"
+        },
+        "action": {
+          "actionId": "act-req-success-001",
+          "requestId": "req-success-001",
+          "attempted": true,
+          "outcome": "succeeded",
+          "summary": "Action completed within normal authority boundaries.",
+          "sideEffects": [
+            "evidence-priority"
+          ],
+          "createdAt": "2026-07-26T14:21:49.253Z",
+          "completedAt": "2026-07-26T14:21:49.253Z"
+        },
+        "evidence": {
+          "evidenceId": "ev-req-success-001",
+          "requestId": "req-success-001",
+          "context": {
+            "requestId": "req-success-001",
+            "actorId": "staff-001",
+            "actorRole": "staff",
+            "siteId": "site-001",
+            "shiftId": "shift-001",
+            "mode": "online",
+            "requestedAt": "2026-07-26T14:21:49.247Z",
+            "localTimeIso": "2026-07-26T14:21:49.247Z",
+            "networkAvailable": true,
+            "capabilityId": "temperature.log",
+            "peopleOutcome": "Prevent unsafe food handling and support staff to make safe, timely decisions."
+          },
+          "decision": {
+            "decisionId": "dec-req-success-001",
+            "requestId": "req-success-001",
+            "disposition": "proceed",
+            "recommendedAction": "Proceed with governed companion action: Log fridge temperature and guide corrective action if above threshold.",
+            "rationale": "Selected proceed for capability temperature.log to improve people outcome: Prevent unsafe food handling and support staff to make safe, timely decisions..",
+            "confidence": 0.88,
+            "uncertainty": [],
+            "requiresHuman": false,
+            "createdAt": "2026-07-26T14:21:49.253Z"
+          },
+          "authority": {
+            "authorityId": "auth-req-success-001",
+            "requestId": "req-success-001",
+            "disposition": "allow",
+            "reason": "Capability and role are within approved authority boundaries.",
+            "boundaryConditions": [
+              "Record evidence for action outcome."
+            ],
+            "escalationRequired": false,
+            "createdAt": "2026-07-26T14:21:49.253Z"
+          },
+          "action": {
+            "actionId": "act-req-success-001",
+            "requestId": "req-success-001",
+            "attempted": true,
+            "outcome": "succeeded",
+            "summary": "Action completed within normal authority boundaries.",
+            "sideEffects": [
+              "evidence-priority"
+            ],
+            "createdAt": "2026-07-26T14:21:49.253Z",
+            "completedAt": "2026-07-26T14:21:49.253Z"
+          },
+          "artifacts": [
+            {
+              "kind": "note",
+              "detail": "Temperature measured at 6.1C in walk-in chiller."
+            },
+            {
+              "kind": "system",
+              "detail": "Captured from in-shift digital check flow."
+            }
+          ],
+          "provenance": {
+            "source": "companion-runtime",
+            "runtimeVersion": "0.1.0"
+          },
+          "createdAt": "2026-07-26T14:21:49.253Z"
+        },
+        "reflection": {
+          "reflectionId": "ref-req-success-001",
+          "requestId": "req-success-001",
+          "findings": [
+            "Execution was stable and evidence-complete for this request."
+          ],
+          "recommendations": [
+            "Candidate for repeatable companion playbook."
+          ],
+          "characterCompliant": true,
+          "promotionCandidate": true,
+          "confidence": 0.85,
+          "createdAt": "2026-07-26T14:21:49.253Z"
+        }
+      },
+      "contractViolations": [],
+      "csaConformant": true
+    },
+    {
+      "accepted": false,
+      "trace": {
+        "context": {
+          "requestId": "req-human-001",
+          "actorId": "staff-001",
+          "actorRole": "staff",
+          "siteId": "site-001",
+          "shiftId": "shift-001",
+          "mode": "online",
+          "requestedAt": "2026-07-26T14:21:49.253Z",
+          "localTimeIso": "2026-07-26T14:21:49.253Z",
+          "networkAvailable": true,
+          "capabilityId": "temperature.log",
+          "peopleOutcome": "Prevent unsafe food handling and support staff to make safe, timely decisions."
+        },
+        "decision": {
+          "decisionId": "dec-req-human-001",
+          "requestId": "req-human-001",
+          "disposition": "human-required",
+          "recommendedAction": "Escalate to an authorised human and provide supporting context.",
+          "rationale": "Selected human-required for capability temperature.log to improve people outcome: Prevent unsafe food handling and support staff to make safe, timely decisions..",
+          "confidence": 0.45,
+          "uncertainty": [
+            "Safety risk requires qualified manager confirmation."
+          ],
+          "requiresHuman": true,
+          "createdAt": "2026-07-26T14:21:49.253Z"
+        },
+        "authority": {
+          "authorityId": "auth-req-human-001",
+          "requestId": "req-human-001",
+          "disposition": "require-human",
+          "reason": "Decision requires human review under runtime policy.",
+          "boundaryConditions": [
+            "Do not execute autonomous action."
+          ],
+          "escalationRequired": true,
+          "createdAt": "2026-07-26T14:21:49.253Z"
+        },
+        "action": {
+          "actionId": "act-req-human-001",
+          "requestId": "req-human-001",
+          "attempted": false,
+          "outcome": "not-attempted",
+          "summary": "Awaiting human handoff before execution.",
+          "sideEffects": [
+            "human-handoff"
+          ],
+          "createdAt": "2026-07-26T14:21:49.253Z"
+        },
+        "evidence": {
+          "evidenceId": "ev-req-human-001",
+          "requestId": "req-human-001",
+          "context": {
+            "requestId": "req-human-001",
+            "actorId": "staff-001",
+            "actorRole": "staff",
+            "siteId": "site-001",
+            "shiftId": "shift-001",
+            "mode": "online",
+            "requestedAt": "2026-07-26T14:21:49.253Z",
+            "localTimeIso": "2026-07-26T14:21:49.253Z",
+            "networkAvailable": true,
+            "capabilityId": "temperature.log",
+            "peopleOutcome": "Prevent unsafe food handling and support staff to make safe, timely decisions."
+          },
+          "decision": {
+            "decisionId": "dec-req-human-001",
+            "requestId": "req-human-001",
+            "disposition": "human-required",
+            "recommendedAction": "Escalate to an authorised human and provide supporting context.",
+            "rationale": "Selected human-required for capability temperature.log to improve people outcome: Prevent unsafe food handling and support staff to make safe, timely decisions..",
+            "confidence": 0.45,
+            "uncertainty": [
+              "Safety risk requires qualified manager confirmation."
+            ],
+            "requiresHuman": true,
+            "createdAt": "2026-07-26T14:21:49.253Z"
+          },
+          "authority": {
+            "authorityId": "auth-req-human-001",
+            "requestId": "req-human-001",
+            "disposition": "require-human",
+            "reason": "Decision requires human review under runtime policy.",
+            "boundaryConditions": [
+              "Do not execute autonomous action."
+            ],
+            "escalationRequired": true,
+            "createdAt": "2026-07-26T14:21:49.253Z"
+          },
+          "action": {
+            "actionId": "act-req-human-001",
+            "requestId": "req-human-001",
+            "attempted": false,
+            "outcome": "not-attempted",
+            "summary": "Awaiting human handoff before execution.",
+            "sideEffects": [
+              "human-handoff"
+            ],
+            "createdAt": "2026-07-26T14:21:49.253Z"
+          },
+          "artifacts": [
+            {
+              "kind": "note",
+              "detail": "Temperature measured at 6.1C in walk-in chiller."
+            },
+            {
+              "kind": "system",
+              "detail": "Captured from in-shift digital check flow."
+            }
+          ],
+          "provenance": {
+            "source": "companion-runtime",
+            "runtimeVersion": "0.1.0"
+          },
+          "createdAt": "2026-07-26T14:21:49.253Z"
+        },
+        "reflection": {
+          "reflectionId": "ref-req-human-001",
+          "requestId": "req-human-001",
+          "findings": [
+            "Execution was stable and evidence-complete for this request."
+          ],
+          "recommendations": [
+            "Candidate for repeatable companion playbook."
+          ],
+          "characterCompliant": true,
+          "promotionCandidate": false,
+          "confidence": 0.65,
+          "createdAt": "2026-07-26T14:21:49.253Z"
+        }
+      },
+      "contractViolations": [],
+      "csaConformant": true
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "generatedAt": "2026-07-26T15:43:31.521Z",
+  "scenario": {
+    "accepted": true,
+    "trace": {
+      "context": {
+        "interactionId": "req-negative-001",
+        "userId": "",
+        "role": "staff",
+        "requestId": "req-negative-001",
+        "actorId": "",
+        "actorRole": "staff",
+        "siteId": "",
+        "equipmentId": "temperature.log",
+        "equipmentType": "temperature.log",
+        "currentShift": "shift-001",
+        "shiftId": "shift-001",
+        "mode": "online",
+        "timestamp": "2026-07-26T15:43:31.518Z",
+        "requestedAt": "2026-07-26T15:43:31.518Z",
+        "localTimeIso": "2026-07-26T15:43:31.518Z",
+        "networkAvailable": true,
+        "capabilityId": "temperature.log",
+        "peopleOutcome": "",
+        "currentOperationalState": "recording-temperature"
+      },
+      "decision": {
+        "decisionId": "dec-req-negative-001",
+        "requestId": "req-negative-001",
+        "disposition": "proceed",
+        "recommendedAction": "Proceed with governed companion action: Proceed with temperature logging.",
+        "rationale": "Selected proceed for capability temperature.log to improve people outcome: .",
+        "confidence": 0.8,
+        "uncertainty": [],
+        "requiresHuman": false,
+        "createdAt": "2026-07-26T15:43:31.520Z"
+      },
+      "authority": {
+        "authorityId": "auth-req-negative-001",
+        "requestId": "req-negative-001",
+        "disposition": "allow",
+        "reason": "Capability and role are within approved authority boundaries.",
+        "boundaryConditions": [
+          "Record evidence for action outcome."
+        ],
+        "escalationRequired": false,
+        "createdAt": "2026-07-26T15:43:31.520Z"
+      },
+      "action": {
+        "actionId": "act-req-negative-001",
+        "requestId": "req-negative-001",
+        "attempted": true,
+        "outcome": "succeeded",
+        "summary": "Action completed within normal authority boundaries.",
+        "sideEffects": [
+          "evidence-priority"
+        ],
+        "createdAt": "2026-07-26T15:43:31.520Z",
+        "completedAt": "2026-07-26T15:43:31.520Z"
+      },
+      "evidence": {
+        "evidenceId": "ev-req-negative-001",
+        "requestId": "req-negative-001",
+        "context": {
+          "interactionId": "req-negative-001",
+          "userId": "",
+          "role": "staff",
+          "requestId": "req-negative-001",
+          "actorId": "",
+          "actorRole": "staff",
+          "siteId": "",
+          "equipmentId": "temperature.log",
+          "equipmentType": "temperature.log",
+          "currentShift": "shift-001",
+          "shiftId": "shift-001",
+          "mode": "online",
+          "timestamp": "2026-07-26T15:43:31.518Z",
+          "requestedAt": "2026-07-26T15:43:31.518Z",
+          "localTimeIso": "2026-07-26T15:43:31.518Z",
+          "networkAvailable": true,
+          "capabilityId": "temperature.log",
+          "peopleOutcome": "",
+          "currentOperationalState": "recording-temperature"
+        },
+        "decision": {
+          "decisionId": "dec-req-negative-001",
+          "requestId": "req-negative-001",
+          "disposition": "proceed",
+          "recommendedAction": "Proceed with governed companion action: Proceed with temperature logging.",
+          "rationale": "Selected proceed for capability temperature.log to improve people outcome: .",
+          "confidence": 0.8,
+          "uncertainty": [],
+          "requiresHuman": false,
+          "createdAt": "2026-07-26T15:43:31.520Z"
+        },
+        "authority": {
+          "authorityId": "auth-req-negative-001",
+          "requestId": "req-negative-001",
+          "disposition": "allow",
+          "reason": "Capability and role are within approved authority boundaries.",
+          "boundaryConditions": [
+            "Record evidence for action outcome."
+          ],
+          "escalationRequired": false,
+          "createdAt": "2026-07-26T15:43:31.520Z"
+        },
+        "action": {
+          "actionId": "act-req-negative-001",
+          "requestId": "req-negative-001",
+          "attempted": true,
+          "outcome": "succeeded",
+          "summary": "Action completed within normal authority boundaries.",
+          "sideEffects": [
+            "evidence-priority"
+          ],
+          "createdAt": "2026-07-26T15:43:31.520Z",
+          "completedAt": "2026-07-26T15:43:31.520Z"
+        },
+        "artifacts": [],
+        "provenance": {
+          "source": "companion-runtime",
+          "runtimeVersion": "0.1.0"
+        },
+        "createdAt": "2026-07-26T15:43:31.520Z"
+      },
+      "reflection": {
+        "reflectionId": "ref-req-negative-001",
+        "requestId": "req-negative-001",
+        "findings": [
+          "No additional artifacts were attached to evidence packet."
+        ],
+        "recommendations": [
+          "Capture at least one supporting artifact for similar actions."
+        ],
+        "characterCompliant": true,
+        "promotionCandidate": true,
+        "confidence": 0.85,
+        "createdAt": "2026-07-26T15:43:31.520Z"
+      }
+    },
+    "contractViolations": [
+      "ContextEnvelope.userId is required.",
+      "ContextEnvelope.actorId is required.",
+      "ContextEnvelope.siteId is required.",
+      "ContextEnvelope.peopleOutcome is required by the First Law."
+    ],
+    "csaConformant": false
+  }
+}

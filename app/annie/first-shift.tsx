@@ -1,4 +1,5 @@
-import { ScrollView } from "react-native";
+import { router } from "expo-router";
+import { Pressable, ScrollView, Text } from "react-native";
 import { ThemedText } from "../../components/themed-text";
 import { ThemedView } from "../../components/themed-view";
 
@@ -84,6 +85,27 @@ export default function AnnieFirstShift() {
         <ThemedText>
           {companionRootResponse}
         </ThemedText>
+
+        <Pressable
+          style={{
+            marginTop: 32,
+            backgroundColor: "#0A7CFF",
+            paddingVertical: 18,
+            borderRadius: 12,
+            alignItems: "center",
+          }}
+          onPress={() => router.push("/academy")}
+        >
+          <Text
+            style={{
+              color: "#fff",
+              fontSize: 18,
+              fontWeight: "700",
+            }}
+          >
+            Enter Helping Hand Academy
+          </Text>
+        </Pressable>
 
       </ThemedView>
     </ScrollView>

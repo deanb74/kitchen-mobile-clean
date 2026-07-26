@@ -13,6 +13,21 @@ export type OfflineAction =
       id: string;
       type: "logTemperature";
       payload: { fridge: string; value: string; type: string };
+      runtimeMeta?: {
+        interactionId: string;
+        userId: string;
+        role: string;
+        requestId: string;
+        siteId: string;
+        equipmentId: string;
+        equipmentType: string;
+        currentShift?: string;
+        peopleOutcome: string;
+        originalActionIntent: string;
+        originalAttemptedAt: string;
+        idempotencyKey: string;
+        currentOperationalState: string;
+      };
       createdAt: string;
     };
 

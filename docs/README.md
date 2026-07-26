@@ -20,6 +20,22 @@ Helping Hand uses this library, together with the Companion Operating System (CO
 
 The library is organised for understanding rather than navigation.
 
+New contributors should start with [architecture/COMPANION-INTELLIGENCE-CORE.md](architecture/COMPANION-INTELLIGENCE-CORE.md) before exploring other documents.
+
+## Companion Intelligence Responsibilities
+
+| Layer | Responsibility |
+| --- | --- |
+| Understanding | Explain |
+| Judgement | Choose |
+| Authority | Permit |
+| Action | Govern |
+| Execution | Record |
+| Reflection | Interpret |
+| Learning | Propose |
+| Knowledge Governance | Approve |
+| Knowledge | Remember |
+
 ---
 
 # Purpose

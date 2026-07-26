@@ -17,48 +17,46 @@ Knowledge should exist at the lowest sensible level and flow upwards through exp
 
 ---
 
-# Level 1 – Venue Digital Colleague
+# Level 1 – Venue Intelligence
 
-Examples:
-- Annie
-- Kev
-- Riley
+Every venue has its own operational intelligence.
 
-Owns:
-- Local memory
-- Local relationships
-- Local equipment
-- Local routines
-- Local layout
-- Local preferences
+Venue Intelligence represents everything the venue has learned about itself.
 
-Learns from:
-- People
-- Observation
-- Living Memory
-- Local systems
+This includes:
+
+- equipment history
+- maintenance history
+- local operating routines
+- venue layouts
+- supplier performance
+- recurring issues
+- venue-specific terminology
+- validated operational learning
+
+Venue Intelligence belongs to the venue, not to any individual Digital Colleague.
+
+Multiple Digital Colleagues contribute to and benefit from the same Venue Intelligence.
 
 ---
 
 # Level 2 – Organisation HQ (Optional)
 
-Examples:
-- Greene King HQ
-- Marston's HQ
-- Company HQ
+Organisation HQ exists for organisations operating multiple venues.
 
-Owns:
-- Company procedures
-- Company recipes
-- Brand standards
-- Internal training
-- Company best practice
+It provides:
 
-Learns from:
-- Every venue in the organisation
+- company procedures
+- organisational policies
+- menus
+- pricing
+- branding
+- organisational learning
+- cross-venue pattern recognition
 
-Teaches:
-- Every venue in the organisation
+Independent operators do not require an Organisation HQ.
+
+Their Digital Colleagues work directly with Venue Intelligence and Professional HQ.
 
 ---
 
@@ -113,61 +111,22 @@ Teaches:
 
 # Knowledge Flow
 
-Venue Digital Colleague
-        ↓
-Living Memory
-        ↓
+Helping Hand HQ
+        │
+        ▼
+Professional HQ
+        │
+        ▼
 Organisation HQ (optional)
-        ↓
-Profession HQ
-        ↓
-Helping Hand HQ
-
-Helping Hand HQ
-        ↓
-Profession HQ
-        ↓
-Organisation HQ (optional)
-        ↓
-Every Digital Colleague
-
-# Independent and Multi-Site Flow
-
-## Independent Venue
-
-Venue Digital Colleague
-        ↓
-Living Memory
-        ↓
-Profession HQ
-        ↓
-Helping Hand HQ
-
-Helping Hand HQ
-        ↓
-Profession HQ
-        ↓
-Venue Digital Colleague
-
-## Multi-Site Organisation
-
-Venue Digital Colleague
-        ↓
-Living Memory
-        ↓
-Organisation HQ
-        ↓
-Profession HQ
-        ↓
-Helping Hand HQ
-
-Helping Hand HQ
-        ↓
-Profession HQ
-        ↓
-Organisation HQ
-        ↓
-Every Venue Digital Colleague
+        │
+        ▼
+Venue Intelligence
+        │
+        ▼
+Digital Colleague
+        │
+        ▼
+People
 
 ---
 
@@ -263,3 +222,21 @@ people have to operate?
 □ Does it make this Digital Colleague wiser?
 
 □ Could the resulting understanding help future Digital Colleagues?
+
+---
+
+# Ownership of Understanding
+
+Helping Hand separates knowledge according to ownership.
+
+Personal understanding belongs to the relationship.
+
+Venue understanding belongs to the venue.
+
+Organisation understanding belongs to the organisation.
+
+Professional understanding belongs to the profession.
+
+Universal understanding belongs to Helping Hand.
+
+Understanding is only promoted upwards through validation.

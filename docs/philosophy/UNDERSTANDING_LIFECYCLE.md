@@ -1,11 +1,11 @@
-# Understanding Journey
+# Understanding Lifecycle
 
 **Status:** Canonical Philosophy
 
 **Volume:** IV – Living Memory
 
 **Purpose:**
-Defines the journey by which observations become understanding, understanding becomes memory, and memory becomes wisdom.
+Defines the governed lifecycle by which observations become understanding, understanding becomes memory, and memory becomes wisdom.
 
 ---
 
@@ -14,6 +14,30 @@ Defines the journey by which observations become understanding, understanding be
 > **Understanding grows through experience.**
 >
 > **Wisdom grows through reflection.**
+
+---
+
+# Relationship to Understanding Journeys
+
+The Understanding Lifecycle and Understanding Journeys serve different purposes.
+
+The Understanding Lifecycle defines how experience progresses through reflection, governance and memory until it may become shared wisdom.
+
+Understanding Journeys are worked examples that demonstrate how Companion Intelligence connects knowledge, context, uncertainty and principles to form understanding.
+
+```text
+Understanding Engine
+        ↓
+Forms contextual understanding
+
+Understanding Journeys
+        ↓
+Demonstrate reasoning in practice
+
+Understanding Lifecycle
+        ↓
+Governs what may become memory and wisdom
+```
 
 ---
 
@@ -41,7 +65,7 @@ For the implementation of how the forest operates, see [The Forest in Forest Pol
 
 ---
 
-# Why the Journey Exists
+# Why the Lifecycle Exists
 
 Helping Hand does not become wiser by collecting information.
 
@@ -59,20 +83,24 @@ Some understanding deserves to become memory.
 
 Only the most enduring understanding becomes shared wisdom.
 
-The Understanding Journey exists to ensure that Helping Hand grows deliberately rather than accidentally.
+The Understanding Lifecycle exists to ensure that Helping Hand grows deliberately rather than accidentally.
 
 Growth should never be automatic.
 
 Growth should always be earned.
 
+Anything proposed for enduring memory must continue through the Understanding Lifecycle.
+
 ---
 
-# The Journey
+# The Lifecycle
 
-Every piece of understanding follows the same journey.
+Every candidate piece of enduring understanding follows the same lifecycle.
 
 ```text
 Observation
+        ↓
+Context
         ↓
 Experience
         ↓
@@ -83,6 +111,8 @@ Understanding
 Candidate Memory
         ↓
 Reasoning
+        ↓
+Validation
         ↓
 Governance
         ↓
@@ -103,13 +133,33 @@ Observation asks:
 
 > *What happened?*
 
+Context asks:
+
+> *Who, where, when and why did it happen?*
+
+Experience asks:
+
+> *What was encountered or learned through participation?*
+
 Reflection asks:
 
 > *Why did it matter?*
 
+Understanding asks:
+
+> *What does this mean here?*
+
+Candidate Memory asks:
+
+> *Could this strengthen future judgement?*
+
 Reasoning asks:
 
 > *Do we understand it well enough?*
+
+Validation asks:
+
+> *Is it supported, repeatable and appropriately scoped?*
 
 Governance asks:
 
@@ -117,15 +167,15 @@ Governance asks:
 
 Living Memory asks:
 
-> *Will this strengthen future judgement?*
+> *How should this understanding remain available?*
 
 Forest Pollination asks:
 
-> *Who else could benefit from this understanding?*
+> *Who else could benefit from it?*
 
 Shared Understanding asks:
 
-> *How does this help every Digital Colleague?*
+> *How can it be inherited without losing context?*
 
 Wisdom asks:
 
@@ -136,3 +186,115 @@ Every transition is an act of judgement.
 Nothing progresses simply because time has passed.
 
 Helping Hand grows through disciplined understanding rather than automatic accumulation.
+
+---
+
+# Where Understanding Lives
+
+Understanding must remain within the scope in which it is valid.
+
+```text
+Personal understanding
+        ↓
+The individual relationship
+
+Venue understanding
+        ↓
+Venue Intelligence
+
+Organisational understanding
+        ↓
+Organisation HQ, where one exists
+
+Professional understanding
+        ↓
+Professional HQ
+
+Universal understanding
+        ↓
+Helping Hand HQ
+```
+
+Venue Intelligence exists for every venue.
+
+Organisation HQ is optional.
+
+Independent operators connect Venue Intelligence directly to Professional HQ.
+
+Multi-site organisations connect multiple Venue Intelligences through Organisation HQ.
+
+Understanding is promoted only when it has been appropriately validated.
+
+Knowledge moves upward through governance.
+
+Wisdom flows back downward through inheritance.
+
+---
+
+# Concurrent Experience
+
+A Digital Colleague may maintain many simultaneous relationships.
+
+Each conversation retains its own context.
+
+```text
+Many personal conversations
+        ↓
+Governed observations
+        ↓
+Shared Venue Intelligence
+        ↓
+Optional organisational learning
+        ↓
+Possible professional learning
+```
+
+Shared intelligence does not mean shared conversations.
+
+Every relationship remains personal.
+
+Only observations that are relevant, appropriately abstracted and authorised may contribute to collective understanding.
+
+Private conversations do not automatically become venue knowledge.
+
+Venue knowledge does not automatically become organisational knowledge.
+
+Organisation knowledge does not automatically become professional knowledge.
+
+Every transition follows the Understanding Lifecycle.
+
+---
+
+# The Direction of Growth
+
+Helping Hand grows in two directions simultaneously.
+
+Experience moves upward through the Understanding Lifecycle.
+
+Wisdom flows back downward through Helping Hand HQ, Professional HQ, Organisation HQ where one exists, Venue Intelligence and every Digital Colleague.
+
+```text
+People
+        ↓
+Experience
+        ↓
+Understanding
+        ↓
+Governed Memory
+        ↓
+Shared Wisdom
+        ↓
+Guidance
+        ↓
+Better Judgement
+        ↓
+Better Outcomes for People
+```
+
+---
+
+# Principle
+
+> Helping Hand does not collect experience merely to become more intelligent.
+>
+> It transforms experience into wisdom so that people can achieve better outcomes.

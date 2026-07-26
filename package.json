@@ -20,7 +20,9 @@
     "knowledge:test-reflection": "tsx scripts/test-reflection-engine.ts",
     "knowledge:test-governance": "tsx scripts/test-knowledge-governance-engine.ts",
     "knowledge:test-cycle": "tsx scripts/test-companion-intelligence-cycle.ts",
-    "academy": "tsx scripts/academy/run-academy.ts"
+    "academy": "tsx scripts/academy/run-academy.ts",
+    "companion:test-runtime": "tsx scripts/test-companion-runtime.ts",
+    "companion:test-runtime-negative": "tsx scripts/test-companion-runtime-negative.ts"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",

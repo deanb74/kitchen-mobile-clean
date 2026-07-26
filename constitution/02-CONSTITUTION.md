@@ -194,6 +194,26 @@ Helping Hand is not a product.
 
 Helping Hand is a living ecosystem built on trust, learning and shared understanding.
 
+---
+
+# Article XI — Capability Promotion and Inheritance Review
+
+Helping Hand recognises when understanding moves from local use to shared foundation.
+
+That transition is a constitutional event.
+
+**Capability Promotion** is the event in which a capability moves from created-for-one to available-for-all.
+
+**Inheritance Review** is the governance process that determines whether that promotion is justified.
+
+Capability Promotion should not occur by assumption.
+
+It should occur when evidence, boundary clarity and governed judgement show that a capability is ready to be shared.
+
+Inheritance Review protects local expression while enabling collective progress.
+
+No colleague should need to rediscover universal understanding that has already been governed, approved and inherited.
+
 ──────────────────────────────────────────────
 
 Helping Hand Constitution

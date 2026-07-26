@@ -34,6 +34,15 @@ export default function AcademyHome() {
           Begin Learning
         </Text>
       </Pressable>
+
+      <Pressable
+        style={[styles.button, styles.runtimeButton]}
+        onPress={() => router.push("/academy/runtime")}
+      >
+        <Text style={styles.buttonText}>
+          Test Andy and MARC
+        </Text>
+      </Pressable>
     </View>
   );
 }
@@ -88,6 +97,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#0A7CFF",
     paddingVertical: 18,
     borderRadius: 12,
+  },
+  runtimeButton: {
+    marginTop: 14,
+    backgroundColor: "#5B6472",
   },
   buttonText: {
     color: "#fff",
