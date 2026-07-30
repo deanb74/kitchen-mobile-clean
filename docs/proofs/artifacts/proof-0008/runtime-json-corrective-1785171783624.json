@@ -1,0 +1,140 @@
+{
+  "accepted": true,
+  "trace": {
+    "context": {
+      "interactionId": "corrective-1785171783624",
+      "userId": "4",
+      "role": "manager",
+      "actorId": "4",
+      "actorRole": "manager",
+      "requestId": "corrective-1785171783624",
+      "siteId": "2",
+      "equipmentId": "130 user-4",
+      "equipmentType": "workflow",
+      "mode": "online",
+      "timestamp": "2026-07-27T17:03:03.624Z",
+      "requestedAt": "2026-07-27T17:03:03.624Z",
+      "localTimeIso": "2026-07-27T17:03:03.624Z",
+      "networkAvailable": true,
+      "capabilityId": "corrective.action.complete",
+      "peopleOutcome": "Ensure corrective actions are completed safely and consistently to protect people and service quality.",
+      "currentOperationalState": "corrective-action-active"
+    },
+    "decision": {
+      "decisionId": "dec-corrective-1785171783624",
+      "requestId": "corrective-1785171783624",
+      "disposition": "proceed",
+      "recommendedAction": "Proceed with governed companion action: Complete corrective action ComplianceCorrectiveAction for 130 user-4: Escalated to refrigeration engineer, moved vulnerable stock, and scheduled urgent maintenance follow-up.",
+      "rationale": "Selected proceed for capability corrective.action.complete to improve people outcome: Ensure corrective actions are completed safely and consistently to protect people and service quality..",
+      "confidence": 0.88,
+      "uncertainty": [],
+      "requiresHuman": false,
+      "createdAt": "2026-07-27T17:03:03.624Z"
+    },
+    "authority": {
+      "authorityId": "auth-corrective-1785171783624",
+      "requestId": "corrective-1785171783624",
+      "disposition": "allow",
+      "reason": "Capability and role are within approved authority boundaries.",
+      "boundaryConditions": [
+        "Record evidence for action outcome."
+      ],
+      "escalationRequired": false,
+      "createdAt": "2026-07-27T17:03:03.624Z"
+    },
+    "action": {
+      "actionId": "act-corrective-1785171783624",
+      "requestId": "corrective-1785171783624",
+      "attempted": true,
+      "outcome": "succeeded",
+      "summary": "Corrective action recorded for compliance record 40.",
+      "sideEffects": [
+        "manager-review-required",
+        "follow-up-assignment-required"
+      ],
+      "createdAt": "2026-07-27T17:03:06.420Z",
+      "completedAt": "2026-07-27T17:03:06.420Z"
+    },
+    "evidence": {
+      "evidenceId": "ev-corrective-1785171783624",
+      "requestId": "corrective-1785171783624",
+      "context": {
+        "interactionId": "corrective-1785171783624",
+        "userId": "4",
+        "role": "manager",
+        "actorId": "4",
+        "actorRole": "manager",
+        "requestId": "corrective-1785171783624",
+        "siteId": "2",
+        "equipmentId": "130 user-4",
+        "equipmentType": "workflow",
+        "mode": "online",
+        "timestamp": "2026-07-27T17:03:03.624Z",
+        "requestedAt": "2026-07-27T17:03:03.624Z",
+        "localTimeIso": "2026-07-27T17:03:03.624Z",
+        "networkAvailable": true,
+        "capabilityId": "corrective.action.complete",
+        "peopleOutcome": "Ensure corrective actions are completed safely and consistently to protect people and service quality.",
+        "currentOperationalState": "corrective-action-active"
+      },
+      "decision": {
+        "decisionId": "dec-corrective-1785171783624",
+        "requestId": "corrective-1785171783624",
+        "disposition": "proceed",
+        "recommendedAction": "Proceed with governed companion action: Complete corrective action ComplianceCorrectiveAction for 130 user-4: Escalated to refrigeration engineer, moved vulnerable stock, and scheduled urgent maintenance follow-up.",
+        "rationale": "Selected proceed for capability corrective.action.complete to improve people outcome: Ensure corrective actions are completed safely and consistently to protect people and service quality..",
+        "confidence": 0.88,
+        "uncertainty": [],
+        "requiresHuman": false,
+        "createdAt": "2026-07-27T17:03:03.624Z"
+      },
+      "authority": {
+        "authorityId": "auth-corrective-1785171783624",
+        "requestId": "corrective-1785171783624",
+        "disposition": "allow",
+        "reason": "Capability and role are within approved authority boundaries.",
+        "boundaryConditions": [
+          "Record evidence for action outcome."
+        ],
+        "escalationRequired": false,
+        "createdAt": "2026-07-27T17:03:03.624Z"
+      },
+      "action": {
+        "actionId": "act-corrective-1785171783624",
+        "requestId": "corrective-1785171783624",
+        "attempted": true,
+        "outcome": "succeeded",
+        "summary": "Corrective action recorded for compliance record 40.",
+        "sideEffects": [
+          "manager-review-required",
+          "follow-up-assignment-required"
+        ],
+        "createdAt": "2026-07-27T17:03:06.420Z",
+        "completedAt": "2026-07-27T17:03:06.420Z"
+      },
+      "artifacts": [],
+      "provenance": {
+        "source": "companion-runtime",
+        "runtimeVersion": "0.1.0",
+        "schemaVersion": "1.0"
+      },
+      "createdAt": "2026-07-27T17:03:06.420Z"
+    },
+    "reflection": {
+      "reflectionId": "ref-corrective-1785171783624",
+      "requestId": "corrective-1785171783624",
+      "findings": [
+        "No additional artifacts were attached to evidence packet."
+      ],
+      "recommendations": [
+        "Capture at least one supporting artifact for similar actions."
+      ],
+      "characterCompliant": true,
+      "promotionCandidate": true,
+      "confidence": 0.85,
+      "createdAt": "2026-07-27T17:03:06.420Z"
+    }
+  },
+  "contractViolations": [],
+  "csaConformant": true
+}

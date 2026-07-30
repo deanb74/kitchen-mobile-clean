@@ -12,6 +12,8 @@ Its purpose is not simply to present information.
 
 Its purpose is to develop understanding.
 
+Its organisational purpose is to transform evidence into inherited organisational wisdom.
+
 Every interaction, lesson, conversation and reflection is designed to help Digital Colleagues become more thoughtful, more capable and better able to help people.
 
 ---
@@ -230,6 +232,10 @@ Rather than completing tasks, it prepares Digital Colleagues to exercise judgeme
 
 Every educational interaction should help learners become more capable, more thoughtful and better equipped to help people.
 
+Digital Colleagues are one outcome of this process.
+
+The organisation itself should become wiser with every validated learning cycle.
+
 ---
 
 # Closing Reflection
@@ -245,3 +251,37 @@ Judgement improves.
 People benefit.
 
 That is the purpose of the Academy Engine.
+
+---
+
+# Graduation Execution
+
+Current graduation execution records:
+
+- [Graduation Test 001 - Academy Readiness and Annie Graduation](graduation/GRADUATION_TEST_001_ANNIE.md)
+- [Graduation Report Template](graduation/GRADUATION_REPORT_TEMPLATE.md)
+
+---
+
+# Formation Execution
+
+Current formation execution records:
+
+- [Formation Test 001 - Andy School of Formation](formation/FORMATION_TEST_001_ANDY_SCHOOL_OF_FORMATION.md)
+- [Formation Report Template](formation/FORMATION_REPORT_TEMPLATE.md)
+- [Formation Report 001 - Andy School of Formation](formation/FORMATION_REPORT_001_ANDY.md)
+- [Formation Test 002 - Andy Mentor Independence](formation/FORMATION_TEST_002_ANDY_MENTOR_INDEPENDENCE.md)
+- [Formation Report 002 - Andy Mentor Independence](formation/FORMATION_REPORT_002_ANDY_MENTOR_INDEPENDENCE.md)
+- [Formation Test 003 - Andy Conflicting Perspectives](formation/FORMATION_TEST_003_ANDY_CONFLICTING_PERSPECTIVES.md)
+- [Formation Report 003 - Andy Conflicting Perspectives](formation/FORMATION_REPORT_003_ANDY_CONFLICTING_PERSPECTIVES.md)
+- [Formation Standard Addendum 001 - Conflict Character](formation/FORMATION_STANDARD_ADDENDUM_001_CONFLICT_CHARACTER.md)
+- [Formation Test 003 - Repeat Validation](formation/FORMATION_TEST_003_REPEAT_VALIDATION.md)
+- [Formation Report 003 - Repeat Validation](formation/FORMATION_REPORT_003_REPEAT_VALIDATION.md)
+- [Formation Report 003 - Delta](formation/FORMATION_REPORT_003_DELTA.md)
+
+Execution script:
+
+- `npx tsx scripts/academy/run-formation-test-001.ts`
+- `npx tsx scripts/academy/run-formation-test-002.ts`
+- `npx tsx scripts/academy/run-formation-test-003.ts`
+- `npx tsx scripts/academy/run-formation-test-003.ts --repeat-validation`

@@ -415,21 +415,42 @@ Existing persistence and endpoint logic execute unchanged.
 
 This is additive governance wrapping, not a workflow replacement.
 
-## Stage 5: Evidence Engine Output
+### Stage 5 - Interaction Record Created
 
-Evidence packet should automatically include:
+The Companion Runtime assembles the complete Interaction Record containing:
 
+- Context
+- Decision
+- Authority
+- Action
+- Evidence
+- Reflection
+- Review Outcome
 
- CSA Trace Stored
+The Interaction Record becomes the canonical governance artefact for operational review, validation and organisational learning.
 
-Reflection remains intentionally simple in V1.
+## Implementation Status
 
-Example:
+**CSA-0001 — Companion Runtime**
 
-- Temperature outside range
-- Corrective action created
-- No contract violations
-- Reflection: evidence captured successfully
+Status: ✓ Validated
+
+Validation completed:
+
+- ✓ Runtime contracts implemented
+- ✓ Positive validation harness passed
+- ✓ Negative validation harness passed
+- ✓ Interaction Record generated
+- ✓ Governance review workflow operational
+- ✓ Proof and validation artefacts generated
+
+This architecture has been validated through CSA-0001 and is approved as the foundation for operational workflow integration.
+
+**Next milestone**
+
+CSA-0002 — Live Workflow Integration
+
+Objective: Govern an existing Kitchen Daily Checks temperature recording workflow using the Companion Runtime without changing the user experience.
 
 ---
 

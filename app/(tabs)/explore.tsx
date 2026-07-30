@@ -1,97 +1,16 @@
-import { appendCompanionRuntimeTrace } from "@/lib/companionRuntimeTraceStore";
-import { CompanionOrchestrator } from "@/src/companion/CompanionOrchestrator";
-import type { CompanionRuntimeResult } from "@/src/companion/types";
-import NetInfo from "@react-native-community/netinfo";
+import {
+    temperatureAdapter,
+    type TemperatureInteractionRecordPreview,
+} from "@/src/companion/adapters/TemperatureAdapter";
 import axios from "axios";
 import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import { Button, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
-import { addToOfflineQueue, getOfflineQueueCount } from "../../lib/offlineQueue";
+import { getOfflineQueueCount } from "../../lib/offlineQueue";
 import { deleteStoredItem, getStoredItem } from "../../lib/storage";
 import { getSyncStatus, subscribeToSyncStatus } from "../../lib/syncStatus";
 
 const API = "http://192.168.0.183:3001";
-const companionRuntime = new CompanionOrchestrator();
-
-function buildTemperatureContextEnvelope(params: {
-  interactionId: string;
-  userId: string;
-  role: string;
-  siteId: string;
-  equipmentId: string;
-  equipmentType: string;
-  currentShift?: string;
-  peopleOutcome: string;
-  currentOperationalState: string;
-  timestamp: string;
-  networkAvailable: boolean;
-}) {
-  return {
-    interactionId: params.interactionId,
-    userId: params.userId,
-    role: params.role,
-    requestId: params.interactionId,
-    siteId: params.siteId,
-    equipmentId: params.equipmentId,
-    equipmentType: params.equipmentType,
-    currentShift: params.currentShift,
-    mode: params.networkAvailable ? ("online" as const) : ("offline" as const),
-    timestamp: params.timestamp,
-    localTimeIso: params.timestamp,
-    networkAvailable: params.networkAvailable,
-    capabilityId: "temperature.log",
-    peopleOutcome: params.peopleOutcome,
-    currentOperationalState: params.currentOperationalState,
-  };
-}
-
-function buildOfflineTemperatureMeta(params: {
-  contextEnvelope: ReturnType<typeof buildTemperatureContextEnvelope>;
-  idempotencyKey: string;
-  originalAttemptedAt: string;
-  originalActionIntent: string;
-}) {
-  return {
-    interactionId: params.contextEnvelope.interactionId,
-    userId: params.contextEnvelope.userId,
-    role: params.contextEnvelope.role,
-    requestId: params.contextEnvelope.requestId,
-    siteId: params.contextEnvelope.siteId,
-    equipmentId: params.contextEnvelope.equipmentId,
-    equipmentType: params.contextEnvelope.equipmentType,
-    currentShift: params.contextEnvelope.currentShift,
-    peopleOutcome: params.contextEnvelope.peopleOutcome,
-    originalActionIntent: params.originalActionIntent,
-    originalAttemptedAt: params.originalAttemptedAt,
-    idempotencyKey: params.idempotencyKey,
-    currentOperationalState: params.contextEnvelope.currentOperationalState,
-  };
-}
-
-function buildTemperatureDecisionSnapshot(params: {
-  equipment: string;
-  equipmentType: string;
-  observedTemperature: number;
-}) {
-  return {
-    intent: "TemperatureRecording" as const,
-    equipment: params.equipment,
-    observedTemperature: params.observedTemperature,
-    expectedRange: params.equipmentType === "freezer" ? "-18 to -15°C" : "0 to 5°C",
-    risk: params.equipmentType === "freezer"
-      ? params.observedTemperature > -15
-        ? "High"
-        : "Low"
-      : params.observedTemperature > 5
-        ? "High"
-        : "Low",
-    confidence: 0.99,
-    reason:
-      params.equipmentType === "freezer"
-        ? "Recorded temperature exceeds configured freezer operating range."
-        : "Recorded temperature exceeds configured safe operating range.",
-  };
-}
 
   function describeCorrectiveAction(status: string): string {
     if (status === "red") {
@@ -105,16 +24,6 @@ function buildTemperatureDecisionSnapshot(params: {
     return "No corrective action required";
   }
 
-  type InteractionRecordPreview = {
-    interactionId: string;
-    assistedBy: string;
-    submittedAt: string;
-    saveStatus: string;
-    contextEnvelope: ReturnType<typeof buildTemperatureContextEnvelope>;
-    decisionSnapshot: ReturnType<typeof buildTemperatureDecisionSnapshot>;
-    runtimeResult: CompanionRuntimeResult;
-  };
-
 export default function TemperaturesScreen() {
   const [fridge, setFridge] = useState("Fridge 1");
   const [temp, setTemp] = useState("");
@@ -122,7 +31,7 @@ export default function TemperaturesScreen() {
   const [logs, setLogs] = useState<any[]>([]);
   const [queueCount, setQueueCount] = useState(0);
   const [syncStatus, setSyncStatusState] = useState(getSyncStatus());
-    const [latestInteractionRecord, setLatestInteractionRecord] = useState<InteractionRecordPreview | null>(null);
+    const [latestInteractionRecord, setLatestInteractionRecord] = useState<TemperatureInteractionRecordPreview | null>(null);
     const [interactionRecordExpanded, setInteractionRecordExpanded] = useState(false);
 
   const handleUnauthorized = async () => {
@@ -162,125 +71,46 @@ export default function TemperaturesScreen() {
 
   const submitTemperature = async () => {
     try {
-      const payload = {
+      const result = await temperatureAdapter.submit({
         fridge,
         value: temp,
         type,
-      };
-
-      const [userId, actorRole, siteId, shiftId] = await Promise.all([
-        getStoredItem("userId"),
-        getStoredItem("role"),
-        getStoredItem("siteId"),
-        getStoredItem("shiftId"),
-      ]);
-
-      const net = await NetInfo.fetch();
-
-      const envelopeTimestamp = new Date().toISOString();
-      const contextEnvelope = buildTemperatureContextEnvelope({
-        interactionId: `temp-${Date.now()}`,
-        userId: userId || "unknown-user",
-        role: actorRole || "staff",
-        siteId: siteId || "unknown-site",
-        equipmentId: fridge,
-        equipmentType: type,
-        currentShift: shiftId || undefined,
-        peopleOutcome:
-          "Prevent unsafe food handling and support timely, safe operational decisions.",
-        currentOperationalState: net.isConnected
-          ? "temperature-entry-active"
-          : "temperature-queued-offline",
-        timestamp: envelopeTimestamp,
-        networkAvailable: net.isConnected === true,
+        getAuthHeaders,
       });
-      const decisionSnapshot = buildTemperatureDecisionSnapshot({
-        equipment: fridge,
-        equipmentType: type,
-        observedTemperature: Number(temp),
-      });
-      let completionStatus = "unknown";
 
-      if (!net.isConnected) {
-        const queuedAt = new Date().toISOString();
-        const idempotencyKey = `${Date.now()}-temp-${fridge}`;
-
-        await addToOfflineQueue({
-          id: idempotencyKey,
-          type: "logTemperature",
-          payload,
-          runtimeMeta: buildOfflineTemperatureMeta({
-            contextEnvelope,
-            idempotencyKey,
-            originalAttemptedAt: queuedAt,
-            originalActionIntent: `Log ${type} temperature for ${fridge} at ${temp}C`,
-          }),
-          createdAt: queuedAt,
-        });
-
+      if (result.mode === "queued-offline") {
         await loadQueueCount();
         alert("Offline: temperature queued for sync");
         setTemp("");
         return;
       }
 
-      const headers = await getAuthHeaders();
-      if (!headers) return;
+      if (result.mode === "auth-required") return;
 
-      const runtimeResult = await companionRuntime.runAroundAction(
-        {
-          requestId: contextEnvelope.interactionId,
-          actorId: contextEnvelope.userId,
-          actorRole: contextEnvelope.role,
-          siteId: contextEnvelope.siteId,
-          shiftId: contextEnvelope.currentShift,
-          capabilityId: "temperature.log",
-          prompt: `Log ${type} temperature for ${fridge} at ${temp}C`,
-          peopleOutcome:
-            "Prevent unsafe food handling and support timely, safe operational decisions.",
-          networkAvailable: true,
-          confidenceHint: 0.85,
-          uncertainty: [],
-          contextEnvelope,
-        },
-        async () => {
-          const res = await axios.post(`${API}/temperatures`, payload, { headers });
-          completionStatus = String(res.data.status || "unknown");
+      const { interactionRecord } = result;
+      const { saveStatus } = interactionRecord;
 
-          if (res.data.status === "red") {
-            alert("RED WARNING: Temperature is out of range");
-          } else if (res.data.status === "amber") {
-            alert("AMBER WARNING: Temperature is acceptable but outside optimum range");
-          } else {
-            alert("Temperature logged");
-          }
+      if (saveStatus === "red") {
+        alert("RED WARNING: Temperature is out of range");
+      } else if (saveStatus === "amber") {
+        alert("AMBER WARNING: Temperature is acceptable but outside optimum range");
+      } else {
+        alert("Temperature logged");
+      }
 
-          return {
-            attempted: true,
-            outcome: "succeeded" as const,
-            summary: `Temperature submission succeeded with status ${res.data.status || "unknown"}.`,
-            sideEffects: ["temperature-record-created"],
-          };
-        },
-      );
-
-      await appendCompanionRuntimeTrace(runtimeResult);
-
-      setLatestInteractionRecord({
-        interactionId: contextEnvelope.interactionId,
-        assistedBy: contextEnvelope.userId,
-        submittedAt: envelopeTimestamp,
-        saveStatus: completionStatus,
-        contextEnvelope,
-        decisionSnapshot,
-        runtimeResult,
-      });
+      setLatestInteractionRecord(interactionRecord);
       setInteractionRecordExpanded(true);
 
-      console.log("Decision Engine What is happening?:", decisionSnapshot);
+      console.log(
+        "Decision Engine What is happening?:",
+        interactionRecord.decisionSnapshot,
+      );
 
-      if (!runtimeResult.csaConformant) {
-        console.log("Companion runtime contract violations:", runtimeResult.contractViolations);
+      if (!interactionRecord.csaConformant) {
+        console.log(
+          "Companion runtime contract violations:",
+          interactionRecord.contractViolations,
+        );
       }
 
       setTemp("");
@@ -365,7 +195,7 @@ export default function TemperaturesScreen() {
               </Text>
               <Text style={styles.interactionRecordTitle}>View Interaction Record</Text>
               <Text style={styles.interactionRecordSubtitle}>
-                Review Outcome: Unreviewed
+                Review Outcome: {latestInteractionRecord.interactionRecord.reviewOutcome}
               </Text>
             </View>
             <Text style={styles.interactionRecordToggle}>
@@ -375,6 +205,22 @@ export default function TemperaturesScreen() {
 
           {interactionRecordExpanded && (
             <View style={styles.interactionRecordBody}>
+              <View style={styles.interactionRecordSection}>
+                <Text style={styles.interactionRecordSectionTitle}>Operational Event</Text>
+                <Text style={styles.interactionRecordText}>
+                  Type: {latestInteractionRecord.operationalEvent.type}
+                </Text>
+                <Text style={styles.interactionRecordText}>
+                  Actor: {latestInteractionRecord.operationalEvent.actor}
+                </Text>
+                <Text style={styles.interactionRecordText}>
+                  Venue: {latestInteractionRecord.operationalEvent.venue}
+                </Text>
+                <Text style={styles.interactionRecordText}>
+                  Outcome: {latestInteractionRecord.operationalEvent.outcome}
+                </Text>
+              </View>
+
               <View style={styles.interactionRecordSection}>
                 <Text style={styles.interactionRecordSectionTitle}>Context</Text>
                 <Text style={styles.interactionRecordText}>
@@ -422,10 +268,10 @@ export default function TemperaturesScreen() {
               <View style={styles.interactionRecordSection}>
                 <Text style={styles.interactionRecordSectionTitle}>Authority</Text>
                 <Text style={styles.interactionRecordText}>
-                  Status: {latestInteractionRecord.runtimeResult.trace.authority.disposition.toUpperCase()}
+                  Status: {latestInteractionRecord.interactionRecord.authority.disposition.toUpperCase()}
                 </Text>
                 <Text style={styles.interactionRecordText}>
-                  Reason: {latestInteractionRecord.runtimeResult.trace.authority.reason}
+                  Reason: {latestInteractionRecord.interactionRecord.authority.reason}
                 </Text>
               </View>
 
@@ -465,10 +311,10 @@ export default function TemperaturesScreen() {
                   Corrective action: {describeCorrectiveAction(latestInteractionRecord.saveStatus)}
                 </Text>
                 <Text style={styles.interactionRecordText}>
-                  Optional photo: {latestInteractionRecord.runtimeResult.trace.evidence.artifacts.some((artifact) => artifact.kind === "image") ? "Captured" : "Not captured"}
+                  Optional photo: {latestInteractionRecord.interactionRecord.evidence.artifacts.some((artifact) => artifact.kind === "image") ? "Captured" : "Not captured"}
                 </Text>
                 <Text style={styles.interactionRecordText}>
-                  Optional voice note: {latestInteractionRecord.runtimeResult.trace.evidence.artifacts.some((artifact) => artifact.kind === "audio") ? "Captured" : "Not captured"}
+                  Optional voice note: {latestInteractionRecord.interactionRecord.evidence.artifacts.some((artifact) => artifact.kind === "audio") ? "Captured" : "Not captured"}
                 </Text>
               </View>
 
@@ -490,7 +336,9 @@ export default function TemperaturesScreen() {
 
               <View style={styles.interactionRecordSection}>
                 <Text style={styles.interactionRecordSectionTitle}>Review Outcome</Text>
-                <Text style={styles.interactionRecordText}>Unreviewed</Text>
+                <Text style={styles.interactionRecordText}>
+                  {latestInteractionRecord.interactionRecord.reviewOutcome}
+                </Text>
               </View>
             </View>
           )}

@@ -17,7 +17,7 @@ export default function AcademyHome() {
       </View>
 
       <View style={styles.card}>
-        <Text style={styles.heading}>Today's Lesson</Text>
+        <Text style={styles.heading}>Today&apos;s Lesson</Text>
         <Text style={styles.lesson}>
           Why Do Professions Exist?
         </Text>

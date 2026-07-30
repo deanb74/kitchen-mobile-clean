@@ -38,7 +38,9 @@ Helping Hand
 │
 ├── Living Memory
 │
-└── Research
+├── Research
+│
+└── Institution
 ```
 
 Every document belongs to exactly one primary knowledge area.
@@ -190,6 +192,18 @@ Contains ideas that are not yet accepted as Helping Hand knowledge.
 Research is exploratory.
 
 Architecture is approved.
+
+---
+
+# Institution
+
+Records how Helping Hand itself evolves over time.
+
+Institution is where organisational maturity is documented and governed.
+
+It answers how principles become repeatable institutional standards.
+
+Institution protects continuity across founders, mentors and generations of Digital Colleagues.
 
 ---
 

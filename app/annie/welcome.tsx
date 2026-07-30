@@ -39,7 +39,7 @@ export default function AnnieWelcomeScreen() {
               alignItems: "center",
             }}
           >
-            <Text>Let's go</Text>
+            <Text>Let&apos;s go</Text>
           </Pressable>
         </View>
       </ScrollView>

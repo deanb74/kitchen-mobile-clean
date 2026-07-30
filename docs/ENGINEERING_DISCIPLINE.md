@@ -165,6 +165,42 @@ Not an afterthought.
 
 ---
 
+# Execution Evidence
+
+For reasoning capabilities, completion requires three artefacts:
+
+- Design: Why should this capability exist? (Theory and Architecture)
+- Implementation: How was it built? (Code)
+- Execution Evidence: What happened when it ran? (Runtime)
+
+Compilation alone is not sufficient.
+
+Behaviour must be demonstrated in runtime evidence.
+
+---
+
+# Runtime Learning Loop
+
+Reasoning capabilities should follow this loop:
+
+```text
+Theory
+        ↓
+Reasoning
+        ↓
+Implementation
+        ↓
+Execution Evidence
+        ↓
+Reflection
+        ↓
+Improvement
+```
+
+This keeps engineering aligned with Helping Hand's operating model.
+
+---
+
 # The Rule of Simplicity
 
 If architecture becomes more complicated after introducing a capability...

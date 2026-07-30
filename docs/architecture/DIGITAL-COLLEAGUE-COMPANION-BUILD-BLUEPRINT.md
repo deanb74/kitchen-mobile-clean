@@ -33,7 +33,7 @@ Local success must flow into promotion and inheritance review, not straight into
 1. Companion interaction layer
 
 
-When actions complete, auto-generate structured evidence records and attach documents, photos, and voice notes.
+When actions complete, auto-generate structured Interaction Records and attach documents, photos, and voice notes.
 
 5. Reflection engine
 
@@ -146,13 +146,13 @@ Implementation: character policy profile, behavioral guardrails, response tone r
 
 #### 6. Memory and Evidence Capabilities (Learning Safely)
 
- CSA Interaction Record Stored
+1. Interaction Record persistence
 	Capability: remember events, outcomes, and context for retrieval.
-	Implementation: structured event log schema with actor, intent, action, outcome, and timestamp.
+	Implementation: structured Interaction Record schema with actor, intent, action, outcome, and timestamp.
 
 2. Evidence generation
 	Capability: turn operations into auditable evidence automatically.
-	Implementation: attach photos, transcripts, notes, and system traces to each significant action.
+	Implementation: attach photos, transcripts, notes, and runtime traces (internal) mapped into the Interaction Record.
 
 3. Reflection and promotion
 	Capability: propose improvements from repeated evidence patterns.
@@ -190,7 +190,7 @@ Human-like behavior is not mainly about natural conversation. It is about reliab
 1. Human asks for help in context.
 2. Companion explains recommended action and why.
 3. Companion executes only if authority rules allow.
-4. Execution is logged as evidence.
+4. Execution produces an Interaction Record.
 5. Evidence is reviewed for promotion.
 6. Proven capability is inherited by future colleagues.
 
@@ -210,45 +210,72 @@ Companion Intelligence should reduce effort, not create it.
 Operational flow:
 
 Staff
+-> Temperature Entry
+-> Companion Orchestrator
+-> Context Envelope
+-> Decision Engine
+-> Authority Engine
+-> Existing Temperature Save
+-> Evidence Engine
+-> Reflection Engine
+-> Temperature Stored
 
 Plus:
 
+- Interaction Record Stored
+- Governance Evidence Available
 
 Stage 1. Intercept before save
 
 Intercept `recordTemperature(...)` (or equivalent boundary).
 
-Create Context Envelope before the existing save executes.
+Before the save executes, create a Context Envelope.
 
 Stage 2. Decision interpretation
 
-Decision Engine answers what is happening.
+Ask the Decision Engine what is happening.
 
-Example shape:
+Example V1 interpretation:
 
+- Reading type: Temperature
+- Equipment: Walk-in fridge
+- Expected range: 0-5C
+- Observed: 9.2C
+- Confidence: 99%
+- Reason: Temperature exceeds permitted range
 
 Stage 3. Authority assessment
 
-Authority answers:
+Authority answers two different questions:
 
+- Can this staff member record this event? (yes/no)
+- Can the companion close this issue autonomously? (yes/no)
 
 Example V1 outcome:
 
+- Record allowed: Yes
+- Auto-close allowed: No
+- Human corrective action required
 
 Stage 4. Existing save executes
 
 Existing save logic executes unchanged.
 
-Stage 5. Evidence engine output
+This is additive governance wrapping, not a workflow replacement.
 
-Automatically capture:
+Stage 5. Interaction Record created
 
+The Companion Runtime assembles the complete Interaction Record containing:
 
-Stage 6. Reflection (V1)
+- Context
+- Decision
+- Authority
+- Action
+- Evidence
+- Reflection
+- Review Outcome
 
-Keep reflection simple in V1.
-
-Example:
+The Interaction Record becomes the canonical governance artefact for operational review, validation and organisational learning.
 
 
 ## Closing Principle

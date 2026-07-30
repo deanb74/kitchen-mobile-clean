@@ -1,18 +1,18 @@
 import { useState } from "react";
 import {
-  Pressable,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
+    Pressable,
+    SafeAreaView,
+    ScrollView,
+    StyleSheet,
+    Text,
+    View,
 } from "react-native";
 import {
-  AndyDigitalColleague,
-  firstUncertaintyJourney,
-  JourneyRunner,
-  MarcMentor,
-  type JourneyResult,
+    AndyDigitalColleague,
+    candidate0FirstReasoningJourney,
+    JourneyRunner,
+    MarcMentor,
+    type JourneyResult,
 } from "../../lib/academy";
 
 type Speaker = "MARC" | "ANDY" | "ACADEMY";
@@ -56,7 +56,7 @@ export default function AcademyRuntimeScreen() {
 
   function beginJourney() {
     const journeyResult = academy.run(
-      firstUncertaintyJourney,
+      candidate0FirstReasoningJourney,
     );
 
     setResult(journeyResult);
@@ -73,8 +73,8 @@ export default function AcademyRuntimeScreen() {
         </Text>
 
         <Text style={styles.subtitle}>
-          MARC and Andy's first executable
-          learning experience.
+          Candidate 0 validation: governance-sensitive
+          reasoning conversation.
         </Text>
 
         <View style={styles.summaryCard}>

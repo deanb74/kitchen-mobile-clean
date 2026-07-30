@@ -256,6 +256,79 @@ Any critical safety or high-severity governance signal must remain visible and e
 
 ---
 
+# Operational Event Model
+
+Companion Intelligence uses one Operational Event model across workflows.
+
+This is the first formal event contract for runtime-to-governance handoff.
+
+Every Operational Event produces an Interaction Record with the canonical seven sections:
+
+- Context
+- Decision
+- Authority
+- Action
+- Evidence
+- Reflection
+- Review Outcome
+
+Example:
+
+Operational Event
+
+Type:
+Temperature Recording
+
+Actor:
+Chef
+
+Venue:
+Anne Arms
+
+Outcome:
+Completed
+
+One model.
+
+Many event types.
+
+Initial event taxonomy:
+
+- Temperature Recording
+- Cleaning Completed
+- Delivery Accepted
+- Equipment Fault Reported
+- Operational Communications
+- Managerial Instruction
+
+Every event type flows through the same governed cycle, evidence model and Interaction Record structure.
+
+## Operational Learning Loop
+
+The architectural learning loop is:
+
+Operational Event
+    -> Companion Runtime
+    -> Interaction Record
+    -> Venue Intelligence
+    -> Future Guidance
+    -> Better Operational Events
+    -> Operational Event (next cycle)
+
+This loop defines how operational reality becomes governed guidance and then returns as improved operation.
+
+Companion Intelligence is not only recording history. It is continuously improving future operation.
+
+This reflects the Helping Hand principle: help people achieve better outcomes today while building better understanding for tomorrow.
+
+Operational Communications should enter this loop as an Operational Event type.
+
+They are not a standalone messaging system in the architecture.
+
+They are governed operational inputs that must produce an Interaction Record and feed Venue Intelligence in the same way as other event types.
+
+---
+
 # Immutable Evidence Flow
 
 Evidence flow is append-only across the core.

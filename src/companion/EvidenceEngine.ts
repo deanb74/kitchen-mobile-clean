@@ -28,6 +28,7 @@ export class EvidenceEngine {
       provenance: {
         source: "companion-runtime",
         runtimeVersion: "0.1.0",
+        schemaVersion: "1.0",
       },
       createdAt: now,
     };

@@ -67,6 +67,7 @@ export type AcademyJourney = {
   id: string;
   title: string;
   openingStatement: string;
+  mode?: "uncertainty" | "candidate0";
 };
 
 export type JourneyResult = {

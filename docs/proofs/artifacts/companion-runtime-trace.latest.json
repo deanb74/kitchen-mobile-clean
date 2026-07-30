@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T15:43:32.285Z",
+  "generatedAt": "2026-07-27T12:10:14.479Z",
   "scenarios": [
     {
       "accepted": true,
@@ -17,9 +17,9 @@
           "currentShift": "shift-001",
           "shiftId": "shift-001",
           "mode": "online",
-          "timestamp": "2026-07-26T15:43:32.280Z",
-          "requestedAt": "2026-07-26T15:43:32.280Z",
-          "localTimeIso": "2026-07-26T15:43:32.280Z",
+          "timestamp": "2026-07-27T12:10:14.476Z",
+          "requestedAt": "2026-07-27T12:10:14.476Z",
+          "localTimeIso": "2026-07-27T12:10:14.476Z",
           "networkAvailable": true,
           "capabilityId": "temperature.log",
           "peopleOutcome": "Prevent unsafe food handling and support staff to make safe, timely decisions.",
@@ -34,7 +34,7 @@
           "confidence": 0.88,
           "uncertainty": [],
           "requiresHuman": false,
-          "createdAt": "2026-07-26T15:43:32.282Z"
+          "createdAt": "2026-07-27T12:10:14.478Z"
         },
         "authority": {
           "authorityId": "auth-req-success-001",
@@ -45,7 +45,7 @@
             "Record evidence for action outcome."
           ],
           "escalationRequired": false,
-          "createdAt": "2026-07-26T15:43:32.283Z"
+          "createdAt": "2026-07-27T12:10:14.478Z"
         },
         "action": {
           "actionId": "act-req-success-001",
@@ -56,8 +56,8 @@
           "sideEffects": [
             "evidence-priority"
           ],
-          "createdAt": "2026-07-26T15:43:32.283Z",
-          "completedAt": "2026-07-26T15:43:32.283Z"
+          "createdAt": "2026-07-27T12:10:14.479Z",
+          "completedAt": "2026-07-27T12:10:14.479Z"
         },
         "evidence": {
           "evidenceId": "ev-req-success-001",
@@ -75,9 +75,9 @@
             "currentShift": "shift-001",
             "shiftId": "shift-001",
             "mode": "online",
-            "timestamp": "2026-07-26T15:43:32.280Z",
-            "requestedAt": "2026-07-26T15:43:32.280Z",
-            "localTimeIso": "2026-07-26T15:43:32.280Z",
+            "timestamp": "2026-07-27T12:10:14.476Z",
+            "requestedAt": "2026-07-27T12:10:14.476Z",
+            "localTimeIso": "2026-07-27T12:10:14.476Z",
             "networkAvailable": true,
             "capabilityId": "temperature.log",
             "peopleOutcome": "Prevent unsafe food handling and support staff to make safe, timely decisions.",
@@ -92,7 +92,7 @@
             "confidence": 0.88,
             "uncertainty": [],
             "requiresHuman": false,
-            "createdAt": "2026-07-26T15:43:32.282Z"
+            "createdAt": "2026-07-27T12:10:14.478Z"
           },
           "authority": {
             "authorityId": "auth-req-success-001",
@@ -103,7 +103,7 @@
               "Record evidence for action outcome."
             ],
             "escalationRequired": false,
-            "createdAt": "2026-07-26T15:43:32.283Z"
+            "createdAt": "2026-07-27T12:10:14.478Z"
           },
           "action": {
             "actionId": "act-req-success-001",
@@ -114,8 +114,8 @@
             "sideEffects": [
               "evidence-priority"
             ],
-            "createdAt": "2026-07-26T15:43:32.283Z",
-            "completedAt": "2026-07-26T15:43:32.283Z"
+            "createdAt": "2026-07-27T12:10:14.479Z",
+            "completedAt": "2026-07-27T12:10:14.479Z"
           },
           "artifacts": [
             {
@@ -131,7 +131,7 @@
             "source": "companion-runtime",
             "runtimeVersion": "0.1.0"
           },
-          "createdAt": "2026-07-26T15:43:32.284Z"
+          "createdAt": "2026-07-27T12:10:14.479Z"
         },
         "reflection": {
           "reflectionId": "ref-req-success-001",
@@ -145,7 +145,7 @@
           "characterCompliant": true,
           "promotionCandidate": true,
           "confidence": 0.85,
-          "createdAt": "2026-07-26T15:43:32.284Z"
+          "createdAt": "2026-07-27T12:10:14.479Z"
         }
       },
       "contractViolations": [],
@@ -167,9 +167,9 @@
           "currentShift": "shift-001",
           "shiftId": "shift-001",
           "mode": "online",
-          "timestamp": "2026-07-26T15:43:32.284Z",
-          "requestedAt": "2026-07-26T15:43:32.284Z",
-          "localTimeIso": "2026-07-26T15:43:32.284Z",
+          "timestamp": "2026-07-27T12:10:14.479Z",
+          "requestedAt": "2026-07-27T12:10:14.479Z",
+          "localTimeIso": "2026-07-27T12:10:14.479Z",
           "networkAvailable": true,
           "capabilityId": "temperature.log",
           "peopleOutcome": "Prevent unsafe food handling and support staff to make safe, timely decisions.",
@@ -186,7 +186,7 @@
             "Safety risk requires qualified manager confirmation."
           ],
           "requiresHuman": true,
-          "createdAt": "2026-07-26T15:43:32.284Z"
+          "createdAt": "2026-07-27T12:10:14.479Z"
         },
         "authority": {
           "authorityId": "auth-req-human-001",
@@ -197,7 +197,7 @@
             "Do not execute autonomous action."
           ],
           "escalationRequired": true,
-          "createdAt": "2026-07-26T15:43:32.284Z"
+          "createdAt": "2026-07-27T12:10:14.479Z"
         },
         "action": {
           "actionId": "act-req-human-001",
@@ -208,7 +208,7 @@
           "sideEffects": [
             "human-handoff"
           ],
-          "createdAt": "2026-07-26T15:43:32.284Z"
+          "createdAt": "2026-07-27T12:10:14.479Z"
         },
         "evidence": {
           "evidenceId": "ev-req-human-001",
@@ -226,9 +226,9 @@
             "currentShift": "shift-001",
             "shiftId": "shift-001",
             "mode": "online",
-            "timestamp": "2026-07-26T15:43:32.284Z",
-            "requestedAt": "2026-07-26T15:43:32.284Z",
-            "localTimeIso": "2026-07-26T15:43:32.284Z",
+            "timestamp": "2026-07-27T12:10:14.479Z",
+            "requestedAt": "2026-07-27T12:10:14.479Z",
+            "localTimeIso": "2026-07-27T12:10:14.479Z",
             "networkAvailable": true,
             "capabilityId": "temperature.log",
             "peopleOutcome": "Prevent unsafe food handling and support staff to make safe, timely decisions.",
@@ -245,7 +245,7 @@
               "Safety risk requires qualified manager confirmation."
             ],
             "requiresHuman": true,
-            "createdAt": "2026-07-26T15:43:32.284Z"
+            "createdAt": "2026-07-27T12:10:14.479Z"
           },
           "authority": {
             "authorityId": "auth-req-human-001",
@@ -256,7 +256,7 @@
               "Do not execute autonomous action."
             ],
             "escalationRequired": true,
-            "createdAt": "2026-07-26T15:43:32.284Z"
+            "createdAt": "2026-07-27T12:10:14.479Z"
           },
           "action": {
             "actionId": "act-req-human-001",
@@ -267,7 +267,7 @@
             "sideEffects": [
               "human-handoff"
             ],
-            "createdAt": "2026-07-26T15:43:32.284Z"
+            "createdAt": "2026-07-27T12:10:14.479Z"
           },
           "artifacts": [
             {
@@ -283,7 +283,7 @@
             "source": "companion-runtime",
             "runtimeVersion": "0.1.0"
           },
-          "createdAt": "2026-07-26T15:43:32.284Z"
+          "createdAt": "2026-07-27T12:10:14.479Z"
         },
         "reflection": {
           "reflectionId": "ref-req-human-001",
@@ -297,7 +297,7 @@
           "characterCompliant": true,
           "promotionCandidate": false,
           "confidence": 0.65,
-          "createdAt": "2026-07-26T15:43:32.284Z"
+          "createdAt": "2026-07-27T12:10:14.479Z"
         }
       },
       "contractViolations": [],

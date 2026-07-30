@@ -3,7 +3,7 @@ import { router } from "expo-router";
 import { useState } from "react";
 import { Alert, Button, StyleSheet, Text, TextInput, View } from "react-native";
 import { registerForPushNotificationsAsync } from "../lib/notifications";
-import { setStoredItem } from "../lib/storage";
+import { deleteStoredItem, setStoredItem } from "../lib/storage";
 
 const API = "http://192.168.0.183:3001";
 
@@ -21,7 +21,17 @@ export default function LoginScreen() {
     console.log("LOGIN RESPONSE:", res.data); // 👈 debug
 
     await setStoredItem("token", res.data.token);
-    await setStoredItem("userId", String(res.data.user?.id || ""));
+
+    const resolvedUserId =
+      res.data.user?.id == null ? null : String(res.data.user.id).trim();
+
+    if (resolvedUserId) {
+      await setStoredItem("userId", resolvedUserId);
+      await setStoredItem("actorId", resolvedUserId);
+    } else {
+      await deleteStoredItem("userId");
+      await deleteStoredItem("actorId");
+    }
 
     // ✅ SAFE ROLE HANDLING
     const role = res.data.user?.role || "staff";

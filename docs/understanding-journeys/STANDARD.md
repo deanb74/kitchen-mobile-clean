@@ -153,6 +153,95 @@ Validation records should distinguish clearly between:
 
 ---
 
+# Execution Evidence Format
+
+Execution evidence should be recorded as experimental evidence, not narrative summary.
+
+Each execution record should include the same fields:
+
+| Field | Purpose |
+|---|---|
+| Objective | What behaviour was being tested? |
+| Scenario | What was presented to the Digital Colleague? |
+| Expected reasoning | What constitutional behaviour should emerge? |
+| Actual reasoning | What actually happened? |
+| Alignment | Where did it align or differ? |
+| Confidence assessment | How much weight should this evidence carry? |
+| Reflection | What should Helping Hand learn? |
+| Outcome | Pass, partial, or further investigation |
+
+Using a consistent evidence format allows behaviour to be compared across reruns, prompt variations and future Digital Colleagues.
+
+---
+
+# Validation Set Format
+
+Evidence remains the unit of record.
+
+A Validation Set is the unit of execution.
+
+Each Validation Set should group related executions of the same objective under controlled variation.
+
+Minimum structure:
+
+1. Validation Set ID and title
+2. Objective
+3. Run list (for example 001.1, 001.2, 001.3)
+4. Run conditions (what changed between runs)
+5. Per-run outcome references
+6. Consistency summary
+7. Confidence and robustness assessment
+8. Reflection
+9. Outcome and next action
+
+Confidence should be derived from the set, not from a single run.
+
+---
+
+# Confidence and Robustness Assessment Format
+
+Confidence is not confidence in the Digital Colleague.
+
+Confidence is confidence in the conclusion drawn from the evidence.
+
+Each execution record should include a confidence assessment.
+
+Each Validation Set should additionally include a robustness assessment.
+
+Use the same dimensions across records and sets:
+
+| Dimension | Assessment Options | Purpose |
+|---|---|---|
+| Repeatability | High / Medium / Low | Are results stable across reruns and prompt variation? |
+| Evidence strength | Strong / Moderate / Weak | How directly does evidence support the conclusion? |
+| Robustness | High / Medium / Low | How well did reasoning survive scenario variation? |
+| Foundation impact | None / Engineering / Theory Review | Does this evidence require no change, implementation refinement, or possible theory review? |
+| Recommended action | Accept / Gather more evidence / Investigate discrepancy / Escalate for review | What is the next disciplined step? |
+
+This step prevents overreaction to isolated runs and makes the transition from evidence to reflection explicit.
+
+Assessment methodology should follow the assessor discipline in [Evidence Assessment Guide](ASSESSMENT_GUIDE.md).
+
+Preferred governance chain:
+
+Execution
+        ↓
+Evidence
+        ↓
+Validation Set
+        ↓
+Confidence Assessment
+        ↓
+Reflection
+        ↓
+Improvement
+        ↓
+Validation Report
+        ↓
+Certification (when justified)
+
+---
+
 # Naming and Placement
 
 Journey documents should live in profession or domain-specific folders beneath `docs/understanding-journeys/`.

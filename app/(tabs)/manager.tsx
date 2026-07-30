@@ -1,5 +1,8 @@
 import EvidenceGallery from "@/components/EvidenceGallery";
 import EvidenceViewer from "@/components/EvidenceViewer";
+import { appendCompanionRuntimeTrace } from "@/lib/companionRuntimeTraceStore";
+import { correctiveActionAdapter } from "@/src/companion/adapters/CorrectiveActionAdapter";
+import { equipmentFaultAdapter } from "@/src/companion/adapters/EquipmentFaultAdapter";
 import axios from "axios";
 import * as FileSystem from "expo-file-system/legacy";
 // import * as ImagePicker from "expo-image-picker";
@@ -9,21 +12,23 @@ import * as SecureStore from "expo-secure-store";
 import * as Sharing from "expo-sharing";
 import { useEffect, useRef, useState } from "react";
 import {
-  Alert,
-  Button,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View
+    Alert,
+    Button,
+    Pressable,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View
 } from "react-native";
 import { getStoredItem, setStoredItem } from "../../lib/storage";
 
 const API = "http://192.168.0.183:3001";
 
 export default function ManagerScreen() {
+  type FaultSeverity = "low" | "medium" | "high";
+
   const [venuePresets, setVenuePresets] = useState<any[]>([]);
   const [selectedPresetId, setSelectedPresetId] = useState("");
   const [importingPreset, setImportingPreset] = useState(false);
@@ -120,25 +125,105 @@ export default function ManagerScreen() {
   const [drilldownItems, setDrilldownItems] = useState<any[]>([]);
   const [drilldownTitle, setDrilldownTitle] = useState("");
   const [correctiveActionText, setCorrectiveActionText] = useState("");
+  const [activeCorrectiveRecordId, setActiveCorrectiveRecordId] = useState<number | null>(null);
   const [equipmentFaultNotes, setEquipmentFaultNotes] = useState("");
   const [managerSection, setManagerSection] = useState<string>("home");
   const [themeName, setThemeName] = useState("default");
   const [isOfflineMode, setIsOfflineMode] = useState(false);
   const hasShownOfflineWarningRef = useRef(false);
+
+  const normalizeStoredValue = (value: string | null): string | null => {
+    if (value == null) return null;
+    const trimmed = value.trim();
+    return trimmed.length > 0 ? trimmed : null;
+  };
+
+  const resolveEquipmentFaultActorContext = async () => {
+    const [userId, actorId, id, role, siteId, shiftId] = await Promise.all([
+      getStoredItem("userId"),
+      getStoredItem("actorId"),
+      getStoredItem("id"),
+      getStoredItem("role"),
+      getStoredItem("siteId"),
+      getStoredItem("shiftId"),
+    ]);
+
+    return {
+      userId:
+        normalizeStoredValue(userId) ||
+        normalizeStoredValue(actorId) ||
+        normalizeStoredValue(id) ||
+        "unknown-user",
+      role: normalizeStoredValue(role) || "manager",
+      siteId: normalizeStoredValue(siteId) || "unknown-site",
+      shiftId: normalizeStoredValue(shiftId) || undefined,
+      networkAvailable: true,
+    };
+  };
+
   // Report equipment fault
-  const reportEquipmentFault = async (equipmentId: number) => {
+  const reportEquipmentFault = async (
+    equipmentId: number,
+    equipmentName: string,
+    severity: FaultSeverity,
+  ) => {
     try {
-      const headers = await getAuthHeaders();
+      const actorContext = await resolveEquipmentFaultActorContext();
+      const faultDescription =
+        equipmentFaultNotes.trim() ||
+        `${equipmentName} fault reported by manager from equipment board.`;
 
-      await axios.post(
-        `${API}/equipment/${equipmentId}/report-fault`,
-        { notes: equipmentFaultNotes },
-        { headers }
+      const result = await equipmentFaultAdapter.submit({
+        actorContext,
+        equipmentId: String(equipmentId),
+        faultDescription,
+        severity,
+        executeExistingSave: async () => {
+          const token = await getStoredItem("token");
+
+          if (!token || token.trim().length === 0) {
+            return {
+              attempted: false,
+              outcome: "failed",
+              summary: "Equipment fault save blocked: missing auth token.",
+              sideEffects: ["auth-required"],
+            };
+          }
+
+          await axios.post(
+            `${API}/equipment/${equipmentId}/report-fault`,
+            { notes: faultDescription, severity },
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            },
+          );
+
+          return {
+            attempted: true,
+            outcome: "succeeded" as const,
+            summary: `Equipment fault saved for ${equipmentName} with ${severity} severity.`,
+            sideEffects:
+              severity === "high"
+                ? [
+                    "equipment-marked-out-of-service",
+                    "manager-notification-required",
+                    "follow-up-assignment-required",
+                  ]
+                : ["equipment-maintenance-follow-up-required"],
+          };
+        },
+      });
+
+      await appendCompanionRuntimeTrace(result.runtimeResult);
+
+      Alert.alert(
+        "Equipment fault reported",
+        `Risk ${result.decisionSnapshot.risk}. Interaction ${result.interactionId} recorded.`,
       );
-
-      Alert.alert("Equipment fault reported");
-        setEquipmentFaultNotes("");
-        await loadEquipment();
+      setEquipmentFaultNotes("");
+      await loadEquipment();
     } catch (err: any) {
       Alert.alert(
         "Could not report equipment fault",
@@ -875,23 +960,73 @@ Please advise attendance date and next steps.
     }
   };
 
-  const requestCorrectiveAction = async (recordId: number) => {
+  const requestCorrectiveAction = async (record: any) => {
     try {
       if (!correctiveActionText.trim()) {
         Alert.alert("Enter corrective action first");
         return;
       }
 
-      const headers = await getAuthHeaders();
+      const actorContext = await resolveEquipmentFaultActorContext();
+      const priority =
+        record.value === "red" || record.value === "amber" || record.type === "urgent_check_note"
+          ? "urgent"
+          : "standard";
+      const target =
+        String(record.taskId || "compliance-record") +
+        (record.userId ? ` user-${record.userId}` : "");
 
-      await axios.post(
-        `${API}/manager/compliance-records/${recordId}/corrective-action`,
-        { correctiveAction: correctiveActionText },
-        { headers }
+      const result = await correctiveActionAdapter.submit({
+        actorContext,
+        actionType: "ComplianceCorrectiveAction",
+        target,
+        details: correctiveActionText.trim(),
+        priority,
+        executeExistingSave: async () => {
+          const token = await getStoredItem("token");
+
+          if (!token || token.trim().length === 0) {
+            return {
+              attempted: false,
+              outcome: "failed",
+              summary: "Corrective action save blocked: missing auth token.",
+              sideEffects: ["auth-required"],
+            };
+          }
+
+          await axios.post(
+            `${API}/manager/compliance-records/${record.id}/corrective-action`,
+            { correctiveAction: correctiveActionText.trim() },
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            },
+          );
+
+          return {
+            attempted: true,
+            outcome: "succeeded" as const,
+            summary: `Corrective action recorded for compliance record ${record.id}.`,
+            sideEffects:
+              priority === "urgent"
+                ? [
+                    "manager-review-required",
+                    "follow-up-assignment-required",
+                  ]
+                : ["standard-follow-up-required"],
+          };
+        },
+      });
+
+      await appendCompanionRuntimeTrace(result.runtimeResult);
+
+      Alert.alert(
+        "Corrective action requested",
+        `Risk ${result.decisionSnapshot.risk}. Interaction ${result.interactionId} recorded.`,
       );
-
-      Alert.alert("Corrective action requested");
       setCorrectiveActionText("");
+      setActiveCorrectiveRecordId(null);
       await loadComplianceRecords();
     } catch (err: any) {
       Alert.alert(
@@ -1464,9 +1599,16 @@ Please advise attendance date and next steps.
     };
 
     loadSavedSite();
-    SecureStore.getItemAsync("themeName").then((saved) => {
-      if (saved) setThemeName(saved);
-    });
+    // Guard web/runtime variants where SecureStore method can be unavailable.
+    if (typeof SecureStore.getItemAsync === "function") {
+      SecureStore.getItemAsync("themeName")
+        .then((saved) => {
+          if (saved) setThemeName(saved);
+        })
+        .catch(() => {
+          // Keep default theme when secure storage cannot be read.
+        });
+    }
     loadUsers();
     loadSites();
     loadVenuePresets();
@@ -2077,9 +2219,37 @@ Please advise attendance date and next steps.
                               onPress: () => returnEquipmentToService(Number(item.id)),
                             }
                           : {
-                              text: "Report Fault",
-                              onPress: () => reportEquipmentFault(Number(item.id)),
+                              text: "Report Low Fault",
+                              onPress: () =>
+                                reportEquipmentFault(
+                                  Number(item.id),
+                                  String(item.name || "equipment"),
+                                  "low",
+                                ),
                             },
+                        ...(!item.outOfService
+                          ? [
+                              {
+                                text: "Report Medium Fault",
+                                onPress: () =>
+                                  reportEquipmentFault(
+                                    Number(item.id),
+                                    String(item.name || "equipment"),
+                                    "medium",
+                                  ),
+                              },
+                              {
+                                text: "Report High Fault",
+                                style: "destructive" as const,
+                                onPress: () =>
+                                  reportEquipmentFault(
+                                    Number(item.id),
+                                    String(item.name || "equipment"),
+                                    "high",
+                                  ),
+                              },
+                            ]
+                          : []),
                       ]
                     );
                   }}
@@ -2829,6 +2999,41 @@ Please advise attendance date and next steps.
                       Action: {record.correctiveAction}
                     </Text>
                   ) : null}
+
+                  <View style={{ marginTop: 10 }}>
+                    <Button
+                      title={
+                        activeCorrectiveRecordId === record.id
+                          ? "Cancel Corrective Action"
+                          : "Record Corrective Action"
+                      }
+                      onPress={() => {
+                        if (activeCorrectiveRecordId === record.id) {
+                          setActiveCorrectiveRecordId(null);
+                          setCorrectiveActionText("");
+                          return;
+                        }
+
+                        setActiveCorrectiveRecordId(record.id);
+                        setCorrectiveActionText("");
+                      }}
+                    />
+
+                    {activeCorrectiveRecordId === record.id ? (
+                      <>
+                        <TextInput
+                          style={[styles.input, themedInput, { marginTop: 8 }]}
+                          placeholder="Describe corrective action"
+                          value={correctiveActionText}
+                          onChangeText={setCorrectiveActionText}
+                        />
+                        <Button
+                          title="Submit Corrective Action"
+                          onPress={() => requestCorrectiveAction(record)}
+                        />
+                      </>
+                    ) : null}
+                  </View>
 
                   {record.actionLogs?.length > 0 && (
                     <View style={{ marginTop: 8 }}>

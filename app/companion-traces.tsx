@@ -66,6 +66,19 @@ function parseTimestamp(trace: CompanionRuntimeResult): number {
   return new Date(trace.trace.context.timestamp).getTime();
 }
 
+function formatReviewOutcome(outcome?: TraceReviewOutcome): string {
+  if (!outcome) return "Unreviewed";
+
+  if (outcome === "needs-investigation") return "Needs Investigation";
+  if (outcome === "expected-safeguard") return "Expected Safeguard";
+  if (outcome === "candidate-reflection") return "Candidate For Reflection";
+  if (outcome === "candidate-capability-promotion") {
+    return "Candidate For Capability Promotion";
+  }
+
+  return "Reviewed";
+}
+
 export default function CompanionTracesScreen() {
   const [traces, setTraces] = useState<CompanionRuntimeResult[]>([]);
   const [reviews, setReviews] = useState<Record<string, TraceReviewRecord>>({});
@@ -130,6 +143,15 @@ export default function CompanionTracesScreen() {
 
     return parseTimestamp(b) - parseTimestamp(a);
   });
+
+  const firstLiveRecord =
+    traces.length > 0
+      ? [...traces].sort((a, b) => parseTimestamp(a) - parseTimestamp(b))[0]
+      : null;
+
+  const firstLiveReview = firstLiveRecord
+    ? reviews[firstLiveRecord.trace.context.requestId]
+    : undefined;
 
   const filterChips: { key: FilterKey; label: string }[] = [
     { key: "all", label: "All" },
@@ -198,7 +220,7 @@ export default function CompanionTracesScreen() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.topRow}>
-        <Text style={styles.title}>Interaction Record Viewer</Text>
+        <Text style={styles.title}>Companion Review</Text>
         <Pressable onPress={() => router.back()}>
           <Text style={styles.back}>Back</Text>
         </Pressable>
@@ -222,6 +244,85 @@ export default function CompanionTracesScreen() {
         <Text style={styles.summaryItem}>
           Candidate for capability promotion {reviewCounts["candidate-capability-promotion"]}
         </Text>
+      </View>
+
+      <View style={styles.proofCard}>
+        <Text style={styles.proofTitle}>Operational Proof #1</Text>
+        {!firstLiveRecord ? (
+          <Text style={styles.proofEmptyText}>
+            Waiting for first live Interaction Record.
+          </Text>
+        ) : (
+          <>
+            <Text style={styles.metaText}>
+              Interaction: {firstLiveRecord.trace.context.interactionId}
+            </Text>
+            <Text style={styles.metaText}>
+              Timestamp: {new Date(firstLiveRecord.trace.context.timestamp).toLocaleString()}
+            </Text>
+            <Text style={styles.metaText}>
+              Review Status: {formatReviewOutcome(firstLiveReview?.outcome)}
+            </Text>
+
+            <View style={styles.stage}>
+              <Text style={styles.stageTitle}>Context</Text>
+              <Text style={styles.stageText}>
+                {firstLiveRecord.trace.context.role} at {firstLiveRecord.trace.context.siteId}
+              </Text>
+              <Text style={styles.stageText}>
+                Equipment: {firstLiveRecord.trace.context.equipmentId} ({firstLiveRecord.trace.context.equipmentType})
+              </Text>
+            </View>
+
+            <View style={styles.stage}>
+              <Text style={styles.stageTitle}>Decision</Text>
+              <Text style={styles.stageText}>
+                {firstLiveRecord.trace.decision.recommendedAction}
+              </Text>
+              <Text style={styles.stageText}>
+                Confidence: {firstLiveRecord.trace.decision.confidence}
+              </Text>
+            </View>
+
+            <View style={styles.stage}>
+              <Text style={styles.stageTitle}>Authority</Text>
+              <Text style={styles.stageText}>
+                {firstLiveRecord.trace.authority.disposition}
+              </Text>
+              <Text style={styles.stageText}>{firstLiveRecord.trace.authority.reason}</Text>
+            </View>
+
+            <View style={styles.stage}>
+              <Text style={styles.stageTitle}>Action</Text>
+              <Text style={styles.stageText}>{firstLiveRecord.trace.action.outcome}</Text>
+              <Text style={styles.stageText}>{firstLiveRecord.trace.action.summary}</Text>
+            </View>
+
+            <View style={styles.stage}>
+              <Text style={styles.stageTitle}>Evidence</Text>
+              <Text style={styles.stageText}>
+                Artifacts: {firstLiveRecord.trace.evidence.artifacts.length}
+              </Text>
+              <Text style={styles.stageText}>
+                Provenance: {firstLiveRecord.trace.evidence.provenance.source}
+              </Text>
+            </View>
+
+            <View style={styles.stage}>
+              <Text style={styles.stageTitle}>Reflection</Text>
+              <Text style={styles.stageText}>
+                {firstLiveRecord.trace.reflection.findings.join(" | ") || "None"}
+              </Text>
+            </View>
+
+            <View style={styles.stage}>
+              <Text style={styles.stageTitle}>Review Outcome</Text>
+              <Text style={styles.stageText}>
+                {formatReviewOutcome(firstLiveReview?.outcome)}
+              </Text>
+            </View>
+          </>
+        )}
       </View>
 
       <Text style={styles.groupTitle}>Governance Filters</Text>
@@ -304,6 +405,11 @@ export default function CompanionTracesScreen() {
               </Text>
               <Text style={styles.metaText}>
                 CSA Conformant: {trace.csaConformant ? "Yes" : "No"}
+              </Text>
+              <Text style={styles.metaText}>
+                Review Status: {review
+                  ? `${formatReviewOutcome(review.outcome)} @ ${new Date(review.reviewedAt).toLocaleString()}`
+                  : "Current: Unreviewed"}
               </Text>
 
               <View style={styles.stage}>
@@ -426,13 +532,13 @@ export default function CompanionTracesScreen() {
                 <Text style={styles.reviewMetaText}>
                   {review
                     ? `Current: ${review.outcome} @ ${new Date(review.reviewedAt).toLocaleString()}`
-                    : "Current: Unset"}
+                    : "Current: Unreviewed"}
                 </Text>
               </View>
 
               <Pressable style={styles.rawButton} onPress={() => toggleRaw(id)}>
                 <Text style={styles.rawButtonText}>
-                  {expandedRaw[id] ? "Hide Raw JSON" : "Show Raw JSON"}
+                  {expandedRaw[id] ? "Hide Runtime JSON" : "Show Runtime JSON"}
                 </Text>
               </Pressable>
 
@@ -490,6 +596,23 @@ const styles = StyleSheet.create({
     color: "#164e63",
     fontWeight: "600",
     fontSize: 12,
+  },
+  proofCard: {
+    backgroundColor: "#ecfccb",
+    borderColor: "#a3e635",
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 12,
+    marginBottom: 12,
+  },
+  proofTitle: {
+    color: "#365314",
+    fontSize: 16,
+    fontWeight: "700",
+    marginBottom: 6,
+  },
+  proofEmptyText: {
+    color: "#3f6212",
   },
   groupTitle: {
     fontWeight: "700",

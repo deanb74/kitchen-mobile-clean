@@ -20,7 +20,18 @@ The identifier remains constant.
 | HH-ARCH-004 | Annie Graduation Audit | 1.0 | Governance | Released |
 | HH-ARCH-005 | Governance Changelog | 1.0 | Governance | Released |
 | HH-ARCH-006 | Companion System Architecture (CSA) | 1.0 | Architecture | Review |
-| HH-CON-001 | Helping Hand Constitution | 1.0 | Helping Hand HQ | Planned |
+| HH-ARCH-000 | Helping Hand Organisational Operating Model | 1.0 | Helping Hand Architecture | Foundation |
+| HH-ARCH-CI-001 | Companion Intelligence Architecture | 1.0 | Companion Intelligence | Foundation |
+| HH-ARCH-CI-002 | Human and People Intelligence (HIPI) | 1.0 | Helping Hand Architecture | Foundation |
+| HH-ARCH-CI-003 | Digital Colleague Architecture | 1.0 | Helping Hand Architecture | Foundation |
+| HH-ARCH-CI-004 | Professional Intelligence | 1.0 | Helping Hand Architecture | Foundation |
+| HH-ARCH-CI-005 | Helping Hand University Architecture | 1.0 | Helping Hand Architecture | Foundation |
+| HH-GOV-001 | Helping Hand Governance Framework | 1.0 | Helping Hand Governance | Foundation |
+| HH-GOV-002 | Helping Hand Standards Lifecycle | 1.0 | Helping Hand Governance | Foundation |
+| HH-GOV-003 | Helping Hand Ratification Process | 1.0 | Helping Hand Governance | Foundation |
+| HH-GOV-004 | Helping Hand Architecture Review Board | 1.0 | Helping Hand Governance | Foundation |
+| HH-CON-001 | Helping Hand Constitution | 1.0 | Helping Hand HQ | Released |
+| HH-CON-002 | Constitutional Framework | 1.0 | Helping Hand HQ | Released |
 | HH-CHAR-001 | Helping Hand Character | 1.0 | Helping Hand HQ | Planned |
 | HH-CB-001 | Companion Behaviour | 1.0 | Companion Intelligence | Released |
 | HH-CM-001 | Helping Hand Cognitive Model | 1.0 | Companion Intelligence | Planned |
@@ -29,6 +40,15 @@ The identifier remains constant.
 | HH-LM-001 | Living Memory | 1.0 | Companion Intelligence | Planned |
 | HH-HQ-001 | Helping Hand HQ | 1.0 | Helping Hand HQ | Legacy |
 | HH-ACA-001 | Helping Hand Academy | 1.0 | Helping Hand Academy | Legacy |
+| HH-PROOF-001 | Wave 1 Certification Report | 1.0 | Companion Runtime Engineering | Released |
+| HH-MILESTONE-002 | Certification Baseline 1 - Wave 1 Complete | 1.0 | Companion Runtime Engineering | Released |
+| HH-THEORY-001 | Theory Library README | 1.0 | Theory | Released |
+| HH-THEORY-002 | Theory Map | 1.0 | Theory | Released |
+| HH-THEORY-003 | Theory Synthesis | 1.0 | Theory | Released |
+| HH-THEORY-004 | Theory Governance | 1.0 | Theory | Released |
+| HH-INSTITUTION-001 | The Beginning of Institutional Maturity | 1.0 | Institution | Released |
+| HH-INSTITUTION-002 | Institutional Operating Model | 1.0 | Institution | Released |
+| HH-INSTITUTION-003 | Evidence Before Improvement | 1.0 | Institution | Released |
 
 ---
 
@@ -36,8 +56,9 @@ The identifier remains constant.
 
 | Title | File | Status | Description |
 |-------|------|--------|-------------|
-| Understanding Engine | `UNDERSTANDING_ENGINE.md` | Proposed | Defines how Helping Hand connects knowledge, context and experience to support judgement |
-| Digital Colleague Companion Build Blueprint | `DIGITAL-COLLEAGUE-COMPANION-BUILD-BLUEPRINT.md` | Proposed | Practical implementation blueprint for translating companion architecture into build sequence |
+| Understanding Engine | UNDERSTANDING_ENGINE.md | Proposed | Defines how Helping Hand connects knowledge, context and experience to support judgement |
+| Andy Reasoning Engine | ANDY_REASONING_ENGINE.md | Proposed | Defines the reasoning architecture used to derive and justify capability decisions from foundation principles |
+| Digital Colleague Companion Build Blueprint | DIGITAL-COLLEAGUE-COMPANION-BUILD-BLUEPRINT.md | Proposed | Practical implementation blueprint for translating companion architecture into build sequence |
 
 ---
 
@@ -45,6 +66,7 @@ The identifier remains constant.
 
 | Status | Meaning |
 |---------|---------|
+| Foundation | Baseline architectural standard that other documents build on |
 | Draft | Under development |
 | Review | Ready for review before release |
 | Released | Current approved version |

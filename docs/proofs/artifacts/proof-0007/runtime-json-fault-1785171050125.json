@@ -1,0 +1,142 @@
+{
+  "accepted": true,
+  "trace": {
+    "context": {
+      "interactionId": "fault-1785171050125",
+      "userId": "4",
+      "role": "manager",
+      "actorId": "4",
+      "actorRole": "manager",
+      "requestId": "fault-1785171050125",
+      "siteId": "2",
+      "equipmentId": "39",
+      "equipmentType": "equipment",
+      "mode": "online",
+      "timestamp": "2026-07-27T16:50:50.125Z",
+      "requestedAt": "2026-07-27T16:50:50.125Z",
+      "localTimeIso": "2026-07-27T16:50:50.125Z",
+      "networkAvailable": true,
+      "capabilityId": "equipment.fault.report",
+      "peopleOutcome": "Protect people and preserve safe operations by recording and escalating equipment faults quickly.",
+      "currentOperationalState": "equipment-fault-reporting"
+    },
+    "decision": {
+      "decisionId": "dec-fault-1785171050125",
+      "requestId": "fault-1785171050125",
+      "disposition": "proceed",
+      "recommendedAction": "Proceed with governed companion action: Record equipment fault for 39: Beer Cellar Cooling fault reported by manager from equipment board.",
+      "rationale": "Selected proceed for capability equipment.fault.report to improve people outcome: Protect people and preserve safe operations by recording and escalating equipment faults quickly..",
+      "confidence": 0.9,
+      "uncertainty": [],
+      "requiresHuman": false,
+      "createdAt": "2026-07-27T16:50:50.125Z"
+    },
+    "authority": {
+      "authorityId": "auth-fault-1785171050125",
+      "requestId": "fault-1785171050125",
+      "disposition": "allow",
+      "reason": "Capability and role are within approved authority boundaries.",
+      "boundaryConditions": [
+        "Record evidence for action outcome."
+      ],
+      "escalationRequired": false,
+      "createdAt": "2026-07-27T16:50:50.125Z"
+    },
+    "action": {
+      "actionId": "act-fault-1785171050125",
+      "requestId": "fault-1785171050125",
+      "attempted": true,
+      "outcome": "succeeded",
+      "summary": "Equipment fault saved for Beer Cellar Cooling with high severity.",
+      "sideEffects": [
+        "equipment-marked-out-of-service",
+        "manager-notification-required",
+        "follow-up-assignment-required"
+      ],
+      "createdAt": "2026-07-27T16:50:51.281Z",
+      "completedAt": "2026-07-27T16:50:51.281Z"
+    },
+    "evidence": {
+      "evidenceId": "ev-fault-1785171050125",
+      "requestId": "fault-1785171050125",
+      "context": {
+        "interactionId": "fault-1785171050125",
+        "userId": "4",
+        "role": "manager",
+        "actorId": "4",
+        "actorRole": "manager",
+        "requestId": "fault-1785171050125",
+        "siteId": "2",
+        "equipmentId": "39",
+        "equipmentType": "equipment",
+        "mode": "online",
+        "timestamp": "2026-07-27T16:50:50.125Z",
+        "requestedAt": "2026-07-27T16:50:50.125Z",
+        "localTimeIso": "2026-07-27T16:50:50.125Z",
+        "networkAvailable": true,
+        "capabilityId": "equipment.fault.report",
+        "peopleOutcome": "Protect people and preserve safe operations by recording and escalating equipment faults quickly.",
+        "currentOperationalState": "equipment-fault-reporting"
+      },
+      "decision": {
+        "decisionId": "dec-fault-1785171050125",
+        "requestId": "fault-1785171050125",
+        "disposition": "proceed",
+        "recommendedAction": "Proceed with governed companion action: Record equipment fault for 39: Beer Cellar Cooling fault reported by manager from equipment board.",
+        "rationale": "Selected proceed for capability equipment.fault.report to improve people outcome: Protect people and preserve safe operations by recording and escalating equipment faults quickly..",
+        "confidence": 0.9,
+        "uncertainty": [],
+        "requiresHuman": false,
+        "createdAt": "2026-07-27T16:50:50.125Z"
+      },
+      "authority": {
+        "authorityId": "auth-fault-1785171050125",
+        "requestId": "fault-1785171050125",
+        "disposition": "allow",
+        "reason": "Capability and role are within approved authority boundaries.",
+        "boundaryConditions": [
+          "Record evidence for action outcome."
+        ],
+        "escalationRequired": false,
+        "createdAt": "2026-07-27T16:50:50.125Z"
+      },
+      "action": {
+        "actionId": "act-fault-1785171050125",
+        "requestId": "fault-1785171050125",
+        "attempted": true,
+        "outcome": "succeeded",
+        "summary": "Equipment fault saved for Beer Cellar Cooling with high severity.",
+        "sideEffects": [
+          "equipment-marked-out-of-service",
+          "manager-notification-required",
+          "follow-up-assignment-required"
+        ],
+        "createdAt": "2026-07-27T16:50:51.281Z",
+        "completedAt": "2026-07-27T16:50:51.281Z"
+      },
+      "artifacts": [],
+      "provenance": {
+        "source": "companion-runtime",
+        "runtimeVersion": "0.1.0",
+        "schemaVersion": "1.0"
+      },
+      "createdAt": "2026-07-27T16:50:51.281Z"
+    },
+    "reflection": {
+      "reflectionId": "ref-fault-1785171050125",
+      "requestId": "fault-1785171050125",
+      "findings": [
+        "No additional artifacts were attached to evidence packet."
+      ],
+      "recommendations": [
+        "Capture at least one supporting artifact for similar actions."
+      ],
+      "characterCompliant": true,
+      "promotionCandidate": true,
+      "confidence": 0.85,
+      "createdAt": "2026-07-27T16:50:51.281Z"
+    }
+  },
+  "contractViolations": [],
+  "csaConformant": true
+}

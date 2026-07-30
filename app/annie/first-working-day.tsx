@@ -16,7 +16,7 @@ export default function AnnieFirstWorkingDayScreen() {
         </Text>
 
         <Text style={{ fontSize: 20, lineHeight: 32, marginTop: 12 }}>
-          I'm Annie.
+          I&apos;m Annie.
         </Text>
 
         <Text style={{ fontSize: 20, lineHeight: 32, marginTop: 12 }}>
@@ -30,7 +30,7 @@ export default function AnnieFirstWorkingDayScreen() {
         <Text
           style={{ fontSize: 18, lineHeight: 30, marginTop: 8, color: "#666" }}
         >
-          I'd love to start learning how you work.
+          I&apos;d love to start learning how you work.
         </Text>
 
         <Section title="Here's what I think I can see...">

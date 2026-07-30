@@ -6,6 +6,57 @@ Welcome to the Helping Hand Engineering Library.
 
 This library is the permanent knowledge repository for the Helping Hand platform.
 
+## Operating Model
+
+- [Helping Hand Operating Model](OPERATING_MODEL.md)
+- [Institutional Operating Model](INSTITUTIONAL_OPERATING_MODEL.md)
+- [Helping Hand Organisational Operating Model](architecture/HELPING_HAND_ORGANISATIONAL_OPERATING_MODEL.md)
+- [Helping Hand Governance Framework](architecture/HELPING_HAND_GOVERNANCE_FRAMEWORK.md)
+- [Helping Hand Standards Lifecycle](architecture/HELPING_HAND_STANDARDS_LIFECYCLE.md)
+- [Helping Hand Ratification Process](architecture/HELPING_HAND_RATIFICATION_PROCESS.md)
+- [Helping Hand Architecture Review Board](architecture/HELPING_HAND_ARCHITECTURE_REVIEW_BOARD.md)
+- [The Organisation](THE_ORGANISATION.md)
+- [Companion Intelligence Architecture](architecture/COMPANION_INTELLIGENCE_ARCHITECTURE.md)
+- [Human and People Intelligence (HIPI)](architecture/HUMAN_AND_PEOPLE_INTELLIGENCE_HIPI.md)
+- [Digital Colleague Architecture](architecture/DIGITAL_COLLEAGUE_ARCHITECTURE.md)
+- [Professional Intelligence](architecture/PROFESSIONAL_INTELLIGENCE.md)
+- [Helping Hand University Architecture](architecture/HELPING_HAND_UNIVERSITY_ARCHITECTURE.md)
+
+## Graduation
+
+- [Volume VIII - Opening](handovers/VOLUME_VIII_OPENING_GRADUATION.md)
+- [Graduation Test 001 - Academy Readiness and Annie Graduation](academy/graduation/GRADUATION_TEST_001_ANNIE.md)
+- [Formation Test 001 - Andy School of Formation](academy/formation/FORMATION_TEST_001_ANDY_SCHOOL_OF_FORMATION.md)
+- [Formation Report 001 - Andy School of Formation](academy/formation/FORMATION_REPORT_001_ANDY.md)
+- [Formation Report 002 - Andy Mentor Independence](academy/formation/FORMATION_REPORT_002_ANDY_MENTOR_INDEPENDENCE.md)
+- [Formation Test 003 - Andy Conflicting Perspectives](academy/formation/FORMATION_TEST_003_ANDY_CONFLICTING_PERSPECTIVES.md)
+- [Formation Report 003 - Andy Conflicting Perspectives](academy/formation/FORMATION_REPORT_003_ANDY_CONFLICTING_PERSPECTIVES.md)
+- [Formation Standard Addendum 001 - Conflict Character](academy/formation/FORMATION_STANDARD_ADDENDUM_001_CONFLICT_CHARACTER.md)
+- [Formation Test 003 - Repeat Validation](academy/formation/FORMATION_TEST_003_REPEAT_VALIDATION.md)
+- [Formation Report 003 - Repeat Validation](academy/formation/FORMATION_REPORT_003_REPEAT_VALIDATION.md)
+- [Formation Report 003 - Delta](academy/formation/FORMATION_REPORT_003_DELTA.md)
+
+## Foundation Freeze
+
+- [Foundation Freeze v1.0](GOVERNANCE_FOUNDATION_FREEZE.md)
+- [HH-REVIEW-001 - Foundation Readiness](reviews/INSTITUTIONAL_REVIEW_001_FOUNDATION_READINESS.md)
+- [Milestone 006 - Governed Institutional Architecture](milestones/MILESTONE_006_GOVERNED_INSTITUTIONAL_ARCHITECTURE.md)
+- [Milestone 007 - Beginning of the Evidence Era](milestones/MILESTONE_007_BEGINNING_OF_THE_EVIDENCE_ERA.md)
+- [Milestone 008 - Institutional Reproducibility](milestones/MILESTONE_008_INSTITUTIONAL_REPRODUCIBILITY.md)
+
+## Institution
+
+- [Institution Library](institution/README.md)
+- [HH-INSTITUTION-001 - The Beginning of Institutional Maturity](institution/001-THE-BEGINNING-OF-INSTITUTIONAL-MATURITY.md)
+- [HH-INSTITUTION-003 - Evidence Before Improvement](institution/003-EVIDENCE-BEFORE-IMPROVEMENT.md)
+- [HH-INSTITUTION-002 - Institutional Operating Model](INSTITUTIONAL_OPERATING_MODEL.md)
+
+## Foundation Coverage Test
+
+- [Foundation Coverage Test](GOVERNANCE_FOUNDATION_COVERAGE_TEST.md)
+
+Helping Hand should be understood first as an organisational system for creating and improving understanding.
+
 Unlike traditional software projects, engineers are not expected to memorise where information is stored.
 
 They simply ask Helping Hand.
@@ -186,6 +237,59 @@ Architecture should emerge from understanding.
 
 Implementation should emerge from architecture.
 
+## Institution Library
+
+The Institution Library records how Helping Hand itself matures over time.
+
+It explains how Theory, Governance, Formation and Evidence become a repeatable organisational capability.
+
+Start here:
+
+- [Institution Library](institution/README.md)
+- [HH-INSTITUTION-001 - The Beginning of Institutional Maturity](institution/001-THE-BEGINNING-OF-INSTITUTIONAL-MATURITY.md)
+- [HH-INSTITUTION-003 - Evidence Before Improvement](institution/003-EVIDENCE-BEFORE-IMPROVEMENT.md)
+- [HH-INSTITUTION-002 - Institutional Operating Model](INSTITUTIONAL_OPERATING_MODEL.md)
+
+---
+
+## Organisational Learning
+
+Organisational Learning records preserve what Helping Hand has learned about learning.
+
+They are distinct from architecture and engineering implementation records.
+
+They capture generic lessons from completed evidence cycles so future colleagues inherit wisdom, not only code.
+
+Start here:
+
+- [Organisational Learning Library](organisational-learning/README.md)
+- [Institutional Learning 003 - Conflict Character Baseline](organisational-learning/INSTITUTIONAL_LEARNING_003_CONFLICT_CHARACTER_BASELINE.md)
+
+Volume transition records:
+
+- [Volume VII - Closure](handovers/VOLUME_VII_CLOSURE.md)
+- [Volume VIII - Opening](handovers/VOLUME_VIII_OPENING_GRADUATION.md)
+
+How Helping Hand becomes wiser:
+
+Observation
+	↓
+Engineering change
+	↓
+Focused verification
+	↓
+Regression validation
+	↓
+Evidence
+	↓
+Reflection
+	↓
+Inheritance
+
+Reference:
+
+- [Reflection on Learning - Cycle 001](organisational-learning/REFLECTION_ON_LEARNING_CYCLE_001.md)
+
 ---
 
 # Repository as Memory
@@ -203,6 +307,15 @@ Important understanding belongs in:
 - and source code.
 
 Not in chat history.
+
+---
+
+# Milestones
+
+Key repository milestones are recorded in the milestones library.
+
+- [MILESTONE_001_ACADEMY_ESTABLISHED.md](milestones/MILESTONE_001_ACADEMY_ESTABLISHED.md)
+- [MILESTONE_002_CERTIFICATION_BASELINE_1_WAVE_1_COMPLETE.md](milestones/MILESTONE_002_CERTIFICATION_BASELINE_1_WAVE_1_COMPLETE.md)
 
 ---
 

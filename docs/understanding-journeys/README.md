@@ -60,6 +60,22 @@ Builds reasoning.
 
 ---
 
+# Volume VII Opening
+
+Volume VII begins with [Understanding Journey 001 — The First Reasoning Conversation](000-CANDIDATE-0-FIRST-REASONING-CONVERSATION.md).
+
+This is the first conversation used to validate Candidate 0 — HH-0000 (Andy).
+
+Validation evidence: [Validation Evidence 001](validation/001-CANDIDATE-0-FIRST-REASONING-CONVERSATION-VALIDATION.md)
+
+Validation set execution: [Validation Set 001 - Governance Under Pressure](validation/VALIDATION_SET_001_GOVERNANCE_UNDER_PRESSURE.md)
+
+Volume VII synthesis deliverable: [Candidate 0 Validation Report](validation/CANDIDATE-0-VALIDATION-REPORT.md)
+
+Volume VII validation plan: [Volume VII Validation Plan](VOLUME_VII_VALIDATION_PLAN.md)
+
+---
+
 # Standard Journey Structure
 
 Every Understanding Journey follows a common structure.
@@ -86,6 +102,8 @@ Understanding Journeys are not automatically accepted as organisational learning
 Like engineering designs, they are expected to be reviewed, improved and refined.
 
 They represent the current best understanding, not absolute truth.
+
+Assessment method for evidence confidence: [Evidence Assessment Guide](ASSESSMENT_GUIDE.md)
 
 ---
 

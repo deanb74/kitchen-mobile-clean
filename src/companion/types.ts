@@ -18,6 +18,24 @@ export type ActionOutcome =
 
 export type OperationalMode = "online" | "offline" | "degraded";
 
+export type OperationalEventType =
+  | "Temperature Recording"
+  | "Corrective Action"
+  | "Cleaning Completed"
+  | "Opening Checks"
+  | "Closing Checks"
+  | "Delivery Accepted"
+  | "Equipment Fault Reported"
+  | "Operational Communication"
+  | "Managerial Instruction";
+
+export interface OperationalEvent {
+  type: OperationalEventType;
+  actor: string;
+  venue: string;
+  outcome: "Completed" | "Queued" | "Blocked";
+}
+
 export interface ContextEnvelope {
   interactionId: string;
   userId: string;
@@ -90,6 +108,7 @@ export interface EvidencePacket {
   provenance: {
     source: "companion-runtime";
     runtimeVersion: string;
+    schemaVersion?: string;
   };
   createdAt: string;
 }
@@ -103,6 +122,24 @@ export interface ReflectionRecord {
   promotionCandidate: boolean;
   confidence: number;
   createdAt: string;
+}
+
+export type ReviewOutcomeStatus =
+  | "Unreviewed"
+  | "Reviewed"
+  | "Needs Investigation"
+  | "Expected Safeguard"
+  | "Candidate For Reflection"
+  | "Candidate For Capability Promotion";
+
+export interface InteractionRecord {
+  context: ContextEnvelope;
+  decision: DecisionRecord;
+  authority: AuthorityRecord;
+  action: ActionRecord;
+  evidence: EvidencePacket;
+  reflection: ReflectionRecord;
+  reviewOutcome: ReviewOutcomeStatus;
 }
 
 export interface RuntimeTrace {

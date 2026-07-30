@@ -1,4 +1,4 @@
-import { router } from "expo-router";
+import { type Href, router } from "expo-router";
 import { Pressable, SafeAreaView, ScrollView, Text } from "react-native";
 import { onboardingPrompts } from "../lib/onboarding/onboardingPrompts";
 
@@ -19,7 +19,7 @@ export default function AnnieScreen() {
             marginBottom: 30,
           }}
         >
-          👋 Hello, I'm Annie
+          👋 Hello, I&apos;m Annie
         </Text>
 
         <Text style={{ fontSize: 18, lineHeight: 30 }}>
@@ -63,7 +63,7 @@ export default function AnnieScreen() {
             alignItems: "center",
           }}
           onPress={() => {
-            router.push("/academy");
+            router.replace("/(tabs)" as Href);
           }}
         >
           <Text
@@ -73,7 +73,7 @@ export default function AnnieScreen() {
               fontWeight: "600",
             }}
           >
-            Let's get to know each other
+            Let&apos;s get to know each other
           </Text>
         </Pressable>
       </ScrollView>

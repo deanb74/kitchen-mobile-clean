@@ -1,4 +1,4 @@
-import { router } from "expo-router";
+import { type Href, router } from "expo-router";
 import { Pressable, ScrollView, Text } from "react-native";
 import { ThemedText } from "../../components/themed-text";
 import { ThemedView } from "../../components/themed-view";
@@ -35,7 +35,7 @@ export default function AnnieFirstShift() {
         </ThemedText>
 
         <ThemedText>
-          I'm Annie.
+          I&apos;m Annie.
         </ThemedText>
 
         <ThemedText>
@@ -43,7 +43,7 @@ export default function AnnieFirstShift() {
         </ThemedText>
 
         <ThemedText>
-          I'd love to understand your venue so I can become a useful colleague.
+          I&apos;d love to understand your venue so I can become a useful colleague.
         </ThemedText>
 
         <ThemedText type="subtitle">
@@ -71,7 +71,7 @@ export default function AnnieFirstShift() {
         </ThemedText>
 
         <ThemedText type="subtitle">
-          Today's reflection
+          Today&apos;s reflection
         </ThemedText>
 
         <ThemedText>
@@ -94,7 +94,7 @@ export default function AnnieFirstShift() {
             borderRadius: 12,
             alignItems: "center",
           }}
-          onPress={() => router.push("/academy")}
+          onPress={() => router.replace("/(tabs)" as Href)}
         >
           <Text
             style={{

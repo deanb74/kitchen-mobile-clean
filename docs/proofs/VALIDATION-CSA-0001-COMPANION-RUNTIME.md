@@ -14,8 +14,24 @@ The Companion Runtime can execute governed operational flows and safely detect c
 
 ## Outcome
 
-Validated for controlled integration into one hospitality workflow.
+Approved for operational integration.
 
-## Status
+## CSA-0001 Closure
 
-Passed
+Status:
+
+✓ Complete
+
+Validation:
+
+✓ Positive Harness
+✓ Negative Harness
+✓ TypeScript
+✓ Runtime Contracts
+✓ Interaction Record
+✓ Governance Review
+✓ Proof Generated
+
+Outcome:
+
+Approved for operational integration.

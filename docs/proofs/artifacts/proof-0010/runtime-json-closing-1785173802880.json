@@ -1,0 +1,138 @@
+{
+  "accepted": true,
+  "trace": {
+    "context": {
+      "interactionId": "closing-1785173802880",
+      "userId": "4",
+      "role": "manager",
+      "actorId": "4",
+      "actorRole": "manager",
+      "requestId": "closing-1785173802880",
+      "siteId": "2",
+      "equipmentId": "359",
+      "equipmentType": "closing-checklist",
+      "mode": "online",
+      "timestamp": "2026-07-27T17:36:42.880Z",
+      "requestedAt": "2026-07-27T17:36:42.880Z",
+      "localTimeIso": "2026-07-27T17:36:42.880Z",
+      "networkAvailable": true,
+      "capabilityId": "closing.checks.complete",
+      "peopleOutcome": "Ensure closing checks are completed safely so the venue can transition cleanly between services.",
+      "currentOperationalState": "closing-checks-active"
+    },
+    "decision": {
+      "decisionId": "dec-closing-1785173802880",
+      "requestId": "closing-1785173802880",
+      "disposition": "proceed",
+      "recommendedAction": "Proceed with governed companion action: Record closing checks 359 completion=true",
+      "rationale": "Selected proceed for capability closing.checks.complete to improve people outcome: Ensure closing checks are completed safely so the venue can transition cleanly between services..",
+      "confidence": 0.68,
+      "uncertainty": [],
+      "requiresHuman": false,
+      "createdAt": "2026-07-27T17:36:42.884Z"
+    },
+    "authority": {
+      "authorityId": "auth-closing-1785173802880",
+      "requestId": "closing-1785173802880",
+      "disposition": "allow",
+      "reason": "Capability and role are within approved authority boundaries.",
+      "boundaryConditions": [
+        "Record evidence for action outcome."
+      ],
+      "escalationRequired": false,
+      "createdAt": "2026-07-27T17:36:42.885Z"
+    },
+    "action": {
+      "actionId": "act-closing-1785173802880",
+      "requestId": "closing-1785173802880",
+      "attempted": true,
+      "outcome": "succeeded",
+      "summary": "Closing checks completion recorded for task 359.",
+      "sideEffects": [
+        "closing-follow-up-required"
+      ],
+      "createdAt": "2026-07-27T17:36:45.498Z",
+      "completedAt": "2026-07-27T17:36:45.498Z"
+    },
+    "evidence": {
+      "evidenceId": "ev-closing-1785173802880",
+      "requestId": "closing-1785173802880",
+      "context": {
+        "interactionId": "closing-1785173802880",
+        "userId": "4",
+        "role": "manager",
+        "actorId": "4",
+        "actorRole": "manager",
+        "requestId": "closing-1785173802880",
+        "siteId": "2",
+        "equipmentId": "359",
+        "equipmentType": "closing-checklist",
+        "mode": "online",
+        "timestamp": "2026-07-27T17:36:42.880Z",
+        "requestedAt": "2026-07-27T17:36:42.880Z",
+        "localTimeIso": "2026-07-27T17:36:42.880Z",
+        "networkAvailable": true,
+        "capabilityId": "closing.checks.complete",
+        "peopleOutcome": "Ensure closing checks are completed safely so the venue can transition cleanly between services.",
+        "currentOperationalState": "closing-checks-active"
+      },
+      "decision": {
+        "decisionId": "dec-closing-1785173802880",
+        "requestId": "closing-1785173802880",
+        "disposition": "proceed",
+        "recommendedAction": "Proceed with governed companion action: Record closing checks 359 completion=true",
+        "rationale": "Selected proceed for capability closing.checks.complete to improve people outcome: Ensure closing checks are completed safely so the venue can transition cleanly between services..",
+        "confidence": 0.68,
+        "uncertainty": [],
+        "requiresHuman": false,
+        "createdAt": "2026-07-27T17:36:42.884Z"
+      },
+      "authority": {
+        "authorityId": "auth-closing-1785173802880",
+        "requestId": "closing-1785173802880",
+        "disposition": "allow",
+        "reason": "Capability and role are within approved authority boundaries.",
+        "boundaryConditions": [
+          "Record evidence for action outcome."
+        ],
+        "escalationRequired": false,
+        "createdAt": "2026-07-27T17:36:42.885Z"
+      },
+      "action": {
+        "actionId": "act-closing-1785173802880",
+        "requestId": "closing-1785173802880",
+        "attempted": true,
+        "outcome": "succeeded",
+        "summary": "Closing checks completion recorded for task 359.",
+        "sideEffects": [
+          "closing-follow-up-required"
+        ],
+        "createdAt": "2026-07-27T17:36:45.498Z",
+        "completedAt": "2026-07-27T17:36:45.498Z"
+      },
+      "artifacts": [],
+      "provenance": {
+        "source": "companion-runtime",
+        "runtimeVersion": "0.1.0",
+        "schemaVersion": "1.0"
+      },
+      "createdAt": "2026-07-27T17:36:45.498Z"
+    },
+    "reflection": {
+      "reflectionId": "ref-closing-1785173802880",
+      "requestId": "closing-1785173802880",
+      "findings": [
+        "No additional artifacts were attached to evidence packet."
+      ],
+      "recommendations": [
+        "Capture at least one supporting artifact for similar actions."
+      ],
+      "characterCompliant": true,
+      "promotionCandidate": true,
+      "confidence": 0.85,
+      "createdAt": "2026-07-27T17:36:45.499Z"
+    }
+  },
+  "contractViolations": [],
+  "csaConformant": true
+}

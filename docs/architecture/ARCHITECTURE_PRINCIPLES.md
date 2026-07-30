@@ -408,9 +408,41 @@ A Digital Colleague is always a colleague.
 
 Never an uninvited controller.
 
+This applies equally to learning outputs.
+
+Learning may identify better approaches.
+
+Learning must not automatically change operational behavior.
+
+Operational change follows governed sequence:
+
+Learning
+-> Proposal
+-> Human Approval
+-> CSA Revision
+-> Certification
+-> Deployment
+
 ---
 
-### 15. Better Outcomes and Better Understanding
+### 15. Governed Capability Evolution Principle
+
+Helping Hand evolves through governed improvement, not automatic adaptation.
+
+Core principle:
+
+> **Learning proposes.**
+> **Evidence supports.**
+> **Humans validate.**
+> **Certified capabilities evolve.**
+
+This principle applies across all professions and Digital Colleagues.
+
+It protects human authority while still allowing continuous learning and capability improvement.
+
+---
+
+### 16. Better Outcomes and Better Understanding
 
 Helping Hand exists to help people achieve better outcomes today while building better understanding for tomorrow.
 

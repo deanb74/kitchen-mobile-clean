@@ -1,3 +1,7 @@
+import { appendCompanionRuntimeTrace } from "@/lib/companionRuntimeTraceStore";
+import { cleaningAdapter } from "@/src/companion/adapters/CleaningAdapter";
+import { closingChecksAdapter } from "@/src/companion/adapters/ClosingChecksAdapter";
+import { openingChecksAdapter } from "@/src/companion/adapters/OpeningChecksAdapter";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
@@ -10,6 +14,130 @@ export default function ChecksScreen() {
   const [closingChecks, setClosingChecks] = useState<any[]>([]);
   const [selectedCheck, setSelectedCheck] = useState<any>(null);
   const [note, setNote] = useState("");
+
+  const normalizeStoredValue = (value: string | null): string | null => {
+    if (value == null) return null;
+    const trimmed = value.trim();
+    return trimmed.length > 0 ? trimmed : null;
+  };
+
+  const decodeJwtPayload = (token: string): Record<string, unknown> | null => {
+    try {
+      const parts = token.split(".");
+      if (parts.length < 2) return null;
+
+      const payload = parts[1].replace(/-/g, "+").replace(/_/g, "/");
+      const padded = payload + "=".repeat((4 - (payload.length % 4)) % 4);
+
+      if (typeof globalThis.atob !== "function") return null;
+
+      const decoded = globalThis.atob(padded);
+      return JSON.parse(decoded) as Record<string, unknown>;
+    } catch {
+      return null;
+    }
+  };
+
+  const resolveIdentityFromToken = async () => {
+    const token = normalizeStoredValue(await getStoredItem("token"));
+    if (!token) return null;
+
+    const payload = decodeJwtPayload(token);
+    if (!payload) return null;
+
+    const payloadUser =
+      payload.user && typeof payload.user === "object"
+        ? (payload.user as Record<string, unknown>)
+        : null;
+    const payloadSite =
+      payload.site && typeof payload.site === "object"
+        ? (payload.site as Record<string, unknown>)
+        : null;
+
+    const userIdCandidate =
+      payload.userId ?? payload.id ?? payload.sub ?? payloadUser?.id;
+    const roleCandidate = payload.role;
+    const siteIdCandidate = payload.siteId ?? payloadSite?.id;
+
+    return {
+      userId:
+        userIdCandidate != null
+          ? String(userIdCandidate)
+          : null,
+      role: roleCandidate != null ? String(roleCandidate) : null,
+      siteId: siteIdCandidate != null ? String(siteIdCandidate) : null,
+    };
+  };
+
+  const resolveActorContext = async () => {
+    const tokenIdentity = await resolveIdentityFromToken();
+
+    const [userId, actorId, id, role, siteId, shiftId] = await Promise.all([
+      getStoredItem("userId"),
+      getStoredItem("actorId"),
+      getStoredItem("id"),
+      getStoredItem("role"),
+      getStoredItem("siteId"),
+      getStoredItem("shiftId"),
+    ]);
+
+    return {
+      userId:
+        normalizeStoredValue(userId) ||
+        normalizeStoredValue(actorId) ||
+        normalizeStoredValue(id) ||
+        normalizeStoredValue(tokenIdentity?.userId ?? null) ||
+        "unknown-user",
+      role:
+        normalizeStoredValue(role) ||
+        normalizeStoredValue(tokenIdentity?.role ?? null) ||
+        "staff",
+      siteId:
+        normalizeStoredValue(siteId) ||
+        normalizeStoredValue(tokenIdentity?.siteId ?? null) ||
+        "unknown-site",
+      shiftId: normalizeStoredValue(shiftId) || undefined,
+      networkAvailable: true,
+    };
+  };
+
+  const setCheckSavingState = (taskId: number) => {
+    const completedAt = new Date().toISOString();
+
+    setOpeningChecks((items) =>
+      items.map((item) =>
+        item.id === taskId
+          ? { ...item, completed: true, completedByEmail: "Saving...", completedAt }
+          : item,
+      ),
+    );
+
+    setClosingChecks((items) =>
+      items.map((item) =>
+        item.id === taskId
+          ? { ...item, completed: true, completedByEmail: "Saving...", completedAt }
+          : item,
+      ),
+    );
+  };
+
+  const saveCheckCompletion = async (taskId: number, noteText?: string) => {
+    const token = await getStoredItem("token");
+
+    if (!token || token.trim().length === 0) {
+      throw new Error("Missing auth token");
+    }
+
+    const headers = { Authorization: `Bearer ${token}` };
+
+    await axios.post(
+      `${API}/tasks/${taskId}/complete`,
+      {
+        note: noteText,
+      },
+      { headers },
+    );
+  };
 
   const loadChecks = async () => {
     try {
@@ -34,36 +162,152 @@ export default function ChecksScreen() {
     noteText?: string
   ) => {
     try {
-      setOpeningChecks((items) =>
-        items.map((item) =>
-          item.id === taskId
-            ? { ...item, completed: true, completedByEmail: "Saving...", completedAt: new Date().toISOString() }
-            : item
-        )
-      );
-
-      setClosingChecks((items) =>
-        items.map((item) =>
-          item.id === taskId
-            ? { ...item, completed: true, completedByEmail: "Saving...", completedAt: new Date().toISOString() }
-            : item
-        )
-      );
-
-      const token = await getStoredItem("token");
-      const headers = { Authorization: `Bearer ${token}` };
-
-      await axios.post(
-        `${API}/tasks/${taskId}/complete`,
-        {
-          note: noteText,
-        },
-        { headers }
-      );
+      setCheckSavingState(taskId);
+      await saveCheckCompletion(taskId, noteText);
       await loadChecks();
     } catch (err: any) {
       console.log("COMPLETE CHECK ERROR:", err?.response?.data || err.message);
       Alert.alert("Could not complete check");
+    }
+  };
+
+  const completeCleaningCheck = async (check: any, noteText?: string) => {
+    try {
+      setCheckSavingState(check.id);
+
+      const actorContext = await resolveActorContext();
+      const findings = noteText?.trim() ? [noteText.trim()] : [];
+
+      const result = await cleaningAdapter.submit({
+        actorContext,
+        area: String(check?.area?.name || check?.department || "front_of_house"),
+        checklistId: String(check.id),
+        completed: true,
+        findings,
+        executeExistingSave: async () => {
+          await saveCheckCompletion(check.id, noteText);
+
+          return {
+            attempted: true,
+            outcome: "succeeded" as const,
+            summary: `Cleaning completion recorded for task ${check.id}.`,
+            sideEffects:
+              findings.length > 0
+                ? ["follow-up-review-required"]
+                : ["cleaning-completion-recorded"],
+          };
+        },
+      });
+
+      await appendCompanionRuntimeTrace(result.runtimeResult);
+
+      const runtimeTimestamp = result.runtimeResult.trace.context.timestamp;
+      const actionCompletedAt =
+        result.runtimeResult.trace.action.completedAt ||
+        result.runtimeResult.trace.action.createdAt;
+
+      Alert.alert(
+        "Cleaning completion recorded",
+        `Task ${check.id} at site ${actorContext.siteId} completed.\nInteraction ${result.interactionId}.\nRuntime timestamp ${runtimeTimestamp}.\nAction completed ${actionCompletedAt}.\nRisk ${result.decisionSnapshot.risk}.`,
+      );
+
+      await loadChecks();
+    } catch (err: any) {
+      console.log("COMPLETE CLEANING CHECK ERROR:", err?.response?.data || err.message);
+      Alert.alert("Could not complete cleaning check");
+    }
+  };
+
+  const completeOpeningCheckEvent = async (check: any, noteText?: string) => {
+    try {
+      setCheckSavingState(check.id);
+
+      const actorContext = await resolveActorContext();
+      const startedAt =
+        check?.createdAt ||
+        check?.startedAt ||
+        new Date().toISOString();
+
+      const result = await openingChecksAdapter.submit({
+        actorContext,
+        checklistId: String(check.id),
+        completed: true,
+        startedAt,
+        completedAt: new Date().toISOString(),
+        executeExistingSave: async () => {
+          await saveCheckCompletion(check.id, noteText);
+
+          return {
+            attempted: true,
+            outcome: "succeeded" as const,
+            summary: `Opening checks completion recorded for task ${check.id}.`,
+            sideEffects: ["opening-checks-completion-recorded"],
+          };
+        },
+      });
+
+      await appendCompanionRuntimeTrace(result.runtimeResult);
+
+      const runtimeTimestamp = result.interactionRecord.context.timestamp;
+      const actionCompletedAt =
+        result.interactionRecord.action.completedAt ||
+        result.interactionRecord.action.createdAt;
+
+      Alert.alert(
+        "Opening checks event recorded",
+        `Task ${check.id} at site ${actorContext.siteId} completed.\nInteraction ${result.interactionId}.\nRuntime timestamp ${runtimeTimestamp}.\nAction completed ${actionCompletedAt}.\nRisk ${result.decisionSnapshot.risk}.`,
+      );
+
+      await loadChecks();
+    } catch (err: any) {
+      console.log("COMPLETE OPENING CHECK EVENT ERROR:", err?.response?.data || err.message);
+      Alert.alert("Could not complete opening checks event");
+    }
+  };
+
+  const completeClosingCheckEvent = async (check: any, noteText?: string) => {
+    try {
+      setCheckSavingState(check.id);
+
+      const actorContext = await resolveActorContext();
+      const unresolvedItems = noteText?.trim() ? [noteText.trim()] : [];
+
+      const result = await closingChecksAdapter.submit({
+        actorContext,
+        checklistId: String(check.id),
+        completed: true,
+        unresolvedItems,
+        executeExistingSave: async () => {
+          await saveCheckCompletion(check.id, noteText);
+
+          return {
+            attempted: true,
+            outcome: "succeeded" as const,
+            summary: `Closing checks completion recorded for task ${check.id}.`,
+            sideEffects:
+              unresolvedItems.length > 0
+                ? ["closing-follow-up-required"]
+                : ["closing-checks-completion-recorded"],
+          };
+        },
+      });
+
+      await appendCompanionRuntimeTrace(result.runtimeResult);
+
+      const runtimeTimestamp = result.runtimeResult.trace.context.timestamp;
+      const actionCompletedAt =
+        result.runtimeResult.trace.action.completedAt ||
+        result.runtimeResult.trace.action.createdAt;
+
+      Alert.alert(
+        "Closing checks event recorded",
+        `Task ${check.id} at site ${actorContext.siteId} completed.\nInteraction ${result.interactionId}.\nRuntime timestamp ${runtimeTimestamp}.\nAction completed ${actionCompletedAt}.\nRisk ${result.decisionSnapshot.risk}.`,
+      );
+
+      await loadChecks();
+    } catch (err: any) {
+      console.log("COMPLETE CLOSING CHECK EVENT ERROR:", err?.response?.data || err.message);
+      Alert.alert("Could not complete closing checks event");
     }
   };
 
@@ -73,6 +317,12 @@ export default function ChecksScreen() {
 
   const openingCompleted = openingChecks.filter((item) => item.completed).length;
   const closingCompleted = closingChecks.filter((item) => item.completed).length;
+  const isSelectedOpeningCheck =
+    !!selectedCheck &&
+    openingChecks.some((item) => item.id === selectedCheck.id);
+  const isSelectedClosingCheck =
+    !!selectedCheck &&
+    closingChecks.some((item) => item.id === selectedCheck.id);
 
   const getRagStyle = (completed: number, total: number) => {
     if (total === 0) return styles.ragRed;
@@ -273,6 +523,79 @@ export default function ChecksScreen() {
                 Complete Check
               </Text>
             </Pressable>
+
+            <Pressable
+              style={{
+                backgroundColor: "#0f766e",
+                padding: 12,
+                borderRadius: 8,
+                marginBottom: 8,
+              }}
+              onPress={async () => {
+                await completeCleaningCheck(selectedCheck, note);
+                setSelectedCheck(null);
+              }}
+            >
+              <Text
+                style={{
+                  color: "#fff",
+                  textAlign: "center",
+                  fontWeight: "700",
+                }}
+              >
+                Complete As Cleaning Event
+              </Text>
+            </Pressable>
+
+            {isSelectedOpeningCheck ? (
+              <Pressable
+                style={{
+                  backgroundColor: "#1d4ed8",
+                  padding: 12,
+                  borderRadius: 8,
+                  marginBottom: 8,
+                }}
+                onPress={async () => {
+                  await completeOpeningCheckEvent(selectedCheck, note);
+                  setSelectedCheck(null);
+                }}
+              >
+                <Text
+                  style={{
+                    color: "#fff",
+                    textAlign: "center",
+                    fontWeight: "700",
+                  }}
+                >
+                  Complete As Opening Event
+                </Text>
+              </Pressable>
+            ) : null}
+
+            {isSelectedClosingCheck ? (
+              <Pressable
+                style={{
+                  backgroundColor: "#7c3aed",
+                  padding: 12,
+                  borderRadius: 8,
+                  marginBottom: 8,
+                }}
+                onPress={async () => {
+                  await completeClosingCheckEvent(selectedCheck, note);
+                  setSelectedCheck(null);
+                }}
+              >
+                <Text
+                  style={{
+                    color: "#fff",
+                    textAlign: "center",
+                    fontWeight: "700",
+                  }}
+                >
+                  Complete As Closing Event
+                </Text>
+              </Pressable>
+            ) : null}
 
             <Pressable
               onPress={() => setSelectedCheck(null)}

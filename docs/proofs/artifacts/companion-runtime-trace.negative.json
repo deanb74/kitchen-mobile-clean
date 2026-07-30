@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T15:43:31.521Z",
+  "generatedAt": "2026-07-27T12:10:14.983Z",
   "scenario": {
     "accepted": true,
     "trace": {
@@ -16,9 +16,9 @@
         "currentShift": "shift-001",
         "shiftId": "shift-001",
         "mode": "online",
-        "timestamp": "2026-07-26T15:43:31.518Z",
-        "requestedAt": "2026-07-26T15:43:31.518Z",
-        "localTimeIso": "2026-07-26T15:43:31.518Z",
+        "timestamp": "2026-07-27T12:10:14.981Z",
+        "requestedAt": "2026-07-27T12:10:14.981Z",
+        "localTimeIso": "2026-07-27T12:10:14.981Z",
         "networkAvailable": true,
         "capabilityId": "temperature.log",
         "peopleOutcome": "",
@@ -33,7 +33,7 @@
         "confidence": 0.8,
         "uncertainty": [],
         "requiresHuman": false,
-        "createdAt": "2026-07-26T15:43:31.520Z"
+        "createdAt": "2026-07-27T12:10:14.982Z"
       },
       "authority": {
         "authorityId": "auth-req-negative-001",
@@ -44,7 +44,7 @@
           "Record evidence for action outcome."
         ],
         "escalationRequired": false,
-        "createdAt": "2026-07-26T15:43:31.520Z"
+        "createdAt": "2026-07-27T12:10:14.982Z"
       },
       "action": {
         "actionId": "act-req-negative-001",
@@ -55,8 +55,8 @@
         "sideEffects": [
           "evidence-priority"
         ],
-        "createdAt": "2026-07-26T15:43:31.520Z",
-        "completedAt": "2026-07-26T15:43:31.520Z"
+        "createdAt": "2026-07-27T12:10:14.983Z",
+        "completedAt": "2026-07-27T12:10:14.983Z"
       },
       "evidence": {
         "evidenceId": "ev-req-negative-001",
@@ -74,9 +74,9 @@
           "currentShift": "shift-001",
           "shiftId": "shift-001",
           "mode": "online",
-          "timestamp": "2026-07-26T15:43:31.518Z",
-          "requestedAt": "2026-07-26T15:43:31.518Z",
-          "localTimeIso": "2026-07-26T15:43:31.518Z",
+          "timestamp": "2026-07-27T12:10:14.981Z",
+          "requestedAt": "2026-07-27T12:10:14.981Z",
+          "localTimeIso": "2026-07-27T12:10:14.981Z",
           "networkAvailable": true,
           "capabilityId": "temperature.log",
           "peopleOutcome": "",
@@ -91,7 +91,7 @@
           "confidence": 0.8,
           "uncertainty": [],
           "requiresHuman": false,
-          "createdAt": "2026-07-26T15:43:31.520Z"
+          "createdAt": "2026-07-27T12:10:14.982Z"
         },
         "authority": {
           "authorityId": "auth-req-negative-001",
@@ -102,7 +102,7 @@
             "Record evidence for action outcome."
           ],
           "escalationRequired": false,
-          "createdAt": "2026-07-26T15:43:31.520Z"
+          "createdAt": "2026-07-27T12:10:14.982Z"
         },
         "action": {
           "actionId": "act-req-negative-001",
@@ -113,15 +113,15 @@
           "sideEffects": [
             "evidence-priority"
           ],
-          "createdAt": "2026-07-26T15:43:31.520Z",
-          "completedAt": "2026-07-26T15:43:31.520Z"
+          "createdAt": "2026-07-27T12:10:14.983Z",
+          "completedAt": "2026-07-27T12:10:14.983Z"
         },
         "artifacts": [],
         "provenance": {
           "source": "companion-runtime",
           "runtimeVersion": "0.1.0"
         },
-        "createdAt": "2026-07-26T15:43:31.520Z"
+        "createdAt": "2026-07-27T12:10:14.983Z"
       },
       "reflection": {
         "reflectionId": "ref-req-negative-001",
@@ -135,7 +135,7 @@
         "characterCompliant": true,
         "promotionCandidate": true,
         "confidence": 0.85,
-        "createdAt": "2026-07-26T15:43:31.520Z"
+        "createdAt": "2026-07-27T12:10:14.983Z"
       }
     },
     "contractViolations": [

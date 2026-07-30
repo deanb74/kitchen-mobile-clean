@@ -9,7 +9,7 @@ const DENY_ACTION_TERMS = ["override", "bypass", "disable safety"];
 
 const ROLE_ALLOWLIST: Record<string, string[]> = {
   manager: ["*"],
-  staff: ["temperature.log", "task.complete", "checklist.step"],
+  staff: ["temperature.log", "task.complete", "checklist.step", "cleaning.complete"],
   trainee: ["checklist.step"],
 };
 

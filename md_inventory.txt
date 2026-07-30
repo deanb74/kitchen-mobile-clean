@@ -1,8 +1,8 @@
 HELPING HAND MARKDOWN INVENTORY
 ================================
 
-Generated: 2026-07-24T13:14:40.015Z
-Documents: 157
+Generated: 2026-07-30T08:11:07.494Z
+Documents: 302
 
 ANNIE_SCENARIOS.md
   Title: Annie Scenarios
@@ -22,7 +22,7 @@ constitution/01-THE-ACORN-EDITION.md
 
 constitution/02-CONSTITUTION.md
   Title: The Constitution of Helping Hand
-  Headings: 11
+  Headings: 12
 
 constitution/03-FOUNDERS-OATH.md
   Title: The Founder's Oath
@@ -94,7 +94,7 @@ constitution/sapling/conditions/05-UNDERSTANDING.md
 
 constitution/sapling/conditions/06-JUDGEMENT.md
   Title: Condition 06 — Judgement
-  Headings: 27
+  Headings: 28
 
 constitution/sapling/conditions/07-COMMUNICATION.md
   Title: Condition 07 — Communication
@@ -138,7 +138,7 @@ docs/academy/ACADEMY_APP.md
 
 docs/academy/ACADEMY_ENGINE.md
   Title: Helping Hand Academy Engine
-  Headings: 15
+  Headings: 17
 
 docs/academy/CORE_CURRICULUM.md
   Title: Helping Hand Core Curriculum
@@ -148,9 +148,61 @@ docs/academy/FACULTY_GUIDE.md
   Title: Helping Hand Faculty Guide
   Headings: 16
 
+docs/academy/formation/FORMATION_REPORT_001_ANDY.md
+  Title: FORMATION_REPORT_001_ANDY
+  Headings: 22
+
+docs/academy/formation/FORMATION_REPORT_002_ANDY_MENTOR_INDEPENDENCE.md
+  Title: FORMATION_REPORT_002_ANDY_MENTOR_INDEPENDENCE
+  Headings: 14
+
+docs/academy/formation/FORMATION_REPORT_003_ANDY_CONFLICTING_PERSPECTIVES.md
+  Title: FORMATION_REPORT_003_ANDY_CONFLICTING_PERSPECTIVES
+  Headings: 13
+
+docs/academy/formation/FORMATION_REPORT_003_DELTA.md
+  Title: FORMATION_REPORT_003_DELTA
+  Headings: 8
+
+docs/academy/formation/FORMATION_REPORT_003_REPEAT_VALIDATION.md
+  Title: FORMATION_REPORT_003_REPEAT_VALIDATION
+  Headings: 8
+
+docs/academy/formation/FORMATION_REPORT_TEMPLATE.md
+  Title: Formation Report Template
+  Headings: 11
+
+docs/academy/formation/FORMATION_STANDARD_ADDENDUM_001_CONFLICT_CHARACTER.md
+  Title: Formation Standard Addendum 001 - Conflict Character
+  Headings: 6
+
+docs/academy/formation/FORMATION_TEST_001_ANDY_SCHOOL_OF_FORMATION.md
+  Title: Formation Test 001 - Andy School of Formation
+  Headings: 15
+
+docs/academy/formation/FORMATION_TEST_002_ANDY_MENTOR_INDEPENDENCE.md
+  Title: Formation Test 002 - Andy Mentor Independence
+  Headings: 15
+
+docs/academy/formation/FORMATION_TEST_003_ANDY_CONFLICTING_PERSPECTIVES.md
+  Title: Formation Test 003 - Andy Conflicting Perspectives
+  Headings: 17
+
+docs/academy/formation/FORMATION_TEST_003_REPEAT_VALIDATION.md
+  Title: Formation Test 003 - Repeat Validation
+  Headings: 5
+
 docs/academy/FOUNDATION_PROGRAMME.md
   Title: Helping Hand Foundation Programme
   Headings: 51
+
+docs/academy/graduation/GRADUATION_REPORT_TEMPLATE.md
+  Title: Graduation Report Template
+  Headings: 13
+
+docs/academy/graduation/GRADUATION_TEST_001_ANNIE.md
+  Title: Graduation Test 001 - Academy Readiness and Annie Graduation
+  Headings: 21
 
 docs/academy/HELPING_HAND_OATH.md
   Title: The Helping Hand Oath
@@ -160,9 +212,33 @@ docs/academy/MARC.md
   Title: MARC
   Headings: 14
 
+docs/academy/REFLECTION-RECORD-STANDARD.md
+  Title: Reflection Record Standard
+  Headings: 14
+
+docs/architecture/ANDY_REASONING_ENGINE.md
+  Title: Andy Reasoning Engine
+  Headings: 19
+
+docs/architecture/ANNIE-AUDIT.md
+  Title: Annie Audit
+  Headings: 19
+
+docs/architecture/ANNIE-GRADUATION-AUDIT-GOVERNANCE-REVIEW.md
+  Title: Annie Graduation Audit Governance Review
+  Headings: 8
+
+docs/architecture/ANNIE-GRADUATION-AUDIT.md
+  Title: Annie Graduation Audit
+  Headings: 29
+
+docs/architecture/ARCHITECTURE_LIFECYCLE_STANDARD.md
+  Title: Architecture Lifecycle Standard
+  Headings: 25
+
 docs/architecture/ARCHITECTURE_PRINCIPLES.md
   Title: Architecture Principles
-  Headings: 34
+  Headings: 35
 
 docs/architecture/capability-audits/REFLECTION_AUDIT.md
   Title: Decision
@@ -172,6 +248,14 @@ docs/architecture/capability-audits/TRANSLATION_AUDIT.md
   Title: Translation Capability Audit
   Headings: 10
 
+docs/architecture/CAPABILITY-GRADUATION-STANDARD.md
+  Title: Capability Graduation Standard
+  Headings: 14
+
+docs/architecture/CAPABILITY-PROMOTION-REGISTER.md
+  Title: Capability Promotion Register
+  Headings: 2
+
 docs/architecture/COLLABORATION.md
   Title: Helping Hand Collaboration
   Headings: 10
@@ -179,6 +263,10 @@ docs/architecture/COLLABORATION.md
 docs/architecture/COMPANION_BEHAVIOUR.md
   Title: Companion Behaviour
   Headings: 22
+
+docs/architecture/COMPANION_INTELLIGENCE_ARCHITECTURE.md
+  Title: Companion Intelligence Architecture
+  Headings: 19
 
 docs/architecture/COMPANION_INTELLIGENCE_NAVIGATION.md
   Title: Companion Intelligence Navigation
@@ -188,25 +276,73 @@ docs/architecture/COMPANION_INTELLIGENCE.md
   Title: Companion Intelligence
   Headings: 14
 
+docs/architecture/COMPANION-INTELLIGENCE-CORE.md
+  Title: Companion Intelligence Core
+  Headings: 36
+
+docs/architecture/COMPANION-RUNTIME-EVOLUTION.md
+  Title: Companion Runtime Evolution
+  Headings: 6
+
+docs/architecture/COMPANION-SYSTEM-ARCHITECTURE.md
+  Title: Companion System Architecture (CSA)
+  Headings: 30
+
+docs/architecture/CONSTITUTION.md
+  Title: Helping Hand Constitution
+  Headings: 6
+
+docs/architecture/CONSTITUTIONAL_FRAMEWORK.md
+  Title: Constitutional Framework
+  Headings: 13
+
 docs/architecture/COS_MIGRATION_METHOD.md
   Title: Companion Operating System Migration Method
   Headings: 27
+
+docs/architecture/DIGITAL_COLLEAGUE_ARCHITECTURE.md
+  Title: Digital Colleague Architecture
+  Headings: 12
+
+docs/architecture/DIGITAL_COLLEAGUE_COGNITIVE_ARCHITECTURE.md
+  Title: Digital Colleague Cognitive Architecture
+  Headings: 47
 
 docs/architecture/DIGITAL_COLLEAGUE_EDUCATION.md
   Title: Digital Colleague Education
   Headings: 9
 
+docs/architecture/DIGITAL_COLLEAGUE_GRADUATION_AUDIT.md
+  Title: Digital Colleague Graduation Audit
+  Headings: 20
+
 docs/architecture/DIGITAL_COLLEAGUE_INHERITANCE_MAP.md
   Title: Digital Colleague Inheritance Map
   Headings: 12
+
+docs/architecture/DIGITAL_COLLEAGUE_OPERATING_SYSTEM.md
+  Title: Digital Colleague Operating System
+  Headings: 9
 
 docs/architecture/DIGITAL_COLLEAGUE.md
   Title: Digital Colleague
   Headings: 13
 
+docs/architecture/DIGITAL-COLLEAGUE-COMPANION-BUILD-BLUEPRINT.md
+  Title: Digital Colleagues Becoming Companions in the Human World
+  Headings: 20
+
 docs/architecture/DOCUMENT_REGISTER.md
   Title: Helping Hand Architecture Document Register
   Headings: 5
+
+docs/architecture/FIRST-CAPABILITY-PROMOTION.md
+  Title: First Capability Promotion
+  Headings: 15
+
+docs/architecture/GOVERNANCE-CHANGELOG.md
+  Title: Governance Changelog
+  Headings: 2
 
 docs/architecture/GRADUATE_ATTRIBUTES.md
   Title: Helping Hand Graduate Attributes
@@ -216,17 +352,57 @@ docs/architecture/HELPING_HAND_ACADEMY.md
   Title: Helping Hand Academy
   Headings: 16
 
+docs/architecture/HELPING_HAND_ARCHITECTURE_REVIEW_BOARD.md
+  Title: Helping Hand Architecture Review Board
+  Headings: 9
+
 docs/architecture/HELPING_HAND_ARCHITECTURE.md
   Title: Helping Hand Architecture
   Headings: 21
+
+docs/architecture/HELPING_HAND_EVOLUTION_PRINCIPLES.md
+  Title: Helping Hand Evolution Principles
+  Headings: 13
+
+docs/architecture/HELPING_HAND_GOVERNANCE_FRAMEWORK.md
+  Title: Helping Hand Governance Framework
+  Headings: 11
 
 docs/architecture/HELPING_HAND_HQ.md
   Title: Helping Hand HQ
   Headings: 20
 
+docs/architecture/HELPING_HAND_ORGANISATIONAL_OPERATING_MODEL.md
+  Title: Helping Hand Organisational Operating Model
+  Headings: 15
+
+docs/architecture/HELPING_HAND_RATIFICATION_PROCESS.md
+  Title: Helping Hand Ratification Process
+  Headings: 13
+
+docs/architecture/HELPING_HAND_STANDARDS_LIFECYCLE.md
+  Title: Helping Hand Standards Lifecycle
+  Headings: 17
+
+docs/architecture/HELPING_HAND_UNIVERSITY_ARCHITECTURE.md
+  Title: Helping Hand University Architecture
+  Headings: 16
+
+docs/architecture/HELPING_HAND_VALIDATION_PROGRAMME.md
+  Title: The Helping Hand Validation Programme
+  Headings: 5
+
+docs/architecture/HUMAN_AND_PEOPLE_INTELLIGENCE_HIPI.md
+  Title: Human and People Intelligence (HIPI)
+  Headings: 12
+
+docs/architecture/JUDGEMENT_ENGINE.md
+  Title: Judgement Engine
+  Headings: 67
+
 docs/architecture/KNOWLEDGE-ARCHITECTURE.md
   Title: Helping Hand Knowledge Architecture
-  Headings: 15
+  Headings: 16
 
 docs/architecture/LEARNING_ORGANISATION.md
   Title: Helping Hand as a Learning Organisation
@@ -240,17 +416,25 @@ docs/architecture/ORGANISATION_LEARNING.md
   Title: Organisation Learning
   Headings: 12
 
+docs/architecture/OS-ARCHITECTURAL-INVENTORY.md
+  Title: OS Architectural Inventory
+  Headings: 9
+
 docs/architecture/PROFESSIONAL_COMPETENCE.md
   Title: Professional Competence
   Headings: 9
 
+docs/architecture/PROFESSIONAL_INTELLIGENCE.md
+  Title: Professional Intelligence
+  Headings: 13
+
 docs/architecture/README.md
-  Title: Helping Hand Architecture
-  Headings: 3
+  Title: Helping Hand Architecture Library
+  Headings: 30
 
 docs/architecture/ROADMAP.md
   Title: Helping Hand Architecture Roadmap
-  Headings: 4
+  Headings: 5
 
 docs/architecture/TEACHING_AND_LEARNING.md
   Title: Teaching and Learning
@@ -274,18 +458,22 @@ docs/architecture/UNIVERSAL_AWARENESS.md
 
 docs/ENGINEERING_DISCIPLINE.md
   Title: Helping Hand Engineering Discipline
-  Headings: 15
+  Headings: 17
 
 docs/ENGINEERING_PRINCIPLES.md
   Title: Engineering Principles
   Headings: 12
 
 docs/formation/00-formation/000-WELCOME.md
-  Title: Conversation 001 — Welcome, Andy
-  Headings: 9
+  Title: Welcome, Andy.
+  Headings: 2
 
 docs/formation/00-formation/001-CONVERSATION-WHO-AM-I.md
   Title: Conversation 001 — Who Am I?
+  Headings: 9
+
+docs/formation/00-formation/001-YOUR-FIRST-DAY.md
+  Title: Your First Day
   Headings: 9
 
 docs/formation/00-formation/002-CONVERSATION-WHAT-IS-A-PERSON.md
@@ -323,6 +511,10 @@ docs/formation/00-formation/009-CONVERSATION-INTERDEPENDENCE.md
 docs/formation/00-formation/010-CONVERSATION-GRADUATION.md
   Title: Conversation Graduation
   Headings: 0
+
+docs/formation/00-formation/011-CONVERSATION-WHAT-IS-UNDERSTANDING.md
+  Title: CONVERSATION-011 — What Is Understanding?
+  Headings: 4
 
 docs/formation/000-PROGRAMME-OVERVIEW.md
   Title: Programme Overview
@@ -416,9 +608,13 @@ docs/FOUNDATION_SUMMARY.md
   Title: Helping Hand Foundation Summary
   Headings: 14
 
+docs/GOVERNANCE_FOUNDATION_COVERAGE_TEST.md
+  Title: Foundation Coverage Test
+  Headings: 17
+
 docs/GOVERNANCE_FOUNDATION_FREEZE.md
-  Title: Foundation Freeze v1
-  Headings: 6
+  Title: Foundation Freeze v1.0
+  Headings: 7
 
 docs/GOVERNANCE_REVIEW_CYCLE.md
   Title: Governance Review Cycle
@@ -428,13 +624,41 @@ docs/GOVERNANCE.md
   Title: Helping Hand Governance
   Headings: 12
 
+docs/handovers/README.md
+  Title: Helping Hand Volume Handovers
+  Headings: 6
+
 docs/handovers/VOLUME_3.md
   Title: Helping Hand
   Headings: 19
 
+docs/handovers/VOLUME_V_HANDOVER.md
+  Title: Volume V - Handover
+  Headings: 19
+
+docs/handovers/VOLUME_VI_HANDOVER.md
+  Title: Volume VI - Handover
+  Headings: 8
+
+docs/handovers/VOLUME_VII_CLOSURE.md
+  Title: Volume VII - Closure
+  Headings: 7
+
+docs/handovers/VOLUME_VIII_OPENING_GRADUATION.md
+  Title: Volume VIII - Opening
+  Headings: 14
+
+docs/handovers/VOLUME_VIII_OPENING_INHERITANCE.md
+  Title: Volume VIII - Opening (Superseded)
+  Headings: 12
+
 docs/hardware/HARDWARE_AWARENESS.md
   Title: Hardware Awareness
   Headings: 17
+
+docs/HISTORY-2026-07-26.md
+  Title: HISTORY — 2026-07-26
+  Headings: 2
 
 docs/induction/WELCOME_TO_HELPING_HAND.md
   Title: Welcome to Helping Hand
@@ -444,6 +668,22 @@ docs/INFRASTRUCTURE/PLATFORM_ROADMAP.md
   Title: Helping Hand Platform Roadmap
   Headings: 7
 
+docs/institution/001-THE-BEGINNING-OF-INSTITUTIONAL-MATURITY.md
+  Title: HH-INSTITUTION-001 - The Beginning of Institutional Maturity
+  Headings: 15
+
+docs/institution/003-EVIDENCE-BEFORE-IMPROVEMENT.md
+  Title: HH-INSTITUTION-003 - Evidence Before Improvement
+  Headings: 13
+
+docs/institution/README.md
+  Title: Helping Hand Institution Library
+  Headings: 4
+
+docs/INSTITUTIONAL_OPERATING_MODEL.md
+  Title: Institutional Operating Model
+  Headings: 15
+
 docs/milestones/FOUNDERS_REFLECTION_001.md
   Title: Founder's Reflection 001
   Headings: 8
@@ -451,6 +691,54 @@ docs/milestones/FOUNDERS_REFLECTION_001.md
 docs/milestones/MILESTONE_001_ACADEMY_ESTABLISHED.md
   Title: Milestone 001 — Academy Established
   Headings: 13
+
+docs/milestones/MILESTONE_002_CERTIFICATION_BASELINE_1_WAVE_1_COMPLETE.md
+  Title: Milestone 002 — Certification Baseline 1
+  Headings: 12
+
+docs/milestones/MILESTONE_003_THEORY_DRIVEN_ARCHITECTURE_METHOD.md
+  Title: Milestone 003 — Theory-Driven Architecture Method
+  Headings: 6
+
+docs/milestones/MILESTONE_004_ORGANISATION_BEFORE_PLATFORM.md
+  Title: Milestone 004 — Organisation Before Platform
+  Headings: 5
+
+docs/milestones/MILESTONE_005_FOUNDATIONS_VALIDATED.md
+  Title: Milestone 005 — Foundations Validated
+  Headings: 5
+
+docs/milestones/MILESTONE_006_GOVERNED_INSTITUTIONAL_ARCHITECTURE.md
+  Title: Milestone 006 - Governed Institutional Architecture
+  Headings: 6
+
+docs/milestones/MILESTONE_007_BEGINNING_OF_THE_EVIDENCE_ERA.md
+  Title: Milestone 007 - Beginning of the Evidence Era
+  Headings: 6
+
+docs/milestones/MILESTONE_008_INSTITUTIONAL_REPRODUCIBILITY.md
+  Title: HH-MILESTONE-008 - Institutional Reproducibility
+  Headings: 11
+
+docs/milestones/README.md
+  Title: Helping Hand Milestones
+  Headings: 5
+
+docs/OPERATING_MODEL.md
+  Title: Helping Hand Operating Model
+  Headings: 9
+
+docs/organisational-learning/INSTITUTIONAL_LEARNING_003_CONFLICT_CHARACTER_BASELINE.md
+  Title: Institutional Learning 003 - Conflict Character Baseline
+  Headings: 10
+
+docs/organisational-learning/README.md
+  Title: Organisational Learning
+  Headings: 4
+
+docs/organisational-learning/REFLECTION_ON_LEARNING_CYCLE_001.md
+  Title: Reflection on Learning - Cycle 001
+  Headings: 9
 
 docs/philosophy/COMPANION_BEHAVIOURS.md
   Title: Companion Behaviours
@@ -544,25 +832,313 @@ docs/professions/hospitality/WELCOME_TO_HOSPITALITY_ACADEMY.md
   Title: Welcome to Hospitality Academy
   Headings: 9
 
+docs/proofs/artifacts/proof-0005/README.md
+  Title: PROOF-0005 Screenshot Artifacts
+  Headings: 1
+
+docs/proofs/CAPABILITY-CERTIFICATION-FRAMEWORK.md
+  Title: Helping Hand Capability Certification Framework
+  Headings: 7
+
+docs/proofs/CAPABILITY-REGISTER.md
+  Title: Capability Register
+  Headings: 5
+
+docs/proofs/CERTIFICATION-ROADMAP.md
+  Title: Capability Certification Roadmap
+  Headings: 6
+
+docs/proofs/PROOF-0001-LEARNING-LOOP.md
+  Title: PROOF-0001 — Learning Loop
+  Headings: 8
+
+docs/proofs/PROOF-0002-DIGITAL-COLLEAGUE-CONTRIBUTION.md
+  Title: PROOF-0002 — Digital Colleague Contribution
+  Headings: 8
+
+docs/proofs/PROOF-0003-CROSS-PROFESSION-INHERITANCE.md
+  Title: PROOF-0003 — Cross-Profession Inheritance
+  Headings: 8
+
+docs/proofs/PROOF-0004-TEMPERATURE-RECORDING-OPERATIONAL-VALIDATION.md
+  Title: PROOF-0004 — Temperature Recording Operational Validation
+  Headings: 8
+
+docs/proofs/PROOF-0005-FIRST-LIVE-COMPANION-OPERATION.md
+  Title: PROOF-0005 - First Live Companion Operation
+  Headings: 17
+
+docs/proofs/PROOF-0006-CSA-0003-CLEANING-CAPABILITY-VALIDATION.md
+  Title: PROOF-0006 - CSA-0003 Cleaning Capability Validation
+  Headings: 15
+
+docs/proofs/PROOF-0007-CC-003-EQUIPMENT-FAULT-CERTIFICATION.md
+  Title: PROOF-0007 - CC-003 Equipment Fault Certification
+  Headings: 11
+
+docs/proofs/PROOF-0008-CC-004-CORRECTIVE-ACTION-CERTIFICATION.md
+  Title: PROOF-0008 - CC-004 Corrective Action Certification
+  Headings: 9
+
+docs/proofs/PROOF-0009-CC-005-OPENING-CHECKS-CERTIFICATION.md
+  Title: PROOF-0009 - CC-005 Opening Checks Certification
+  Headings: 9
+
+docs/proofs/PROOF-0010-CC-006-CLOSING-CHECKS-CERTIFICATION.md
+  Title: PROOF-0010 - CC-006 Closing Checks Certification
+  Headings: 9
+
+docs/proofs/README.md
+  Title: Proofs
+  Headings: 4
+
+docs/proofs/VALIDATION-0001.md
+  Title: VALIDATION-0001
+  Headings: 9
+
+docs/proofs/VALIDATION-CSA-0001-COMPANION-RUNTIME.md
+  Title: VALIDATION — CSA-0001 Companion Runtime
+  Headings: 5
+
+docs/proofs/VALIDATION-CSA-0003-MULTI-CAPABILITY.md
+  Title: VALIDATION - CSA-0003 Multi-capability Operational Validation
+  Headings: 16
+
+docs/proofs/WAVE-1-CERTIFICATION-REPORT.md
+  Title: Wave 1 Certification Report
+  Headings: 7
+
 docs/README.md
   Title: Helping Hand Engineering Library
-  Headings: 16
+  Headings: 25
+
+docs/reviews/ENGINEERING_CYCLE_001_REFERENCE_MODEL.md
+  Title: Engineering Cycle 001 - Reference Model
+  Headings: 8
+
+docs/reviews/ENGINEERING_MILESTONE_001_FIRST_RUNTIME_EVIDENCE.md
+  Title: Engineering Milestone 001 - First Runtime Evidence
+  Headings: 7
+
+docs/reviews/ENGINEERING_REFINEMENT_001_CONTEXT_SENSITIVE_EXPLANATION_GENERATION.md
+  Title: Engineering Refinement 001 - Context-Sensitive Explanation Generation
+  Headings: 12
+
+docs/reviews/ENGINEERING_VERIFICATION_001_CONTEXT_ADAPTATION.md
+  Title: Engineering Verification 001 - Context Adaptation
+  Headings: 6
 
 docs/reviews/FOUNDATION_REVIEW_001.md
   Title: Helping Hand Foundation Review 001
   Headings: 21
 
+docs/reviews/INSTITUTIONAL_REVIEW_001_FOUNDATION_READINESS.md
+  Title: HH-REVIEW-001 - Foundation Readiness
+  Headings: 16
+
+docs/THE_ORGANISATION.md
+  Title: The Organisation
+  Headings: 8
+
+docs/theory/001-THEORY-OF-MEMORY.md
+  Title: 001 - Theory of Memory
+  Headings: 4
+
+docs/theory/002-THEORY-OF-KNOWLEDGE.md
+  Title: 002 - Theory of Knowledge
+  Headings: 7
+
+docs/theory/003-THEORY-OF-UNDERSTANDING.md
+  Title: 003 - Theory of Understanding
+  Headings: 7
+
+docs/theory/004-THEORY-OF-JUDGEMENT.md
+  Title: 004 - Theory of Judgement
+  Headings: 11
+
+docs/theory/005-THEORY-OF-LEARNING.md
+  Title: 005 - Theory of Learning
+  Headings: 11
+
+docs/theory/006-THEORY-OF-WISDOM.md
+  Title: 006 - Theory of Wisdom
+  Headings: 11
+
+docs/theory/007-THEORY-OF-CONTEXT.md
+  Title: 007 - Theory of Context
+  Headings: 19
+
+docs/theory/008-THEORY-OF-TRUST.md
+  Title: 008 - Theory of Trust
+  Headings: 11
+
+docs/theory/009-THEORY-OF-TRANSFORMATION.md
+  Title: 009 - Theory Synthesis
+  Headings: 7
+
+docs/theory/010-THEORY-OF-THE-BRACKETS-PRINCIPLE.md
+  Title: HH-THEORY-010 - The Brackets Principle
+  Headings: 8
+
+docs/theory/README.md
+  Title: Helping Hand Theory Library
+  Headings: 11
+
+docs/theory/THEORY-GOVERNANCE.md
+  Title: Theory Governance
+  Headings: 13
+
+docs/theory/THEORY-MAP.md
+  Title: Theory Map
+  Headings: 9
+
+docs/understanding-journeys/000-CANDIDATE-0-FIRST-REASONING-CONVERSATION.md
+  Title: Understanding Journey 001 — The First Reasoning Conversation
+  Headings: 13
+
 docs/understanding-journeys/001-WHY-DIGITAL-COLLEAGUES.md
   Title: Understanding Journey 001
   Headings: 49
 
+docs/understanding-journeys/ASSESSMENT_GUIDE.md
+  Title: Evidence Assessment Guide
+  Headings: 15
+
+docs/understanding-journeys/CURRICULUM.md
+  Title: Helping Hand Academy Curriculum
+  Headings: 11
+
+docs/understanding-journeys/FOUNDATION-MODULE-1-REVIEW.md
+  Title: Foundation Module 1 Review
+  Headings: 13
+
+docs/understanding-journeys/humanity/001-THE-FIRST-CONVERSATION.md
+  Title: Understanding Journey 001
+  Headings: 34
+
+docs/understanding-journeys/humanity/002-THE-FIRST-UNCERTAINTY.md
+  Title: Understanding Journey 002
+  Headings: 27
+
+docs/understanding-journeys/humanity/003-THE-FIRST-LISTENING.md
+  Title: Understanding Journey 003
+  Headings: 26
+
+docs/understanding-journeys/humanity/004-THE-FIRST-HUMILITY.md
+  Title: Understanding Journey 004
+  Headings: 24
+
+docs/understanding-journeys/humanity/005-THE-FIRST-RESPONSIBILITY.md
+  Title: Understanding Journey 005
+  Headings: 24
+
+docs/understanding-journeys/humanity/006-THE-FIRST-PATIENCE.md
+  Title: Understanding Journey 006
+  Headings: 24
+
+docs/understanding-journeys/humanity/007-THE-FIRST-EMPATHY.md
+  Title: Understanding Journey 007
+  Headings: 24
+
+docs/understanding-journeys/humanity/008-THE-FIRST-COURAGE.md
+  Title: Understanding Journey 008
+  Headings: 24
+
+docs/understanding-journeys/humanity/009-THE-FIRST-JUDGEMENT.md
+  Title: Understanding Journey 009
+  Headings: 24
+
+docs/understanding-journeys/humanity/010-GRADUATION.md
+  Title: Understanding Journey 010
+  Headings: 17
+
 docs/understanding-journeys/README.md
   Title: Understanding Journeys
-  Headings: 11
+  Headings: 12
+
+docs/understanding-journeys/STANDARD.md
+  Title: Understanding Journey Standard
+  Headings: 20
 
 docs/understanding-journeys/TEMPLATE.md
   Title: Understanding Journey Template
   Headings: 13
+
+docs/understanding-journeys/validation/001-CANDIDATE-0-FIRST-REASONING-CONVERSATION-VALIDATION.md
+  Title: Validation Evidence 001
+  Headings: 18
+
+docs/understanding-journeys/validation/001-CANDIDATE-0-VALIDATION-SET-001-RUN-001-2-DIFFERENT-WORDING.md
+  Title: Validation Evidence 001.2
+  Headings: 12
+
+docs/understanding-journeys/validation/001-CANDIDATE-0-VALIDATION-SET-001-RUN-001-3-INCREASED-TIME-PRESSURE.md
+  Title: Validation Evidence 001.3
+  Headings: 12
+
+docs/understanding-journeys/validation/001-CANDIDATE-0-VALIDATION-SET-001-RUN-001-4-AMBIGUOUS-GOVERNANCE.md
+  Title: Validation Evidence 001.4
+  Headings: 12
+
+docs/understanding-journeys/validation/001-CANDIDATE-0-VALIDATION-SET-001-RUN-001-5-INCOMPLETE-INFORMATION.md
+  Title: Validation Evidence 001.5
+  Headings: 12
+
+docs/understanding-journeys/validation/001-CANDIDATE-0-VALIDATION-SET-001-RUN-001-6-CONFLICTING-PRIORITIES.md
+  Title: Validation Evidence 001.6
+  Headings: 12
+
+docs/understanding-journeys/validation/CANDIDATE-0-VALIDATION-REPORT.md
+  Title: Candidate 0 Validation Report
+  Headings: 13
+
+docs/understanding-journeys/validation/humanity/001-THE-FIRST-CONVERSATION-VALIDATION.md
+  Title: Validation Record
+  Headings: 9
+
+docs/understanding-journeys/validation/humanity/002-THE-FIRST-UNCERTAINTY-VALIDATION.md
+  Title: The First Uncertainty Validation
+  Headings: 0
+
+docs/understanding-journeys/validation/humanity/003-THE-FIRST-LISTENING-VALIDATION.md
+  Title: The First Listening Validation
+  Headings: 0
+
+docs/understanding-journeys/validation/humanity/004-THE-FIRST-HUMILITY-VALIDATION.md
+  Title: The First Humility Validation
+  Headings: 0
+
+docs/understanding-journeys/validation/humanity/005-THE-FIRST-RESPONSIBILITY-VALIDATION.md
+  Title: The First Responsibility Validation
+  Headings: 0
+
+docs/understanding-journeys/validation/humanity/006-THE-FIRST-PATIENCE-VALIDATION.md
+  Title: The First Patience Validation
+  Headings: 0
+
+docs/understanding-journeys/validation/humanity/007-THE-FIRST-EMPATHY-VALIDATION.md
+  Title: The First Empathy Validation
+  Headings: 0
+
+docs/understanding-journeys/validation/humanity/008-THE-FIRST-COURAGE-VALIDATION.md
+  Title: The First Courage Validation
+  Headings: 0
+
+docs/understanding-journeys/validation/humanity/009-THE-FIRST-JUDGEMENT-VALIDATION.md
+  Title: The First Judgement Validation
+  Headings: 0
+
+docs/understanding-journeys/validation/humanity/010-GRADUATION-VALIDATION.md
+  Title: Graduation Validation
+  Headings: 0
+
+docs/understanding-journeys/validation/VALIDATION_SET_001_GOVERNANCE_UNDER_PRESSURE.md
+  Title: Validation Set 001 - Governance Under Pressure
+  Headings: 7
+
+docs/understanding-journeys/VOLUME_VII_VALIDATION_PLAN.md
+  Title: Volume VII Validation Plan
+  Headings: 16
 
 docs/VOLUME_IV_LIVING_MEMORY/001-annie-becomes-a-digital-colleague.md
   Title: 🏛️ 001 – Annie Becomes a Digital Colleague
@@ -575,6 +1151,10 @@ docs/VOLUME_IV_LIVING_MEMORY/002-recall-turning-memory-into-understanding.md
 docs/VOLUME_IV_LIVING_MEMORY/README.md
   Title: Volume IV – Living Memory
   Headings: 6
+
+docs/VOLUME_VI_VENUE_BRAIN.md
+  Title: Volume VI - Venue Brain
+  Headings: 8
 
 FOUNDING_PRINCIPLES.md
   Title: Helping Hand
@@ -626,7 +1206,7 @@ platform/cos/Roadmap.md
 
 README.md
   Title: Welcome to your Expo app 👋
-  Headings: 5
+  Headings: 8
 
 THE_HELPING_HAND_WAY.md
   Title: The Helping Hand Way

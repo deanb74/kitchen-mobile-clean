@@ -11,11 +11,11 @@ export default function AnnieBrainScreen() {
       <ThemedView style={{ padding: 20, gap: 18 }}>
 
         <ThemedText type="title">
-          Annie's Brain
+          Annie&apos;s Brain
         </ThemedText>
 
         <ThemedText>
-          This is Annie's complete Companion Intelligence cycle.
+          This is Annie&apos;s complete Companion Intelligence cycle.
         </ThemedText>
 
         <View>

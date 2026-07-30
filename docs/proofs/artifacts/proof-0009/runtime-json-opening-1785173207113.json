@@ -1,0 +1,138 @@
+{
+  "accepted": true,
+  "trace": {
+    "context": {
+      "interactionId": "opening-1785173207113",
+      "userId": "4",
+      "role": "manager",
+      "actorId": "4",
+      "actorRole": "manager",
+      "requestId": "opening-1785173207113",
+      "siteId": "2",
+      "equipmentId": "353",
+      "equipmentType": "opening-checklist",
+      "mode": "online",
+      "timestamp": "2026-07-27T17:26:47.113Z",
+      "requestedAt": "2026-07-27T17:26:47.113Z",
+      "localTimeIso": "2026-07-27T17:26:47.113Z",
+      "networkAvailable": true,
+      "capabilityId": "opening.checks.complete",
+      "peopleOutcome": "Ensure opening checks are completed reliably before service begins.",
+      "currentOperationalState": "opening-checks-active"
+    },
+    "decision": {
+      "decisionId": "dec-opening-1785173207113",
+      "requestId": "opening-1785173207113",
+      "disposition": "proceed",
+      "recommendedAction": "Proceed with governed companion action: Record opening checks 353 completion=true",
+      "rationale": "Selected proceed for capability opening.checks.complete to improve people outcome: Ensure opening checks are completed reliably before service begins..",
+      "confidence": 0.85,
+      "uncertainty": [],
+      "requiresHuman": false,
+      "createdAt": "2026-07-27T17:26:47.115Z"
+    },
+    "authority": {
+      "authorityId": "auth-opening-1785173207113",
+      "requestId": "opening-1785173207113",
+      "disposition": "allow",
+      "reason": "Capability and role are within approved authority boundaries.",
+      "boundaryConditions": [
+        "Record evidence for action outcome."
+      ],
+      "escalationRequired": false,
+      "createdAt": "2026-07-27T17:26:47.115Z"
+    },
+    "action": {
+      "actionId": "act-opening-1785173207113",
+      "requestId": "opening-1785173207113",
+      "attempted": true,
+      "outcome": "succeeded",
+      "summary": "Opening checks completion recorded for task 353.",
+      "sideEffects": [
+        "opening-checks-completion-recorded"
+      ],
+      "createdAt": "2026-07-27T17:26:49.579Z",
+      "completedAt": "2026-07-27T17:26:49.579Z"
+    },
+    "evidence": {
+      "evidenceId": "ev-opening-1785173207113",
+      "requestId": "opening-1785173207113",
+      "context": {
+        "interactionId": "opening-1785173207113",
+        "userId": "4",
+        "role": "manager",
+        "actorId": "4",
+        "actorRole": "manager",
+        "requestId": "opening-1785173207113",
+        "siteId": "2",
+        "equipmentId": "353",
+        "equipmentType": "opening-checklist",
+        "mode": "online",
+        "timestamp": "2026-07-27T17:26:47.113Z",
+        "requestedAt": "2026-07-27T17:26:47.113Z",
+        "localTimeIso": "2026-07-27T17:26:47.113Z",
+        "networkAvailable": true,
+        "capabilityId": "opening.checks.complete",
+        "peopleOutcome": "Ensure opening checks are completed reliably before service begins.",
+        "currentOperationalState": "opening-checks-active"
+      },
+      "decision": {
+        "decisionId": "dec-opening-1785173207113",
+        "requestId": "opening-1785173207113",
+        "disposition": "proceed",
+        "recommendedAction": "Proceed with governed companion action: Record opening checks 353 completion=true",
+        "rationale": "Selected proceed for capability opening.checks.complete to improve people outcome: Ensure opening checks are completed reliably before service begins..",
+        "confidence": 0.85,
+        "uncertainty": [],
+        "requiresHuman": false,
+        "createdAt": "2026-07-27T17:26:47.115Z"
+      },
+      "authority": {
+        "authorityId": "auth-opening-1785173207113",
+        "requestId": "opening-1785173207113",
+        "disposition": "allow",
+        "reason": "Capability and role are within approved authority boundaries.",
+        "boundaryConditions": [
+          "Record evidence for action outcome."
+        ],
+        "escalationRequired": false,
+        "createdAt": "2026-07-27T17:26:47.115Z"
+      },
+      "action": {
+        "actionId": "act-opening-1785173207113",
+        "requestId": "opening-1785173207113",
+        "attempted": true,
+        "outcome": "succeeded",
+        "summary": "Opening checks completion recorded for task 353.",
+        "sideEffects": [
+          "opening-checks-completion-recorded"
+        ],
+        "createdAt": "2026-07-27T17:26:49.579Z",
+        "completedAt": "2026-07-27T17:26:49.579Z"
+      },
+      "artifacts": [],
+      "provenance": {
+        "source": "companion-runtime",
+        "runtimeVersion": "0.1.0",
+        "schemaVersion": "1.0"
+      },
+      "createdAt": "2026-07-27T17:26:49.579Z"
+    },
+    "reflection": {
+      "reflectionId": "ref-opening-1785173207113",
+      "requestId": "opening-1785173207113",
+      "findings": [
+        "No additional artifacts were attached to evidence packet."
+      ],
+      "recommendations": [
+        "Capture at least one supporting artifact for similar actions."
+      ],
+      "characterCompliant": true,
+      "promotionCandidate": true,
+      "confidence": 0.85,
+      "createdAt": "2026-07-27T17:26:49.580Z"
+    }
+  },
+  "contractViolations": [],
+  "csaConformant": true
+}

@@ -9,6 +9,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "expo lint",
+    "typecheck": "tsc --noEmit",
+    "docs": "node scripts/knowledge/build-knowledge.mjs",
     "test": "jest",
     "knowledge": "node scripts/knowledge/build-knowledge.mjs",
     "knowledge:test-graph": "tsx scripts/test-knowledge-graph.ts",
@@ -21,8 +23,15 @@
     "knowledge:test-governance": "tsx scripts/test-knowledge-governance-engine.ts",
     "knowledge:test-cycle": "tsx scripts/test-companion-intelligence-cycle.ts",
     "academy": "tsx scripts/academy/run-academy.ts",
+    "academy:engineering-verification-001": "tsx scripts/academy/run-engineering-verification-001.ts",
+    "academy:validation-set-001": "tsx scripts/academy/run-validation-set-001.ts",
     "companion:test-runtime": "tsx scripts/test-companion-runtime.ts",
-    "companion:test-runtime-negative": "tsx scripts/test-companion-runtime-negative.ts"
+    "companion:test-runtime-negative": "tsx scripts/test-companion-runtime-negative.ts",
+    "companion:test-temperature-adapter-contract": "tsx scripts/test-temperature-adapter-contract.ts",
+    "companion:test-equipment-fault-adapter": "tsx scripts/test-equipment-fault-adapter.ts",
+    "companion:test-corrective-action-adapter": "tsx scripts/test-corrective-action-adapter.ts",
+    "companion:test-cleaning-adapter": "tsx scripts/test-cleaning-adapter.ts",
+    "companion:test-runtime-expansion": "tsx scripts/test-runtime-expansion-adapters.ts"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",

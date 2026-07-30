@@ -70,6 +70,12 @@ export function validateEvidencePacket(evidence: EvidencePacket): string[] {
   if (!hasText(evidence.provenance.runtimeVersion)) {
     issues.push("EvidencePacket.provenance.runtimeVersion is required.");
   }
+  if (
+    evidence.provenance.schemaVersion !== undefined &&
+    !hasText(evidence.provenance.schemaVersion)
+  ) {
+    issues.push("EvidencePacket.provenance.schemaVersion must be non-empty when provided.");
+  }
 
   return issues;
 }

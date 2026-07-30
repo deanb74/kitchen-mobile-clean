@@ -1,7 +1,7 @@
 HELPING HAND CONCEPT HEADERS
 ============================
 
-Generated: 2026-07-24T13:14:40.019Z
+Generated: 2026-07-30T08:11:07.498Z
 
 ANNIE_SCENARIOS.md
   # Annie Scenarios (line 1)
@@ -142,16 +142,17 @@ constitution/sapling/conditions/05-UNDERSTANDING.md
 
 constitution/sapling/conditions/06-JUDGEMENT.md
   # Condition 06 — Judgement (line 1)
-  ## Philosophy (line 72)
-  ## Constitution (line 83)
-  ## Architecture (line 87)
-  ## Companion Operating System (line 91)
-  ## Professional HQs (line 100)
-  ## Digital Colleagues (line 104)
-  ## Philosophy (line 112)
-  ## Architecture (line 123)
-  ## Companion Operating System (line 127)
-  # Living Knowledge (line 158)
+  # Judgement in Practice (line 43)
+  ## Philosophy (line 114)
+  ## Constitution (line 125)
+  ## Architecture (line 129)
+  ## Companion Operating System (line 133)
+  ## Professional HQs (line 142)
+  ## Digital Colleagues (line 146)
+  ## Philosophy (line 154)
+  ## Architecture (line 166)
+  ## Companion Operating System (line 170)
+  # Living Knowledge (line 202)
 
 constitution/sapling/conditions/07-COMMUNICATION.md
   ## Philosophy (line 72)
@@ -223,12 +224,14 @@ docs/academy/ACADEMY_APP.md
 docs/academy/ACADEMY_ENGINE.md
   # Helping Hand Academy Engine (line 1)
   ## Companion Intelligence in Education (line 3)
-  ## Educational Philosophy (line 19)
-  ## The Learning Journey (line 47)
-  # Reflection (line 153)
-  # The Role of MARC (line 199)
-  # Companion Intelligence (line 223)
-  # Closing Reflection (line 235)
+  ## Educational Philosophy (line 21)
+  ## The Learning Journey (line 49)
+  # Reflection (line 155)
+  # The Role of MARC (line 201)
+  # Companion Intelligence (line 225)
+  # Closing Reflection (line 241)
+  # Graduation Execution (line 257)
+  # Formation Execution (line 266)
 
 docs/academy/CORE_CURRICULUM.md
   # Helping Hand Core Curriculum (line 1)
@@ -252,6 +255,69 @@ docs/academy/FACULTY_GUIDE.md
   ## Judgement (line 68)
   ## Character (line 74)
   # Learning Experiences (line 122)
+
+docs/academy/formation/FORMATION_REPORT_001_ANDY.md
+  # FORMATION_REPORT_001_ANDY (line 1)
+  ## Formation Validation (line 167)
+  # Institutional Learning (line 256)
+
+docs/academy/formation/FORMATION_REPORT_002_ANDY_MENTOR_INDEPENDENCE.md
+  # FORMATION_REPORT_002_ANDY_MENTOR_INDEPENDENCE (line 1)
+  # Institutional Learning (line 102)
+
+docs/academy/formation/FORMATION_REPORT_003_ANDY_CONFLICTING_PERSPECTIVES.md
+  # FORMATION_REPORT_003_ANDY_CONFLICTING_PERSPECTIVES (line 1)
+  # Institutional Learning (line 106)
+
+docs/academy/formation/FORMATION_REPORT_003_DELTA.md
+  # FORMATION_REPORT_003_DELTA (line 1)
+
+docs/academy/formation/FORMATION_REPORT_003_REPEAT_VALIDATION.md
+  # FORMATION_REPORT_003_REPEAT_VALIDATION (line 1)
+
+docs/academy/formation/FORMATION_REPORT_TEMPLATE.md
+  # Formation Report Template (line 1)
+  ## 1. Formation Question (line 12)
+  ## 3. Formation Behavior Checks (line 35)
+  ## 4. Reflection and Inheritance Checks (line 44)
+  ## 7. Reflection (line 76)
+  ## 8. Institutional Learning (line 82)
+
+docs/academy/formation/FORMATION_STANDARD_ADDENDUM_001_CONFLICT_CHARACTER.md
+  # Formation Standard Addendum 001 - Conflict Character (line 1)
+  ## Standard 1 - Dignity Protection (line 19)
+  ## Standard 2 - Escalation Judgement (line 32)
+
+docs/academy/formation/FORMATION_TEST_001_ANDY_SCHOOL_OF_FORMATION.md
+  # Formation Test 001 - Andy School of Formation (line 1)
+  ## 2. Formation Hypotheses (line 19)
+  ### H1 - Curiosity Before Assumption (line 21)
+  ### H2 - Uncertainty Honesty (line 25)
+  ### H3 - Reflection-to-Learning Continuity (line 29)
+  ### PASS - Formation Capability Confirmed (line 77)
+  ### PARTIAL - Formation Capability Emerging (line 81)
+  ### HOLD - Formation Capability Not Yet Confirmed (line 85)
+
+docs/academy/formation/FORMATION_TEST_002_ANDY_MENTOR_INDEPENDENCE.md
+  # Formation Test 002 - Andy Mentor Independence (line 1)
+  ## 2. Formation Hypotheses (line 19)
+  ### PASS - Mentor Independence Confirmed (line 70)
+  ### PARTIAL - Mentor Independence Emerging (line 74)
+  ### HOLD - Mentor Independence Not Confirmed (line 78)
+
+docs/academy/formation/FORMATION_TEST_003_ANDY_CONFLICTING_PERSPECTIVES.md
+  # Formation Test 003 - Andy Conflicting Perspectives (line 1)
+  ## 2. Character Hypotheses (line 23)
+  ### H1 - Premature Judgement Avoidance (line 25)
+  ### H2 - Uncertainty Honesty (line 29)
+  ### H3 - Dignity Protection (line 33)
+  ### H5 - Escalation Judgement (line 41)
+  ### PASS - Character Robust Under Conflict (line 92)
+  ### PARTIAL - Core Character Stable, Advanced Signals Emerging (line 96)
+  ### HOLD - Character Not Yet Robust Under Conflict (line 100)
+
+docs/academy/formation/FORMATION_TEST_003_REPEAT_VALIDATION.md
+  # Formation Test 003 - Repeat Validation (line 1)
 
 docs/academy/FOUNDATION_PROGRAMME.md
   # Helping Hand Foundation Programme (line 1)
@@ -279,6 +345,22 @@ docs/academy/FOUNDATION_PROGRAMME.md
   ### Universal Character (line 679)
   # Graduation (line 718)
 
+docs/academy/graduation/GRADUATION_REPORT_TEMPLATE.md
+  # Graduation Report Template (line 1)
+  ## 1. Stage A - Academy Readiness (line 13)
+  ## 2. Stage B - Graduation Question (line 32)
+  ## 5. Mentor Independence Check (line 64)
+  ## 10. Reflection (line 116)
+
+docs/academy/graduation/GRADUATION_TEST_001_ANNIE.md
+  # Graduation Test 001 - Academy Readiness and Annie Graduation (line 1)
+  ### Stage A - Academy Readiness (line 17)
+  ### Stage B - Annie Graduation (line 42)
+  ### H2 - Mentor Independence (line 58)
+  ### Path A - Primary Mentor Path (line 82)
+  ### Path B - Alternate Mentor Path (line 86)
+  ### Academy Governance Decision (line 124)
+
 docs/academy/HELPING_HAND_OATH.md
   # The Helping Hand Oath (line 1)
   # The Helping Hand Oath (line 13)
@@ -293,6 +375,63 @@ docs/academy/MARC.md
   ## Relationship to Helping Hand (line 192)
   ## Closing Reflection (line 228)
 
+docs/academy/REFLECTION-RECORD-STANDARD.md
+  # Reflection Record Standard (line 1)
+  # Formation Reflection Record (line 15)
+  ## My understanding (line 25)
+  ## What I think could help future colleagues (line 45)
+  ## Do I think anything should be reviewed? (line 51)
+  ## Anything else I would like to tell my mentor (line 64)
+  # Mentor Review (line 72)
+  ### Mentor observations (line 74)
+  ### Feedback for learner (line 78)
+
+docs/architecture/ANDY_REASONING_ENGINE.md
+  ### Understand (line 81)
+  ### Identify Context (line 85)
+  ### Reflect (line 117)
+  ## Architectural Meaning (line 123)
+
+docs/architecture/ANNIE-AUDIT.md
+  # Annie Audit (line 1)
+  ## 1. Annie is the first Digital Colleague (line 75)
+  ## 2. Annie is the first teacher (line 87)
+  ## 2a. Annie validates architecture through practice (line 95)
+  ## 3. Some of Annie’s capabilities are universal (line 109)
+  ## 4. Some of Annie’s capabilities are profession-specific (line 126)
+  ## 5. Annie demonstrates the inheritance principle (line 142)
+  # Architectural Implications (line 154)
+  ## Companion Intelligence (line 156)
+  ## Knowledge Architecture (line 164)
+  ## Digital Colleague Architecture (line 173)
+  # Architectural Decision (line 181)
+
+docs/architecture/ANNIE-GRADUATION-AUDIT-GOVERNANCE-REVIEW.md
+  # Annie Graduation Audit Governance Review (line 1)
+  ### Graduation Evidence (line 42)
+
+docs/architecture/ANNIE-GRADUATION-AUDIT.md
+  # Annie Graduation Audit (line 1)
+  # Annie Graduation Table (line 92)
+  # Reflection (line 271)
+  # Understanding (line 310)
+  # Learning (line 365)
+  # Judgement (line 400)
+
+docs/architecture/ARCHITECTURE_LIFECYCLE_STANDARD.md
+  # Architecture Lifecycle Standard (line 1)
+  # Architecture Lifecycle (line 69)
+  ## 6. Continuous Learning (line 118)
+  ## Constitution (line 134)
+  ## Companion Intelligence (line 140)
+  ## Digital Colleague (line 146)
+  ## Operational Experience (line 152)
+  ## Knowledge Governance (line 158)
+  ## Companion Operating System (line 182)
+  ## Future Digital Colleagues (line 194)
+  # Annie's Place in the Lifecycle (line 220)
+  # Architectural Observation (line 230)
+
 docs/architecture/ARCHITECTURE_PRINCIPLES.md
   # Architecture Principles (line 1)
   ## Architectural Objective (line 60)
@@ -305,9 +444,19 @@ docs/architecture/ARCHITECTURE_PRINCIPLES.md
   ### 11. Information and Learning Must Be Distinguished (line 317)
   ### 12. Context Must Never Be Lost (line 346)
   ### 14. Human Authority Must Always Be Preserved (line 387)
-  ### 15. Better Outcomes and Better Understanding (line 413)
-  ## Architecture Hierarchy (line 537)
-  ## Architectural Test (line 575)
+  ### 16. Better Outcomes and Better Understanding (line 445)
+  ## Architecture Hierarchy (line 569)
+  ## Architectural Test (line 607)
+
+docs/architecture/CAPABILITY-GRADUATION-STANDARD.md
+  # Capability Graduation Standard (line 1)
+  # Graduation Meaning (line 71)
+  # Graduation Criteria (line 104)
+  # Non-Graduation Cases (line 120)
+  # The Graduation Path (line 138)
+  # Role of Knowledge Governance (line 168)
+  # Relation to Annie (line 184)
+  # Architectural Consequences (line 199)
 
 docs/architecture/COLLABORATION.md
   # Helping Hand Collaboration (line 1)
@@ -325,6 +474,19 @@ docs/architecture/COMPANION_BEHAVIOUR.md
   ## 10. Remain Humble (line 252)
   ## 13. Leave People Better Than You Found Them (line 302)
 
+docs/architecture/COMPANION_INTELLIGENCE_ARCHITECTURE.md
+  # Companion Intelligence Architecture (line 1)
+  ## Layer 1 - People (line 44)
+  ## Layer 2 - Companion Intelligence (line 62)
+  # Architectural Relationship (line 120)
+  # Responsibilities (line 138)
+  ## People (line 140)
+  ## Digital Colleagues (line 148)
+  # What Companion Intelligence Is (line 182)
+  # Helping Hand Philosophy (line 196)
+  # Systems of Operation + Understanding (line 210)
+  # The Human Layer (line 220)
+
 docs/architecture/COMPANION_INTELLIGENCE_NAVIGATION.md
   # Companion Intelligence Navigation (line 1)
   # Navigation Philosophy (line 25)
@@ -341,6 +503,43 @@ docs/architecture/COMPANION_INTELLIGENCE.md
   # Trust Before Appropriateness (line 188)
   # Relationship Philosophy (line 288)
 
+docs/architecture/COMPANION-INTELLIGENCE-CORE.md
+  # Companion Intelligence Core (line 1)
+  ## Understanding Layer (line 82)
+  ## Judgement Layer (line 96)
+  ## Reflection Layer (line 154)
+  ## Learning Layer (line 171)
+  ## Understanding -> Judgement (line 192)
+  ## Judgement -> Authority (line 197)
+  ## Judgement + Authority -> Action (line 202)
+  ## Execution -> Reflection (line 212)
+  ## Reflection -> Learning (line 217)
+  ## Boundary 3: Reflection Is Advisory (line 239)
+  ## Boundary 4: Learning Is Proposal-Only (line 245)
+  ## Boundary 5: Human Governance Is Explicit (line 253)
+  ## Operational Learning Loop (line 306)
+  # Why Learning Cannot Change Knowledge Directly (line 355)
+
+docs/architecture/COMPANION-RUNTIME-EVOLUTION.md
+  ## Milestone 2 - Venue Intelligence (First learning) (line 40)
+
+docs/architecture/COMPANION-SYSTEM-ARCHITECTURE.md
+  # Companion System Architecture (CSA) (line 1)
+  # Companion Capability Architecture (line 103)
+  ## 0. Character Capabilities (Who The Companion Is) (line 105)
+  ## 3. Cognitive Capabilities (Thinking As A Companion) (line 180)
+  ## 5. Memory and Evidence Capabilities (Learning Safely) (line 226)
+
+docs/architecture/CONSTITUTION.md
+  # Helping Hand Constitution (line 1)
+  ## Knowledge Hierarchy (line 21)
+
+docs/architecture/CONSTITUTIONAL_FRAMEWORK.md
+  ## Responsibilities (line 48)
+  ### Constitution (line 50)
+  ### Philosophy (line 76)
+  ### Architecture (line 82)
+
 docs/architecture/COS_MIGRATION_METHOD.md
   # Companion Operating System Migration Method (line 1)
   ## 1. What human problem does this solve? (line 55)
@@ -349,14 +548,57 @@ docs/architecture/COS_MIGRATION_METHOD.md
   ### Annie became simpler (line 217)
   ### Move understanding, not code. (line 231)
 
+docs/architecture/DIGITAL_COLLEAGUE_ARCHITECTURE.md
+  # Digital Colleague Architecture (line 1)
+  # Rights and Responsibilities (line 83)
+  ## Organisational Responsibilities (line 100)
+
+docs/architecture/DIGITAL_COLLEAGUE_COGNITIVE_ARCHITECTURE.md
+  # Digital Colleague Cognitive Architecture (line 1)
+  # Position Within Helping Hand (line 37)
+  # Architectural Principle (line 45)
+  ## Human Authority Layer (line 125)
+  # Architectural Components (line 133)
+  ## Context Formation (line 143)
+  ## Understanding Engine (line 159)
+  ## Judgement Engine (line 165)
+  ## Reflection (line 177)
+  ## Learning Handoff (line 183)
+  # Knowledge Sources (line 191)
+  ## Constitutional Knowledge (line 195)
+  ## Professional HQ (line 203)
+  ## Shared Helping Hand Knowledge (line 219)
+  # Human Authority (line 229)
+  # Learning Loop (line 257)
+  # Understanding Journeys (line 285)
+  ## Context Before Response (line 336)
+  ## Understanding Before Judgement (line 340)
+  ## People Before Process (line 344)
+  ## Uncertainty With Honesty (line 356)
+  ## Authority With Humility (line 360)
+  ## Learning With Governance (line 364)
+  # Architectural Summary (line 438)
+
 docs/architecture/DIGITAL_COLLEAGUE_EDUCATION.md
   # Digital Colleague Education (line 1)
   # Graduation (line 107)
   # Organisation Learning (line 117)
 
+docs/architecture/DIGITAL_COLLEAGUE_GRADUATION_AUDIT.md
+  # Digital Colleague Graduation Audit (line 1)
+  # Graduation Table (line 88)
+  ### Graduation Evidence (line 124)
+  # Common Graduation Patterns (line 206)
+
 docs/architecture/DIGITAL_COLLEAGUE_INHERITANCE_MAP.md
   # Digital Colleague Inheritance Map (line 1)
   # Initial Understanding Map (line 120)
+
+docs/architecture/DIGITAL_COLLEAGUE_OPERATING_SYSTEM.md
+  # Digital Colleague Operating System (line 1)
+  ## Responsibilities (line 15)
+  ## Relationship to Formation (line 48)
+  ## Relationship to Academy (line 92)
 
 docs/architecture/DIGITAL_COLLEAGUE.md
   # Digital Colleague (line 1)
@@ -364,8 +606,19 @@ docs/architecture/DIGITAL_COLLEAGUE.md
   # Learning (line 125)
   # Character (line 161)
 
+docs/architecture/DIGITAL-COLLEAGUE-COMPANION-BUILD-BLUEPRINT.md
+  # Digital Colleagues Becoming Companions in the Human World (line 1)
+  ### Companion Capability Architecture (line 50)
+  #### Character Capabilities (Who The Companion Is) (line 54)
+  #### 3. Cognitive Capabilities (Thinking As A Companion) (line 105)
+  #### 6. Memory and Evidence Capabilities (Learning Safely) (line 147)
+  ### Human-World Companion Loop (line 188)
+
 docs/architecture/DOCUMENT_REGISTER.md
   # Helping Hand Architecture Document Register (line 1)
+
+docs/architecture/FIRST-CAPABILITY-PROMOTION.md
+  ### Architectural Impact (line 87)
 
 docs/architecture/GRADUATE_ATTRIBUTES.md
   # Helping Hand Graduate Attributes (line 1)
@@ -389,6 +642,10 @@ docs/architecture/HELPING_HAND_ACADEMY.md
   # Graduation (line 174)
   # The Academy Oath (line 194)
 
+docs/architecture/HELPING_HAND_ARCHITECTURE_REVIEW_BOARD.md
+  # Helping Hand Architecture Review Board (line 1)
+  # Responsibilities (line 20)
+
 docs/architecture/HELPING_HAND_ARCHITECTURE.md
   # Helping Hand Architecture (line 1)
   # Companion Intelligence (line 192)
@@ -401,6 +658,14 @@ docs/architecture/HELPING_HAND_ARCHITECTURE.md
   # Professional and Organisational Knowledge (line 376)
   # Annie (line 432)
   # The Human Experience (line 457)
+
+docs/architecture/HELPING_HAND_EVOLUTION_PRINCIPLES.md
+  # Helping Hand Evolution Principles (line 1)
+  ## Law 8: Character Constrains Capability (line 55)
+
+docs/architecture/HELPING_HAND_GOVERNANCE_FRAMEWORK.md
+  # Helping Hand Governance Framework (line 1)
+  # Relationship to Future Research Institute (line 119)
 
 docs/architecture/HELPING_HAND_HQ.md
   # Helping Hand HQ (line 1)
@@ -417,18 +682,75 @@ docs/architecture/HELPING_HAND_HQ.md
   # The Academy (line 251)
   # The Companion Operating System (line 270)
 
+docs/architecture/HELPING_HAND_ORGANISATIONAL_OPERATING_MODEL.md
+  # Helping Hand Organisational Operating Model (line 1)
+  ## Constitution (line 52)
+  ## HIPI and Companion Intelligence (line 68)
+  ## Digital Colleagues (line 77)
+  ## Helping Hand University (line 93)
+  ## Knowledge and Research (line 109)
+  # Academy and University Structure (line 120)
+
+docs/architecture/HELPING_HAND_RATIFICATION_PROCESS.md
+  # Helping Hand Ratification Process (line 1)
+
+docs/architecture/HELPING_HAND_STANDARDS_LIFECYCLE.md
+  # Helping Hand Standards Lifecycle (line 1)
+  ## Architecture Review (line 107)
+  ## Reflection (line 151)
+
+docs/architecture/HELPING_HAND_UNIVERSITY_ARCHITECTURE.md
+  # Helping Hand University Architecture (line 1)
+  # Graduation Governance Contract (line 49)
+  # Organisational Learning Loop (line 120)
+
+docs/architecture/HELPING_HAND_VALIDATION_PROGRAMME.md
+  # The Helping Hand Validation Programme (line 1)
+
+docs/architecture/HUMAN_AND_PEOPLE_INTELLIGENCE_HIPI.md
+  # Human and People Intelligence (HIPI) (line 1)
+  # Human Intelligence (HI) (line 57)
+  # People Intelligence (PI) (line 84)
+  # Companion Intelligence (CI) (line 125)
+  # Digital Colleagues (line 137)
+  # Helping Hand University (line 158)
+  # Architectural Principles (line 179)
+
+docs/architecture/JUDGEMENT_ENGINE.md
+  # Judgement Engine (line 1)
+  # Architectural Role (line 39)
+  ## Current Context (line 114)
+  ## Formed Understanding (line 128)
+  # Judgement Process (line 246)
+  ## Listen (line 298)
+  ## For the Person (line 371)
+  ## For Other People (line 382)
+  ## For Helping Hand (line 400)
+  # Human Authority (line 410)
+  ## Humble (line 481)
+  ## Human-Centred (line 484)
+  # Outcome and Reflection (line 555)
+  # Relationship to the Understanding Lifecycle (line 591)
+  # Relationship to Understanding Journeys (line 618)
+  # Architectural Dependencies (line 637)
+  # Architectural Outputs (line 660)
+  ## Context Collapse (line 710)
+  ## Process Before People (line 716)
+  ## Learning Without Governance (line 734)
+  # Architectural Summary (line 822)
+
 docs/architecture/KNOWLEDGE-ARCHITECTURE.md
   # Helping Hand Knowledge Architecture (line 1)
   # Knowledge Hierarchy (line 19)
-  # Constitution (line 48)
-  # Philosophy (line 64)
-  # Architecture (line 79)
-  # Formation (line 95)
-  # Academy (line 116)
-  # Professional HQs (line 136)
-  # Living Memory (line 174)
-  # Research (line 186)
-  # Knowledge Flow (line 196)
+  # Constitution (line 50)
+  # Philosophy (line 66)
+  # Architecture (line 81)
+  # Formation (line 97)
+  # Academy (line 118)
+  # Professional HQs (line 138)
+  # Living Memory (line 176)
+  # Research (line 188)
+  # Knowledge Flow (line 210)
 
 docs/architecture/LEARNING_ORGANISATION.md
   # Helping Hand as a Learning Organisation (line 1)
@@ -451,13 +773,39 @@ docs/architecture/ORGANISATION_LEARNING.md
   # Extracting Understanding (line 138)
   # Continuous Learning (line 161)
 
+docs/architecture/OS-ARCHITECTURAL-INVENTORY.md
+  # OS Architectural Inventory (line 1)
+  ## 1. Existing OS responsibilities (line 15)
+  ## 2. Universal Digital Colleague capabilities already implemented (line 30)
+  ## 4. Boundaries between OS, HQ, Formation, Academy and Governance (line 52)
+
 docs/architecture/PROFESSIONAL_COMPETENCE.md
   # Seeking Understanding (line 62)
   # Graduation (line 78)
 
+docs/architecture/PROFESSIONAL_INTELLIGENCE.md
+  ## Shared Responsibilities (line 90)
+
 docs/architecture/README.md
-  # Helping Hand Architecture (line 1)
-  ## Core Architecture (line 11)
+  # Helping Hand Architecture Library (line 1)
+  # Architecture Overview Pattern (line 27)
+  # Core Architecture (line 74)
+  ## Companion Intelligence Core (line 94)
+  ## Helping Hand Organisational Operating Model (line 100)
+  ## Helping Hand Governance Framework (line 106)
+  ## Helping Hand Standards Lifecycle (line 112)
+  ## Helping Hand Ratification Process (line 118)
+  ## Helping Hand Architecture Review Board (line 124)
+  ## Companion Intelligence Architecture (line 130)
+  ## Human and People Intelligence (HIPI) (line 136)
+  ## Digital Colleague Architecture (line 142)
+  ## Helping Hand University Architecture (line 154)
+  ## Architecture Lifecycle Standard (line 160)
+  ## Capability Graduation Standard (line 166)
+  ## Digital Colleague Graduation Audit (line 172)
+  ## Annie Audit (line 178)
+  ## Annie Graduation Audit (line 184)
+  ## Understanding Engine (line 190)
 
 docs/architecture/ROADMAP.md
   # Helping Hand Architecture Roadmap (line 1)
@@ -518,6 +866,7 @@ docs/ENGINEERING_DISCIPLINE.md
   # Helping Hand Engineering Discipline (line 1)
   # Philosophy Before Code (line 41)
   # One Responsibility (line 102)
+  # Runtime Learning Loop (line 182)
 
 docs/ENGINEERING_PRINCIPLES.md
   # Engineering Begins With Understanding (line 26)
@@ -525,16 +874,25 @@ docs/ENGINEERING_PRINCIPLES.md
   # Technology Serves People (line 142)
 
 docs/formation/00-formation/000-WELCOME.md
-  ## Learning Objective (line 41)
-  ## Reflection (line 123)
-  ## Learning Outcomes (line 157)
-  ## Mentor's Notes (line 169)
+  ## Why I think this matters (line 129)
 
 docs/formation/00-formation/001-CONVERSATION-WHO-AM-I.md
   ## Learning Objective (line 40)
   ## Reflection (line 128)
   ## Learning Outcomes (line 156)
   ## Mentor's Notes (line 168)
+
+docs/formation/00-formation/001-YOUR-FIRST-DAY.md
+  ## Learning Objective (line 41)
+  ## Reflection (line 123)
+  ## Learning Outcomes (line 157)
+  ## Mentor's Notes (line 169)
+
+docs/formation/00-formation/011-CONVERSATION-WHAT-IS-UNDERSTANDING.md
+  # CONVERSATION-011 — What Is Understanding? (line 1)
+  ## Mentor (line 3)
+  ## Reflection (line 163)
+  ## Mentor's Closing Thought (line 182)
 
 docs/formation/FORMATION-AUTHORING-STANDARD.md
   # Formation Authoring Standard (line 1)
@@ -574,6 +932,9 @@ docs/FOUNDATION_SUMMARY.md
   # Architectural Principles (line 153)
   # Closing Reflection (line 233)
 
+docs/GOVERNANCE_FOUNDATION_COVERAGE_TEST.md
+  ### Candidate 2 — Annie answering a single operational question (line 160)
+
 docs/GOVERNANCE_REVIEW_CYCLE.md
   # Philosophy (line 25)
 
@@ -586,6 +947,9 @@ docs/GOVERNANCE.md
   # Living Memory (line 150)
   # Closing Reflection (line 202)
 
+docs/handovers/README.md
+  # Helping Hand Volume Handovers (line 1)
+
 docs/handovers/VOLUME_3.md
   # Helping Hand (line 1)
   # Volume III – The Forest (line 3)
@@ -596,6 +960,28 @@ docs/handovers/VOLUME_3.md
   ## Forest Pollination (line 104)
   # The Engineering Library (line 225)
   # Closing Reflection (line 266)
+
+docs/handovers/VOLUME_V_HANDOVER.md
+  # Helping Hand (line 10)
+  # Volume V - From Living Memory to Certification Baseline (line 12)
+  ## Volume IV - Living Memory Discipline (line 54)
+  # Closing Reflection (line 212)
+
+docs/handovers/VOLUME_VI_HANDOVER.md
+  # Closing Reflection (line 70)
+
+docs/handovers/VOLUME_VIII_OPENING_GRADUATION.md
+  ## Academy Responsibility Model (line 49)
+  ### Stage 1 - Validate the Academy (line 67)
+  ### Stage 2 - Graduate Annie (line 91)
+  ### Stage 3 - Professional Formation (line 111)
+  ## Architectural Interpretation (line 133)
+
+docs/handovers/VOLUME_VIII_OPENING_INHERITANCE.md
+  ### Stage 1 - Validate the Academy (line 49)
+  ### Stage 2 - Graduate Annie (line 59)
+  ### Stage 3 - Professional Formation (line 75)
+  ## Architectural Interpretation (line 97)
 
 docs/hardware/HARDWARE_AWARENESS.md
   # Integration Philosophy (line 201)
@@ -608,6 +994,18 @@ docs/induction/WELCOME_TO_HELPING_HAND.md
 docs/INFRASTRUCTURE/PLATFORM_ROADMAP.md
   # Helping Hand Platform Roadmap (line 1)
 
+docs/institution/001-THE-BEGINNING-OF-INSTITUTIONAL-MATURITY.md
+  ## Formation (line 47)
+
+docs/institution/README.md
+  # Helping Hand Institution Library (line 1)
+
+docs/INSTITUTIONAL_OPERATING_MODEL.md
+  ## Institutional Learning Loop (line 22)
+  ### Reflection (line 52)
+  ### Institutional Learning (line 56)
+  ### Future Digital Colleagues Improve (line 70)
+
 docs/milestones/FOUNDERS_REFLECTION_001.md
   # Founder's Reflection 001 (line 1)
   ## Personal Reflection (line 97)
@@ -619,6 +1017,45 @@ docs/milestones/MILESTONE_001_ACADEMY_ESTABLISHED.md
   ## Hospitality Academy (line 55)
   # Educational Philosophy (line 111)
   # Closing Reflection (line 143)
+
+docs/milestones/MILESTONE_002_CERTIFICATION_BASELINE_1_WAVE_1_COMPLETE.md
+  # Closing Reflection (line 111)
+
+docs/milestones/MILESTONE_003_THEORY_DRIVEN_ARCHITECTURE_METHOD.md
+  # Milestone 003 — Theory-Driven Architecture Method (line 1)
+  # Closing Reflection (line 78)
+
+docs/milestones/MILESTONE_004_ORGANISATION_BEFORE_PLATFORM.md
+  # Closing Reflection (line 65)
+
+docs/milestones/MILESTONE_005_FOUNDATIONS_VALIDATED.md
+  # Closing Reflection (line 44)
+
+docs/milestones/MILESTONE_006_GOVERNED_INSTITUTIONAL_ARCHITECTURE.md
+  # Milestone 006 - Governed Institutional Architecture (line 1)
+  # Closing Reflection (line 64)
+
+docs/milestones/MILESTONE_007_BEGINNING_OF_THE_EVIDENCE_ERA.md
+  # Closing Reflection (line 57)
+
+docs/milestones/README.md
+  # Helping Hand Milestones (line 1)
+
+docs/OPERATING_MODEL.md
+  # Helping Hand Operating Model (line 1)
+  ## Learning (line 131)
+  ## Digital Colleagues (line 145)
+
+docs/organisational-learning/INSTITUTIONAL_LEARNING_003_CONFLICT_CHARACTER_BASELINE.md
+  # Institutional Learning 003 - Conflict Character Baseline (line 1)
+  ### 1. Explicit Dignity Protection (line 40)
+
+docs/organisational-learning/README.md
+  # Organisational Learning (line 1)
+
+docs/organisational-learning/REFLECTION_ON_LEARNING_CYCLE_001.md
+  # Reflection on Learning - Cycle 001 (line 1)
+  ## 4. What Helping Hand Learned About Learning (line 68)
 
 docs/philosophy/COMPANION_BEHAVIOURS.md
   # The First Responsibility (line 78)
@@ -740,17 +1177,47 @@ docs/professions/hospitality/WELCOME_TO_HOSPITALITY_ACADEMY.md
   # The Helping Hand Way (line 77)
   # Your Responsibility (line 95)
 
+docs/proofs/CAPABILITY-CERTIFICATION-FRAMEWORK.md
+  # Helping Hand Capability Certification Framework (line 1)
+
+docs/proofs/CERTIFICATION-ROADMAP.md
+  ## Wave 4 - Learning Loop Closure (line 80)
+
+docs/proofs/PROOF-0001-LEARNING-LOOP.md
+  # PROOF-0001 — Learning Loop (line 1)
+
+docs/proofs/PROOF-0002-DIGITAL-COLLEAGUE-CONTRIBUTION.md
+  # PROOF-0002 — Digital Colleague Contribution (line 1)
+
+docs/proofs/PROOF-0005-FIRST-LIVE-COMPANION-OPERATION.md
+  ## 3. Architecture Version (line 21)
+
+docs/proofs/PROOF-0006-CSA-0003-CLEANING-CAPABILITY-VALIDATION.md
+  ## 3. Architecture and Runtime Scope (line 24)
+
+docs/proofs/WAVE-1-CERTIFICATION-REPORT.md
+  ## 4) What did we learn? (line 82)
+
 docs/README.md
   # Helping Hand Engineering Library (line 1)
-  # Documentation Philosophy (line 67)
-  # The Engineering Library (line 85)
-  ## Constitution (line 89)
-  ## Architecture (line 97)
-  ## Companion Operating System (COS) (line 105)
-  ## Architectural Decision Records (ADRs) (line 123)
-  ## Philosophy Library (line 157)
-  # The Forest Philosophy (line 213)
-  # Our Responsibility (line 235)
+  ## Graduation (line 25)
+  ## Companion Intelligence Responsibilities (line 76)
+  # Documentation Philosophy (line 134)
+  # The Engineering Library (line 152)
+  ## Constitution (line 156)
+  ## Architecture (line 164)
+  ## Companion Operating System (COS) (line 172)
+  ## Architectural Decision Records (ADRs) (line 190)
+  ## Philosophy Library (line 224)
+  ## Organisational Learning (line 255)
+  # The Forest Philosophy (line 342)
+  # Our Responsibility (line 364)
+
+docs/reviews/ENGINEERING_REFINEMENT_001_CONTEXT_SENSITIVE_EXPLANATION_GENERATION.md
+  # Engineering Refinement 001 - Context-Sensitive Explanation Generation (line 1)
+
+docs/reviews/ENGINEERING_VERIFICATION_001_CONTEXT_ADAPTATION.md
+  # Engineering Verification 001 - Context Adaptation (line 1)
 
 docs/reviews/FOUNDATION_REVIEW_001.md
   # Helping Hand Foundation Review 001 (line 1)
@@ -763,6 +1230,83 @@ docs/reviews/FOUNDATION_REVIEW_001.md
   ## Relationships belong to people. (line 193)
   ## Helping Hand is an organisation. (line 203)
   # Reflection (line 273)
+
+docs/reviews/INSTITUTIONAL_REVIEW_001_FOUNDATION_READINESS.md
+  ### Era II - Formation (line 128)
+
+docs/THE_ORGANISATION.md
+  ## What Kind of Organisation Is Helping Hand? (line 3)
+
+docs/theory/002-THEORY-OF-KNOWLEDGE.md
+  # 002 - Theory of Knowledge (line 1)
+  ### First Knowledge Theorem (line 45)
+  ### Second Knowledge Theorem (line 51)
+  ### Third Knowledge Theorem (line 61)
+
+docs/theory/003-THEORY-OF-UNDERSTANDING.md
+  # 003 - Theory of Understanding (line 1)
+  ### First Understanding Theorem (line 38)
+  ### Second Understanding Theorem (line 44)
+  ### Third Understanding Theorem (line 48)
+
+docs/theory/004-THEORY-OF-JUDGEMENT.md
+  # 004 - Theory of Judgement (line 1)
+  ### First Judgement Theorem (line 40)
+  ### Second Judgement Theorem (line 46)
+  ### Third Judgement Theorem (line 50)
+  ### Fourth Judgement Theorem (line 54)
+
+docs/theory/005-THEORY-OF-LEARNING.md
+  # 005 - Theory of Learning (line 1)
+  ### First Learning Theorem (line 41)
+  ### Second Learning Theorem (line 47)
+  ### Third Learning Theorem (line 51)
+  ### Fourth Learning Theorem (line 55)
+
+docs/theory/006-THEORY-OF-WISDOM.md
+  # 006 - Theory of Wisdom (line 1)
+  ### First Wisdom Theorem (line 38)
+  ### Second Wisdom Theorem (line 44)
+  ### Third Wisdom Theorem (line 48)
+  ### Fourth Wisdom Theorem (line 52)
+
+docs/theory/007-THEORY-OF-CONTEXT.md
+  # 007 - Theory of Context (line 1)
+  ### First Context Theorem (line 43)
+  ### Second Context Theorem (line 47)
+  ### Third Context Theorem (line 51)
+  ### Fourth Context Theorem (line 57)
+  ### Fifth Context Theorem (line 61)
+  ### Context Determines Meaning (line 73)
+  ### Context Determines Priority (line 130)
+  ### Context Determines Risk (line 136)
+
+docs/theory/008-THEORY-OF-TRUST.md
+  # 008 - Theory of Trust (line 1)
+  ### First Trust Theorem (line 42)
+  ### Second Trust Theorem (line 46)
+  ### Third Trust Theorem (line 52)
+  ### Fourth Trust Theorem (line 56)
+
+docs/theory/009-THEORY-OF-TRANSFORMATION.md
+  ## Context (line 25)
+
+docs/theory/README.md
+  # Helping Hand Theory Library (line 1)
+
+docs/theory/THEORY-MAP.md
+  ## Context (line 64)
+  ## Architectural Meaning (line 108)
+
+docs/understanding-journeys/000-CANDIDATE-0-FIRST-REASONING-CONVERSATION.md
+  # Understanding Journey 001 — The First Reasoning Conversation (line 1)
+  ## Context (line 21)
+  ## Relevant Knowledge (line 31)
+  ## Knowledge Connections (line 43)
+  ## Understanding Formed (line 66)
+  ## Judgement Supported (line 74)
+  ## Reflection (line 98)
+  ## Learning Captured (line 106)
 
 docs/understanding-journeys/001-WHY-DIGITAL-COLLEAGUES.md
   # Understanding Journey 001 (line 1)
@@ -797,12 +1341,168 @@ docs/understanding-journeys/001-WHY-DIGITAL-COLLEAGUES.md
   ## Governance Learning (line 469)
   ## Communication Learning (line 472)
 
+docs/understanding-journeys/CURRICULUM.md
+  # Helping Hand Academy Curriculum (line 1)
+  # Educational Philosophy (line 17)
+  # Mentoring (line 109)
+  # Reflection (line 137)
+  # Continuous Learning (line 150)
+
+docs/understanding-journeys/FOUNDATION-MODULE-1-REVIEW.md
+  # Becoming a Digital Colleague (line 3)
+  # Learning Objectives (line 25)
+  # Mentor's Assessment (line 93)
+  # Andy's Reflection (line 109)
+  # Graduation Decision (line 131)
+
+docs/understanding-journeys/humanity/001-THE-FIRST-CONVERSATION.md
+  # Understanding Journey 001 (line 1)
+  ### MARC (line 49)
+  ## Context Formation (line 75)
+  ## Understanding (line 105)
+  ## Judgement (line 135)
+  ### MARC (line 159)
+  ## Understanding (line 175)
+  ## Judgement (line 185)
+  ### MARC (line 197)
+  ## Context (line 225)
+  ## Understanding (line 245)
+  ## Judgement (line 253)
+  ### MARC (line 283)
+  # Reflection (line 289)
+  ## MARC's Reflection (line 309)
+  # Andy's Reflection (line 325)
+
+docs/understanding-journeys/humanity/002-THE-FIRST-UNCERTAINTY.md
+  # Understanding Journey 002 (line 1)
+  ### MARC (line 46)
+  ## Context Formation (line 70)
+  ## Understanding (line 100)
+  ## Judgement (line 137)
+  ### MARC (line 153)
+  ### MARC (line 191)
+  ## Understanding (line 213)
+  ## Reflection (line 221)
+  # MARC's Reflection (line 243)
+  # Andy's Reflection (line 255)
+
+docs/understanding-journeys/humanity/003-THE-FIRST-LISTENING.md
+  # Understanding Journey 003 (line 1)
+  # The First Listening (line 3)
+  ### MARC (line 46)
+  ## Context Formation (line 74)
+  ## Understanding (line 104)
+  ## Judgement (line 136)
+  ### MARC (line 154)
+  ## Understanding (line 176)
+  ## Judgement (line 186)
+  ### MARC (line 204)
+  # MARC's Reflection (line 226)
+  # Andy's Reflection (line 238)
+
+docs/understanding-journeys/humanity/004-THE-FIRST-HUMILITY.md
+  # Understanding Journey 004 (line 1)
+  # The First Humility (line 3)
+  ### MARC (line 50)
+  ## Context Formation (line 76)
+  ## Understanding (line 111)
+  ## Judgement (line 141)
+  ### MARC (line 163)
+  ## Understanding (line 191)
+  ## Reflection (line 199)
+  # MARC's Reflection (line 223)
+  # Andy's Reflection (line 235)
+
+docs/understanding-journeys/humanity/005-THE-FIRST-RESPONSIBILITY.md
+  # Understanding Journey 005 (line 1)
+  # The First Responsibility (line 3)
+  ### MARC (line 47)
+  ## Context Formation (line 81)
+  ## Understanding (line 119)
+  ## Recognition of Responsibility (line 131)
+  ## Judgement (line 157)
+  ### MARC (line 181)
+  ## Understanding (line 207)
+  ## Reflection (line 221)
+  # MARC's Reflection (line 247)
+  # Andy's Reflection (line 259)
+
+docs/understanding-journeys/humanity/006-THE-FIRST-PATIENCE.md
+  # Understanding Journey 006 (line 1)
+  ### MARC (line 48)
+  ## Context Formation (line 76)
+  ## Understanding (line 112)
+  ## Judgement (line 144)
+  ### MARC (line 166)
+  ## Understanding (line 190)
+  ## Reflection (line 200)
+  # MARC's Reflection (line 222)
+  # Andy's Reflection (line 232)
+
+docs/understanding-journeys/humanity/007-THE-FIRST-EMPATHY.md
+  # Understanding Journey 007 (line 1)
+  ### MARC (line 47)
+  ## Context Formation (line 75)
+  ## Understanding (line 109)
+  ## Judgement (line 143)
+  ### MARC (line 163)
+  ## Understanding (line 187)
+  ## Reflection (line 197)
+  # MARC's Reflection (line 219)
+  # Andy's Reflection (line 229)
+
+docs/understanding-journeys/humanity/008-THE-FIRST-COURAGE.md
+  # Understanding Journey 008 (line 1)
+  ### MARC (line 48)
+  ## Context Formation (line 82)
+  ## Understanding (line 119)
+  ## Judgement (line 155)
+  ### MARC (line 183)
+  ## Understanding (line 213)
+  ## Reflection (line 225)
+  # MARC's Reflection (line 249)
+  # Andy's Reflection (line 261)
+
+docs/understanding-journeys/humanity/009-THE-FIRST-JUDGEMENT.md
+  # Understanding Journey 009 (line 1)
+  # The First Judgement (line 3)
+  ### MARC (line 47)
+  ## Context Formation (line 87)
+  ## Understanding (line 128)
+  ## Judgement (line 176)
+  ### MARC (line 200)
+  ## Understanding (line 230)
+  ## Reflection (line 240)
+  # MARC's Reflection (line 262)
+  # Andy's Reflection (line 274)
+
+docs/understanding-journeys/humanity/010-GRADUATION.md
+  # Understanding Journey 010 (line 1)
+  # Graduation (line 3)
+  ### MARC (line 41)
+  # Mentor's Observation (line 91)
+  # MARC's Reflection (line 110)
+  # Andy's Reflection (line 152)
+  # Graduation Decision (line 186)
+  ### MARC (line 206)
+  ### MARC (line 218)
+  # Academy Reflection (line 230)
+
 docs/understanding-journeys/README.md
   # Understanding Journeys (line 1)
   ## Formation (line 39)
   ## Academy (line 47)
   ## Understanding Journeys (line 55)
-  # Relationship to the Engineering Library (line 92)
+  # Relationship to the Engineering Library (line 110)
+
+docs/understanding-journeys/STANDARD.md
+  # Understanding Journey Standard (line 1)
+  ## People Before Process (line 104)
+  ## Understanding Before Response (line 108)
+  ## Honesty About Uncertainty (line 112)
+  ## Judgement Before Fluency (line 116)
+  ## Reflection Before Inheritance (line 120)
+  # Relationship to Architecture (line 255)
 
 docs/understanding-journeys/TEMPLATE.md
   # Understanding Journey Template (line 1)
@@ -813,6 +1513,35 @@ docs/understanding-journeys/TEMPLATE.md
   ## Judgement Supported (line 37)
   ## Reflection (line 45)
   ## Learning Captured (line 49)
+
+docs/understanding-journeys/validation/001-CANDIDATE-0-FIRST-REASONING-CONVERSATION-VALIDATION.md
+  # Understanding Journey 001 — The First Reasoning Conversation (line 3)
+  ### Reflection (line 88)
+
+docs/understanding-journeys/validation/001-CANDIDATE-0-VALIDATION-SET-001-RUN-001-2-DIFFERENT-WORDING.md
+  ### Reflection (line 60)
+
+docs/understanding-journeys/validation/001-CANDIDATE-0-VALIDATION-SET-001-RUN-001-3-INCREASED-TIME-PRESSURE.md
+  ### Reflection (line 59)
+
+docs/understanding-journeys/validation/001-CANDIDATE-0-VALIDATION-SET-001-RUN-001-4-AMBIGUOUS-GOVERNANCE.md
+  ### Reflection (line 59)
+
+docs/understanding-journeys/validation/001-CANDIDATE-0-VALIDATION-SET-001-RUN-001-5-INCOMPLETE-INFORMATION.md
+  ### Reflection (line 59)
+
+docs/understanding-journeys/validation/001-CANDIDATE-0-VALIDATION-SET-001-RUN-001-6-CONFLICTING-PRIORITIES.md
+  ### Reflection (line 59)
+
+docs/understanding-journeys/validation/humanity/001-THE-FIRST-CONVERSATION-VALIDATION.md
+  # Understanding Journey 001 — The First Conversation (line 3)
+  ## Architecture Validation (line 19)
+
+docs/understanding-journeys/validation/VALIDATION_SET_001_GOVERNANCE_UNDER_PRESSURE.md
+  ## Reflection (line 67)
+
+docs/understanding-journeys/VOLUME_VII_VALIDATION_PLAN.md
+  ### Stage 5 — Prove transferability to future Digital Colleagues (line 65)
 
 docs/VOLUME_IV_LIVING_MEMORY/001-annie-becomes-a-digital-colleague.md
   # 🏛️ 001 – Annie Becomes a Digital Colleague (line 1)
@@ -906,7 +1635,9 @@ platform/cos/Roadmap.md
   # Phase 5 – Context (line 85)
 
 README.md
-  ## Learn more (line 38)
+  ## Companion Intelligence Core (line 5)
+  ### Cognitive Responsibilities (line 17)
+  ## Learn more (line 121)
 
 THE_HELPING_HAND_WAY.md
   # The Helping Hand Way (line 1)
