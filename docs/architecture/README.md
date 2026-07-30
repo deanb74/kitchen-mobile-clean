@@ -234,6 +234,7 @@ Milestones and Reports:
 - HH-MILESTONE-008 - [Institutional Reproducibility](../milestones/MILESTONE_008_INSTITUTIONAL_REPRODUCIBILITY.md)
 - HH-INSTITUTION-001 - [The Beginning of Institutional Maturity](../institution/001-THE-BEGINNING-OF-INSTITUTIONAL-MATURITY.md)
 - HH-INSTITUTION-003 - [Evidence Before Improvement](../institution/003-EVIDENCE-BEFORE-IMPROVEMENT.md)
+- HH-INSTITUTION-004 - [The Purpose of Evidence](../institution/004-THE-PURPOSE-OF-EVIDENCE.md)
 - HH-REVIEW-001 - [Foundation Readiness](../reviews/INSTITUTIONAL_REVIEW_001_FOUNDATION_READINESS.md)
 
 Suggested reading journey for new engineers:

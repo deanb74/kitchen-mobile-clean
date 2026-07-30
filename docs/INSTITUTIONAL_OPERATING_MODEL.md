@@ -3,7 +3,7 @@
 **Status:** Released
 **Category:** Institutional Governance
 **Question:** How does Helping Hand improve itself?
-**Related:** HH-INSTITUTION-001, HH-INSTITUTION-003, HH-MILESTONE-008, HH-GOV-001, HH-GOV-002, HH-GOV-003, HH-GOV-004
+**Related:** HH-INSTITUTION-001, HH-INSTITUTION-003, HH-INSTITUTION-004, HH-MILESTONE-008, HH-GOV-001, HH-GOV-002, HH-GOV-003, HH-GOV-004
 
 ---
 

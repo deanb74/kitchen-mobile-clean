@@ -10,6 +10,7 @@ This library is the permanent knowledge repository for the Helping Hand platform
 
 - [Helping Hand Operating Model](OPERATING_MODEL.md)
 - [Institutional Operating Model](INSTITUTIONAL_OPERATING_MODEL.md)
+- [Operational Execution Plan 001](OPERATIONAL_EXECUTION_PLAN_001.md)
 - [Helping Hand Organisational Operating Model](architecture/HELPING_HAND_ORGANISATIONAL_OPERATING_MODEL.md)
 - [Helping Hand Governance Framework](architecture/HELPING_HAND_GOVERNANCE_FRAMEWORK.md)
 - [Helping Hand Standards Lifecycle](architecture/HELPING_HAND_STANDARDS_LIFECYCLE.md)
@@ -25,6 +26,8 @@ This library is the permanent knowledge repository for the Helping Hand platform
 ## Graduation
 
 - [Volume VIII - Opening](handovers/VOLUME_VIII_OPENING_GRADUATION.md)
+- [Volume VIII - Operational Commitment](handovers/VOLUME_VIII_OPERATIONAL_COMMITMENT.md)
+- [Operational Execution Plan 001](OPERATIONAL_EXECUTION_PLAN_001.md)
 - [Graduation Test 001 - Academy Readiness and Annie Graduation](academy/graduation/GRADUATION_TEST_001_ANNIE.md)
 - [Formation Test 001 - Andy School of Formation](academy/formation/FORMATION_TEST_001_ANDY_SCHOOL_OF_FORMATION.md)
 - [Formation Report 001 - Andy School of Formation](academy/formation/FORMATION_REPORT_001_ANDY.md)
@@ -49,11 +52,20 @@ This library is the permanent knowledge repository for the Helping Hand platform
 - [Institution Library](institution/README.md)
 - [HH-INSTITUTION-001 - The Beginning of Institutional Maturity](institution/001-THE-BEGINNING-OF-INSTITUTIONAL-MATURITY.md)
 - [HH-INSTITUTION-003 - Evidence Before Improvement](institution/003-EVIDENCE-BEFORE-IMPROVEMENT.md)
+- [HH-INSTITUTION-004 - The Purpose of Evidence](institution/004-THE-PURPOSE-OF-EVIDENCE.md)
 - [HH-INSTITUTION-002 - Institutional Operating Model](INSTITUTIONAL_OPERATING_MODEL.md)
 
 ## Foundation Coverage Test
 
 - [Foundation Coverage Test](GOVERNANCE_FOUNDATION_COVERAGE_TEST.md)
+
+## Engineering
+
+- [Engineering Principles Library](engineering/README.md)
+- [EP-000 - Engineering Principles Foundation](ENGINEERING_PRINCIPLES.md)
+- [EP-001 - Never Claim Unearned Evidence](engineering/ENGINEERING_PRINCIPLE_001.md)
+- [ED-001 - Transition from Foundation Engineering to Evidence Engineering](engineering/ENGINEERING_DIRECTIVE_001.md)
+- [EED-001 - Execute HOER-0002 - First Live Human Outcome Validation](engineering/ENGINEERING_EXECUTION_DIRECTIVE_001.md)
 
 Helping Hand should be understood first as an organisational system for creating and improving understanding.
 
@@ -248,6 +260,7 @@ Start here:
 - [Institution Library](institution/README.md)
 - [HH-INSTITUTION-001 - The Beginning of Institutional Maturity](institution/001-THE-BEGINNING-OF-INSTITUTIONAL-MATURITY.md)
 - [HH-INSTITUTION-003 - Evidence Before Improvement](institution/003-EVIDENCE-BEFORE-IMPROVEMENT.md)
+- [HH-INSTITUTION-004 - The Purpose of Evidence](institution/004-THE-PURPOSE-OF-EVIDENCE.md)
 - [HH-INSTITUTION-002 - Institutional Operating Model](INSTITUTIONAL_OPERATING_MODEL.md)
 
 ---
@@ -322,6 +335,13 @@ Key repository milestones are recorded in the milestones library.
 # Engineering Principles
 
 Every significant contribution should strengthen both the software and the Engineering Library.
+
+Reference:
+
+- [Engineering Principles Library](engineering/README.md)
+- [EP-000 - Engineering Principles Foundation](ENGINEERING_PRINCIPLES.md)
+- [EP-001 - Never Claim Unearned Evidence](engineering/ENGINEERING_PRINCIPLE_001.md)
+- [ED-001 - Transition from Foundation Engineering to Evidence Engineering](engineering/ENGINEERING_DIRECTIVE_001.md)
 
 Before introducing a major capability, consider documenting:
 

@@ -2,7 +2,12 @@
 
 > *"Good judgement creates Faff Free software."*
 
-**Status:** Engineering Foundation
+**Status:** Released  
+**Reference:** EP-000  
+**Category:** Engineering Principle Foundation  
+**Version:** 1.0
+
+**Lifecycle:** Engineering Foundation
 
 **Purpose:**
 Defines the principles that guide every engineering decision within Helping Hand.

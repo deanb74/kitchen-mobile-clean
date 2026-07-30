@@ -14,6 +14,7 @@ Institution answers what the organisation is becoming.
 
 - [HH-INSTITUTION-001 - The Beginning of Institutional Maturity](001-THE-BEGINNING-OF-INSTITUTIONAL-MATURITY.md)
 - [HH-INSTITUTION-003 - Evidence Before Improvement](003-EVIDENCE-BEFORE-IMPROVEMENT.md)
+- [HH-INSTITUTION-004 - The Purpose of Evidence](004-THE-PURPOSE-OF-EVIDENCE.md)
 
 ## Institutional Standards
 

@@ -49,6 +49,11 @@ The identifier remains constant.
 | HH-INSTITUTION-001 | The Beginning of Institutional Maturity | 1.0 | Institution | Released |
 | HH-INSTITUTION-002 | Institutional Operating Model | 1.0 | Institution | Released |
 | HH-INSTITUTION-003 | Evidence Before Improvement | 1.0 | Institution | Released |
+| HH-INSTITUTION-004 | The Purpose of Evidence | 1.0 | Institution | Released |
+| EP-000 | Engineering Principles Foundation | 1.0 | Engineering | Released |
+| EP-001 | Engineering Principle 001 - Never Claim Unearned Evidence | 1.0 | Engineering | Released |
+| ED-001 | Engineering Directive 001 - Transition from Foundation Engineering to Evidence Engineering | 1.0 | Engineering | Active |
+| EED-001 | Engineering Execution Directive 001 - Execute HOER-0002 - First Live Human Outcome Validation | 1.0 | Engineering | Active |
 
 ---
 
@@ -69,6 +74,7 @@ The identifier remains constant.
 | Foundation | Baseline architectural standard that other documents build on |
 | Draft | Under development |
 | Review | Ready for review before release |
+| Active | In force directive for current engineering phase |
 | Released | Current approved version |
 | Superseded | Replaced by a newer version |
 | Archived | Retained for historical reference |
@@ -89,6 +95,25 @@ Major revisions increase the major version.
 Minor clarifications increase the minor version.
 
 Historical versions remain part of the Helping Hand record.
+
+## Identifier Prefix Taxonomy
+
+The following prefix taxonomy is a frozen convention.
+
+| Prefix | Purpose | Changes When |
+|---------|---------|--------------|
+| CON | Constitution | Extremely rarely |
+| THEORY | Understanding and models | Evidence requires it |
+| GOV | Governance | Process changes |
+| INST | Institutional learning | Evidence changes institutional behaviour |
+| EP | Engineering Principles | Engineering culture evolves |
+| ED | Engineering Directives | Current engineering priorities change |
+| EED | Engineering Execution Directives | Immediate operational execution priority changes |
+| OEP | Operational Execution Playbooks | Execution process improves |
+| PROOF | Validation programmes | New capabilities require proof |
+| HOER | Human Outcome Evidence Records | Every significant live interaction |
+
+This taxonomy should only change through explicit governance review.
 
 ## Versioning
 

@@ -93,3 +93,15 @@ Goal:
 1. Wave 1 complete: all six capabilities certified.
 2. Implement v1 Venue Brain persistence layer.
 3. Execute first multi-capability review across all certified capabilities.
+
+## Volume VIII Operational Proof Entry
+
+Next operational proof:
+
+- PROOF-0011 - First Operational Human Outcome Validation
+
+Goal:
+
+- shift from institutional self-validation to real human-outcome evidence in hospitality,
+- capture full evidence chain from situation through reflection,
+- determine whether current institutional standards are already sufficient in live operational use.

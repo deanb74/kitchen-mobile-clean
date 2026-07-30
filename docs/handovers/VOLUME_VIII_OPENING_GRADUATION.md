@@ -182,5 +182,7 @@ The continuity question for Volume VIII is:
 
 ## First Execution Artifacts
 
+- [Volume VIII - Operational Commitment](VOLUME_VIII_OPERATIONAL_COMMITMENT.md)
+- [Operational Execution Plan 001](../OPERATIONAL_EXECUTION_PLAN_001.md)
 - [Graduation Test 001 - Academy Readiness and Annie Graduation](../academy/graduation/GRADUATION_TEST_001_ANNIE.md)
 - [Graduation Report Template](../academy/graduation/GRADUATION_REPORT_TEMPLATE.md)
