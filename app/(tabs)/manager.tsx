@@ -28,6 +28,20 @@ const API = "http://192.168.0.183:3001";
 
 export default function ManagerScreen() {
   type FaultSeverity = "low" | "medium" | "high";
+  type HoerSignal = "yes" | "no" | "unknown";
+
+  type FaultInteractionSummary = {
+    interactionId: string;
+    equipmentName: string;
+    severity: FaultSeverity;
+    faultDescription: string;
+    recommendation: string;
+    authorityDisposition: string;
+    actionOutcome: string;
+    csaConformant: boolean;
+    contractViolationCount: number;
+    submittedAt: string;
+  };
 
   const [venuePresets, setVenuePresets] = useState<any[]>([]);
   const [selectedPresetId, setSelectedPresetId] = useState("");
@@ -127,6 +141,21 @@ export default function ManagerScreen() {
   const [correctiveActionText, setCorrectiveActionText] = useState("");
   const [activeCorrectiveRecordId, setActiveCorrectiveRecordId] = useState<number | null>(null);
   const [equipmentFaultNotes, setEquipmentFaultNotes] = useState("");
+  const [latestFaultInteraction, setLatestFaultInteraction] =
+    useState<FaultInteractionSummary | null>(null);
+  const [hoerParticipantName, setHoerParticipantName] = useState("");
+  const [hoerInitialUnderstanding, setHoerInitialUnderstanding] = useState("");
+  const [hoerHumanDecision, setHoerHumanDecision] = useState("");
+  const [hoerObservedOutcome, setHoerObservedOutcome] = useState("");
+  const [hoerUnderstandingImproved, setHoerUnderstandingImproved] =
+    useState<HoerSignal>("unknown");
+  const [hoerConfidenceImproved, setHoerConfidenceImproved] =
+    useState<HoerSignal>("unknown");
+  const [hoerNextTimeConfidence, setHoerNextTimeConfidence] =
+    useState<HoerSignal>("unknown");
+  const [hoerAttributionConfidence, setHoerAttributionConfidence] =
+    useState("not-yet-assessable");
+  const [hoerAttributionReason, setHoerAttributionReason] = useState("");
   const [managerSection, setManagerSection] = useState<string>("home");
   const [themeName, setThemeName] = useState("default");
   const [isOfflineMode, setIsOfflineMode] = useState(false);
@@ -218,6 +247,19 @@ export default function ManagerScreen() {
 
       await appendCompanionRuntimeTrace(result.runtimeResult);
 
+      setLatestFaultInteraction({
+        interactionId: result.interactionId,
+        equipmentName,
+        severity,
+        faultDescription,
+        recommendation: result.runtimeResult.trace.decision.recommendedAction,
+        authorityDisposition: result.runtimeResult.trace.authority.disposition,
+        actionOutcome: result.runtimeResult.trace.action.outcome,
+        csaConformant: result.csaConformant,
+        contractViolationCount: result.contractViolations.length,
+        submittedAt: result.submittedAt,
+      });
+
       Alert.alert(
         "Equipment fault reported",
         `Risk ${result.decisionSnapshot.risk}. Interaction ${result.interactionId} recorded.`,
@@ -231,6 +273,76 @@ export default function ManagerScreen() {
       );
     }
 
+  };
+
+  const reviewHoerCaptureReadiness = () => {
+    const missing: string[] = [];
+
+    if (!latestFaultInteraction) {
+      missing.push("run one Annie-guided CC-003 interaction");
+    }
+
+    if (!hoerParticipantName.trim()) {
+      missing.push("participant identity");
+    }
+
+    if (!hoerInitialUnderstanding.trim()) {
+      missing.push("initial understanding");
+    }
+
+    if (!hoerHumanDecision.trim()) {
+      missing.push("human decision");
+    }
+
+    if (!hoerObservedOutcome.trim()) {
+      missing.push("observed outcome");
+    }
+
+    if (!hoerAttributionReason.trim()) {
+      missing.push("attribution reason");
+    }
+
+    if (missing.length === 0) {
+      Alert.alert(
+        "HOER-0002 ready",
+        "Live evidence fields are complete and ready to transfer into HOER-0002.",
+      );
+      return;
+    }
+
+    Alert.alert(
+      "HOER-0002 not ready",
+      `Missing: ${missing.join(", ")}`,
+    );
+  };
+
+  const hoerDraftStorageKey = "hoer-0002-draft";
+
+  const saveHoerDraft = async () => {
+    const payload = {
+      participantName: hoerParticipantName,
+      initialUnderstanding: hoerInitialUnderstanding,
+      humanDecision: hoerHumanDecision,
+      observedOutcome: hoerObservedOutcome,
+      understandingImproved: hoerUnderstandingImproved,
+      confidenceImproved: hoerConfidenceImproved,
+      nextTimeConfidence: hoerNextTimeConfidence,
+      attributionConfidence: hoerAttributionConfidence,
+      attributionReason: hoerAttributionReason,
+      latestFaultInteraction,
+      savedAt: new Date().toISOString(),
+    };
+
+    await setStoredItem(hoerDraftStorageKey, JSON.stringify(payload));
+
+    Alert.alert(
+      "HOER draft saved",
+      "The current HOER-0002 capture fields were saved locally as a draft.",
+    );
+  };
+
+  const submitHoerEvidence = () => {
+    reviewHoerCaptureReadiness();
   };
 
   const returnEquipmentToService = async (equipmentId: number) => {
@@ -2165,6 +2277,116 @@ Please advise attendance date and next steps.
       {managerSection === "equipment" && (
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Equipment Status</Text>
+          <Text style={[styles.subTitle, { color: activeTheme.text }]}>Annie live interaction input</Text>
+          <TextInput
+            style={[styles.input, themedInput]}
+            placeholder="Describe the fault exactly as reported by the duty manager"
+            placeholderTextColor="#9ca3af"
+            value={equipmentFaultNotes}
+            onChangeText={setEquipmentFaultNotes}
+            multiline
+          />
+
+          {latestFaultInteraction && (
+            <View style={[styles.card, { backgroundColor: activeTheme.card }]}> 
+              <Text style={[styles.cardTitle, { color: activeTheme.text }]}>Latest Annie CC-003 interaction</Text>
+              <Text style={[styles.timeText, { color: activeTheme.text }]}>Interaction: {latestFaultInteraction.interactionId}</Text>
+              <Text style={[styles.timeText, { color: activeTheme.text }]}>Equipment: {latestFaultInteraction.equipmentName}</Text>
+              <Text style={[styles.timeText, { color: activeTheme.text }]}>Severity: {latestFaultInteraction.severity}</Text>
+              <Text style={[styles.timeText, { color: activeTheme.text }]}>Recommendation: {latestFaultInteraction.recommendation}</Text>
+              <Text style={[styles.timeText, { color: activeTheme.text }]}>Authority: {latestFaultInteraction.authorityDisposition}</Text>
+              <Text style={[styles.timeText, { color: activeTheme.text }]}>Outcome: {latestFaultInteraction.actionOutcome}</Text>
+              <Text style={[styles.timeText, { color: activeTheme.text }]}>CSA conformant: {latestFaultInteraction.csaConformant ? "yes" : "no"}</Text>
+              <Text style={[styles.timeText, { color: activeTheme.text }]}>Contract violations: {latestFaultInteraction.contractViolationCount}</Text>
+              <Text style={[styles.timeText, { color: activeTheme.text }]}>Timestamp: {new Date(latestFaultInteraction.submittedAt).toLocaleString()}</Text>
+            </View>
+          )}
+
+          <Text style={[styles.subTitle, { color: activeTheme.text }]}>HOER-0002 live evidence capture</Text>
+          <TextInput
+            style={[styles.input, themedInput]}
+            placeholder="Participant name or role"
+            placeholderTextColor="#9ca3af"
+            value={hoerParticipantName}
+            onChangeText={setHoerParticipantName}
+          />
+          <TextInput
+            style={[styles.input, themedInput]}
+            placeholder="Initial understanding before Annie guidance"
+            placeholderTextColor="#9ca3af"
+            value={hoerInitialUnderstanding}
+            onChangeText={setHoerInitialUnderstanding}
+            multiline
+          />
+          <TextInput
+            style={[styles.input, themedInput]}
+            placeholder="Human decision after Annie recommendation"
+            placeholderTextColor="#9ca3af"
+            value={hoerHumanDecision}
+            onChangeText={setHoerHumanDecision}
+            multiline
+          />
+          <TextInput
+            style={[styles.input, themedInput]}
+            placeholder="Observed workplace outcome"
+            placeholderTextColor="#9ca3af"
+            value={hoerObservedOutcome}
+            onChangeText={setHoerObservedOutcome}
+            multiline
+          />
+          <TextInput
+            style={[styles.input, themedInput]}
+            placeholder="Understanding improved? yes / no / unknown"
+            placeholderTextColor="#9ca3af"
+            value={hoerUnderstandingImproved}
+            onChangeText={(value) =>
+              setHoerUnderstandingImproved((value.toLowerCase() as HoerSignal) || "unknown")
+            }
+          />
+          <TextInput
+            style={[styles.input, themedInput]}
+            placeholder="Confidence improved? yes / no / unknown"
+            placeholderTextColor="#9ca3af"
+            value={hoerConfidenceImproved}
+            onChangeText={(value) =>
+              setHoerConfidenceImproved((value.toLowerCase() as HoerSignal) || "unknown")
+            }
+          />
+          <TextInput
+            style={[styles.input, themedInput]}
+            placeholder="Would they handle this better next time? yes / no / unknown"
+            placeholderTextColor="#9ca3af"
+            value={hoerNextTimeConfidence}
+            onChangeText={(value) =>
+              setHoerNextTimeConfidence((value.toLowerCase() as HoerSignal) || "unknown")
+            }
+          />
+          <TextInput
+            style={[styles.input, themedInput]}
+            placeholder="Attribution confidence: high / medium / low / not-yet-assessable"
+            placeholderTextColor="#9ca3af"
+            value={hoerAttributionConfidence}
+            onChangeText={setHoerAttributionConfidence}
+          />
+          <TextInput
+            style={[styles.input, themedInput]}
+            placeholder="Why this attribution confidence was selected"
+            placeholderTextColor="#9ca3af"
+            value={hoerAttributionReason}
+            onChangeText={setHoerAttributionReason}
+            multiline
+          />
+          <Text style={[styles.label, { color: activeTheme.text }]}>Would you like to submit this as HOER evidence?</Text>
+          <Pressable style={styles.button} onPress={submitHoerEvidence}>
+            <Text style={styles.buttonText}>Submit HOER</Text>
+          </Pressable>
+          <Pressable
+            style={[styles.button, styles.secondaryButton]}
+            onPress={saveHoerDraft}
+          >
+            <Text style={styles.buttonText}>Save Draft</Text>
+          </Pressable>
+
           {equipmentStatus?.equipment?.length === 0 ? (
             <Text style={styles.emptyText}>No equipment found</Text>
           ) : (
@@ -4085,6 +4307,9 @@ const styles = StyleSheet.create({
       color: "#ffffff",
       fontWeight: "700",
     },
+  secondaryButton: {
+    backgroundColor: "#5B6472",
+  },
   container: {
     padding: 24,
     paddingTop: 60,
