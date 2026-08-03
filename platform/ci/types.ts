@@ -3,6 +3,8 @@ export type CapabilityRoute =
   | "translate"
   | "reflect"
   | "conversation"
+  | "demonstrate"
+  | "instruct"
   | "complete";
 
 export interface CompanionContext {
@@ -10,6 +12,9 @@ export interface CompanionContext {
   hasTranslations: boolean;
   needsReflection: boolean;
   needsClarification: boolean;
+  requiresDemonstration?: boolean;
+  requiresImmediateInstruction?: boolean;
+  requiresComplianceInstruction?: boolean;
 }
 
 export interface CompanionRouteDecision {

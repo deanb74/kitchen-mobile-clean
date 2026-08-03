@@ -1,6 +1,6 @@
 import type {
-  CompanionContext,
-  CompanionRouteDecision,
+    CompanionContext,
+    CompanionRouteDecision,
 } from "./types";
 
 /**
@@ -27,6 +27,20 @@ export function chooseNextRoute(
     return {
       next: "translate",
       reason: "Observations should become understanding.",
+    };
+  }
+
+  if (context.requiresImmediateInstruction || context.requiresComplianceInstruction) {
+    return {
+      next: "instruct",
+      reason: "Safety, urgency, or compliance duty may require instruction before demonstration.",
+    };
+  }
+
+  if (context.requiresDemonstration) {
+    return {
+      next: "demonstrate",
+      reason: "Professional behaviour should be demonstrated first in normal practice, with instruction only if needed later.",
     };
   }
 
