@@ -4,6 +4,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+ENV_FILE="${BOOTSTRAP_ENV_FILE:-${REPO_ROOT}/.env}"
 
 PASSES=()
 WARNINGS=()
@@ -100,6 +101,27 @@ extract_env_value() {
   printf '%s' "$raw"
 }
 
+ensure_zsh_nvm_profile() {
+  local zshrc_path="$HOME/.zshrc"
+  local begin_marker="# BEGIN kitchen-mobile-clean bootstrap nvm"
+  local end_marker="# END kitchen-mobile-clean bootstrap nvm"
+  local nvm_init_line="[ -s \"${BREW_PREFIX}/opt/nvm/nvm.sh\" ] && . \"${BREW_PREFIX}/opt/nvm/nvm.sh\" --no-use"
+
+  mkdir -p "$(dirname "$zshrc_path")"
+
+  if [[ -f "$zshrc_path" ]] && grep -Fq "$begin_marker" "$zshrc_path"; then
+    return 0
+  fi
+
+  {
+    echo
+    echo "$begin_marker"
+    echo "export NVM_DIR=\"$HOME/.nvm\""
+    echo "$nvm_init_line"
+    echo "$end_marker"
+  } >> "$zshrc_path"
+}
+
 echo "Starting Mac bootstrap from ${REPO_ROOT}"
 
 if [[ ! -f "${REPO_ROOT}/package.json" || ! -f "${REPO_ROOT}/app.json" ]]; then
@@ -175,7 +197,17 @@ if [[ ! -f "$NVM_SH" ]]; then
 fi
 
 # shellcheck source=/dev/null
-source "$NVM_SH"
+if ! source "$NVM_SH" --no-use; then
+  add_blocker "NVM failed to load from ${NVM_SH} with --no-use."
+  print_report
+fi
+
+if ! declare -F nvm >/dev/null 2>&1; then
+  add_blocker "NVM did not define the nvm function after sourcing ${NVM_SH}."
+  print_report
+fi
+
+ensure_zsh_nvm_profile
 
 NODE_VERSION="$(tr -d '[:space:]' < "${REPO_ROOT}/.nvmrc")"
 if [[ -z "$NODE_VERSION" ]]; then
@@ -205,15 +237,15 @@ else
   print_report
 fi
 
-if [[ ! -f "${REPO_ROOT}/.env" ]]; then
+if [[ ! -f "$ENV_FILE" ]]; then
   add_blocker ".env is missing. Copy .env.example to .env and set EXPO_PUBLIC_API_BASE_URL before rerunning."
   print_report
 fi
 
-if api_base_url="$(extract_env_value "EXPO_PUBLIC_API_BASE_URL" "${REPO_ROOT}/.env")"; then
+if api_base_url="$(extract_env_value "EXPO_PUBLIC_API_BASE_URL" "$ENV_FILE")"; then
   validate_api_base_url "$api_base_url"
 else
-  add_blocker "EXPO_PUBLIC_API_BASE_URL is missing from ${REPO_ROOT}/.env."
+  add_blocker "EXPO_PUBLIC_API_BASE_URL is missing from ${ENV_FILE}."
 fi
 
 if ! command -v git >/dev/null 2>&1; then
