@@ -22,9 +22,10 @@ import {
     TouchableOpacity,
     View
 } from "react-native";
+  import { API_BASE_URL } from "../../lib/api";
 import { getStoredItem, setStoredItem } from "../../lib/storage";
 
-const API = "http://192.168.0.183:3001";
+  const API = API_BASE_URL;
 
 export default function ManagerScreen() {
   type FaultSeverity = "low" | "medium" | "high";
@@ -2090,6 +2091,20 @@ Please advise attendance date and next steps.
       {/* Venue Setup Wizard Card */}
       <View style={styles.card}>
         <Text style={[styles.sectionTitle, { color: activeTheme.text }]}>Venue Setup Wizard</Text>
+
+        <Text style={[styles.filterText, { color: activeTheme.text }]}>Industry</Text>
+        <Text style={[styles.filterText, { color: activeTheme.text }]}>↓</Text>
+        <Text style={[styles.filterText, { color: activeTheme.text }]}>Venue Type</Text>
+        <Text style={[styles.filterText, { color: activeTheme.text }]}>↓</Text>
+        <Text style={[styles.filterText, { color: activeTheme.text }]}>Venue HQ</Text>
+        <Text style={[styles.filterText, { color: activeTheme.text }]}>↓</Text>
+        <Text style={[styles.filterText, { color: activeTheme.text }]}>Venue Brain</Text>
+        <Text style={[styles.filterText, { color: activeTheme.text }]}>↓</Text>
+        <Text style={[styles.filterText, { color: activeTheme.text }]}>Operations</Text>
+
+        <Text style={[styles.filterText, { color: activeTheme.text }]}>Industry determines inheritance.</Text>
+        <Text style={[styles.filterText, { color: activeTheme.text }]}>Venue Type determines capability selection.</Text>
+        <Text style={[styles.filterText, { color: activeTheme.text }]}>Venue HQ stores organisation-specific knowledge.</Text>
 
         {venuePresets.map((preset: any) => (
           <Pressable

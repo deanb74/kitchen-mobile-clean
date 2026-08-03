@@ -1,11 +1,12 @@
 import { appendCompanionRuntimeTrace } from "@/lib/companionRuntimeTraceStore";
 import { CompanionOrchestrator } from "@/src/companion/CompanionOrchestrator";
 import axios from "axios";
+import { API_BASE_URL } from "./api";
 import { getOfflineQueue, replaceOfflineQueue } from "./offlineQueue";
 import { getStoredItem } from "./storage";
 import { setSyncStatus } from "./syncStatus";
 
-const API = "http://192.168.0.183:3001";
+const API = API_BASE_URL;
 const companionRuntime = new CompanionOrchestrator();
 
 export async function syncOfflineQueue() {

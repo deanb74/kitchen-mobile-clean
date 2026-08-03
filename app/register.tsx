@@ -2,10 +2,9 @@ import axios from "axios";
 import { router } from "expo-router";
 import { useState } from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { API_BASE_URL } from "../lib/api";
 import { registerForPushNotificationsAsync } from "../lib/notifications";
 import { deleteStoredItem, setStoredItem } from "../lib/storage";
-
-const API = "http://192.168.0.183:3001";
 
 export default function RegisterScreen() {
   const [email, setEmail] = useState("");
@@ -16,7 +15,7 @@ const register = async () => {
   try {
     setLoading(true);
 
-    const res = await axios.post(`${API}/register`, { email, password });
+    const res = await axios.post(`${API_BASE_URL}/register`, { email, password });
 
     await setStoredItem("token", res.data.token);
 
@@ -41,7 +40,7 @@ const register = async () => {
 
       if (pushToken) {
         await axios.post(
-          `${API}/push-token`,
+          `${API_BASE_URL}/push-token`,
           { pushToken },
           {
             headers: {

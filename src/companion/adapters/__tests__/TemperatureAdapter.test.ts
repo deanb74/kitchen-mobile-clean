@@ -5,6 +5,8 @@ import {
     buildTemperatureDecisionSnapshot,
 } from "../temperatureContracts";
 
+const repositoryRoot = path.resolve(__dirname, "../../../..");
+
 describe("TemperatureAdapter contract regression", () => {
   it("builds context with required actor identity", () => {
     const context = buildTemperatureContextEnvelope({
@@ -75,7 +77,7 @@ describe("TemperatureAdapter contract regression", () => {
 
   it("keeps missing-auth and offline-queue branches in adapter", async () => {
     const source = await readFile(
-      path.join(process.cwd(), "src/companion/adapters/TemperatureAdapter.ts"),
+      path.join(repositoryRoot, "src/companion/adapters/TemperatureAdapter.ts"),
       "utf8",
     );
 
@@ -88,7 +90,7 @@ describe("TemperatureAdapter contract regression", () => {
 
   it("keeps offline replay governed by runtime and trace append", async () => {
     const replaySource = await readFile(
-      path.join(process.cwd(), "lib/syncQueue.ts"),
+      path.join(repositoryRoot, "lib/syncQueue.ts"),
       "utf8",
     );
 

@@ -3,9 +3,10 @@ import Constants from "expo-constants";
 import * as Device from "expo-device";
 import * as Notifications from "expo-notifications";
 import { Platform } from "react-native";
+import { API_BASE_URL } from "./api";
 import { getStoredItem } from "./storage";
 
-const API = "http://192.168.0.183:3001";
+const API = API_BASE_URL;
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({

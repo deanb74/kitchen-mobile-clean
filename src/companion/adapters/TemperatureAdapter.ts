@@ -1,4 +1,5 @@
 import { appendCompanionRuntimeTrace } from "@/lib/companionRuntimeTraceStore";
+import { API_BASE_URL } from "@/lib/api";
 import { addToOfflineQueue } from "@/lib/offlineQueue";
 import { getStoredItem } from "@/lib/storage";
 import {
@@ -17,7 +18,7 @@ import type {
 import NetInfo from "@react-native-community/netinfo";
 import axios from "axios";
 
-const API = "http://192.168.0.183:3001";
+const API = API_BASE_URL;
 const PEOPLE_OUTCOME =
   "Prevent unsafe food handling and support timely, safe operational decisions.";
 

@@ -5,9 +5,10 @@ import { openingChecksAdapter } from "@/src/companion/adapters/OpeningChecksAdap
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { API_BASE_URL } from "../../lib/api";
 import { getStoredItem } from "../../lib/storage";
 
-const API = "http://192.168.0.183:3001";
+const API = API_BASE_URL;
 
 export default function ChecksScreen() {
   const [openingChecks, setOpeningChecks] = useState<any[]>([]);

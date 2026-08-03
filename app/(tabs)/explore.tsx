@@ -6,11 +6,12 @@ import axios from "axios";
 import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import { Button, Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { API_BASE_URL } from "../../lib/api";
 import { getOfflineQueueCount } from "../../lib/offlineQueue";
 import { deleteStoredItem, getStoredItem } from "../../lib/storage";
 import { getSyncStatus, subscribeToSyncStatus } from "../../lib/syncStatus";
 
-const API = "http://192.168.0.183:3001";
+const API = API_BASE_URL;
 
   function describeCorrectiveAction(status: string): string {
     if (status === "red") {

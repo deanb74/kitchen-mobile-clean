@@ -6,8 +6,10 @@ import type {
     CompanionRuntimeRequest,
     CompanionRuntimeResult,
 } from "../src/companion/types";
+import { resolveRepositoryRootFromImportMeta } from "./support/repositoryRoot";
 
 const divider = "----------------------------------------";
+const repositoryRoot = resolveRepositoryRootFromImportMeta(import.meta.url);
 
 function buildRequest(
   overrides: Partial<CompanionRuntimeRequest> = {},
@@ -70,8 +72,7 @@ async function writeTraceArtifact(payload: {
   generatedAt: string;
   scenarios: CompanionRuntimeResult[];
 }) {
-  const projectRoot = process.cwd();
-  const artifactDir = path.join(projectRoot, "docs", "proofs", "artifacts");
+  const artifactDir = path.join(repositoryRoot, "docs", "proofs", "artifacts");
   const artifactPath = path.join(
     artifactDir,
     "companion-runtime-trace.latest.json",

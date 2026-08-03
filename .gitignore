@@ -36,6 +36,10 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
+# local analysis and generated document bundles
+repo-sweep/
+UNDERSTANDING-JOURNEYS-COMPLETE-BUNDLE.md
+
 app-example
 
 # generated native folders

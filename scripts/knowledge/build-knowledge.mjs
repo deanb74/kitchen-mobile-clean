@@ -1,7 +1,13 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const projectRoot = process.cwd();
+function resolveProjectRoot() {
+  const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
+  return path.resolve(scriptDirectory, "../..");
+}
+
+const projectRoot = resolveProjectRoot();
 const scanRoot = projectRoot;
 
 const outputFiles = {
@@ -23,6 +29,11 @@ const excludedDirectories = new Set([
   "coverage",
   "android",
   "ios",
+  "repo-sweep",
+]);
+
+const excludedFiles = new Set([
+  "UNDERSTANDING-JOURNEYS-COMPLETE-BUNDLE.md",
 ]);
 
 const concepts = [
@@ -221,7 +232,11 @@ async function walk(directory) {
       continue;
     }
 
-    if (entry.isFile() && entry.name.toLowerCase().endsWith(".md")) {
+    if (
+      entry.isFile() &&
+      entry.name.toLowerCase().endsWith(".md") &&
+      !excludedFiles.has(entry.name)
+    ) {
       files.push(absolutePath);
     }
   }

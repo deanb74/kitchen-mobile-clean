@@ -10,7 +10,19 @@ const fs = require("fs");
 const path = require("path");
 const readline = require("readline");
 
-const root = process.cwd();
+function resolveRepositoryRoot() {
+  const candidateRoot = path.resolve(__dirname, "..");
+
+  if (!fs.existsSync(path.join(candidateRoot, "package.json"))) {
+    throw new Error(
+      `Unable to resolve repository root from ${__filename}. Expected package.json in ${candidateRoot}.`,
+    );
+  }
+
+  return candidateRoot;
+}
+
+const root = resolveRepositoryRoot();
 const oldDirs = ["app", "components", "hooks", "constants", "scripts"];
 const exampleDir = "app-example";
 const newAppDir = "app";

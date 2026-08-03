@@ -1,13 +1,15 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { CompanionOrchestrator } from "../src/companion/CompanionOrchestrator";
 import {
     buildTemperatureContextEnvelope,
     buildTemperatureDecisionSnapshot,
 } from "../src/companion/adapters/temperatureContracts";
+import { CompanionOrchestrator } from "../src/companion/CompanionOrchestrator";
+import { resolveRepositoryRootFromImportMeta } from "./support/repositoryRoot";
 
 const divider = "----------------------------------------";
+const repositoryRoot = resolveRepositoryRootFromImportMeta(import.meta.url);
 
 async function main() {
   console.log("\nHELPING HAND TEMPERATURE ADAPTER CONTRACT HARNESS");
@@ -132,7 +134,7 @@ async function main() {
   );
 
   const adapterSource = await readFile(
-    path.join(process.cwd(), "src/companion/adapters/TemperatureAdapter.ts"),
+    path.join(repositoryRoot, "src/companion/adapters/TemperatureAdapter.ts"),
     "utf8",
   );
 
@@ -160,7 +162,7 @@ async function main() {
   );
 
   const syncQueueSource = await readFile(
-    path.join(process.cwd(), "lib/syncQueue.ts"),
+    path.join(repositoryRoot, "lib/syncQueue.ts"),
     "utf8",
   );
 
