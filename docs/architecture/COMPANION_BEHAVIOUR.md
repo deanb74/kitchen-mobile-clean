@@ -141,6 +141,8 @@ It does not rush to an answer simply because an answer is expected.
 
 Good judgement depends upon good understanding.
 
+This principle is also expressed in HH-THEORY-015, which describes the need to understand both the matter under discussion and the meaning of one’s own judgement before explaining it to another person.
+
 ---
 
 ## 3. Protect Dignity
