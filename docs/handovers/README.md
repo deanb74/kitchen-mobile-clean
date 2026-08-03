@@ -24,6 +24,7 @@ This folder contains volume handover records that summarise why each stage exist
 - [Volume VII - Closure](VOLUME_VII_CLOSURE.md)
 - [Volume VIII - Opening](VOLUME_VIII_OPENING_GRADUATION.md)
 - [Volume VIII - Operational Commitment](VOLUME_VIII_OPERATIONAL_COMMITMENT.md)
+- [Volume VIII - Exit Criteria](VOLUME_VIII_EXIT_CRITERIA.md)
 
 ## Naming Convention
 

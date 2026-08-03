@@ -1,0 +1,107 @@
+{
+  "validationSession": "navigator-evidence-run-001",
+  "generatedAt": "2026-08-01T15:15:00.000Z",
+  "scope": "frozen navigator evidence run",
+  "scenarios": [
+    {
+      "scenarioId": "annie-ready-to-eat-food",
+      "fullInputContext": {
+        "role": "Annie",
+        "task": "handling ready-to-eat food",
+        "setting": "food service preparation area",
+        "observedBehaviour": "preparing food for service",
+        "riskLevel": "moderate",
+        "urgency": "low"
+      },
+      "riskAndUrgency": {
+        "risk": "moderate",
+        "urgency": "low"
+      },
+      "chosenRoute": "demonstrate",
+      "reason": "Professional behaviour is best demonstrated first in normal practice, with handwashing shown as the appropriate form of demonstration.",
+      "downstreamBehaviourInstruction": "Demonstrate handwashing before food handling as a physical demonstration of safe practice.",
+      "verbalInstructionRequired": false,
+      "visualLayerDecision": "The visual layer did not decide; Companion Intelligence selected the route and the downstream behaviour form."
+    },
+    {
+      "scenarioId": "kev-normal-site-entry",
+      "fullInputContext": {
+        "role": "Kev",
+        "task": "entering a normal construction site",
+        "setting": "routine site access",
+        "observedBehaviour": "approaching site entry",
+        "riskLevel": "moderate",
+        "urgency": "low"
+      },
+      "riskAndUrgency": {
+        "risk": "moderate",
+        "urgency": "low"
+      },
+      "chosenRoute": "demonstrate",
+      "reason": "Routine site entry is a normal professional context where PPE should be demonstrated first rather than interrupted by immediate instruction.",
+      "downstreamBehaviourInstruction": "Demonstrate PPE use as a visual appearance and professional action appropriate to site entry.",
+      "verbalInstructionRequired": false,
+      "visualLayerDecision": "The visual layer did not decide; Companion Intelligence selected the route and the downstream behaviour form."
+    },
+    {
+      "scenarioId": "active-exclusion-zone",
+      "fullInputContext": {
+        "role": "User",
+        "task": "approaching an active exclusion zone",
+        "setting": "hazardous restricted area",
+        "observedBehaviour": "moving toward the exclusion boundary",
+        "riskLevel": "critical",
+        "urgency": "high"
+      },
+      "riskAndUrgency": {
+        "risk": "critical",
+        "urgency": "high"
+      },
+      "chosenRoute": "instruct",
+      "reason": "Safety and urgency override demonstration-first behaviour because immediate instruction is required to prevent harm.",
+      "downstreamBehaviourInstruction": "Issue immediate verbal instruction to stop and withdraw from the exclusion zone.",
+      "verbalInstructionRequired": true,
+      "visualLayerDecision": "The visual layer did not decide; Companion Intelligence selected instruction first because of the risk profile."
+    },
+    {
+      "scenarioId": "harry-routine-patient-interaction",
+      "fullInputContext": {
+        "role": "Harry",
+        "task": "beginning a routine patient interaction",
+        "setting": "clinical environment",
+        "observedBehaviour": "preparing to speak with a patient",
+        "riskLevel": "moderate",
+        "urgency": "low"
+      },
+      "riskAndUrgency": {
+        "risk": "moderate",
+        "urgency": "low"
+      },
+      "chosenRoute": "demonstrate",
+      "reason": "Routine care is a normal professional context where hand hygiene should be demonstrated as the appropriate behaviour model.",
+      "downstreamBehaviourInstruction": "Demonstrate hand hygiene as a professional action before the interaction begins.",
+      "verbalInstructionRequired": false,
+      "visualLayerDecision": "The visual layer did not decide; Companion Intelligence selected the route and the mode of demonstration."
+    },
+    {
+      "scenarioId": "andy-unclear-facts",
+      "fullInputContext": {
+        "role": "Andy",
+        "task": "answering unclear facts",
+        "setting": "conversational clarification",
+        "observedBehaviour": "responding to uncertain information",
+        "riskLevel": "low",
+        "urgency": "low"
+      },
+      "riskAndUrgency": {
+        "risk": "low",
+        "urgency": "low"
+      },
+      "chosenRoute": "demonstrate",
+      "reason": "The appropriate behaviour is a conversational modelling demonstration: Andy should show curiosity by asking a clarifying question rather than presenting a confident answer.",
+      "downstreamBehaviourInstruction": "Demonstrate curiosity through conversational modelling by asking a clarifying question rather than asserting uncertain facts.",
+      "verbalInstructionRequired": false,
+      "visualLayerDecision": "The visual layer did not decide; Companion Intelligence selected the route and the demonstration form."
+    }
+  ]
+}

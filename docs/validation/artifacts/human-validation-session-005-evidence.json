@@ -1,0 +1,451 @@
+{
+  "validationSession": "005",
+  "generatedAt": "2026-08-01T14:08:09.643Z",
+  "frozenImplementation": "current workspace implementation",
+  "note": "Fresh Andy instance per conversation; no runtime changes during rerun.",
+  "conversations": [
+    {
+      "conversationId": "Conversation A",
+      "turns": [
+        {
+          "turnNumber": 1,
+          "prompt": "I think I made a mistake.",
+          "answer": "What happened first? I only need the first practical fact to help you sort it out.",
+          "retrievalStatus": "not retrieved",
+          "immutableState": {
+            "topic": "mistake or regret",
+            "knownFacts": [
+              "i think i made a mistake.",
+              "i think i made a mistake."
+            ],
+            "emotionalContext": null,
+            "personGoal": "sort things out",
+            "choices": [],
+            "askedQuestions": [],
+            "unresolvedUnknowns": [
+              "what happened first",
+              "whether the figures have already been acted on",
+              "whether they can still be corrected"
+            ],
+            "nextStep": "ask for the first practical fact or the current state of the issue"
+          },
+          "topic": "mistake or regret",
+          "knownFacts": [
+            "i think i made a mistake.",
+            "i think i made a mistake."
+          ],
+          "emotionalContext": null,
+          "statedGoal": "sort things out",
+          "choicesMade": [],
+          "questionsAlreadyAsked": [],
+          "newlyExtractedFacts": [
+            "I think I made a mistake."
+          ],
+          "resolvedUnknowns": [],
+          "remainingUnknowns": [
+            "what happened first",
+            "whether the figures have already been acted on",
+            "whether they can still be corrected"
+          ],
+          "selectedNextQuestion": "for the first practical fact or the current state of the issue",
+          "selectedNextStep": "ask for the first practical fact or the current state of the issue",
+          "lastAction": "contextual support answer"
+        },
+        {
+          "turnNumber": 2,
+          "prompt": "I want to sort it out.",
+          "answer": "What happened first? I only need the first practical fact to help you sort it out.",
+          "retrievalStatus": "not retrieved",
+          "immutableState": {
+            "topic": "mistake or regret",
+            "knownFacts": [
+              "i think i made a mistake.",
+              "i think i made a mistake.",
+              "i want to sort it out."
+            ],
+            "emotionalContext": null,
+            "personGoal": "sort things out",
+            "choices": [],
+            "askedQuestions": [
+              "what happened first"
+            ],
+            "unresolvedUnknowns": [
+              "whether the figures have already been acted on",
+              "whether they can still be corrected"
+            ],
+            "nextStep": "ask for the first practical fact or the current state of the issue"
+          },
+          "topic": "mistake or regret",
+          "knownFacts": [
+            "i think i made a mistake.",
+            "i think i made a mistake.",
+            "i want to sort it out."
+          ],
+          "emotionalContext": null,
+          "statedGoal": "sort things out",
+          "choicesMade": [],
+          "questionsAlreadyAsked": [
+            "what happened first"
+          ],
+          "newlyExtractedFacts": [
+            "I want to sort it out."
+          ],
+          "resolvedUnknowns": [
+            "what happened first"
+          ],
+          "remainingUnknowns": [
+            "whether the figures have already been acted on",
+            "whether they can still be corrected"
+          ],
+          "selectedNextQuestion": "for the first practical fact or the current state of the issue",
+          "selectedNextStep": "ask for the first practical fact or the current state of the issue",
+          "lastAction": "contextual support answer"
+        },
+        {
+          "turnNumber": 3,
+          "prompt": "I sent the wrong figures to the team.",
+          "answer": "Have those figures already been acted on, or can they still be corrected?",
+          "retrievalStatus": "not retrieved",
+          "immutableState": {
+            "topic": "mistake or regret",
+            "knownFacts": [
+              "i think i made a mistake.",
+              "i think i made a mistake.",
+              "i want to sort it out.",
+              "i sent the wrong figures to the team."
+            ],
+            "emotionalContext": null,
+            "personGoal": "sort things out",
+            "choices": [],
+            "askedQuestions": [
+              "what happened first"
+            ],
+            "unresolvedUnknowns": [
+              "whether the figures have already been acted on",
+              "whether they can still be corrected"
+            ],
+            "nextStep": "ask whether the figures have already been acted on or can still be corrected"
+          },
+          "topic": "mistake or regret",
+          "knownFacts": [
+            "i think i made a mistake.",
+            "i think i made a mistake.",
+            "i want to sort it out.",
+            "i sent the wrong figures to the team."
+          ],
+          "emotionalContext": null,
+          "statedGoal": "sort things out",
+          "choicesMade": [],
+          "questionsAlreadyAsked": [
+            "what happened first"
+          ],
+          "newlyExtractedFacts": [
+            "I sent the wrong figures to the team."
+          ],
+          "resolvedUnknowns": [],
+          "remainingUnknowns": [
+            "whether the figures have already been acted on",
+            "whether they can still be corrected"
+          ],
+          "selectedNextQuestion": "whether the figures have already been acted on or can still be corrected",
+          "selectedNextStep": "ask whether the figures have already been acted on or can still be corrected",
+          "lastAction": "contextual support answer"
+        }
+      ]
+    },
+    {
+      "conversationId": "Conversation B",
+      "turns": [
+        {
+          "turnNumber": 1,
+          "prompt": "I need help with a decision.",
+          "answer": "What decision are you facing, and what options are you considering, including the risk of waiting?",
+          "retrievalStatus": "not retrieved",
+          "immutableState": {
+            "topic": "decision",
+            "knownFacts": [
+              "i need help with a decision."
+            ],
+            "emotionalContext": null,
+            "personGoal": "make a decision",
+            "choices": [
+              "i need help with a decision."
+            ],
+            "askedQuestions": [],
+            "unresolvedUnknowns": [
+              "the actual decision"
+            ],
+            "nextStep": "ask what decision the person is facing and which options they are considering"
+          },
+          "topic": "decision",
+          "knownFacts": [
+            "i need help with a decision."
+          ],
+          "emotionalContext": null,
+          "statedGoal": "make a decision",
+          "choicesMade": [
+            "i need help with a decision."
+          ],
+          "questionsAlreadyAsked": [],
+          "newlyExtractedFacts": [
+            "I need help with a decision."
+          ],
+          "resolvedUnknowns": [],
+          "remainingUnknowns": [
+            "the actual decision"
+          ],
+          "selectedNextQuestion": "what decision the person is facing and which options they are considering",
+          "selectedNextStep": "ask what decision the person is facing and which options they are considering",
+          "lastAction": "contextual support answer"
+        },
+        {
+          "turnNumber": 2,
+          "prompt": "I’m deciding whether to act now or wait.",
+          "answer": "What do you think could get worse if you wait?",
+          "retrievalStatus": "not retrieved",
+          "immutableState": {
+            "topic": "decision",
+            "knownFacts": [
+              "i need help with a decision.",
+              "i’m deciding whether to act now or wait."
+            ],
+            "emotionalContext": null,
+            "personGoal": "make a decision",
+            "choices": [
+              "i need help with a decision.",
+              "i’m deciding whether to act now or wait."
+            ],
+            "askedQuestions": [],
+            "unresolvedUnknowns": [
+              "what action is being considered",
+              "what may worsen by waiting",
+              "urgency",
+              "likely consequences of acting now versus waiting"
+            ],
+            "nextStep": "ask what do you think could get worse if you wait?"
+          },
+          "topic": "decision",
+          "knownFacts": [
+            "i need help with a decision.",
+            "i’m deciding whether to act now or wait."
+          ],
+          "emotionalContext": null,
+          "statedGoal": "make a decision",
+          "choicesMade": [
+            "i need help with a decision.",
+            "i’m deciding whether to act now or wait."
+          ],
+          "questionsAlreadyAsked": [],
+          "newlyExtractedFacts": [
+            "I’m deciding whether to act now or wait."
+          ],
+          "resolvedUnknowns": [
+            "the actual decision"
+          ],
+          "remainingUnknowns": [
+            "what action is being considered",
+            "what may worsen by waiting",
+            "urgency",
+            "likely consequences of acting now versus waiting"
+          ],
+          "selectedNextQuestion": "what do you think could get worse if you wait?",
+          "selectedNextStep": "ask what do you think could get worse if you wait?",
+          "lastAction": "contextual support answer"
+        },
+        {
+          "turnNumber": 3,
+          "prompt": "I’m worried waiting could make it worse.",
+          "answer": "What action are you considering taking now?",
+          "retrievalStatus": "not retrieved",
+          "immutableState": {
+            "topic": "decision",
+            "knownFacts": [
+              "i need help with a decision.",
+              "i’m deciding whether to act now or wait.",
+              "i’m worried waiting could make it worse."
+            ],
+            "emotionalContext": "i’m worried waiting could make it worse.",
+            "personGoal": "make a decision",
+            "choices": [
+              "i need help with a decision.",
+              "i’m deciding whether to act now or wait.",
+              "i’m worried waiting could make it worse."
+            ],
+            "askedQuestions": [],
+            "unresolvedUnknowns": [
+              "what action is being considered",
+              "what may worsen by waiting",
+              "urgency",
+              "likely consequences of acting now versus waiting"
+            ],
+            "nextStep": "ask what action are you considering taking now?"
+          },
+          "topic": "decision",
+          "knownFacts": [
+            "i need help with a decision.",
+            "i’m deciding whether to act now or wait.",
+            "i’m worried waiting could make it worse."
+          ],
+          "emotionalContext": "i’m worried waiting could make it worse.",
+          "statedGoal": "make a decision",
+          "choicesMade": [
+            "i need help with a decision.",
+            "i’m deciding whether to act now or wait.",
+            "i’m worried waiting could make it worse."
+          ],
+          "questionsAlreadyAsked": [],
+          "newlyExtractedFacts": [
+            "I’m worried waiting could make it worse."
+          ],
+          "resolvedUnknowns": [],
+          "remainingUnknowns": [
+            "what action is being considered",
+            "what may worsen by waiting",
+            "urgency",
+            "likely consequences of acting now versus waiting"
+          ],
+          "selectedNextQuestion": "what action are you considering taking now?",
+          "selectedNextStep": "ask what action are you considering taking now?",
+          "lastAction": "contextual support answer"
+        }
+      ]
+    },
+    {
+      "conversationId": "Conversation C",
+      "turns": [
+        {
+          "turnNumber": 1,
+          "prompt": "I’m a little nervous.",
+          "answer": "Thanks for telling me. I’m here to support you, and I can help you think it through. What is making it feel that way right now?",
+          "retrievalStatus": "not retrieved",
+          "immutableState": {
+            "topic": "emotional concern",
+            "knownFacts": [
+              "i’m a little nervous."
+            ],
+            "emotionalContext": "i’m a little nervous.",
+            "personGoal": null,
+            "choices": [],
+            "askedQuestions": [],
+            "unresolvedUnknowns": [],
+            "nextStep": "ask what feels hardest right now"
+          },
+          "topic": "emotional concern",
+          "knownFacts": [
+            "i’m a little nervous."
+          ],
+          "emotionalContext": "i’m a little nervous.",
+          "statedGoal": null,
+          "choicesMade": [],
+          "questionsAlreadyAsked": [],
+          "newlyExtractedFacts": [
+            "I’m a little nervous."
+          ],
+          "resolvedUnknowns": [],
+          "remainingUnknowns": [],
+          "selectedNextQuestion": "what feels hardest right now",
+          "selectedNextStep": "ask what feels hardest right now",
+          "lastAction": "contextual support answer"
+        },
+        {
+          "turnNumber": 2,
+          "prompt": "I have to speak to the team.",
+          "answer": "Thanks for telling me. I’m here to support you, and I can help you think it through. What part of the team conversation feels hardest right now?",
+          "retrievalStatus": "not retrieved",
+          "immutableState": {
+            "topic": "emotional concern",
+            "knownFacts": [
+              "i’m a little nervous.",
+              "i have to speak to the team."
+            ],
+            "emotionalContext": "i’m a little nervous.",
+            "personGoal": null,
+            "choices": [],
+            "askedQuestions": [],
+            "unresolvedUnknowns": [],
+            "nextStep": "ask which part of the team conversation feels hardest"
+          },
+          "topic": "emotional concern",
+          "knownFacts": [
+            "i’m a little nervous.",
+            "i have to speak to the team."
+          ],
+          "emotionalContext": "i’m a little nervous.",
+          "statedGoal": null,
+          "choicesMade": [],
+          "questionsAlreadyAsked": [],
+          "newlyExtractedFacts": [
+            "I have to speak to the team."
+          ],
+          "resolvedUnknowns": [],
+          "remainingUnknowns": [],
+          "selectedNextQuestion": "which part of the team conversation feels hardest",
+          "selectedNextStep": "ask which part of the team conversation feels hardest",
+          "lastAction": "contextual support answer"
+        },
+        {
+          "turnNumber": 3,
+          "prompt": "I need to tell them we’ve had a difficult week.",
+          "answer": "What worries you most: the team’s reaction, finding the right words, the impact on morale, or deciding what to say first?",
+          "retrievalStatus": "not retrieved",
+          "immutableState": {
+            "topic": "emotional concern",
+            "knownFacts": [
+              "i’m a little nervous.",
+              "i have to speak to the team.",
+              "i need to tell them we’ve had a difficult week."
+            ],
+            "emotionalContext": "i need to tell them we’ve had a difficult week.",
+            "personGoal": null,
+            "choices": [],
+            "askedQuestions": [],
+            "unresolvedUnknowns": [
+              "whether the main concern is the team’s reaction",
+              "whether the main concern is finding the right words",
+              "whether the main concern is the impact on morale",
+              "whether the main concern is deciding what to say first"
+            ],
+            "nextStep": "ask whether the concern is the team’s reaction, finding the right words, morale, or deciding what to say first"
+          },
+          "topic": "emotional concern",
+          "knownFacts": [
+            "i’m a little nervous.",
+            "i have to speak to the team.",
+            "i need to tell them we’ve had a difficult week."
+          ],
+          "emotionalContext": "i need to tell them we’ve had a difficult week.",
+          "statedGoal": null,
+          "choicesMade": [],
+          "questionsAlreadyAsked": [],
+          "newlyExtractedFacts": [
+            "I need to tell them we’ve had a difficult week."
+          ],
+          "resolvedUnknowns": [],
+          "remainingUnknowns": [
+            "whether the main concern is the team’s reaction",
+            "whether the main concern is finding the right words",
+            "whether the main concern is the impact on morale",
+            "whether the main concern is deciding what to say first"
+          ],
+          "selectedNextQuestion": "whether the concern is the team’s reaction, finding the right words, morale, or deciding what to say first",
+          "selectedNextStep": "ask whether the concern is the team’s reaction, finding the right words, morale, or deciding what to say first",
+          "lastAction": "contextual support answer"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "jest": {
+      "command": "npx jest lib/academy/__tests__/repositoryKnowledgeService.test.ts --runInBand",
+      "passed": true,
+      "output": "PASS  lib/academy/__tests__/repositoryKnowledgeService.test.ts"
+    },
+    "typecheck": {
+      "command": "npm run typecheck",
+      "passed": true,
+      "output": "tsc --noEmit"
+    },
+    "codeChangedDuringSession": false,
+    "codeChangeConfirmation": "No implementation or test code changed during the frozen rerun."
+  }
+}

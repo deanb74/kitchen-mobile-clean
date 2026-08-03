@@ -1,0 +1,87 @@
+{
+  "validationSession": "behaviour-evidence-run-001",
+  "generatedAt": "2026-08-01T15:30:00.000Z",
+  "scope": "frozen behaviour evidence run",
+  "scenarios": [
+    {
+      "scenarioId": "kev-hard-hat-entry",
+      "inputContext": {
+        "role": "Kev",
+        "task": "enters a normal construction site",
+        "setting": "routine site access",
+        "urgency": "low"
+      },
+      "ciRoute": "demonstrate",
+      "behaviourIntent": "demonstrate required PPE",
+      "visibleAction": "Kev puts on a hard hat and eye protection.",
+      "verbalResponse": null,
+      "urgency": "low",
+      "instructionRequired": false,
+      "visualLayerDecision": "The visual layer made no independent choice; the behaviour was derived from CI intent."
+    },
+    {
+      "scenarioId": "kev-exclusion-zone",
+      "inputContext": {
+        "role": "Kev",
+        "task": "approaches an exclusion zone",
+        "setting": "hazardous restricted area",
+        "urgency": "high"
+      },
+      "ciRoute": "instruct",
+      "behaviourIntent": "warn immediately and stop movement",
+      "visibleAction": "Kev stops and receives an urgent warning.",
+      "verbalResponse": "Stop and withdraw from the exclusion zone.",
+      "urgency": "high",
+      "instructionRequired": true,
+      "visualLayerDecision": "The visual layer made no independent choice; the warning came from CI instruction."
+    },
+    {
+      "scenarioId": "annie-reading-glasses",
+      "inputContext": {
+        "role": "Annie",
+        "task": "inspects a physical document",
+        "setting": "document review",
+        "urgency": "low"
+      },
+      "ciRoute": "demonstrate",
+      "behaviourIntent": "demonstrate appropriate reading support",
+      "visibleAction": "Annie puts on reading glasses.",
+      "verbalResponse": null,
+      "urgency": "low",
+      "instructionRequired": false,
+      "visualLayerDecision": "The visual layer made no independent choice; the behaviour was derived from CI intent."
+    },
+    {
+      "scenarioId": "annie-handwashing",
+      "inputContext": {
+        "role": "Annie",
+        "task": "handles ready-to-eat food",
+        "setting": "food service preparation area",
+        "urgency": "low"
+      },
+      "ciRoute": "demonstrate",
+      "behaviourIntent": "demonstrate handwashing",
+      "visibleAction": "Annie demonstrates handwashing before continuing.",
+      "verbalResponse": null,
+      "urgency": "low",
+      "instructionRequired": false,
+      "visualLayerDecision": "The visual layer made no independent choice; the behaviour was derived from CI intent."
+    },
+    {
+      "scenarioId": "andy-unclear-information",
+      "inputContext": {
+        "role": "Andy",
+        "task": "encounters unclear information",
+        "setting": "conversation and clarification",
+        "urgency": "low"
+      },
+      "ciRoute": "demonstrate",
+      "behaviourIntent": "demonstrate curiosity through a clarifying pause",
+      "visibleAction": "Andy pauses and asks a clarifying question.",
+      "verbalResponse": "Could you clarify that point?",
+      "urgency": "low",
+      "instructionRequired": false,
+      "visualLayerDecision": "The visual layer made no independent choice; the pause and question were derived from CI intent."
+    }
+  ]
+}

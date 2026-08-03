@@ -67,6 +67,26 @@ It does not exist to "think" in isolation.
 
 It exists to help people understand their organisation better than isolated events can.
 
+Venue Brain composition:
+
+Venue Brain
+
+=
+
+Helping Hand Inheritance
+
++
+
+Industry Inheritance
+
++
+
+Venue Knowledge
+
++
+
+Operational Evidence
+
 ---
 
 ## Recommended Next Stage

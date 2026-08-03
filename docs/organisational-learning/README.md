@@ -8,6 +8,7 @@ They are organisation-level learning records derived from completed evidence cyc
 
 ## Records
 
+- [Lessons Learned 001](LESSONS_LEARNED_001.md)
 - [Reflection on Learning - Cycle 001](REFLECTION_ON_LEARNING_CYCLE_001.md)
 - [Institutional Learning 003 - Conflict Character Baseline](INSTITUTIONAL_LEARNING_003_CONFLICT_CHARACTER_BASELINE.md)
 
