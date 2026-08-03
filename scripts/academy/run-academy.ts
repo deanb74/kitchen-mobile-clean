@@ -1,19 +1,21 @@
 import assert from "node:assert/strict";
 import {
-  AndyDigitalColleague,
-  firstUncertaintyJourney,
-  JourneyRunner,
-  MarcMentor,
+    AndyDigitalColleague,
+    firstUncertaintyJourney,
+    JourneyRunner,
+    MarcMentor,
 } from "../../lib/academy";
+import { resolveRepositoryRootFromImportMeta } from "../support/repositoryRoot";
 
 const divider = "────────────────────────────────────────";
+const repositoryRoot = resolveRepositoryRootFromImportMeta(import.meta.url);
 
 function printObject(value: unknown): void {
   console.log(JSON.stringify(value, null, 2));
 }
 
 const marc = new MarcMentor();
-const andy = new AndyDigitalColleague();
+const andy = new AndyDigitalColleague({ repositoryRoot });
 
 const academy = new JourneyRunner({
   mentor: marc,

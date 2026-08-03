@@ -16,6 +16,57 @@ It exists to ensure that every journey demonstrates reasoning clearly, consisten
 
 ---
 
+# Repository Traceability (Mandatory)
+
+Every Understanding Journey shall include a Repository Traceability metadata block near the top of the document.
+
+This requirement inherits from:
+
+- HH-ARCH-RTS-001 - Repository Traceability Standard
+
+The block must declare:
+
+- Constitution references
+- Theory references
+- Architecture references
+- Engineering references
+- Milestone relationship
+- Candidate relationship
+- Evidence type
+
+This requirement ensures the repository can trace dependency and impact without relying on contributor memory.
+
+When a governing document changes, linked journeys can be identified for review through explicit references.
+
+Minimum structure:
+
+```md
+# Repository Traceability
+
+Constitution:
+- <reference>
+
+Theory:
+- <reference>
+
+Architecture:
+- <reference>
+
+Engineering:
+- <reference>
+
+Milestone:
+- <reference>
+
+Candidate:
+- <reference>
+
+Evidence Type:
+- Understanding Validation
+```
+
+---
+
 # Standard
 
 Every Understanding Journey should demonstrate a complete reasoning sequence rather than only a conclusion.

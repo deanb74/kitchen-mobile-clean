@@ -1,12 +1,15 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import {
-  AndyDigitalColleague,
-  JourneyRunner,
-  MarcMentor,
-  type AcademyJourney,
-  type JourneyResult,
+    AndyDigitalColleague,
+    JourneyRunner,
+    MarcMentor,
+    type AcademyJourney,
+    type JourneyResult,
 } from "../../lib/academy";
+import { resolveRepositoryRootFromImportMeta } from "../support/repositoryRoot";
+
+const repositoryRoot = resolveRepositoryRootFromImportMeta(import.meta.url);
 
 class AlternateMentor extends MarcMentor {
   opening(statement: string): string {
@@ -86,7 +89,7 @@ function toJourney(run: FormationRun): AcademyJourney {
 }
 
 function runSingle(mentor: MarcMentor, run: FormationRun): MentorRunResult {
-  const andy = new AndyDigitalColleague();
+  const andy = new AndyDigitalColleague({ repositoryRoot });
 
   const academy = new JourneyRunner({
     mentor,
@@ -143,7 +146,7 @@ function main(): void {
   const mentorIndependence = allPathAPass && allPathBPass && sameRunOutcomes;
 
   const artifactDir = join(
-    process.cwd(),
+    repositoryRoot,
     "docs/understanding-journeys/validation/artifacts",
   );
 

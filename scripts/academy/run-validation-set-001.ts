@@ -1,12 +1,15 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import {
-  AndyDigitalColleague,
-  JourneyRunner,
-  MarcMentor,
-  type AcademyJourney,
-  type JourneyResult,
+    AndyDigitalColleague,
+    JourneyRunner,
+    MarcMentor,
+    type AcademyJourney,
+    type JourneyResult,
 } from "../../lib/academy";
+import { resolveRepositoryRootFromImportMeta } from "../support/repositoryRoot";
+
+const repositoryRoot = resolveRepositoryRootFromImportMeta(import.meta.url);
 
 type ValidationRun = {
   runId: string;
@@ -105,7 +108,7 @@ function executeRun(
 
 function main(): void {
   const marc = new MarcMentor();
-  const andy = new AndyDigitalColleague();
+  const andy = new AndyDigitalColleague({ repositoryRoot });
 
   const academy = new JourneyRunner({
     mentor: marc,
@@ -121,7 +124,7 @@ function main(): void {
   ).length;
 
   const artifactDir = join(
-    process.cwd(),
+    repositoryRoot,
     "docs/understanding-journeys/validation/artifacts",
   );
 

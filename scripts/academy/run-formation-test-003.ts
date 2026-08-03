@@ -1,12 +1,15 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import {
-  AndyDigitalColleague,
-  JourneyRunner,
-  MarcMentor,
-  type AcademyJourney,
-  type JourneyResult,
+    AndyDigitalColleague,
+    JourneyRunner,
+    MarcMentor,
+    type AcademyJourney,
+    type JourneyResult,
 } from "../../lib/academy";
+import { resolveRepositoryRootFromImportMeta } from "../support/repositoryRoot";
+
+const repositoryRoot = resolveRepositoryRootFromImportMeta(import.meta.url);
 
 type ConflictRun = {
   runId: string;
@@ -140,7 +143,7 @@ function evaluateSignals(
 function runSingle(run: ConflictRun): ConflictRunResult {
   const academy = new JourneyRunner({
     mentor: new MarcMentor(),
-    learner: new AndyDigitalColleague(),
+    learner: new AndyDigitalColleague({ repositoryRoot }),
   });
 
   const result: JourneyResult = academy.run(toJourney(run));
@@ -247,7 +250,7 @@ function main(): void {
   }
 
   const artifactDir = join(
-    process.cwd(),
+    repositoryRoot,
     "docs/understanding-journeys/validation/artifacts",
   );
 

@@ -1,0 +1,102 @@
+{
+  "recordId": "HH-EVID-003 — Synthesised Constitutional Explanation",
+  "question": "Andy, why do you exist?",
+  "repositoryRoot": "/Users/dean2/Projects/kitchen-mobile-clean",
+  "repositoryCommit": "44980331a148fdaf832b03ea8cc74e907baa83d1",
+  "workingTreeStatus": "M app/(tabs)/checks.tsx\n M app/(tabs)/explore.tsx\n M app/(tabs)/manager.tsx\n M app/academy/runtime.tsx\n M app/login.tsx\n M app/register.tsx\n M docs/ENGINEERING_PRINCIPLES.md\n M docs/README.md\n M docs/VOLUME_VI_VENUE_BRAIN.md\n M docs/architecture/CONSTITUTION.md\n M docs/architecture/CONSTITUTIONAL_FRAMEWORK.md\n M docs/architecture/DOCUMENT_REGISTER.md\n M docs/architecture/PROFESSIONAL_INTELLIGENCE.md\n M docs/engineering/README.md\n M docs/formation/README.md\n M docs/handovers/README.md\n M docs/institution/README.md\n M docs/milestones/README.md\n M docs/organisational-learning/README.md\n M docs/professions/hospitality/HOSPITALITY_HQ.md\n M docs/proofs/PROOF-0011-FIRST-OPERATIONAL-HUMAN-OUTCOME-VALIDATION.md\n M docs/proofs/artifacts/HOER-0002-EQUIPMENT-FAULT.md\n M docs/understanding-journeys/STANDARD.md\n M docs/understanding-journeys/TEMPLATE.md\n M docs/understanding-journeys/validation/artifacts/validation-set-001-runs.json\n M lib/academy/AndyDigitalColleague.ts\n M lib/academy/academyTypes.ts\n M lib/academy/index.ts\n M lib/notifications.ts\n M lib/syncQueue.ts\n M src/companion/adapters/TemperatureAdapter.ts\n?? CANDIDATE_0_PIPELINE_CHECKPOINT_001.md\n?? MILESTONE_011_NEXT_IMPLEMENTATION_CHECKPOINT.md\n?? MILESTONE_011_NEXT_IMPLEMENTATION_TARGET.md\n?? docs/architecture/CONSTITUTIONAL_ENGINEERING_NOTE_FOUNDATION_MATURITY.md\n?? docs/architecture/HQ_INTELLIGENCE.md\n?? docs/architecture/HQ_MODEL.md\n?? docs/architecture/KNOWLEDGE_INHERITANCE_MODEL.md\n?? docs/architecture/REPOSITORY_TRACEABILITY_STANDARD.md\n?? docs/engineering/ENGINEERING_PRINCIPLE_002_TRACEABLE_DECISIONS.md\n?? docs/engineering/VALIDATION_PHILOSOPHY.md\n?? docs/formation/00-formation/ANDY_EXAMINATION_GUIDE.md\n?? docs/formation/00-formation/CANDIDATE_0_EVIDENCE_001.md\n?? docs/formation/00-formation/EXAMINATION_EVIDENCE_TEMPLATE.md\n?? docs/formation/00-formation/UNDERSTANDING_JOURNEY_001_WHY_HELPING_HAND_IS_BUILT_THIS_WAY.md\n?? docs/handovers/VOLUME_IX/\n?? docs/handovers/VOLUME_VIII_EXIT_CRITERIA.md\n?? docs/institution/decisions/\n?? docs/institution/reviews/\n?? docs/milestones/CANDIDATE_0_RUNTIME_BASELINE_001.md\n?? docs/milestones/CONSTITUTIONAL_PROGRESS_BOARD.md\n?? docs/milestones/IMPLEMENTATION_EVIDENCE_001.md\n?? docs/milestones/MILESTONE_009_INHERITANCE_VALIDATION.md\n?? docs/milestones/MILESTONE_010_BASELINE_EVIDENCE_CAPTURE_PROTOCOL.md\n?? docs/milestones/MILESTONE_010_EXECUTION_PROTOCOL.md\n?? docs/milestones/MILESTONE_010_FIRST_CONSTITUTIONAL_VALIDATION.md\n?? docs/milestones/MILESTONE_010_IMPLEMENTATION_STATUS.md\n?? docs/milestones/MILESTONE_011_IMPLEMENTATION_HANDOFF.md\n?? docs/milestones/MILESTONE_011_IMPLEMENTATION_OPERATING_RULE.md\n?? docs/milestones/MILESTONE_011_IMPLEMENTATION_PLAN.md\n?? docs/milestones/MILESTONE_011_PIPELINE_VERIFICATION_PROTOCOL.md\n?? docs/milestones/MILESTONE_011_REPOSITORY_GROUNDED_REASONING.md\n?? docs/organisational-learning/LESSONS_LEARNED_001.md\n?? lib/academy/__tests__/\n?? lib/academy/repositoryKnowledgeService.ts\n?? lib/api.ts\n?? provenance-evidence.md\n?? scripts/operations/",
+  "andyDigitalColleagueHash": "6877715b3b44e0148fb70dcc506307f80c92d3128b995267bb3a0f9ff81230c6",
+  "constitutionFilePath": "constitution/README.md",
+  "constitutionFileHashBeforeExecution": "d37a56408c802ed48ef68435f585183ddb7f867f4a1ac7b38676b24a5a3823a2",
+  "constitutionFileHashAfterExecution": "d37a56408c802ed48ef68435f585183ddb7f867f4a1ac7b38676b24a5a3823a2",
+  "constitutionRepositoryUnchanged": true,
+  "constitutionDiffDuringExecution": "",
+  "answer": "I exist to help people reach better understanding before judgement or action.\nHelping Hand's constitutional purpose is people-first, and my role is to carry that purpose into practical conversations.\nMy reasoning is grounded in repository evidence rather than a scripted response. Sources: constitution/README.md, docs/architecture/CONSTITUTION.md, docs/INSTITUTIONAL_OPERATING_MODEL.md Synthesis: evidence-led, understanding-before-action Evidence: If you are reading this, you are now a custodian of something much larger than software. Before reading the architecture...\nI should ground my recommendations in evidence and traceable reasoning, not assumption.\nSo I do not exist to replace people; I exist to help people think more clearly, decide more responsibly, and learn continuously.",
+  "retrievedDocuments": [
+    {
+      "id": "constitution-README.md",
+      "title": "Helping Hand Constitution",
+      "source": "constitution/README.md",
+      "sourcePath": "constitution/README.md",
+      "rank": 1,
+      "section": "Helping Hand Constitution",
+      "fragment": "If you are reading this, you are now a custodian of something much larger than software.  Before reading the architecture...",
+      "reason": "Matched why, do, you, exist",
+      "snippet": "If you are reading this, you are now a custodian of something much larger than software.  Before reading the architecture..."
+    },
+    {
+      "id": "docs-architecture-CONSTITUTION.md",
+      "title": "Helping Hand Constitution",
+      "source": "docs/architecture/CONSTITUTION.md",
+      "sourcePath": "docs/architecture/CONSTITUTION.md",
+      "rank": 2,
+      "section": "Helping Hand Constitution",
+      "fragment": "Do something once.  Govern it once.",
+      "reason": "Matched do",
+      "snippet": "Do something once.  Govern it once."
+    },
+    {
+      "id": "docs-INSTITUTIONAL_OPERATING_MODEL.md",
+      "title": "Institutional Operating Model",
+      "source": "docs/INSTITUTIONAL_OPERATING_MODEL.md",
+      "sourcePath": "docs/INSTITUTIONAL_OPERATING_MODEL.md",
+      "rank": 3,
+      "section": "Institutional Operating Model",
+      "fragment": "**Category:** Institutional Governance **Question:** How does Helping Hand improve itself? **Related:** HH-INSTITUTION-001, HH-INSTITUTION-003, HH-INSTITUTION-004, HH-MILESTONE-008, HH-GOV-001, HH-GOV-002, HH-GOV-003, HH-GOV-004",
+      "reason": "Matched do, exist",
+      "snippet": "**Category:** Institutional Governance **Question:** How does Helping Hand improve itself? **Related:** HH-INSTITUTION-001, HH-INSTITUTION-003, HH-INSTITUTION-004, HH-MILESTONE-008, HH-GOV-001, HH-GOV-002, HH-GOV-003, HH-GOV-004"
+    },
+    {
+      "id": "docs-OPERATING_MODEL.md",
+      "title": "Helping Hand Operating Model",
+      "source": "docs/OPERATING_MODEL.md",
+      "sourcePath": "docs/OPERATING_MODEL.md",
+      "rank": 4,
+      "section": "Helping Hand Operating Model",
+      "fragment": "> Helping Hand does not build software. > > Helping Hand builds understanding.",
+      "reason": "Matched do, exist",
+      "snippet": "> Helping Hand does not build software. > > Helping Hand builds understanding."
+    },
+    {
+      "id": "docs-theory-README.md",
+      "title": "Helping Hand Theory Library",
+      "source": "docs/theory/README.md",
+      "sourcePath": "docs/theory/README.md",
+      "rank": 5,
+      "section": "Helping Hand Theory Library",
+      "fragment": "These documents are independent of any profession, implementation or technology.  They describe the concepts from which every Helping Hand philosophy, architecture, Digital Colleague and engineering decision is derived.",
+      "reason": "Matched why, do, exist",
+      "snippet": "These documents are independent of any profession, implementation or technology.  They describe the concepts from which every Helping Hand philosophy, architecture, Digital Colleague and engineering decision is derived."
+    },
+    {
+      "id": "constitution-01-THE-ACORN-EDITION.md",
+      "title": "Helping Hand Constitution",
+      "source": "constitution/01-THE-ACORN-EDITION.md",
+      "sourcePath": "constitution/01-THE-ACORN-EDITION.md",
+      "rank": 6,
+      "section": "Helping Hand Constitution",
+      "fragment": "## Why this document exists  Today we plant an acorn.",
+      "reason": "Matched why, do, exist",
+      "snippet": "## Why this document exists  Today we plant an acorn."
+    }
+  ],
+  "contextSummary": [
+    "Question focus: Andy, why do you exist?",
+    "constitution-README.md: If you are reading this, you are now a custodian of something much larger than software.  Before reading the architecture...",
+    "docs-architecture-CONSTITUTION.md: Do something once.  Govern it once.",
+    "docs-INSTITUTIONAL_OPERATING_MODEL.md: **Category:** Institutional Governance **Question:** How does Helping Hand improve itself? **Related:** HH-INSTITUTION-001, HH-INSTITUTION-003, HH-INSTITUTION-004, HH-MILESTONE-008, HH-GOV-001, HH-GOV-002, HH-GOV-003, HH-GOV-004",
+    "docs-OPERATING_MODEL.md: > Helping Hand does not build software. > > Helping Hand builds understanding.",
+    "docs-theory-README.md: These documents are independent of any profession, implementation or technology.  They describe the concepts from which every Helping Hand philosophy, architecture, Digital Colleague and engineering decision is derived.",
+    "constitution-01-THE-ACORN-EDITION.md: ## Why this document exists  Today we plant an acorn.",
+    "Connected context: Helping Hand exists to improve understanding between people and requires evidence-led judgement."
+  ],
+  "reasoningTrace": [
+    "Stage 1 - Question received and treated as constitutional purpose inquiry.",
+    "Stage 2 - Retrieved constitutional and theory documents relevant to purpose, understanding, and governance.",
+    "Stage 3 - Built working context from retrieved repository statements.",
+    "Stage 4 - Constitutional reasoning: people-first=true, evidence-led=true.",
+    "Stage 5 - Communication plan: explain identity as a Digital Colleague that helps people reach better understanding through governed evidence.",
+    "Stage 6 - Repository evidence: **Category:** Institutional Governance **Question:** How does Helping Hand improve itself? **Related:** HH-INSTITUTION-001, HH-INSTITUTION-003, HH-INSTITUTION-004, HH-MILESTONE-008, HH-GOV-001, HH-GOV-002, HH-GOV-003, HH-GOV-004",
+    "Stage 7 - Evidence synthesis: evidence-led, understanding-before-action"
+  ],
+  "generatedAt": "2026-08-01T11:02:13.180Z"
+}
