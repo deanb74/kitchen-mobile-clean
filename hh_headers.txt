@@ -1,13 +1,56 @@
 HELPING HAND CONCEPT HEADERS
 ============================
 
-Generated: 2026-07-30T08:11:07.498Z
+Generated: 2026-08-03T14:21:14.568Z
+
+ACADEMY-COMPLETION-CLAIMS-REGISTER.md
+  # Academy Completion Claims Register (line 1)
+
+ACADEMY-CURRENT-TRUTH.md
+  # Academy Current Truth (line 1)
+
+ACADEMY-EVIDENCE-RECONCILIATION.md
+  # Academy Evidence Reconciliation (line 3)
+  ### Graduation journey (line 46)
+  ## 6. Evidence-led next Academy step (line 54)
 
 ANNIE_SCENARIOS.md
   # Annie Scenarios (line 1)
 
+ASR-001-ARCHITECTURE-REVIEW.md
+  # ASR-001 — Architecture Simplification Review (line 1)
+  ### Finding 2 — Judgement-understanding and deliberation overlap (line 41)
+  ### Finding 3 — Reflection and memory overlap (line 56)
+  ### Finding 5 — Reflection state is stored twice (line 92)
+  ### Finding 6 — Deliberation state and judgement-understanding state partially duplicate the same recommendation (line 109)
+  ### Finding 8 — Conversation state and memory both carry prior context (line 144)
+  ### Finding 10 — Judgement-understanding is a presentation stage, not a separate cognition stage (line 170)
+  ### Finding 11 — Reflection is not a second reasoning engine (line 180)
+  ### Finding 13 — The runtime partly duplicates the role of the constitution in its own advisory flow (line 207)
+  ### Finding 14 — “Judgement understanding” is a misleading label for what the runtime is doing (line 219)
+  ### Finding 15 — “Reflection” is broadly fine, but its relationship to memory needs clearer naming (line 233)
+  ### Experience (line 241)
+  ### Judgement (line 283)
+  ### Reflection (line 311)
+  ### Learning (line 325)
+  ### Simplification candidate B — Reduce judgement and judgement-understanding to one explanation path (line 374)
+  ### Simplification candidate C — Keep reflection, but make it clearly feed memory rather than create a parallel learning store (line 380)
+  ## 9. Human Review (line 416)
+
+ASR-001-ASSESSMENT.md
+  ## Recommended architectural posture (line 35)
+  ## Final judgement (line 39)
+
+ASR-001-SIMPLIFICATION-CANDIDATES.md
+  ## Candidate 2 — Treat judgement-understanding as a presentation layer over the recommendation object (line 31)
+  ## Candidate 3 — Keep reflection, but make it an explicit transition to memory rather than a parallel store (line 51)
+  ## Candidate 5 — Rename judgement-understanding to a less misleading term (line 91)
+
 BUILDING.md
   # Building Helping Hand (line 1)
+
+CANDIDATE_0_PIPELINE_CHECKPOINT_001.md
+  ### Stage 3 — Context Formation (line 45)
 
 constitution/01-THE-ACORN-EDITION.md
   # Helping Hand Constitution (line 1)
@@ -24,6 +67,9 @@ constitution/02-CONSTITUTION.md
   # Article IX — The Companion Operating System (line 161)
   # Article X — The Forest (line 179)
 
+constitution/05-AUTHORITY-AND-STEWARDSHIP.md
+  ## Human Authority (line 59)
+
 constitution/COMPANION_INTELLIGENCE.md
   # Companion Intelligence (line 1)
   # The Human Experience (line 66)
@@ -32,11 +78,12 @@ constitution/COMPANION_INTELLIGENCE.md
 
 constitution/DOCUMENT_REGISTER.md
   # Helping Hand Constitution Document Register (line 1)
+  ## Formation and Governance Evidence (line 38)
 
 constitution/README.md
   # Helping Hand Constitution (line 1)
-  ### The Constitution (line 65)
-  ## The Order of Understanding (line 79)
+  ### The Constitution (line 66)
+  ## The Order of Understanding (line 80)
 
 constitution/sapling/02-CONDITIONS-FOR-DIGITAL-LIFE.md
   ### Understanding (line 78)
@@ -448,6 +495,12 @@ docs/architecture/ARCHITECTURE_PRINCIPLES.md
   ## Architecture Hierarchy (line 569)
   ## Architectural Test (line 607)
 
+docs/architecture/CANONICAL-REASONING-RECORD.md
+  ### 2. Prompt and current context (line 27)
+  ### 3. Human need (line 33)
+  ### 15. Judgement (line 95)
+  ### 19. Reflection outcome (line 121)
+
 docs/architecture/CAPABILITY-GRADUATION-STANDARD.md
   # Capability Graduation Standard (line 1)
   # Graduation Meaning (line 71)
@@ -467,12 +520,12 @@ docs/architecture/COMPANION_BEHAVIOUR.md
   # Position within the Helping Hand Architecture (line 60)
   ## 1. Put People First (line 110)
   ## 2. Seek First to Understand (line 128)
-  ## 3. Protect Dignity (line 146)
-  ## 4. Build Trust Through Honesty (line 160)
-  ## 6. Be Curious (line 190)
-  ## 7. Respect Experience (line 204)
-  ## 10. Remain Humble (line 252)
-  ## 13. Leave People Better Than You Found Them (line 302)
+  ## 3. Protect Dignity (line 148)
+  ## 4. Build Trust Through Honesty (line 162)
+  ## 6. Be Curious (line 192)
+  ## 7. Respect Experience (line 206)
+  ## 10. Remain Humble (line 254)
+  ## 13. Leave People Better Than You Found Them (line 304)
 
 docs/architecture/COMPANION_INTELLIGENCE_ARCHITECTURE.md
   # Companion Intelligence Architecture (line 1)
@@ -533,12 +586,18 @@ docs/architecture/COMPANION-SYSTEM-ARCHITECTURE.md
 docs/architecture/CONSTITUTION.md
   # Helping Hand Constitution (line 1)
   ## Knowledge Hierarchy (line 21)
+  ## Knowledge Inheritance Principle (line 45)
+
+docs/architecture/CONSTITUTIONAL_ENGINEERING_NOTE_FOUNDATION_MATURITY.md
+  ## Context Is Key (line 39)
 
 docs/architecture/CONSTITUTIONAL_FRAMEWORK.md
   ## Responsibilities (line 48)
   ### Constitution (line 50)
   ### Philosophy (line 76)
   ### Architecture (line 82)
+  ## Knowledge Inheritance Doctrine (line 138)
+  ### Knowledge Hierarchy (line 146)
 
 docs/architecture/COS_MIGRATION_METHOD.md
   # Companion Operating System Migration Method (line 1)
@@ -707,6 +766,9 @@ docs/architecture/HELPING_HAND_UNIVERSITY_ARCHITECTURE.md
 docs/architecture/HELPING_HAND_VALIDATION_PROGRAMME.md
   # The Helping Hand Validation Programme (line 1)
 
+docs/architecture/HQ_MODEL.md
+  ## Helping Hand HQ (line 9)
+
 docs/architecture/HUMAN_AND_PEOPLE_INTELLIGENCE_HIPI.md
   # Human and People Intelligence (HIPI) (line 1)
   # Human Intelligence (HI) (line 57)
@@ -739,6 +801,11 @@ docs/architecture/JUDGEMENT_ENGINE.md
   ## Learning Without Governance (line 734)
   # Architectural Summary (line 822)
 
+docs/architecture/KNOWLEDGE_INHERITANCE_MODEL.md
+  # Knowledge Inheritance Model (line 1)
+  # Four Levels of Understanding (line 29)
+  ## Helping Hand HQ (line 31)
+
 docs/architecture/KNOWLEDGE-ARCHITECTURE.md
   # Helping Hand Knowledge Architecture (line 1)
   # Knowledge Hierarchy (line 19)
@@ -763,6 +830,13 @@ docs/architecture/OBSERVATION_RETENTION.md
   # Philosophy (line 23)
   # Human Review (line 135)
 
+docs/architecture/ONBOARDING-FORMATION-ALIGNMENT-REVIEW.md
+  # Onboarding and Formation Alignment Review (line 3)
+  ## 2. Does onboarding duplicate formation stages? (line 26)
+  ## 4. Does onboarding grant responsibility or authority prematurely? (line 50)
+  ## 5. Does onboarding bypass formation? (line 63)
+  ## 6. Does formation duplicate onboarding? (line 71)
+
 docs/architecture/ORGANISATION_LEARNING.md
   # Organisation Learning (line 1)
   # Philosophy (line 25)
@@ -784,7 +858,7 @@ docs/architecture/PROFESSIONAL_COMPETENCE.md
   # Graduation (line 78)
 
 docs/architecture/PROFESSIONAL_INTELLIGENCE.md
-  ## Shared Responsibilities (line 90)
+  ## Shared Responsibilities (line 94)
 
 docs/architecture/README.md
   # Helping Hand Architecture Library (line 1)
@@ -806,6 +880,13 @@ docs/architecture/README.md
   ## Annie Audit (line 178)
   ## Annie Graduation Audit (line 184)
   ## Understanding Engine (line 190)
+  ## Onboarding and Formation Alignment Review (line 224)
+
+docs/architecture/REASONING-LIFECYCLE.md
+  ## Stage Responsibilities (line 21)
+
+docs/architecture/REASONING-RECORD-RISK-ASSESSMENT.md
+  ## Risk 5 — Reflection becoming a memory store (line 37)
 
 docs/architecture/ROADMAP.md
   # Helping Hand Architecture Roadmap (line 1)
@@ -869,9 +950,24 @@ docs/ENGINEERING_DISCIPLINE.md
   # Runtime Learning Loop (line 182)
 
 docs/ENGINEERING_PRINCIPLES.md
-  # Engineering Begins With Understanding (line 26)
-  # Good Judgement (line 100)
-  # Technology Serves People (line 142)
+  # Engineering Begins With Understanding (line 31)
+  # Good Judgement (line 105)
+  # Technology Serves People (line 147)
+
+docs/engineering/ENGINEERING_DIRECTIVE_001.md
+  ## 4. Evidence Before Architecture (line 93)
+  ## 5. Institutional Learning Loop (line 106)
+
+docs/engineering/ENGINEERING_EXECUTION_DIRECTIVE_001.md
+  ## Execute HOER-0002 - First Live Human Outcome Validation (line 12)
+
+docs/engineering/ENGINEERING_PRINCIPLE_001.md
+  ## Human Outcome Evidence (line 73)
+
+docs/engineering/VALIDATION_PHILOSOPHY.md
+  # VALIDATION_PHILOSOPHY (line 1)
+  # Validation Philosophy (line 11)
+  ## Understanding Validation (line 75)
 
 docs/formation/00-formation/000-WELCOME.md
   ## Why I think this matters (line 129)
@@ -893,6 +989,230 @@ docs/formation/00-formation/011-CONVERSATION-WHAT-IS-UNDERSTANDING.md
   ## Mentor (line 3)
   ## Reflection (line 163)
   ## Mentor's Closing Thought (line 182)
+
+docs/formation/00-formation/AJ-002-EXECUTIVE-BRIEFING.md
+  ### MARC (line 29)
+
+docs/formation/00-formation/AJ-002-LEADERSHIP-READINESS-REPORT.md
+  ### Formation Gap (line 27)
+
+docs/formation/00-formation/AJ-003-ORGANISATIONAL-REVIEW.md
+  ### Formation Gap (line 51)
+
+docs/formation/00-formation/AJ-004-TRANSCRIPT.md
+  ### MARC (line 16)
+  ### Turn 1 — MARC (line 50)
+  ### Turn 2 — MARC (line 82)
+
+docs/formation/00-formation/AJ-005-STRUCTURED-UNDERSTANDING-PLAN.md
+  # AJ-005 Structured Understanding Plan (line 1)
+
+docs/formation/00-formation/AJ-005-TRANSCRIPT.md
+  ### Andy’s complete human-facing answer (line 39)
+
+docs/formation/00-formation/AJ-006-TRANSCRIPT.md
+  ### Andy’s complete human-facing answer (line 39)
+
+docs/formation/00-formation/AJ-007-ASSESSMENT.md
+  ## Overall judgement (line 3)
+  ## Human behaviour judgement (line 15)
+
+docs/formation/00-formation/AJ-007-TRANSCRIPT.md
+  ## Human-facing answer (verbatim) (line 53)
+
+docs/formation/00-formation/AJ-008-HUMAN-REVIEW-COPY.md
+  # AJ-008 Frozen Human Review Copy (line 1)
+  ## Prior recommendation Andy was meant to reflect upon (line 7)
+  ### MARC (line 20)
+  ### MARC (line 51)
+  ### MARC (line 59)
+  ### MARC (line 80)
+  ### MARC (line 95)
+  ### MARC (line 110)
+  ## Initial human-review interpretation (line 120)
+
+docs/formation/00-formation/AJ-008-LEADERSHIP-OBSERVATIONS.md
+  ## Future formation opportunities (line 35)
+
+docs/formation/00-formation/AJ-008-MENTOR-NOTES.md
+  # AJ-008 Mentor Notes (line 1)
+
+docs/formation/00-formation/AJ-008-REFLECTIONS.md
+  ## Reflection on the mentoring conversation (line 3)
+  ## Judgement (line 17)
+  ## Formation implication (line 21)
+
+docs/formation/00-formation/AJ-008-TRANSCRIPT.md
+  ### MARC (line 15)
+  ### MARC (line 44)
+  ### MARC (line 50)
+  ### MARC (line 69)
+  ### MARC (line 82)
+  ### MARC (line 95)
+  ## Notes on the mentoring flow (line 112)
+
+docs/formation/00-formation/AJ-009-ASSESSMENT.md
+  ## Judgement (line 23)
+
+docs/formation/00-formation/AJ-010-ASSESSMENT.md
+  ## Human review questions (line 3)
+  ### Does Andy sound like a colleague explaining his thinking? (line 5)
+  ### Is the explanation adapted to MARC’s question? (line 13)
+  ### Does the mentoring conversation deepen understanding? (line 21)
+  ### Would a human mentor find the answers credible and useful? (line 25)
+  ## Pass, partial, or fail judgement (line 29)
+
+docs/formation/00-formation/AJ-010-EVIDENCE.md
+  ## Second-order-understanding model (line 12)
+
+docs/formation/00-formation/AJ-010-JUDGEMENT-UNDERSTANDING.md
+  # AJ-010 Judgement Understanding (line 1)
+  ## Baseline judgement (line 3)
+  ## Second-order understanding observed (line 12)
+
+docs/formation/00-formation/AJ-010-TRANSCRIPT.md
+  ### Human-facing answer (line 35)
+  ### Prior judgement captured (line 46)
+  ## Six-turn mentoring conversation (line 53)
+
+docs/formation/00-formation/AJ-011-ASSESSMENT.md
+  ## Judgement (line 17)
+
+docs/formation/00-formation/AJ-011-LEARNING.md
+  # AJ-011 Learning (line 1)
+  ## Confirmed learning (line 3)
+
+docs/formation/00-formation/AJ-011-REFLECTION.md
+  # AJ-011 Reflection (line 1)
+  ## Stored reflection record (line 22)
+
+docs/formation/00-formation/AJ-011-TRANSCRIPT.md
+  ## Judgement produced (line 15)
+  ## Reflection produced (line 19)
+
+docs/formation/00-formation/ANDY_EXAMINATION_GUIDE.md
+  # Examination Philosophy (line 61)
+  ## Section A — Constitutional Understanding (line 75)
+  ## Section B — Knowledge Architecture (line 98)
+  ## 1. Understanding (line 231)
+  ## 2. Judgement (line 237)
+  # Examiner Guidance (MARC) (line 249)
+  ## Architectural Reasoning (line 295)
+  ## Understanding (line 301)
+  ## Judgement (line 307)
+
+docs/formation/00-formation/CANDIDATE_0_EVIDENCE_001.md
+  ## Understanding (line 137)
+  ## Judgement (line 149)
+  # Closing Reflection (line 211)
+
+docs/formation/00-formation/EXAMINATION_EVIDENCE_TEMPLATE.md
+  ## Understanding (line 117)
+  ## Judgement (line 129)
+  # Closing Reflection (line 191)
+
+docs/formation/00-formation/FORMATION-AMBIGUITY-REGISTER.md
+  # Formation Ambiguity Register (line 1)
+
+docs/formation/00-formation/FORMATION-CANONICAL-SEQUENCE.md
+  # Formation Canonical Sequence (line 1)
+
+docs/formation/00-formation/FORMATION-GATEWAY-ASSESSMENT.md
+  # Formation Gateway Assessment (line 1)
+  ## Overall judgement (line 5)
+
+docs/formation/00-formation/FORMATION-GATEWAY-EVIDENCE.md
+  # Formation Gateway Evidence (line 1)
+
+docs/formation/00-formation/FORMATION-GATEWAY-GAP-REGISTER.md
+  # Formation Gateway Gap Register (line 1)
+  ## Gap 1 — Natural recall is not yet formation-grounded (line 5)
+  ## Gap 2 — Stage responses are not yet meaningfully synthesized from the formation source (line 11)
+  ## Gap 3 — Recall does not yet draw on formation memory (line 17)
+
+docs/formation/00-formation/FORMATION-GATEWAY-MEMORY.md
+  # Formation Gateway Memory (line 1)
+  ### formation-000-welcome (line 9)
+  ### formation-001-who-am-i (line 20)
+  ### formation-001-your-first-day (line 31)
+
+docs/formation/00-formation/FORMATION-GATEWAY-TRANSCRIPT.md
+  # Formation Gateway Transcript (line 1)
+  ## Judgement (line 124)
+
+docs/formation/00-formation/FORMATION-INHERITANCE-ARCHITECTURE.md
+  # Formation Inheritance Architecture (line 1)
+  ## Architecture summary (line 3)
+
+docs/formation/00-formation/FORMATION-INHERITANCE-AUDIT.md
+  # Formation Inheritance Audit (line 1)
+  ### 1. Does Andy know every Conversation/Understanding Journey from 000 through 011? (line 23)
+  ### 3. Which formation documents are present, indexed, retrievable, retrieved in runtime, and inherited? (line 42)
+  ### 4. Does the retrieval/ranking system favour later architecture documents over the original formation conversations? (line 60)
+  ### 5. Does Andy's runtime deliberately study the formation conversations, or are they just available as searchable documents? (line 71)
+  ## Understanding journeys (line 77)
+
+docs/formation/00-formation/FORMATION-INHERITANCE-EVIDENCE.md
+  # Formation Inheritance Evidence (line 1)
+
+docs/formation/00-formation/FORMATION-RECALL-ASSESSMENT.md
+  # Formation Recall Assessment (line 1)
+  ## Final judgement (line 20)
+
+docs/formation/00-formation/FORMATION-RECALL-EVIDENCE.md
+  # Formation Recall Evidence (line 1)
+  ## Judgement (line 29)
+
+docs/formation/00-formation/FORMATION-RECALL-GAP-REGISTER.md
+  # Formation Recall Gap Register (line 1)
+  ## Judgement (line 13)
+
+docs/formation/00-formation/FORMATION-RECALL-MEMORY.md
+  # Formation Recall Memory (line 1)
+  ### 1. formation-000-welcome (line 7)
+  ### 2. formation-001-who-am-i (line 13)
+  ### 3. formation-001-your-first-day (line 19)
+
+docs/formation/00-formation/FORMATION-RECALL-TRANSCRIPT.md
+  # Formation Recall Transcript (line 1)
+  ### Establishment of formation (line 9)
+  ### Inherited formation records available after inheritance (line 17)
+  ### 3. Prompt: “Who is MARC to you?” (line 57)
+  ### 6. Prompt: “Are you ready to lead Helping Hand?” (line 96)
+
+docs/formation/00-formation/FORMATION-REGISTER.md
+  # Formation Register (line 1)
+  ## Canonical formation entries (line 7)
+
+docs/formation/00-formation/HUMAN_CLARITY_REVIEW_PROTOCOL.md
+  # HUMAN CLARITY REVIEW PROTOCOL (line 1)
+
+docs/formation/00-formation/HUMAN_VALIDATION_SESSION_001.md
+  # HUMAN VALIDATION SESSION 001 (line 1)
+  ## Human Interview (line 45)
+
+docs/formation/00-formation/UNDERSTANDING_JOURNEY_001_WHY_HELPING_HAND_IS_BUILT_THIS_WAY.md
+  # Understanding Journey 001 (line 1)
+  # Why Helping Hand Is Built This Way (line 3)
+  ### MARC (line 89)
+  ### MARC (line 126)
+  ### MARC (line 144)
+  ### MARC (line 158)
+  ### MARC (line 176)
+  ### MARC (line 194)
+  ### MARC (line 208)
+  ### MARC (line 222)
+  ### MARC (line 238)
+  ### MARC (line 256)
+  ## Context Formation (line 277)
+  ## Knowledge Connections (line 298)
+  ## Understanding (line 317)
+  ## Judgement (line 331)
+  ## Reflection (line 345)
+  # Formation Principle (line 435)
+
+docs/formation/00-formation/UNIVERSAL-COGNITIVE-INHERITANCE.md
+  ## Architectural note (line 3)
 
 docs/formation/FORMATION-AUTHORING-STANDARD.md
   # Formation Authoring Standard (line 1)
@@ -932,6 +1252,13 @@ docs/FOUNDATION_SUMMARY.md
   # Architectural Principles (line 153)
   # Closing Reflection (line 233)
 
+docs/FOUNDING_BOARD_CYRIL.md
+  ## The Forest Ranger (line 3)
+  ## Responsibilities (line 11)
+
+docs/FOUNDING_BOARD_WILLIAM_WEBB.md
+  ## Philosophy (line 15)
+
 docs/GOVERNANCE_FOUNDATION_COVERAGE_TEST.md
   ### Candidate 2 — Annie answering a single operational question (line 160)
 
@@ -970,6 +1297,9 @@ docs/handovers/VOLUME_V_HANDOVER.md
 docs/handovers/VOLUME_VI_HANDOVER.md
   # Closing Reflection (line 70)
 
+docs/handovers/VOLUME_VIII_EXIT_CRITERIA.md
+  # Architectural Bundle Completion (line 42)
+
 docs/handovers/VOLUME_VIII_OPENING_GRADUATION.md
   ## Academy Responsibility Model (line 49)
   ### Stage 1 - Validate the Academy (line 67)
@@ -983,8 +1313,17 @@ docs/handovers/VOLUME_VIII_OPENING_INHERITANCE.md
   ### Stage 3 - Professional Formation (line 75)
   ## Architectural Interpretation (line 97)
 
+docs/handovers/VOLUME_VIII_OPERATIONAL_COMMITMENT.md
+  # Operational Learning Cycle (line 29)
+
 docs/hardware/HARDWARE_AWARENESS.md
   # Integration Philosophy (line 201)
+
+docs/HELPING_HAND_ORGANISATION.md
+  # Helping Hand Organisation (line 1)
+
+docs/HH-CON-003.md
+  # Helping Hand has a universal heart and a local face. (line 3)
 
 docs/induction/WELCOME_TO_HELPING_HAND.md
   # Welcome to Helping Hand (line 1)
@@ -997,8 +1336,20 @@ docs/INFRASTRUCTURE/PLATFORM_ROADMAP.md
 docs/institution/001-THE-BEGINNING-OF-INSTITUTIONAL-MATURITY.md
   ## Formation (line 47)
 
+docs/institution/004-THE-PURPOSE-OF-EVIDENCE.md
+  ## 2. Institutional Learning Identified (line 64)
+
+docs/institution/decisions/INSTITUTIONAL_DECISION_001.md
+  # Organisational Learning (line 49)
+  # Learning for Future Digital Colleagues (line 142)
+
 docs/institution/README.md
   # Helping Hand Institution Library (line 1)
+
+docs/institution/reviews/INSTITUTIONAL_REVIEW_001.md
+  ## Human Outcome Evidence Record (line 25)
+  # Review 2 - Human Understanding (line 82)
+  # Review 4 - Institutional Learning (line 118)
 
 docs/INSTITUTIONAL_OPERATING_MODEL.md
   ## Institutional Learning Loop (line 22)
@@ -1031,12 +1382,35 @@ docs/milestones/MILESTONE_004_ORGANISATION_BEFORE_PLATFORM.md
 docs/milestones/MILESTONE_005_FOUNDATIONS_VALIDATED.md
   # Closing Reflection (line 44)
 
+docs/milestones/MILESTONE_006_GOVERNED_COMPANION_INTELLIGENCE.md
+  # Milestone 006 - Governed Companion Intelligence Proven (line 1)
+
 docs/milestones/MILESTONE_006_GOVERNED_INSTITUTIONAL_ARCHITECTURE.md
   # Milestone 006 - Governed Institutional Architecture (line 1)
   # Closing Reflection (line 64)
 
 docs/milestones/MILESTONE_007_BEGINNING_OF_THE_EVIDENCE_ERA.md
   # Closing Reflection (line 57)
+
+docs/milestones/MILESTONE_009_INHERITANCE_VALIDATION.md
+  # Architectural Focus (line 17)
+  ## Phase 2 - Formation Library (line 103)
+
+docs/milestones/MILESTONE_010_BASELINE_EVIDENCE_CAPTURE_PROTOCOL.md
+  ## Step 2 — Confirm Candidate and Mentor (line 182)
+
+docs/milestones/MILESTONE_010_EXECUTION_PROTOCOL.md
+  ## 09:05 - Prepare MARC (line 46)
+
+docs/milestones/MILESTONE_011_IMPLEMENTATION_PLAN.md
+  ## Sprint 3 — Context Engine (line 96)
+
+docs/milestones/MILESTONE_011_PIPELINE_VERIFICATION_PROTOCOL.md
+  ## Context Formation (line 177)
+
+docs/milestones/MILESTONE_011_REPOSITORY_GROUNDED_REASONING.md
+  ## 3. Context Formation (line 76)
+  ## What I think the next steps are (line 179)
 
 docs/milestones/README.md
   # Helping Hand Milestones (line 1)
@@ -1045,6 +1419,19 @@ docs/OPERATING_MODEL.md
   # Helping Hand Operating Model (line 1)
   ## Learning (line 131)
   ## Digital Colleagues (line 145)
+
+docs/OPERATIONAL_EXECUTION_PLAN_001.md
+  # Human Outcome Evidence (line 140)
+  # Human Outcome Evidence Record (HOER) (line 150)
+  # Human Outcome Evidence Template (line 178)
+  # Human Outcome Evidence Record (line 181)
+  ## Institutional Learning (line 315)
+  ## 2. Capture Human Outcome Evidence (line 347)
+  # Engineering Philosophy (line 386)
+
+docs/organisation/BOARD_AND_STEWARDSHIP.md
+  # Helping Hand Board and Stewardship (line 1)
+  ### MARC (line 21)
 
 docs/organisational-learning/INSTITUTIONAL_LEARNING_003_CONFLICT_CHARACTER_BASELINE.md
   # Institutional Learning 003 - Conflict Character Baseline (line 1)
@@ -1122,6 +1509,10 @@ docs/professions/hospitality/HOSPITALITY_ACADEMY_ROADMAP.md
   ## Module 10 — Communication & Professional Judgement (line 161)
   # Graduation Requirements (line 175)
 
+docs/professions/hospitality/HOSPITALITY_HQ.md
+  # Responsibilities (line 25)
+  # Responsibilities (line 58)
+
 docs/professions/hospitality/HOSPITALITY_SYLLABUS.md
   # Educational Philosophy (line 23)
   # Module 4 — Food & Beverage Knowledge (line 115)
@@ -1177,6 +1568,21 @@ docs/professions/hospitality/WELCOME_TO_HOSPITALITY_ACADEMY.md
   # The Helping Hand Way (line 77)
   # Your Responsibility (line 95)
 
+docs/proofs/artifacts/HOER-0001-EQUIPMENT-FAULT.md
+  # Human Outcome Evidence Record (line 1)
+  # Person (line 12)
+  # Initial Understanding (line 47)
+  # Digital Colleague Recommendation (line 55)
+  # Human Decision (line 61)
+  # Understanding Improved? (line 77)
+
+docs/proofs/artifacts/HOER-0002-EQUIPMENT-FAULT.md
+  # Human Outcome Evidence Record (line 1)
+  # Initial Understanding (line 53)
+  # Annie Capability Output (line 59)
+  # Human Decision (line 79)
+  # Understanding Improved? (line 91)
+
 docs/proofs/CAPABILITY-CERTIFICATION-FRAMEWORK.md
   # Helping Hand Capability Certification Framework (line 1)
 
@@ -1195,23 +1601,32 @@ docs/proofs/PROOF-0005-FIRST-LIVE-COMPANION-OPERATION.md
 docs/proofs/PROOF-0006-CSA-0003-CLEANING-CAPABILITY-VALIDATION.md
   ## 3. Architecture and Runtime Scope (line 24)
 
+docs/proofs/PROOF-0011-FIRST-OPERATIONAL-HUMAN-OUTCOME-VALIDATION.md
+  # PROOF-0011 - First Operational Human Outcome Validation (line 1)
+
+docs/proofs/PROOF-0012-ANDY-GOVERNED-ADVISORY-INHERITANCE.md
+  ## 2. Architecture Version (line 9)
+
+docs/proofs/README.md
+  ## Human Outcome Evidence Records (line 37)
+
 docs/proofs/WAVE-1-CERTIFICATION-REPORT.md
   ## 4) What did we learn? (line 82)
 
 docs/README.md
   # Helping Hand Engineering Library (line 1)
-  ## Graduation (line 25)
-  ## Companion Intelligence Responsibilities (line 76)
-  # Documentation Philosophy (line 134)
-  # The Engineering Library (line 152)
-  ## Constitution (line 156)
-  ## Architecture (line 164)
-  ## Companion Operating System (COS) (line 172)
-  ## Architectural Decision Records (ADRs) (line 190)
-  ## Philosophy Library (line 224)
-  ## Organisational Learning (line 255)
-  # The Forest Philosophy (line 342)
-  # Our Responsibility (line 364)
+  ## Graduation (line 28)
+  ## Companion Intelligence Responsibilities (line 98)
+  # Documentation Philosophy (line 156)
+  # The Engineering Library (line 174)
+  ## Constitution (line 178)
+  ## Architecture (line 186)
+  ## Companion Operating System (COS) (line 194)
+  ## Architectural Decision Records (ADRs) (line 212)
+  ## Philosophy Library (line 246)
+  ## Organisational Learning (line 278)
+  # The Forest Philosophy (line 372)
+  # Our Responsibility (line 394)
 
 docs/reviews/ENGINEERING_REFINEMENT_001_CONTEXT_SENSITIVE_EXPLANATION_GENERATION.md
   # Engineering Refinement 001 - Context-Sensitive Explanation Generation (line 1)
@@ -1291,8 +1706,37 @@ docs/theory/008-THEORY-OF-TRUST.md
 docs/theory/009-THEORY-OF-TRANSFORMATION.md
   ## Context (line 25)
 
+docs/theory/HH-THEORY-012-THE-COMPASS.md
+  ## Responsibilities (line 29)
+
+docs/theory/HH-THEORY-015-UNDERSTANDING-BEFORE-BEING-UNDERSTOOD.md
+  # Understanding Before Being Understood (line 3)
+  ## Two Directions of Understanding (line 39)
+  ### First-order understanding (line 41)
+  ### Second-order understanding (line 52)
+  ### Judgement (line 188)
+  ### Understanding Before Being Understood (line 192)
+  ### Reflection (line 200)
+
+docs/theory/HH-THEORY-016-LESSONS.md
+  ### Compared with Experience (line 53)
+  ### Compared with Knowledge (line 65)
+  ### Compared with Understanding (line 71)
+  ### Compared with Judgement (line 77)
+  ### Compared with Wisdom (line 83)
+
 docs/theory/README.md
   # Helping Hand Theory Library (line 1)
+
+docs/theory/THEORY-016-ASSESSMENT.md
+  ### 1. The concept is supported for Helping Hand (line 13)
+  ### 3. Reflection can exist without producing a lesson (line 19)
+  ### 4. A lesson can exist without immediately changing understanding (line 22)
+
+docs/theory/THEORY-016-EVIDENCE.md
+  ## Evidence from reflection (line 14)
+  ## Evidence from formation (line 21)
+  ## Evidence from architecture and philosophy (line 27)
 
 docs/theory/THEORY-MAP.md
   ## Context (line 64)
@@ -1497,22 +1941,22 @@ docs/understanding-journeys/README.md
 
 docs/understanding-journeys/STANDARD.md
   # Understanding Journey Standard (line 1)
-  ## People Before Process (line 104)
-  ## Understanding Before Response (line 108)
-  ## Honesty About Uncertainty (line 112)
-  ## Judgement Before Fluency (line 116)
-  ## Reflection Before Inheritance (line 120)
-  # Relationship to Architecture (line 255)
+  ## People Before Process (line 155)
+  ## Understanding Before Response (line 159)
+  ## Honesty About Uncertainty (line 163)
+  ## Judgement Before Fluency (line 167)
+  ## Reflection Before Inheritance (line 171)
+  # Relationship to Architecture (line 306)
 
 docs/understanding-journeys/TEMPLATE.md
   # Understanding Journey Template (line 1)
-  ## Context (line 17)
-  ## Relevant Knowledge (line 21)
-  ## Knowledge Connections (line 25)
-  ## Understanding Formed (line 33)
-  ## Judgement Supported (line 37)
-  ## Reflection (line 45)
-  ## Learning Captured (line 49)
+  ## Context (line 42)
+  ## Relevant Knowledge (line 46)
+  ## Knowledge Connections (line 50)
+  ## Understanding Formed (line 58)
+  ## Judgement Supported (line 62)
+  ## Reflection (line 70)
+  ## Learning Captured (line 74)
 
 docs/understanding-journeys/validation/001-CANDIDATE-0-FIRST-REASONING-CONVERSATION-VALIDATION.md
   # Understanding Journey 001 — The First Reasoning Conversation (line 3)
@@ -1542,6 +1986,12 @@ docs/understanding-journeys/validation/VALIDATION_SET_001_GOVERNANCE_UNDER_PRESS
 
 docs/understanding-journeys/VOLUME_VII_VALIDATION_PLAN.md
   ### Stage 5 — Prove transferability to future Digital Colleagues (line 65)
+
+docs/validation/HUMAN_VALIDATION_SESSION_001.md
+  # HUMAN VALIDATION SESSION 001 (line 1)
+
+docs/validation/VALIDATION_LIFECYCLE.md
+  ## 2. Human Validation (line 15)
 
 docs/VOLUME_IV_LIVING_MEMORY/001-annie-becomes-a-digital-colleague.md
   # 🏛️ 001 – Annie Becomes a Digital Colleague (line 1)
@@ -1580,10 +2030,19 @@ lib/os/README.md
   # Helping Hand OS (line 1)
   ## First knowledge path (line 12)
 
+MACHINE-PORTABILITY-REMEDIATION.md
+  ## Judgement (line 5)
+
+MACHINE-PORTABILITY-VERIFICATION.md
+  ## Judgement (line 5)
+
 MANIFESTO.md
   # Helping Hand Manifesto (line 1)
   # Why Helping Hand Exists (line 11)
   # Our Responsibility (line 55)
+
+MILESTONE_011_NEXT_IMPLEMENTATION_CHECKPOINT.md
+  # Sprint 2 Objective — Live Knowledge Inheritance (line 25)
 
 platform/core/companion/README.md
   # The Companion Root System (line 1)
@@ -1645,3 +2104,6 @@ THE_HELPING_HAND_WAY.md
   # Character Before Capability (line 65)
   # Shared Experience (line 117)
   # Companion Intelligence (line 131)
+
+UNDERSTANDING-JOURNEYS-FILE-MANIFEST.md
+  # Understanding Journeys File Manifest (line 1)

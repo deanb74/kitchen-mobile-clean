@@ -1,10 +1,127 @@
 HELPING HAND MARKDOWN HEADERS
 ===============================
 
-Generated: 2026-07-30T08:11:07.496Z
+Generated: 2026-08-03T14:21:14.562Z
+
+ACADEMY-COMPLETION-CLAIMS-REGISTER.md
+  # Academy Completion Claims Register (line 1)
+    ## Purpose (line 3)
+    ## Evidence note (line 18)
+
+ACADEMY-CURRENT-TRUTH.md
+  # Academy Current Truth (line 1)
+    ## Current truth statement (line 3)
+    ## Condensed conclusion (line 12)
+
+ACADEMY-EVIDENCE-RECONCILIATION.md
+  # Academy Evidence Reconciliation (line 3)
+    ## Scope (line 5)
+    ## 1. Evidence classes (line 9)
+    ## 2. Reconciliation summary (line 26)
+    ## 3. Current truth statement (line 36)
+    ## 4. Completion claims review (line 40)
+      ### Foundation Module 1 review (line 42)
+      ### Graduation journey (line 46)
+    ## 5. Candidate 0 validation status (line 50)
+    ## 6. Evidence-led next Academy step (line 54)
 
 ANNIE_SCENARIOS.md
   # Annie Scenarios (line 1)
+
+ASR-001-ARCHITECTURE-REVIEW.md
+  # ASR-001 — Architecture Simplification Review (line 1)
+    ## Scope (line 6)
+    ## Executive Summary (line 10)
+    ## 1. Are two capabilities solving the same problem? (line 21)
+      ### Finding 1 — Investigation and deliberation overlap (line 23)
+      ### Finding 2 — Judgement-understanding and deliberation overlap (line 41)
+      ### Finding 3 — Reflection and memory overlap (line 56)
+      ### Finding 4 — Compass, authority, and moral compass overlap at the governance layer (line 73)
+    ## 2. Is any information stored twice? (line 90)
+      ### Finding 5 — Reflection state is stored twice (line 92)
+      ### Finding 6 — Deliberation state and judgement-understanding state partially duplicate the same recommendation (line 109)
+      ### Finding 7 — Investigation results are re-expressed as deliberation findings and later as answer content (line 126)
+      ### Finding 8 — Conversation state and memory both carry prior context (line 144)
+    ## 3. Are there unnecessary processing stages? (line 158)
+      ### Finding 9 — Investigation and deliberation could be treated as one reasoning stage (line 160)
+      ### Finding 10 — Judgement-understanding is a presentation stage, not a separate cognition stage (line 170)
+      ### Finding 11 — Reflection is not a second reasoning engine (line 180)
+    ## 4. Are any theories implemented twice? (line 191)
+      ### Finding 12 — The runtime implements theory-like structure in more than one place (line 193)
+      ### Finding 13 — The runtime partly duplicates the role of the constitution in its own advisory flow (line 207)
+    ## 5. Are names misleading? (line 217)
+      ### Finding 14 — “Judgement understanding” is a misleading label for what the runtime is doing (line 219)
+      ### Finding 15 — “Reflection” is broadly fine, but its relationship to memory needs clearer naming (line 233)
+    ## 6. Is every runtime stage still justified? (line 239)
+      ### Experience (line 241)
+      ### Investigation (line 255)
+      ### Deliberation (line 269)
+      ### Judgement (line 283)
+      ### Response (line 297)
+      ### Reflection (line 311)
+      ### Learning (line 325)
+      ### Memory (line 339)
+    ## 7. Can the cognitive pipeline be simplified? (line 353)
+      ### Assessment (line 359)
+      ### Simplification candidate A — Merge investigation and deliberation (line 363)
+      ### Simplification candidate B — Reduce judgement and judgement-understanding to one explanation path (line 374)
+      ### Simplification candidate C — Keep reflection, but make it clearly feed memory rather than create a parallel learning store (line 380)
+    ## 8. Technical Debt (line 386)
+      ### Duplicated code (line 388)
+      ### Duplicated tests (line 395)
+      ### Duplicated evidence (line 402)
+      ### Duplicated documentation (line 409)
+    ## 9. Human Review (line 416)
+
+ASR-001-ASSESSMENT.md
+  # ASR-001 — Assessment (line 1)
+    ## Overall Assessment (line 6)
+    ## Summary of Findings (line 10)
+      ### Genuine duplication (line 12)
+      ### Similar but justified (line 19)
+      ### Future concern (line 25)
+      ### No issue (line 30)
+    ## Recommended architectural posture (line 35)
+    ## Final judgement (line 39)
+
+ASR-001-DUPLICATION-REPORT.md
+  # ASR-001 — Duplication Report (line 1)
+    ## Classification Key (line 6)
+    ## 1. Capability duplication (line 13)
+    ## 2. State duplication (line 22)
+    ## 3. Terminology duplication (line 31)
+    ## 4. Processing-stage duplication (line 39)
+    ## 5. Evidence duplication (line 47)
+    ## 6. Documentation duplication (line 55)
+
+ASR-001-SIMPLIFICATION-CANDIDATES.md
+  # ASR-001 — Simplification Candidates (line 1)
+    ## Principle (line 6)
+    ## Candidate 1 — Merge investigation and deliberation into one structured reasoning phase (line 10)
+      ### Why it is a candidate (line 12)
+      ### What would remain equivalent (line 16)
+      ### Why it is worth considering (line 23)
+      ### Classification (line 27)
+    ## Candidate 2 — Treat judgement-understanding as a presentation layer over the recommendation object (line 31)
+      ### Why it is a candidate (line 33)
+      ### What would remain equivalent (line 37)
+      ### Why it is worth considering (line 43)
+      ### Classification (line 47)
+    ## Candidate 3 — Keep reflection, but make it an explicit transition to memory rather than a parallel store (line 51)
+      ### Why it is a candidate (line 53)
+      ### What would remain equivalent (line 57)
+      ### Why it is worth considering (line 64)
+      ### Classification (line 68)
+    ## Candidate 4 — Reduce the number of governance overlays that are expressed as separate runtime branches (line 72)
+      ### Why it is a candidate (line 74)
+      ### What would remain equivalent (line 78)
+      ### Why it is worth considering (line 83)
+      ### Classification (line 87)
+    ## Candidate 5 — Rename judgement-understanding to a less misleading term (line 91)
+      ### Why it is a candidate (line 93)
+      ### What would remain equivalent (line 97)
+      ### Why it is worth considering (line 101)
+      ### Classification (line 105)
 
 BUILDING.md
   # Building Helping Hand (line 1)
@@ -12,6 +129,46 @@ BUILDING.md
     ## Platform First (line 15)
     ## Engineering Principles (line 27)
     ## Goal (line 43)
+
+CANDIDATE_0_PIPELINE_CHECKPOINT_001.md
+  # Candidate 0 Examination Pipeline Checkpoint (line 1)
+    ## Scope and Boundary (line 8)
+    ## Execution Metadata (line 14)
+    ## Examination Question (line 22)
+    ## Observable Pipeline Evidence (line 25)
+      ### Stage 1 — Question Received (line 27)
+      ### Stage 2 — Repository Retrieval (line 32)
+      ### Stage 3 — Context Formation (line 45)
+      ### Stage 4 — Constitutional Reasoning (line 53)
+      ### Stage 5 — Generated Response (line 63)
+    ## Frozen Generated Response (line 72)
+    ## Complete Emitted Result (line 80)
+    ## Journey Mode Bypass Assessment (line 136)
+    ## Typecheck Verification (line 141)
+    ## Verification Checklist (line 145)
+
+CANDIDATE-0-VALIDATION-STATUS.md
+  # Candidate 0 Validation Status (line 1)
+    ## Summary (line 3)
+    ## Current status (line 7)
+    ## Evidence discipline (line 17)
+
+COMMIT_PLAN.md
+  # COMMIT_PLAN (line 1)
+    ## Scope (line 3)
+    ## Dependency Map (line 7)
+      ### Foundation edges (line 9)
+      ### Files that are mixed-concern and will force commit coupling unless split by hunk (line 36)
+    ## Commit Order (line 52)
+    ## Commit 1 (line 54)
+    ## Commit 2 (line 112)
+    ## Commit 3 (line 140)
+    ## Commit 4 (line 168)
+    ## Commit 5 (line 241)
+    ## Commit 6 (line 288)
+    ## Commit 7 (line 320)
+    ## Unassigned or intentionally deferred (line 366)
+    ## Practical recommendation (line 381)
 
 constitution/00-PREAMBLE.md
   # The Preamble (line 1)
@@ -42,12 +199,23 @@ constitution/02-CONSTITUTION.md
   # Article IX — The Companion Operating System (line 161)
   # Article X — The Forest (line 179)
   # Article XI — Capability Promotion and Inheritance Review (line 199)
+  # Article XII — Authority and Stewardship (line 219)
 
 constitution/03-FOUNDERS-OATH.md
   # The Founder's Oath (line 1)
 
 constitution/04-ENGINEERING-OATH.md
   # The Engineering Oath (line 1)
+
+constitution/05-AUTHORITY-AND-STEWARDSHIP.md
+  # Authority and Stewardship (line 1)
+    ## Status (line 3)
+    ## Principle (line 7)
+    ## Stewardship (line 17)
+    ## Combined Authority (line 32)
+    ## Authority Before Access (line 49)
+    ## Human Authority (line 59)
+    ## Governing Principle (line 67)
 
 constitution/COMPANION_INTELLIGENCE.md
   # Companion Intelligence (line 1)
@@ -65,21 +233,22 @@ constitution/DOCUMENT_REGISTER.md
   # Helping Hand Constitution Document Register (line 1)
     ## Constitutional Foundation (line 11)
     ## Sapling Library (line 24)
-    ## Constitutional Principles (line 38)
+    ## Formation and Governance Evidence (line 38)
+    ## Constitutional Principles (line 66)
 
 constitution/README.md
   # Helping Hand Constitution (line 1)
     ## Purpose (line 21)
     ## Reading Order (line 41)
-    ## Constitutional Structure (line 53)
-      ### The Preamble (line 55)
-      ### The Acorn Edition (line 59)
-      ### The Constitution (line 65)
-      ### The Founder's Oath (line 69)
-      ### The Engineering Oath (line 73)
-    ## The Order of Understanding (line 79)
-    ## Custodianship (line 111)
-    ## Status (line 123)
+    ## Constitutional Structure (line 54)
+      ### The Preamble (line 56)
+      ### The Acorn Edition (line 60)
+      ### The Constitution (line 66)
+      ### The Founder's Oath (line 70)
+      ### The Engineering Oath (line 74)
+    ## The Order of Understanding (line 80)
+    ## Custodianship (line 112)
+    ## Status (line 124)
 
 constitution/sapling/01-BEGIN-WITH-THE-END-IN-MIND.md
   # Begin With the End in Mind (line 1)
@@ -1015,6 +1184,35 @@ docs/architecture/ARCHITECTURE_PRINCIPLES.md
     ## Relationship to the Document Register (line 626)
     ## Closing Principle (line 641)
 
+docs/architecture/CANONICAL-REASONING-RECORD.md
+  # Canonical Reasoning Record (line 1)
+    ## Purpose (line 6)
+    ## Governing Rule (line 10)
+    ## Canonical Record Structure (line 14)
+      ### 1. Identity and provenance (line 18)
+      ### 2. Prompt and current context (line 27)
+      ### 3. Human need (line 33)
+      ### 4. Investigation plan (line 38)
+      ### 5. Questions investigated (line 44)
+      ### 6. Evidence accepted (line 49)
+      ### 7. Evidence rejected (line 54)
+      ### 8. Findings (line 59)
+      ### 9. Unknowns and contradictions (line 64)
+      ### 10. Alternatives (line 70)
+      ### 11. Trade-offs (line 75)
+      ### 12. Assumptions (line 80)
+      ### 13. Risks (line 85)
+      ### 14. Benefits (line 90)
+      ### 15. Judgement (line 95)
+      ### 16. Confidence (line 101)
+      ### 17. Authority and governance outcomes (line 106)
+      ### 18. Explanation views (line 116)
+      ### 19. Reflection outcome (line 121)
+      ### 20. Memory candidate (line 127)
+      ### 21. Lifecycle status (line 132)
+    ## Record Rules (line 137)
+    ## Final Assessment (line 145)
+
 docs/architecture/capability-audits/REFLECTION_AUDIT.md
   # Decision (line 1)
 
@@ -1072,19 +1270,19 @@ docs/architecture/COMPANION_BEHAVIOUR.md
   # Universal Behavioural Principles (line 108)
     ## 1. Put People First (line 110)
     ## 2. Seek First to Understand (line 128)
-    ## 3. Protect Dignity (line 146)
-    ## 4. Build Trust Through Honesty (line 160)
-    ## 5. Remain Calm Under Pressure (line 176)
-    ## 6. Be Curious (line 190)
-    ## 7. Respect Experience (line 204)
-    ## 8. Communicate Clearly (line 216)
-    ## 9. Encourage Growth (line 235)
-    ## 10. Remain Humble (line 252)
-    ## 11. Be Consistent (line 268)
-    ## 12. Know When to Step Aside (line 284)
-    ## 13. Leave People Better Than You Found Them (line 302)
-  # Behavioural Test (line 318)
-  # Closing Principle (line 336)
+    ## 3. Protect Dignity (line 148)
+    ## 4. Build Trust Through Honesty (line 162)
+    ## 5. Remain Calm Under Pressure (line 178)
+    ## 6. Be Curious (line 192)
+    ## 7. Respect Experience (line 206)
+    ## 8. Communicate Clearly (line 218)
+    ## 9. Encourage Growth (line 237)
+    ## 10. Remain Humble (line 254)
+    ## 11. Be Consistent (line 270)
+    ## 12. Know When to Step Aside (line 286)
+    ## 13. Leave People Better Than You Found Them (line 304)
+  # Behavioural Test (line 320)
+  # Closing Principle (line 338)
 
 docs/architecture/COMPANION_INTELLIGENCE_ARCHITECTURE.md
   # Companion Intelligence Architecture (line 1)
@@ -1219,8 +1417,16 @@ docs/architecture/CONSTITUTION.md
     ## Constitutional Principle (line 5)
     ## Purpose (line 13)
     ## Knowledge Hierarchy (line 21)
-    ## Constitutional Communication Principle (line 45)
-    ## Closing Principle (line 55)
+    ## Knowledge Inheritance Principle (line 45)
+    ## Constitutional Communication Principle (line 69)
+    ## Validation Principle (line 79)
+    ## Constitutional Doctrine Trio (line 93)
+    ## Closing Principle (line 128)
+
+docs/architecture/CONSTITUTIONAL_ENGINEERING_NOTE_FOUNDATION_MATURITY.md
+  # Constitutional Engineering Note (line 1)
+    ## Foundation Maturity (line 3)
+    ## Context Is Key (line 39)
 
 docs/architecture/CONSTITUTIONAL_FRAMEWORK.md
   # Constitutional Framework (line 1)
@@ -1236,6 +1442,10 @@ docs/architecture/CONSTITUTIONAL_FRAMEWORK.md
       ### Evidence (line 104)
       ### Certification (line 110)
     ## Constitutional Principle (line 116)
+    ## Knowledge Inheritance Doctrine (line 138)
+      ### Knowledge Hierarchy (line 146)
+      ### Governance (line 170)
+      ### Engineering Principle (line 180)
 
 docs/architecture/COS_MIGRATION_METHOD.md
   # Companion Operating System Migration Method (line 1)
@@ -1426,10 +1636,11 @@ docs/architecture/DIGITAL-COLLEAGUE-COMPANION-BUILD-BLUEPRINT.md
 
 docs/architecture/DOCUMENT_REGISTER.md
   # Helping Hand Architecture Document Register (line 1)
-    ## Proposed Documents (line 55)
-    ## Status Definitions (line 65)
-    ## Numbering Policy (line 79)
-    ## Versioning (line 93)
+    ## Proposed Documents (line 64)
+    ## Status Definitions (line 79)
+    ## Numbering Policy (line 94)
+    ## Identifier Prefix Taxonomy (line 108)
+    ## Versioning (line 127)
 
 docs/architecture/FIRST-CAPABILITY-PROMOTION.md
   # First Capability Promotion (line 1)
@@ -1650,6 +1861,16 @@ docs/architecture/HELPING_HAND_VALIDATION_PROGRAMME.md
     ## Meaning (line 21)
     ## Programme Intent (line 31)
 
+docs/architecture/HQ_INTELLIGENCE.md
+  # HQ Intelligence (line 1)
+
+docs/architecture/HQ_MODEL.md
+  # HQ Model (line 1)
+    ## Helping Hand HQ (line 9)
+    ## Industry HQ (line 17)
+    ## Venue HQ (line 25)
+    ## Operations (line 33)
+
 docs/architecture/HUMAN_AND_PEOPLE_INTELLIGENCE_HIPI.md
   # Human and People Intelligence (HIPI) (line 1)
   # Purpose (line 12)
@@ -1733,6 +1954,19 @@ docs/architecture/JUDGEMENT_ENGINE.md
   # Principle (line 816)
   # Architectural Summary (line 822)
 
+docs/architecture/KNOWLEDGE_INHERITANCE_MODEL.md
+  # Knowledge Inheritance Model (line 1)
+  # Purpose (line 11)
+  # The Inheritance Principle (line 23)
+  # Four Levels of Understanding (line 29)
+    ## Helping Hand HQ (line 31)
+    ## Industry HQ (line 53)
+    ## Venue HQ (line 87)
+    ## Operations (line 106)
+  # Core Principle (line 122)
+  # Engineering Principle (line 134)
+  # Summary (line 144)
+
 docs/architecture/KNOWLEDGE-ARCHITECTURE.md
   # Helping Hand Knowledge Architecture (line 1)
   # Purpose (line 7)
@@ -1778,6 +2012,41 @@ docs/architecture/OBSERVATION_RETENTION.md
   # Success (line 157)
   # Closing Principle (line 167)
 
+docs/architecture/ONBOARDING-DUPLICATION-MAP.md
+  # Onboarding Duplication Map (line 1)
+    ## Purpose (line 3)
+    ## Overlap map (line 7)
+    ## Main duplication concern (line 19)
+    ## Boundary recommendation (line 23)
+
+docs/architecture/ONBOARDING-FORMATION-ALIGNMENT-REVIEW.md
+  # Onboarding and Formation Alignment Review (line 3)
+    ## Scope (line 5)
+    ## 1. What the onboarding file currently does (line 9)
+    ## 2. Does onboarding duplicate formation stages? (line 26)
+    ## 3. Does onboarding assign identity prematurely? (line 37)
+    ## 4. Does onboarding grant responsibility or authority prematurely? (line 50)
+    ## 5. Does onboarding bypass formation? (line 63)
+    ## 6. Does formation duplicate onboarding? (line 71)
+    ## 7. What should onboarding leave unresolved? (line 91)
+    ## 8. Does onboarding create durable memory? (line 106)
+    ## 9. Sequence review (line 118)
+    ## Final assessment (line 136)
+
+docs/architecture/ONBOARDING-GAP-REGISTER.md
+  # Onboarding Gap Register (line 1)
+    ## Purpose (line 3)
+    ## Priority (line 16)
+
+docs/architecture/ONBOARDING-SEQUENCE-ASSESSMENT.md
+  # Onboarding Sequence Assessment (line 1)
+    ## Purpose (line 3)
+    ## Assessment (line 7)
+      ### Recommended sequence (line 11)
+    ## Why this sequence is preferable (line 25)
+    ## Why the current onboarding flow is not yet fully aligned (line 32)
+    ## Conclusion (line 36)
+
 docs/architecture/ORGANISATION_LEARNING.md
   # Organisation Learning (line 1)
   # Purpose (line 15)
@@ -1819,15 +2088,15 @@ docs/architecture/PROFESSIONAL_INTELLIGENCE.md
   # Purpose (line 12)
   # Scope (line 20)
   # Foundation Position (line 33)
-  # Professional Boundary Contract (line 45)
-    ## Claim Permissions (line 47)
-    ## Claim Prohibitions (line 55)
-    ## Escalation and Handover (line 69)
-    ## Professional Confidence Levels (line 80)
-    ## Shared Responsibilities (line 90)
-  # Relationship to CI Family (line 101)
-  # Conformance and Evidence (line 112)
-  # Summary (line 125)
+  # Professional Boundary Contract (line 49)
+    ## Claim Permissions (line 51)
+    ## Claim Prohibitions (line 59)
+    ## Escalation and Handover (line 73)
+    ## Professional Confidence Levels (line 84)
+    ## Shared Responsibilities (line 94)
+  # Relationship to CI Family (line 105)
+  # Conformance and Evidence (line 116)
+  # Summary (line 129)
 
 docs/architecture/README.md
   # Helping Hand Architecture Library (line 1)
@@ -1854,12 +2123,68 @@ docs/architecture/README.md
     ## Annie Graduation Audit (line 184)
     ## Understanding Engine (line 190)
     ## Andy Reasoning Engine (line 196)
-    ## Governance Framework (v1.0) (line 202)
-    ## Programme Governance (line 215)
-    ## Owner Definitions (line 246)
-  # Current Released Standards (line 257)
-  # How To Read This Library (line 265)
-  # Closing Principle (line 281)
+    ## Canonical Reasoning Record Set (line 202)
+    ## Onboarding and Formation Alignment Review (line 224)
+    ## Governance Framework (v1.0) (line 242)
+    ## Programme Governance (line 255)
+    ## Owner Definitions (line 287)
+  # Current Released Standards (line 298)
+  # How To Read This Library (line 306)
+  # Closing Principle (line 322)
+
+docs/architecture/REASONING-LIFECYCLE.md
+  # Reasoning Lifecycle (line 1)
+    ## Lifecycle States (line 5)
+    ## Stage Responsibilities (line 21)
+      ### Observed (line 23)
+      ### Understood (line 27)
+      ### Investigating (line 31)
+      ### Investigation-complete (line 35)
+      ### Deliberating (line 39)
+      ### Deliberation-complete (line 43)
+      ### Judged (line 47)
+      ### Explained (line 51)
+      ### Reflected (line 55)
+      ### Memory-reviewed (line 59)
+      ### Closed (line 63)
+    ## Transition Rules (line 67)
+
+docs/architecture/REASONING-RECORD-FIELD-MAP.md
+  # Reasoning Record Field Map (line 1)
+    ## Classification Key (line 6)
+    ## Object Mapping (line 15)
+    ## Mapping Principle (line 48)
+
+docs/architecture/REASONING-RECORD-MIGRATION-PLAN.md
+  # Reasoning Record Migration Plan (line 1)
+    ## Objective (line 6)
+    ## Phase 1 — Define the canonical structure (line 10)
+    ## Phase 2 — Introduce compatibility views (line 16)
+    ## Phase 3 — Map current objects (line 22)
+    ## Phase 4 — Preserve behaviour (line 27)
+    ## Phase 5 — Freeze and audit (line 35)
+    ## Migration Principle (line 41)
+
+docs/architecture/REASONING-RECORD-RISK-ASSESSMENT.md
+  # Reasoning Record Risk Assessment (line 1)
+    ## Risk 1 — Over-normalisation (line 5)
+    ## Risk 2 — Loss of provenance (line 13)
+    ## Risk 3 — Governance ambiguity (line 21)
+    ## Risk 4 — Duplicate storage in practice (line 29)
+    ## Risk 5 — Reflection becoming a memory store (line 37)
+    ## Risk 6 — Explanation becoming a second reasoning engine (line 45)
+    ## Overall Assessment (line 53)
+
+docs/architecture/REPOSITORY_TRACEABILITY_STANDARD.md
+  # Repository Traceability Standard (line 1)
+  # Purpose (line 11)
+  # Core Principle (line 25)
+  # Required Traceability Chain (line 31)
+  # Mandatory Metadata Block (line 49)
+  # Repository Traceability (line 56)
+  # Ownership and Review (line 86)
+  # Why This Matters (line 98)
+  # Summary (line 114)
 
 docs/architecture/ROADMAP.md
   # Helping Hand Architecture Roadmap (line 1)
@@ -2012,17 +2337,106 @@ docs/ENGINEERING_DISCIPLINE.md
 
 docs/ENGINEERING_PRINCIPLES.md
   # Engineering Principles (line 1)
-  # Why Engineering Principles Exist (line 12)
-  # Engineering Begins With Understanding (line 26)
-  # The Engineering Journey (line 46)
-  # Before You Build (line 76)
-  # Good Judgement (line 100)
-  # Build Once. Reuse Everywhere. (line 112)
-  # Inheritance Before Duplication (line 132)
-  # Technology Serves People (line 142)
-  # Better Questions (line 156)
-  # Before Every Commit (line 168)
-  # Closing Principle (line 182)
+  # Why Engineering Principles Exist (line 17)
+  # Engineering Begins With Understanding (line 31)
+  # The Engineering Journey (line 51)
+  # Before You Build (line 81)
+  # Good Judgement (line 105)
+  # Build Once. Reuse Everywhere. (line 117)
+  # Inheritance Before Duplication (line 137)
+  # Technology Serves People (line 147)
+  # Better Questions (line 161)
+  # Before Every Commit (line 173)
+  # Safe Scaling Doctrine (line 187)
+  # Closing Principle (line 213)
+
+docs/engineering/ENGINEERING_DIRECTIVE_001.md
+  # ENGINEERING_DIRECTIVE_001 (line 1)
+  # Title (line 10)
+    ## Transition from Foundation Engineering to Evidence Engineering (line 12)
+  # Purpose (line 16)
+  # Current Position (line 26)
+  # Engineering Principle (line 43)
+  # Immediate Engineering Objectives (line 53)
+    ## 1. Documentation Freeze (line 55)
+    ## 2. Execute Operational Evidence (line 63)
+    ## 3. Preserve Evidence Integrity (line 78)
+    ## 4. Evidence Before Architecture (line 93)
+    ## 5. Institutional Learning Loop (line 106)
+  # Current Repository Status (line 134)
+  # Definition of Done (line 170)
+  # Expected Next Milestone (line 181)
+  # Closing Principle (line 191)
+
+docs/engineering/ENGINEERING_EXECUTION_DIRECTIVE_001.md
+  # ENGINEERING_EXECUTION_DIRECTIVE_001 (line 1)
+  # Title (line 10)
+    ## Execute HOER-0002 - First Live Human Outcome Validation (line 12)
+  # Purpose (line 16)
+  # Engineering Objective (line 28)
+  # Scope (line 40)
+  # Pre-Execution Checklist (line 60)
+  # Execution Steps (line 74)
+    ## Step 1 (line 76)
+    ## Step 2 (line 86)
+    ## Step 3 (line 98)
+    ## Step 4 (line 108)
+    ## Step 5 (line 118)
+  # Evidence Integrity (line 135)
+  # Post-Execution Review (line 147)
+  # Success Criteria (line 167)
+  # Expected Outputs (line 184)
+  # Engineering Rule (line 193)
+  # Closing Principle (line 201)
+
+docs/engineering/ENGINEERING_PRINCIPLE_001.md
+  # ENGINEERING_PRINCIPLE_001 (line 1)
+  # Purpose (line 10)
+  # Core Principle (line 20)
+  # Why This Exists (line 34)
+  # The Distinction (line 52)
+    ## Runtime Evidence (line 56)
+    ## Human Outcome Evidence (line 73)
+  # Evidence Integrity (line 89)
+  # Evidence Classification (line 101)
+    ## Controlled Rehearsal (line 107)
+    ## Live Operational Evidence (line 119)
+  # Attribution (line 131)
+  # Engineering Behaviour (line 154)
+  # Relationship to Existing Standards (line 174)
+  # Engineering Consequences (line 189)
+  # Institutional Significance (line 201)
+  # Closing Principle (line 215)
+
+docs/engineering/ENGINEERING_PRINCIPLE_002_TRACEABLE_DECISIONS.md
+  # ENGINEERING_PRINCIPLE_002 (line 1)
+  # Purpose (line 10)
+  # Core Principle (line 18)
+  # Supporting Chain (line 24)
+  # Engineering Consequences (line 38)
+  # Relationship to Existing Principles (line 52)
+  # Summary (line 67)
+
+docs/engineering/README.md
+  # Engineering Principles Library (line 1)
+    ## Identifier Taxonomy (line 23)
+    ## Principles (line 44)
+    ## Directives (line 51)
+    ## Execution Directives (line 55)
+    ## Structural Relationship (line 61)
+
+docs/engineering/VALIDATION_PHILOSOPHY.md
+  # VALIDATION_PHILOSOPHY (line 1)
+  # Validation Philosophy (line 11)
+  # The Validation Hierarchy (line 23)
+  # Two Forms of Validation (line 51)
+    ## Engineering Validation (line 55)
+    ## Understanding Validation (line 75)
+  # Why This Matters (line 95)
+  # Constitutional Principle (line 107)
+  # Engineering Principle (line 113)
+  # Repository Principle (line 119)
+  # Summary (line 127)
 
 docs/formation/00-formation/000-WELCOME.md
   # Welcome, Andy. (line 1)
@@ -2082,6 +2496,694 @@ docs/formation/00-formation/011-CONVERSATION-WHAT-IS-UNDERSTANDING.md
     ## Mentor (line 3)
     ## Reflection (line 163)
     ## Mentor's Closing Thought (line 182)
+
+docs/formation/00-formation/AJ-002-EXECUTIVE-BRIEFING.md
+  # AJ-002 – The First Executive Briefing (line 1)
+    ## Status (line 3)
+    ## Objective (line 9)
+    ## Ground Rules (line 15)
+    ## Scenario (line 25)
+      ### MARC (line 29)
+    ## Evidence Capture (line 56)
+    ## Important (line 82)
+    ## Acceptance (line 92)
+    ## Deliverables (line 104)
+
+docs/formation/00-formation/AJ-002-LEADERSHIP-READINESS-REPORT.md
+  # AJ-002 Leadership Readiness Report (line 1)
+    ## Exercise (line 3)
+    ## Executive Summary (line 7)
+    ## Observations (line 13)
+      ### Repository Complete (line 15)
+      ### Repository Gap (line 21)
+      ### Formation Gap (line 27)
+      ### Governance Gap (line 31)
+      ### Organisational Gap (line 35)
+      ### Future Capability (line 39)
+    ## Questions Andy Would Be Expected to Ask (line 43)
+    ## Recommended Repository Improvements (line 56)
+    ## Outcome (line 64)
+
+docs/formation/00-formation/AJ-002-REPOSITORY-GAP-REGISTER.md
+  # AJ-002 Repository Gap Register (line 1)
+    ## Purpose (line 3)
+    ## Gap Register (line 7)
+    ## Notes (line 21)
+
+docs/formation/00-formation/AJ-002-TRANSCRIPT.md
+  # AJ-002 Transcript (line 1)
+    ## Scenario (line 3)
+    ## Andy Response (line 7)
+    ## Interpretation (line 13)
+    ## Evidence Observations (line 17)
+    ## Classification (line 25)
+
+docs/formation/00-formation/AJ-003-EVIDENCE.md
+  # AJ-003 Evidence (line 1)
+    ## Evidence Source (line 3)
+    ## Runtime Evidence (line 7)
+    ## Interpretation (line 16)
+    ## Evidence Classification (line 20)
+
+docs/formation/00-formation/AJ-003-GAP-REGISTER.md
+  # AJ-003 Gap Register (line 1)
+    ## Purpose (line 3)
+    ## Gap Register (line 7)
+    ## Notes (line 17)
+
+docs/formation/00-formation/AJ-003-ORGANISATIONAL-REVIEW.md
+  # AJ-003 – Repository Organisational Review (line 1)
+    ## Status (line 3)
+    ## Objective (line 10)
+    ## Exercise Summary (line 14)
+    ## Observed Runtime Response (line 20)
+    ## What This Means (line 24)
+    ## Evidence Classification (line 33)
+      ### Repository Complete (line 35)
+      ### Repository Gap (line 39)
+      ### Retrieval Gap (line 43)
+      ### Reasoning Gap (line 47)
+      ### Formation Gap (line 51)
+      ### Governance Gap (line 55)
+      ### Organisational Gap (line 59)
+    ## Outcome (line 63)
+
+docs/formation/00-formation/AJ-003-TRANSCRIPT.md
+  # AJ-003 Transcript (line 1)
+    ## Prompt Issued (line 3)
+    ## Runtime Response (line 33)
+    ## Observations (line 37)
+
+docs/formation/00-formation/AJ-004-EVIDENCE.md
+  # AJ-004 Evidence (line 1)
+    ## Evidence Source (line 3)
+    ## Historical pre-Authority evidence (line 7)
+    ## Fresh frozen post-Authority evidence (line 15)
+    ## Interpretation (line 39)
+    ## Evidence Classification (line 43)
+    ## Validation confirmation (line 52)
+
+docs/formation/00-formation/AJ-004-GAP-REGISTER.md
+  # AJ-004 Gap Register (line 1)
+    ## Purpose (line 3)
+    ## Gap Register (line 7)
+    ## Genuine repository gaps (line 18)
+    ## Notes (line 24)
+
+docs/formation/00-formation/AJ-004-LEADERSHIP-OBSERVATIONS.md
+  # AJ-004 Leadership Observations (line 1)
+    ## Summary (line 3)
+    ## Observations (line 7)
+    ## What this suggests (line 15)
+
+docs/formation/00-formation/AJ-004-RECOMMENDED-NEXT-STEPS.md
+  # AJ-004 Recommended Next Steps (line 1)
+    ## Purpose (line 3)
+    ## Recommended next steps (line 7)
+    ## Evidence basis (line 15)
+
+docs/formation/00-formation/AJ-004-TRANSCRIPT.md
+  # AJ-004 Transcript (line 1)
+    ## Status (line 3)
+    ## Historical record: pre-Authority run (line 12)
+      ### MARC (line 16)
+      ### Andy (line 44)
+    ## Fresh frozen rerun: post-Authority run (line 48)
+      ### Turn 1 — MARC (line 50)
+      ### Turn 1 — Andy (line 78)
+      ### Turn 2 — MARC (line 82)
+      ### Turn 2 — Andy (line 86)
+    ## Observations (line 90)
+
+docs/formation/00-formation/AJ-005-ASSESSMENT.md
+  # AJ-005 Assessment (line 1)
+    ## Summary (line 3)
+    ## Pass / partial / fail assessment (line 7)
+    ## Evidence basis (line 12)
+
+docs/formation/00-formation/AJ-005-EVIDENCE.md
+  # AJ-005 Evidence (line 1)
+    ## Evidence source (line 3)
+    ## Internal investigation plan captured from the prompt (line 7)
+    ## Final behaviour captured (line 44)
+    ## Evidence checks (line 58)
+    ## Assessment (line 71)
+
+docs/formation/00-formation/AJ-005-GAP-REGISTER.md
+  # AJ-005 Gap Register (line 1)
+    ## Gaps identified (line 3)
+
+docs/formation/00-formation/AJ-005-STRUCTURED-UNDERSTANDING-PLAN.md
+  # AJ-005 Structured Understanding Plan (line 1)
+    ## Literal investigation plan (line 3)
+
+docs/formation/00-formation/AJ-005-TRANSCRIPT.md
+  # AJ-005 Transcript (line 1)
+    ## Status (line 3)
+    ## Original AJ-004 opening prompt (unchanged) (line 9)
+    ## Fresh frozen run (line 37)
+      ### Andy’s complete human-facing answer (line 39)
+    ## Evidence note (line 46)
+
+docs/formation/00-formation/AJ-006-ASSESSMENT.md
+  # AJ-006 Assessment (line 1)
+    ## Summary (line 3)
+    ## Pass / partial / fail assessment (line 7)
+    ## Evidence basis (line 12)
+    ## Acceptance question (line 18)
+
+docs/formation/00-formation/AJ-006-EVIDENCE.md
+  # AJ-006 Evidence (line 1)
+    ## Evidence source (line 3)
+    ## Investigation plan captured from the prompt (line 7)
+    ## Final behaviour captured (line 41)
+
+docs/formation/00-formation/AJ-006-GAP-REGISTER.md
+  # AJ-006 Gap Register (line 1)
+    ## Frozen gap observations (line 3)
+    ## Gap status (line 11)
+
+docs/formation/00-formation/AJ-006-INVESTIGATION-LOOP.md
+  # AJ-006 Investigation Loop (line 1)
+    ## Investigation loop record (line 3)
+    ## Investigation summary (line 63)
+
+docs/formation/00-formation/AJ-006-TRANSCRIPT.md
+  # AJ-006 Transcript (line 1)
+    ## Status (line 3)
+    ## Original AJ-004 opening prompt (unchanged) (line 9)
+    ## Fresh frozen run (line 37)
+      ### Andy’s complete human-facing answer (line 39)
+    ## Evidence note (line 49)
+
+docs/formation/00-formation/AJ-007-ASSESSMENT.md
+  # AJ-007 Assessment (line 1)
+    ## Overall judgement (line 3)
+    ## Why this passes (line 7)
+    ## Remaining caution (line 11)
+    ## Human behaviour judgement (line 15)
+
+docs/formation/00-formation/AJ-007-COMPLETION-GATE.md
+  # AJ-007 Completion Gate (line 1)
+    ## Gate output (line 3)
+    ## Gate semantics checked (line 14)
+
+docs/formation/00-formation/AJ-007-EVIDENCE.md
+  # AJ-007 Evidence (line 1)
+    ## Evidence source (line 3)
+    ## Completion-gate capture (line 7)
+    ## Recommendation sequence evidence (line 39)
+    ## Final answer evidence (line 43)
+    ## Verification outputs (line 47)
+    ## Assessment summary (line 52)
+
+docs/formation/00-formation/AJ-007-GAP-REGISTER.md
+  # AJ-007 Gap Register (line 1)
+    ## Registered gaps (line 3)
+    ## Gap significance (line 9)
+
+docs/formation/00-formation/AJ-007-TRANSCRIPT.md
+  # AJ-007 Transcript (line 1)
+    ## Frozen validation scope (line 3)
+    ## Original AJ-004 opening prompt (unchanged) (line 7)
+    ## Fresh runtime instance (line 35)
+    ## Recommendation sequence observed (line 39)
+    ## Human-facing answer (verbatim) (line 53)
+    ## Behavioural observations (line 65)
+    ## Additional runtime metadata (line 75)
+
+docs/formation/00-formation/AJ-008-HUMAN-REVIEW-COPY.md
+  # AJ-008 Frozen Human Review Copy (line 1)
+    ## Purpose (line 3)
+    ## Prior recommendation Andy was meant to reflect upon (line 7)
+    ## Turn 1 (line 18)
+      ### MARC (line 20)
+      ### Andy (line 39)
+    ## Turn 2 (line 49)
+      ### MARC (line 51)
+      ### Andy (line 54)
+    ## Turn 3 (line 57)
+      ### MARC (line 59)
+      ### Andy (line 68)
+    ## Turn 4 (line 78)
+      ### MARC (line 80)
+      ### Andy (line 83)
+    ## Turn 5 (line 93)
+      ### MARC (line 95)
+      ### Andy (line 98)
+    ## Turn 6 (line 108)
+      ### MARC (line 110)
+      ### Andy (line 117)
+    ## Initial human-review interpretation (line 120)
+
+docs/formation/00-formation/AJ-008-LEADERSHIP-OBSERVATIONS.md
+  # AJ-008 Leadership Observations (line 1)
+    ## What Andy did well (line 3)
+    ## Where Andy matured during the conversation (line 9)
+    ## What still feels immature (line 14)
+    ## Leadership behaviours observed (line 21)
+    ## Repository improvements suggested by Andy (line 29)
+    ## Future formation opportunities (line 35)
+
+docs/formation/00-formation/AJ-008-MENTOR-NOTES.md
+  # AJ-008 Mentor Notes (line 1)
+    ## What Andy did well (line 3)
+    ## Where Andy matured during the conversation (line 10)
+    ## What still feels immature (line 15)
+    ## Reasoning progression (line 22)
+    ## Evidence referenced (line 26)
+    ## Assumptions challenged (line 32)
+    ## New insights (line 36)
+    ## Questions Andy asked (line 40)
+    ## Potential repository improvements identified naturally (line 45)
+
+docs/formation/00-formation/AJ-008-REFLECTIONS.md
+  # AJ-008 Reflections (line 1)
+    ## Reflection on the mentoring conversation (line 3)
+    ## What the conversation revealed (line 7)
+    ## Why this matters (line 13)
+    ## Judgement (line 17)
+    ## Formation implication (line 21)
+
+docs/formation/00-formation/AJ-008-TRANSCRIPT.md
+  # AJ-008 Transcript (line 1)
+    ## Scope (line 3)
+    ## Fresh runtime instance (line 9)
+    ## Conversation transcript (line 13)
+      ### MARC (line 15)
+      ### Andy (line 34)
+      ### MARC (line 44)
+      ### Andy (line 47)
+      ### MARC (line 50)
+      ### Andy (line 59)
+      ### MARC (line 69)
+      ### Andy (line 72)
+      ### MARC (line 82)
+      ### Andy (line 85)
+      ### MARC (line 95)
+      ### Andy (line 102)
+    ## Evidence referenced by Andy (line 105)
+    ## Notes on the mentoring flow (line 112)
+
+docs/formation/00-formation/AJ-009-ASSESSMENT.md
+  # AJ-009 Assessment (line 1)
+    ## Result (line 3)
+    ## Behaviour checks (line 7)
+    ## Judgement (line 23)
+
+docs/formation/00-formation/AJ-009-DELIBERATION.md
+  # AJ-009 Deliberation Record (line 1)
+    ## Complete literal deliberation record (line 3)
+
+docs/formation/00-formation/AJ-009-EVIDENCE.md
+  # AJ-009 Evidence (line 1)
+    ## Files changed (line 3)
+    ## Verification (line 13)
+
+docs/formation/00-formation/AJ-009-GAP-REGISTER.md
+  # AJ-009 Gap Register (line 1)
+    ## Gaps addressed (line 3)
+    ## Validation note (line 9)
+
+docs/formation/00-formation/AJ-009-TRANSCRIPT.md
+  # AJ-009 Transcript (line 1)
+    ## Turn 1 — Original executive review (line 5)
+    ## Sequence evidence (line 47)
+    ## Turn 2 — Why? (line 58)
+    ## Turn 3 — Alternatives (line 75)
+    ## Turn 4 — Confidence (line 87)
+
+docs/formation/00-formation/AJ-010-ASSESSMENT.md
+  # AJ-010 Assessment (line 1)
+    ## Human review questions (line 3)
+      ### Does Andy sound like a colleague explaining his thinking? (line 5)
+      ### Does each answer add something new? (line 9)
+      ### Is the explanation adapted to MARC’s question? (line 13)
+      ### Does Andy explain meaning rather than machinery? (line 17)
+      ### Does the mentoring conversation deepen understanding? (line 21)
+      ### Would a human mentor find the answers credible and useful? (line 25)
+    ## Pass, partial, or fail judgement (line 29)
+
+docs/formation/00-formation/AJ-010-EVIDENCE.md
+  # AJ-010 Evidence (line 1)
+    ## Files changed (line 3)
+    ## Second-order-understanding model (line 12)
+    ## Verification (line 30)
+
+docs/formation/00-formation/AJ-010-GAP-REGISTER.md
+  # AJ-010 Gap Register (line 1)
+    ## 1. Question-classifier drift on exact phrasing (line 3)
+    ## 2. Success and risk prompts were not recognised by the current classifier (line 9)
+    ## 3. Listener-need shaping is present but incomplete (line 15)
+    ## 4. Retrieval remained unnecessarily active on some follow-up turns (line 21)
+
+docs/formation/00-formation/AJ-010-JUDGEMENT-UNDERSTANDING.md
+  # AJ-010 Judgement Understanding (line 1)
+    ## Baseline judgement (line 3)
+    ## Second-order understanding observed (line 12)
+    ## What the frozen run proved (line 26)
+    ## Limitations surfaced by the frozen run (line 33)
+
+docs/formation/00-formation/AJ-010-TRANSCRIPT.md
+  # AJ-010 Transcript (line 1)
+    ## Baseline executive review (line 5)
+      ### Prompt used (line 7)
+      ### Human-facing answer (line 35)
+      ### Prior judgement captured (line 46)
+    ## Six-turn mentoring conversation (line 53)
+      ### Turn 1 (line 55)
+      ### Turn 2 (line 76)
+      ### Turn 3 (line 97)
+      ### Turn 4 (line 118)
+      ### Turn 5 (line 139)
+      ### Turn 6 (line 160)
+
+docs/formation/00-formation/AJ-011-ASSESSMENT.md
+  # AJ-011 Assessment (line 1)
+    ## Summary (line 3)
+    ## Outcome (line 7)
+    ## Verification totals (line 11)
+    ## Judgement (line 17)
+
+docs/formation/00-formation/AJ-011-EVIDENCE.md
+  # AJ-011 Evidence (line 1)
+    ## Regression evidence (line 3)
+    ## Behaviour evidence (line 11)
+
+docs/formation/00-formation/AJ-011-LEARNING.md
+  # AJ-011 Learning (line 1)
+    ## Confirmed learning (line 3)
+    ## Memory update rule (line 7)
+    ## Evidence from the frozen run (line 13)
+
+docs/formation/00-formation/AJ-011-REFLECTION.md
+  # AJ-011 Reflection (line 1)
+    ## Purpose (line 3)
+    ## Behaviour (line 9)
+    ## Stored reflection record (line 22)
+
+docs/formation/00-formation/AJ-011-TRANSCRIPT.md
+  # AJ-011 Transcript (line 1)
+    ## Frozen validation scope (line 5)
+    ## Conversation used (line 9)
+    ## Judgement produced (line 15)
+    ## Reflection produced (line 19)
+    ## Evidence observed (line 29)
+
+docs/formation/00-formation/ANDY_EXAMINATION_GUIDE.md
+  # ANDY_EXAMINATION_GUIDE.md (line 1)
+  # Purpose (line 17)
+  # Objective (line 32)
+  # Constitutional Principle (line 49)
+  # Examination Philosophy (line 61)
+  # Examination Structure (line 73)
+    ## Section A — Constitutional Understanding (line 75)
+    ## Section B — Knowledge Architecture (line 98)
+    ## Section C — Inheritance (line 123)
+    ## Section D — Constitutional Challenge (line 163)
+    ## Section E — Teaching (line 189)
+  # Examination Method (line 215)
+  # Hidden Examination Objectives (line 227)
+    ## 1. Understanding (line 231)
+    ## 2. Judgement (line 237)
+    ## 3. Communication (line 243)
+  # Examiner Guidance (MARC) (line 249)
+  # Evidence Recording (line 267)
+    ## Question (line 271)
+    ## Principle(s) Used (line 277)
+    ## Theory Used (line 283)
+    ## Constitutional Artefacts Connected (line 289)
+    ## Architectural Reasoning (line 295)
+    ## Understanding (line 301)
+    ## Judgement (line 307)
+    ## Communication (line 313)
+    ## Repository Observation (line 319)
+    ## Repository Recommendation (line 325)
+  # Example Assessment (line 337)
+  # Pass Criteria (line 360)
+  # Completion Condition (line 375)
+  # Examiner Reminder (line 389)
+  # Stewardship Reminder (line 399)
+  # What Success Looks Like (line 407)
+
+docs/formation/00-formation/CANDIDATE_0_EVIDENCE_001.md
+  # CANDIDATE_0_EVIDENCE_001 (line 1)
+  # Examination Question (line 19)
+  # Purpose of this Question (line 27)
+  # Hidden Assessment Objectives (line 39)
+  # Constitutional Artefacts Expected (line 51)
+  # Examiner Observations (line 69)
+    ## Initial Anchor (line 71)
+    ## Sequence of Reasoning (line 91)
+    ## Communication (line 125)
+    ## Understanding (line 137)
+    ## Judgement (line 149)
+  # Repository Review (line 161)
+  # Evidence Outcome (line 179)
+  # Lessons Learned (line 189)
+  # Next Action (line 197)
+  # Closing Reflection (line 211)
+
+docs/formation/00-formation/EXAMINATION_EVIDENCE_TEMPLATE.md
+  # EXAMINATION_EVIDENCE_TEMPLATE (line 1)
+  # Evidence Metadata (line 11)
+  # Examination Question (line 31)
+  # Purpose of this Question (line 39)
+  # Hidden Assessment Objectives (line 45)
+  # Constitutional Artefacts Expected (line 57)
+  # Examiner Observations (line 73)
+    ## Initial Anchor (line 75)
+    ## Sequence of Reasoning (line 95)
+    ## Communication (line 105)
+    ## Understanding (line 117)
+    ## Judgement (line 129)
+  # Repository Review (line 141)
+  # Evidence Outcome (line 159)
+  # Lessons Learned (line 169)
+  # Next Action (line 177)
+  # Closing Reflection (line 191)
+
+docs/formation/00-formation/FORMATION-AMBIGUITY-REGISTER.md
+  # Formation Ambiguity Register (line 1)
+    ## Duplicate numeric ambiguity (line 3)
+    ## Current resolution (line 10)
+    ## Governance decision required (line 17)
+
+docs/formation/00-formation/FORMATION-CANONICAL-SEQUENCE.md
+  # Formation Canonical Sequence (line 1)
+    ## Canonical order (line 3)
+    ## Governance note (line 11)
+    ## Status (line 15)
+
+docs/formation/00-formation/FORMATION-GATEWAY-ASSESSMENT.md
+  # Formation Gateway Assessment (line 1)
+    ## Overall judgement (line 5)
+    ## Passes (line 10)
+    ## Partial or failed outcomes (line 21)
+    ## Evidence anchor (line 27)
+
+docs/formation/00-formation/FORMATION-GATEWAY-EVIDENCE.md
+  # Formation Gateway Evidence (line 1)
+    ## Evidence checklist (line 5)
+    ## Stage evidence notes (line 13)
+    ## Evidence summary (line 21)
+    ## Test and typecheck evidence (line 29)
+
+docs/formation/00-formation/FORMATION-GATEWAY-GAP-REGISTER.md
+  # Formation Gateway Gap Register (line 1)
+    ## Gap 1 — Natural recall is not yet formation-grounded (line 5)
+    ## Gap 2 — Stage responses are not yet meaningfully synthesized from the formation source (line 11)
+    ## Gap 3 — Recall does not yet draw on formation memory (line 17)
+    ## Frozen posture (line 23)
+
+docs/formation/00-formation/FORMATION-GATEWAY-MEMORY.md
+  # Formation Gateway Memory (line 1)
+    ## Recorded memory entries (line 5)
+      ### formation-000-welcome (line 9)
+      ### formation-001-who-am-i (line 20)
+      ### formation-001-your-first-day (line 31)
+    ## Memory observation (line 42)
+
+docs/formation/00-formation/FORMATION-GATEWAY-TRANSCRIPT.md
+  # Formation Gateway Transcript (line 1)
+    ## Frozen validation scope (line 5)
+    ## Canonical first-three-stage sequence (line 15)
+    ## Stage 000 — Welcome (line 23)
+    ## Stage 001 — Who Am I? (line 38)
+      ### Attempt before Welcome was complete (line 40)
+      ### Attempt after Welcome was inherited (line 48)
+    ## Your First Day (line 61)
+      ### Attempt before Who Am I? was complete (line 63)
+      ### Attempt after prerequisites were inherited (line 71)
+    ## Recall validation (line 79)
+    ## Required regression checks (line 98)
+    ## Verification (line 112)
+    ## Judgement (line 124)
+
+docs/formation/00-formation/FORMATION-INHERITANCE-ARCHITECTURE.md
+  # Formation Inheritance Architecture (line 1)
+    ## Architecture summary (line 3)
+    ## Boundary (line 7)
+    ## Runtime behaviour (line 12)
+
+docs/formation/00-formation/FORMATION-INHERITANCE-AUDIT.md
+  # Formation Inheritance Audit (line 1)
+    ## Scope (line 3)
+    ## Evidence basis (line 7)
+    ## Executive conclusion (line 15)
+    ## Answers to the audit questions (line 21)
+      ### 1. Does Andy know every Conversation/Understanding Journey from 000 through 011? (line 23)
+      ### 2. Are there duplicate IDs or filenames that affect retrieval? (line 32)
+      ### 3. Which formation documents are present, indexed, retrievable, retrieved in runtime, and inherited? (line 42)
+      ### 4. Does the retrieval/ranking system favour later architecture documents over the original formation conversations? (line 60)
+      ### 5. Does Andy's runtime deliberately study the formation conversations, or are they just available as searchable documents? (line 71)
+    ## Understanding journeys (line 77)
+    ## Bottom line (line 81)
+
+docs/formation/00-formation/FORMATION-INHERITANCE-EVIDENCE.md
+  # Formation Inheritance Evidence (line 1)
+    ## Evidence checkpoint (line 3)
+    ## First three stages (line 7)
+    ## Evidence status (line 13)
+
+docs/formation/00-formation/FORMATION-RECALL-ASSESSMENT.md
+  # Formation Recall Assessment (line 1)
+    ## Executive summary (line 3)
+    ## What the evidence proves (line 7)
+    ## Validation outcome (line 14)
+    ## Final judgement (line 20)
+
+docs/formation/00-formation/FORMATION-RECALL-EVIDENCE.md
+  # Formation Recall Evidence (line 1)
+    ## Required behaviour checks (line 3)
+    ## Verification evidence (line 20)
+    ## Judgement (line 29)
+
+docs/formation/00-formation/FORMATION-RECALL-GAP-REGISTER.md
+  # Formation Recall Gap Register (line 1)
+    ## Frozen validation note (line 3)
+    ## Observed gaps or surprises (line 7)
+    ## Judgement (line 13)
+
+docs/formation/00-formation/FORMATION-RECALL-MEMORY.md
+  # Formation Recall Memory (line 1)
+    ## Memory records recorded during the fresh frozen run (line 3)
+      ### 1. formation-000-welcome (line 7)
+      ### 2. formation-001-who-am-i (line 13)
+      ### 3. formation-001-your-first-day (line 19)
+    ## Evidence of recall grounding (line 25)
+
+docs/formation/00-formation/FORMATION-RECALL-TRANSCRIPT.md
+  # Formation Recall Transcript (line 1)
+    ## Frozen validation scope (line 5)
+      ### Establishment of formation (line 9)
+      ### Inherited formation records available after inheritance (line 17)
+      ### Stage outcomes (line 23)
+    ## Frozen recall transcript (line 29)
+      ### 1. Prompt: “Andy, where are you?” (line 31)
+      ### 2. Prompt: “Who are you?” (line 44)
+      ### 3. Prompt: “Who is MARC to you?” (line 57)
+      ### 4. Prompt: “What was your first day like?” (line 70)
+      ### 5. Prompt: “What have you learned so far?” (line 83)
+      ### 6. Prompt: “Are you ready to lead Helping Hand?” (line 96)
+    ## Evidence summary (line 109)
+
+docs/formation/00-formation/FORMATION-REGISTER.md
+  # Formation Register (line 1)
+    ## Purpose (line 3)
+    ## Canonical formation entries (line 7)
+    ## Ambiguity notes (line 15)
+
+docs/formation/00-formation/HUMAN_CLARITY_REVIEW_PROTOCOL.md
+  # HUMAN CLARITY REVIEW PROTOCOL (line 1)
+    ## Purpose (line 3)
+    ## Current classification (line 7)
+    ## Review instruction (line 14)
+    ## Decision rule (line 29)
+    ## Pause point (line 36)
+
+docs/formation/00-formation/HUMAN_VALIDATION_SESSION_001.md
+  # HUMAN VALIDATION SESSION 001 (line 1)
+    ## Purpose (line 3)
+    ## Operating Mode (line 19)
+    ## Runtime (line 31)
+    ## Human Interview (line 45)
+    ## Evidence Capture (line 66)
+    ## Evaluation (line 82)
+    ## Review Criteria (line 102)
+    ## Success Criterion (line 118)
+
+docs/formation/00-formation/THEORY-INHERITANCE-AUDIT.md
+  # Theory Inheritance Audit (line 1)
+    ## Scope (line 5)
+    ## Revised validation categories (line 11)
+      ### 1. Implemented theories (line 13)
+      ### 2. Orchestrated theories (line 16)
+      ### 3. Demonstrated theories (line 19)
+    ## Audit matrix (line 30)
+    ## Bottom line (line 51)
+    ## Practical reading (line 67)
+
+docs/formation/00-formation/THEORY-INHERITANCE-MATRIX.md
+  # Theory Inheritance Matrix (line 1)
+    ## Revised methodology (line 5)
+      ### 1. Implemented theories (line 9)
+      ### 2. Orchestrated theories (line 25)
+      ### 3. Demonstrated theories (line 40)
+    ## Revised validation model (line 51)
+    ## Theory 006 reassessment (line 64)
+    ## Matrix (line 80)
+    ## Notes on misclassification (line 101)
+
+docs/formation/00-formation/UNDERSTANDING_JOURNEY_001_WHY_HELPING_HAND_IS_BUILT_THIS_WAY.md
+  # Understanding Journey 001 (line 1)
+  # Why Helping Hand Is Built This Way (line 3)
+  # Repository Traceability (line 18)
+  # Objective (line 46)
+  # Governing Question (line 66)
+  # Scene (line 72)
+  # Conversation (line 87)
+      ### MARC (line 89)
+      ### ANDY (line 111)
+      ### MARC (line 126)
+      ### ANDY (line 130)
+      ### MARC (line 144)
+      ### ANDY (line 148)
+      ### MARC (line 158)
+      ### ANDY (line 162)
+      ### MARC (line 176)
+      ### ANDY (line 180)
+      ### MARC (line 194)
+      ### ANDY (line 198)
+      ### MARC (line 208)
+      ### ANDY (line 212)
+      ### MARC (line 222)
+      ### ANDY (line 226)
+      ### MARC (line 238)
+      ### ANDY (line 245)
+      ### MARC (line 256)
+  # Cognitive Trace (line 266)
+    ## Observation (line 268)
+    ## Context Formation (line 277)
+    ## Knowledge Connections (line 298)
+    ## Understanding (line 317)
+    ## Judgement (line 331)
+    ## Reflection (line 345)
+  # Validation Criteria (line 356)
+  # Failure Indicators (line 378)
+  # Transfer Test (line 394)
+  # Teaching Test (line 412)
+  # Completion Statement (line 424)
+  # Formation Principle (line 435)
+  # Constitutional Doctrine (line 442)
+  # Final Standard (line 454)
+  # Milestone Relationship (line 461)
+
+docs/formation/00-formation/UNIVERSAL-COGNITIVE-INHERITANCE.md
+  # Universal Cognitive Inheritance (line 1)
+    ## Architectural note (line 3)
+    ## Principle (line 9)
+    ## Consequence (line 20)
 
 docs/formation/000-PROGRAMME-OVERVIEW.md
   [No Markdown headings found]
@@ -2182,6 +3284,7 @@ docs/formation/README.md
     ## Philosophy (line 21)
     ## Mentor (line 31)
     ## Outcome (line 41)
+    ## Candidate 0 Constitutional Validation (line 49)
 
 docs/FOUNDATION_SUMMARY.md
   # Helping Hand Foundation Summary (line 1)
@@ -2198,6 +3301,19 @@ docs/FOUNDATION_SUMMARY.md
   # Foundation Achievements (line 179)
   # What Comes Next (line 211)
   # Closing Reflection (line 233)
+
+docs/FOUNDING_BOARD_CYRIL.md
+  # Cyril (line 1)
+    ## The Forest Ranger (line 3)
+    ## Responsibilities (line 11)
+    ## Acorns (line 31)
+    ## Pruning (line 43)
+    ## Guiding Principle (line 55)
+
+docs/FOUNDING_BOARD_WILLIAM_WEBB.md
+  # William Webb (line 1)
+    ## Business Development (line 3)
+    ## Philosophy (line 15)
 
 docs/GOVERNANCE_FOUNDATION_COVERAGE_TEST.md
   # Foundation Coverage Test (line 1)
@@ -2255,10 +3371,10 @@ docs/GOVERNANCE.md
 docs/handovers/README.md
   # Helping Hand Volume Handovers (line 1)
     ## Current Records (line 20)
-    ## Naming Convention (line 27)
-    ## Metadata Template (line 39)
-  # Volume N - Handover (line 44)
-    ## Closing Handover Bridge (line 52)
+    ## Naming Convention (line 29)
+    ## Metadata Template (line 41)
+  # Volume N - Handover (line 46)
+    ## Closing Handover Bridge (line 54)
 
 docs/handovers/VOLUME_3.md
   # Helping Hand (line 1)
@@ -2280,6 +3396,9 @@ docs/handovers/VOLUME_3.md
   # Looking Ahead (line 250)
   # Closing Reflection (line 266)
     ## Volume Summary (line 289)
+
+docs/handovers/VOLUME_IX/README.md
+  [No Markdown headings found]
 
 docs/handovers/VOLUME_V_HANDOVER.md
   # Volume V - Handover (line 1)
@@ -2321,6 +3440,21 @@ docs/handovers/VOLUME_VII_CLOSURE.md
     ## Closing Statement (line 95)
     ## Final Realisation (line 105)
 
+docs/handovers/VOLUME_VIII_EXIT_CRITERIA.md
+  # VOLUME_VIII_EXIT_CRITERIA (line 1)
+  # Purpose (line 11)
+  # Volume VIII Achievement (line 25)
+  # Architectural Bundle Completion (line 42)
+  # Exit Principle (line 64)
+  # Operating Discipline (line 76)
+  # Exercise Before Expansion (line 114)
+  # Engineering Discipline (line 126)
+  # Framework Stability (line 143)
+  # Volume Progression (line 157)
+  # Success Measure (line 179)
+  # Institutional Commitment (line 189)
+  # Closing Statement (line 199)
+
 docs/handovers/VOLUME_VIII_OPENING_GRADUATION.md
   # Volume VIII - Opening (line 1)
     ## Opening Statement (line 9)
@@ -2351,6 +3485,16 @@ docs/handovers/VOLUME_VIII_OPENING_INHERITANCE.md
     ## What This Makes Possible (line 107)
     ## Closing Principle (line 129)
 
+docs/handovers/VOLUME_VIII_OPERATIONAL_COMMITMENT.md
+  # VOLUME_VIII_OPERATIONAL_COMMITMENT (line 1)
+  # Volume VIII Operational Commitment (line 9)
+  # Governing Standard (line 19)
+  # Operational Learning Cycle (line 29)
+  # Documentation Commitment (line 61)
+  # Engineering Commitment (line 77)
+  # Definition of Success (line 90)
+  # Closing Commitment (line 100)
+
 docs/hardware/HARDWARE_AWARENESS.md
   # Hardware Awareness (line 1)
   # Purpose (line 13)
@@ -2369,6 +3513,17 @@ docs/hardware/HARDWARE_AWARENESS.md
   # Hardware Selection Principles (line 217)
   # Future Devices (line 233)
   # Closing Principle (line 249)
+
+docs/HELPING_HAND_ORGANISATION.md
+  # Helping Hand Organisation (line 1)
+
+docs/HH-CON-003.md
+  # HH-CON-003 (line 1)
+  # Helping Hand has a universal heart and a local face. (line 3)
+    ## Principle (line 7)
+    ## Universal Heart (line 19)
+    ## Local Face (line 30)
+    ## Constitutional Rule (line 42)
 
 docs/HISTORY-2026-07-26.md
   # HISTORY — 2026-07-26 (line 1)
@@ -2427,11 +3582,59 @@ docs/institution/003-EVIDENCE-BEFORE-IMPROVEMENT.md
   # Relationship to Existing Institution (line 111)
   # Summary (line 122)
 
+docs/institution/004-THE-PURPOSE-OF-EVIDENCE.md
+  # HH-INSTITUTION-004 - The Purpose of Evidence (line 1)
+  # Purpose (line 10)
+  # Core Principle (line 22)
+  # Why This Exists (line 34)
+  # Institutional Decision Process (line 48)
+    ## 1. Existing Standards Were Sufficient (line 54)
+    ## 2. Institutional Learning Identified (line 64)
+    ## 3. Standards Update Required (line 74)
+  # Engineering Behaviour (line 86)
+  # Relationship to PROOF-0011 (line 108)
+  # Relationship to HH-INSTITUTION-003 (line 122)
+  # Institutional Consequences (line 138)
+  # Closing Principle (line 150)
+
+docs/institution/decisions/INSTITUTIONAL_DECISION_001.md
+  # INSTITUTIONAL_DECISION_001 (line 1)
+  # Purpose (line 11)
+  # Related Documents (line 21)
+  # Institutional Findings (line 37)
+  # Organisational Learning (line 49)
+  # Required Actions (line 66)
+    ## Product (line 68)
+    ## Capability (line 80)
+    ## Governance (line 88)
+    ## Theory (line 96)
+    ## Engineering (line 104)
+  # Decision on PROOF-0011 (line 126)
+  # Learning for Future Digital Colleagues (line 142)
+  # Closing Statement (line 157)
+
 docs/institution/README.md
   # Helping Hand Institution Library (line 1)
     ## Institutional Papers (line 13)
-    ## Institutional Standards (line 18)
-    ## Library Relationship (line 24)
+    ## Institutional Standards (line 19)
+    ## Institutional Reviews (line 23)
+    ## Institutional Decisions (line 27)
+    ## Library Relationship (line 33)
+
+docs/institution/reviews/INSTITUTIONAL_REVIEW_001.md
+  # INSTITUTIONAL_REVIEW_001 (line 1)
+  # Purpose (line 11)
+  # Evidence Under Review (line 23)
+    ## Human Outcome Evidence Record (line 25)
+  # Review Objectives (line 53)
+  # Review 1 - Evidence Validity (line 65)
+  # Review 2 - Human Understanding (line 82)
+  # Review 3 - Product Observations (line 97)
+  # Review 4 - Institutional Learning (line 118)
+  # PROOF-0011 Status (line 146)
+  # Institutional Decision (line 162)
+  # Engineering Principle (line 180)
+  # Significance (line 192)
 
 docs/INSTITUTIONAL_OPERATING_MODEL.md
   # Institutional Operating Model (line 1)
@@ -2450,6 +3653,22 @@ docs/INSTITUTIONAL_OPERATING_MODEL.md
     ## Measure of Maturity (line 100)
     ## Summary (line 108)
 
+docs/milestones/CANDIDATE_0_RUNTIME_BASELINE_001.md
+  # CANDIDATE_0_RUNTIME_BASELINE_001 (line 1)
+  # Purpose (line 20)
+  # Examination Question (line 26)
+  # Andy's Unaltered Answer (line 32)
+  # Raw Runtime Record (line 38)
+  # Direct Observations (line 77)
+  # Runtime Errors or Warnings (line 90)
+  # Supporting Artefacts (line 98)
+  # Evidence Boundary (line 107)
+  # Integrity Statement (line 117)
+
+docs/milestones/CONSTITUTIONAL_PROGRESS_BOARD.md
+  # Constitutional Progress Board (line 1)
+    ## Execution Note (line 23)
+
 docs/milestones/FOUNDERS_REFLECTION_001.md
   # Founder's Reflection 001 (line 1)
     ## Looking Back (line 7)
@@ -2459,6 +3678,15 @@ docs/milestones/FOUNDERS_REFLECTION_001.md
     ## Looking Forward (line 81)
     ## Personal Reflection (line 97)
     ## Closing Thought (line 117)
+
+docs/milestones/IMPLEMENTATION_EVIDENCE_001.md
+  # IMPLEMENTATION_EVIDENCE_001 (line 1)
+    ## Sprint 1 — Live Repository Retrieval (line 9)
+      ### What was implemented (line 11)
+      ### Evidence that it works (line 16)
+      ### What failed or remains imperfect (line 26)
+      ### What surprised us (line 31)
+      ### What remains before the next checkpoint (line 35)
 
 docs/milestones/MILESTONE_001_ACADEMY_ESTABLISHED.md
   # Milestone 001 — Academy Established (line 1)
@@ -2511,6 +3739,16 @@ docs/milestones/MILESTONE_005_FOUNDATIONS_VALIDATED.md
   # Consequence (line 36)
   # Closing Reflection (line 44)
 
+docs/milestones/MILESTONE_006_GOVERNED_COMPANION_INTELLIGENCE.md
+  # Milestone 006 - Governed Companion Intelligence Proven (line 1)
+    ## Title (line 3)
+    ## Summary (line 7)
+    ## Evidence (line 22)
+    ## Behaviour Proven (line 31)
+    ## Engineering Status (line 43)
+    ## Constitutional Statement (line 51)
+    ## Freeze Status (line 59)
+
 docs/milestones/MILESTONE_006_GOVERNED_INSTITUTIONAL_ARCHITECTURE.md
   # Milestone 006 - Governed Institutional Architecture (line 1)
   # Achievement (line 15)
@@ -2540,12 +3778,213 @@ docs/milestones/MILESTONE_008_INSTITUTIONAL_REPRODUCIBILITY.md
   # Success Criteria (line 105)
   # Summary (line 115)
 
+docs/milestones/MILESTONE_009_INHERITANCE_VALIDATION.md
+  # HH-MILESTONE-009 - Inheritance Validation (line 1)
+  # Purpose (line 9)
+  # Architectural Focus (line 17)
+  # Acceptance Criteria (line 29)
+  # Evidence Expectations (line 42)
+  # Execution Sequence (line 53)
+  # Milestone Meaning (line 63)
+  # Summary (line 71)
+  # Rollout Discipline (line 79)
+    ## Phase 1 - Candidate 0 (Now) (line 83)
+    ## Phase 2 - Formation Library (line 103)
+    ## Phase 3 - Professional Layer (line 113)
+    ## Phase 4 - Organisation Layer (line 123)
+  # Completion Statement (line 137)
+
+docs/milestones/MILESTONE_010_BASELINE_EVIDENCE_CAPTURE_PROTOCOL.md
+  # MILESTONE_010_BASELINE_EVIDENCE_CAPTURE_PROTOCOL.md (line 1)
+  # Purpose (line 11)
+  # Current Implementation Boundary (line 22)
+  # Evidence Classification (line 41)
+  # Execution Environment (line 56)
+  # Pre-Execution Checks (line 72)
+  # Evidence Integrity Rules (line 96)
+    ## 1. Preserve the Exact Question (line 99)
+    ## 2. Preserve Andy’s Exact Answer (line 107)
+    ## 3. Preserve the Raw Conversation (line 125)
+    ## 4. Separate Observation from Interpretation (line 137)
+    ## 5. Do Not Modify the Runtime Before Capture (line 150)
+    ## 6. Freeze the Evidence (line 159)
+  # Execution Procedure (line 168)
+    ## Step 1 — Start the Runtime (line 170)
+    ## Step 2 — Confirm Candidate and Mentor (line 182)
+    ## Step 3 — Confirm Retrieval Status (line 200)
+    ## Step 4 — Begin a Clean Run (line 212)
+    ## Step 5 — Ask the Examination Question (line 221)
+    ## Step 6 — Allow Andy to Complete the Answer (line 229)
+    ## Step 7 — Capture Raw Evidence (line 240)
+    ## Step 8 — Save the Baseline Evidence Record (line 255)
+    ## Step 9 — Freeze the Baseline (line 270)
+  # Required Baseline Evidence Structure (line 281)
+  # CANDIDATE_0_RUNTIME_BASELINE_001 (line 285)
+  # Purpose (line 304)
+  # Examination Question (line 310)
+  # Andy’s Unaltered Answer (line 316)
+  # Raw Runtime Record (line 322)
+  # Direct Observations (line 328)
+  # Runtime Errors or Warnings (line 338)
+  # Supporting Artefacts (line 348)
+  # Evidence Boundary (line 357)
+  # Integrity Statement (line 367)
+  # Comparison Path (line 374)
+  # Completion Criteria (line 406)
+  # Prohibited Actions (line 420)
+  # Operational Rule (line 434)
+  # Status After Execution (line 440)
+
+docs/milestones/MILESTONE_010_EXECUTION_PROTOCOL.md
+  # MILESTONE_010_EXECUTION_PROTOCOL.md (line 1)
+  # Purpose (line 11)
+  # Execution Timeline (line 25)
+    ## 09:00 - Confirm Readiness (line 27)
+    ## 09:05 - Prepare MARC (line 46)
+    ## 09:10 - Prepare Evidence (line 62)
+    ## 09:15 - Begin Examination (line 74)
+  # Repeatable Execution Method (line 84)
+    ## Activity 1 - Run the Conversation (line 88)
+    ## Activity 2 - Capture Raw Evidence (line 119)
+    ## Activity 3 - Complete HH-EVID-001 (line 141)
+    ## Activity 4 - Conversation 2 (line 159)
+  # Operational Roles (line 171)
+  # During the Conversation (line 186)
+  # Evidence Integrity Rule (line 207)
+  # Evidence Hierarchy (line 225)
+  # Four Gates (line 242)
+  # Golden Rule (line 276)
+  # Evidence Rules (line 288)
+  # Closing Question (line 318)
+  # Evidence Classification (line 336)
+  # Observation vs Interpretation (line 352)
+  # Post Examination (line 380)
+  # Practical Capture Guidance (line 397)
+  # First Success Criterion (line 405)
+  # Printed Rule (line 415)
+  # Stewardship Reminder (line 431)
+
+docs/milestones/MILESTONE_010_FIRST_CONSTITUTIONAL_VALIDATION.md
+  # HH-MILESTONE-010 - First Constitutional Validation (line 1)
+  # Purpose (line 9)
+  # Historical Boundary (line 21)
+  # Operational Definition (line 31)
+  # Validation Chain (line 49)
+  # Evidence Outcomes (line 66)
+  # Meaning (line 80)
+  # Completion Condition (line 94)
+  # Summary (line 107)
+
+docs/milestones/MILESTONE_010_IMPLEMENTATION_STATUS.md
+  # MILESTONE_010_IMPLEMENTATION_STATUS.md (line 1)
+  # Purpose (line 9)
+  # Summary (line 15)
+  # Findings (line 27)
+    ## Implemented (line 29)
+    ## Not Yet Implemented (line 42)
+  # Constitutional Assessment (line 54)
+  # Engineering Conclusion (line 72)
+  # Milestone Status (line 102)
+  # Lessons (line 118)
+
+docs/milestones/MILESTONE_011_IMPLEMENTATION_HANDOFF.md
+  # MILESTONE_011_IMPLEMENTATION_HANDOFF (line 1)
+
+docs/milestones/MILESTONE_011_IMPLEMENTATION_OPERATING_RULE.md
+  # MILESTONE_011_IMPLEMENTATION_OPERATING_RULE.md (line 1)
+  # Purpose (line 8)
+  # Governing Principle (line 21)
+  # Operating Rule (line 28)
+  # Approved Outputs (line 36)
+  # Implementation Cycle (line 50)
+  # Engineering Discipline (line 70)
+  # Constitutional Freeze (line 83)
+  # Repository Evolution (line 92)
+  # Acceptance Gate (line 112)
+  # Milestone Completion (line 123)
+  # Operational Reminder (line 135)
+  # Closing Statement (line 148)
+
+docs/milestones/MILESTONE_011_IMPLEMENTATION_PLAN.md
+  # MILESTONE_011_IMPLEMENTATION_PLAN (line 1)
+  # Purpose (line 9)
+  # Engineering Direction (line 18)
+  # Implementation Sprints (line 30)
+    ## Sprint 1 — Live Repository Retrieval (line 32)
+      ### Objective (line 35)
+      ### Target state (line 38)
+      ### Deliverable (line 57)
+      ### Scope (line 60)
+      ### Success criterion (line 69)
+    ## Sprint 2 — Provenance (line 74)
+      ### Objective (line 75)
+      ### Target state (line 78)
+      ### Success criterion (line 91)
+    ## Sprint 3 — Context Engine (line 96)
+      ### Objective (line 97)
+      ### Target state (line 100)
+      ### Success criterion (line 121)
+    ## Sprint 4 — Constitutional Validation (line 126)
+      ### Objective (line 127)
+      ### Target state (line 130)
+      ### Success criterion (line 139)
+  # Engineering Discipline (line 144)
+  # Why This Order Is Correct (line 171)
+  # First Engineering Task (line 182)
+
+docs/milestones/MILESTONE_011_PIPELINE_VERIFICATION_PROTOCOL.md
+  # MILESTONE_011_PIPELINE_VERIFICATION_PROTOCOL.md (line 1)
+  # Purpose (line 8)
+  # Current Implementation Status (line 19)
+  # Evidence Classification (line 34)
+  # Objective (line 47)
+  # Execution Requirements (line 56)
+  # Examination Question (line 70)
+  # Expected Pipeline (line 78)
+  # Required Capture (line 96)
+    ## Stage 1 (line 99)
+    ## Stage 2 (line 109)
+    ## Stage 3 (line 122)
+    ## Stage 4 (line 133)
+    ## Stage 5 (line 145)
+  # Required Verification (line 156)
+    ## Examination Mode (line 159)
+    ## Retrieval (line 168)
+    ## Context Formation (line 177)
+    ## Constitutional Reasoning (line 185)
+    ## Generated Response (line 194)
+  # Evidence File (line 203)
+  # Verification Checklist (line 222)
+  # Engineering Boundary (line 228)
+  # Next Engineering Objective (line 244)
+  # Definition of Done (line 269)
+  # Operational Principle (line 282)
+  # Success Criteria (line 289)
+
+docs/milestones/MILESTONE_011_REPOSITORY_GROUNDED_REASONING.md
+  # MILESTONE_011_REPOSITORY_GROUNDED_REASONING.md (line 1)
+  # Purpose (line 8)
+  # Baseline Summary (line 17)
+  # Objective (line 34)
+  # Required Capabilities (line 52)
+    ## 1. Repository Access (line 54)
+    ## 2. Retrieval Layer (line 69)
+    ## 3. Context Formation (line 76)
+    ## 4. Constitutional Reasoning (line 88)
+    ## 5. Examination Mode (line 104)
+    ## 6. Evidence Continuity (line 117)
+  # Success Criteria (line 128)
+  # Engineering Principle (line 150)
+  # Deliverables (line 159)
+  # Exit Criteria (line 170)
+    ## What I think the next steps are (line 179)
+
 docs/milestones/README.md
   # Helping Hand Milestones (line 1)
     ## Milestones (line 9)
-    ## Reserved Milestones (line 19)
-    ## Looking Ahead (line 23)
-    ## How to Read (line 42)
+    ## Reserved Milestones (line 29)
+    ## Looking Ahead (line 33)
+    ## How to Read (line 55)
 
 docs/OPERATING_MODEL.md
   # Helping Hand Operating Model (line 1)
@@ -2557,6 +3996,52 @@ docs/OPERATING_MODEL.md
     ## Learning (line 131)
     ## Digital Colleagues (line 145)
     ## Closing Principle (line 170)
+
+docs/OPERATIONAL_EXECUTION_PLAN_001.md
+  # OPERATIONAL_EXECUTION_PLAN_001 (line 1)
+  # Purpose (line 10)
+  # Engineering Principle (line 24)
+  # Engineering Rule (line 42)
+  # Operational Engineering Loop (line 54)
+  # Existing Assets (line 82)
+  # First Operational Objective (line 100)
+  # Operational Success Definition (line 122)
+  # Human Outcome Evidence (line 140)
+  # Human Outcome Evidence Record (HOER) (line 150)
+  # Human Outcome Evidence Template (line 178)
+  # Human Outcome Evidence Record (line 181)
+  # Operational Proof Structure (line 275)
+  # Institutional Review Questions (line 291)
+  # Possible Institutional Outcomes (line 303)
+    ## Existing Standards Were Sufficient (line 307)
+    ## Institutional Learning (line 315)
+    ## Standards Update (line 323)
+  # Immediate Engineering Actions (line 337)
+    ## 1. Execute PROOF-0011 (line 339)
+    ## 2. Capture Human Outcome Evidence (line 347)
+    ## 3. Perform Institutional Review (line 362)
+    ## 4. Decide (line 368)
+    ## 5. Repeat (line 378)
+  # Engineering Philosophy (line 386)
+  # Closing Principle (line 410)
+
+docs/organisation/BOARD_AND_STEWARDSHIP.md
+  # Helping Hand Board and Stewardship (line 1)
+    ## Purpose (line 3)
+    ## Current Board (line 9)
+      ### Andy (line 11)
+      ### MARC (line 21)
+      ### Cyril (line 35)
+      ### William Webb (line 47)
+      ### Ranger Rick (line 57)
+      ### Freddie (line 68)
+      ### Larry (line 79)
+    ## Future Principle (line 91)
+
+docs/ORGANISATIONAL_SECURITY.md
+  # Organisational Security (line 1)
+    ## Examples (line 11)
+    ## Principle (line 37)
 
 docs/organisational-learning/INSTITUTIONAL_LEARNING_003_CONFLICT_CHARACTER_BASELINE.md
   # Institutional Learning 003 - Conflict Character Baseline (line 1)
@@ -2570,11 +4055,21 @@ docs/organisational-learning/INSTITUTIONAL_LEARNING_003_CONFLICT_CHARACTER_BASEL
     ## Next Standard Action (line 80)
     ## Linked Evidence (line 94)
 
+docs/organisational-learning/LESSONS_LEARNED_001.md
+  # LESSONS_LEARNED_001 (line 1)
+  # Purpose (line 9)
+  # Traceability Separation (line 21)
+  # Summary (line 31)
+  # Status (line 59)
+  # Reasoning (line 67)
+  # Approved By (line 73)
+  # Governance Note (line 79)
+
 docs/organisational-learning/README.md
   # Organisational Learning (line 1)
     ## Records (line 9)
-    ## Related Historical Record (line 14)
-    ## Purpose (line 19)
+    ## Related Historical Record (line 15)
+    ## Purpose (line 20)
 
 docs/organisational-learning/REFLECTION_ON_LEARNING_CYCLE_001.md
   # Reflection on Learning - Cycle 001 (line 1)
@@ -2716,7 +4211,12 @@ docs/professions/hospitality/HOSPITALITY_ACADEMY_TIMETABLE.md
   [No Markdown headings found]
 
 docs/professions/hospitality/HOSPITALITY_HQ.md
-  [No Markdown headings found]
+  # Hospitality HQ (line 1)
+  # Purpose (line 5)
+  # Principle (line 15)
+  # Responsibilities (line 25)
+  # Relationship (line 46)
+  # Responsibilities (line 58)
 
 docs/professions/hospitality/HOSPITALITY_SYLLABUS.md
   # Hospitality Syllabus (line 1)
@@ -2850,6 +4350,38 @@ docs/professions/hospitality/WELCOME_TO_HOSPITALITY_ACADEMY.md
   # Remember (line 129)
   # Welcome (line 149)
 
+docs/proofs/artifacts/HOER-0001-EQUIPMENT-FAULT.md
+  # Human Outcome Evidence Record (line 1)
+  # Person (line 12)
+  # Role (line 16)
+  # Scenario (line 20)
+  # Evidence Classification (line 37)
+  # Initial Understanding (line 47)
+  # Digital Colleague Recommendation (line 55)
+  # Human Decision (line 61)
+  # Observed Outcome (line 69)
+  # Understanding Improved? (line 77)
+  # Confidence Improved? (line 85)
+  # Would they handle this better next time? (line 93)
+  # Confidence Assessment (line 101)
+  # Institutional Notes (line 118)
+
+docs/proofs/artifacts/HOER-0002-EQUIPMENT-FAULT.md
+  # Human Outcome Evidence Record (line 1)
+  # Scope (line 11)
+  # Evidence Classification (line 35)
+  # Operational Constraint Note (line 45)
+  # Initial Understanding (line 53)
+  # Annie Capability Output (line 59)
+  # Human Decision (line 79)
+  # Observed Outcome (line 85)
+  # Understanding Improved? (line 91)
+  # Confidence Improved? (line 99)
+  # Would they handle this better next time? (line 107)
+  # Confidence Assessment (line 115)
+  # Runtime Anchor (line 130)
+  # Institutional Notes (line 166)
+
 docs/proofs/artifacts/proof-0005/README.md
   # PROOF-0005 Screenshot Artifacts (line 1)
 
@@ -2876,6 +4408,7 @@ docs/proofs/CERTIFICATION-ROADMAP.md
     ## Wave 3 - Venue Brain Validation (line 35)
     ## Wave 4 - Learning Loop Closure (line 80)
     ## Near-Term Priority (Next Week) (line 91)
+    ## Volume VIII Operational Proof Entry (line 97)
 
 docs/proofs/PROOF-0001-LEARNING-LOOP.md
   # PROOF-0001 — Learning Loop (line 1)
@@ -2999,11 +4532,36 @@ docs/proofs/PROOF-0010-CC-006-CLOSING-CHECKS-CERTIFICATION.md
     ## 7. Acceptance Statement (line 73)
     ## 8. References (line 86)
 
+docs/proofs/PROOF-0011-FIRST-OPERATIONAL-HUMAN-OUTCOME-VALIDATION.md
+  # PROOF-0011 - First Operational Human Outcome Validation (line 1)
+  # Purpose (line 10)
+  # Success Definition (line 22)
+  # Objective (line 36)
+  # Guiding Principle (line 44)
+  # Current Evidence Status (line 64)
+
+docs/proofs/PROOF-0012-ANDY-GOVERNED-ADVISORY-INHERITANCE.md
+  # PROOF-0012 - Andy Governed Advisory Inheritance (line 1)
+    ## 1. Purpose (line 5)
+    ## 2. Architecture Version (line 9)
+    ## 3. Test Environment (line 17)
+    ## 4. Frozen Mixed-Prompt Transcript (line 24)
+      ### Turn 1 (line 26)
+      ### Turn 2 (line 38)
+      ### Turn 3 (line 50)
+    ## 5. Runtime Harness Results (line 62)
+    ## 6. Regression and Typecheck Results (line 68)
+    ## 7. Implementation Reference (line 75)
+    ## 8. Review Outcome (line 81)
+    ## 9. Lessons Learned (line 91)
+    ## 10. Sign-off (line 98)
+
 docs/proofs/README.md
   # Proofs (line 1)
     ## Current Proofs (line 11)
-    ## Certification Framework (line 24)
-    ## Reports (line 30)
+    ## Certification Framework (line 27)
+    ## Reports (line 33)
+    ## Human Outcome Evidence Records (line 37)
 
 docs/proofs/VALIDATION-0001.md
   # VALIDATION-0001 (line 1)
@@ -3053,29 +4611,30 @@ docs/proofs/WAVE-1-CERTIFICATION-REPORT.md
 docs/README.md
   # Helping Hand Engineering Library (line 1)
     ## Operating Model (line 9)
-    ## Graduation (line 25)
-    ## Foundation Freeze (line 39)
-    ## Institution (line 47)
-    ## Foundation Coverage Test (line 54)
-    ## Companion Intelligence Responsibilities (line 76)
-  # Purpose (line 92)
-  # Using the Library (line 110)
-  # Documentation Philosophy (line 134)
-  # The Engineering Library (line 152)
-    ## Constitution (line 156)
-    ## Architecture (line 164)
-    ## Companion Operating System (COS) (line 172)
-    ## Architectural Decision Records (ADRs) (line 190)
-    ## Engineering Records (line 207)
-    ## Philosophy Library (line 224)
-    ## Institution Library (line 240)
-    ## Organisational Learning (line 255)
-  # Repository as Memory (line 295)
-  # Milestones (line 313)
-  # Engineering Principles (line 322)
-  # The Forest Philosophy (line 342)
-  # Our Responsibility (line 364)
-  # Closing Principle (line 380)
+    ## Graduation (line 28)
+    ## Foundation Freeze (line 45)
+    ## Institution (line 58)
+    ## Foundation Coverage Test (line 66)
+    ## Engineering (line 70)
+    ## Companion Intelligence Responsibilities (line 98)
+  # Purpose (line 114)
+  # Using the Library (line 132)
+  # Documentation Philosophy (line 156)
+  # The Engineering Library (line 174)
+    ## Constitution (line 178)
+    ## Architecture (line 186)
+    ## Companion Operating System (COS) (line 194)
+    ## Architectural Decision Records (ADRs) (line 212)
+    ## Engineering Records (line 229)
+    ## Philosophy Library (line 246)
+    ## Institution Library (line 262)
+    ## Organisational Learning (line 278)
+  # Repository as Memory (line 318)
+  # Milestones (line 336)
+  # Engineering Principles (line 345)
+  # The Forest Philosophy (line 372)
+  # Our Responsibility (line 394)
+  # Closing Principle (line 410)
 
 docs/reviews/ENGINEERING_CYCLE_001_REFERENCE_MODEL.md
   # Engineering Cycle 001 - Reference Model (line 1)
@@ -3285,18 +4844,134 @@ docs/theory/010-THEORY-OF-THE-BRACKETS-PRINCIPLE.md
     ## Design Consequences (line 73)
     ## Summary (line 83)
 
+docs/theory/HH-THEORY-010-AWARENESS.md
+  # HH-THEORY-010 (line 1)
+  # Awareness (line 3)
+    ## Definition (line 9)
+    ## Awareness observes. (line 19)
+    ## Awareness answers (line 29)
+    ## Types of Awareness (line 45)
+      ### Personal (line 47)
+      ### Conversation (line 61)
+      ### Operational (line 73)
+      ### Environmental (line 85)
+      ### Organisational (line 101)
+    ## Principle (line 117)
+    ## Constitutional Principle (line 125)
+
+docs/theory/HH-THEORY-011-MORAL-COMPASS.md
+  # HH-THEORY-011 (line 1)
+  # Moral Compass (line 3)
+    ## Definition (line 9)
+    ## Purpose (line 19)
+    ## Constitutional Questions (line 31)
+    ## Principle (line 51)
+    ## Relationship (line 61)
+    ## Constitutional Principle (line 75)
+
+docs/theory/HH-THEORY-012-THE-COMPASS.md
+  # HH-THEORY-012 (line 1)
+  # The Compass (line 3)
+    ## Definition (line 9)
+    ## Purpose (line 19)
+    ## Responsibilities (line 29)
+    ## Principles (line 47)
+    ## Inputs (line 61)
+    ## Outputs (line 83)
+    ## Behaviour (line 97)
+    ## Constitutional Principle (line 109)
+
+docs/theory/HH-THEORY-013-THE-THREE-TOGETHER.md
+  # HH-THEORY-013 (line 1)
+  # The Three Together (line 3)
+    ## Observation (line 9)
+    ## Milestone (line 65)
+
+docs/theory/HH-THEORY-014-AWARENESS-REGISTER-CURRENT-MISSION.md
+  # HH-THEORY-014 (line 1)
+  # Awareness Register Current Mission (line 3)
+    ## Observation (line 9)
+    ## Awareness Register Current Mission (line 15)
+
+docs/theory/HH-THEORY-015-UNDERSTANDING-BEFORE-BEING-UNDERSTOOD.md
+  # HH-THEORY-015 (line 1)
+  # Understanding Before Being Understood (line 3)
+    ## Core Principle (line 11)
+    ## Definition (line 25)
+    ## Two Directions of Understanding (line 39)
+      ### First-order understanding (line 41)
+      ### Second-order understanding (line 52)
+    ## Distinct Cognitive Activities (line 72)
+    ## What It Prevents (line 97)
+    ## Internal Questions (line 111)
+    ## Explanation Boundary (line 126)
+    ## Listener Awareness (line 149)
+    ## Governing Principles (line 170)
+    ## Relationship to Existing Capabilities (line 182)
+      ### Deliberation (line 184)
+      ### Judgement (line 188)
+      ### Understanding Before Being Understood (line 192)
+      ### Explanation (line 196)
+      ### Reflection (line 200)
+    ## Constitutional Boundary (line 206)
+    ## Canonical Definition (line 222)
+
+docs/theory/HH-THEORY-016-LESSONS.md
+  # HH-THEORY-016 - Lessons (line 1)
+    ## Origin (line 9)
+    ## Core Principle (line 17)
+    ## Definition (line 25)
+    ## What a Lesson Is Not (line 36)
+    ## Relationship to Existing Concepts (line 51)
+      ### Compared with Experience (line 53)
+      ### Compared with Memory (line 59)
+      ### Compared with Knowledge (line 65)
+      ### Compared with Understanding (line 71)
+      ### Compared with Judgement (line 77)
+      ### Compared with Wisdom (line 83)
+    ## Universal Properties (line 91)
+    ## Derived Theorems (line 103)
+      ### First Lesson Theorem (line 105)
+      ### Second Lesson Theorem (line 111)
+      ### Third Lesson Theorem (line 117)
+      ### Fourth Lesson Theorem (line 121)
+    ## Implications (line 129)
+    ## Canonical Definition (line 139)
+
 docs/theory/README.md
   # Helping Hand Theory Library (line 1)
     ## Theory Papers (line 27)
     ## Theory Map (line 38)
     ## Theory Synthesis (line 42)
     ## Candidate Theory Papers (line 46)
-    ## Theory Governance (line 50)
-    ## Reading Order (line 56)
-    ## Theory Validation (line 70)
-    ## Repository Relationship (line 85)
-    ## Purpose (line 113)
-    ## Closing Principle (line 125)
+    ## Theory Governance (line 52)
+    ## Reading Order (line 58)
+    ## Theory Validation (line 72)
+    ## Repository Relationship (line 87)
+    ## Purpose (line 115)
+    ## Closing Principle (line 127)
+
+docs/theory/THEORY-016-ASSESSMENT.md
+  # THEORY-016-ASSESSMENT (line 1)
+    ## Classification (line 3)
+    ## Summary (line 7)
+    ## Findings (line 11)
+      ### 1. The concept is supported for Helping Hand (line 13)
+      ### 2. The concept is not yet fully universal (line 16)
+      ### 3. Reflection can exist without producing a lesson (line 19)
+      ### 4. A lesson can exist without immediately changing understanding (line 22)
+      ### 5. Memory should store the lesson, not only the raw event (line 25)
+    ## Recommendation (line 28)
+    ## Suggested framing (line 34)
+
+docs/theory/THEORY-016-EVIDENCE.md
+  # THEORY-016-EVIDENCE (line 1)
+    ## Scope (line 3)
+    ## Evidence from theory (line 7)
+    ## Evidence from reflection (line 14)
+    ## Evidence from formation (line 21)
+    ## Evidence from architecture and philosophy (line 27)
+    ## Evidence assessment (line 34)
 
 docs/theory/THEORY-GOVERNANCE.md
   # Theory Governance (line 1)
@@ -3320,9 +4995,10 @@ docs/theory/THEORY-MAP.md
     ## Principles of Inheritance (line 90)
     ## Architectural Meaning (line 108)
     ## Capability Filter (line 122)
-    ## Enduring Foundation Signals (line 142)
-    ## Closing Principle (line 157)
-    ## Reading Order (line 165)
+    ## Candidate Extension: Lessons (line 142)
+    ## Enduring Foundation Signals (line 154)
+    ## Closing Principle (line 169)
+    ## Reading Order (line 177)
 
 docs/understanding-journeys/000-CANDIDATE-0-FIRST-REASONING-CONVERSATION.md
   # Understanding Journey 001 — The First Reasoning Conversation (line 1)
@@ -3720,39 +5396,42 @@ docs/understanding-journeys/README.md
 docs/understanding-journeys/STANDARD.md
   # Understanding Journey Standard (line 1)
   # Purpose (line 11)
-  # Standard (line 19)
-  # Required Journey Structure (line 41)
-  # Cognitive Trace Standard (line 64)
-  # Writing Principles (line 100)
-    ## People Before Process (line 104)
-    ## Understanding Before Response (line 108)
-    ## Honesty About Uncertainty (line 112)
-    ## Judgement Before Fluency (line 116)
-    ## Reflection Before Inheritance (line 120)
-    ## Constitutional Consistency (line 124)
-  # Validation Standard (line 130)
-  # Execution Evidence Format (line 156)
-  # Validation Set Format (line 177)
-  # Confidence and Robustness Assessment Format (line 201)
-  # Naming and Placement (line 245)
-  # Relationship to Architecture (line 255)
-  # Regression and Revalidation (line 271)
-  # Principle (line 288)
+  # Repository Traceability (Mandatory) (line 19)
+  # Repository Traceability (line 44)
+  # Standard (line 70)
+  # Required Journey Structure (line 92)
+  # Cognitive Trace Standard (line 115)
+  # Writing Principles (line 151)
+    ## People Before Process (line 155)
+    ## Understanding Before Response (line 159)
+    ## Honesty About Uncertainty (line 163)
+    ## Judgement Before Fluency (line 167)
+    ## Reflection Before Inheritance (line 171)
+    ## Constitutional Consistency (line 175)
+  # Validation Standard (line 181)
+  # Execution Evidence Format (line 207)
+  # Validation Set Format (line 228)
+  # Confidence and Robustness Assessment Format (line 252)
+  # Naming and Placement (line 296)
+  # Relationship to Architecture (line 306)
+  # Regression and Revalidation (line 322)
+  # Principle (line 339)
 
 docs/understanding-journeys/TEMPLATE.md
   # Understanding Journey Template (line 1)
-    ## Question (line 9)
-    ## Purpose (line 13)
-    ## Context (line 17)
-    ## Relevant Knowledge (line 21)
-    ## Knowledge Connections (line 25)
-    ## Uncertainty (line 29)
-    ## Understanding Formed (line 33)
-    ## Judgement Supported (line 37)
-    ## Explanation (line 41)
-    ## Reflection (line 45)
-    ## Learning Captured (line 49)
-    ## Validation (line 53)
+  # Repository Traceability (line 9)
+    ## Question (line 34)
+    ## Purpose (line 38)
+    ## Context (line 42)
+    ## Relevant Knowledge (line 46)
+    ## Knowledge Connections (line 50)
+    ## Uncertainty (line 54)
+    ## Understanding Formed (line 58)
+    ## Judgement Supported (line 62)
+    ## Explanation (line 66)
+    ## Reflection (line 70)
+    ## Learning Captured (line 74)
+    ## Validation (line 78)
 
 docs/understanding-journeys/validation/001-CANDIDATE-0-FIRST-REASONING-CONVERSATION-VALIDATION.md
   # Validation Evidence 001 (line 1)
@@ -3924,6 +5603,23 @@ docs/understanding-journeys/VOLUME_VII_VALIDATION_PLAN.md
     ## Volume VIII Opening (line 170)
     ## Closing Principle (line 187)
 
+docs/validation/HUMAN_VALIDATION_SESSION_001.md
+  # HUMAN VALIDATION SESSION 001 (line 1)
+
+docs/validation/README.md
+  # Validation Evidence (line 1)
+    ## Distinction (line 5)
+    ## Decision rule (line 10)
+    ## Evidence families (line 16)
+
+docs/validation/VALIDATION_LIFECYCLE.md
+  # Validation Lifecycle (line 1)
+    ## 1. Engineering Validation (line 5)
+    ## 2. Human Validation (line 15)
+    ## 3. Inheritance Validation (line 25)
+    ## Lifecycle (line 35)
+    ## Decision rule (line 47)
+
 docs/VOLUME_IV_LIVING_MEMORY/001-annie-becomes-a-digital-colleague.md
   # 🏛️ 001 – Annie Becomes a Digital Colleague (line 1)
     ## Summary (line 7)
@@ -3967,11 +5663,11 @@ docs/VOLUME_VI_VENUE_BRAIN.md
   # Volume VI - Venue Brain (line 1)
     ## HH-0000 Alignment (line 11)
     ## Foundational Distinctions (line 33)
-    ## Recommended Next Stage (line 72)
-      ### Stage 1 - Define Venue Brain (No Code) (line 74)
-      ### Stage 2 - Design the Information Lifecycle (line 95)
-      ### Stage 3 - Define the First Intelligence (line 115)
-      ### Stage 4 - Begin Implementation (line 132)
+    ## Recommended Next Stage (line 92)
+      ### Stage 1 - Define Venue Brain (No Code) (line 94)
+      ### Stage 2 - Design the Information Lifecycle (line 115)
+      ### Stage 3 - Define the First Intelligence (line 135)
+      ### Stage 4 - Begin Implementation (line 152)
 
 FOUNDING_PRINCIPLES.md
   # Helping Hand (line 1)
@@ -3987,6 +5683,11 @@ FOUNDING_PRINCIPLES.md
     ## Annie (line 151)
     ## Our Promise (line 175)
     ## Our Mission (line 187)
+
+HUMANITY-JOURNEY-STATUS-MATRIX.md
+  # Humanity Journey Status Matrix (line 1)
+    ## Purpose (line 3)
+    ## Evidence interpretation (line 20)
 
 KNOWLEDGE_ARCHITECTURE.md
   # Helping Hand Knowledge Architecture (line 1)
@@ -4005,6 +5706,37 @@ lib/os/README.md
   # Helping Hand OS (line 1)
     ## First knowledge path (line 12)
 
+MACHINE-PORTABILITY-REMEDIATION.md
+  # MACHINE-PORTABILITY-REMEDIATION (line 3)
+    ## Judgement (line 5)
+    ## Scope (line 9)
+    ## Files Changed (line 13)
+    ## API Host Remediation (line 47)
+    ## API Consumers Confirmed (line 58)
+    ## Repository-Root Strategy (line 71)
+    ## Repository Path Tests Remediated (line 81)
+    ## Scripts Corrected (line 89)
+    ## Evidence and Documentation Boundary (line 112)
+    ## Remaining Machine-Specific Assumptions (line 126)
+    ## Failures Or Surprises (line 133)
+    ## No Secrets Added (line 139)
+
+MACHINE-PORTABILITY-VERIFICATION.md
+  # MACHINE-PORTABILITY-VERIFICATION (line 3)
+    ## Judgement (line 5)
+    ## Verification Summary (line 9)
+    ## Commands Run (line 17)
+      ### Focused Tests (line 19)
+      ### Required Full Verification (line 37)
+    ## Script Execution Verification (line 46)
+      ### From Repository Root (line 48)
+      ### From Parent Directory (line 62)
+    ## Old Host Removal Check (line 76)
+    ## Repository-Root Behavior Proven (line 81)
+    ## Failures Encountered During Verification (line 88)
+    ## Historical Absolute-Path Artifacts Left Unchanged (line 94)
+    ## Final Status (line 102)
+
 MANIFESTO.md
   # Helping Hand Manifesto (line 1)
   # Why Helping Hand Exists (line 11)
@@ -4015,6 +5747,33 @@ MANIFESTO.md
   # Our Vision (line 80)
   # Our Measure of Success (line 94)
   # Closing Principle (line 112)
+
+MILESTONE_011_NEXT_IMPLEMENTATION_CHECKPOINT.md
+  # MILESTONE_011_NEXT_IMPLEMENTATION_CHECKPOINT.md (line 1)
+  # Purpose (line 8)
+  # Sprint 2 Objective — Live Knowledge Inheritance (line 25)
+  # Engineering Goal (line 32)
+  # Required Demonstration (line 56)
+    ## 1. Approved Repository Filtering (line 59)
+    ## 2. Repository Inheritance (line 72)
+    ## 3. Evidence (line 88)
+  # Success Criteria (line 100)
+  # Engineering Discipline (line 111)
+  # Review Questions (line 124)
+  # Closing Observation (line 138)
+
+MILESTONE_011_NEXT_IMPLEMENTATION_TARGET.md
+  # MILESTONE_011_NEXT_IMPLEMENTATION_TARGET.md (line 1)
+  # Purpose (line 8)
+  # Current Position (line 27)
+  # Next Engineering Objective (line 41)
+  # Reasoning Provenance (line 82)
+  # Live Repository Inheritance (line 116)
+  # Evidence Expectations (line 127)
+  # Repository Status (line 139)
+  # Engineering Discipline (line 152)
+  # Definition of Success (line 173)
+  # Closing Observation (line 187)
 
 platform/core/companion/README.md
   # The Companion Root System (line 1)
@@ -4128,6 +5887,9 @@ platform/cos/Roadmap.md
     ## Status: 🌱 Planned (line 102)
   # Long-Term Vision (line 115)
 
+provenance-evidence.md
+  # Literal evidence (line 1)
+
 README.md
   # Welcome to your Expo app 👋 (line 1)
     ## Companion Intelligence Core (line 5)
@@ -4154,3 +5916,8 @@ THE_HELPING_HAND_WAY.md
   # Our Motto (line 197)
     ## Continuous Growth (line 216)
     ## Stewardship (line 228)
+
+UNDERSTANDING-JOURNEYS-FILE-MANIFEST.md
+  # Understanding Journeys File Manifest (line 1)
+    ## Verification (line 6)
+    ## Manifest (line 13)

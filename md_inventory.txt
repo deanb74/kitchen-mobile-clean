@@ -1,16 +1,56 @@
 HELPING HAND MARKDOWN INVENTORY
 ================================
 
-Generated: 2026-07-30T08:11:07.494Z
-Documents: 302
+Generated: 2026-08-03T14:21:14.554Z
+Documents: 457
+
+ACADEMY-COMPLETION-CLAIMS-REGISTER.md
+  Title: Academy Completion Claims Register
+  Headings: 3
+
+ACADEMY-CURRENT-TRUTH.md
+  Title: Academy Current Truth
+  Headings: 3
+
+ACADEMY-EVIDENCE-RECONCILIATION.md
+  Title: Academy Evidence Reconciliation
+  Headings: 10
 
 ANNIE_SCENARIOS.md
   Title: Annie Scenarios
   Headings: 1
 
+ASR-001-ARCHITECTURE-REVIEW.md
+  Title: ASR-001 — Architecture Simplification Review
+  Headings: 43
+
+ASR-001-ASSESSMENT.md
+  Title: ASR-001 — Assessment
+  Headings: 9
+
+ASR-001-DUPLICATION-REPORT.md
+  Title: ASR-001 — Duplication Report
+  Headings: 8
+
+ASR-001-SIMPLIFICATION-CANDIDATES.md
+  Title: ASR-001 — Simplification Candidates
+  Headings: 27
+
 BUILDING.md
   Title: Building Helping Hand
   Headings: 5
+
+CANDIDATE_0_PIPELINE_CHECKPOINT_001.md
+  Title: Candidate 0 Examination Pipeline Checkpoint
+  Headings: 15
+
+CANDIDATE-0-VALIDATION-STATUS.md
+  Title: Candidate 0 Validation Status
+  Headings: 4
+
+COMMIT_PLAN.md
+  Title: COMMIT_PLAN
+  Headings: 15
 
 constitution/00-PREAMBLE.md
   Title: The Preamble
@@ -22,7 +62,7 @@ constitution/01-THE-ACORN-EDITION.md
 
 constitution/02-CONSTITUTION.md
   Title: The Constitution of Helping Hand
-  Headings: 12
+  Headings: 13
 
 constitution/03-FOUNDERS-OATH.md
   Title: The Founder's Oath
@@ -32,13 +72,17 @@ constitution/04-ENGINEERING-OATH.md
   Title: The Engineering Oath
   Headings: 1
 
+constitution/05-AUTHORITY-AND-STEWARDSHIP.md
+  Title: Authority and Stewardship
+  Headings: 8
+
 constitution/COMPANION_INTELLIGENCE.md
   Title: Companion Intelligence
   Headings: 10
 
 constitution/DOCUMENT_REGISTER.md
   Title: Helping Hand Constitution Document Register
-  Headings: 4
+  Headings: 5
 
 constitution/README.md
   Title: Helping Hand Constitution
@@ -240,6 +284,10 @@ docs/architecture/ARCHITECTURE_PRINCIPLES.md
   Title: Architecture Principles
   Headings: 35
 
+docs/architecture/CANONICAL-REASONING-RECORD.md
+  Title: Canonical Reasoning Record
+  Headings: 27
+
 docs/architecture/capability-audits/REFLECTION_AUDIT.md
   Title: Decision
   Headings: 1
@@ -290,11 +338,15 @@ docs/architecture/COMPANION-SYSTEM-ARCHITECTURE.md
 
 docs/architecture/CONSTITUTION.md
   Title: Helping Hand Constitution
-  Headings: 6
+  Headings: 9
+
+docs/architecture/CONSTITUTIONAL_ENGINEERING_NOTE_FOUNDATION_MATURITY.md
+  Title: Constitutional Engineering Note
+  Headings: 3
 
 docs/architecture/CONSTITUTIONAL_FRAMEWORK.md
   Title: Constitutional Framework
-  Headings: 13
+  Headings: 17
 
 docs/architecture/COS_MIGRATION_METHOD.md
   Title: Companion Operating System Migration Method
@@ -334,7 +386,7 @@ docs/architecture/DIGITAL-COLLEAGUE-COMPANION-BUILD-BLUEPRINT.md
 
 docs/architecture/DOCUMENT_REGISTER.md
   Title: Helping Hand Architecture Document Register
-  Headings: 5
+  Headings: 6
 
 docs/architecture/FIRST-CAPABILITY-PROMOTION.md
   Title: First Capability Promotion
@@ -392,6 +444,14 @@ docs/architecture/HELPING_HAND_VALIDATION_PROGRAMME.md
   Title: The Helping Hand Validation Programme
   Headings: 5
 
+docs/architecture/HQ_INTELLIGENCE.md
+  Title: HQ Intelligence
+  Headings: 1
+
+docs/architecture/HQ_MODEL.md
+  Title: HQ Model
+  Headings: 5
+
 docs/architecture/HUMAN_AND_PEOPLE_INTELLIGENCE_HIPI.md
   Title: Human and People Intelligence (HIPI)
   Headings: 12
@@ -399,6 +459,10 @@ docs/architecture/HUMAN_AND_PEOPLE_INTELLIGENCE_HIPI.md
 docs/architecture/JUDGEMENT_ENGINE.md
   Title: Judgement Engine
   Headings: 67
+
+docs/architecture/KNOWLEDGE_INHERITANCE_MODEL.md
+  Title: Knowledge Inheritance Model
+  Headings: 11
 
 docs/architecture/KNOWLEDGE-ARCHITECTURE.md
   Title: Helping Hand Knowledge Architecture
@@ -411,6 +475,22 @@ docs/architecture/LEARNING_ORGANISATION.md
 docs/architecture/OBSERVATION_RETENTION.md
   Title: Observation Retention
   Headings: 12
+
+docs/architecture/ONBOARDING-DUPLICATION-MAP.md
+  Title: Onboarding Duplication Map
+  Headings: 5
+
+docs/architecture/ONBOARDING-FORMATION-ALIGNMENT-REVIEW.md
+  Title: Onboarding and Formation Alignment Review
+  Headings: 12
+
+docs/architecture/ONBOARDING-GAP-REGISTER.md
+  Title: Onboarding Gap Register
+  Headings: 3
+
+docs/architecture/ONBOARDING-SEQUENCE-ASSESSMENT.md
+  Title: Onboarding Sequence Assessment
+  Headings: 7
 
 docs/architecture/ORGANISATION_LEARNING.md
   Title: Organisation Learning
@@ -430,7 +510,27 @@ docs/architecture/PROFESSIONAL_INTELLIGENCE.md
 
 docs/architecture/README.md
   Title: Helping Hand Architecture Library
-  Headings: 30
+  Headings: 32
+
+docs/architecture/REASONING-LIFECYCLE.md
+  Title: Reasoning Lifecycle
+  Headings: 15
+
+docs/architecture/REASONING-RECORD-FIELD-MAP.md
+  Title: Reasoning Record Field Map
+  Headings: 4
+
+docs/architecture/REASONING-RECORD-MIGRATION-PLAN.md
+  Title: Reasoning Record Migration Plan
+  Headings: 8
+
+docs/architecture/REASONING-RECORD-RISK-ASSESSMENT.md
+  Title: Reasoning Record Risk Assessment
+  Headings: 8
+
+docs/architecture/REPOSITORY_TRACEABILITY_STANDARD.md
+  Title: Repository Traceability Standard
+  Headings: 9
 
 docs/architecture/ROADMAP.md
   Title: Helping Hand Architecture Roadmap
@@ -462,7 +562,31 @@ docs/ENGINEERING_DISCIPLINE.md
 
 docs/ENGINEERING_PRINCIPLES.md
   Title: Engineering Principles
-  Headings: 12
+  Headings: 13
+
+docs/engineering/ENGINEERING_DIRECTIVE_001.md
+  Title: ENGINEERING_DIRECTIVE_001
+  Headings: 16
+
+docs/engineering/ENGINEERING_EXECUTION_DIRECTIVE_001.md
+  Title: ENGINEERING_EXECUTION_DIRECTIVE_001
+  Headings: 19
+
+docs/engineering/ENGINEERING_PRINCIPLE_001.md
+  Title: ENGINEERING_PRINCIPLE_001
+  Headings: 17
+
+docs/engineering/ENGINEERING_PRINCIPLE_002_TRACEABLE_DECISIONS.md
+  Title: ENGINEERING_PRINCIPLE_002
+  Headings: 7
+
+docs/engineering/README.md
+  Title: Engineering Principles Library
+  Headings: 6
+
+docs/engineering/VALIDATION_PHILOSOPHY.md
+  Title: VALIDATION_PHILOSOPHY
+  Headings: 11
 
 docs/formation/00-formation/000-WELCOME.md
   Title: Welcome, Andy.
@@ -514,6 +638,298 @@ docs/formation/00-formation/010-CONVERSATION-GRADUATION.md
 
 docs/formation/00-formation/011-CONVERSATION-WHAT-IS-UNDERSTANDING.md
   Title: CONVERSATION-011 — What Is Understanding?
+  Headings: 4
+
+docs/formation/00-formation/AJ-002-EXECUTIVE-BRIEFING.md
+  Title: AJ-002 – The First Executive Briefing
+  Headings: 10
+
+docs/formation/00-formation/AJ-002-LEADERSHIP-READINESS-REPORT.md
+  Title: AJ-002 Leadership Readiness Report
+  Headings: 13
+
+docs/formation/00-formation/AJ-002-REPOSITORY-GAP-REGISTER.md
+  Title: AJ-002 Repository Gap Register
+  Headings: 4
+
+docs/formation/00-formation/AJ-002-TRANSCRIPT.md
+  Title: AJ-002 Transcript
+  Headings: 6
+
+docs/formation/00-formation/AJ-003-EVIDENCE.md
+  Title: AJ-003 Evidence
+  Headings: 5
+
+docs/formation/00-formation/AJ-003-GAP-REGISTER.md
+  Title: AJ-003 Gap Register
+  Headings: 4
+
+docs/formation/00-formation/AJ-003-ORGANISATIONAL-REVIEW.md
+  Title: AJ-003 – Repository Organisational Review
+  Headings: 15
+
+docs/formation/00-formation/AJ-003-TRANSCRIPT.md
+  Title: AJ-003 Transcript
+  Headings: 4
+
+docs/formation/00-formation/AJ-004-EVIDENCE.md
+  Title: AJ-004 Evidence
+  Headings: 7
+
+docs/formation/00-formation/AJ-004-GAP-REGISTER.md
+  Title: AJ-004 Gap Register
+  Headings: 5
+
+docs/formation/00-formation/AJ-004-LEADERSHIP-OBSERVATIONS.md
+  Title: AJ-004 Leadership Observations
+  Headings: 4
+
+docs/formation/00-formation/AJ-004-RECOMMENDED-NEXT-STEPS.md
+  Title: AJ-004 Recommended Next Steps
+  Headings: 4
+
+docs/formation/00-formation/AJ-004-TRANSCRIPT.md
+  Title: AJ-004 Transcript
+  Headings: 11
+
+docs/formation/00-formation/AJ-005-ASSESSMENT.md
+  Title: AJ-005 Assessment
+  Headings: 4
+
+docs/formation/00-formation/AJ-005-EVIDENCE.md
+  Title: AJ-005 Evidence
+  Headings: 6
+
+docs/formation/00-formation/AJ-005-GAP-REGISTER.md
+  Title: AJ-005 Gap Register
+  Headings: 2
+
+docs/formation/00-formation/AJ-005-STRUCTURED-UNDERSTANDING-PLAN.md
+  Title: AJ-005 Structured Understanding Plan
+  Headings: 2
+
+docs/formation/00-formation/AJ-005-TRANSCRIPT.md
+  Title: AJ-005 Transcript
+  Headings: 6
+
+docs/formation/00-formation/AJ-006-ASSESSMENT.md
+  Title: AJ-006 Assessment
+  Headings: 5
+
+docs/formation/00-formation/AJ-006-EVIDENCE.md
+  Title: AJ-006 Evidence
+  Headings: 4
+
+docs/formation/00-formation/AJ-006-GAP-REGISTER.md
+  Title: AJ-006 Gap Register
+  Headings: 3
+
+docs/formation/00-formation/AJ-006-INVESTIGATION-LOOP.md
+  Title: AJ-006 Investigation Loop
+  Headings: 3
+
+docs/formation/00-formation/AJ-006-TRANSCRIPT.md
+  Title: AJ-006 Transcript
+  Headings: 6
+
+docs/formation/00-formation/AJ-007-ASSESSMENT.md
+  Title: AJ-007 Assessment
+  Headings: 5
+
+docs/formation/00-formation/AJ-007-COMPLETION-GATE.md
+  Title: AJ-007 Completion Gate
+  Headings: 3
+
+docs/formation/00-formation/AJ-007-EVIDENCE.md
+  Title: AJ-007 Evidence
+  Headings: 7
+
+docs/formation/00-formation/AJ-007-GAP-REGISTER.md
+  Title: AJ-007 Gap Register
+  Headings: 3
+
+docs/formation/00-formation/AJ-007-TRANSCRIPT.md
+  Title: AJ-007 Transcript
+  Headings: 8
+
+docs/formation/00-formation/AJ-008-HUMAN-REVIEW-COPY.md
+  Title: AJ-008 Frozen Human Review Copy
+  Headings: 22
+
+docs/formation/00-formation/AJ-008-LEADERSHIP-OBSERVATIONS.md
+  Title: AJ-008 Leadership Observations
+  Headings: 7
+
+docs/formation/00-formation/AJ-008-MENTOR-NOTES.md
+  Title: AJ-008 Mentor Notes
+  Headings: 10
+
+docs/formation/00-formation/AJ-008-REFLECTIONS.md
+  Title: AJ-008 Reflections
+  Headings: 6
+
+docs/formation/00-formation/AJ-008-TRANSCRIPT.md
+  Title: AJ-008 Transcript
+  Headings: 18
+
+docs/formation/00-formation/AJ-009-ASSESSMENT.md
+  Title: AJ-009 Assessment
+  Headings: 4
+
+docs/formation/00-formation/AJ-009-DELIBERATION.md
+  Title: AJ-009 Deliberation Record
+  Headings: 2
+
+docs/formation/00-formation/AJ-009-EVIDENCE.md
+  Title: AJ-009 Evidence
+  Headings: 3
+
+docs/formation/00-formation/AJ-009-GAP-REGISTER.md
+  Title: AJ-009 Gap Register
+  Headings: 3
+
+docs/formation/00-formation/AJ-009-TRANSCRIPT.md
+  Title: AJ-009 Transcript
+  Headings: 6
+
+docs/formation/00-formation/AJ-010-ASSESSMENT.md
+  Title: AJ-010 Assessment
+  Headings: 9
+
+docs/formation/00-formation/AJ-010-EVIDENCE.md
+  Title: AJ-010 Evidence
+  Headings: 4
+
+docs/formation/00-formation/AJ-010-GAP-REGISTER.md
+  Title: AJ-010 Gap Register
+  Headings: 5
+
+docs/formation/00-formation/AJ-010-JUDGEMENT-UNDERSTANDING.md
+  Title: AJ-010 Judgement Understanding
+  Headings: 5
+
+docs/formation/00-formation/AJ-010-TRANSCRIPT.md
+  Title: AJ-010 Transcript
+  Headings: 12
+
+docs/formation/00-formation/AJ-011-ASSESSMENT.md
+  Title: AJ-011 Assessment
+  Headings: 5
+
+docs/formation/00-formation/AJ-011-EVIDENCE.md
+  Title: AJ-011 Evidence
+  Headings: 3
+
+docs/formation/00-formation/AJ-011-LEARNING.md
+  Title: AJ-011 Learning
+  Headings: 4
+
+docs/formation/00-formation/AJ-011-REFLECTION.md
+  Title: AJ-011 Reflection
+  Headings: 4
+
+docs/formation/00-formation/AJ-011-TRANSCRIPT.md
+  Title: AJ-011 Transcript
+  Headings: 6
+
+docs/formation/00-formation/ANDY_EXAMINATION_GUIDE.md
+  Title: ANDY_EXAMINATION_GUIDE.md
+  Headings: 34
+
+docs/formation/00-formation/CANDIDATE_0_EVIDENCE_001.md
+  Title: CANDIDATE_0_EVIDENCE_001
+  Headings: 16
+
+docs/formation/00-formation/EXAMINATION_EVIDENCE_TEMPLATE.md
+  Title: EXAMINATION_EVIDENCE_TEMPLATE
+  Headings: 17
+
+docs/formation/00-formation/FORMATION-AMBIGUITY-REGISTER.md
+  Title: Formation Ambiguity Register
+  Headings: 4
+
+docs/formation/00-formation/FORMATION-CANONICAL-SEQUENCE.md
+  Title: Formation Canonical Sequence
+  Headings: 4
+
+docs/formation/00-formation/FORMATION-GATEWAY-ASSESSMENT.md
+  Title: Formation Gateway Assessment
+  Headings: 5
+
+docs/formation/00-formation/FORMATION-GATEWAY-EVIDENCE.md
+  Title: Formation Gateway Evidence
+  Headings: 5
+
+docs/formation/00-formation/FORMATION-GATEWAY-GAP-REGISTER.md
+  Title: Formation Gateway Gap Register
+  Headings: 5
+
+docs/formation/00-formation/FORMATION-GATEWAY-MEMORY.md
+  Title: Formation Gateway Memory
+  Headings: 6
+
+docs/formation/00-formation/FORMATION-GATEWAY-TRANSCRIPT.md
+  Title: Formation Gateway Transcript
+  Headings: 14
+
+docs/formation/00-formation/FORMATION-INHERITANCE-ARCHITECTURE.md
+  Title: Formation Inheritance Architecture
+  Headings: 4
+
+docs/formation/00-formation/FORMATION-INHERITANCE-AUDIT.md
+  Title: Formation Inheritance Audit
+  Headings: 12
+
+docs/formation/00-formation/FORMATION-INHERITANCE-EVIDENCE.md
+  Title: Formation Inheritance Evidence
+  Headings: 4
+
+docs/formation/00-formation/FORMATION-RECALL-ASSESSMENT.md
+  Title: Formation Recall Assessment
+  Headings: 5
+
+docs/formation/00-formation/FORMATION-RECALL-EVIDENCE.md
+  Title: Formation Recall Evidence
+  Headings: 4
+
+docs/formation/00-formation/FORMATION-RECALL-GAP-REGISTER.md
+  Title: Formation Recall Gap Register
+  Headings: 4
+
+docs/formation/00-formation/FORMATION-RECALL-MEMORY.md
+  Title: Formation Recall Memory
+  Headings: 6
+
+docs/formation/00-formation/FORMATION-RECALL-TRANSCRIPT.md
+  Title: Formation Recall Transcript
+  Headings: 13
+
+docs/formation/00-formation/FORMATION-REGISTER.md
+  Title: Formation Register
+  Headings: 4
+
+docs/formation/00-formation/HUMAN_CLARITY_REVIEW_PROTOCOL.md
+  Title: HUMAN CLARITY REVIEW PROTOCOL
+  Headings: 6
+
+docs/formation/00-formation/HUMAN_VALIDATION_SESSION_001.md
+  Title: HUMAN VALIDATION SESSION 001
+  Headings: 9
+
+docs/formation/00-formation/THEORY-INHERITANCE-AUDIT.md
+  Title: Theory Inheritance Audit
+  Headings: 9
+
+docs/formation/00-formation/THEORY-INHERITANCE-MATRIX.md
+  Title: Theory Inheritance Matrix
+  Headings: 9
+
+docs/formation/00-formation/UNDERSTANDING_JOURNEY_001_WHY_HELPING_HAND_IS_BUILT_THIS_WAY.md
+  Title: Understanding Journey 001
+  Headings: 42
+
+docs/formation/00-formation/UNIVERSAL-COGNITIVE-INHERITANCE.md
+  Title: Universal Cognitive Inheritance
   Headings: 4
 
 docs/formation/000-PROGRAMME-OVERVIEW.md
@@ -602,11 +1018,19 @@ docs/formation/MARC-MENTORING-PRINCIPLES.md
 
 docs/formation/README.md
   Title: Helping Hand Formation Programme
-  Headings: 5
+  Headings: 6
 
 docs/FOUNDATION_SUMMARY.md
   Title: Helping Hand Foundation Summary
   Headings: 14
+
+docs/FOUNDING_BOARD_CYRIL.md
+  Title: Cyril
+  Headings: 6
+
+docs/FOUNDING_BOARD_WILLIAM_WEBB.md
+  Title: William Webb
+  Headings: 3
 
 docs/GOVERNANCE_FOUNDATION_COVERAGE_TEST.md
   Title: Foundation Coverage Test
@@ -632,6 +1056,10 @@ docs/handovers/VOLUME_3.md
   Title: Helping Hand
   Headings: 19
 
+docs/handovers/VOLUME_IX/README.md
+  Title: Readme
+  Headings: 0
+
 docs/handovers/VOLUME_V_HANDOVER.md
   Title: Volume V - Handover
   Headings: 19
@@ -644,6 +1072,10 @@ docs/handovers/VOLUME_VII_CLOSURE.md
   Title: Volume VII - Closure
   Headings: 7
 
+docs/handovers/VOLUME_VIII_EXIT_CRITERIA.md
+  Title: VOLUME_VIII_EXIT_CRITERIA
+  Headings: 13
+
 docs/handovers/VOLUME_VIII_OPENING_GRADUATION.md
   Title: Volume VIII - Opening
   Headings: 14
@@ -652,9 +1084,21 @@ docs/handovers/VOLUME_VIII_OPENING_INHERITANCE.md
   Title: Volume VIII - Opening (Superseded)
   Headings: 12
 
+docs/handovers/VOLUME_VIII_OPERATIONAL_COMMITMENT.md
+  Title: VOLUME_VIII_OPERATIONAL_COMMITMENT
+  Headings: 8
+
 docs/hardware/HARDWARE_AWARENESS.md
   Title: Hardware Awareness
   Headings: 17
+
+docs/HELPING_HAND_ORGANISATION.md
+  Title: Helping Hand Organisation
+  Headings: 1
+
+docs/HH-CON-003.md
+  Title: HH-CON-003
+  Headings: 6
 
 docs/HISTORY-2026-07-26.md
   Title: HISTORY — 2026-07-26
@@ -676,17 +1120,41 @@ docs/institution/003-EVIDENCE-BEFORE-IMPROVEMENT.md
   Title: HH-INSTITUTION-003 - Evidence Before Improvement
   Headings: 13
 
+docs/institution/004-THE-PURPOSE-OF-EVIDENCE.md
+  Title: HH-INSTITUTION-004 - The Purpose of Evidence
+  Headings: 13
+
+docs/institution/decisions/INSTITUTIONAL_DECISION_001.md
+  Title: INSTITUTIONAL_DECISION_001
+  Headings: 14
+
 docs/institution/README.md
   Title: Helping Hand Institution Library
-  Headings: 4
+  Headings: 6
+
+docs/institution/reviews/INSTITUTIONAL_REVIEW_001.md
+  Title: INSTITUTIONAL_REVIEW_001
+  Headings: 13
 
 docs/INSTITUTIONAL_OPERATING_MODEL.md
   Title: Institutional Operating Model
   Headings: 15
 
+docs/milestones/CANDIDATE_0_RUNTIME_BASELINE_001.md
+  Title: CANDIDATE_0_RUNTIME_BASELINE_001
+  Headings: 10
+
+docs/milestones/CONSTITUTIONAL_PROGRESS_BOARD.md
+  Title: Constitutional Progress Board
+  Headings: 2
+
 docs/milestones/FOUNDERS_REFLECTION_001.md
   Title: Founder's Reflection 001
   Headings: 8
+
+docs/milestones/IMPLEMENTATION_EVIDENCE_001.md
+  Title: IMPLEMENTATION_EVIDENCE_001
+  Headings: 7
 
 docs/milestones/MILESTONE_001_ACADEMY_ESTABLISHED.md
   Title: Milestone 001 — Academy Established
@@ -708,6 +1176,10 @@ docs/milestones/MILESTONE_005_FOUNDATIONS_VALIDATED.md
   Title: Milestone 005 — Foundations Validated
   Headings: 5
 
+docs/milestones/MILESTONE_006_GOVERNED_COMPANION_INTELLIGENCE.md
+  Title: Milestone 006 - Governed Companion Intelligence Proven
+  Headings: 8
+
 docs/milestones/MILESTONE_006_GOVERNED_INSTITUTIONAL_ARCHITECTURE.md
   Title: Milestone 006 - Governed Institutional Architecture
   Headings: 6
@@ -720,6 +1192,46 @@ docs/milestones/MILESTONE_008_INSTITUTIONAL_REPRODUCIBILITY.md
   Title: HH-MILESTONE-008 - Institutional Reproducibility
   Headings: 11
 
+docs/milestones/MILESTONE_009_INHERITANCE_VALIDATION.md
+  Title: HH-MILESTONE-009 - Inheritance Validation
+  Headings: 14
+
+docs/milestones/MILESTONE_010_BASELINE_EVIDENCE_CAPTURE_PROTOCOL.md
+  Title: MILESTONE_010_BASELINE_EVIDENCE_CAPTURE_PROTOCOL.md
+  Headings: 39
+
+docs/milestones/MILESTONE_010_EXECUTION_PROTOCOL.md
+  Title: MILESTONE_010_EXECUTION_PROTOCOL.md
+  Headings: 27
+
+docs/milestones/MILESTONE_010_FIRST_CONSTITUTIONAL_VALIDATION.md
+  Title: HH-MILESTONE-010 - First Constitutional Validation
+  Headings: 9
+
+docs/milestones/MILESTONE_010_IMPLEMENTATION_STATUS.md
+  Title: MILESTONE_010_IMPLEMENTATION_STATUS.md
+  Headings: 10
+
+docs/milestones/MILESTONE_011_IMPLEMENTATION_HANDOFF.md
+  Title: MILESTONE_011_IMPLEMENTATION_HANDOFF
+  Headings: 1
+
+docs/milestones/MILESTONE_011_IMPLEMENTATION_OPERATING_RULE.md
+  Title: MILESTONE_011_IMPLEMENTATION_OPERATING_RULE.md
+  Headings: 13
+
+docs/milestones/MILESTONE_011_IMPLEMENTATION_PLAN.md
+  Title: MILESTONE_011_IMPLEMENTATION_PLAN
+  Headings: 25
+
+docs/milestones/MILESTONE_011_PIPELINE_VERIFICATION_PROTOCOL.md
+  Title: MILESTONE_011_PIPELINE_VERIFICATION_PROTOCOL.md
+  Headings: 27
+
+docs/milestones/MILESTONE_011_REPOSITORY_GROUNDED_REASONING.md
+  Title: MILESTONE_011_REPOSITORY_GROUNDED_REASONING.md
+  Headings: 16
+
 docs/milestones/README.md
   Title: Helping Hand Milestones
   Headings: 5
@@ -728,9 +1240,25 @@ docs/OPERATING_MODEL.md
   Title: Helping Hand Operating Model
   Headings: 9
 
+docs/OPERATIONAL_EXECUTION_PLAN_001.md
+  Title: OPERATIONAL_EXECUTION_PLAN_001
+  Headings: 26
+
+docs/organisation/BOARD_AND_STEWARDSHIP.md
+  Title: Helping Hand Board and Stewardship
+  Headings: 11
+
+docs/ORGANISATIONAL_SECURITY.md
+  Title: Organisational Security
+  Headings: 3
+
 docs/organisational-learning/INSTITUTIONAL_LEARNING_003_CONFLICT_CHARACTER_BASELINE.md
   Title: Institutional Learning 003 - Conflict Character Baseline
   Headings: 10
+
+docs/organisational-learning/LESSONS_LEARNED_001.md
+  Title: LESSONS_LEARNED_001
+  Headings: 8
 
 docs/organisational-learning/README.md
   Title: Organisational Learning
@@ -797,8 +1325,8 @@ docs/professions/hospitality/HOSPITALITY_ACADEMY_TIMETABLE.md
   Headings: 0
 
 docs/professions/hospitality/HOSPITALITY_HQ.md
-  Title: Hospitality Hq
-  Headings: 0
+  Title: Hospitality HQ
+  Headings: 6
 
 docs/professions/hospitality/HOSPITALITY_SYLLABUS.md
   Title: Hospitality Syllabus
@@ -832,6 +1360,14 @@ docs/professions/hospitality/WELCOME_TO_HOSPITALITY_ACADEMY.md
   Title: Welcome to Hospitality Academy
   Headings: 9
 
+docs/proofs/artifacts/HOER-0001-EQUIPMENT-FAULT.md
+  Title: Human Outcome Evidence Record
+  Headings: 14
+
+docs/proofs/artifacts/HOER-0002-EQUIPMENT-FAULT.md
+  Title: Human Outcome Evidence Record
+  Headings: 14
+
 docs/proofs/artifacts/proof-0005/README.md
   Title: PROOF-0005 Screenshot Artifacts
   Headings: 1
@@ -846,7 +1382,7 @@ docs/proofs/CAPABILITY-REGISTER.md
 
 docs/proofs/CERTIFICATION-ROADMAP.md
   Title: Capability Certification Roadmap
-  Headings: 6
+  Headings: 7
 
 docs/proofs/PROOF-0001-LEARNING-LOOP.md
   Title: PROOF-0001 — Learning Loop
@@ -888,9 +1424,17 @@ docs/proofs/PROOF-0010-CC-006-CLOSING-CHECKS-CERTIFICATION.md
   Title: PROOF-0010 - CC-006 Closing Checks Certification
   Headings: 9
 
+docs/proofs/PROOF-0011-FIRST-OPERATIONAL-HUMAN-OUTCOME-VALIDATION.md
+  Title: PROOF-0011 - First Operational Human Outcome Validation
+  Headings: 6
+
+docs/proofs/PROOF-0012-ANDY-GOVERNED-ADVISORY-INHERITANCE.md
+  Title: PROOF-0012 - Andy Governed Advisory Inheritance
+  Headings: 14
+
 docs/proofs/README.md
   Title: Proofs
-  Headings: 4
+  Headings: 5
 
 docs/proofs/VALIDATION-0001.md
   Title: VALIDATION-0001
@@ -910,7 +1454,7 @@ docs/proofs/WAVE-1-CERTIFICATION-REPORT.md
 
 docs/README.md
   Title: Helping Hand Engineering Library
-  Headings: 25
+  Headings: 26
 
 docs/reviews/ENGINEERING_CYCLE_001_REFERENCE_MODEL.md
   Title: Engineering Cycle 001 - Reference Model
@@ -980,9 +1524,45 @@ docs/theory/010-THEORY-OF-THE-BRACKETS-PRINCIPLE.md
   Title: HH-THEORY-010 - The Brackets Principle
   Headings: 8
 
+docs/theory/HH-THEORY-010-AWARENESS.md
+  Title: HH-THEORY-010
+  Headings: 13
+
+docs/theory/HH-THEORY-011-MORAL-COMPASS.md
+  Title: HH-THEORY-011
+  Headings: 8
+
+docs/theory/HH-THEORY-012-THE-COMPASS.md
+  Title: HH-THEORY-012
+  Headings: 10
+
+docs/theory/HH-THEORY-013-THE-THREE-TOGETHER.md
+  Title: HH-THEORY-013
+  Headings: 4
+
+docs/theory/HH-THEORY-014-AWARENESS-REGISTER-CURRENT-MISSION.md
+  Title: HH-THEORY-014
+  Headings: 4
+
+docs/theory/HH-THEORY-015-UNDERSTANDING-BEFORE-BEING-UNDERSTOOD.md
+  Title: HH-THEORY-015
+  Headings: 21
+
+docs/theory/HH-THEORY-016-LESSONS.md
+  Title: HH-THEORY-016 - Lessons
+  Headings: 20
+
 docs/theory/README.md
   Title: Helping Hand Theory Library
   Headings: 11
+
+docs/theory/THEORY-016-ASSESSMENT.md
+  Title: THEORY-016-ASSESSMENT
+  Headings: 11
+
+docs/theory/THEORY-016-EVIDENCE.md
+  Title: THEORY-016-EVIDENCE
+  Headings: 7
 
 docs/theory/THEORY-GOVERNANCE.md
   Title: Theory Governance
@@ -990,7 +1570,7 @@ docs/theory/THEORY-GOVERNANCE.md
 
 docs/theory/THEORY-MAP.md
   Title: Theory Map
-  Headings: 9
+  Headings: 10
 
 docs/understanding-journeys/000-CANDIDATE-0-FIRST-REASONING-CONVERSATION.md
   Title: Understanding Journey 001 — The First Reasoning Conversation
@@ -1058,11 +1638,11 @@ docs/understanding-journeys/README.md
 
 docs/understanding-journeys/STANDARD.md
   Title: Understanding Journey Standard
-  Headings: 20
+  Headings: 22
 
 docs/understanding-journeys/TEMPLATE.md
   Title: Understanding Journey Template
-  Headings: 13
+  Headings: 14
 
 docs/understanding-journeys/validation/001-CANDIDATE-0-FIRST-REASONING-CONVERSATION-VALIDATION.md
   Title: Validation Evidence 001
@@ -1140,6 +1720,18 @@ docs/understanding-journeys/VOLUME_VII_VALIDATION_PLAN.md
   Title: Volume VII Validation Plan
   Headings: 16
 
+docs/validation/HUMAN_VALIDATION_SESSION_001.md
+  Title: HUMAN VALIDATION SESSION 001
+  Headings: 1
+
+docs/validation/README.md
+  Title: Validation Evidence
+  Headings: 4
+
+docs/validation/VALIDATION_LIFECYCLE.md
+  Title: Validation Lifecycle
+  Headings: 6
+
 docs/VOLUME_IV_LIVING_MEMORY/001-annie-becomes-a-digital-colleague.md
   Title: 🏛️ 001 – Annie Becomes a Digital Colleague
   Headings: 13
@@ -1160,6 +1752,10 @@ FOUNDING_PRINCIPLES.md
   Title: Helping Hand
   Headings: 13
 
+HUMANITY-JOURNEY-STATUS-MATRIX.md
+  Title: Humanity Journey Status Matrix
+  Headings: 3
+
 KNOWLEDGE_ARCHITECTURE.md
   Title: Helping Hand Knowledge Architecture
   Headings: 11
@@ -1168,9 +1764,25 @@ lib/os/README.md
   Title: Helping Hand OS
   Headings: 2
 
+MACHINE-PORTABILITY-REMEDIATION.md
+  Title: MACHINE-PORTABILITY-REMEDIATION
+  Headings: 13
+
+MACHINE-PORTABILITY-VERIFICATION.md
+  Title: MACHINE-PORTABILITY-VERIFICATION
+  Headings: 14
+
 MANIFESTO.md
   Title: Helping Hand Manifesto
   Headings: 9
+
+MILESTONE_011_NEXT_IMPLEMENTATION_CHECKPOINT.md
+  Title: MILESTONE_011_NEXT_IMPLEMENTATION_CHECKPOINT.md
+  Headings: 12
+
+MILESTONE_011_NEXT_IMPLEMENTATION_TARGET.md
+  Title: MILESTONE_011_NEXT_IMPLEMENTATION_TARGET.md
+  Headings: 11
 
 platform/core/companion/README.md
   Title: The Companion Root System
@@ -1204,6 +1816,10 @@ platform/cos/Roadmap.md
   Title: COS Roadmap
   Headings: 16
 
+provenance-evidence.md
+  Title: Literal evidence
+  Headings: 1
+
 README.md
   Title: Welcome to your Expo app 👋
   Headings: 8
@@ -1211,3 +1827,7 @@ README.md
 THE_HELPING_HAND_WAY.md
   Title: The Helping Hand Way
   Headings: 15
+
+UNDERSTANDING-JOURNEYS-FILE-MANIFEST.md
+  Title: Understanding Journeys File Manifest
+  Headings: 3
