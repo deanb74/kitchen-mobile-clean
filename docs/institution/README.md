@@ -20,6 +20,14 @@ Institution answers what the organisation is becoming.
 
 - [HH-INSTITUTION-002 - Institutional Operating Model](../INSTITUTIONAL_OPERATING_MODEL.md)
 
+## Institutional Reviews
+
+- [HH-INST-REVIEW-001 - Institutional Review of HOER-0002](reviews/INSTITUTIONAL_REVIEW_001.md)
+
+## Institutional Decisions
+
+- [HH-INST-DEC-001 - Institutional Decision Following Review of HOER-0002](decisions/INSTITUTIONAL_DECISION_001.md)
+
 ---
 
 ## Library Relationship

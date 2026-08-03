@@ -132,3 +132,55 @@ Certification demonstrates trust.
 Context shapes communication.
 
 It does not rewrite reasoning.
+
+---
+
+## Knowledge Inheritance Doctrine
+
+Helping Hand organises knowledge according to where it remains true.
+
+Knowledge shall always be maintained at the highest level where it remains universally valid and inherited by every level beneath it.
+
+This principle governs both organisational architecture and Digital Colleague inheritance.
+
+### Knowledge Hierarchy
+
+Helping Hand HQ
+
+Principles are universal.
+
+↓
+
+Industry HQ
+
+Rules are shared.
+
+↓
+
+Venue HQ
+
+Practice is specific.
+
+↓
+
+Operations
+
+Experience is local.
+
+### Governance
+
+Knowledge shall not be duplicated unnecessarily.
+
+Knowledge shall be governed once.
+
+Knowledge shall be inherited wherever possible.
+
+Experience shall continuously improve understanding.
+
+### Engineering Principle
+
+Do something once.
+
+Govern it once.
+
+Pass it forward.

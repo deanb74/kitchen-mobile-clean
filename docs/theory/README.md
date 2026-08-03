@@ -46,6 +46,8 @@ They should be read as one work rather than as independent documents.
 ## Candidate Theory Papers
 
 - [HH-THEORY-010 - The Brackets Principle](010-THEORY-OF-THE-BRACKETS-PRINCIPLE.md)
+- [HH-THEORY-015 - Understanding Before Being Understood](HH-THEORY-015-UNDERSTANDING-BEFORE-BEING-UNDERSTOOD.md)
+- [HH-THEORY-016 - Lessons](HH-THEORY-016-LESSONS.md)
 
 ## Theory Governance
 

@@ -47,6 +47,7 @@ Read the constitutional documents in this order:
 3. `02-CONSTITUTION.md`
 4. `03-FOUNDERS-OATH.md`
 5. `04-ENGINEERING-OATH.md`
+6. `05-AUTHORITY-AND-STEWARDSHIP.md`
 
 ---
 

@@ -199,6 +199,46 @@ Defines how Helping Hand transforms organised knowledge into contextual understa
 
 Defines the inherited reasoning architecture by which HH-0000 and future Digital Colleagues reason from constitutional, theoretical and governance foundations.
 
+## Canonical Reasoning Record Set
+
+[CANONICAL-REASONING-RECORD.md](CANONICAL-REASONING-RECORD.md)
+
+Defines the smallest canonical reasoning record that preserves one continuous reasoning lifecycle while keeping investigation, deliberation, judgement, explanation, reflection and memory distinct.
+
+[REASONING-RECORD-FIELD-MAP.md](REASONING-RECORD-FIELD-MAP.md)
+
+Maps the current runtime objects into the canonical record and classifies each field as retain, reference, merge, derive, remove or unresolved.
+
+[REASONING-LIFECYCLE.md](REASONING-LIFECYCLE.md)
+
+Defines the lifecycle states for the canonical reasoning record, including the transition rules that preserve provenance.
+
+[REASONING-RECORD-MIGRATION-PLAN.md](REASONING-RECORD-MIGRATION-PLAN.md)
+
+Outlines the migration path from overlapping runtime objects to one canonical reasoning record without changing behaviour.
+
+[REASONING-RECORD-RISK-ASSESSMENT.md](REASONING-RECORD-RISK-ASSESSMENT.md)
+
+Assesses the principal architectural risks of introducing a canonical reasoning record and the mitigations required.
+
+## Onboarding and Formation Alignment Review
+
+[ONBOARDING-FORMATION-ALIGNMENT-REVIEW.md](ONBOARDING-FORMATION-ALIGNMENT-REVIEW.md)
+
+Reviews the existing onboarding material against the formation inheritance architecture and tests whether onboarding and formation remain distinct.
+
+[ONBOARDING-DUPLICATION-MAP.md](ONBOARDING-DUPLICATION-MAP.md)
+
+Maps the main overlaps between onboarding and the formation stages and classifies each overlap.
+
+[ONBOARDING-SEQUENCE-ASSESSMENT.md](ONBOARDING-SEQUENCE-ASSESSMENT.md)
+
+Assesses the preferred sequence from arrival through onboarding, formation, education, responsibility, and authority.
+
+[ONBOARDING-GAP-REGISTER.md](ONBOARDING-GAP-REGISTER.md)
+
+Registers the main alignment gaps where onboarding currently risks replacing formation or implying premature readiness.
+
 ## Governance Framework (v1.0)
 
 Helping Hand governs architectural evolution through a small set of complementary documents:

@@ -45,6 +45,8 @@ Authoritative status, ownership and lifecycle remain governed by the Document Re
 
 - [EP-000 - Engineering Principles Foundation](../ENGINEERING_PRINCIPLES.md)
 - [EP-001 - Never Claim Unearned Evidence](ENGINEERING_PRINCIPLE_001.md)
+- [EP-002 - Traceable Decisions](ENGINEERING_PRINCIPLE_002_TRACEABLE_DECISIONS.md)
+- [HH-ENG-001 - Validation Philosophy](VALIDATION_PHILOSOPHY.md)
 
 ## Directives
 
@@ -67,6 +69,9 @@ Proofs define how execution is validated through evidence.
 Reference surfaces:
 
 - [Engineering Principles Foundation](../ENGINEERING_PRINCIPLES.md)
+- [Engineering Principle 002 - Traceable Decisions](ENGINEERING_PRINCIPLE_002_TRACEABLE_DECISIONS.md)
+- [Validation Philosophy](VALIDATION_PHILOSOPHY.md)
+- [Repository Traceability Standard](../architecture/REPOSITORY_TRACEABILITY_STANDARD.md)
 - [Operational Execution Plan 001](../OPERATIONAL_EXECUTION_PLAN_001.md)
 - [Proofs Library](../proofs/README.md)
 - [ED-001 - Transition from Foundation Engineering to Evidence Engineering](ENGINEERING_DIRECTIVE_001.md)

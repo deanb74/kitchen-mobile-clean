@@ -26,12 +26,14 @@ The identifier remains constant.
 | HH-ARCH-CI-003 | Digital Colleague Architecture | 1.0 | Helping Hand Architecture | Foundation |
 | HH-ARCH-CI-004 | Professional Intelligence | 1.0 | Helping Hand Architecture | Foundation |
 | HH-ARCH-CI-005 | Helping Hand University Architecture | 1.0 | Helping Hand Architecture | Foundation |
+| HH-ARCH-RTS-001 | Repository Traceability Standard | 1.0 | Helping Hand Architecture | Foundation |
 | HH-GOV-001 | Helping Hand Governance Framework | 1.0 | Helping Hand Governance | Foundation |
 | HH-GOV-002 | Helping Hand Standards Lifecycle | 1.0 | Helping Hand Governance | Foundation |
 | HH-GOV-003 | Helping Hand Ratification Process | 1.0 | Helping Hand Governance | Foundation |
 | HH-GOV-004 | Helping Hand Architecture Review Board | 1.0 | Helping Hand Governance | Foundation |
 | HH-CON-001 | Helping Hand Constitution | 1.0 | Helping Hand HQ | Released |
 | HH-CON-002 | Constitutional Framework | 1.0 | Helping Hand HQ | Released |
+| HH-CON-NOTE-001 | Constitutional Engineering Note - Foundation Maturity | 1.0 | Helping Hand HQ | Released |
 | HH-CHAR-001 | Helping Hand Character | 1.0 | Helping Hand HQ | Planned |
 | HH-CB-001 | Companion Behaviour | 1.0 | Companion Intelligence | Released |
 | HH-CM-001 | Helping Hand Cognitive Model | 1.0 | Companion Intelligence | Planned |
@@ -42,6 +44,7 @@ The identifier remains constant.
 | HH-ACA-001 | Helping Hand Academy | 1.0 | Helping Hand Academy | Legacy |
 | HH-PROOF-001 | Wave 1 Certification Report | 1.0 | Companion Runtime Engineering | Released |
 | HH-MILESTONE-002 | Certification Baseline 1 - Wave 1 Complete | 1.0 | Companion Runtime Engineering | Released |
+| HH-MILESTONE-010 | First Constitutional Validation | 1.0 | Institution | Active |
 | HH-THEORY-001 | Theory Library README | 1.0 | Theory | Released |
 | HH-THEORY-002 | Theory Map | 1.0 | Theory | Released |
 | HH-THEORY-003 | Theory Synthesis | 1.0 | Theory | Released |
@@ -52,6 +55,7 @@ The identifier remains constant.
 | HH-INSTITUTION-004 | The Purpose of Evidence | 1.0 | Institution | Released |
 | EP-000 | Engineering Principles Foundation | 1.0 | Engineering | Released |
 | EP-001 | Engineering Principle 001 - Never Claim Unearned Evidence | 1.0 | Engineering | Released |
+| EP-002 | Engineering Principle 002 - Traceable Decisions | 1.0 | Engineering | Released |
 | ED-001 | Engineering Directive 001 - Transition from Foundation Engineering to Evidence Engineering | 1.0 | Engineering | Active |
 | EED-001 | Engineering Execution Directive 001 - Execute HOER-0002 - First Live Human Outcome Validation | 1.0 | Engineering | Active |
 
@@ -63,6 +67,11 @@ The identifier remains constant.
 |-------|------|--------|-------------|
 | Understanding Engine | UNDERSTANDING_ENGINE.md | Proposed | Defines how Helping Hand connects knowledge, context and experience to support judgement |
 | Andy Reasoning Engine | ANDY_REASONING_ENGINE.md | Proposed | Defines the reasoning architecture used to derive and justify capability decisions from foundation principles |
+| Canonical Reasoning Record | CANONICAL-REASONING-RECORD.md | Proposed | Defines the smallest canonical reasoning record for one continuous reasoning lifecycle |
+| Reasoning Record Field Map | REASONING-RECORD-FIELD-MAP.md | Proposed | Maps current runtime objects into the canonical reasoning record |
+| Reasoning Lifecycle | REASONING-LIFECYCLE.md | Proposed | Defines the lifecycle states for the canonical reasoning record |
+| Reasoning Record Migration Plan | REASONING-RECORD-MIGRATION-PLAN.md | Proposed | Outlines the migration path from overlapping runtime objects to a canonical record |
+| Reasoning Record Risk Assessment | REASONING-RECORD-RISK-ASSESSMENT.md | Proposed | Assesses the architectural risks of the canonical reasoning record approach |
 | Digital Colleague Companion Build Blueprint | DIGITAL-COLLEAGUE-COMPANION-BUILD-BLUEPRINT.md | Proposed | Practical implementation blueprint for translating companion architecture into build sequence |
 
 ---

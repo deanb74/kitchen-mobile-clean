@@ -40,6 +40,10 @@ Professional Intelligence may specialise outcomes.
 
 It may not alter inherited character, constitutional duty or governance behavior.
 
+Professional Intelligence is governed by Industry HQ.
+
+Industry HQ is responsible for maintaining professional knowledge, interpreting industry change and distributing governed capability to every relevant Digital Colleague.
+
 ---
 
 # Professional Boundary Contract

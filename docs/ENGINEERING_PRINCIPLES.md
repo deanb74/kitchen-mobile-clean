@@ -184,6 +184,32 @@ Not accumulation.
 
 ---
 
+# Safe Scaling Doctrine
+
+Helping Hand scales safely through this engineering lifecycle:
+
+Validate before rollout.
+
+Govern before inheritance.
+
+Inherit before duplication.
+
+Trace before change.
+
+Lifecycle:
+
+Validate
+        ↓
+Govern
+        ↓
+Inherit
+        ↓
+Trace
+        ↓
+Improve
+
+---
+
 # Closing Principle
 
 Good engineering is invisible.

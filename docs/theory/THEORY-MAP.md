@@ -139,6 +139,18 @@ Capabilities that do not improve what happens between people should not enter sh
 
 ---
 
+## Candidate Extension: Lessons
+
+The repository also contains evidence for a candidate concept of Lesson between reflection and memory.
+
+This is not yet a fully established universal stage in the core chain. It is best treated as a candidate extension that helps explain how reflected learning becomes reusable memory.
+
+Supporting documents:
+
+- [HH-THEORY-016 - Lessons](HH-THEORY-016-LESSONS.md)
+- [THEORY-016-EVIDENCE.md](THEORY-016-EVIDENCE.md)
+- [THEORY-016-ASSESSMENT.md](THEORY-016-ASSESSMENT.md)
+
 ## Enduring Foundation Signals
 
 The map is reinforced by a small set of enduring signals:

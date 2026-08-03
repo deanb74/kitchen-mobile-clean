@@ -13,10 +13,12 @@ This library is the permanent knowledge repository for the Helping Hand platform
 - [Operational Execution Plan 001](OPERATIONAL_EXECUTION_PLAN_001.md)
 - [Helping Hand Organisational Operating Model](architecture/HELPING_HAND_ORGANISATIONAL_OPERATING_MODEL.md)
 - [Helping Hand Governance Framework](architecture/HELPING_HAND_GOVERNANCE_FRAMEWORK.md)
+- [Repository Traceability Standard](architecture/REPOSITORY_TRACEABILITY_STANDARD.md)
 - [Helping Hand Standards Lifecycle](architecture/HELPING_HAND_STANDARDS_LIFECYCLE.md)
 - [Helping Hand Ratification Process](architecture/HELPING_HAND_RATIFICATION_PROCESS.md)
 - [Helping Hand Architecture Review Board](architecture/HELPING_HAND_ARCHITECTURE_REVIEW_BOARD.md)
 - [The Organisation](THE_ORGANISATION.md)
+- [Board and Stewardship](organisation/BOARD_AND_STEWARDSHIP.md)
 - [Companion Intelligence Architecture](architecture/COMPANION_INTELLIGENCE_ARCHITECTURE.md)
 - [Human and People Intelligence (HIPI)](architecture/HUMAN_AND_PEOPLE_INTELLIGENCE_HIPI.md)
 - [Digital Colleague Architecture](architecture/DIGITAL_COLLEAGUE_ARCHITECTURE.md)
@@ -27,6 +29,7 @@ This library is the permanent knowledge repository for the Helping Hand platform
 
 - [Volume VIII - Opening](handovers/VOLUME_VIII_OPENING_GRADUATION.md)
 - [Volume VIII - Operational Commitment](handovers/VOLUME_VIII_OPERATIONAL_COMMITMENT.md)
+- [Volume VIII - Exit Criteria](handovers/VOLUME_VIII_EXIT_CRITERIA.md)
 - [Operational Execution Plan 001](OPERATIONAL_EXECUTION_PLAN_001.md)
 - [Graduation Test 001 - Academy Readiness and Annie Graduation](academy/graduation/GRADUATION_TEST_001_ANNIE.md)
 - [Formation Test 001 - Andy School of Formation](academy/formation/FORMATION_TEST_001_ANDY_SCHOOL_OF_FORMATION.md)
@@ -46,6 +49,11 @@ This library is the permanent knowledge repository for the Helping Hand platform
 - [Milestone 006 - Governed Institutional Architecture](milestones/MILESTONE_006_GOVERNED_INSTITUTIONAL_ARCHITECTURE.md)
 - [Milestone 007 - Beginning of the Evidence Era](milestones/MILESTONE_007_BEGINNING_OF_THE_EVIDENCE_ERA.md)
 - [Milestone 008 - Institutional Reproducibility](milestones/MILESTONE_008_INSTITUTIONAL_REPRODUCIBILITY.md)
+- [Milestone 009 - Inheritance Validation](milestones/MILESTONE_009_INHERITANCE_VALIDATION.md)
+- [Milestone 010 - First Constitutional Validation](milestones/MILESTONE_010_FIRST_CONSTITUTIONAL_VALIDATION.md)
+- [Milestone 011 - Repository Grounded Reasoning](milestones/MILESTONE_011_REPOSITORY_GROUNDED_REASONING.md)
+- [Milestone 011 - Pipeline Verification Protocol](milestones/MILESTONE_011_PIPELINE_VERIFICATION_PROTOCOL.md)
+- [Milestone 011 - Implementation Operating Rule](milestones/MILESTONE_011_IMPLEMENTATION_OPERATING_RULE.md)
 
 ## Institution
 
@@ -64,6 +72,8 @@ This library is the permanent knowledge repository for the Helping Hand platform
 - [Engineering Principles Library](engineering/README.md)
 - [EP-000 - Engineering Principles Foundation](ENGINEERING_PRINCIPLES.md)
 - [EP-001 - Never Claim Unearned Evidence](engineering/ENGINEERING_PRINCIPLE_001.md)
+- [EP-002 - Traceable Decisions](engineering/ENGINEERING_PRINCIPLE_002_TRACEABLE_DECISIONS.md)
+- [HH-ENG-001 - Validation Philosophy](engineering/VALIDATION_PHILOSOPHY.md)
 - [ED-001 - Transition from Foundation Engineering to Evidence Engineering](engineering/ENGINEERING_DIRECTIVE_001.md)
 - [EED-001 - Execute HOER-0002 - First Live Human Outcome Validation](engineering/ENGINEERING_EXECUTION_DIRECTIVE_001.md)
 

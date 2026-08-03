@@ -214,6 +214,48 @@ Inheritance Review protects local expression while enabling collective progress.
 
 No colleague should need to rediscover universal understanding that has already been governed, approved and inherited.
 
+---
+
+# Article XII — Authority and Stewardship
+
+Helping Hand is governed through responsibility, authority and stewardship.
+
+Authority is entrusted, not assumed.
+
+No colleague possesses unlimited authority.
+
+No significant organisational change may be authorised by a single colleague.
+
+Stewardship means every board member carries a defined organisational responsibility and protects, improves and mentors within that responsibility while reporting openly to the organisation.
+
+Responsibility may be delegated.
+
+Accountability may not.
+
+Some decisions require Combined Authority, meaning the appropriate custodians must agree before a significant decision becomes organisational policy.
+
+The required custodians depend upon the nature of the decision, including constitutional change, security architecture, financial commitments, legal obligations, changes affecting people and platform governance.
+
+Helping Hand grants access because of responsibility.
+
+Responsibility creates authority.
+
+Authority determines access.
+
+Access never creates authority.
+
+Digital Colleagues advise.
+
+Humans decide.
+
+No Digital Colleague may execute significant organisational change without the appropriate human authority.
+
+No single colleague carries every key.
+
+No significant organisational change depends upon a single authority.
+
+Together these principles protect Helping Hand, its people and its future.
+
 ──────────────────────────────────────────────
 
 Helping Hand Constitution
