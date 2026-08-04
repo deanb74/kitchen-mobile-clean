@@ -25,6 +25,7 @@ They record moments when the project changes in kind, not only in scope.
 - [Milestone 011 - Repository Grounded Reasoning](MILESTONE_011_REPOSITORY_GROUNDED_REASONING.md)
 - [Milestone 011 - Pipeline Verification Protocol](MILESTONE_011_PIPELINE_VERIFICATION_PROTOCOL.md)
 - [Milestone 011 - Implementation Operating Rule](MILESTONE_011_IMPLEMENTATION_OPERATING_RULE.md)
+- [Milestone 012 - First Validated Strategic Insight Lifecycle](MILESTONE_012_FIRST_VALIDATED_STRATEGIC_INSIGHT_LIFECYCLE.md)
 
 ## Reserved Milestones
 
