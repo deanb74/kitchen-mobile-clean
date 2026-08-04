@@ -109,7 +109,7 @@ The Strategic Insights Register is:
 | SIR-003 | Automatic Fridge and Freezer Temperatures | Hardware & IoT | Founder Discussion | Medium | Captured | Founder | SIR review | Manual temperature workflow and equipment model validated in live operation |
 | SIR-004 | Website as the Digital Colleague | Customer Experience | Founder Discussion | High | Captured | Founder | SIR review | Andy and customer-facing Digital Colleague model have sufficient maturity |
 | SIR-005 | Voice-Led Venue Onboarding | Human Interaction | Founder Discussion | Medium | Captured | Founder | SIR review | Context Engine and venue-knowledge capture are sufficiently reliable |
-| SIR-006 | Age-Appropriate and Person-Appropriate Communication | Context Engine | Founder Discussion | High | Captured | Founder | SIR review | Context Engine communication-profile work begins |
+| SIR-006 | Age-Appropriate and Person-Appropriate Communication | Context Engine | Founder Discussion | High | Under Review | Founder | Run Andy/MARC Understanding Journey — Person Before Words (UJ-HUM-011) | Context Engine communication-profile work begins |
 | SIR-007 | Staff-Controlled Customer Conversation Handover | Human Interaction | Founder Discussion | High | Captured | Founder | SIR review | Human authority, consent and safeguarding architecture are mature |
 | SIR-008 | Helping Hand Beyond the Clock | Human Interaction | Founder Discussion | Medium | Captured | Founder | SIR review | Human-support boundaries and emotional-intelligence governance are validated |
 | SIR-009 | Emotional Intelligence as a Shared Capability | Companion Intelligence | Founder Discussion | High | Captured | Founder | SIR review | Context, judgement and human-support models ready for governed extension |
@@ -284,7 +284,9 @@ The Strategic Insights Register is:
 
 **Review Trigger:** Context Engine communication-profile work begins.
 
-**Current Status:** Captured
+**Current Status:** Under Review
+
+**Lifecycle Note:** Selected as the first SIR lifecycle exercise because it can be demonstrated through an Andy/MARC Understanding Journey before any software implementation. Understanding Journey UJ-HUM-011 (Person Before Words) provides the first evidence pass. SIR-015 is identified as the parent capability dependency.
 
 ---
 
