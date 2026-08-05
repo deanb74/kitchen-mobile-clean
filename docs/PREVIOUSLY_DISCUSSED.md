@@ -115,6 +115,8 @@ Each entry contains:
 | ID | Title | Date | Status |
 |---|---|---|---|
 | [PD-001](previously-discussed/PD-001.md) | Organisational Model of Companion Intelligence | 2026-08-03 | Candidate |
+| [PD-002](previously-discussed/PD-002-HELPING_HAND_MUST_BE_ORIENTABLE.md) | Helping Hand Must Be Orientable Before It Can Orient Others | 2026-08-04 | Candidate |
+| [PD-003](previously-discussed/PD-003-ANDY_NAVIGATOR_OF_UNDERSTANDING.md) | Andy — Navigator of Understanding | 2026-08-05 | Candidate |
 
 ---
 
