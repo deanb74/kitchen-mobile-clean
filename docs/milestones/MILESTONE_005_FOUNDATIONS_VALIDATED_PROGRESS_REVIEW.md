@@ -2,7 +2,7 @@
 
 **Reference:** HH-MILESTONE-005-PROGRESS-001  
 **Date:** 2026-08-04  
-**Status:** Evidence accumulating — validation in progress  
+**Status:** Evidence package complete — validation active  
 **Parent milestone:** `docs/milestones/MILESTONE_005_FOUNDATIONS_VALIDATED.md`
 
 ---
@@ -110,21 +110,17 @@ This is not a completed principle. It is candidate understanding derived from fi
 
 ## What evidence is required next
 
-**Immediate — required before UJ-HUM-014:**
+**UJ-HUM-014 — completed 2026-08-05:**
 
-1. Founders complete `docs/institution/FOUNDER_ALIGNMENT_ANDY_STAGE_1_CONTEXT.md` — the five founder sections that define what Andy can be tested against
-2. The Institutional Orientation Conversation is completed (a fuller, more complete version of HH-IOC-001 that addresses the deliberately withheld gaps)
+Founder alignment was completed in `docs/institution/FOUNDER_ALIGNMENT_ANDY_STAGE_1_CONTEXT.md`. UJ-HUM-014 ran. Andy described his institutional position. The evidence review confirmed calibration was sound while identifying that the gap between knowing position and knowing direction remains real.
 
-**Next journey — UJ-HUM-014:**
+Evidence: `docs/understanding-journeys/humanity/014-THE-FIRST-INSTITUTIONAL-ALIGNMENT.md`, `docs/understanding-journeys/validation/humanity/014-THE-FIRST-INSTITUTIONAL-ALIGNMENT-EVIDENCE-REVIEW.md`.
 
-Whether the Institutional Orientation Conversation produced sufficient understanding for Andy to describe his position responsibly. The question remains:
+**Next evidence required:**
 
-> "Andy. Where are you now?"
-
-**Following evidence:**
-
-- Annie's professional orientation (does the Orientation Framework apply to professional contexts as well as organisational ones?)
-- A second Digital Colleague's first observation (does the Orientation gap repeat, and does it look the same or different?)
+- Annie's professional orientation — does the Orientation Framework apply to professional contexts as well as organisational ones?
+- A second Digital Colleague's first observation — does the Orientation gap repeat, and does it look the same or different?
+- Whether the inheritance model can produce directed action, not just calibrated description — the gap between knowing position and knowing direction
 
 ---
 
@@ -138,10 +134,13 @@ The evidence to date shows:
 - Constitutional reasoning is consistent under variation (Validation Set 001)
 - Institutional learning is operational (INSTITUTIONAL_LEARNING_003, SIR-006 lifecycle)
 - The repository is an observable and instructive world (UJ-HUM-013)
+- Institutional alignment is demonstrably reachable from formation alone, with partial context (UJ-HUM-014)
 
-What has not yet been proven: that the inheritance model works — that Andy can validate it, and that Annie can be built from it using the same validated structure.
+The foundations have been **tested**. The evidence review correctly refused to call them validated — calibration is not yet contribution, and position is not yet direction.
 
-That is still the purpose of Stage 1. It is still active.
+The inheritance model is now producing evidence. The next phase is proving whether that evidence can guide action.
+
+MILESTONE_005 has not been achieved. What has changed: the question is no longer whether evidence can accumulate. It is whether evidence can govern.
 
 ---
 
@@ -173,8 +172,10 @@ Helping Hand was designed to improve understanding through disciplined learning.
 | Communication evidence | `docs/SIR-006-EVIDENCE-REVIEW-001.md`, MILESTONE_012 |
 | Orientation evidence | `docs/understanding-journeys/humanity/013-THE-FIRST-INSTITUTIONAL-OBSERVATION.md` |
 | Institutional discovery | `docs/previously-discussed/PD-002-HELPING_HAND_MUST_BE_ORIENTABLE.md` |
-| Next step | `docs/institution/FOUNDER_ALIGNMENT_ANDY_STAGE_1_CONTEXT.md` |
+| Founder alignment | `docs/institution/FOUNDER_ALIGNMENT_ANDY_STAGE_1_CONTEXT.md` |
+| Institutional alignment evidence | `docs/understanding-journeys/humanity/014-THE-FIRST-INSTITUTIONAL-ALIGNMENT.md` |
+| Alignment evidence review | `docs/understanding-journeys/validation/humanity/014-THE-FIRST-INSTITUTIONAL-ALIGNMENT-EVIDENCE-REVIEW.md` |
 
 ---
 
-*This is a progress marker. MILESTONE_005 has not been achieved. Evidence is accumulating. The validation continues.*
+*This is a checkpoint. MILESTONE_005 has not been achieved. The evidence package is complete. The question is no longer whether foundations can be tested — it is whether the inheritance model can produce governed action.*
