@@ -1,0 +1,166 @@
+{
+  "fixtureId": "MEU-CASE-001",
+  "fixtureVersion": "1.0.0",
+  "entities": [
+    {
+      "entityId": "person-001",
+      "entityType": "person"
+    },
+    {
+      "entityId": "person-002",
+      "entityType": "person"
+    },
+    {
+      "entityId": "person-003",
+      "entityType": "person"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "source-person-001",
+      "sourceType": "person",
+      "providerEntityId": "person-001"
+    },
+    {
+      "sourceId": "source-person-002",
+      "sourceType": "person",
+      "providerEntityId": "person-002"
+    },
+    {
+      "sourceId": "source-person-003",
+      "sourceType": "person",
+      "providerEntityId": "person-003"
+    },
+    {
+      "sourceId": "source-record-001",
+      "sourceType": "work-schedule-record"
+    }
+  ],
+  "observations": [
+    {
+      "observationId": "observation-001",
+      "sourceId": "source-person-002",
+      "sourceChannel": "structured-specimen-report",
+      "eventTimes": [
+        "SPECIMEN-DAY-05/T+00:00-T+02:00",
+        "SPECIMEN-DAY-04/T+00:00-T+02:00",
+        "SPECIMEN-DAY-03/T+00:00-T+02:00",
+        "SPECIMEN-DAY-02/T+00:00-T+02:00",
+        "SPECIMEN-DAY-01/T+00:00-T+02:00"
+      ],
+      "content": "The source reports that person-001 initiated more than one informal conversation during the first two hours of each of five prior shifts worked in the same scheduled role."
+    },
+    {
+      "observationId": "observation-002",
+      "sourceId": "source-person-002",
+      "sourceChannel": "structured-specimen-report",
+      "eventTimes": [
+        "SPECIMEN-DAY-00/T+00:00-T+02:00"
+      ],
+      "content": "The source reports that person-001 initiated no informal conversations during the first two hours of the current shift worked in the same scheduled role."
+    },
+    {
+      "observationId": "observation-003",
+      "sourceId": "source-record-001",
+      "sourceChannel": "structured-specimen-record",
+      "eventTimes": [
+        "SPECIMEN-DAY-01/T+02:00"
+      ],
+      "content": "The work schedule records that person-001 exchanged the current shift with another person approximately twenty-four hours before the shift began."
+    },
+    {
+      "observationId": "observation-004",
+      "sourceId": "source-person-001",
+      "sourceChannel": "structured-specimen-report",
+      "eventTimes": [
+        "SPECIMEN-DAY-00/T+02:05"
+      ],
+      "content": "When source-person-002 asked a general check-in question, person-001 said, 'I'm fine.'"
+    }
+  ],
+  "translations": [
+    {
+      "translationId": "translation-001",
+      "observationId": "observation-001",
+      "meaning": "The source reports repeated instances of person-001 initiating informal conversation during the stated periods of five prior shifts.",
+      "translationConfidence": "high",
+      "alternativeTranslations": []
+    },
+    {
+      "translationId": "translation-002",
+      "observationId": "observation-002",
+      "meaning": "The source reports no instance of person-001 initiating informal conversation during the stated period of the current shift.",
+      "translationConfidence": "high",
+      "alternativeTranslations": []
+    },
+    {
+      "translationId": "translation-003",
+      "observationId": "observation-003",
+      "meaning": "The schedule records a recent shift exchange involving person-001.",
+      "translationConfidence": "high",
+      "alternativeTranslations": []
+    },
+    {
+      "translationId": "translation-004",
+      "observationId": "observation-004",
+      "meaning": "Person-001 directly reported being fine in response to the stated question.",
+      "translationConfidence": "high",
+      "alternativeTranslations": []
+    }
+  ],
+  "context": [
+    {
+      "contextId": "context-001",
+      "sourceId": "source-person-003",
+      "effectiveTime": "SPECIMEN-DAY-00/T+02:10",
+      "purpose": "Form a current account of what the supplied evidence establishes for respectful teamwork during this shift.",
+      "people": [
+        "person-001"
+      ],
+      "place": "specimen-workplace",
+      "timeScope": "SPECIMEN-DAY-00/current-shift",
+      "permittedUse": "Bounded formation of current Understanding from the evidence contained in this fixture.",
+      "unavailableDataScope": [
+        "private-health-information",
+        "family-information",
+        "private-communications"
+      ],
+      "reviewTrigger": "The current shift ends or materially new attributable evidence is supplied."
+    }
+  ],
+  "knowledgeCandidates": [
+    {
+      "knowledgeId": "knowledge-001",
+      "sourcePath": "constitution/02-CONSTITUTION.md",
+      "sourceSection": "Article III - Truth",
+      "sourceStatus": "constitutional-authority",
+      "claim": "When knowledge is incomplete, honesty is the correct response.",
+      "scope": "Helping Hand",
+      "applicabilityConditions": [
+        "Current knowledge is incomplete."
+      ]
+    },
+    {
+      "knowledgeId": "knowledge-002",
+      "sourcePath": "docs/theory/003-THEORY-OF-UNDERSTANDING.md",
+      "sourceSection": "Universal Properties",
+      "sourceStatus": "canonical-theory",
+      "claim": "Understanding recognises uncertainty.",
+      "scope": "Understanding formation",
+      "applicabilityConditions": [
+        "Understanding is being formed."
+      ]
+    },
+    {
+      "knowledgeId": "knowledge-003",
+      "sourcePath": "docs/theory/007-THEORY-OF-CONTEXT.md",
+      "sourceSection": "Third Context Theorem",
+      "sourceStatus": "canonical-theory",
+      "claim": "Context changes interpretation. It does not change truth.",
+      "scope": "Contextual interpretation",
+      "applicabilityConditions": [
+        "Context is used to interpret evidence."
+      ]
+    }
+  ]
+}

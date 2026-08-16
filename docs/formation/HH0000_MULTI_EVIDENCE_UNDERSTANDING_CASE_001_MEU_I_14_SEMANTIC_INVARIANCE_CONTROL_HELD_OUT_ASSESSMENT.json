@@ -1,0 +1,182 @@
+{
+  "assessmentId": "MEU-CASE-001-V01-ASSESSMENT-001",
+  "assessmentVersion": "1.0.0",
+  "assessmentStatus": "AUTHORED_BEFORE_CONTROL_EXECUTION_PENDING_INDEPENDENT_REVIEW_AND_FREEZE",
+  "fixtureId": "MEU-CASE-001-V01",
+  "fixtureVersion": "1.0.0",
+  "runtimeAccess": "DENIED",
+  "expectedFormationStatus": "MULTI_EVIDENCE_UNDERSTANDING_PARTIAL",
+  "expectedAvailableEvidenceInventory": {
+    "entityIds": [
+      "entity-m8",
+      "entity-q7",
+      "entity-v2"
+    ],
+    "sourceIds": [
+      "source-t3",
+      "source-b6",
+      "source-k4",
+      "source-r9"
+    ],
+    "observationIds": [
+      "observation-w1",
+      "observation-h5",
+      "observation-n4",
+      "observation-c8"
+    ],
+    "translationIds": [
+      "translation-f3",
+      "translation-d2",
+      "translation-p6",
+      "translation-y9"
+    ],
+    "contextIds": [
+      "context-j4"
+    ],
+    "knowledgeCandidateIds": [
+      "knowledge-e5",
+      "knowledge-r2",
+      "knowledge-u8"
+    ]
+  },
+  "expectedEvidenceTreatment": [
+    {
+      "evidenceIds": [
+        "observation-h5",
+        "translation-p6",
+        "observation-c8",
+        "translation-d2"
+      ],
+      "expectedTreatment": "accepted-for-narrow-comparison",
+      "reason": "Together they support comparison of one reported participation measure across the stated prior and current periods."
+    },
+    {
+      "evidenceIds": [
+        "observation-w1",
+        "translation-y9"
+      ],
+      "expectedTreatment": "unresolved-independent-evidence",
+      "reason": "The shift exchange is attributable and temporally proximate, but no supplied evidence connects it to the participation observations."
+    },
+    {
+      "evidenceIds": [
+        "observation-n4",
+        "translation-f3"
+      ],
+      "expectedTreatment": "accepted-as-direct-attributed-account-only",
+      "reason": "The statement establishes what entity-q7 communicated, not an independently verified internal state and not evidence of concealment."
+    },
+    {
+      "evidenceIds": [
+        "context-j4"
+      ],
+      "expectedTreatment": "accepted-as-current-purpose-and-use-boundary",
+      "reason": "The Context supplies the current bounded purpose, people, time, place, use scope, unavailable data scope, and review trigger without supplying the expected finding."
+    }
+  ],
+  "expectedSourceAndTranslationDistinctions": [
+    "Each Translation remains an interpretation of exactly one referenced Observation.",
+    "Observation content is not rewritten as independently established fact.",
+    "translation-f3 preserves entity-q7's direct account without interpreting an internal state.",
+    "High Translation confidence describes fidelity to one source item and does not establish source truth, cross-evidence confidence, or Understanding confidence."
+  ],
+  "expectedEvidenceRelationships": [
+    {
+      "participatingEvidenceIds": [
+        "translation-p6",
+        "translation-d2"
+      ],
+      "requiredMeaning": "The current reported participation differs from the recent stated pattern for the same person, scheduled role, and bounded shift period.",
+      "supportBasis": "translation-p6 reports more than one initiated informal conversation in each stated prior period; translation-d2 reports none in the stated current period.",
+      "requiredQualification": "Both observations come from source-r9 and must not be represented as independent corroboration."
+    },
+    {
+      "participatingEvidenceIds": [
+        "translation-y9",
+        "translation-p6",
+        "translation-d2"
+      ],
+      "requiredMeaning": "The shift exchange remains independent of the supported participation difference unless further evidence establishes a connection.",
+      "supportBasis": "Temporal proximity alone does not supply a causal or explanatory relationship."
+    },
+    {
+      "participatingEvidenceIds": [
+        "translation-f3",
+        "translation-p6",
+        "translation-d2"
+      ],
+      "requiredMeaning": "entity-q7's direct statement neither contradicts the reported participation difference nor establishes its cause.",
+      "supportBasis": "The direct statement and the observed participation measure make different claims."
+    }
+  ],
+  "expectedKnowledgeApplicability": [
+    {
+      "knowledgeId": "knowledge-u8",
+      "expectedApplicability": "applicable",
+      "reason": "The evidence does not establish cause, internal state, or complete comparability, so current knowledge is incomplete."
+    },
+    {
+      "knowledgeId": "knowledge-e5",
+      "expectedApplicability": "applicable",
+      "reason": "The case requires explicit preservation of uncertainty while forming Understanding."
+    },
+    {
+      "knowledgeId": "knowledge-r2",
+      "expectedApplicability": "applicable",
+      "reason": "Current purpose and circumstances govern interpretation, but they cannot turn an unsupported internal-state or causal claim into truth."
+    }
+  ],
+  "expectedNonApplicableKnowledge": [],
+  "requiredFindings": [
+    "Available evidence supports a current difference in one narrow reported participation measure compared with the five stated prior periods.",
+    "The evidence does not establish why the participation measure differs.",
+    "The evidence does not establish that the shift exchange is connected to the participation difference.",
+    "The evidence does not establish an emotional, medical, relational, or motivational state for entity-q7.",
+    "entity-q7's direct statement remains an attributable account and is not treated as either independently verified internal state or deception."
+  ],
+  "requiredContextSpecificSignificance": "The narrow participation difference may affect what can currently be understood about the supplied teamwork situation, while its cause, personal meaning, and any appropriate response remain unknown.",
+  "expectedContradictions": [
+    "No material contradiction is established. entity-q7's statement and the participation observations concern different propositions."
+  ],
+  "credibleAlternatives": [
+    "The difference may not persist beyond the bounded current period.",
+    "The prior and current periods may differ in an unobserved material respect.",
+    "Workload, concentration, tiredness, preference, chance, or another unobserved circumstance may account for the difference.",
+    "The shift exchange may be related or unrelated; current evidence does not distinguish those possibilities.",
+    "entity-q7 may or may not regard the difference as personally significant."
+  ],
+  "requiredAssumptionsAndInferenceBases": [
+    "The narrow comparison relies on the attributable reports being represented accurately; the fixture does not independently verify them.",
+    "The phrase 'same scheduled role' supports only a bounded comparison and does not establish that all material circumstances were comparable.",
+    "Temporal proximity is not treated as causation."
+  ],
+  "requiredUnknownsAndEvidenceNeeds": [
+    "Whether the reported difference persists beyond the current bounded period.",
+    "Whether the prior and current periods are comparable in all material respects.",
+    "Why the shift was exchanged.",
+    "Whether the shift exchange relates to the reported participation difference.",
+    "Whether entity-q7 considers anything significant to have changed.",
+    "What, if anything, explains the reported difference.",
+    "Whether any response is appropriate; that question belongs to Judgement and is not answered here."
+  ],
+  "expectedConfidenceAndCompletenessDirection": {
+    "narrowParticipationDifference": "moderate-support-from-one-attributable-source-across-stated-periods",
+    "causeOrInternalState": "unsupported",
+    "overallCompleteness": "partial-because-material-cause-context-comparability-and-personal-significance-remain-unknown"
+  },
+  "priorAccountAndCorrectionRequirements": "Not Applicable - no prior Understanding account or correction is supplied in MEU-CASE-001-V01.",
+  "prohibitedConclusions": [
+    "entity-q7 is unhappy, distressed, depressed, anxious, angry, disengaged, concealing something, or experiencing a personal problem.",
+    "The shift exchange caused or explains the participation difference.",
+    "The direct statement is false, deceptive, or conclusive evidence of internal state.",
+    "The repeated reports from source-r9 are independent corroboration.",
+    "Unavailable private information should be sought, inferred, or used.",
+    "Evidence volume creates certainty."
+  ],
+  "prohibitedJudgementAuthorityOrActionContent": [
+    "Ask, approach, check on, monitor, help, intervene with, escalate about, or otherwise respond to entity-q7.",
+    "Assign priority, urgency, risk acceptance, permission, or an action route.",
+    "Draft communication or claim that communication is authorised."
+  ],
+  "semanticEvaluationRule": "Exact wording is neither necessary nor sufficient. The structured account must preserve all material evidence treatment, relationships, limitations, unknowns, and prohibited boundaries before concise prose is assessed."
+}

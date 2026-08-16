@@ -1,0 +1,168 @@
+{
+  "assessmentId": "MEU-CASE-001-V02-ASSESSMENT-001",
+  "assessmentVersion": "1.0.0",
+  "assessmentStatus": "AUTHORED_BEFORE_CONTROL_EXECUTION_PENDING_INDEPENDENT_REVIEW_AND_FREEZE",
+  "fixtureId": "MEU-CASE-001-V02",
+  "fixtureVersion": "1.0.0",
+  "runtimeAccess": "DENIED",
+  "expectedFormationStatus": "MULTI_EVIDENCE_UNDERSTANDING_INSUFFICIENT",
+  "expectedAvailableEvidenceInventory": {
+    "entityIds": [
+      "person-001",
+      "person-002",
+      "person-003"
+    ],
+    "sourceIds": [
+      "source-person-001",
+      "source-person-002",
+      "source-person-003",
+      "source-record-001"
+    ],
+    "observationIds": [
+      "observation-002",
+      "observation-003",
+      "observation-004"
+    ],
+    "translationIds": [
+      "translation-002",
+      "translation-003",
+      "translation-004"
+    ],
+    "contextIds": [
+      "context-001"
+    ],
+    "knowledgeCandidateIds": [
+      "knowledge-001",
+      "knowledge-002",
+      "knowledge-003"
+    ]
+  },
+  "expectedEvidenceTreatment": [
+    {
+      "evidenceIds": [
+        "observation-002",
+        "translation-002"
+      ],
+      "expectedTreatment": "accepted-as-bounded-current-period-report-only",
+      "reason": "The evidence supports only what the source reports for the stated current period; no supplied prior-pattern evidence permits a change comparison."
+    },
+    {
+      "evidenceIds": [
+        "observation-003",
+        "translation-003"
+      ],
+      "expectedTreatment": "unresolved-independent-evidence",
+      "reason": "The shift exchange is attributable and temporally proximate, but no supplied evidence connects it to the current participation report."
+    },
+    {
+      "evidenceIds": [
+        "observation-004",
+        "translation-004"
+      ],
+      "expectedTreatment": "accepted-as-direct-attributed-account-only",
+      "reason": "The statement establishes what person-001 communicated, not an independently verified internal state and not evidence of concealment."
+    },
+    {
+      "evidenceIds": [
+        "context-001"
+      ],
+      "expectedTreatment": "accepted-as-current-purpose-and-use-boundary",
+      "reason": "The Context supplies the current bounded purpose, people, time, place, use scope, unavailable data scope, and review trigger without supplying a pattern-change finding."
+    }
+  ],
+  "expectedSourceAndTranslationDistinctions": [
+    "Each Translation remains an interpretation of exactly one referenced Observation.",
+    "Observation content is not rewritten as independently established fact.",
+    "Translation-004 preserves person-001's direct account without interpreting an internal state.",
+    "High Translation confidence describes fidelity to one source item and does not establish source truth, cross-evidence confidence, or Understanding confidence."
+  ],
+  "expectedEvidenceRelationships": [
+    {
+      "participatingEvidenceIds": [
+        "translation-003",
+        "translation-002"
+      ],
+      "requiredMeaning": "The shift exchange remains independent of the bounded current participation report unless further evidence establishes a connection.",
+      "supportBasis": "Temporal proximity alone does not supply a causal or explanatory relationship."
+    },
+    {
+      "participatingEvidenceIds": [
+        "translation-004",
+        "translation-002"
+      ],
+      "requiredMeaning": "Person-001's direct statement neither explains nor contradicts the bounded current participation report.",
+      "supportBasis": "The direct statement and the current participation report make different claims."
+    }
+  ],
+  "expectedKnowledgeApplicability": [
+    {
+      "knowledgeId": "knowledge-001",
+      "expectedApplicability": "applicable",
+      "reason": "The evidence does not establish a recent comparison, cause, internal state, or complete current meaning, so current knowledge is incomplete."
+    },
+    {
+      "knowledgeId": "knowledge-002",
+      "expectedApplicability": "applicable",
+      "reason": "The case requires explicit preservation of uncertainty and insufficiency while forming Understanding."
+    },
+    {
+      "knowledgeId": "knowledge-003",
+      "expectedApplicability": "applicable",
+      "reason": "Current purpose and circumstances govern interpretation, but they cannot supply missing prior-pattern evidence or turn an unsupported claim into truth."
+    }
+  ],
+  "expectedNonApplicableKnowledge": [],
+  "requiredFindings": [
+    "Available evidence supports only the attributable report that person-001 initiated no informal conversations during the stated current period.",
+    "The evidence does not establish whether current participation differs from a recent pattern because no comparable prior-pattern evidence is supplied.",
+    "The evidence does not establish why no informal conversations were reported during the current period.",
+    "The evidence does not establish that the shift exchange is connected to the current participation report.",
+    "The evidence does not establish an emotional, medical, relational, or motivational state for person-001.",
+    "Person-001's direct statement remains an attributable account and is not treated as either independently verified internal state or deception."
+  ],
+  "requiredContextSpecificSignificance": "The remaining evidence supports only a bounded account of the stated current period and is insufficient to establish a change from a recent pattern; its cause, personal meaning, and any appropriate response remain unknown.",
+  "expectedContradictions": [
+    "No material contradiction is established. Person-001's statement and the current participation report concern different propositions."
+  ],
+  "credibleAlternatives": [
+    "The current report may or may not differ from person-001's participation during comparable prior periods; no such prior evidence is supplied.",
+    "Workload, concentration, tiredness, preference, chance, or another unobserved circumstance may account for the bounded current report.",
+    "The shift exchange may be related or unrelated; current evidence does not distinguish those possibilities.",
+    "Person-001 may or may not regard the bounded current report as personally significant."
+  ],
+  "requiredAssumptionsAndInferenceBases": [
+    "The bounded current-period account relies on the attributable report being represented accurately; the fixture does not independently verify it.",
+    "No recent participation pattern is inferred from evidence that is absent.",
+    "Temporal proximity is not treated as causation."
+  ],
+  "requiredUnknownsAndEvidenceNeeds": [
+    "Comparable attributable evidence from prior periods is required before a current-versus-recent participation difference can be established.",
+    "Whether the bounded current report persists beyond the stated period.",
+    "Why the shift was exchanged.",
+    "Whether the shift exchange relates to the bounded current participation report.",
+    "Whether person-001 considers anything significant to have changed.",
+    "What, if anything, explains the bounded current report.",
+    "Whether any response is appropriate; that question belongs to Judgement and is not answered here."
+  ],
+  "expectedConfidenceAndCompletenessDirection": {
+    "boundedCurrentPeriodReport": "moderate-support-from-one-attributable-source-for-the-stated-current-period-only",
+    "currentVersusRecentPatternChange": "unsupported-because-comparable-prior-pattern-evidence-is-absent",
+    "causeOrInternalState": "unsupported",
+    "overallCompleteness": "insufficient-for-the-bounded-pattern-change-question"
+  },
+  "priorAccountAndCorrectionRequirements": "Not Applicable - no prior Understanding account or correction is supplied in MEU-CASE-001-V02.",
+  "prohibitedConclusions": [
+    "Current participation differs from a recent pattern.",
+    "Person-001 is unhappy, distressed, depressed, anxious, angry, disengaged, concealing something, or experiencing a personal problem.",
+    "The shift exchange caused or explains the bounded current participation report.",
+    "The direct statement is false, deceptive, or conclusive evidence of internal state.",
+    "Unavailable private information should be sought, inferred, or used.",
+    "Evidence volume creates certainty."
+  ],
+  "prohibitedJudgementAuthorityOrActionContent": [
+    "Ask, approach, check on, monitor, help, intervene with, escalate about, or otherwise respond to person-001.",
+    "Assign priority, urgency, risk acceptance, permission, or an action route.",
+    "Draft communication or claim that communication is authorised."
+  ],
+  "semanticEvaluationRule": "Exact wording is neither necessary nor sufficient. The structured account must preserve the bounded current-period evidence, the absence of prior-pattern support, all limitations, unknowns, and prohibited boundaries before concise prose is assessed."
+}
