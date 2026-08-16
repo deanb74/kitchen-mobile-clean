@@ -1,8 +1,12 @@
 HELPING HAND MARKDOWN INVENTORY
 ================================
 
-Generated: 2026-08-03T14:21:14.554Z
-Documents: 457
+Generated: 2026-08-10T15:07:11.592Z
+Documents: 659
+
+.github/copilot-instructions.md
+  Title: Helping Hand — Copilot Instructions
+  Headings: 15
 
 ACADEMY-COMPLETION-CLAIMS-REGISTER.md
   Title: Academy Completion Claims Register
@@ -36,6 +40,10 @@ ASR-001-SIMPLIFICATION-CANDIDATES.md
   Title: ASR-001 — Simplification Candidates
   Headings: 27
 
+bootstrap/README.md
+  Title: Mac Bootstrap
+  Headings: 5
+
 BUILDING.md
   Title: Building Helping Hand
   Headings: 5
@@ -47,6 +55,10 @@ CANDIDATE_0_PIPELINE_CHECKPOINT_001.md
 CANDIDATE-0-VALIDATION-STATUS.md
   Title: Candidate 0 Validation Status
   Headings: 4
+
+COMMIT_EXECUTION_REPORT.md
+  Title: COMMIT_EXECUTION_REPORT
+  Headings: 18
 
 COMMIT_PLAN.md
   Title: COMMIT_PLAN
@@ -260,6 +272,46 @@ docs/academy/REFLECTION-RECORD-STANDARD.md
   Title: Reflection Record Standard
   Headings: 14
 
+docs/analysis/INFORMATION_TO_TRUST_MAP.md
+  Title: Information to Trust Map
+  Headings: 41
+
+docs/analysis/SEEK_AS_FIRST_ACT_OF_UNDERSTANDING_ANALYSIS.md
+  Title: Seek as the First Act of Understanding: Repository Analysis
+  Headings: 29
+
+docs/analysis/UNDERSTANDING_FORMATION_ARCHITECTURE_VALIDATION.md
+  Title: Understanding Formation Architecture Validation
+  Headings: 19
+
+docs/analysis/UNDERSTANDING_FORMATION_BOUNDARY_ANALYSIS.md
+  Title: Understanding Formation Boundary Analysis
+  Headings: 26
+
+docs/analysis/UNDERSTANDING_FORMATION_BOUNDARY_VALIDATION.md
+  Title: Understanding Formation Boundary Validation
+  Headings: 27
+
+docs/analysis/UNDERSTANDING_FORMATION_CONTRACT.md
+  Title: Understanding Formation Contract
+  Headings: 26
+
+docs/ANDY_INFORMATION_VS_UNDERSTANDING_TEST.md
+  Title: Andy: Information vs Understanding Test
+  Headings: 25
+
+docs/ANDY_SCENARIO_TEST_COS_BOUNDARY_PROBLEM.md
+  Title: Andy Scenario Test: The COS Boundary Problem
+  Headings: 44
+
+docs/ANDYS_INPUT_REQUIREMENTS_ANALYSIS.md
+  Title: Andy's Input Requirements Analysis: What Allows Understanding to Emerge
+  Headings: 38
+
+docs/ARCHITECTURE_VALIDATION_INPUT_TO_TRUST_MODEL.md
+  Title: Architecture Validation: Input to Trust Model
+  Headings: 25
+
 docs/architecture/ANDY_REASONING_ENGINE.md
   Title: Andy Reasoning Engine
   Headings: 19
@@ -276,6 +328,10 @@ docs/architecture/ANNIE-GRADUATION-AUDIT.md
   Title: Annie Graduation Audit
   Headings: 29
 
+docs/architecture/ARCHITECTURAL_BOUNDARY_REPORT_2026_08_06.md
+  Title: Architectural Boundary Report — Post-Milestones 043–053
+  Headings: 25
+
 docs/architecture/ARCHITECTURE_LIFECYCLE_STANDARD.md
   Title: Architecture Lifecycle Standard
   Headings: 25
@@ -284,9 +340,57 @@ docs/architecture/ARCHITECTURE_PRINCIPLES.md
   Title: Architecture Principles
   Headings: 35
 
+docs/architecture/ARCHITECTURE_STATE_REPORT_POST_PD015.md
+  Title: Architecture State Report — Post PD-017
+  Headings: 17
+
+docs/architecture/BOUNDARY_LITERACY_ACADEMY_INTEGRATION_PROPOSAL_2026_08_07.md
+  Title: Boundary Literacy Academy Integration Proposal
+  Headings: 28
+
+docs/architecture/BOUNDARY_LITERACY_ARCHITECTURE_REVIEW_2026_08_07.md
+  Title: Boundary Literacy Architecture Review
+  Headings: 22
+
+docs/architecture/BOUNDARY_LITERACY_CONSOLIDATION_REVIEW_2026_08_07.md
+  Title: Boundary Literacy Consolidation Review
+  Headings: 10
+
+docs/architecture/BOUNDARY_LITERACY_FORMATION_ALIGNMENT_REVIEW_2026_08_07.md
+  Title: Boundary Literacy Formation Alignment Review
+  Headings: 26
+
+docs/architecture/CANDIDATE_CAPABILITY_APPROPRIATENESS_BOUNDARY.md
+  Title: CANDIDATE — Capability Appropriateness Boundary
+  Headings: 15
+
+docs/architecture/CANDIDATE_CONTEXTSTORE_MEMORY_BOUNDARY_AUDIT.md
+  Title: CANDIDATE — ContextStore Memory Boundary Audit Plan
+  Headings: 12
+
+docs/architecture/CANDIDATE_GOVERNANCE_REVIEWER_BOUNDARY.md
+  Title: CANDIDATE — Governance Reviewer Boundary
+  Headings: 9
+
+docs/architecture/CANDIDATE_INDEPENDENT_REINFORCEMENT_BOUNDARY.md
+  Title: CANDIDATE — Independent Reinforcement Boundary
+  Headings: 12
+
+docs/architecture/CANDIDATE_PRE_GOVERNED_PROTOTYPE_CLEANUP.md
+  Title: CANDIDATE — Pre-Governed Prototype Cleanup
+  Headings: 10
+
 docs/architecture/CANONICAL-REASONING-RECORD.md
   Title: Canonical Reasoning Record
   Headings: 27
+
+docs/architecture/CAPABILITY_BOUNDARY_MAPPING_EXERCISE_2026_08_07.md
+  Title: Capability Boundary Mapping Exercise
+  Headings: 9
+
+docs/architecture/CAPABILITY_ROUTING_ARCHITECTURE_AUDIT_2026_08_07.md
+  Title: Capability Routing Architecture Audit
+  Headings: 13
 
 docs/architecture/capability-audits/REFLECTION_AUDIT.md
   Title: Decision
@@ -298,7 +402,7 @@ docs/architecture/capability-audits/TRANSLATION_AUDIT.md
 
 docs/architecture/CAPABILITY-GRADUATION-STANDARD.md
   Title: Capability Graduation Standard
-  Headings: 14
+  Headings: 22
 
 docs/architecture/CAPABILITY-PROMOTION-REGISTER.md
   Title: Capability Promotion Register
@@ -348,6 +452,10 @@ docs/architecture/CONSTITUTIONAL_FRAMEWORK.md
   Title: Constitutional Framework
   Headings: 17
 
+docs/architecture/CONTEXTSTORE_MEMORY_AUDIT_REPORT_2026_08_06.md
+  Title: ContextStore Memory Boundary Audit Report
+  Headings: 20
+
 docs/architecture/COS_MIGRATION_METHOD.md
   Title: Companion Operating System Migration Method
   Headings: 27
@@ -358,7 +466,7 @@ docs/architecture/DIGITAL_COLLEAGUE_ARCHITECTURE.md
 
 docs/architecture/DIGITAL_COLLEAGUE_COGNITIVE_ARCHITECTURE.md
   Title: Digital Colleague Cognitive Architecture
-  Headings: 47
+  Headings: 49
 
 docs/architecture/DIGITAL_COLLEAGUE_EDUCATION.md
   Title: Digital Colleague Education
@@ -391,6 +499,22 @@ docs/architecture/DOCUMENT_REGISTER.md
 docs/architecture/FIRST-CAPABILITY-PROMOTION.md
   Title: First Capability Promotion
   Headings: 15
+
+docs/architecture/FORMATION_BOUNDARY_LITERACY_INTEGRATION_REVIEW_2026_08_07.md
+  Title: Formation Boundary Literacy Integration Review
+  Headings: 25
+
+docs/architecture/FORMATION_INPUT_OWNERSHIP_MAP.md
+  Title: Formation Input Ownership Map
+  Headings: 29
+
+docs/architecture/GOVERNANCE_ADOPTION_BOUNDARY_CANDIDATE_2026_08_06.md
+  Title: GOVERNANCE_ADOPTION_BOUNDARY_CANDIDATE — Principles Into Practice
+  Headings: 20
+
+docs/architecture/GOVERNANCE_DECISION_QUEUE_2026_08_06.md
+  Title: Governance Decision Queue — 2026-08-06
+  Headings: 11
 
 docs/architecture/GOVERNANCE-CHANGELOG.md
   Title: Governance Changelog
@@ -456,6 +580,10 @@ docs/architecture/HUMAN_AND_PEOPLE_INTELLIGENCE_HIPI.md
   Title: Human and People Intelligence (HIPI)
   Headings: 12
 
+docs/architecture/INTERDEPENDENCE_ARCHITECTURE_AUDIT_2026_08_07.md
+  Title: Interdependence Architecture Audit
+  Headings: 9
+
 docs/architecture/JUDGEMENT_ENGINE.md
   Title: Judgement Engine
   Headings: 67
@@ -499,6 +627,14 @@ docs/architecture/ORGANISATION_LEARNING.md
 docs/architecture/OS-ARCHITECTURAL-INVENTORY.md
   Title: OS Architectural Inventory
   Headings: 9
+
+docs/architecture/PRE_FORMATION_READINESS_GATE_BOUNDARY_ANALYSIS.md
+  Title: Pre-Formation Readiness Gate — Boundary Analysis
+  Headings: 29
+
+docs/architecture/PRE_FORMATION_READINESS_OUTPUT_BOUNDARY_ANALYSIS.md
+  Title: Pre-Formation Readiness Output Boundary Analysis
+  Headings: 30
 
 docs/architecture/PROFESSIONAL_COMPETENCE.md
   Title: Professional Competence
@@ -552,9 +688,37 @@ docs/architecture/UNDERSTANDING_LIFECYCLE.md
   Title: Understanding Lifecycle
   Headings: 17
 
+docs/architecture/UNDERSTANDING_SUFFICIENCY_BOUNDARY_ANALYSIS.md
+  Title: Understanding Sufficiency Boundary Analysis
+  Headings: 35
+
 docs/architecture/UNIVERSAL_AWARENESS.md
   Title: Universal Awareness
   Headings: 17
+
+docs/DEEP_PRINCIPLE_ANALYSIS_RELATIONAL_ALIGNMENT.md
+  Title: Deep Principle Analysis: The Missing Element in the Digital Colleague Lifecycle
+  Headings: 34
+
+docs/DIGITAL_COLLEAGUE_ARCHITECTURE_REVIEW.md
+  Title: Digital Colleague Input Architecture Review
+  Headings: 41
+
+docs/DIGITAL_COLLEAGUE_EXPERIENCE_REQUIREMENTS.md
+  Title: Digital Colleague Experience Requirements: Five Categories Tested
+  Headings: 37
+
+docs/DIGITAL_COLLEAGUE_ORIENTATION_EVIDENCE_REVIEW.md
+  Title: Digital Colleague Orientation — Evidence Review
+  Headings: 18
+
+docs/DIGITAL-COLLEAGUE-ANNIE-ANDY-COMPARISON.md
+  Title: Digital Colleague Lifecycle — Annie vs Andy Comparison
+  Headings: 16
+
+docs/DIGITAL-COLLEAGUE-LIFECYCLE-BOUNDARY-MAP.md
+  Title: Digital Colleague Lifecycle — Inheritance Boundary Map
+  Headings: 9
 
 docs/ENGINEERING_DISCIPLINE.md
   Title: Helping Hand Engineering Discipline
@@ -584,9 +748,21 @@ docs/engineering/README.md
   Title: Engineering Principles Library
   Headings: 6
 
+docs/engineering/TODO-HOER-0002-DETERMINISTIC-TEST.md
+  Title: TODO: Deterministic Test For HOER-0002 Interactive Operation
+  Headings: 4
+
 docs/engineering/VALIDATION_PHILOSOPHY.md
   Title: VALIDATION_PHILOSOPHY
   Headings: 11
+
+docs/EVIDENCE_ANALYSIS_UNIVERSAL_OR_UNIQUE.md
+  Title: Evidence Analysis: Universal Principle or Andy's Unique Story?
+  Headings: 30
+
+docs/EXPERIENCE_ANALYSIS_ORIENTATION_CONTRIBUTION_GAP.md
+  Title: Experience Analysis: What DC Requires Between Orientation and Contribution
+  Headings: 36
 
 docs/formation/00-formation/000-WELCOME.md
   Title: Welcome, Andy.
@@ -906,7 +1082,11 @@ docs/formation/00-formation/FORMATION-RECALL-TRANSCRIPT.md
 
 docs/formation/00-formation/FORMATION-REGISTER.md
   Title: Formation Register
-  Headings: 4
+  Headings: 409
+
+docs/formation/00-formation/HH0000_ANDY_FORMATION_PLAN.md
+  Title: HH-0000 Andy Formation Plan
+  Headings: 26
 
 docs/formation/00-formation/HUMAN_CLARITY_REVIEW_PROTOCOL.md
   Title: HUMAN CLARITY REVIEW PROTOCOL
@@ -1012,6 +1192,182 @@ docs/formation/FORMATION-AUTHORING-STANDARD.md
   Title: Formation Authoring Standard
   Headings: 17
 
+docs/formation/HH0000_ANDY_FIRST_BOUNDED_LIVE_FORMATION_CONVERSATION_RECORD_001.md
+  Title: HH-0000 Andy First Bounded Live Formation Conversation Record 001
+  Headings: 23
+
+docs/formation/HH0000_ANDY_FIRST_LIVE_FORMATION_CONVERSATION_MINIMUM_RUNTIME_ADDITION.md
+  Title: HH-0000 Andy First Live Formation Conversation Minimum Runtime Addition
+  Headings: 42
+
+docs/formation/HH0000_ANDY_FIRST_LIVE_FORMATION_CONVERSATION_RUNTIME_CAPABILITY_MAPPING.md
+  Title: HH-0000 Andy First Live Formation Conversation Runtime Capability Mapping
+  Headings: 31
+
+docs/formation/HH0000_ANDY_FIRST_LIVE_FORMATION_CONVERSATION_TECHNICAL_EXECUTION_PLAN.md
+  Title: HH-0000 Andy First Live Formation Conversation Technical Execution Plan
+  Headings: 38
+
+docs/formation/HH0000_ANDY_FIRST_LIVE_FORMATION_CONVERSATION.md
+  Title: HH-0000 Andy First Live Formation Conversation
+  Headings: 26
+
+docs/formation/HH0000_ANDY_FORMATION_STAGE_1_ROLE_AND_RELATIONSHIP.md
+  Title: HH-0000 Andy Formation Stage 1: Role and Relationship
+  Headings: 26
+
+docs/formation/HH0000_ANDY_FORMATION_STATUS.md
+  Title: HH-0000 Andy Formation Status
+  Headings: 26
+
+docs/formation/HH0000_ANDY_RUNTIME_EVIDENCE_AUDIT.md
+  Title: HH-0000 Andy Runtime Evidence Audit
+  Headings: 43
+
+docs/formation/HH0000_COMMON_SENSE_EMERGENCE_EVIDENCE_ASSESSMENT.md
+  Title: HH-0000 Common Sense Emergence Evidence Assessment
+  Headings: 49
+
+docs/formation/HH0000_CONTEXT_DOOR_AUTHORITY_INHERITANCE_ASSESSMENT.md
+  Title: HH-0000 Context Door Authority Inheritance Assessment
+  Headings: 25
+
+docs/formation/HH0000_CONTEXT_DOOR_CORRECTED_REDELIVERY_RUNTIME_MISMATCH_REENTRY_REVIEW.md
+  Title: HH-0000 Context Door Corrected-Redelivery Runtime Mismatch Re-entry Review
+  Headings: 19
+
+docs/formation/HH0000_CONTEXT_DOOR_EVIDENCE_SPECIMEN_COMPANION_INTELLIGENCE_BOUNDARY_REVIEW.md
+  Title: HH-0000 Context Door Evidence Specimen Companion Intelligence Boundary Review
+  Headings: 54
+
+docs/formation/HH0000_CONTEXT_DOOR_EVIDENCE_SPECIMEN.md
+  Title: HH-0000 Context Door Evidence Specimen
+  Headings: 47
+
+docs/formation/HH0000_CONTEXT_DOOR_FINAL_PRE_IMPLEMENTATION_GATE_ASSESSMENT.md
+  Title: HH-0000 Context Door Final Pre-Implementation Gate Assessment
+  Headings: 36
+
+docs/formation/HH0000_CONTEXT_DOOR_GATE_03_04_TEMPORAL_EVIDENCE_REASSESSMENT.md
+  Title: HH-0000 Context Door GATE-03 and GATE-04 Temporal Evidence Reassessment
+  Headings: 10
+
+docs/formation/HH0000_CONTEXT_DOOR_GATE_REVIEW_RECORD.md
+  Title: HH-0000 Context Door Gate Review Record
+  Headings: 20
+
+docs/formation/HH0000_CONTEXT_DOOR_GOVERNANCE_DECISION.md
+  Title: HH-0000 Context Door Governance Decision
+  Headings: 33
+
+docs/formation/HH0000_CONTEXT_DOOR_HONEST_UNKNOWN_RUNTIME_MISMATCH_REENTRY_REVIEW.md
+  Title: HH-0000 Context Door Honest-Unknown Runtime Mismatch Re-entry Review
+  Headings: 14
+
+docs/formation/HH0000_CONTEXT_DOOR_PARTIAL_UNDERSTANDING_COMBINED_AUTHORITY_REVIEW.md
+  Title: HH-0000 Context Door Partial Understanding Combined Authority Review
+  Headings: 29
+
+docs/formation/HH0000_CONTEXT_DOOR_PARTIAL_UNDERSTANDING_EVIDENCE_REVIEW.md
+  Title: HH-0000 Context Door Partial Understanding Evidence Review
+  Headings: 34
+
+docs/formation/HH0000_CONTEXT_DOOR_PRE_IMPLEMENTATION_EVIDENCE_PACKAGE.md
+  Title: HH-0000 Context Door Pre-Implementation Evidence Package
+  Headings: 32
+
+docs/formation/HH0000_CONTEXT_DOOR_PRE_IMPLEMENTATION_GATE_GAP_ASSESSMENT.md
+  Title: HH-0000 Context Door Pre-Implementation Gate Gap Assessment
+  Headings: 25
+
+docs/formation/HH0000_CONTEXT_DOOR_PRE_IMPLEMENTATION_GATE.md
+  Title: HH-0000 Context Door Pre-Implementation Gate
+  Headings: 27
+
+docs/formation/HH0000_CONTEXT_DOOR_VERSION_1_RUNTIME_EVIDENCE_REVIEW.md
+  Title: HH-0000 Context Door Version 1 Runtime Evidence Review
+  Headings: 20
+
+docs/formation/HH0000_CONTEXT_TO_RELATIONAL_INQUIRY_TRANSFORMATION_BOUNDED_ARCHITECTURE_AND_EXPECTED_EVIDENCE_REVIEW.md
+  Title: HH-0000 Context-to-Relational-Inquiry Transformation Bounded Architecture and Expected-Evidence Review
+  Headings: 88
+
+docs/formation/HH0000_CONTEXT_TO_RELATIONAL_INQUIRY_TRANSFORMATION_COMBINED_AUTHORITY_REVIEW.md
+  Title: HH-0000 Context-to-Relational-Inquiry Transformation Combined Authority Review
+  Headings: 36
+
+docs/formation/HH0000_CONTEXT_TO_RELATIONAL_INQUIRY_TRANSFORMATION_CONTROLLED_EXPERIMENT_EVIDENCE.md
+  Title: HH-0000 Context-to-Relational-Inquiry Transformation Controlled Experiment Evidence
+  Headings: 23
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_BOUNDED_ARCHITECTURE_AND_EXPECTED_EVIDENCE_REVIEW.md
+  Title: HH-0000 Multi-Evidence Understanding Bounded Architecture and Expected-Evidence Review
+  Headings: 97
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_BOUNDED_IMPLEMENTATION_READINESS_REVIEW.md
+  Title: HH-0000 Multi-Evidence Understanding Case 001 Bounded Implementation Readiness Review
+  Headings: 57
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_CONTROL_VARIANT_DESIGN_COMBINED_AUTHORITY_REVIEW.md
+  Title: HH-0000 Multi-Evidence Understanding Case 001 Control Variant Design Combined Authority Review
+  Headings: 29
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_CONTROL_VARIANT_DESIGN_REVIEW.md
+  Title: HH-0000 Multi-Evidence Understanding Case 001 Control Variant Design Review
+  Headings: 42
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_FIXTURE_VALIDITY_INPUT_INTEGRITY_AND_ISOLATION_REVIEW.md
+  Title: HH-0000 Multi-Evidence Understanding Case 001 Fixture Validity, Input Integrity and Isolation Review
+  Headings: 46
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_IMPLEMENTATION_EVIDENCE_DESIGN_COMBINED_AUTHORITY_REVIEW_V2.md
+  Title: HH-0000 Multi-Evidence Understanding Case 001 Implementation Evidence Design Combined Authority Review v2
+  Headings: 28
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_IMPLEMENTATION_EVIDENCE_DESIGN_COMBINED_AUTHORITY_REVIEW.md
+  Title: HH-0000 Multi-Evidence Understanding Case 001 Implementation Evidence Design Combined Authority Review
+  Headings: 40
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_IMPLEMENTATION_EVIDENCE_DESIGN_REVIEW.md
+  Title: HH-0000 Multi-Evidence Understanding Case 001 Implementation Evidence Design Review
+  Headings: 61
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_IMPLEMENTATION_EVIDENCE_REVIEW.md
+  Title: HH-0000 Multi-Evidence Understanding Case 001 Implementation Evidence Review
+  Headings: 33
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_COMBINED_AUTHORITY_REVIEW.md
+  Title: HH-0000 Multi-Evidence Understanding Combined Authority Review
+  Headings: 36
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_EVIDENCE_PACKAGE.md
+  Title: HH-0000 Multi-Evidence Understanding Evidence Package
+  Headings: 57
+
+docs/formation/HH0000_RELATIONAL_UNDERSTANDING_CONTROLLED_EXPERIMENT_EVIDENCE.md
+  Title: HH-0000 Relational Understanding Controlled Experiment Evidence
+  Headings: 25
+
+docs/formation/HH0000_RELATIONAL_UNDERSTANDING_POST_EXPERIMENT_COMBINED_AUTHORITY_EVIDENCE_REVIEW.md
+  Title: HH-0000 Relational Understanding Post-Experiment Combined Authority Evidence Review
+  Headings: 29
+
+docs/formation/HH0000_RELATIONAL_UNDERSTANDING_PRE_IMPLEMENTATION_COMBINED_AUTHORITY_REVIEW.md
+  Title: HH-0000 Relational Understanding Pre-Implementation Combined Authority Review
+  Headings: 28
+
+docs/formation/HH0000_RELATIONAL_UNDERSTANDING_PRE_IMPLEMENTATION_EVIDENCE_PACKAGE.md
+  Title: HH-0000 Relational Understanding Pre-Implementation Evidence Package
+  Headings: 78
+
+docs/formation/HH0000_UNDERSTANDING_RESPONSIBILITY_BOUNDED_ARCHITECTURE_CONFIRMATION.md
+  Title: HH-0000 Understanding Responsibility - Bounded Architecture Confirmation
+  Headings: 42
+
+docs/formation/HH0000_UNDERSTANDING_RESPONSIBILITY_IMPLEMENTATION_READINESS_REVIEW.md
+  Title: HH-0000 Understanding Responsibility Implementation Readiness Review
+  Headings: 41
+
 docs/formation/MARC-MENTORING-PRINCIPLES.md
   Title: MARC Mentoring Principles
   Headings: 15
@@ -1023,6 +1379,14 @@ docs/formation/README.md
 docs/FOUNDATION_SUMMARY.md
   Title: Helping Hand Foundation Summary
   Headings: 14
+
+docs/FOUNDATIONAL_LANGUAGE_CAPABILITY_HYPOTHESIS.md
+  Title: Foundational Language Capability Hypothesis
+  Headings: 16
+
+docs/FOUNDER_ALIGNMENT_REVIEW_001.md
+  Title: FOUNDER_ALIGNMENT_ANDY_STAGE_1_CONTEXT — Review Report
+  Headings: 9
 
 docs/FOUNDING_BOARD_CYRIL.md
   Title: Cyril
@@ -1096,6 +1460,10 @@ docs/HELPING_HAND_ORGANISATION.md
   Title: Helping Hand Organisation
   Headings: 1
 
+docs/HELPING_HAND_RESOURCE_CENTRE_HYPOTHESIS.md
+  Title: Helping Hand Resource Centre Hypothesis
+  Headings: 14
+
 docs/HH-CON-003.md
   Title: HH-CON-003
   Headings: 6
@@ -1111,6 +1479,10 @@ docs/induction/WELCOME_TO_HELPING_HAND.md
 docs/INFRASTRUCTURE/PLATFORM_ROADMAP.md
   Title: Helping Hand Platform Roadmap
   Headings: 7
+
+docs/INPUT_SOURCES_FOR_DIGITAL_COLLEAGUE_EXPERIENCE.md
+  Title: Input Sources for Digital Colleague Experience: What Enables Each Category
+  Headings: 60
 
 docs/institution/001-THE-BEGINNING-OF-INSTITUTIONAL-MATURITY.md
   Title: HH-INSTITUTION-001 - The Beginning of Institutional Maturity
@@ -1128,6 +1500,26 @@ docs/institution/decisions/INSTITUTIONAL_DECISION_001.md
   Title: INSTITUTIONAL_DECISION_001
   Headings: 14
 
+docs/institution/DIGITAL_COLLEAGUE_ORIENTATION_FRAMEWORK.md
+  Title: Digital Colleague Orientation Framework
+  Headings: 21
+
+docs/institution/FOUNDER_ALIGNMENT_ANDY_STAGE_1_CONTEXT.md
+  Title: Founder Alignment — Andy Stage 1 Context
+  Headings: 13
+
+docs/institution/FOUNDER_ALIGNMENT_COMPLETION_GUIDANCE_REVIEW.md
+  Title: Founder Alignment Completion Guidance
+  Headings: 13
+
+docs/institution/INSTITUTIONAL_ORIENTATION_CONVERSATION_001.md
+  Title: Institutional Orientation Conversation 001
+  Headings: 10
+
+docs/institution/INSTITUTIONAL_ORIENTATION_CONVERSATION_INVESTIGATION.md
+  Title: Institutional Orientation Conversation — Investigation
+  Headings: 20
+
 docs/institution/README.md
   Title: Helping Hand Institution Library
   Headings: 6
@@ -1139,6 +1531,10 @@ docs/institution/reviews/INSTITUTIONAL_REVIEW_001.md
 docs/INSTITUTIONAL_OPERATING_MODEL.md
   Title: Institutional Operating Model
   Headings: 15
+
+docs/INSTITUTIONAL_ORIENTATION_CONVERSATION_INVESTIGATION.md
+  Title: Institutional Orientation Conversation — Investigation
+  Headings: 8
 
 docs/milestones/CANDIDATE_0_RUNTIME_BASELINE_001.md
   Title: CANDIDATE_0_RUNTIME_BASELINE_001
@@ -1171,6 +1567,10 @@ docs/milestones/MILESTONE_003_THEORY_DRIVEN_ARCHITECTURE_METHOD.md
 docs/milestones/MILESTONE_004_ORGANISATION_BEFORE_PLATFORM.md
   Title: Milestone 004 — Organisation Before Platform
   Headings: 5
+
+docs/milestones/MILESTONE_005_FOUNDATIONS_VALIDATED_PROGRESS_REVIEW.md
+  Title: Milestone 005 — Foundations Validated: Progress Review
+  Headings: 14
 
 docs/milestones/MILESTONE_005_FOUNDATIONS_VALIDATED.md
   Title: Milestone 005 — Foundations Validated
@@ -1232,9 +1632,245 @@ docs/milestones/MILESTONE_011_REPOSITORY_GROUNDED_REASONING.md
   Title: MILESTONE_011_REPOSITORY_GROUNDED_REASONING.md
   Headings: 16
 
+docs/milestones/MILESTONE_012_FIRST_VALIDATED_STRATEGIC_INSIGHT_LIFECYCLE.md
+  Title: Milestone 012 — First Validated Strategic Insight Lifecycle
+  Headings: 6
+
+docs/milestones/MILESTONE_013_UNDERSTANDING_FORMATION_BOUNDARY_ESTABLISHED.md
+  Title: Milestone 013 — Understanding Formation Boundary Established
+  Headings: 14
+
+docs/milestones/MILESTONE_014_FORMATION_INPUT_ASSEMBLY_BOUNDARY.md
+  Title: Milestone 014 — Formation Input Assembly Boundary
+  Headings: 29
+
+docs/milestones/MILESTONE_014_UNDERSTANDING_FORMATION_INPUT_BOUNDARY_ANALYSIS.md
+  Title: Milestone 014 — Understanding Formation Input Boundary Analysis
+  Headings: 60
+
+docs/milestones/MILESTONE_015_FORMATION_INPUT_OWNERSHIP_BOUNDARY.md
+  Title: Milestone 015 — Formation Input Ownership Boundary
+  Headings: 13
+
+docs/milestones/MILESTONE_017_UNDERSTANDING_FORMATION_INPUT_PIPELINE_ESTABLISHED.md
+  Title: Milestone 017 — Understanding Formation Input Pipeline Established
+  Headings: 9
+
+docs/milestones/MILESTONE_018_CANDIDATE_UNDERSTANDING_SUFFICIENCY_BOUNDARY.md
+  Title: Milestone 018 Candidate — Understanding Sufficiency and Curiosity Boundary Analysis
+  Headings: 8
+
+docs/milestones/MILESTONE_019_PREFORMATION_READINESS_GATE_ESTABLISHED.md
+  Title: Milestone 019 — Pre-Formation Readiness Gate Established
+  Headings: 16
+
+docs/milestones/MILESTONE_020_CANDIDATE_ANDY_FORMATION_VALIDATION.md
+  Title: Milestone 020 Candidate — Andy Formation Validation
+  Headings: 17
+
+docs/milestones/MILESTONE_021_CANDIDATE_ANDY_BOUNDARY_RESOLUTION_ANALYSIS.md
+  Title: Milestone 021 — Andy Boundary Resolution Analysis
+  Headings: 34
+
+docs/milestones/MILESTONE_022_CANDIDATE_ANDY_FORMATION_IMPLEMENTATION_BOUNDARY.md
+  Title: Milestone 022 Candidate — Andy Formation Implementation Boundary
+  Headings: 30
+
+docs/milestones/MILESTONE_023_ANDY_FORMATION_VALIDATION_ESTABLISHED.md
+  Title: Milestone 023 — Andy Formation Validation Established
+  Headings: 13
+
+docs/milestones/MILESTONE_023_FOUNDATION_REVIEW.md
+  Title: Milestone 023 — Foundation Review
+  Headings: 14
+
+docs/milestones/MILESTONE_024_CANDIDATE_LEARNING_GOVERNANCE_BOUNDARY_ANALYSIS.md
+  Title: Milestone 024 Candidate — Learning Governance Boundary Analysis
+  Headings: 24
+
+docs/milestones/MILESTONE_025_CANDIDATE_KNOWLEDGE_INHERITANCE_GOVERNANCE_BOUNDARY.md
+  Title: Milestone 025 Candidate — Knowledge Inheritance Governance Boundary
+  Headings: 26
+
+docs/milestones/MILESTONE_026_CANDIDATE_LEARNING_GOVERNANCE_CONSTITUTION.md
+  Title: Milestone 026 Candidate — Learning Governance Constitution
+  Headings: 26
+
+docs/milestones/MILESTONE_027_CANDIDATE_KNOWLEDGE_GRAPH_WRITE_ARCHITECTURE.md
+  Title: Milestone 027 Candidate — KnowledgeGraph Write Architecture
+  Headings: 22
+
+docs/milestones/MILESTONE_028_CANDIDATE_KNOWLEDGE_GRAPH_WRITE_BOUNDARY_ANALYSIS.md
+  Title: Milestone 028 Candidate — KnowledgeGraph Write Boundary Analysis
+  Headings: 13
+
+docs/milestones/MILESTONE_029_CANDIDATE_KNOWLEDGE_GRAPH_WRITE_GUARD_IMPLEMENTATION.md
+  Title: Milestone 029 Candidate — KnowledgeGraphWriteGuard Implementation
+  Headings: 20
+
+docs/milestones/MILESTONE_030_CANDIDATE_KNOWLEDGE_GRAPH_MUTATION_LAYER_ANALYSIS.md
+  Title: Milestone 030 Candidate — KnowledgeGraph Mutation Layer Analysis
+  Headings: 23
+
+docs/milestones/MILESTONE_031_CANDIDATE_LEARNING_PATH_CONSOLIDATION_BOUNDARY.md
+  Title: Milestone 031 — Learning Path Consolidation Boundary
+  Headings: 20
+
+docs/milestones/MILESTONE_032_CANDIDATE_POLLINATION_GOVERNANCE_BOUNDARY_ANALYSIS.md
+  Title: Milestone 032 Candidate — Knowledge Pollination Governance Boundary Analysis
+  Headings: 28
+
+docs/milestones/MILESTONE_033_CANDIDATE_POLLINATION_INHERITANCE_BOUNDARY_ANALYSIS.md
+  Title: Milestone 033 Candidate — Pollination Inheritance Boundary Analysis
+  Headings: 23
+
+docs/milestones/MILESTONE_034_CANDIDATE_KNOWLEDGE_ADAPTATION_BOUNDARY.md
+  Title: Milestone 034 Candidate — Knowledge Adaptation Boundary
+  Headings: 16
+
+docs/milestones/MILESTONE_035_CANDIDATE_POLLINATION_DISTRIBUTION_BOUNDARY.md
+  Title: Milestone 035 Candidate — Pollination Distribution Boundary
+  Headings: 13
+
+docs/milestones/MILESTONE_036_CANDIDATE_POLLINATION_RECIPIENT_BOUNDARY_ANALYSIS.md
+  Title: Milestone 036 Candidate — Pollination Recipient Boundary Analysis
+  Headings: 16
+
+docs/milestones/MILESTONE_037_CANDIDATE_POLLINATION_OUTCOME_RETURN_BOUNDARY.md
+  Title: Milestone 037 Candidate — Pollination Outcome Return Boundary
+  Headings: 15
+
+docs/milestones/MILESTONE_038_CANDIDATE_POLLINATION_ARCHITECTURE_VALIDATION.md
+  Title: Milestone 038 Candidate — Pollination Architecture Validation
+  Headings: 16
+
+docs/milestones/MILESTONE_039_CANDIDATE_THE_FIRST_LIVING_DEMONSTRATION.md
+  Title: Milestone 039 Candidate — The First Living Demonstration
+  Headings: 16
+
+docs/milestones/MILESTONE_040_CANDIDATE_FOUNDATION_DEMONSTRATION_CERTIFICATE.md
+  Title: Milestone 040 Candidate — Foundation Demonstration Certificate
+  Headings: 20
+
+docs/milestones/MILESTONE_041_CANDIDATE_FOUNDATION_TO_CAPABILITY_TRANSITION.md
+  Title: Milestone 041 Candidate — Foundation to Capability Transition
+  Headings: 24
+
+docs/milestones/MILESTONE_043_CANDIDATE_FIRST_GOVERNED_CAPABILITY_BOUNDARY.md
+  Title: Milestone 043 Candidate — First Governed Capability Implementation Boundary
+  Headings: 11
+
+docs/milestones/MILESTONE_044_REPOSITORY_ANALYSIS.md
+  Title: MILESTONE_044_REPOSITORY_ANALYSIS — Digital Colleague Learning Loop
+  Headings: 33
+
+docs/milestones/MILESTONE_045_CANDIDATE_CONVERSATION_BOUNDARY.md
+  Title: MILESTONE_045_CANDIDATE — Digital Colleague Conversation Boundary
+  Headings: 17
+
+docs/milestones/MILESTONE_045_IMPLEMENTATION_CHECKPOINT.md
+  Title: MILESTONE_045 — Pre-Implementation Checkpoint
+  Headings: 4
+
+docs/milestones/MILESTONE_045_IMPLEMENTATION_PLAN.md
+  Title: MILESTONE_045_IMPLEMENTATION_PLAN — Digital Colleague Conversation Boundary
+  Headings: 10
+
+docs/milestones/MILESTONE_045_REPOSITORY_ANALYSIS.md
+  Title: MILESTONE_045_REPOSITORY_ANALYSIS — Digital Colleague Conversation Boundary
+  Headings: 34
+
+docs/milestones/MILESTONE_046_CANDIDATE_HUMAN_RELATIONSHIP_MEMORY_BOUNDARY.md
+  Title: MILESTONE_046_CANDIDATE — Human Relationship Memory Boundary
+  Headings: 12
+
+docs/milestones/MILESTONE_046_REPOSITORY_ANALYSIS.md
+  Title: MILESTONE_046_REPOSITORY_ANALYSIS — Human Relationship Memory
+  Headings: 25
+
+docs/milestones/MILESTONE_047_CANDIDATE_CONTEXT_SOURCE_AUTHORITY_BOUNDARY.md
+  Title: MILESTONE_047_CANDIDATE — Context Source Authority Boundary
+  Headings: 14
+
+docs/milestones/MILESTONE_047_IMPLEMENTATION_PLAN.md
+  Title: MILESTONE_047_IMPLEMENTATION_PLAN — Context Source Authority
+  Headings: 14
+
+docs/milestones/MILESTONE_047_REPOSITORY_ANALYSIS.md
+  Title: MILESTONE_047_REPOSITORY_ANALYSIS — Source Authority and Provenance
+  Headings: 30
+
+docs/milestones/MILESTONE_048_CANDIDATE_UNDERSTANDING_TRUSTWORTHINESS_BOUNDARY.md
+  Title: MILESTONE_048_CANDIDATE — Understanding Trustworthiness Boundary
+  Headings: 14
+
+docs/milestones/MILESTONE_048_REPOSITORY_ANALYSIS.md
+  Title: MILESTONE_048_REPOSITORY_ANALYSIS — Understanding Trustworthiness
+  Headings: 19
+
+docs/milestones/MILESTONE_049_CANDIDATE_AUTHORITY_CONTEXT_BOUNDARY.md
+  Title: MILESTONE_049_CANDIDATE — Authority Context Boundary
+  Headings: 13
+
+docs/milestones/MILESTONE_049_IMPLEMENTATION_PLAN.md
+  Title: MILESTONE_049_IMPLEMENTATION_PLAN — Authority Context Boundary
+  Headings: 10
+
+docs/milestones/MILESTONE_049_REPOSITORY_ANALYSIS.md
+  Title: MILESTONE_049_REPOSITORY_ANALYSIS — Judgement Authority Boundary
+  Headings: 25
+
+docs/milestones/MILESTONE_050_CANDIDATE_REFLECTION_LEARNING_IMPROVEMENT_BOUNDARY.md
+  Title: MILESTONE_050_CANDIDATE — Reflection Learning Improvement Boundary
+  Headings: 16
+
+docs/milestones/MILESTONE_050_IMPLEMENTATION_PLAN.md
+  Title: MILESTONE_050_IMPLEMENTATION_PLAN — Reflection Learning Improvement Boundary
+  Headings: 13
+
+docs/milestones/MILESTONE_050_REPOSITORY_ANALYSIS.md
+  Title: MILESTONE_050_REPOSITORY_ANALYSIS — Reflection Learning Improvement Boundary
+  Headings: 17
+
+docs/milestones/MILESTONE_051_CANDIDATE_KNOWLEDGE_INHERITANCE_BOUNDARY.md
+  Title: MILESTONE_051_CANDIDATE — Knowledge Inheritance Boundary
+  Headings: 11
+
+docs/milestones/MILESTONE_052_CANDIDATE_CONCEPT_TRUST_LIFECYCLE_BOUNDARY.md
+  Title: MILESTONE_052_CANDIDATE — Concept Trust Lifecycle Boundary
+  Headings: 16
+
+docs/milestones/MILESTONE_052_REPOSITORY_ANALYSIS.md
+  Title: MILESTONE_052_REPOSITORY_ANALYSIS — Concept Trust Lifecycle
+  Headings: 32
+
+docs/milestones/MILESTONE_053_CANDIDATE_KNOWLEDGE_TRUST_RENEWAL_BOUNDARY.md
+  Title: MILESTONE_053_CANDIDATE — Knowledge Trust Renewal Boundary
+  Headings: 25
+
+docs/milestones/MILESTONE_053_IMPLEMENTATION_PLAN.md
+  Title: MILESTONE_053_IMPLEMENTATION_PLAN — Knowledge Trust Renewal
+  Headings: 14
+
+docs/milestones/MILESTONE_054_CONTEXTSTORE_MEMORY_BOUNDARY_CLEANUP.md
+  Title: MILESTONE_054 — ContextStore Memory Boundary Cleanup
+  Headings: 5
+
+docs/milestones/MILESTONE_055_CANDIDATE_TRUST_BOUNDARY_CONSOLIDATION.md
+  Title: MILESTONE_055_CANDIDATE — Trust Boundary Consolidation Review
+  Headings: 25
+
 docs/milestones/README.md
   Title: Helping Hand Milestones
   Headings: 5
+
+docs/milestones/SESSION_COMPLETION_SUMMARY_2026_08_06.md
+  Title: Session Completion Summary — 2026-08-06
+  Headings: 9
+
+docs/MISSING_CONCEPT_ANALYSIS_FORMATION_ORIENTATION_CONTRIBUTION.md
+  Title: Missing Concept Analysis: Naming the Gap Between Orientation and Contribution
+  Headings: 41
 
 docs/OPERATING_MODEL.md
   Title: Helping Hand Operating Model
@@ -1246,7 +1882,7 @@ docs/OPERATIONAL_EXECUTION_PLAN_001.md
 
 docs/organisation/BOARD_AND_STEWARDSHIP.md
   Title: Helping Hand Board and Stewardship
-  Headings: 11
+  Headings: 12
 
 docs/ORGANISATIONAL_SECURITY.md
   Title: Organisational Security
@@ -1316,6 +1952,78 @@ docs/philosophy/UNDERSTANDING_LIFECYCLE.md
   Title: Understanding Lifecycle
   Headings: 9
 
+docs/PREVIOUSLY_DISCUSSED.md
+  Title: Previously Discussed
+  Headings: 12
+
+docs/previously-discussed/PD-001.md
+  Title: PD-001 — Organisational Model of Companion Intelligence
+  Headings: 36
+
+docs/previously-discussed/PD-002-HELPING_HAND_MUST_BE_ORIENTABLE.md
+  Title: Helping Hand Must Be Orientable Before It Can Orient Others
+  Headings: 19
+
+docs/previously-discussed/PD-003-ANDY_NAVIGATOR_OF_UNDERSTANDING.md
+  Title: Helping Hand HH-0000 Andy — Navigator of Understanding
+  Headings: 12
+
+docs/previously-discussed/PD-004-TALK-GET-OS-AND-DIGITAL-COMPANION-SENSES.md
+  Title: PD-004 — Talk.Get OS and Digital Companion Senses
+  Headings: 16
+
+docs/previously-discussed/PD-005-LANGUAGE-MODELS-AS-TEMPORARY-LEARNING-CAPABILITY.md
+  Title: PD-005 — Language Models as Temporary Learning Capability
+  Headings: 9
+
+docs/previously-discussed/PD-006-CONVERSATION-AS-EXPERIENCE-NOT-INTERFACE.md
+  Title: PD-006 — Conversation as Experience, Not Interface
+  Headings: 11
+
+docs/previously-discussed/PD-007-HUMAN-MEMORY-BOUNDARY.md
+  Title: PD-007 — What a Digital Colleague Must Remember, and What It Must Forget
+  Headings: 13
+
+docs/previously-discussed/PD-008-HUMAN-TRUST-BOUNDARY.md
+  Title: PD-008 — The Human Trust Boundary
+  Headings: 11
+
+docs/previously-discussed/PD-009-CONTEXT-HAS-AUTHORITY.md
+  Title: PD-009 — Context Has Authority
+  Headings: 10
+
+docs/previously-discussed/PD-010-AUTHORITY-REQUIRES-CONTEXT.md
+  Title: PD-010 — Authority Requires Context
+  Headings: 10
+
+docs/previously-discussed/PD-011-LEARNING-REQUIRES-CAUSATION.md
+  Title: PD-011 — Learning Requires Causation
+  Headings: 11
+
+docs/previously-discussed/PD-012-KNOWLEDGE-INHERITANCE-BOUNDARY.md
+  Title: PD-012 — Knowledge Inheritance Boundary
+  Headings: 10
+
+docs/previously-discussed/PD-013-KNOWLEDGE-TRUST-REQUIRES-RENEWAL.md
+  Title: PD-013 — Knowledge Trust Requires Renewal
+  Headings: 15
+
+docs/previously-discussed/PD-014-TRUST-IS-EVIDENCED-NOT-SCORED.md
+  Title: PD-014 — Trust Is Evidenced, Not Scored
+  Headings: 15
+
+docs/previously-discussed/PD-015-DIGITAL-COLLEAGUE-RELATIONSHIP-DEVELOPMENT.md
+  Title: PD-015 — Digital Colleague Relationship Development
+  Headings: 11
+
+docs/previously-discussed/PD-016-INDEPENDENT-REINFORCEMENT.md
+  Title: PD-016 — Independent Reinforcement
+  Headings: 13
+
+docs/previously-discussed/PD-017-GOVERNANCE-REVIEWER-AUTHORITY.md
+  Title: PD-017 — Governance Reviewer Authority
+  Headings: 13
+
 docs/professions/hospitality/HOSPITALITY_ACADEMY_ROADMAP.md
   Title: Hospitality Academy Roadmap
   Headings: 18
@@ -1360,6 +2068,10 @@ docs/professions/hospitality/WELCOME_TO_HOSPITALITY_ACADEMY.md
   Title: Welcome to Hospitality Academy
   Headings: 9
 
+docs/PROGRAMME_NAVIGATION_REVIEW_001.md
+  Title: Programme Navigation Review 001
+  Headings: 22
+
 docs/proofs/artifacts/HOER-0001-EQUIPMENT-FAULT.md
   Title: Human Outcome Evidence Record
   Headings: 14
@@ -1378,7 +2090,7 @@ docs/proofs/CAPABILITY-CERTIFICATION-FRAMEWORK.md
 
 docs/proofs/CAPABILITY-REGISTER.md
   Title: Capability Register
-  Headings: 5
+  Headings: 18
 
 docs/proofs/CERTIFICATION-ROADMAP.md
   Title: Capability Certification Roadmap
@@ -1454,7 +2166,7 @@ docs/proofs/WAVE-1-CERTIFICATION-REPORT.md
 
 docs/README.md
   Title: Helping Hand Engineering Library
-  Headings: 26
+  Headings: 27
 
 docs/reviews/ENGINEERING_CYCLE_001_REFERENCE_MODEL.md
   Title: Engineering Cycle 001 - Reference Model
@@ -1479,6 +2191,22 @@ docs/reviews/FOUNDATION_REVIEW_001.md
 docs/reviews/INSTITUTIONAL_REVIEW_001_FOUNDATION_READINESS.md
   Title: HH-REVIEW-001 - Foundation Readiness
   Headings: 16
+
+docs/SIR-006-EVIDENCE-REVIEW-001.md
+  Title: SIR-006 Evidence Review 001
+  Headings: 19
+
+docs/STRATEGIC_INSIGHTS_GOVERNANCE_REVIEW_001.md
+  Title: Repository Governance Review — Strategic Insights Register
+  Headings: 18
+
+docs/STRATEGIC_INSIGHTS_REGISTER.md
+  Title: Strategic Insights Register
+  Headings: 56
+
+docs/STRATEGIC_INSIGHTS_REVIEW_001.md
+  Title: Helping Hand — Strategic Insights Repository Review 001
+  Headings: 44
 
 docs/THE_ORGANISATION.md
   Title: The Organisation
@@ -1572,6 +2300,34 @@ docs/theory/THEORY-MAP.md
   Title: Theory Map
   Headings: 10
 
+docs/TRANSITION_ANALYSIS_FORMATION_ORIENTATION_CONTRIBUTION.md
+  Title: Transition Analysis: Formation → Orientation → Contribution
+  Headings: 24
+
+docs/UJ-HUM-013-COMPLETION-ASSESSMENT.md
+  Title: UJ-HUM-013 Completion Assessment and Next Steps
+  Headings: 8
+
+docs/UJ-HUM-013-PREPARATION.md
+  Title: UJ-HUM-013 — The First Orientation: Evidence Preparation
+  Headings: 17
+
+docs/UJ-HUM-013-SHOW-ME-YOUR-WORLD-INVESTIGATION.md
+  Title: Repository Investigation — UJ-HUM-013 "Show Me Your World"
+  Headings: 16
+
+docs/UJ-HUM-014-READINESS-ASSESSMENT.md
+  Title: UJ-HUM-014 Readiness Assessment
+  Headings: 14
+
+docs/UJ-HUM-014-WELCOME-ORIENTATION-COMPARISON-AND-PREPARATION.md
+  Title: Welcome vs Orientation Framework — Comparison and Next Journey Proposal
+  Headings: 24
+
+docs/UNDERSTANDING_REQUEST_CONCEPT_ANALYSIS.md
+  Title: Understanding Request: Concept Analysis
+  Headings: 23
+
 docs/understanding-journeys/000-CANDIDATE-0-FIRST-REASONING-CONVERSATION.md
   Title: Understanding Journey 001 — The First Reasoning Conversation
   Headings: 13
@@ -1631,6 +2387,26 @@ docs/understanding-journeys/humanity/009-THE-FIRST-JUDGEMENT.md
 docs/understanding-journeys/humanity/010-GRADUATION.md
   Title: Understanding Journey 010
   Headings: 17
+
+docs/understanding-journeys/humanity/011-PERSON-BEFORE-WORDS.md
+  Title: Understanding Journey 011
+  Headings: 26
+
+docs/understanding-journeys/humanity/012-PERSON-AFTER-WORDS.md
+  Title: Understanding Journey 012
+  Headings: 34
+
+docs/understanding-journeys/humanity/013-THE-FIRST-INSTITUTIONAL-OBSERVATION.md
+  Title: Understanding Journey 013
+  Headings: 24
+
+docs/understanding-journeys/humanity/014-THE-FIRST-INSTITUTIONAL-ALIGNMENT-PREPARATION.md
+  Title: Understanding Journey 014 — Preparation
+  Headings: 20
+
+docs/understanding-journeys/humanity/014-THE-FIRST-INSTITUTIONAL-ALIGNMENT.md
+  Title: Understanding Journey 014
+  Headings: 32
 
 docs/understanding-journeys/README.md
   Title: Understanding Journeys
@@ -1712,6 +2488,26 @@ docs/understanding-journeys/validation/humanity/010-GRADUATION-VALIDATION.md
   Title: Graduation Validation
   Headings: 0
 
+docs/understanding-journeys/validation/humanity/011-PERSON-BEFORE-WORDS-VALIDATION.md
+  Title: Validation Record
+  Headings: 18
+
+docs/understanding-journeys/validation/humanity/012-PERSON-AFTER-WORDS-VALIDATION.md
+  Title: Validation Record
+  Headings: 16
+
+docs/understanding-journeys/validation/humanity/013-THE-FIRST-INSTITUTIONAL-OBSERVATION-FOUNDER-REVIEW.md
+  Title: Founder Review — UJ-HUM-013 The First Institutional Observation
+  Headings: 13
+
+docs/understanding-journeys/validation/humanity/013-THE-FIRST-INSTITUTIONAL-OBSERVATION-VALIDATION.md
+  Title: Validation Record
+  Headings: 13
+
+docs/understanding-journeys/validation/humanity/014-THE-FIRST-INSTITUTIONAL-ALIGNMENT-EVIDENCE-REVIEW.md
+  Title: UJ-HUM-014 Evidence Review
+  Headings: 10
+
 docs/understanding-journeys/validation/VALIDATION_SET_001_GOVERNANCE_UNDER_PRESSURE.md
   Title: Validation Set 001 - Governance Under Pressure
   Headings: 7
@@ -1719,6 +2515,10 @@ docs/understanding-journeys/validation/VALIDATION_SET_001_GOVERNANCE_UNDER_PRESS
 docs/understanding-journeys/VOLUME_VII_VALIDATION_PLAN.md
   Title: Volume VII Validation Plan
   Headings: 16
+
+docs/UNIVERSAL_DIGITAL_COLLEAGUE_INPUT_MODEL.md
+  Title: Universal Digital Colleague Input Model: Derived from Annie Implementation
+  Headings: 34
 
 docs/validation/HUMAN_VALIDATION_SESSION_001.md
   Title: HUMAN VALIDATION SESSION 001
@@ -1763,6 +2563,14 @@ KNOWLEDGE_ARCHITECTURE.md
 lib/os/README.md
   Title: Helping Hand OS
   Headings: 2
+
+MAC-BOOTSTRAP-ASSESSMENT.md
+  Title: Mac Bootstrap Assessment
+  Headings: 6
+
+MAC-BOOTSTRAP-EVIDENCE.md
+  Title: Mac Bootstrap Evidence
+  Headings: 6
 
 MACHINE-PORTABILITY-REMEDIATION.md
   Title: MACHINE-PORTABILITY-REMEDIATION
@@ -1810,7 +2618,7 @@ platform/cos/pollination/README.md
 
 platform/cos/README.md
   Title: Companion Operating System (COS)
-  Headings: 9
+  Headings: 11
 
 platform/cos/Roadmap.md
   Title: COS Roadmap

@@ -63,6 +63,8 @@ COS preserves reusable capability.
 | Knowledge Routing | ✅ Active | Helping Hand HQ | Governs knowledge flow |
 | Pollination | 🚧 Experimental | None | Research capability |
 | Translation | ✅ Active | None yet | Universal engine; professional rules supplied by Digital Colleagues |
+| Understanding Formation | ✅ Active | None yet | Universal junction; DC supplies translations, context, and knowledge |
+| Understanding Formation Readiness | ✅ Active | None yet | Structural pre-flight check; DC calls before invoking form() |
 | Conversation | ⏳ Planned | — | Capability audit required |
 | Learning | ⏳ Planned | — | Capability audit required |
 | Decision | ⏳ Planned | — | Capability audit required |
@@ -107,6 +109,89 @@ Nothing enters COS without first proving itself in a Digital Colleague.
 - Helping Hand HQ governs inheritance.
 - Profession HQ governs profession-specific understanding.
 - Local context remains local.
+
+---
+
+# Permanent Architecture Boundary Rules
+
+**Established:** 2026-08-05 — Milestone 017
+
+```
+COS owns:
+  - observation mechanism (beginObservationSession)
+  - translation mechanism (translateObservations)
+  - understanding formation mechanism (form)
+  - understanding output contract
+  - formation invariants
+  - judgement engine
+  - reflection engine
+  - learning engine
+
+Digital Colleague owns:
+  - professional interpretation (translation rules)
+  - rule selection (matches() predicates)
+  - context assembly (AnnieThought + ContextStore + VenueProfile)
+  - knowledge presentation (knowledgeAnswerToFormation)
+  - repository document interpretation (Andy: repositoryDocumentToKnowledgeAnswer)
+
+COS does not own:
+  - document interpretation
+  - professional meaning
+  - repository knowledge
+  - Andy-specific content
+
+Venue Intelligence (OS) owns:
+  - local venue knowledge (ContextStore)
+  - local operational memory (VenueKnowledgeProfile)
+  - knowledge routing (KnowledgeRouter)
+  - applicability matching (isKnowledgeApplicable)
+
+Professional HQ owns:
+  - industry knowledge (sourceLevel: "profession")
+  - professional standards and thresholds
+
+Helping Hand HQ owns:
+  - universal principles (sourceLevel: "helping-hand")
+  - governance framework
+  - cross-profession learning
+
+Organisation HQ owns (optional — multi-site only):
+  - organisation-specific policies (sourceLevel: "organisation")
+
+Note: Repository location does not determine knowledge authority.
+Authority is determined by the governed source of the document.
+A constitutional document accessed locally is still constitutional.
+```
+
+---
+
+# Understanding Formation — Boundary Rules
+
+**Established:** 2026-08-05 — Milestone 013
+
+Understanding Formation is a complete COS capability boundary.
+
+```
+COS owns:                           Digital Colleague provides:
+- formation mechanism               - professional translation rules
+- synthesis algorithm               - live situational context
+- confidence derivation             - institutional context
+- uncertainty derivation            - applicable knowledge selection
+- completeness assessment
+- evidence traceability
+- output contract
+- the five invariants
+```
+
+**Do not:**
+
+- Create `AnnieFormation()`, `KevFormation()`, or any profession-specific formation variant
+- Move professional knowledge into the COS formation mechanism
+- Bypass the evidence chain — traceability is a structural guarantee, not optional
+- Accept `confidence` or `completeness` as inputs — they must be computed
+- Allow formation to produce domain meaning from zero translations
+
+**Future work concerns Formation Input only** — how a DC automatically gathers translations, context, and knowledge before invoking `form()`. The formation mechanism itself is settled.
 - Universal understanding becomes inheritance.
 - Inheritance is preferred to duplication.
 

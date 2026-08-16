@@ -16,9 +16,9 @@ It exists to identify learning that is sufficiently trustworthy, useful and tran
 
 # The Forest
 
-In COS, The Forest describes how shared learning operates safely at system level.
+In COS, The Forest refers to the wider human world — the ecosystem outside Helping Hand that Digital Colleagues serve and contribute to.
 
-Forest Pollination is the movement mechanism.
+Forest Pollination is how seeds of governed understanding travel from the Helping Hand Oak into that wider world.
 
 Governance is the gatekeeper.
 
@@ -28,13 +28,13 @@ Privacy protects people and local context.
 
 Distribution carries approved learning to the correct layer.
 
-Evaluation determines whether learning should remain local, move to profession, or move to forest.
+Evaluation determines whether learning should remain local, move to profession, or move to the wider forest.
 
 This is implementation, not metaphor.
 
-The objective is governed transfer of validated learning.
+The objective is governed contribution of validated learning.
 
-For the worldview of why the forest exists, see [The Forest in Understanding Journey](../../../docs/philosophy/UNDERSTANDING_JOURNEY.md#the-forest).
+For the worldview of why Helping Hand grows within the forest rather than becoming it, see [The Oak in Understanding Lifecycle](../../../docs/philosophy/UNDERSTANDING_LIFECYCLE.md#the-oak).
 
 ---
 
@@ -246,7 +246,7 @@ It does not bypass privacy.
 
 It does not bypass the appropriate knowledge layer.
 
-Every contribution should strengthen the forest without weakening the tree that produced it.
+Every contribution should strengthen the forest without weakening the Oak that produced it.
 
 ---
 
@@ -272,4 +272,4 @@ Future development should strengthen governance before increasing automation.
 
 The Acorn Edition
 
-*"Every tree learns. The forest decides. Every tree benefits."*
+*"Every leaf learns. The Oak grows. The forest benefits."*

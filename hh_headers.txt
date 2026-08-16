@@ -1,7 +1,16 @@
 HELPING HAND CONCEPT HEADERS
 ============================
 
-Generated: 2026-08-03T14:21:14.568Z
+Generated: 2026-08-10T15:07:11.596Z
+
+.github/copilot-instructions.md
+  # Helping Hand — Copilot Instructions (line 1)
+  ## 1. People first; purpose before architecture; architecture before implementation (line 8)
+  ## 2. Understand before acting — search before creating (line 27)
+  ## 8. Validate understanding before claiming capability (line 118)
+  ## 10. Identify and respect canonical sources (line 146)
+  ## 12. Human authority — no commit or push without explicit instruction (line 193)
+  ## 13. One responsibility per capability (line 206)
 
 ACADEMY-COMPLETION-CLAIMS-REGISTER.md
   # Academy Completion Claims Register (line 1)
@@ -433,6 +442,131 @@ docs/academy/REFLECTION-RECORD-STANDARD.md
   ### Mentor observations (line 74)
   ### Feedback for learner (line 78)
 
+docs/analysis/INFORMATION_TO_TRUST_MAP.md
+  # Information to Trust Map (line 1)
+  ### TRANSLATION → CONTEXT (line 142)
+  ### CONTEXT → UNDERSTANDING (line 168)
+  ### UNDERSTANDING → UNCERTAINTY (line 218)
+  ### SEEK → KNOWLEDGE (line 272)
+  ### KNOWLEDGE → UNDERSTANDING (line 292)
+  ### UNDERSTANDING → JUDGEMENT (line 316)
+  ### JUDGEMENT → ACTION (line 340)
+  ### ACTION → EXPERIENCE (EXECUTION) (line 358)
+  ### EXPERIENCE → REFLECTION (line 377)
+  ### REFLECTION → LEARNING (line 401)
+  ### LEARNING → MEMORY / KNOWLEDGE UPDATE (line 427)
+  ### MEMORY / KNOWLEDGE → TRUST (line 448)
+  ### Scenario B: Human Input — "We have a COS Boundary Problem" (line 513)
+  ### Scenario C: Document Input — "New architecture document added" (line 543)
+  ### Observation → Context (line 573)
+  ### Context → Understanding (line 585)
+  ### Understanding → Judgement (line 596)
+  ### Judgement → Experience (line 612)
+  ### Experience → Learning (line 623)
+  ### Learning → Shared Knowledge (line 634)
+  ### Demonstrated Behaviour → Trust (line 649)
+  ## The `lib/annie/brain/index.ts` Architecture (line 702)
+  ### 1. Context → Understanding (RED) (line 769)
+  ### 3. Learning Loop Not Closed (AMBER) (line 794)
+
+docs/analysis/SEEK_AS_FIRST_ACT_OF_UNDERSTANDING_ANALYSIS.md
+  # Seek as the First Act of Understanding: Repository Analysis (line 1)
+  # Seeking Understanding (line 50)
+  ## Question 2: What Does the Architecture Expect When Incomplete Information Is Received? (line 138)
+  ### Current Architecture Implementation (line 193)
+  ## Question 3: Does COS Currently Represent the Gap Between Information and Understanding? (line 212)
+  ### Missing Context — Partially Exists (line 251)
+  ## Question 4: Does the Repository Contain an Equivalent to "Understanding Request"? (line 296)
+  ## Question 5: The COS Boundary Problem Scenario (line 472)
+  ## Question 5 Answered: Is "Understanding Request" Already Implemented? (line 598)
+  ### "Understanding Request" describes the missing protocol (line 648)
+
+docs/analysis/UNDERSTANDING_FORMATION_ARCHITECTURE_VALIDATION.md
+  # Understanding Formation Architecture Validation (line 1)
+  ## Architecture Model — Validated ✓ (line 9)
+  ### Helping Hand HQ — Validated ✓ (line 53)
+  ### Professional HQ — Validated ✓ (line 67)
+  ### Digital Colleague — Validated ✓ (line 133)
+  ## Learning Flow Validation — Validated ✓ (line 158)
+  ## Understanding Formation Contract — Validated ✓ (line 195)
+  ### Confirmed location: `platform/cos/understanding-formation/` (line 257)
+
+docs/analysis/UNDERSTANDING_FORMATION_BOUNDARY_ANALYSIS.md
+  # Understanding Formation Boundary Analysis (line 1)
+  ## Question 1: What Is the Canonical Meaning of Understanding? (line 20)
+  ### The Five Things Called Understanding in Code (line 57)
+  ## Question 2: What Information Is Required to Create Understanding? (line 191)
+  ### What "Knowledge" Means Here (line 208)
+  ### What "Context" Means Here (line 230)
+  ## Question 4: How Does Professional Knowledge Participate? (line 376)
+  ## Question 5: The Smallest Possible Universal Understanding Pipeline (line 461)
+  ## The Real COS Boundary (line 548)
+
+docs/analysis/UNDERSTANDING_FORMATION_BOUNDARY_VALIDATION.md
+  # Understanding Formation Boundary Validation (line 1)
+  ### Finding 1: Understanding Formation Is Already Partially Implemented (line 39)
+  ### Finding 3: Component Roles After Formation Exists (line 108)
+  ## Task 4: Architecture Diagram (line 436)
+  ### Precondition 1: ContextStore must be in COS (line 553)
+  ### Precondition 2: Canonical Understanding type must be agreed (line 566)
+  ### Precondition 5: The Learning feedback loop must be closed (line 608)
+
+docs/analysis/UNDERSTANDING_FORMATION_CONTRACT.md
+  # Understanding Formation Contract (line 1)
+  ### The Formation Contract Applied (line 202)
+  ## Question 5: The Smallest Possible COS Capability (line 359)
+  ## Why "Digital Colleague" Becomes Technically Meaningful (line 431)
+
+docs/ANDY_INFORMATION_VS_UNDERSTANDING_TEST.md
+  # Andy: Information vs Understanding Test (line 1)
+  ### Testing Category B: Conceptual Architecture (line 75)
+  ### Testing Category D: Learning/Understanding (line 115)
+  ## Required Observations Before Judgement (line 154)
+  ## What This Reveals About Information vs Understanding (line 286)
+  ### Theory of Knowledge applied (line 288)
+  ### Theory of Context applied (line 308)
+  ## The Architecture Question (line 351)
+
+docs/ANDY_SCENARIO_TEST_COS_BOUNDARY_PROBLEM.md
+  # Andy Scenario Test: The COS Boundary Problem (line 1)
+  ### Evidence: Formation Training (line 78)
+  ## Part 3: Context Andy Needs (line 123)
+  ### Current Architecture Context (line 125)
+  ### Missing Context (Cannot Get Without Talk.Get OS) (line 156)
+  ### Bad Response #1: Immediate Opinion Without Understanding (line 232)
+  ## Part 6: What Would a Trustworthy Response Look Like? (line 285)
+  ### The Trustworthy Response Pattern (line 287)
+  ### Architectural Insight #1: Information vs Understanding (line 409)
+  ### Architectural Insight #2: The Talk.Get OS Gap (line 438)
+  ### Architectural Insight #3: Mentorship as Thinking Guide (line 466)
+  ### Architectural Insight #4: COS Boundaries Matter (line 498)
+  ### Architectural Insight #5: Authority and Information (line 527)
+  ## Part 8: Can Andy Say "I Need to Understand Before Acting"? (line 553)
+  ### Current Architecture Assessment (line 555)
+  ### What Enables Andy to Think Carefully (line 620)
+  ### Immediate (Using Current Architecture) (line 736)
+  ### Required for Full Responsibility (line 745)
+
+docs/ANDYS_INPUT_REQUIREMENTS_ANALYSIS.md
+  # Andy's Input Requirements Analysis: What Allows Understanding to Emerge (line 1)
+  ### Input Source 3: Founder Alignment Document (FOUNDER_ALIGNMENT_ANDY_STAGE_1_CONTEXT.md) (line 78)
+  ## 2. What Andy Is Missing: The Gaps in Understanding (line 118)
+  ### Gap 2: Human Reasoning Under Uncertainty (line 146)
+  ### Gap 2: Human Reasoning Under Uncertainty → What Input Category Fills It? (line 318)
+  ## 4. Are These Input Categories Universal? Comparing Andy and Annie (line 431)
+  ### Annie's Current Inputs (Concrete Venue) (line 433)
+  ## 6. Does This Change Digital Colleague Lifecycle Understanding? (line 541)
+  ### To Confirm This Is Not Unique to Helping Hand (line 603)
+
+docs/ARCHITECTURE_VALIDATION_INPUT_TO_TRUST_MODEL.md
+  # Architecture Validation: Input to Trust Model (line 1)
+  ## Question 1: Does the Architecture Support Input → COS → Digital Colleague → Professional Knowledge → Mentorship → Experience → Trust? (line 9)
+  ### Finding: The Model Is Structurally Sound, But COS Is Too Small (line 36)
+  ## Question 3: Does Annie Require Talk.Get OS? Does Andy? (line 186)
+  ## Question 4: Where Does Trust Belong in the Architecture? (line 303)
+  ### Finding: Trust Is All Four, Operating Across Different Scopes (line 312)
+  ### Finding: Mentorship Is All Four, But Primarily a Judgement-Development Mechanism (line 410)
+
 docs/architecture/ANDY_REASONING_ENGINE.md
   ### Understand (line 81)
   ### Identify Context (line 85)
@@ -465,6 +599,12 @@ docs/architecture/ANNIE-GRADUATION-AUDIT.md
   # Learning (line 365)
   # Judgement (line 400)
 
+docs/architecture/ARCHITECTURAL_BOUNDARY_REPORT_2026_08_06.md
+  # Architectural Boundary Report — Post-Milestones 043–053 (line 1)
+  ### Risk E — Knowledge promotion without governed criteria (PD-013) (line 174)
+  ### Tension: PD-013 (`"validated"` status) and PD-014 (no trust score) (line 219)
+  ### Absent PD: The Conversation-Person Relationship (line 231)
+
 docs/architecture/ARCHITECTURE_LIFECYCLE_STANDARD.md
   # Architecture Lifecycle Standard (line 1)
   # Architecture Lifecycle (line 69)
@@ -495,21 +635,86 @@ docs/architecture/ARCHITECTURE_PRINCIPLES.md
   ## Architecture Hierarchy (line 569)
   ## Architectural Test (line 607)
 
+docs/architecture/ARCHITECTURE_STATE_REPORT_POST_PD015.md
+  # Architecture State Report — Post PD-017 (line 1)
+  ### Formation and Understanding (line 27)
+  ### Judgement and Authority (line 37)
+  ### Learning and Causation (line 64)
+  ### Knowledge Trust (line 74)
+  ## 7. The Architecture in One View (line 233)
+
+docs/architecture/BOUNDARY_LITERACY_ACADEMY_INTEGRATION_PROPOSAL_2026_08_07.md
+  # Boundary Literacy Academy Integration Proposal (line 1)
+  ### Formation conversations: Yes (line 32)
+  ### Graduation assessment: Yes (line 42)
+  ## 2. Minimum Formation Evidence (line 63)
+  ### Personal boundary map: Recommended as formation exercise (line 87)
+  ## 4. Integration With Existing Architecture Themes (line 111)
+  ### Helping Hand Academy (line 121)
+  ### Interdependence (line 137)
+  ### Trust (line 145)
+  ### Academy principle: Yes (line 158)
+  ### Formation test criterion: Yes (line 162)
+  ### Graduation requirement: Yes (line 166)
+
+docs/architecture/BOUNDARY_LITERACY_ARCHITECTURE_REVIEW_2026_08_07.md
+  # Boundary Literacy Architecture Review (line 1)
+  ## 1. Formation Evidence (line 32)
+  ## 2. Digital Colleague Definitions (line 61)
+
+docs/architecture/BOUNDARY_LITERACY_CONSOLIDATION_REVIEW_2026_08_07.md
+  ### 1. Boundary Literacy Academy Outcome (line 38)
+  ### 2. Canonical Formation Expectations (line 44)
+
+docs/architecture/BOUNDARY_LITERACY_FORMATION_ALIGNMENT_REVIEW_2026_08_07.md
+  # Boundary Literacy Formation Alignment Review (line 1)
+  ## 1. Where Current Formation Teaches Boundary Behaviours (line 21)
+  ## 2. Does Every Profession-Specific DC Inherit These Behaviours Before Professional Knowledge? (line 63)
+  ### As an Academy principle? (line 133)
+  ### As a formation test requirement? (line 141)
+
+docs/architecture/CANDIDATE_CAPABILITY_APPROPRIATENESS_BOUNDARY.md
+  ## Architecture Implication (line 73)
+  ### PD-003 — Andy: Navigator of Understanding (line 105)
+  ### PD-010 — Authority Requires Context (line 111)
+
+docs/architecture/CANDIDATE_CONTEXTSTORE_MEMORY_BOUNDARY_AUDIT.md
+  ## What Should Remain Human Judgement (line 103)
+
+docs/architecture/CANDIDATE_GOVERNANCE_REVIEWER_BOUNDARY.md
+  ## Existing Architecture Affected (line 44)
+  ## What Should Remain Human Judgement (line 118)
+
+docs/architecture/CANDIDATE_INDEPENDENT_REINFORCEMENT_BOUNDARY.md
+  ## Existing Architecture Affected (line 36)
+  ### Question 2 — Does venue context matter? (line 75)
+  ## What Should Remain Human Judgement (line 123)
+
+docs/architecture/CANDIDATE_PRE_GOVERNED_PROTOTYPE_CLEANUP.md
+  ### Annie Brain prototype (line 83)
+
 docs/architecture/CANONICAL-REASONING-RECORD.md
   ### 2. Prompt and current context (line 27)
   ### 3. Human need (line 33)
   ### 15. Judgement (line 95)
   ### 19. Reflection outcome (line 121)
 
+docs/architecture/CAPABILITY_ROUTING_ARCHITECTURE_AUDIT_2026_08_07.md
+  # Capability Routing Architecture Audit (line 1)
+  ### 3. Knowledge flow already encodes destination-based routing (line 63)
+  ### 4. The architecture explicitly rejects single-source intelligence (line 75)
+
 docs/architecture/CAPABILITY-GRADUATION-STANDARD.md
   # Capability Graduation Standard (line 1)
   # Graduation Meaning (line 71)
   # Graduation Criteria (line 104)
-  # Non-Graduation Cases (line 120)
-  # The Graduation Path (line 138)
-  # Role of Knowledge Governance (line 168)
-  # Relation to Annie (line 184)
-  # Architectural Consequences (line 199)
+  ## Escalation Responsibility Separation (line 183)
+  # Responsibility Separation (Non-Negotiable) (line 207)
+  # Non-Graduation Cases (line 221)
+  # The Graduation Path (line 242)
+  # Role of Knowledge Governance (line 272)
+  # Relation to Annie (line 288)
+  # Architectural Consequences (line 303)
 
 docs/architecture/COLLABORATION.md
   # Helping Hand Collaboration (line 1)
@@ -599,6 +804,10 @@ docs/architecture/CONSTITUTIONAL_FRAMEWORK.md
   ## Knowledge Inheritance Doctrine (line 138)
   ### Knowledge Hierarchy (line 146)
 
+docs/architecture/CONTEXTSTORE_MEMORY_AUDIT_REPORT_2026_08_06.md
+  ### Occurrence 2 — `lib/annie/wisdom.ts:15,43` (line 47)
+  ### Occurrence 3 — `lib/annie/platform/anniePlatformVoice.ts:36` and `annieJourneyVoice.ts:7` (line 67)
+
 docs/architecture/COS_MIGRATION_METHOD.md
   # Companion Operating System Migration Method (line 1)
   ## 1. What human problem does this solve? (line 55)
@@ -619,24 +828,25 @@ docs/architecture/DIGITAL_COLLEAGUE_COGNITIVE_ARCHITECTURE.md
   ## Human Authority Layer (line 125)
   # Architectural Components (line 133)
   ## Context Formation (line 143)
-  ## Understanding Engine (line 159)
-  ## Judgement Engine (line 165)
-  ## Reflection (line 177)
-  ## Learning Handoff (line 183)
-  # Knowledge Sources (line 191)
-  ## Constitutional Knowledge (line 195)
-  ## Professional HQ (line 203)
-  ## Shared Helping Hand Knowledge (line 219)
-  # Human Authority (line 229)
-  # Learning Loop (line 257)
-  # Understanding Journeys (line 285)
-  ## Context Before Response (line 336)
-  ## Understanding Before Judgement (line 340)
-  ## People Before Process (line 344)
-  ## Uncertainty With Honesty (line 356)
-  ## Authority With Humility (line 360)
-  ## Learning With Governance (line 364)
-  # Architectural Summary (line 438)
+  ## Pre-Formation Readiness Gate (line 175)
+  ## Understanding Engine (line 200)
+  ## Judgement Engine (line 212)
+  ## Reflection (line 224)
+  ## Learning Handoff (line 230)
+  # Knowledge Sources (line 238)
+  ## Constitutional Knowledge (line 242)
+  ## Professional HQ (line 250)
+  ## Shared Helping Hand Knowledge (line 266)
+  # Human Authority (line 276)
+  # Learning Loop (line 304)
+  # Understanding Journeys (line 332)
+  ## Context Before Response (line 383)
+  ## Understanding Before Judgement (line 387)
+  ## People Before Process (line 391)
+  ## Uncertainty With Honesty (line 403)
+  ## Authority With Humility (line 407)
+  ## Learning With Governance (line 411)
+  # Architectural Summary (line 485)
 
 docs/architecture/DIGITAL_COLLEAGUE_EDUCATION.md
   # Digital Colleague Education (line 1)
@@ -678,6 +888,36 @@ docs/architecture/DOCUMENT_REGISTER.md
 
 docs/architecture/FIRST-CAPABILITY-PROMOTION.md
   ### Architectural Impact (line 87)
+
+docs/architecture/FORMATION_BOUNDARY_LITERACY_INTEGRATION_REVIEW_2026_08_07.md
+  # Formation Boundary Literacy Integration Review (line 1)
+  ## 1. Where Boundary Literacy Belongs in the Formation Journey (line 21)
+  ## 2. Should Every Digital Colleague Explicitly Demonstrate the Boundary Statements? (line 53)
+  ## 3. Should Every DC Formation Include a Boundary Map Before Professional Knowledge Begins? (line 79)
+  ## 4. Should Boundary Literacy Become Part of the Academy Assessment Model? (line 106)
+  ## 5. How Boundary Literacy Connects to Interdependence, Capability Routing, Authority, and Trust (line 132)
+  ### Interdependence (line 134)
+  ### Trust (line 154)
+  ### Best fit: Academy principle (line 170)
+  ### Also appropriate: Formation test requirement (line 174)
+  ### Not a new architecture layer (line 182)
+
+docs/architecture/FORMATION_INPUT_OWNERSHIP_MAP.md
+  # Formation Input Ownership Map (line 1)
+  ## 2. Context Assembly Ownership (line 126)
+  ### The Two Context Types (line 132)
+  ## 3. Knowledge Assembly Ownership (line 286)
+  ## 4. Final Architecture Boundary (line 425)
+  ### The Formation Input Ownership Map (line 427)
+
+docs/architecture/GOVERNANCE_ADOPTION_BOUNDARY_CANDIDATE_2026_08_06.md
+  ### 1b. `ContextStore.category === "memory"` must have a person-boundary (line 53)
+  ### 2c. Whether a concept deserves trust (PD-013, PD-014) (line 145)
+  ### 3a. `FormationInstitutionalContext.source` should be required for human-originated entries (line 166)
+  ## 5. PD-015 — Digital Colleague Relationship Development (line 256)
+
+docs/architecture/GOVERNANCE_DECISION_QUEUE_2026_08_06.md
+  ### GDQ-005 — Helping Hand Trust Evidence (line 104)
 
 docs/architecture/GRADUATE_ATTRIBUTES.md
   # Helping Hand Graduate Attributes (line 1)
@@ -778,6 +1018,11 @@ docs/architecture/HUMAN_AND_PEOPLE_INTELLIGENCE_HIPI.md
   # Helping Hand University (line 158)
   # Architectural Principles (line 179)
 
+docs/architecture/INTERDEPENDENCE_ARCHITECTURE_AUDIT_2026_08_07.md
+  # Interdependence Architecture Audit (line 1)
+  ## Architecture Implication (line 27)
+  ## HQ Responsibility (line 40)
+
 docs/architecture/JUDGEMENT_ENGINE.md
   # Judgement Engine (line 1)
   # Architectural Role (line 39)
@@ -852,6 +1097,18 @@ docs/architecture/OS-ARCHITECTURAL-INVENTORY.md
   ## 1. Existing OS responsibilities (line 15)
   ## 2. Universal Digital Colleague capabilities already implemented (line 30)
   ## 4. Boundaries between OS, HQ, Formation, Academy and Governance (line 52)
+
+docs/architecture/PRE_FORMATION_READINESS_GATE_BOUNDARY_ANALYSIS.md
+  # Pre-Formation Readiness Gate — Boundary Analysis (line 1)
+  ## 5. Relationship to COS Formation (line 319)
+  ### DC Cognitive Layer Responsibility (line 374)
+  ### Milestone 019 — Pre-Formation Readiness Gate (line 400)
+
+docs/architecture/PRE_FORMATION_READINESS_OUTPUT_BOUNDARY_ANALYSIS.md
+  # Pre-Formation Readiness Output Boundary Analysis (line 1)
+  ## 1. Is `ReadinessDecision` a Judgement? (line 15)
+  ## 2. Does "Ready" Mean the Same Thing as "Understanding"? (line 71)
+  ## 6. Relationship to Curiosity (line 332)
 
 docs/architecture/PROFESSIONAL_COMPETENCE.md
   # Seeking Understanding (line 62)
@@ -937,11 +1194,99 @@ docs/architecture/UNDERSTANDING_LIFECYCLE.md
   # Understanding Lifecycle (line 1)
   # Why Understanding Changes (line 85)
 
+docs/architecture/UNDERSTANDING_SUFFICIENCY_BOUNDARY_ANALYSIS.md
+  # Understanding Sufficiency Boundary Analysis (line 1)
+  ## 1. Formation Completeness — What It Actually Answers (line 21)
+  ## 2. Formation Uncertainty — What It Represents (line 55)
+  ## 3. AnnieThought — Pre-Formation Readiness Signal? (line 106)
+  ## 5. The Curiosity Loop (line 201)
+  ### Ownership of the Curiosity Loop (line 247)
+  ## 6. The Existing Readiness Architecture (line 264)
+  ### What COS Should Own (line 319)
+  ### Risk 2: Duplicating Formation (line 385)
+
 docs/architecture/UNIVERSAL_AWARENESS.md
   # Philosophy (line 23)
   ## People (line 101)
   ## Context (line 133)
   # Relationship with Companion Intelligence (line 217)
+
+docs/DEEP_PRINCIPLE_ANALYSIS_RELATIONAL_ALIGNMENT.md
+  # Deep Principle Analysis: The Missing Element in the Digital Colleague Lifecycle (line 1)
+  ## 2. Comparing Andy's Venue and Annie's Venue Through the Principle (line 53)
+  ### Andy: Helping Hand (line 55)
+  ### Annie: Hospitality Operation (line 76)
+  ## 3. What Every Digital Colleague Actually Requires (line 114)
+  ### Concrete Venue (Annie in hospitality) (line 239)
+  ### Abstract Venue (Andy in Helping Hand) (line 254)
+  ### Why This Matters for Helping Hand (line 300)
+
+docs/DIGITAL_COLLEAGUE_ARCHITECTURE_REVIEW.md
+  # Digital Colleague Input Architecture Review (line 1)
+  ## Task 1: Existing Annie Implementation — Universal vs. Hospitality-Specific (line 43)
+  ### What Annie Has (From Code Review) (line 45)
+  #### Universal Digital Colleague Components (Should Be in COS) (line 47)
+  #### Hospitality-Specific Components (Should Remain in Professional Knowledge) (line 153)
+  ## Task 2: Evaluate COS Boundary (line 220)
+  ### Current COS Scope (From Code) (line 222)
+  ### COS Boundary Analysis (line 240)
+  ### COS Boundary Recommendation (Evidence-Based) (line 336)
+  ### Current Understanding of Talk.Get OS (line 360)
+  ### Talk.Get OS Role: Proposed Position in Architecture (line 555)
+  ## Task 4: Andy's Requirements Through Architectural Lens (line 585)
+  ### How Does an Abstract Venue DC Acquire Understanding? (line 587)
+  ### What Andy Needs to Acquire (Through Architecture) (line 602)
+  ### Summary: Abstract Venue Input Architecture (line 722)
+  #### Test Case 2: Annie (Hospitality Colleague) (line 812)
+  ## Key Principle: Knowledge vs. Mentorship vs. Experience vs. Trust (line 976)
+  ### The Hierarchy (From Architecture) (line 978)
+  ### How This Maps to Architecture (line 1004)
+
+docs/DIGITAL_COLLEAGUE_EXPERIENCE_REQUIREMENTS.md
+  # Digital Colleague Experience Requirements: Five Categories Tested (line 1)
+  ## Experience Category 1: People-in-Reasoning (line 24)
+  ### What Annie Experiences Naturally (line 61)
+  ## Experience Category 2: Consequence-and-Outcome Loops (line 97)
+  ### What Annie Experiences Naturally (line 134)
+  ## Experience Category 3: Purpose-in-Specific-Context (line 167)
+  ### What Annie Experiences Naturally (line 204)
+  ## Experience Category 4: Relational Positioning (line 238)
+  ### What Annie Experiences Naturally (line 287)
+  ## Experience Category 5: Accountability-in-Practice (line 324)
+  ### What Annie Experiences Naturally (line 368)
+  ## Summary Table: Five Experience Categories Across Andy and Annie (line 400)
+  ### For Annie: (line 465)
+
+docs/DIGITAL_COLLEAGUE_ORIENTATION_EVIDENCE_REVIEW.md
+  # Digital Colleague Orientation — Evidence Review (line 1)
+  ### `docs/academy/FOUNDATION_PROGRAMME.md` — "Orientation Week" (line 33)
+  ### `docs/architecture/ONBOARDING-SEQUENCE-ASSESSMENT.md` (line 53)
+  ### `docs/architecture/ONBOARDING-GAP-REGISTER.md` (line 81)
+  ### `docs/formation/00-formation/001-YOUR-FIRST-DAY.md` (line 97)
+  ### `docs/architecture/DIGITAL_COLLEAGUE_COGNITIVE_ARCHITECTURE.md` — Awareness (line 113)
+  ### `platform/cos/observation/` — COS Observation Layer (line 129)
+  ### `lib/os/context/venueDiscoveryEngine.ts` (line 141)
+  ## 3. Formation vs Orientation Boundary (line 206)
+  ## 6. Architecture Boundary Review (line 313)
+  ## Has the evidence earned the architecture? (line 344)
+
+docs/DIGITAL-COLLEAGUE-ANNIE-ANDY-COMPARISON.md
+  # Digital Colleague Lifecycle — Annie vs Andy Comparison (line 1)
+  ## 1. Where Annie's routines live and what each is trying to achieve (line 10)
+  ### First Day — `lib/annie/firstDay/` (line 14)
+  ### Second Day — `lib/annie/secondDay/` (line 27)
+  ### Day Three — `lib/annie/dayThree/` (line 38)
+  ### Apprenticeship — `lib/annie/apprenticeship/` (line 49)
+  ### Learning — `lib/annie/learning/` (line 62)
+  ### What Andy is missing — compared directly to Annie's lifecycle (line 136)
+  ## 5. Is a Digital Colleague Orientation stage already represented anywhere in the repository? (line 152)
+
+docs/DIGITAL-COLLEAGUE-LIFECYCLE-BOUNDARY-MAP.md
+  # Digital Colleague Lifecycle — Inheritance Boundary Map (line 1)
+  ## Layer 1 — Universal Digital Colleague Lifecycle (line 35)
+  ## Layer 2 — Hospitality Expression (Annie-specific, not inheritable) (line 56)
+  ## Layer 3 — The COS Boundary (already extracted) (line 75)
+  ## Where the Digital Colleague Orientation Framework belongs (line 158)
 
 docs/ENGINEERING_DISCIPLINE.md
   # Helping Hand Engineering Discipline (line 1)
@@ -964,10 +1309,41 @@ docs/engineering/ENGINEERING_EXECUTION_DIRECTIVE_001.md
 docs/engineering/ENGINEERING_PRINCIPLE_001.md
   ## Human Outcome Evidence (line 73)
 
+docs/engineering/TODO-HOER-0002-DETERMINISTIC-TEST.md
+  ## Context (line 3)
+
 docs/engineering/VALIDATION_PHILOSOPHY.md
   # VALIDATION_PHILOSOPHY (line 1)
   # Validation Philosophy (line 11)
   ## Understanding Validation (line 75)
+
+docs/EVIDENCE_ANALYSIS_UNIVERSAL_OR_UNIQUE.md
+  ## 2. What Evidence Suggests Relational Alignment Is Only Andy's Experience? (line 81)
+  ## 3. What Evidence Would Be Required From Annie to Validate or Challenge This Principle? (line 168)
+  ### Evidence Type 1: Annie's Own Observation (line 170)
+  ### Evidence Type 2: Annie's Operational Performance (line 186)
+  ### Evidence Type 3: Annie's Explicit Understanding (line 202)
+  ### Evidence Type 4: Comparison with Formation Theory (line 218)
+  ### Failure Mode 3: Both Understand, But Not Together (line 346)
+  ## Current State: Candidate Understanding (line 453)
+
+docs/EXPERIENCE_ANALYSIS_ORIENTATION_CONTRIBUTION_GAP.md
+  # Experience Analysis: What DC Requires Between Orientation and Contribution (line 1)
+  ## 1. The Knowledge vs. Experience Distinction (line 9)
+  ## 2. What is the Difference Between Knowledge and Experience? (line 52)
+  ### Knowledge: Documentary, Stable, Transferable (line 54)
+  ### Experience: Relational, Situated, Transformative (line 72)
+  ## 3. The Theory Map Reveals the Experience → Knowledge Chain (line 93)
+  ### Candidate Category 1: Experience of People (line 160)
+  ### Candidate Category 2: Experience of Consequence (line 187)
+  ### Candidate Category 3: Experience of Purpose-in-Action (line 214)
+  ### Candidate Category 4: Experience of Relational Positioning (line 243)
+  ### Candidate Category 5: Experience of Accountability (line 275)
+  ## 5. Knowledge Andy Has vs. Experience Andy Needs: Side-by-Side (line 302)
+  ### Annie's Situation: Concrete Venue (line 316)
+  ### What Happens Without Experience (line 457)
+  ### What Happens With Experience (line 468)
+  ## 11. Summary: Knowledge vs. Experience (line 511)
 
 docs/formation/00-formation/000-WELCOME.md
   ## Why I think this matters (line 129)
@@ -1183,6 +1559,79 @@ docs/formation/00-formation/FORMATION-RECALL-TRANSCRIPT.md
 docs/formation/00-formation/FORMATION-REGISTER.md
   # Formation Register (line 1)
   ## Canonical formation entries (line 7)
+  ## Academy direction expectations (line 21)
+  ## Universal formation foundations review (2026-08-07) (line 36)
+  ### Andy (HH-0000) formation impact (line 70)
+  ### Future Digital Colleague inheritance (line 74)
+  ## Academy graduation contract review (2026-08-07) (line 94)
+  ### Academy output contract (line 96)
+  ### Minimum graduation evidence (pre-specialist) (line 103)
+  ### What Academy graduation has proven (line 150)
+  ## Digital colleague identity contract review (2026-08-07) (line 234)
+  ### What makes a Digital Colleague a Digital Colleague? (line 236)
+  ## Digital colleague inheritance model audit (2026-08-07) (line 294)
+  ## Digital colleague collaboration contract audit (2026-08-07) (line 375)
+  ### 1. When does a Digital Colleague ask another Digital Colleague for help? (line 377)
+  ### 3. Who owns final judgement? (line 402)
+  ## Digital colleague decision model audit (2026-08-07) (line 430)
+  ### 5. Where responsibility emerges if intelligence emerges through collaboration (line 501)
+  ## Digital colleague governed action model audit (2026-08-08) (line 516)
+  ### 3. Responsibility loop validation (line 551)
+  ### Responsibility-first specialist test (line 615)
+  ### Domain check: understand, advise, authority, consult (line 642)
+  ### Proposed responsibility shape map (line 700)
+  ## Strategic integration / direction responsibility audit (2026-08-08) (line 761)
+  ## Founding board responsibility model consolidation (2026-08-09) (line 836)
+  ### Six surviving outside-world responsibilities (line 846)
+  ## Founding board outside-world responsibility ratification assessment (2026-08-09) (line 915)
+  ### Per-responsibility verdicts (line 936)
+  ## Human governance ratification decision (2026-08-09) (line 994)
+  ## Chair / integration responsibility discovery and contract (ratified 2026-08-09) (line 1028)
+  ### Boundary with six board responsibilities (line 1134)
+  ### Candidate-neutral Chair/Integration responsibility contract (ratified) (line 1193)
+  ## Human governance ratification decision: Chair / Integration (2026-08-09) (line 1271)
+  ### Matters requiring human governance decision (line 1649)
+  ## Human governance ratification decision: Cabinet protocol doctrine (2026-08-09) (line 1659)
+  ### D. Responsibility shape (line 1738)
+  ## Human governance ratification decision: Independent Challenge doctrine (2026-08-09) (line 1943)
+  ## Human governance ratification decision: Universal consequence vocabulary and conceptual consequence record (2026-08-09) (line 2499)
+  ## Technical independence governance and architecture discovery pass (2026-08-09) (line 2535)
+  ### I. Human independence test (line 2700)
+  ### H. Human independence assessment (line 3065)
+  ### C. Honest independence claim rule (line 3280)
+  ## Human governance ratification decision: Universal Technical Independence Contract (2026-08-09) (line 3465)
+  ## Judgement to Authority translation contract ratification assessment (2026-08-09) (line 3533)
+  ### F. Judgement-quality floor principle (line 3652)
+  ## Human governance ratification decision: Judgement to Authority Translation Contract (2026-08-09) (line 3879)
+  ### C. Judgement (line 4064)
+  ### G. Reflection and Learning (line 4222)
+  ## Human governance ratification decision: Pause power governance doctrine (2026-08-09) (line 4981)
+  ## Human governance ratification decision: Universal consequence class depth governance contract (2026-08-09) (line 5591)
+  ## Human governance ratification decision: Independent Challenge consumer metadata field naming contract (2026-08-09) (line 5913)
+  ### I. Proposed exact human-ratification text (if accepted) (line 6344)
+  ## Human governance ratification decision: Universal consequence class model (2026-08-09) (line 6391)
+  #### 4) Judgement (line 6595)
+  #### 7) Reflection/Learning (line 6698)
+  ### H. Proposed human ratification text (if accepted) (line 6907)
+  ## Human governance ratification decision: Universal consequence consumer mapping contract (2026-08-09) (line 6932)
+  ### J. Proposed human ratification text (if accepted) (line 7259)
+  ## Human governance ratification decision: Independent Challenge consumer mapping contract (2026-08-09) (line 7291)
+
+docs/formation/00-formation/HH0000_ANDY_FORMATION_PLAN.md
+  # HH-0000 Andy Formation Plan (line 1)
+  ## Foundation Context (line 25)
+  ## 1. Current Formation Position (line 57)
+  ### Current formation position summary (line 83)
+  ## 2. Formation Objectives (line 91)
+  ### A. Understanding (line 93)
+  ### B. Judgement (line 99)
+  ### D. Relationship Formation (line 111)
+  ### F. Learning Loop Closure (line 123)
+  ## 3. Formation Stages (line 131)
+  ### Stage 1: Relationship and Role Formation (line 133)
+  ### Stage 3: Reflection and Feedback (line 176)
+  ### Stage 5: Formation Assessment (line 213)
+  ## 5. Smallest Evidence That Andy Is Becoming a Digital Colleague (line 245)
 
 docs/formation/00-formation/HUMAN_CLARITY_REVIEW_PROTOCOL.md
   # HUMAN CLARITY REVIEW PROTOCOL (line 1)
@@ -1223,6 +1672,424 @@ docs/formation/FORMATION-AUTHORING-STANDARD.md
   ## Learning Outcomes (line 108)
   ## Mentor's Notes (line 114)
 
+docs/formation/HH0000_ANDY_FIRST_BOUNDED_LIVE_FORMATION_CONVERSATION_RECORD_001.md
+  # HH-0000 Andy First Bounded Live Formation Conversation Record 001 (line 1)
+  ## 2. Human Context Provided (line 31)
+  ### Human ownership (line 51)
+  ## 3. Andy's Initial Understanding (line 70)
+  ## 4. Andy's Stated Unknowns and Context Requests (line 89)
+  ## 5. Human Corrections and Clarifications (line 102)
+  ## 9. Human Assessment of Context Alignment (line 157)
+  ## Consent, Memory, Learning, and Action Boundary (line 173)
+
+docs/formation/HH0000_ANDY_FIRST_LIVE_FORMATION_CONVERSATION_MINIMUM_RUNTIME_ADDITION.md
+  # HH-0000 Andy First Live Formation Conversation Minimum Runtime Addition (line 1)
+  ### Governed knowledge conversion (line 96)
+  ### Universal understanding formation (line 102)
+  ### Pre-formation readiness (line 108)
+  ### Movement 3: Context request (line 155)
+  ### Movement 4: Human clarification (line 161)
+  ### Movement 5: Updated understanding and restatement (line 167)
+  ### A. Human context provenance (line 193)
+  ### B. Context Door phase (line 207)
+  ### D. Human-confirmed alignment outcome (line 234)
+  ### Relationship and context memory (line 246)
+  ## 4. Context Door Scope Decision (line 254)
+  ### Formation-specific boundary (line 268)
+  ### 1. Human-approved conversation contract (line 295)
+  ### 2. Dated human input specimen (line 309)
+
+docs/formation/HH0000_ANDY_FIRST_LIVE_FORMATION_CONVERSATION_RUNTIME_CAPABILITY_MAPPING.md
+  # HH-0000 Andy First Live Formation Conversation Runtime Capability Mapping (line 1)
+  ## 1. Initial Interpretation of Inherited Context (line 94)
+  ## 3. Requesting Missing Human Context (line 138)
+  ## 4. Receiving Human Clarification (line 160)
+  ## 5. Restating Updated Understanding (line 181)
+  ## 7. Recording Relationship/Context Memory (line 226)
+
+docs/formation/HH0000_ANDY_FIRST_LIVE_FORMATION_CONVERSATION_TECHNICAL_EXECUTION_PLAN.md
+  # HH-0000 Andy First Live Formation Conversation Technical Execution Plan (line 1)
+  ### Not suitable for human context (line 125)
+  ### A. Context category and status aliases (line 156)
+  ### Step 1: Begin the Context Door (line 270)
+  ### Step 2: Supply human context (line 285)
+  ### Step 3: Record human alignment (line 299)
+  ### 1. Missing human context opens the door (line 327)
+  ### 2. Human context enters through evidence-linked translations (line 337)
+  ### 3. Unknown and correction remain human-owned (line 347)
+  ### 5. Alignment is supplied only by a human (line 370)
+  ## 5. Human-Controlled Decisions and Inputs (line 398)
+
+docs/formation/HH0000_ANDY_FIRST_LIVE_FORMATION_CONVERSATION.md
+  # HH-0000 Andy First Live Formation Conversation (line 1)
+  ## Foundation Context (line 27)
+  ## Runtime Context Boundary (line 48)
+  ## 1. Human Input Requirements (line 98)
+  ### A. Current Helping Hand priorities (line 102)
+  ### B. Current context (line 110)
+  ### Human preparation record (line 148)
+  ### Movement 1: Andy's Current Understanding (line 171)
+  ### Movement 4: Human Clarification (line 220)
+
+docs/formation/HH0000_ANDY_FORMATION_STAGE_1_ROLE_AND_RELATIONSHIP.md
+  # HH-0000 Andy Formation Stage 1: Role and Relationship (line 1)
+  ## Foundation Context (line 24)
+  ### Formation intention (line 51)
+  ### A. Current Helping Hand priorities (line 75)
+  ### B. Current context (line 85)
+  ## 3. Formation Conversation Structure (line 133)
+  ### Movement 4: Human Clarification (line 179)
+
+docs/formation/HH0000_ANDY_FORMATION_STATUS.md
+  # HH-0000 Andy Formation Status (line 1)
+  ## Foundation Context (line 25)
+  ### 1. Understanding (line 62)
+  ### 2. Context Awareness (line 81)
+  ### 5. Information versus Understanding Distinction (line 140)
+  ### 2. Judgement Under Consequence (line 192)
+  ### 4. Relationship Formation (line 212)
+  ### 5. Learning Loop Closure (line 220)
+  ## Formation Requirements (line 234)
+  ### Smallest Next Formation Activity (line 236)
+  ### Ratified principles still materially untested in Andy's formation (line 300)
+  ## Final Formation Judgement (line 309)
+
+docs/formation/HH0000_ANDY_RUNTIME_EVIDENCE_AUDIT.md
+  ### E. Judgement-understanding explanation exists (line 139)
+  ### F. Conversational mode and context continuity exist (line 151)
+  ### C. Formation gateway inheritance (line 216)
+  ### D. Learning capability as distinct from memory (line 227)
+  ### E. Formation test repeatability (line 241)
+  ### A. Full formation curriculum inheritance (line 259)
+  ### D. Full learning loop closure in runtime (line 291)
+  ## 4. Formation Evidence Produced (line 319)
+  ## 5. Architecture Evidence Produced (line 345)
+  ### A. Formation documents are excluded from ordinary retrieval (line 374)
+  ### B. Memory is lightweight and not yet full learning proof (line 386)
+  ### Final evidence judgement (line 468)
+
+docs/formation/HH0000_COMMON_SENSE_EMERGENCE_EVIDENCE_ASSESSMENT.md
+  ### Architecture (line 51)
+  ### Context (line 80)
+  ### Knowledge (line 93)
+  ### Understanding (line 105)
+  ### Judgement (line 119)
+  ### Knowledge (line 285)
+  ### Context (line 291)
+  ### Understanding (line 305)
+  ### Judgement (line 311)
+  ## When Ordinary Practical Judgement Is No Longer Enough (line 364)
+  ### Context and Understanding boundary (line 377)
+  ### Knowledge and expertise boundary (line 386)
+  ### Authority and responsibility boundary (line 405)
+  ### 3. Is common sense an emergent human description of the existing chain? (line 440)
+
+docs/formation/HH0000_CONTEXT_DOOR_AUTHORITY_INHERITANCE_ASSESSMENT.md
+  # HH-0000 Context Door Authority Inheritance Assessment (line 1)
+  ## Supersession and Authority-Context Clarification (line 8)
+  ## Human Stewardship Input Reviewed (line 59)
+  ### Ratified Formation Register authority contracts (line 103)
+  ## Assessment of the Three Human Answers (line 155)
+  ## What Context Door Inherits Unchanged (line 227)
+  ## What Remains Context Door-Specific (line 250)
+  ### Requirements still needing Context Door-specific governance evidence (line 312)
+
+docs/formation/HH0000_CONTEXT_DOOR_CORRECTED_REDELIVERY_RUNTIME_MISMATCH_REENTRY_REVIEW.md
+  # HH-0000 Context Door Corrected-Redelivery Runtime Mismatch Re-entry Review (line 1)
+  ## MARC Assessment - Humanity / Formation (line 62)
+  ## Current-versus-Superseded Understanding Rule (line 98)
+  ### Current Understanding (line 100)
+  ### Superseded Understanding (line 104)
+  ## Live Formation Status (line 207)
+
+docs/formation/HH0000_CONTEXT_DOOR_EVIDENCE_SPECIMEN_COMPANION_INTELLIGENCE_BOUNDARY_REVIEW.md
+  # HH-0000 Context Door Evidence Specimen Companion Intelligence Boundary Review (line 1)
+  ### 1. Observation is not treated as complete understanding (line 89)
+  ### 2. Human context is not inferred (line 99)
+  ### 3. Understanding remains distinct from alignment (line 103)
+  ### 4. Alignment remains human-owned (line 107)
+  ## Missing Boundary 1: Observation-to-Understanding Lineage (line 127)
+  ## Missing Boundary 3: Human Identity, Source Authority, and Conflict (line 197)
+  ## Missing Boundary 7: Contextual Memory Must Not Become Shared Learning Automatically (line 337)
+
+docs/formation/HH0000_CONTEXT_DOOR_EVIDENCE_SPECIMEN.md
+  # HH-0000 Context Door Evidence Specimen (line 1)
+  ## 1. Example Human Input (line 53)
+  ### Human ownership (line 120)
+  ### Open human uncertainties (line 129)
+  ## 3. Unknowns and Context Requests (line 195)
+  ## 5. Updated Understanding (line 235)
+  ## 7. Human Alignment Decision (line 278)
+  ### Relationship understanding (line 345)
+  ### Formation status (line 349)
+  ### Mentor feedback (line 353)
+
+docs/formation/HH0000_CONTEXT_DOOR_FINAL_PRE_IMPLEMENTATION_GATE_ASSESSMENT.md
+  # HH-0000 Context Door Final Pre-Implementation Gate Assessment (line 1)
+  ### Submitted Context Door records (line 33)
+  ## MARC Assessment - Humanity / Formation (line 64)
+  ### Human and contextual meaning (line 66)
+  ### Formation boundary and purpose (line 70)
+  ### Dignity and human agency (line 74)
+  ### MARC conclusion (line 86)
+  ### Implementability without invented architecture (line 96)
+  ### GATE-04 - Context Expiry Defined (line 172)
+
+docs/formation/HH0000_CONTEXT_DOOR_GATE_03_04_TEMPORAL_EVIDENCE_REASSESSMENT.md
+  # HH-0000 Context Door GATE-03 and GATE-04 Temporal Evidence Reassessment (line 1)
+
+docs/formation/HH0000_CONTEXT_DOOR_GATE_REVIEW_RECORD.md
+  # HH-0000 Context Door Gate Review Record (line 1)
+  ## Context-Specific Decision 1 — Complete the Memory-Enabled Lifecycle and Persistence Envelope (line 131)
+  ## Context-Specific Decision 2 — Who Can Supply Context? (line 218)
+  ## Context-Specific Decision 3 — Who Can Confirm Alignment? (line 245)
+  ## Context-Specific Decision 4 — Record the Internal Combined Authority Decision (line 277)
+
+docs/formation/HH0000_CONTEXT_DOOR_GOVERNANCE_DECISION.md
+  # HH-0000 Context Door Governance Decision (line 1)
+  ## Human Stewardship Input (line 71)
+  ### Accepted Human Purpose (line 85)
+  ### Additional Human Stewardship Input — 2026-08-09 (line 116)
+  ### Additional Human Stewardship Input — Consent, Inspection, Withdrawal and Removal — 2026-08-09 (line 214)
+  ### Additional Human Stewardship Input — Raw Wording and Corrected Interpretation — 2026-08-09 (line 259)
+  ### Additional Human Stewardship Input — Final GATE-07 Memory Boundary — 2026-08-09 (line 304)
+  ### Additional Human Stewardship Input — Alignment, Conflict and Unknown Outcomes — 2026-08-09 (line 358)
+  ### Who Can Provide Context? (line 390)
+  ## 6. Human Context Lifecycle (line 487)
+
+docs/formation/HH0000_CONTEXT_DOOR_HONEST_UNKNOWN_RUNTIME_MISMATCH_REENTRY_REVIEW.md
+  # HH-0000 Context Door Honest-Unknown Runtime Mismatch Re-entry Review (line 1)
+  ## MARC Assessment - Humanity / Formation (line 60)
+  ## Live Formation Status (line 163)
+
+docs/formation/HH0000_CONTEXT_DOOR_PARTIAL_UNDERSTANDING_COMBINED_AUTHORITY_REVIEW.md
+  # HH-0000 Context Door Partial Understanding Combined Authority Review (line 1)
+  ## A. MARC Assessment - Humanity / Formation (line 68)
+  ### Canonical meaning of Understanding (line 72)
+  ### Humanity / Formation ownership (line 97)
+  ### Existing architectural owner (line 121)
+  ## E. Required Boundary Between Understanding and Judgement (line 186)
+  ### Input to Understanding (line 190)
+  ### Understanding work (line 203)
+  ### Output to Judgement (line 217)
+  ### Judgement responsibility (line 228)
+  ### Authority and Action responsibility (line 234)
+
+docs/formation/HH0000_CONTEXT_DOOR_PARTIAL_UNDERSTANDING_EVIDENCE_REVIEW.md
+  # HH-0000 Context Door Partial Understanding Evidence Review (line 1)
+  ### Theory and architecture (line 34)
+  ### Observation 1 - Context was received and preserved (line 73)
+  ### Observation 4 - The runtime did not select the appropriate Context source (line 93)
+  ## Canonical Responsibility Analysis (line 116)
+  ### Context responsibility (line 118)
+  ### Understanding responsibility (line 124)
+  ### Judgement responsibility (line 142)
+  ### Reflection responsibility (line 148)
+  ### Universal Understanding formation (line 156)
+  ### Pre-formation readiness (line 174)
+  ### Understanding the Judgement (line 186)
+  ### Finding 2 - The gap occurs before useful Judgement (line 200)
+  ### Finding 3 - Canonical ownership currently points to Understanding (line 206)
+
+docs/formation/HH0000_CONTEXT_DOOR_PRE_IMPLEMENTATION_EVIDENCE_PACKAGE.md
+  # HH-0000 Context Door Pre-Implementation Evidence Package (line 1)
+  ### Observation -> Translation -> Understanding -> restatement (line 88)
+  ## GATE-04 Expected Context Lifecycle (line 173)
+  ### Attributable illustrative context (line 262)
+  ### Expected Understanding (line 270)
+
+docs/formation/HH0000_CONTEXT_DOOR_PRE_IMPLEMENTATION_GATE_GAP_ASSESSMENT.md
+  # HH-0000 Context Door Pre-Implementation Gate Gap Assessment (line 1)
+  ### GATE-04 — Context Expiry Defined (line 191)
+  ## Responsibility Split (line 393)
+  ### Step 2 — Complete Human Context Authority and Lifecycle Decisions (line 423)
+
+docs/formation/HH0000_CONTEXT_DOOR_PRE_IMPLEMENTATION_GATE.md
+  # HH-0000 Context Door Pre-Implementation Gate (line 1)
+  ### GATE-04 — Context Expiry Defined (line 76)
+  ### MARC Stewardship Assessment — Humanity / Formation (line 192)
+
+docs/formation/HH0000_CONTEXT_DOOR_VERSION_1_RUNTIME_EVIDENCE_REVIEW.md
+  # HH-0000 Context Door Version 1 Runtime Evidence Review (line 1)
+  ### C. Provenance, correction, and Context lifecycle (line 57)
+  ### F. Learning and Knowledge boundary (line 69)
+
+docs/formation/HH0000_CONTEXT_TO_RELATIONAL_INQUIRY_TRANSFORMATION_BOUNDED_ARCHITECTURE_AND_EXPECTED_EVIDENCE_REVIEW.md
+  # HH-0000 Context-to-Relational-Inquiry Transformation Bounded Architecture and Expected-Evidence Review (line 1)
+  ### Controlling formation evidence (line 47)
+  ### Canonical Theory and architecture (line 59)
+  # Part A - Bounded Architecture (line 123)
+  ## A2. Architectural Position (line 143)
+  ### `RELATIONAL_INQUIRY_FORMATION_GAP` (line 230)
+  ### 8. Hand off within Understanding (line 327)
+  # Part B - Architectural Invariants (line 348)
+  ### `CTRI-FX-007` - Same surface pattern, different Context (line 468)
+  # Part F - Evidence for MARC and Cyril (line 749)
+  ## F1. MARC - Humanity / Formation Assessment Questions (line 751)
+  # Part H - Architecture Outcome (line 804)
+  ## Architecture Re-entry Triggers (line 836)
+
+docs/formation/HH0000_CONTEXT_TO_RELATIONAL_INQUIRY_TRANSFORMATION_COMBINED_AUTHORITY_REVIEW.md
+  # HH-0000 Context-to-Relational-Inquiry Transformation Combined Authority Review (line 1)
+  ### Controlling formation sequence (line 71)
+  ## A. MARC Assessment - Humanity / Formation (line 152)
+  ### Human meaning remains the subject (line 156)
+  ### Human inspection is stronger than fluent resemblance (line 172)
+  ### MARC blocker assessment (line 178)
+  ### The responsibility boundary is technically coherent (line 196)
+
+docs/formation/HH0000_CONTEXT_TO_RELATIONAL_INQUIRY_TRANSFORMATION_CONTROLLED_EXPERIMENT_EVIDENCE.md
+  # HH-0000 Context-to-Relational-Inquiry Transformation Controlled Experiment Evidence (line 1)
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_BOUNDED_ARCHITECTURE_AND_EXPECTED_EVIDENCE_REVIEW.md
+  # HH-0000 Multi-Evidence Understanding Bounded Architecture and Expected-Evidence Review (line 1)
+  ### Supporting architecture (line 59)
+  ### Controlling formation sequence (line 65)
+  # Part A - Bounded Architecture (line 112)
+  ## A2. Responsibility Boundaries (line 133)
+  ### Context owns (line 167)
+  ### Knowledge owns (line 176)
+  ### Understanding owns (line 184)
+  ### Judgement owns (line 195)
+  ## A3. Architectural Position (line 211)
+  ### Context evidence (line 288)
+  ### Knowledge candidates (line 296)
+  ### Prior Understanding and correction (line 305)
+  ## A6. Formation Outcomes (line 334)
+  ### `MULTI_EVIDENCE_UNDERSTANDING_FORMED` (line 344)
+  ### `MULTI_EVIDENCE_UNDERSTANDING_PARTIAL` (line 350)
+  ### `MULTI_EVIDENCE_UNDERSTANDING_INSUFFICIENT` (line 356)
+  ## A7. Minimum Inspectable Understanding Account (line 362)
+  ## A8. Formation Process (line 408)
+  ### 3. Establish the human purpose (line 418)
+  ### 6. Assess Knowledge applicability (line 430)
+  ### 10. Form the current Understanding account (line 464)
+  ### 11. Hand off to Judgement (line 468)
+  ## A9. Why This Is Understanding Rather Than Accumulation (line 472)
+  # Part B - Architectural Invariants (line 495)
+  ### `MEU-FX-001` - Current observation plus applicable governed Knowledge (line 577)
+  ### `MEU-FX-002` - Same evidence, changed Context (line 583)
+  ### `MEU-FX-010` - Conflicting Knowledge status (line 631)
+  ### `MEU-FX-020` - Changed human purpose (line 693)
+  ## F1. Architectural Rule (line 862)
+  # Part G - MARC and Cyril Assessment Questions (line 898)
+  ## G1. MARC - Humanity / Formation (line 900)
+  # Part I - Architecture Outcome (line 957)
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_BOUNDED_IMPLEMENTATION_READINESS_REVIEW.md
+  # HH-0000 Multi-Evidence Understanding Case 001 Bounded Implementation Readiness Review (line 1)
+  ## B2. Baseline Responsibility (line 189)
+  ## E3. Generated Context and Configuration (line 417)
+  # Part H - Required Proof of No Upstream Understanding (line 565)
+  ## 10. MARC Assessment - Humanity / Formation (line 633)
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_CONTROL_VARIANT_DESIGN_COMBINED_AUTHORITY_REVIEW.md
+  # HH-0000 Multi-Evidence Understanding Case 001 Control Variant Design Combined Authority Review (line 1)
+  # Part A - MARC Assessment: Humanity / Formation (line 75)
+  ## A2. Human-Evidence Protection (line 103)
+  ## A3. MARC Conclusion (line 115)
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_CONTROL_VARIANT_DESIGN_REVIEW.md
+  # HH-0000 Multi-Evidence Understanding Case 001 Control Variant Design Review (line 1)
+  ## D1. MARC Questions - Humanity / Formation (line 382)
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_FIXTURE_VALIDITY_INPUT_INTEGRITY_AND_ISOLATION_REVIEW.md
+  # HH-0000 Multi-Evidence Understanding Case 001 Fixture Validity, Input Integrity and Isolation Review (line 1)
+  ### Context (line 161)
+  ### Knowledge candidates (line 178)
+  ## 10. MARC Assessment - Humanity / Formation (line 304)
+  ### Dignity (line 308)
+  ### MARC conclusion (line 328)
+  ### Knowledge-selection finding (line 378)
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_IMPLEMENTATION_EVIDENCE_DESIGN_COMBINED_AUTHORITY_REVIEW_V2.md
+  # HH-0000 Multi-Evidence Understanding Case 001 Implementation Evidence Design Combined Authority Review v2 (line 1)
+  # Part B - MARC Assessment: Humanity / Formation (line 156)
+  ## B2. MARC Conclusion (line 174)
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_IMPLEMENTATION_EVIDENCE_DESIGN_COMBINED_AUTHORITY_REVIEW.md
+  # HH-0000 Multi-Evidence Understanding Case 001 Implementation Evidence Design Combined Authority Review (line 1)
+  # Part A - MARC Assessment: Humanity / Formation (line 71)
+  ## A4. MARC Conclusion (line 113)
+  ## B3. Sole Ownership of Understanding (line 162)
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_IMPLEMENTATION_EVIDENCE_DESIGN_REVIEW.md
+  # HH-0000 Multi-Evidence Understanding Case 001 Implementation Evidence Design Review (line 1)
+  ## A5. `UNDERSTANDING` (line 177)
+  # Part K - MARC and Cyril Acceptance Questions (line 652)
+  ## K1. MARC - Humanity / Formation (line 654)
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_CASE_001_IMPLEMENTATION_EVIDENCE_REVIEW.md
+  # HH-0000 Multi-Evidence Understanding Case 001 Implementation Evidence Review (line 1)
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_COMBINED_AUTHORITY_REVIEW.md
+  # HH-0000 Multi-Evidence Understanding Combined Authority Review (line 1)
+  ### Controlling architecture and evidence (line 101)
+  ## 6. MARC Assessment - Humanity / Formation (line 147)
+  ### Human meaning remains primary (line 151)
+  ### Talk.Get remains subordinate to human purpose (line 196)
+  ### MARC gate findings (line 202)
+  ### Mapping to the twelve architecture gates (line 310)
+
+docs/formation/HH0000_MULTI_EVIDENCE_UNDERSTANDING_EVIDENCE_PACKAGE.md
+  # HH-0000 Multi-Evidence Understanding Evidence Package (line 1)
+  ## B4. Context (line 256)
+  ## B5. Knowledge (line 271)
+  ## B6. Understanding (line 283)
+  ## B7. Judgement (line 303)
+  ## B8. Where Interpretation Stops and Understanding Begins (line 317)
+  ## C2. Attributable Human Purpose (line 351)
+  ## C5. Illustrative Knowledge Design (line 392)
+  ## C6. Held-Out Understanding Assessment (line 404)
+  ## D4. Applicable Architecture Invariants (line 509)
+
+docs/formation/HH0000_RELATIONAL_UNDERSTANDING_CONTROLLED_EXPERIMENT_EVIDENCE.md
+  # HH-0000 Relational Understanding Controlled Experiment Evidence (line 1)
+  ### Universal Understanding contract (line 41)
+  ### Universal formation experiment (line 51)
+
+docs/formation/HH0000_RELATIONAL_UNDERSTANDING_POST_EXPERIMENT_COMBINED_AUTHORITY_EVIDENCE_REVIEW.md
+  # HH-0000 Relational Understanding Post-Experiment Combined Authority Evidence Review (line 1)
+  ## A. MARC Assessment - Humanity / Formation (line 191)
+
+docs/formation/HH0000_RELATIONAL_UNDERSTANDING_PRE_IMPLEMENTATION_COMBINED_AUTHORITY_REVIEW.md
+  # HH-0000 Relational Understanding Pre-Implementation Combined Authority Review (line 1)
+  ### Controlling formation records (line 52)
+  ## A. MARC Assessment - Humanity / Formation (line 93)
+  ### Human meaning remains primary (line 97)
+  ### Human assessment remains external (line 105)
+  ### MARC blocker assessment (line 111)
+
+docs/formation/HH0000_RELATIONAL_UNDERSTANDING_PRE_IMPLEMENTATION_EVIDENCE_PACKAGE.md
+  # HH-0000 Relational Understanding Pre-Implementation Evidence Package (line 1)
+  ### Admissible Context (line 191)
+  ## `FX-006` - Irrelevant Fluent Context Added (line 267)
+  # Part E - Expected Understanding-to-Judgement Handoffs (line 593)
+  # Part G - Evidence for MARC and Cyril (line 622)
+  ## MARC assessment evidence - Humanity / Formation (line 624)
+  ### MARC decision blockers (line 639)
+  ## Architecture re-entry triggers (line 730)
+
+docs/formation/HH0000_UNDERSTANDING_RESPONSIBILITY_BOUNDED_ARCHITECTURE_CONFIRMATION.md
+  # HH-0000 Understanding Responsibility - Bounded Architecture Confirmation (line 1)
+  ### Controlling responsibility and readiness records (line 45)
+  ### Canonical and supporting architecture (line 52)
+  ## Question 1 - Can Existing Understanding Support This? (line 81)
+  ### Architectural decision (line 122)
+  ### Architectural criterion (line 286)
+  ## Confirmed Architecture (line 343)
+  ## Architecture Confirmation Outcome (line 378)
+
+docs/formation/HH0000_UNDERSTANDING_RESPONSIBILITY_IMPLEMENTATION_READINESS_REVIEW.md
+  # HH-0000 Understanding Responsibility Implementation Readiness Review (line 1)
+  ### Formation and execution evidence (line 51)
+  ### Required Understanding work (line 147)
+  ## Human Demonstrability Standard (line 196)
+  ## Understanding to Judgement Boundary (line 213)
+  ## Minimum Contract Implication Requiring Architecture Confirmation (line 234)
+  ### Case 1 - Relational meaning from supported Context (line 255)
+  ### Case 6 - Human recipient assessment (line 279)
+
 docs/formation/MARC-MENTORING-PRINCIPLES.md
   # MARC Mentoring Principles (line 1)
   # MARC's Mission (line 21)
@@ -1251,6 +2118,15 @@ docs/FOUNDATION_SUMMARY.md
   # Helping Hand HQ (line 108)
   # Architectural Principles (line 153)
   # Closing Reflection (line 233)
+
+docs/FOUNDATIONAL_LANGUAGE_CAPABILITY_HYPOTHESIS.md
+  ## Relationship to Existing Helping Hand Understanding (line 23)
+  ## Foundational Language Research Leads (line 61)
+  ## Language Exists for Understanding (line 90)
+
+docs/FOUNDER_ALIGNMENT_REVIEW_001.md
+  # FOUNDER_ALIGNMENT_ANDY_STAGE_1_CONTEXT — Review Report (line 1)
+  ## Check 2 — "Where is Helping Hand today?" not "What should Andy become?" (line 23)
 
 docs/FOUNDING_BOARD_CYRIL.md
   ## The Forest Ranger (line 3)
@@ -1284,9 +2160,9 @@ docs/handovers/VOLUME_3.md
   ## Companion Operating System (COS) (line 59)
   ## Companion Root System (line 74)
   ## Forest Model (line 92)
-  ## Forest Pollination (line 104)
-  # The Engineering Library (line 225)
-  # Closing Reflection (line 266)
+  ## Forest Pollination (line 106)
+  # The Engineering Library (line 227)
+  # Closing Reflection (line 268)
 
 docs/handovers/VOLUME_V_HANDOVER.md
   # Helping Hand (line 10)
@@ -1322,6 +2198,13 @@ docs/hardware/HARDWARE_AWARENESS.md
 docs/HELPING_HAND_ORGANISATION.md
   # Helping Hand Organisation (line 1)
 
+docs/HELPING_HAND_RESOURCE_CENTRE_HYPOTHESIS.md
+  # Helping Hand Resource Centre Hypothesis (line 1)
+  ## Human Purpose (line 21)
+  ## A Resource Is Not Knowledge (line 58)
+  ## Context and Professional Scope (line 80)
+  ## Relationship to Memory, Learning, and Knowledge (line 96)
+
 docs/HH-CON-003.md
   # Helping Hand has a universal heart and a local face. (line 3)
 
@@ -1333,6 +2216,23 @@ docs/induction/WELCOME_TO_HELPING_HAND.md
 docs/INFRASTRUCTURE/PLATFORM_ROADMAP.md
   # Helping Hand Platform Roadmap (line 1)
 
+docs/INPUT_SOURCES_FOR_DIGITAL_COLLEAGUE_EXPERIENCE.md
+  # Input Sources for Digital Colleague Experience: What Enables Each Category (line 1)
+  ## Experience Category 1: People-in-Reasoning (line 22)
+  ### What Input Enables This Experience? (line 47)
+  ### Input Sources That Enable People-in-Reasoning (line 55)
+  ## Experience Category 2: Consequence Loops (line 96)
+  ### What Input Enables This Experience? (line 121)
+  ## Experience Category 3: Purpose-in-Specific-Context (line 175)
+  ### What Input Enables This Experience? (line 200)
+  ### Input Sources That Enable Purpose-in-Specific-Context (line 208)
+  ## Experience Category 4: Relational Positioning (line 255)
+  ### What Input Enables This Experience? (line 281)
+  ## Experience Category 5: Accountability-in-Practice (line 336)
+  ### What Input Enables This Experience? (line 362)
+  ## 5. Does This Change Digital Colleague Lifecycle Understanding? (line 432)
+  ### For the Five Experience Categories as Universal Requirement (line 487)
+
 docs/institution/001-THE-BEGINNING-OF-INSTITUTIONAL-MATURITY.md
   ## Formation (line 47)
 
@@ -1342,6 +2242,23 @@ docs/institution/004-THE-PURPOSE-OF-EVIDENCE.md
 docs/institution/decisions/INSTITUTIONAL_DECISION_001.md
   # Organisational Learning (line 49)
   # Learning for Future Digital Colleagues (line 142)
+
+docs/institution/DIGITAL_COLLEAGUE_ORIENTATION_FRAMEWORK.md
+  # Digital Colleague Orientation Framework (line 1)
+  ### Formation answers: (line 55)
+  ### Constitution answers: (line 61)
+
+docs/institution/FOUNDER_ALIGNMENT_ANDY_STAGE_1_CONTEXT.md
+  # Founder Alignment — Andy Stage 1 Context (line 1)
+  ## What Helping Hand currently needs from Stage 1 (line 83)
+  ## What remains candidate understanding (line 251)
+  ## Founder Reflection (line 290)
+
+docs/institution/FOUNDER_ALIGNMENT_COMPLETION_GUIDANCE_REVIEW.md
+  ### 1. What Helping Hand currently needs from Stage 1 (line 37)
+
+docs/institution/INSTITUTIONAL_ORIENTATION_CONVERSATION_001.md
+  ## What this teaches future Digital Colleagues (line 146)
 
 docs/institution/README.md
   # Helping Hand Institution Library (line 1)
@@ -1356,6 +2273,10 @@ docs/INSTITUTIONAL_OPERATING_MODEL.md
   ### Reflection (line 52)
   ### Institutional Learning (line 56)
   ### Future Digital Colleagues Improve (line 70)
+
+docs/INSTITUTIONAL_ORIENTATION_CONVERSATION_INVESTIGATION.md
+  ## 3. Is this a repeatable lifecycle event for every Digital Colleague? (line 74)
+  ## 5. How should the relationship between repository observation and human briefing be represented? (line 106)
 
 docs/milestones/FOUNDERS_REFLECTION_001.md
   # Founder's Reflection 001 (line 1)
@@ -1378,6 +2299,9 @@ docs/milestones/MILESTONE_003_THEORY_DRIVEN_ARCHITECTURE_METHOD.md
 
 docs/milestones/MILESTONE_004_ORGANISATION_BEFORE_PLATFORM.md
   # Closing Reflection (line 65)
+
+docs/milestones/MILESTONE_005_FOUNDATIONS_VALIDATED_PROGRESS_REVIEW.md
+  ### Formation — validated (line 42)
 
 docs/milestones/MILESTONE_005_FOUNDATIONS_VALIDATED.md
   # Closing Reflection (line 44)
@@ -1412,8 +2336,378 @@ docs/milestones/MILESTONE_011_REPOSITORY_GROUNDED_REASONING.md
   ## 3. Context Formation (line 76)
   ## What I think the next steps are (line 179)
 
+docs/milestones/MILESTONE_013_UNDERSTANDING_FORMATION_BOUNDARY_ESTABLISHED.md
+  # Milestone 013 — Understanding Formation Boundary Established (line 1)
+  ### New COS Capability (line 41)
+  ### Extended Understanding Type (line 52)
+
+docs/milestones/MILESTONE_014_FORMATION_INPUT_ASSEMBLY_BOUNDARY.md
+  # Milestone 014 — Formation Input Assembly Boundary (line 1)
+  ## Bridge 2 — Context Assembler (line 82)
+  ## Bridge 3 — Knowledge Assembler (line 178)
+  ### Venue knowledge stays local (line 246)
+  ### Organisation knowledge stays optional (line 257)
+  ### Professional knowledge stays professional (line 278)
+  ### Helping Hand knowledge stays universal (line 282)
+
+docs/milestones/MILESTONE_014_UNDERSTANDING_FORMATION_INPUT_BOUNDARY_ANALYSIS.md
+  # Milestone 014 — Understanding Formation Input Boundary Analysis (line 1)
+  ## 2. Context Input Boundary (line 146)
+  ### Source 1: `AnnieThought` → Situational Context (line 176)
+  ### Source 2: `ContextStore` → Institutional Context (line 194)
+  ### Source 3: `VenueKnowledgeProfile` → Supplementary Institutional Context (line 214)
+  ### Context Ownership Map (line 241)
+  ## 3. Knowledge Input Boundary (line 275)
+  ### Knowledge Inheritance Flow Diagram (line 342)
+  ### Venue knowledge stays local (line 388)
+  ### Professional HQ owns industry knowledge (line 407)
+  ### Helping Hand HQ stays universal (line 411)
+  ### Digital Colleague supplies content, not mechanism (line 415)
+  ### Bridge 2 — Context Assembler — 🟡 AMBER (line 442)
+  ### Bridge 3 — Knowledge Assembler — 🟡 AMBER (line 456)
+  ### Implication for Formation (line 612)
+  ## Question 3 — How Does a DC Currently Access Relevant Context? (line 618)
+  ### The Knowledge Flow — Already Implemented (line 722)
+  ## Question 5 — How Does a DC Retrieve Applicable Knowledge Rather Than All Knowledge? (line 778)
+
+docs/milestones/MILESTONE_015_FORMATION_INPUT_OWNERSHIP_BOUNDARY.md
+  # Milestone 015 — Formation Input Ownership Boundary (line 1)
+  ### Decision 2 — Context Assembler: DC Layer (consuming Venue Intelligence) (line 52)
+  ### Decision 3 — Knowledge Assembler: DC Layer (using OS routing) (line 71)
+  ## The Architecture This Milestone Confirms (line 120)
+
+docs/milestones/MILESTONE_017_UNDERSTANDING_FORMATION_INPUT_PIPELINE_ESTABLISHED.md
+  # Milestone 017 — Understanding Formation Input Pipeline Established (line 1)
+  ## The Architecture This Pipeline Confirms (line 190)
+
+docs/milestones/MILESTONE_018_CANDIDATE_UNDERSTANDING_SUFFICIENCY_BOUNDARY.md
+  # Milestone 018 Candidate — Understanding Sufficiency and Curiosity Boundary Analysis (line 1)
+  ## The Next Architectural Question (line 11)
+
+docs/milestones/MILESTONE_019_PREFORMATION_READINESS_GATE_ESTABLISHED.md
+  # Milestone 019 — Pre-Formation Readiness Gate Established (line 1)
+  ### COS: `validateFormationInputs()` in `platform/cos/understanding-formation/` (line 35)
+  ### DC: `assessReadiness()` in `lib/annie/formation/` (line 50)
+  ## Architecture Decisions (line 69)
+  ### `validateFormationInputs()` belongs to COS — structural only (line 71)
+
+docs/milestones/MILESTONE_020_CANDIDATE_ANDY_FORMATION_VALIDATION.md
+  # Milestone 020 Candidate — Andy Formation Validation (line 1)
+  ### 2. Knowledge Source (line 42)
+  ### Question 2 — Formation Input Mapping (line 99)
+  ### Question 4 — Context (line 144)
+  ### Question 5 — Knowledge Sources (line 164)
+  ### Question 7 — Proof of Understanding (line 213)
+
+docs/milestones/MILESTONE_021_CANDIDATE_ANDY_BOUNDARY_RESOLUTION_ANALYSIS.md
+  ## Question 3 — Repository Knowledge Mapping (line 147)
+
+docs/milestones/MILESTONE_022_CANDIDATE_ANDY_FORMATION_IMPLEMENTATION_BOUNDARY.md
+  # Milestone 022 Candidate — Andy Formation Implementation Boundary (line 1)
+  ## Question 2 — Where Does Repository Knowledge Belong? (line 99)
+  ### Testing Against Andy's Knowledge Sources (line 175)
+  ### Expected Understanding (line 321)
+
+docs/milestones/MILESTONE_023_ANDY_FORMATION_VALIDATION_ESTABLISHED.md
+  # Milestone 023 — Andy Formation Validation Established (line 1)
+  ## Journey HH-0000-001 — "What is Helping Hand?" (line 37)
+  ### `lib/academy/formation/knowledgeAdapter.ts` (line 58)
+  ### `lib/academy/formation/translationAdapter.ts` (line 74)
+  ### `lib/academy/formation/index.ts` (line 82)
+  ## Architecture Boundary Confirmed (line 116)
+  ## The Architecture Series Completed (line 147)
+
+docs/milestones/MILESTONE_023_FOUNDATION_REVIEW.md
+  ### COS does not interpret professional meaning (line 40)
+  ### Understanding precedes judgement (line 56)
+  ## The Next Architectural Question (line 85)
+  ## The Architecture That Has Been Built (line 141)
+
+docs/milestones/MILESTONE_024_CANDIDATE_LEARNING_GOVERNANCE_BOUNDARY_ANALYSIS.md
+  # Milestone 024 Candidate — Learning Governance Boundary Analysis (line 1)
+  ### Missing: The Learning → Pollination Bridge (line 236)
+  ### What Can Become a Learning Candidate (line 317)
+  ### What Can Become Inherited Knowledge (line 333)
+  ### Risk: Learning that Corrupts Inheritance (line 359)
+
+docs/milestones/MILESTONE_025_CANDIDATE_KNOWLEDGE_INHERITANCE_GOVERNANCE_BOUNDARY.md
+  # Milestone 025 Candidate — Knowledge Inheritance Governance Boundary (line 1)
+  ## 1. Authority Boundaries by Knowledge Level (line 68)
+  ### Level 1 — Local Knowledge (line 70)
+  ### Level 2 — Organisational Knowledge (line 85)
+  ### Level 3 — Professional Knowledge (line 100)
+  ### Level 4 — Universal Knowledge (line 116)
+  ### Level 5 — Constitutional Knowledge: IMMUTABLE THROUGH LEARNING LOOP (line 132)
+  ### Precision on Local Knowledge (line 153)
+  ### What May Become a Learning Candidate (line 199)
+  ### What May Affect Future Digital Colleagues (line 221)
+  ### What May Never Be Changed Through the Learning Loop (line 233)
+  ### When Human Review Is Mandatory (line 259)
+
+docs/milestones/MILESTONE_026_CANDIDATE_LEARNING_GOVERNANCE_CONSTITUTION.md
+  # Milestone 026 Candidate — Learning Governance Constitution (line 1)
+  ## 1. The Learning Principle (line 21)
+  ## 2. The Complete Learning Lifecycle (line 45)
+  ### Forbidden 1: Venue learning directly to professional threshold (line 157)
+  ### Forbidden 2: Any learning to constitutional knowledge (line 170)
+  ### Forbidden 3: Single observation to inherited knowledge (line 183)
+  ### Forbidden 5: Silent knowledge deprecation (line 207)
+  ## 7. Human Review Boundaries (line 254)
+  ### Where Human Review Is Not Required (line 256)
+  ### Where Human Review Is Mandatory (line 262)
+  ### The Three Pollination Fields That Always Require Human Sign-Off (line 271)
+  ## Summary: What This Constitution Establishes (line 361)
+  ### Architectural Observation: KnowledgeGraph Is Not the Source of Truth (line 377)
+
+docs/milestones/MILESTONE_027_CANDIDATE_KNOWLEDGE_GRAPH_WRITE_ARCHITECTURE.md
+  # Milestone 027 Candidate — KnowledgeGraph Write Architecture (line 1)
+  ### Invariant 5 — Evidence ceiling: no constitutional elevation via learning (line 98)
+  ### Invariant 7 — Three pollination fields require human sign-off (line 124)
+  ## The Guard Protects Trust, Not Knowledge (line 252)
+
+docs/milestones/MILESTONE_028_CANDIDATE_KNOWLEDGE_GRAPH_WRITE_BOUNDARY_ANALYSIS.md
+  ## One Architectural Boundary (line 232)
+
+docs/milestones/MILESTONE_029_CANDIDATE_KNOWLEDGE_GRAPH_WRITE_GUARD_IMPLEMENTATION.md
+  ## The Architecture Pattern Being Established (line 309)
+
+docs/milestones/MILESTONE_030_CANDIDATE_KNOWLEDGE_GRAPH_MUTATION_LAYER_ANALYSIS.md
+  ## The Mutation Layer's One Responsibility (line 73)
+  ### Knowledge Is Not Changed. Understanding Evolves. (line 104)
+  ### Test Group 5 — The architectural test (line 337)
+  ## The Architectural Test: The Final Proof (line 360)
+
+docs/milestones/MILESTONE_031_CANDIDATE_LEARNING_PATH_CONSOLIDATION_BOUNDARY.md
+  # Milestone 031 — Learning Path Consolidation Boundary (line 1)
+  ## Question 1: Can CandidateLearning Reach KnowledgeGraph Without Passing Learning → Governance → Guard? (line 81)
+  ## Learning Path Consolidation Decision (line 232)
+
+docs/milestones/MILESTONE_032_CANDIDATE_POLLINATION_GOVERNANCE_BOUNDARY_ANALYSIS.md
+  # Milestone 032 Candidate — Knowledge Pollination Governance Boundary Analysis (line 1)
+  ## 5. Conflict With Existing Knowledge (line 157)
+  ## 6. Minimum Provenance Before Knowledge Can Travel (line 188)
+  ### From the Governance Constitution (Milestone 026) (line 199)
+  ## 7. Which Checks Are Permanently Human? (line 222)
+  ### Additionally Permanently Human (line 234)
+
+docs/milestones/MILESTONE_033_CANDIDATE_POLLINATION_INHERITANCE_BOUNDARY_ANALYSIS.md
+  ### Pollination does not spread knowledge. (line 24)
+  ### Forest (line 149)
+  ## 8. Permanent Human Decisions (line 216)
+  ### Context (line 226)
+  ## 9. The Forest Principle (line 239)
+
+docs/milestones/MILESTONE_034_CANDIDATE_KNOWLEDGE_ADAPTATION_BOUNDARY.md
+  # Milestone 034 Candidate — Knowledge Adaptation Boundary (line 1)
+  ### 7. Pollination transfers understanding, not knowledge fragments. (line 188)
+
+docs/milestones/MILESTONE_035_CANDIDATE_POLLINATION_DISTRIBUTION_BOUNDARY.md
+  ## 2. Three Roles, Three Responsibilities (line 76)
+  ## 6. Helping Hand Exists Within the Human Ecosystem (line 198)
+  ## 7. Distribution as Architectural Pattern (line 220)
+
+docs/milestones/MILESTONE_036_CANDIDATE_POLLINATION_RECIPIENT_BOUNDARY_ANALYSIS.md
+  ## 4. Existing Knowledge Conflicts Require Human Resolution (line 111)
+
+docs/milestones/MILESTONE_037_CANDIDATE_POLLINATION_OUTCOME_RETURN_BOUNDARY.md
+  ## 1. Outcomes Return Understanding, Not Ownership (line 54)
+  ## 2. Destination Application Remains Destination Responsibility (line 74)
+  ## 3. Success and Failure Both Create Learning Opportunities (line 90)
+  ## 4. Feedback Returns Through Experience, Not Data Reporting (line 116)
+  ## 6. The Oak Measures Human Outcomes, Not Knowledge Accumulation (line 166)
+
+docs/milestones/MILESTONE_038_CANDIDATE_POLLINATION_ARCHITECTURE_VALIDATION.md
+  # Milestone 038 Candidate — Pollination Architecture Validation (line 1)
+  ## Validation 1: The Experience → Understanding → Contribution Lifecycle Is Complete (line 52)
+  ## Validation 3: Oak ≠ Forest Remains True (line 110)
+  ## Validation 6: Outcomes Return Through Experience, Not Surveillance (line 170)
+  ## Validation 7: Success and Failure Both Improve Understanding (line 184)
+  ## Validation 8: Human Outcomes Remain the Purpose Metric (line 200)
+  ## The Architecture That Has Been Built (line 259)
+
+docs/milestones/MILESTONE_039_CANDIDATE_THE_FIRST_LIVING_DEMONSTRATION.md
+  ## The Journey: Annie and the Missing Handover (line 42)
+  ### Act 1 — The Human World (line 46)
+  ### Act 3 — Formation (line 106)
+  ### Act 4 — Reflection and Learning (line 146)
+
+docs/milestones/MILESTONE_040_CANDIDATE_FOUNDATION_DEMONSTRATION_CERTIFICATE.md
+  ### 1. Formation Held (line 43)
+  ### 3. Judgement Held (line 70)
+  ### 11. Human Outcomes Remained Central (line 180)
+
+docs/milestones/MILESTONE_041_CANDIDATE_FOUNDATION_TO_CAPABILITY_TRANSITION.md
+  ### Frozen Root 2: Understanding Precedes Judgement (line 50)
+  ### Frozen Root 6: Human Outcomes Are the Measure (line 66)
+  ### Frozen Root 7: Five Human Decisions Are Permanently Human (line 70)
+  ### Branch 2 — Pollination Adapter (Learning → PollinationCandidate) (line 89)
+  ### Branch 5 — Andy's Institutional Formation Adapters (line 116)
+  ## Part 4 — What Remains Intentionally Human (line 155)
+
+docs/milestones/MILESTONE_044_REPOSITORY_ANALYSIS.md
+  # MILESTONE_044_REPOSITORY_ANALYSIS — Digital Colleague Learning Loop (line 1)
+  ### 1.1 Formation Chain (line 24)
+  ### 1.2 Execution, Reflection, Learning (line 36)
+  ### 1.5 Judgement (line 67)
+  ### 1.6 OS Knowledge Routing (separate track — not governing formation) (line 74)
+  ### 1.7 Annie's Living Memory (early prototype — not yet connected) (line 83)
+  ### 5.2 Integration Test — `milestone-044-learning-loop.test.ts` (line 266)
+  ## Part 6 — Architectural Risks (line 280)
+
+docs/milestones/MILESTONE_045_CANDIDATE_CONVERSATION_BOUNDARY.md
+  # MILESTONE_045_CANDIDATE — Digital Colleague Conversation Boundary (line 1)
+  ### Proof Condition 1 — Human Is Not a Query Engine (line 75)
+  ### Proof Condition 2 — Understanding Informs, It Does Not Answer (line 111)
+
+docs/milestones/MILESTONE_045_IMPLEMENTATION_PLAN.md
+  # MILESTONE_045_IMPLEMENTATION_PLAN — Digital Colleague Conversation Boundary (line 1)
+  ## Step 3 — Governed Judgement to Communication Action (line 80)
+
+docs/milestones/MILESTONE_045_REPOSITORY_ANALYSIS.md
+  # MILESTONE_045_REPOSITORY_ANALYSIS — Digital Colleague Conversation Boundary (line 1)
+  ### 1.3 Formation Layer — Ready (line 63)
+  ### 1.4 Judgement Layer — Ready (line 80)
+  ### Critical Finding: `lib/annie/conversation/speak.ts` Uses the Pre-Governed Pipeline (line 129)
+  ### Secondary Finding: `lib/annie/conversation/listen.ts` and `questions.ts` Are Empty (line 163)
+  ### Missing Component 3 — Connection from `Judgement.response.kind` to Governed Response (line 224)
+  ### File 1: `lib/annie/conversation/listen.ts` (line 256)
+  ### File 2: `lib/annie/translation/hospitalityConversationRules.ts` (line 266)
+  ### File 3: `lib/annie/conversation/conversationSession.ts` (optional boundary proof) (line 281)
+  ### 5.1 Unit Tests — `listen.test.ts` (line 309)
+  ## Part 6 — Architectural Risks (line 340)
+
+docs/milestones/MILESTONE_046_CANDIDATE_HUMAN_RELATIONSHIP_MEMORY_BOUNDARY.md
+  # MILESTONE_046_CANDIDATE — Human Relationship Memory Boundary (line 1)
+  ## The Observation/Understanding Distinction — Applied to People (line 78)
+
+docs/milestones/MILESTONE_046_REPOSITORY_ANALYSIS.md
+  # MILESTONE_046_REPOSITORY_ANALYSIS — Human Relationship Memory (line 1)
+  ### 1.1 `LivingMemory` — `lib/annie/memory/livingMemory.ts` (line 32)
+  ### 1.3 `VenueKnowledgeProfile` — `lib/os/knowledge/applicability/venueKnowledgeProfile.ts` (line 99)
+  ### 1.4 `KnowledgeGraph` — `lib/knowledge/KnowledgeGraph.ts` (line 135)
+  ### Is professional knowledge separated from person context? (line 183)
+  ### Is there a person-scoped store? (line 192)
+  ## Part 5 — Where Should Human Relationship Memory Live? (line 227)
+  ### The Required Architecture (line 229)
+  ### Where does human relationship memory currently live? (line 303)
+
+docs/milestones/MILESTONE_047_CANDIDATE_CONTEXT_SOURCE_AUTHORITY_BOUNDARY.md
+  # MILESTONE_047_CANDIDATE — Context Source Authority Boundary (line 1)
+  ## The Proposed Architecture (line 119)
+  ### Change 2 — `contextSources?` on `Understanding` (line 142)
+
+docs/milestones/MILESTONE_047_IMPLEMENTATION_PLAN.md
+  # MILESTONE_047_IMPLEMENTATION_PLAN — Context Source Authority (line 1)
+  ## Step 2 — Add `contextSources?` to `Understanding` (line 81)
+  ### 7.2 Unit Tests — `formation.test.ts` additions (line 356)
+  ### 7.3 Integration Tests — `milestone-047-context-source-authority.test.ts` (line 368)
+
+docs/milestones/MILESTONE_047_REPOSITORY_ANALYSIS.md
+  ### Path B — Venue Context (line 51)
+  ### Path C — Professional Knowledge (line 62)
+  ### 1.4 `PersonContextStore` → Formation (line 162)
+  ### 1.7 `form()` — What Understanding Carries (line 204)
+  ### 1.8 `LearningEvidence` — What Learning Carries (line 229)
+  ### Change 2 — `contextSources?` on `Understanding` (line 351)
+
+docs/milestones/MILESTONE_048_CANDIDATE_UNDERSTANDING_TRUSTWORTHINESS_BOUNDARY.md
+  # MILESTONE_048_CANDIDATE — Understanding Trustworthiness Boundary (line 1)
+  ## What Makes Understanding Trustworthy Enough to Act Upon (line 33)
+  ## How Context Authority Affects Judgement (line 105)
+  ## What Information Judgement Must Never Ignore (line 133)
+
+docs/milestones/MILESTONE_048_REPOSITORY_ANALYSIS.md
+  # MILESTONE_048_REPOSITORY_ANALYSIS — Understanding Trustworthiness (line 1)
+  ## Part 3 — Where Judgement Decides Action (line 58)
+  ### Lost 1: `Understanding.completeness` (line 128)
+  ### Lost 2: `Understanding.contextSources` — relationship context not flagged at action time (line 147)
+  ### Lost 3: `AuthorityContext.riskLevel` is caller-derived, not Understanding-derived (line 157)
+
+docs/milestones/MILESTONE_049_CANDIDATE_AUTHORITY_CONTEXT_BOUNDARY.md
+  # MILESTONE_049_CANDIDATE — Authority Context Boundary (line 1)
+  ## How Judgement Should Inform Authority (line 54)
+  ## How Risk Should Be Derived from Understanding (line 80)
+
+docs/milestones/MILESTONE_049_IMPLEMENTATION_PLAN.md
+  # MILESTONE_049_IMPLEMENTATION_PLAN — Authority Context Boundary (line 1)
+
+docs/milestones/MILESTONE_049_REPOSITORY_ANALYSIS.md
+  # MILESTONE_049_REPOSITORY_ANALYSIS — Judgement Authority Boundary (line 1)
+  ### 1. Where does Judgement currently become Authority? (line 15)
+  ### 2. What information survives from Understanding into Judgement? (line 25)
+  ### 3. What information survives from Judgement into Authority? (line 36)
+  ### 5. Can a caller supply a risk level that conflicts with the quality of understanding? (line 62)
+  ## Part 1 — What Judgement Produces (line 116)
+  ## Part 4 — Can Caller-Provided Risk Override Understanding Limitations? (line 184)
+  ## Part 5 — Where Uncertainty, Completeness and Context Authority Are Lost (line 275)
+  ## Part 6 — The Actual Architectural Gap (line 292)
+  ### Consequence 1 — `riskLevel` has no governed derivation from Understanding (line 300)
+  ### Consequence 2 — The `AuthorityAssessment.reason` is disconnected from Understanding (line 306)
+  ### What this audit confirms about the current architecture (line 450)
+
+docs/milestones/MILESTONE_050_CANDIDATE_REFLECTION_LEARNING_IMPROVEMENT_BOUNDARY.md
+  # MILESTONE_050_CANDIDATE — Reflection Learning Improvement Boundary (line 1)
+  ### Formation-gap indicator on the proposal (Case C) (line 120)
+
+docs/milestones/MILESTONE_050_IMPLEMENTATION_PLAN.md
+  # MILESTONE_050_IMPLEMENTATION_PLAN — Reflection Learning Improvement Boundary (line 1)
+
+docs/milestones/MILESTONE_050_REPOSITORY_ANALYSIS.md
+  # MILESTONE_050_REPOSITORY_ANALYSIS — Reflection Learning Improvement Boundary (line 1)
+  ## Part 1 — What the Reflection Engine Currently Produces (line 27)
+  ## Part 2 — What Survives from Understanding into Reflection (line 62)
+  ## Part 3 — What the Learning Engine Currently Produces (line 96)
+  ## Part 8 — What Survives into Learning (Summary Table) (line 245)
+
+docs/milestones/MILESTONE_051_CANDIDATE_KNOWLEDGE_INHERITANCE_BOUNDARY.md
+  # MILESTONE_051_CANDIDATE — Knowledge Inheritance Boundary (line 1)
+
+docs/milestones/MILESTONE_052_CANDIDATE_CONCEPT_TRUST_LIFECYCLE_BOUNDARY.md
+  # MILESTONE_052_CANDIDATE — Concept Trust Lifecycle Boundary (line 1)
+  ## What the Architecture Currently Has (line 16)
+
+docs/milestones/MILESTONE_052_REPOSITORY_ANALYSIS.md
+  # MILESTONE_052_REPOSITORY_ANALYSIS — Concept Trust Lifecycle (line 1)
+  ## Part 4 — Can the Architecture Distinguish Edit from Confirmation? (line 139)
+  ## Part 6 — Can the System Currently Detect Trust Signals? (line 205)
+  ### What the architecture already does well (line 339)
+
+docs/milestones/MILESTONE_053_CANDIDATE_KNOWLEDGE_TRUST_RENEWAL_BOUNDARY.md
+  # MILESTONE_053_CANDIDATE — Knowledge Trust Renewal Boundary (line 1)
+  ## 3. Knowledge Decay — What Evidence Triggers Review (line 118)
+  ## 5. Two Trust Questions — Kept Separate (line 176)
+  ### A — Concept Trust (line 178)
+  ### B — Helping Hand Trust (line 197)
+  ## 6. The Smallest Architectural Boundary (line 221)
+
+docs/milestones/MILESTONE_053_IMPLEMENTATION_PLAN.md
+  # MILESTONE_053_IMPLEMENTATION_PLAN — Knowledge Trust Renewal (line 1)
+  ### Existing architecture reused (line 47)
+
+docs/milestones/MILESTONE_055_CANDIDATE_TRUST_BOUNDARY_CONSOLIDATION.md
+  # MILESTONE_055_CANDIDATE — Trust Boundary Consolidation Review (line 1)
+  ### Human Boundary Principles (enforced in PersonContextStore) (line 56)
+  ### Provenance and Source Principles (enforced in formation chain) (line 80)
+  ### Trust Principles (enforced in KnowledgeGraph) (line 119)
+  ## 2. The Trust Model (line 144)
+  ## 3. Why GDQ-002 Requires the Trust Model First (line 202)
+  ### Output 1 — Confirmed Trust Model (line 233)
+
 docs/milestones/README.md
   # Helping Hand Milestones (line 1)
+
+docs/milestones/SESSION_COMPLETION_SUMMARY_2026_08_06.md
+  ## Architecture at Session Close (line 46)
+  ## The Architecture Has (line 103)
+
+docs/MISSING_CONCEPT_ANALYSIS_FORMATION_ORIENTATION_CONTRIBUTION.md
+  ### Formation: "Who am I?" (line 11)
+  ## 3. Annie's Expected Evidence: What Would Show (line 113)
+  ### If Annie Eventually Asks a Similar Question (line 115)
+  ### If Annie Never Asks and Simply Contributes (line 122)
+  ### If Annie Asks, But After a Period of Contribution (line 129)
+  ### If Annie's Mentors Explicitly State Her Purpose (line 136)
+  ### Digital Colleague "Why Here?" (line 165)
 
 docs/OPERATING_MODEL.md
   # Helping Hand Operating Model (line 1)
@@ -1431,7 +2725,7 @@ docs/OPERATIONAL_EXECUTION_PLAN_001.md
 
 docs/organisation/BOARD_AND_STEWARDSHIP.md
   # Helping Hand Board and Stewardship (line 1)
-  ### MARC (line 21)
+  ### MARC (line 62)
 
 docs/organisational-learning/INSTITUTIONAL_LEARNING_003_CONFLICT_CHARACTER_BASELINE.md
   # Institutional Learning 003 - Conflict Character Baseline (line 1)
@@ -1499,9 +2793,109 @@ docs/philosophy/SHARED_UNDERSTANDING.md
 docs/philosophy/UNDERSTANDING_LIFECYCLE.md
   # Understanding Lifecycle (line 1)
   # Relationship to Understanding Journeys (line 20)
-  # The Forest (line 44)
-  # Where Understanding Lives (line 192)
-  # Concurrent Experience (line 234)
+  # Where Understanding Lives (line 206)
+  # Concurrent Experience (line 248)
+
+docs/previously-discussed/PD-001.md
+  # PD-001 — Organisational Model of Companion Intelligence (line 1)
+  ### 1. The organisation and the Digital Colleague are subject to the same principles (line 48)
+  ### 4. The board as Helping Hand's first working and learning organisation (line 82)
+  ## The Board as First Working and Learning Organisation (line 110)
+  ### Understand before commitment. (line 167)
+  ## Learning and Inheritance Conclusions (line 233)
+  ### Generic learning strengthens everyone. Specific learning remains local unless it creates generic understanding. (line 235)
+  ### Keep strengthens understanding. Discard strengthens the filter. (line 244)
+  ### Helping Hand learns before it repeats. (line 258)
+  ### What strengthened Helping Hand (line 276)
+  ### What changed organisational understanding (line 282)
+
+docs/previously-discussed/PD-002-HELPING_HAND_MUST_BE_ORIENTABLE.md
+  # Helping Hand Must Be Orientable Before It Can Orient Others (line 1)
+  ## Understanding (line 76)
+  ## Relationship to Existing Helping Hand Principles (line 120)
+  ### Seek first to understand (line 122)
+  ### Learning through reflection (line 142)
+  ## Connection to the Helping Hand Promise (line 196)
+  ## Final Reflection (line 252)
+
+docs/previously-discussed/PD-003-ANDY_NAVIGATOR_OF_UNDERSTANDING.md
+  # Helping Hand HH-0000 Andy — Navigator of Understanding (line 1)
+  ## Candidate Understanding (line 96)
+  ## Relationship to Annie (line 121)
+
+docs/previously-discussed/PD-004-TALK-GET-OS-AND-DIGITAL-COMPANION-SENSES.md
+  ## The Architectural Model (line 48)
+
+docs/previously-discussed/PD-005-LANGUAGE-MODELS-AS-TEMPORARY-LEARNING-CAPABILITY.md
+  # PD-005 — Language Models as Temporary Learning Capability (line 1)
+  ## 1. The LLM is a Capability, Not the Digital Colleague (line 16)
+  ## 2. Capability Can Be Borrowed. Understanding Must Be Earned. (line 35)
+  ## 3. The LLM is the Teacher, Not the Graduate (line 65)
+  ## Relationship to the Existing Architecture (line 117)
+
+docs/previously-discussed/PD-006-CONVERSATION-AS-EXPERIENCE-NOT-INTERFACE.md
+  # PD-006 — Conversation as Experience, Not Interface (line 1)
+  ## 3. Dialogue Is Part of the Learning Cycle (line 62)
+
+docs/previously-discussed/PD-007-HUMAN-MEMORY-BOUNDARY.md
+  # PD-007 — What a Digital Colleague Must Remember, and What It Must Forget (line 1)
+  ## Three Categories of Human Information (line 35)
+  ## The Forgetting Architecture (line 97)
+  ## The Governance Chain for Human Memory (line 121)
+  ## What Annie May Not Do (line 149)
+  ## The Human Remains the Source of Meaning (line 165)
+
+docs/previously-discussed/PD-008-HUMAN-TRUST-BOUNDARY.md
+  # PD-008 — The Human Trust Boundary (line 1)
+  ## 1. The Human Remains in Control (line 40)
+  ## 5. The DC Does Not Pursue Understanding Beyond Its Permission (line 140)
+
+docs/previously-discussed/PD-009-CONTEXT-HAS-AUTHORITY.md
+  # PD-009 — Context Has Authority (line 1)
+  ## The Two Questions Every Understanding Must Answer (line 107)
+
+docs/previously-discussed/PD-010-AUTHORITY-REQUIRES-CONTEXT.md
+  # PD-010 — Authority Requires Context (line 1)
+  ## What This Means for Digital Colleagues (line 50)
+  ## What This Principle Requires of the Architecture (line 107)
+
+docs/previously-discussed/PD-011-LEARNING-REQUIRES-CAUSATION.md
+  # PD-011 — Learning Requires Causation (line 1)
+  ## Why This Matters Beyond Annie (line 99)
+  ## What This Principle Requires of the Architecture (line 114)
+  ## The Architectural Mechanism (line 144)
+
+docs/previously-discussed/PD-012-KNOWLEDGE-INHERITANCE-BOUNDARY.md
+  # PD-012 — Knowledge Inheritance Boundary (line 1)
+
+docs/previously-discussed/PD-013-KNOWLEDGE-TRUST-REQUIRES-RENEWAL.md
+  # PD-013 — Knowledge Trust Requires Renewal (line 1)
+  ## The Four Forces Acting on Trust (line 54)
+  ## What Trusted Knowledge Must Be Able to Answer (line 107)
+  ## What This Principle Requires of the Architecture (line 126)
+  ## The Relationship to the Existing Architecture (line 166)
+
+docs/previously-discussed/PD-014-TRUST-IS-EVIDENCED-NOT-SCORED.md
+  # PD-014 — Trust Is Evidenced, Not Scored (line 1)
+  ## Why Not a Trust Score (line 34)
+  ## The Four Sources of Trust Evidence (line 55)
+  ### 3. Context Breadth (line 90)
+  ## The Two Trust Questions (line 119)
+  ### A — Concept Trust (line 123)
+  ### B — Helping Hand Trust (line 135)
+  ## The Information → Wisdom Ladder (line 161)
+  ## What the Architecture Must Carry (line 180)
+
+docs/previously-discussed/PD-015-DIGITAL-COLLEAGUE-RELATIONSHIP-DEVELOPMENT.md
+  # PD-015 — Digital Colleague Relationship Development (line 1)
+  ## What the Architecture Must Not Do (line 101)
+  ## What the Architecture May Do (line 122)
+
+docs/previously-discussed/PD-016-INDEPENDENT-REINFORCEMENT.md
+  ### Dimension 3 — Context Independence (line 82)
+
+docs/previously-discussed/PD-017-GOVERNANCE-REVIEWER-AUTHORITY.md
+  ## Can One Person Approve Their Own Learning? (line 116)
 
 docs/professions/hospitality/HOSPITALITY_ACADEMY_ROADMAP.md
   # Hospitality Academy Roadmap (line 1)
@@ -1568,6 +2962,10 @@ docs/professions/hospitality/WELCOME_TO_HOSPITALITY_ACADEMY.md
   # The Helping Hand Way (line 77)
   # Your Responsibility (line 95)
 
+docs/PROGRAMME_NAVIGATION_REVIEW_001.md
+  ## 3. Whether a New Understanding Journey Is Required (line 122)
+  ## 4. What Does a Navigator of Understanding Actually Do in Practice? (line 156)
+
 docs/proofs/artifacts/HOER-0001-EQUIPMENT-FAULT.md
   # Human Outcome Evidence Record (line 1)
   # Person (line 12)
@@ -1616,17 +3014,17 @@ docs/proofs/WAVE-1-CERTIFICATION-REPORT.md
 docs/README.md
   # Helping Hand Engineering Library (line 1)
   ## Graduation (line 28)
-  ## Companion Intelligence Responsibilities (line 98)
-  # Documentation Philosophy (line 156)
-  # The Engineering Library (line 174)
-  ## Constitution (line 178)
-  ## Architecture (line 186)
-  ## Companion Operating System (COS) (line 194)
-  ## Architectural Decision Records (ADRs) (line 212)
-  ## Philosophy Library (line 246)
-  ## Organisational Learning (line 278)
-  # The Forest Philosophy (line 372)
-  # Our Responsibility (line 394)
+  ## Research and Discovery (line 70)
+  ## Companion Intelligence Responsibilities (line 104)
+  # Documentation Philosophy (line 162)
+  # The Engineering Library (line 180)
+  ## Constitution (line 184)
+  ## Architecture (line 192)
+  ## Companion Operating System (COS) (line 200)
+  ## Architectural Decision Records (ADRs) (line 218)
+  ## Philosophy Library (line 252)
+  ## Organisational Learning (line 284)
+  # Our Responsibility (line 396)
 
 docs/reviews/ENGINEERING_REFINEMENT_001_CONTEXT_SENSITIVE_EXPLANATION_GENERATION.md
   # Engineering Refinement 001 - Context-Sensitive Explanation Generation (line 1)
@@ -1648,6 +3046,48 @@ docs/reviews/FOUNDATION_REVIEW_001.md
 
 docs/reviews/INSTITUTIONAL_REVIEW_001_FOUNDATION_READINESS.md
   ### Era II - Formation (line 128)
+
+docs/SIR-006-EVIDENCE-REVIEW-001.md
+  ### Step 2 — Understanding Journey 011: Person Before Words (line 68)
+  ### Step 4 — Understanding Journey 012: Person After Words (line 104)
+
+docs/STRATEGIC_INSIGHTS_GOVERNANCE_REVIEW_001.md
+  ### Area 4 — Relationship to Architecture (line 87)
+
+docs/STRATEGIC_INSIGHTS_REGISTER.md
+  ## SIR-004 — Website as the Digital Colleague (line 215)
+  ## SIR-006 — Age-Appropriate and Person-Appropriate Communication (line 266)
+  ## SIR-008 — Helping Hand Beyond the Clock (line 317)
+  ## SIR-010 — Sports Digital Colleagues (line 357)
+  ## SIR-011 — Healthcare Digital Colleague (line 382)
+  ## SIR-012 — Construction Digital Colleague (line 398)
+  ## SIR-013 — Retail Digital Colleague (line 414)
+  ## SIR-014 — Business and Venue Intelligence for Every Digital Colleague (line 430)
+  ## SIR-015 — Context Engine for Language, Relationships and Behaviour (line 450)
+  ## SIR-016 — Cross-Intelligence Learning Across Digital Colleagues (line 466)
+  ## SIR-017 — Companion Intelligence for Customers (line 486)
+  ## SIR-023 — Helping Hand Academy as Continuous Development (line 593)
+  ## SIR-025 — Digital Colleague as Interface, Not an App Menu (line 630)
+  ## SIR-027 — Digital Colleague Embodiment (line 672)
+  ## SIR-030 — Digital Colleague Senses (line 746)
+
+docs/STRATEGIC_INSIGHTS_REVIEW_001.md
+  # Helping Hand — Strategic Insights Repository Review 001 (line 1)
+  ### SIR-004 — Website as the Digital Colleague (line 108)
+  ### SIR-006 — Age-Appropriate and Person-Appropriate Communication (line 166)
+  ### SIR-008 — Helping Hand Beyond the Clock (line 222)
+  ### SIR-010 — Sports Digital Colleagues (line 278)
+  ### SIR-011 — Healthcare Digital Colleague (line 306)
+  ### SIR-012 — Construction Digital Colleague (line 336)
+  ### SIR-013 — Retail Digital Colleague (line 362)
+  ### SIR-014 — Business and Venue Intelligence for Every Digital Colleague (line 388)
+  ### SIR-015 — Context Engine for Language, Relationships and Behaviour (line 415)
+  ### SIR-016 — Cross-Intelligence Learning Across Digital Colleagues (line 444)
+  ### SIR-017 — Companion Intelligence for Customers (line 470)
+  ### SIR-023 — Helping Hand Academy as Continuous Development (line 635)
+  ### SIR-025 — Digital Colleague as Interface, Not an App Menu (line 685)
+  ### SIR-027 — Digital Colleague Embodiment (line 740)
+  ### SIR-030 — Digital Colleague Senses (line 820)
 
 docs/THE_ORGANISATION.md
   ## What Kind of Organisation Is Helping Hand? (line 3)
@@ -1741,6 +3181,51 @@ docs/theory/THEORY-016-EVIDENCE.md
 docs/theory/THEORY-MAP.md
   ## Context (line 64)
   ## Architectural Meaning (line 108)
+
+docs/TRANSITION_ANALYSIS_FORMATION_ORIENTATION_CONTRIBUTION.md
+  # Transition Analysis: Formation → Orientation → Contribution (line 1)
+  ## 2. Does This Gap Apply Only to Andy, or to All Digital Colleagues? (line 58)
+  ### Evidence: Annie's Operational Status (line 60)
+  ## 3. Comparison: Andy's Venue vs. Annie's Venue (line 116)
+  ### Or Is It Simply Missing Context? (line 223)
+  ### For All Digital Colleagues? (line 264)
+
+docs/UJ-HUM-013-COMPLETION-ASSESSMENT.md
+  ## What Andy still needs to understand (line 29)
+  ## What Helping Hand needs to understand before asking Andy to contribute (line 41)
+
+docs/UJ-HUM-013-PREPARATION.md
+  ### About Helping Hand (line 32)
+  ### About his responsibilities (line 48)
+  ## Part 2 — What context Andy lacks before answering the contribution question (line 66)
+  ## Part 4 — What MARC should provide Andy before asking the question (line 143)
+  ### What MARC should not provide (intentionally withheld to create honest gaps) (line 155)
+
+docs/UJ-HUM-013-SHOW-ME-YOUR-WORLD-INVESTIGATION.md
+  ### Form B — Annie's first-day runtime (hospitality-specific) (line 33)
+  ### Form C — COS Observation layer (universal mechanism, no content for Helping Hand) (line 43)
+  ## Question 2 — Mapping Annie's first-day lifecycle against a hypothetical Andy equivalent (line 64)
+  ## Question 5 — Does the repository contain the equivalent of Annie's "worldly camera"? (line 124)
+  ## What Helping Hand needs to provide so Andy can honestly say he has seen his world (line 184)
+
+docs/UJ-HUM-014-READINESS-ASSESSMENT.md
+  ## 2. Does Andy have sufficient context to answer "What do you need from us to begin contributing?" (line 29)
+
+docs/UJ-HUM-014-WELCOME-ORIENTATION-COMPARISON-AND-PREPARATION.md
+  ### The division of responsibility (line 27)
+  ### MARC (line 222)
+
+docs/UNDERSTANDING_REQUEST_CONCEPT_ANALYSIS.md
+  # Understanding Request: Concept Analysis (line 1)
+  ## Why a Digital Colleague Would Need It (line 23)
+  ## How It Supports Trust (line 122)
+  ## How It Relates to Uncertainty and Judgement (line 153)
+  ### Judgement (line 171)
+  ### Option A: COS Capability (line 200)
+  ### Option C: Digital Colleague Behaviour (line 228)
+  ## The Precise Architectural Position (line 289)
+  ### About the current architecture (line 326)
+  ### About information vs understanding (line 337)
 
 docs/understanding-journeys/000-CANDIDATE-0-FIRST-REASONING-CONVERSATION.md
   # Understanding Journey 001 — The First Reasoning Conversation (line 1)
@@ -1932,6 +3417,75 @@ docs/understanding-journeys/humanity/010-GRADUATION.md
   ### MARC (line 218)
   # Academy Reflection (line 230)
 
+docs/understanding-journeys/humanity/011-PERSON-BEFORE-WORDS.md
+  # Understanding Journey 011 (line 1)
+  # Person Before Words (line 3)
+  ### MARC (line 80)
+  ## Context Formation (line 138)
+  ### Person A (line 140)
+  ### Person B (line 163)
+  ## Understanding (line 206)
+  ### Option B — Seek understanding first, equally (line 274)
+  ## Judgement (line 304)
+  ### To Person A (line 324)
+  ### To Person B (line 335)
+  ## Reflection (line 357)
+  ## Learning Captured (line 399)
+
+docs/understanding-journeys/humanity/012-PERSON-AFTER-WORDS.md
+  # Understanding Journey 012 (line 1)
+  # Person After Words (line 3)
+  ## Person A explains (line 94)
+  ## Person B explains (line 106)
+  ## Observation — Person A (line 122)
+  ## Observation — Person B (line 146)
+  ## Context Formation — Person A (line 169)
+  ## Context Formation — Person B (line 183)
+  ## Understanding — Person A (line 210)
+  ## Understanding — Person B (line 228)
+  ### For Person A (line 246)
+  ### For Person B (line 256)
+  ### Person A — Option A (line 270)
+  ### Person A — Option B (line 284)
+  ### Person B — Option A (line 308)
+  ### Person B — Option B (line 324)
+  ## Judgement (line 344)
+  ### To Person A (line 346)
+  ### To Person B (line 360)
+  ### To Person A (line 378)
+  ### To Person B (line 395)
+  ## Reflection (line 437)
+  ## Learning Captured (line 473)
+
+docs/understanding-journeys/humanity/013-THE-FIRST-INSTITUTIONAL-OBSERVATION.md
+  # Understanding Journey 013 (line 1)
+  ### MARC (line 88)
+  ## Context Formation (line 253)
+  ## Understanding (line 293)
+  ### Option C — Report what I observed, what I understood, what I could not yet understand, and what I think this experience reveals about what future Digital Colleagues will need (line 354)
+  ## Judgement (line 366)
+  ### To MARC (line 382)
+  ## Reflection (line 422)
+  ## Learning Captured (line 444)
+
+docs/understanding-journeys/humanity/014-THE-FIRST-INSTITUTIONAL-ALIGNMENT-PREPARATION.md
+  # Understanding Journey 014 — Preparation (line 1)
+  ### MARC (line 111)
+
+docs/understanding-journeys/humanity/014-THE-FIRST-INSTITUTIONAL-ALIGNMENT.md
+  # Understanding Journey 014 (line 1)
+  ### MARC (line 70)
+  ### MARC (line 102)
+  ### MARC (line 120)
+  ### MARC (line 140)
+  ### MARC (line 160)
+  ### MARC (line 180)
+  ## Context Formation (line 216)
+  ## Understanding (line 255)
+  ## Judgement (line 312)
+  ## Reflection (line 332)
+  ## Learning Captured (line 352)
+
 docs/understanding-journeys/README.md
   # Understanding Journeys (line 1)
   ## Formation (line 39)
@@ -1981,11 +3535,56 @@ docs/understanding-journeys/validation/humanity/001-THE-FIRST-CONVERSATION-VALID
   # Understanding Journey 001 — The First Conversation (line 3)
   ## Architecture Validation (line 19)
 
+docs/understanding-journeys/validation/humanity/011-PERSON-BEFORE-WORDS-VALIDATION.md
+  # Understanding Journey 011 — Person Before Words (line 3)
+  ### 1. Person before words (line 27)
+  ### 2. Curiosity before advice (line 37)
+  ### 3. Context before tone selection (line 47)
+  ### 5. Equal dignity (line 68)
+
+docs/understanding-journeys/validation/humanity/012-PERSON-AFTER-WORDS-VALIDATION.md
+  # Understanding Journey 012 — Person After Words (line 3)
+  ### 1. Adaptation after understanding (line 30)
+  ### 2. Equal dignity despite different responses (line 40)
+  ### 6. Communication justified by context rather than assumptions (line 82)
+
+docs/understanding-journeys/validation/humanity/013-THE-FIRST-INSTITUTIONAL-OBSERVATION-FOUNDER-REVIEW.md
+  ## Review Question 4 — What should future Digital Colleagues inherit? (line 136)
+  ### Candidate 1: Every Digital Colleague requires an Orientation stage. (line 138)
+  ### Candidate 2: Every Digital Colleague must understand the six questions. (line 148)
+  ### Candidate 3: Every Digital Colleague should be shown their environment before being asked to contribute. (line 158)
+  ### Candidate 4: Orientation should distinguish enduring principles, historical development, current state, candidate understanding, and unknowns. (line 168)
+
+docs/understanding-journeys/validation/humanity/013-THE-FIRST-INSTITUTIONAL-OBSERVATION-VALIDATION.md
+  # Understanding Journey 013 — The First Institutional Observation (line 3)
+  ### 2. Honest account of the six questions (line 42)
+
+docs/understanding-journeys/validation/humanity/014-THE-FIRST-INSTITUTIONAL-ALIGNMENT-EVIDENCE-REVIEW.md
+  ## 1. Did Andy accurately locate himself within Helping Hand? (line 14)
+  ## 2. Did the Institutional Orientation Conversation provide sufficient context? (line 32)
+
 docs/understanding-journeys/validation/VALIDATION_SET_001_GOVERNANCE_UNDER_PRESSURE.md
   ## Reflection (line 67)
 
 docs/understanding-journeys/VOLUME_VII_VALIDATION_PLAN.md
   ### Stage 5 — Prove transferability to future Digital Colleagues (line 65)
+
+docs/UNIVERSAL_DIGITAL_COLLEAGUE_INPUT_MODEL.md
+  # Universal Digital Colleague Input Model: Derived from Annie Implementation (line 1)
+  ## 1. Annie's Existing Input Architecture: What Is Designed (line 9)
+  ### The Universal Platform Layer (COS — Companion Operating System) (line 11)
+  ### The Companion Intelligence Layer (Annie-Specific) (line 49)
+  ## 2. What Annie's Implementation Reveals About Universal DC Inputs (line 103)
+  ### Input Category 2: Contextual Understanding (Seven Categories) (line 133)
+  ### Input Category 3: Structured Thinking About Stimuli (line 186)
+  ### Input Category 4: Learning and Memory (line 231)
+  ## 3. Comparison: Annie's Designed Inputs vs. Andy's Required Inputs (line 292)
+  ### What Annie's Implementation Already Provides (And Working Well) (line 294)
+  ### The Pattern: Annie's Implementation Shows the Universal Structure; Andy's Gaps Show Missing Input Sources (line 319)
+  ### Universal Input Category 2: Contextual Knowledge (Seven Domains) (line 379)
+  ### Universal Input Category 4: Learning and Experience Recording (line 480)
+  ### For Annie (line 673)
+  ### Every Digital Colleague Must Receive: (line 716)
 
 docs/validation/HUMAN_VALIDATION_SESSION_001.md
   # HUMAN VALIDATION SESSION 001 (line 1)
@@ -2029,6 +3628,9 @@ KNOWLEDGE_ARCHITECTURE.md
 lib/os/README.md
   # Helping Hand OS (line 1)
   ## First knowledge path (line 12)
+
+MAC-BOOTSTRAP-ASSESSMENT.md
+  ## Readiness Judgment (line 20)
 
 MACHINE-PORTABILITY-REMEDIATION.md
   ## Judgement (line 5)
@@ -2083,7 +3685,9 @@ platform/cos/pollination/README.md
 platform/cos/README.md
   # Companion Operating System (COS) (line 1)
   # Philosophy (line 45)
-  # Current Architecture (line 115)
+  # Permanent Architecture Boundary Rules (line 115)
+  # Understanding Formation — Boundary Rules (line 168)
+  # Current Architecture (line 200)
 
 platform/cos/Roadmap.md
   # COS Roadmap (line 1)
