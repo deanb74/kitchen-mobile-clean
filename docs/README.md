@@ -67,6 +67,12 @@ This library is the permanent knowledge repository for the Helping Hand platform
 
 - [Foundation Coverage Test](GOVERNANCE_FOUNDATION_COVERAGE_TEST.md)
 
+## Research and Discovery
+
+- [Foundational Language Capability Hypothesis](FOUNDATIONAL_LANGUAGE_CAPABILITY_HYPOTHESIS.md) - Candidate hypothesis, not architecture
+- [Helping Hand Resource Centre Hypothesis](HELPING_HAND_RESOURCE_CENTRE_HYPOTHESIS.md) - Candidate hypothesis, not architecture
+- [Previously Discussed](PREVIOUSLY_DISCUSSED.md) - Short topic pointer and prior reasoning register
+
 ## Engineering
 
 - [Engineering Principles Library](engineering/README.md)
@@ -346,8 +352,8 @@ Key repository milestones are recorded in the milestones library.
 
 Every significant contribution should strengthen both the software and the Engineering Library.
 
+Every subsystem should strengthen the Oak and contribute to the human forest.
 Reference:
-
 - [Engineering Principles Library](engineering/README.md)
 - [EP-000 - Engineering Principles Foundation](ENGINEERING_PRINCIPLES.md)
 - [EP-001 - Never Claim Unearned Evidence](engineering/ENGINEERING_PRINCIPLE_001.md)
@@ -369,25 +375,21 @@ Understanding should grow before complexity.
 
 ---
 
-# The Forest Philosophy
+# The Oak Model
 
-Helping Hand is designed as a living ecosystem.
+Helping Hand is one living organism — the Oak.
 
-Individual Digital Colleagues are trees.
+Digital Colleagues are leaves on the Helping Hand Oak. Each leaf is specialised because of where it grows, but strengthened because it remains connected to the shared organism.
 
-The Companion Operating System is the shared forest.
+The Companion Operating System is the trunk — shared architecture and governance that every leaf inherits.
 
-Every improvement made to COS strengthens every future Digital Colleague.
+Learning should spread deliberately. Knowledge should be governed. Behaviour should remain consistent.
 
-Learning should spread deliberately.
+Healthy roots create healthy leaves. Healthy leaves produce fruit for the human world.
 
-Knowledge should be governed.
+Helping Hand does not seek to become the forest. It contributes to it.
 
-Behaviour should remain consistent.
-
-Healthy roots create healthy trees.
-
-Healthy trees create healthy forests.
+The goal is not to build a forest inside Helping Hand. The goal is to help the human forest grow.
 
 ---
 

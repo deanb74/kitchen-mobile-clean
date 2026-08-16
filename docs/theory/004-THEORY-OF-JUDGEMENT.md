@@ -55,6 +55,12 @@ Good judgement acknowledges uncertainty rather than ignoring it.
 
 Judgement determines the most appropriate action, not necessarily the only possible action.
 
+### Fifth Judgement Theorem
+
+Judgement determines whether available understanding, including its uncertainty, is adequate in context for a course of action and its reasonably foreseeable consequences.
+
+Uncertainty is material when it could change the appropriate course or its reasonably foreseeable consequences. Whether to seek more evidence is itself a judgement: inquiry must be feasible, proportionate, responsible, timely and within authority. If material uncertainty cannot responsibly be reduced, it must remain explicit and constrain the course chosen. Judgement may conclude that no further inquiry is presently warranted, but must consider the consequences of action, inaction, delay and inquiry. Such a conclusion neither resolves uncertainty nor closes the matter; materially changed context or evidence requires fresh judgement.
+
 ## Implications
 
 Judgement transforms understanding into action.

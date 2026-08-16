@@ -113,7 +113,108 @@ A capability should normally graduate only when the following are true:
 6. It can be expressed as a shared capability without losing meaning.
 7. Knowledge Governance can review it explicitly.
 
+8. A complete capability stewardship contract is recorded.
+
 If these conditions are not met, the capability should remain local.
+
+---
+
+# Capability Stewardship Contract Gate (Mandatory)
+
+No capability may graduate to shared architecture without an explicit stewardship contract.
+
+Minimum contract fields required before promotion approval:
+
+1. capability identity and name
+2. bounded purpose
+3. technical steward
+4. capability steward
+5. what it can do
+6. what it cannot do
+7. input assumptions and data prerequisites
+8. known failure modes
+9. evaluation method
+10. confidence and uncertainty disclosure expectation
+11. decision criticality class
+12. permitted uses
+13. prohibited uses
+14. escalation conditions
+15. relevant profession and context meaning owners
+16. authority envelope
+17. version and change history
+18. retirement and deprecation path
+
+Governance promotion must be rejected if any required stewardship field is missing.
+
+Each required stewardship field must also carry an explicit evidence-strength classification:
+
+1. Directly evidenced
+2. Governed derivation
+3. Evidence gap
+
+No field may be silently inferred to make a contract appear complete.
+
+## Ownership Source Requirements
+
+Stewardship evidence may come from different accountable boundaries.
+Graduation review must confirm the source boundary for each field:
+
+1. Technical integrity fields: Digital or technical stewardship
+2. Capability-specific boundaries: capability stewardship
+3. Professional meaning fields: relevant Profession HQ
+4. Profession-sensitive escalation thresholds: relevant Profession HQ
+5. Authority envelope fields: authority and governance evidence
+6. Lifecycle and deprecation fields: capability governance evidence
+
+If the required accountable boundary has not provided evidence, classify the field as an evidence gap.
+
+## Professional Meaning Ownership Requirement
+
+Where professional interpretation is required, the stewardship contract must name the profession or context meaning owner explicitly.
+
+Runtime actor evidence (for example role values observed in interaction records) is not sufficient on its own to establish professional meaning ownership.
+
+## Prohibited Uses Requirement
+
+Every capability contract must include capability-specific prohibited uses.
+
+Generic authority constraints are necessary but not sufficient.
+
+## Escalation Responsibility Separation
+
+Stewardship records must distinguish:
+
+1. Capability detection of an escalation condition
+2. Professional definition of profession-sensitive escalation thresholds
+3. Governance or authority handling after escalation
+
+Collapsing these into one undifferentiated escalation statement is not acceptable for graduation.
+
+## Lifecycle and Evidence Continuity
+
+Retirement and deprecation path is a universal capability-governance requirement.
+
+Where applicable, stewardship records must state successor mapping and evidence continuity expectations across versions.
+
+## Confidence and Uncertainty Disclosure
+
+Confidence and uncertainty disclosure is a governed evidence expectation.
+
+This requirement does not imply immediate new runtime functionality. Runtime changes are required only if a later audit proves the existing runtime cannot provide the needed evidence.
+
+---
+
+# Responsibility Separation (Non-Negotiable)
+
+Every stewardship contract must preserve the following separation:
+
+1. Technical steward owns capability integrity.
+2. Professional or context owner owns meaning.
+3. Judgement owns appropriateness.
+4. Authority owns permission.
+5. Execution owns state-change evidence.
+
+No graduation record is valid if these responsibilities collapse into a single "the model decided" outcome.
 
 ---
 
@@ -129,6 +230,9 @@ A capability should remain local when it is:
 - too dependent on a single implementation
 - not yet validated through repeated use
 - not yet explainable as a shared rule
+- missing a complete stewardship contract
+- unable to show who owns meaning outside the capability
+- unable to show authority-envelope limits for consequential use
 
 Local capability is not a failure.
 It is often the correct place for early understanding to remain.
@@ -207,6 +311,12 @@ When a capability graduates, Helping Hand should record:
 - whether it is universal or profession-independent
 - which layer owns it after graduation
 - how it will be inherited
+- who stewards technical integrity
+- who stewards capability boundary
+- which professions or contexts own output meaning
+- what authority envelope governs its use
+- how it escalates when confidence, consequence, or uncertainty thresholds are crossed
+- how and when it may be deprecated or retired
 
 This keeps the architecture understandable and auditable.
 
@@ -225,3 +335,5 @@ They sit alongside the core architectural reference and the knowledge architectu
 Helping Hand does not promote ideas before they are proven.
 
 It grows by allowing experience to become evidence, evidence to become learning, and learning to become governed shared capability.
+
+Governed shared capability requires governed stewardship before inheritance.

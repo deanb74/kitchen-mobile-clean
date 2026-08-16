@@ -99,6 +99,8 @@ Digital Colleagues became individual trees.
 
 COS became the ecosystem that enables every tree to grow while sharing appropriate learning.
 
+*Note: This model was further refined in 2026 (Milestone 033). The correct model is that Helping Hand is the Oak — one living organism — and Digital Colleagues are leaves, not individual trees. The forest is the human world that Helping Hand contributes to. This historical section is preserved to record how the model evolved.*
+
 ---
 
 ## Forest Pollination

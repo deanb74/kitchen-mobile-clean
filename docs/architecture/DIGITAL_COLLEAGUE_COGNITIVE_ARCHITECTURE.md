@@ -156,11 +156,58 @@ Memory should support the present situation without overwhelming it.
 
 Recall must never be allowed to dominate present evidence blindly.
 
+## DC Interpretation Layer
+
+Before Understanding can be formed, a Digital Colleague must translate observations into professional meaning, assemble the current situational and institutional context, and retrieve applicable governed knowledge.
+
+This layer is the DC's professional contribution to the Understanding Formation act.
+
+It answers three questions:
+
+- **Translation:** What do these observations mean in my profession?
+- **Context:** What is the current situation, and what do I know about this environment?
+- **Knowledge:** What governed principles apply here?
+
+The DC owns this layer. COS does not. Professional content must not enter COS.
+
+**Evidence:** `lib/annie/formation/` — Milestone 016
+
+## Pre-Formation Readiness Gate
+
+Before invoking Understanding Formation, a Digital Colleague evaluates whether its inputs are sufficient to produce meaningful Understanding.
+
+The gate answers one question:
+
+> Should I call `form()` now, or first observe, ask, research, or recall?
+
+It has two parts:
+
+- **Structural check** (`validateFormationInputs`) — COS validates that Formation type fields are present. No professional knowledge required.
+- **Professional assessment** (`assessReadiness`) — DC evaluates whether its translations, context, and knowledge are professionally adequate for this situation.
+
+The gate produces a `ReadinessDecision`:
+- `ready: boolean` — whether to proceed to Formation
+- `nextStep` — observe / ask / research / remember / wait / form
+- `gaps[]` — named missing inputs (structural + professional)
+- `explanation?` — human-readable description of the routing choice
+
+`"I don’t know yet"` is a valid, architected state. The gate makes seeking the normal path, not the exceptional one.
+
+The gate does not prevent calling `form()`. It recommends against it when inputs are below threshold. The DC retains the decision.
+
+**Evidence:** `platform/cos/understanding-formation/readiness.ts` + `lib/annie/formation/readinessAdapter.ts` — Milestone 019
+
 ## Understanding Engine
 
-The Understanding Engine interprets observations, context and knowledge to determine what the situation means.
+The Understanding Engine interprets the DC's translated observations, assembled context, and applicable knowledge to determine what the situation means.
 
 It is responsible for formed understanding rather than raw retrieval.
+
+The mechanism is universal. The content is professional. COS owns the mechanism. The DC supplies the content.
+
+**Evidence:** `platform/cos/understanding-formation/` — Milestone 013
+
+**Validation:** HH-0000 Andy formed Understanding of Helping Hand using this mechanism in Milestone 023. Andy is not a special case. He uses the same pipeline as Annie, Kev, and Harry — with institutional translation rules and repository knowledge in place of professional domain rules and HQ knowledge. This confirms the mechanism is universal across professions, including the profession whose domain is Helping Hand itself.
 
 ## Judgement Engine
 

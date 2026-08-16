@@ -6,6 +6,47 @@ Describe organisational responsibilities.
 
 This document is operational, not constitutional.
 
+## Governance Alignment Note (2026-08-09)
+
+The Founding Board outside-world responsibility model has been ratified in:
+
+- docs/formation/00-formation/FORMATION-REGISTER.md
+
+Ratified responsibilities:
+
+1. Humanity
+2. Politics / Civic Systems
+3. Legal / Regulatory
+4. Economics
+5. Digital / Technology
+6. Nature / Environment
+
+This document lists current operational stewardship and named role-holders.
+
+It does not redefine the ratified outside-world responsibility taxonomy.
+
+Ratification is responsibility-level only and does not itself appoint people.
+
+Chair / Integration governance contract is also ratified in:
+
+- docs/formation/00-formation/FORMATION-REGISTER.md
+
+The Chair is an integration responsibility with process-integrity authority.
+
+The Chair is not a seventh outside-world perspective and does not gain superior authority over board perspectives by title alone.
+
+Cabinet protocol doctrine is also ratified in:
+
+- docs/formation/00-formation/FORMATION-REGISTER.md
+
+Cabinet is a cross-responsibility deliberation mechanism and does not itself acquire standalone decision authority.
+
+Independent Challenge doctrine is also ratified in:
+
+- docs/formation/00-formation/FORMATION-REGISTER.md
+
+Independent Challenge is a cross-cutting governance function. It is not a seventh outside-world perspective and does not acquire specialist judgement ownership, standalone decision authority, or execution authority.
+
 ## Current Board
 
 ### Andy
