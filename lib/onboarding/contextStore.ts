@@ -4,8 +4,8 @@ export type ContextCategory =
   | "team"
   | "systems"
   | "communication"
-  | "knowledge"
-  | "memory";
+  | "knowledge";
+  // "memory" removed — audit confirmed zero callers; person-scoped memory belongs in PersonContextStore
 
 export interface ContextEntry {
   id: string;

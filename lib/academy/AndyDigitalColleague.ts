@@ -3,23 +3,23 @@ import { createAndyAuthorityRegister, evaluateAuthority } from "../../platform/c
 import type { RecommendationDirection } from "../../platform/ci/compass";
 import { createAwarenessRegister, evaluateMoralCompass, runCompassFlow } from "../../platform/ci/compass";
 import type {
-    AcademyJourney,
-    Alternative,
-    Assumption,
-    Benefit,
-    CognitiveTrace,
-    ConfidenceAssessment,
-    DeliberationRecord,
-    ExaminationRunResult,
-    FormationRecord,
-    FormationStageResult,
-    JudgementUnderstanding,
-    MemoryRecord,
-    Recommendation,
-    ReflectionRecord,
-    RetrievedDocument,
-    Risk,
-    TradeOff
+  AcademyJourney,
+  Alternative,
+  Assumption,
+  Benefit,
+  CognitiveTrace,
+  ConfidenceAssessment,
+  DeliberationRecord,
+  ExaminationRunResult,
+  FormationRecord,
+  FormationStageResult,
+  JudgementUnderstanding,
+  MemoryRecord,
+  Recommendation,
+  ReflectionRecord,
+  RetrievedDocument,
+  Risk,
+  TradeOff
 } from "./academyTypes";
 import { Memory } from "./Memory";
 import { RepositoryKnowledgeService } from "./repositoryKnowledgeService";
@@ -49,6 +49,105 @@ type InvestigationCompletion = {
   contradictoryQuestions: string[];
   recommendationAllowed: boolean;
   completionReason: string;
+};
+
+type StructuralMetadataCategory = "status" | "date" | "scope" | "state" | "generic";
+
+type StructuralObservation = {
+  id: string;
+  sourceId: string;
+  sourcePath: string;
+  title: string;
+  section: string;
+  kind: "source" | "heading" | "metadata" | "paragraph" | "list-item" | "opaque";
+  exactText: string;
+  blockOrdinal: number;
+  startLine: number;
+  endLine: number;
+  headingLineage: string[];
+  label?: string;
+  value?: string;
+  metadataCategory?: StructuralMetadataCategory;
+  structurallyValid: boolean;
+  unknownReason?: string;
+  explicitRelationship?: {
+    verb: "supersedes" | "is superseded by" | "replaces" | "is replaced by" | "amends" | "is amended by";
+    subject: string;
+    object: string;
+  };
+};
+
+type StructuralMetadataResolution = {
+  status: "known" | "unknown";
+  observationIds: string[];
+  value?: string;
+  reason?: "missing" | "invalid" | "duplicate-identical" | "duplicate-conflicting";
+};
+
+type StructuralExtraction = {
+  observations: StructuralObservation[];
+  metadata: Record<"status" | "date" | "scope" | "state", StructuralMetadataResolution>;
+  exactTextAvailable: boolean;
+};
+
+type ComparativeRelationshipKind =
+  | "agreement"
+  | "apparent-disagreement"
+  | "qualification"
+  | "explicit-authored-relationship"
+  | "possible-supersession"
+  | "unresolved-relationship"
+  | "insufficient-evidence";
+
+type ComparativeRelationship = {
+  id: string;
+  kind: ComparativeRelationshipKind;
+  statement: string;
+  observationIds: string[];
+  direct: boolean;
+  inferenceBasis?: string;
+  uncertainty?: string;
+};
+
+type ComparativeInference = {
+  id: string;
+  statement: string;
+  supportingObservationIds: string[];
+  basis: string;
+  uncertainty: string;
+};
+
+type HumanDecisionQuestion = {
+  id: string;
+  unresolvedRelationshipId: string;
+  question: string;
+  reason: string;
+};
+
+type ComparativeUnderstanding = {
+  observations: StructuralObservation[];
+  relationships: ComparativeRelationship[];
+  inferences: ComparativeInference[];
+  uncertainty: string[];
+  humanDecisionQuestions: HumanDecisionQuestion[];
+};
+
+type StructuredUnderstandingPlan = {
+  task: string;
+  subQuestions: string[];
+  retrievalPlan: string[];
+  selectedDocuments: string[];
+  rejectedDocuments: string[];
+  evidenceQuality: string[];
+  known: string[];
+  unknown: string[];
+  recommendation: string;
+  prioritizedDocuments: RetrievedDocument[];
+  investigationResults: InvestigationResult[];
+  investigationComplete: boolean;
+  investigationCompletion: InvestigationCompletion;
+  deliberationRecord: DeliberationRecord | null;
+  comparativeUnderstanding: ComparativeUnderstanding | null;
 };
 
 type AndyDigitalColleagueOptions = {
@@ -337,6 +436,16 @@ export class AndyDigitalColleague {
     );
   }
 
+  private isComparativeUnderstandingRequest(statement: string): boolean {
+    const lowered = statement.trim().toLowerCase();
+    const explicitComparison = /\b(compare|contrast|differences?|differ(?:s|ent)?)\b/.test(lowered);
+    const explanation = /\b(explain|what do|what does|how do)\b/.test(lowered);
+    const pluralAuthoredMaterial = /\b(records|documents|sources|materials|notes|reports)\b/.test(lowered);
+    const relationalMeaning = /\b(collectively|together|relate|relationship|agree|disagree|differ|across|between|combined)\b/.test(lowered);
+
+    return explicitComparison || (explanation && pluralAuthoredMaterial && relationalMeaning);
+  }
+
   private analyzeConversation(statement: string): {
     categories: string[];
     primaryCategory: string;
@@ -415,6 +524,11 @@ export class AndyDigitalColleague {
       shouldRetrieveForAnalysis = true;
     }
 
+    if (this.isComparativeUnderstandingRequest(lowered)) {
+      addCategory("comparative explanation");
+      shouldRetrieveForAnalysis = true;
+    }
+
     if (/\b(difficult week|hard week|tough week|hard time|difficult time|struggling)\b/.test(lowered) && /\b(team|tell them|talk to|speak to|meeting|presentation|call|class|group)\b/.test(lowered)) {
       addCategory("emotional disclosure");
     }
@@ -455,6 +569,7 @@ export class AndyDigitalColleague {
       "trust",
       "uncertainty",
       "review or recommendation",
+      "comparative explanation",
       "unknown",
     ];
 
@@ -478,6 +593,7 @@ export class AndyDigitalColleague {
       "trust",
       "uncertainty",
       "review or recommendation",
+      "comparative explanation",
     ].includes(primaryCategory) || shouldRetrieveForAnalysis;
 
     const responseMode = need === "acknowledge"
@@ -833,6 +949,8 @@ export class AndyDigitalColleague {
   ): CognitiveTrace {
     const previousLearning =
       this.memory.learningForJourney(journey.id);
+    const relevantLearning =
+      this.memory.learningRelevantTo(statement);
 
     if (journey.mode === "candidate0") {
       const candidate0Trace: CognitiveTrace = {
@@ -855,6 +973,7 @@ export class AndyDigitalColleague {
         memoryRecall: {
           principles: [...this.permanentPrinciples],
           previousLearning,
+          relevantLearning,
         },
 
         understanding: {
@@ -908,6 +1027,7 @@ export class AndyDigitalColleague {
       memoryRecall: {
         principles: [...this.permanentPrinciples],
         previousLearning,
+        relevantLearning,
       },
 
       understanding: {
@@ -1684,22 +1804,7 @@ export class AndyDigitalColleague {
   private buildStructuredUnderstandingPlan(
     question: string,
     retrievedDocuments: RetrievedDocument[],
-  ): {
-    task: string;
-    subQuestions: string[];
-    retrievalPlan: string[];
-    selectedDocuments: string[];
-    rejectedDocuments: string[];
-    evidenceQuality: string[];
-    known: string[];
-    unknown: string[];
-    recommendation: string;
-    prioritizedDocuments: RetrievedDocument[];
-    investigationResults: InvestigationResult[];
-    investigationComplete: boolean;
-    investigationCompletion: InvestigationCompletion;
-    deliberationRecord: DeliberationRecord | null;
-  } {
+  ): StructuredUnderstandingPlan {
     const loweredQuestion = question.trim().toLowerCase();
     let task = "unknown";
 
@@ -1760,6 +1865,11 @@ export class AndyDigitalColleague {
     const deliberationRecord = investigationComplete && task === "review/recommend"
       ? this.buildDeliberationRecord(question, investigationResults, investigationCompletion, prioritizedDocuments)
       : null;
+    const comparativeUnderstanding = task !== "review/recommend" &&
+      this.isComparativeUnderstandingRequest(loweredQuestion) &&
+      prioritizedDocuments.length >= 2
+      ? this.formComparativeUnderstanding(prioritizedDocuments)
+      : null;
 
     return {
       task,
@@ -1778,7 +1888,500 @@ export class AndyDigitalColleague {
       investigationComplete,
       investigationCompletion,
       deliberationRecord,
+      comparativeUnderstanding,
     };
+  }
+
+  private extractStructuralObservations(document: RetrievedDocument): StructuralExtraction {
+    const observations: StructuralObservation[] = [];
+    const metadataCategories: Array<"status" | "date" | "scope" | "state"> = ["status", "date", "scope", "state"];
+    const exactTextAvailable = document.fragment === document.snippet;
+
+    observations.push({
+      id: `observation-${document.id}-0`,
+      sourceId: document.id,
+      sourcePath: document.sourcePath,
+      title: document.title,
+      section: document.section,
+      kind: "source",
+      exactText: document.title,
+      blockOrdinal: 0,
+      startLine: 0,
+      endLine: 0,
+      headingLineage: [],
+      structurallyValid: exactTextAvailable,
+      unknownReason: exactTextAvailable ? undefined : "supplied text and fragment differ",
+    });
+
+    if (!exactTextAvailable) {
+      return {
+        observations,
+        metadata: {
+          status: { status: "unknown", observationIds: [], reason: "invalid" },
+          date: { status: "unknown", observationIds: [], reason: "invalid" },
+          scope: { status: "unknown", observationIds: [], reason: "invalid" },
+          state: { status: "unknown", observationIds: [], reason: "invalid" },
+        } satisfies StructuralExtraction["metadata"],
+        exactTextAvailable,
+      };
+    }
+
+    const lines = document.snippet.split(/\r?\n/);
+    const headingStack: Array<{ level: number; text: string }> = [];
+    let blockOrdinal = 0;
+    let lineIndex = 0;
+
+    const addObservation = (
+      observation: Omit<StructuralObservation, "id" | "sourceId" | "sourcePath" | "title" | "section" | "blockOrdinal">,
+    ): StructuralObservation => {
+      blockOrdinal += 1;
+      const complete: StructuralObservation = {
+        ...observation,
+        id: `observation-${document.id}-${blockOrdinal}`,
+        sourceId: document.id,
+        sourcePath: document.sourcePath,
+        title: document.title,
+        section: document.section,
+        blockOrdinal,
+      };
+      observations.push(complete);
+      return complete;
+    };
+
+    while (lineIndex < lines.length) {
+      const line = lines[lineIndex] ?? "";
+      const lineNumber = lineIndex + 1;
+
+      if (line.trim().length === 0) {
+        lineIndex += 1;
+        continue;
+      }
+
+      const fenceMatch = line.match(/^\s*(```|~~~)/);
+      if (fenceMatch) {
+        const fence = fenceMatch[1];
+        const startIndex = lineIndex;
+        let closed = false;
+        lineIndex += 1;
+        while (lineIndex < lines.length) {
+          if ((lines[lineIndex] ?? "").trimStart().startsWith(fence)) {
+            closed = true;
+            lineIndex += 1;
+            break;
+          }
+          lineIndex += 1;
+        }
+        addObservation({
+          kind: "opaque",
+          exactText: lines.slice(startIndex, lineIndex).join("\n"),
+          startLine: startIndex + 1,
+          endLine: lineIndex,
+          headingLineage: headingStack.map((heading) => heading.text),
+          structurallyValid: closed,
+          unknownReason: closed ? "fenced content is opaque" : "unclosed fenced content",
+        });
+        continue;
+      }
+
+      const headingMatch = line.match(/^(#{1,6})[ \t]+(.+)$/);
+      if (headingMatch) {
+        const level = headingMatch[1].length;
+        const headingText = headingMatch[2];
+        while (headingStack.length > 0 && headingStack[headingStack.length - 1].level >= level) {
+          headingStack.pop();
+        }
+        headingStack.push({ level, text: headingText });
+        addObservation({
+          kind: "heading",
+          exactText: line,
+          startLine: lineNumber,
+          endLine: lineNumber,
+          headingLineage: headingStack.map((heading) => heading.text),
+          structurallyValid: true,
+        });
+        lineIndex += 1;
+        continue;
+      }
+
+      const labelValue = this.parseStrictLabelValue(line);
+      const emptyKnownLabel = line.match(/^(?:\*\*)?(Status|Date|Review date|Decision date|Execution date|Effective date|Scope|State|Lifecycle):(?:\*\*)?[ \t]*$/i);
+      if (labelValue || emptyKnownLabel) {
+        const label = labelValue?.label ?? emptyKnownLabel?.[1] ?? "";
+        const value = labelValue?.value ?? "";
+        const metadataCategory = this.classifyStructuralMetadataLabel(label);
+        const validDate = metadataCategory !== "date" || this.isStrictIsoDate(value);
+        const structurallyValid = Boolean(labelValue) && validDate;
+        const observation = addObservation({
+          kind: labelValue ? "metadata" : "opaque",
+          exactText: line,
+          startLine: lineNumber,
+          endLine: lineNumber,
+          headingLineage: headingStack.map((heading) => heading.text),
+          label,
+          value,
+          metadataCategory,
+          structurallyValid,
+          unknownReason: !labelValue ? "empty metadata value" : validDate ? undefined : "invalid date value",
+        });
+        observation.explicitRelationship = this.parseExplicitRelationship(value);
+        lineIndex += 1;
+        continue;
+      }
+
+      const listMatch = line.match(/^([ \t]*)([-+*]|\d+\.)[ \t]+(.+)$/);
+      const hasContinuation = listMatch && lineIndex + 1 < lines.length && /^(?: {2,}|\t)\S/.test(lines[lineIndex + 1] ?? "");
+      if (listMatch && !hasContinuation) {
+        const observation = addObservation({
+          kind: "list-item",
+          exactText: line,
+          startLine: lineNumber,
+          endLine: lineNumber,
+          headingLineage: headingStack.map((heading) => heading.text),
+          structurallyValid: true,
+        });
+        observation.explicitRelationship = this.parseExplicitRelationship(listMatch[3]);
+        lineIndex += 1;
+        continue;
+      }
+
+      const paragraphStart = lineIndex;
+      lineIndex += 1;
+      while (lineIndex < lines.length) {
+        const candidate = lines[lineIndex] ?? "";
+        if (
+          candidate.trim().length === 0 ||
+          /^(#{1,6})[ \t]+(.+)$/.test(candidate) ||
+          /^\s*(```|~~~)/.test(candidate) ||
+          this.parseStrictLabelValue(candidate) ||
+          /^([ \t]*)([-+*]|\d+\.)[ \t]+(.+)$/.test(candidate)
+        ) {
+          break;
+        }
+        lineIndex += 1;
+      }
+      const exactText = lines.slice(paragraphStart, lineIndex).join("\n");
+      const observation = addObservation({
+        kind: "paragraph",
+        exactText,
+        startLine: paragraphStart + 1,
+        endLine: lineIndex,
+        headingLineage: headingStack.map((heading) => heading.text),
+        structurallyValid: true,
+      });
+      observation.explicitRelationship = this.parseExplicitRelationship(exactText);
+    }
+
+    const metadata = Object.fromEntries(metadataCategories.map((category) => {
+      const categoryObservations = observations.filter((observation) => observation.metadataCategory === category);
+      const validObservations = categoryObservations.filter((observation) => observation.structurallyValid);
+      let resolution: StructuralMetadataResolution;
+
+      if (categoryObservations.length === 0) {
+        resolution = { status: "unknown", observationIds: [], reason: "missing" };
+      } else if (categoryObservations.length > 1) {
+        const distinctValues = new Set(categoryObservations.map((observation) => observation.value));
+        resolution = {
+          status: "unknown",
+          observationIds: categoryObservations.map((observation) => observation.id),
+          reason: distinctValues.size === 1 ? "duplicate-identical" : "duplicate-conflicting",
+        };
+      } else if (validObservations.length === 1) {
+        resolution = {
+          status: "known",
+          observationIds: [validObservations[0].id],
+          value: validObservations[0].value,
+        };
+      } else {
+        resolution = {
+          status: "unknown",
+          observationIds: categoryObservations.map((observation) => observation.id),
+          reason: "invalid",
+        };
+      }
+
+      return [category, resolution];
+    })) as StructuralExtraction["metadata"];
+
+    return { observations, metadata, exactTextAvailable };
+  }
+
+  private parseStrictLabelValue(line: string): { label: string; value: string } | null {
+    const bold = line.match(/^\*\*([^:*\n][^:\n]*):\*\*[ \t]+(.+)$/);
+    if (bold) {
+      return { label: bold[1], value: bold[2] };
+    }
+
+    const plain = line.match(/^([^:*\n][^:\n]*):[ \t]+(.+)$/);
+    return plain ? { label: plain[1], value: plain[2] } : null;
+  }
+
+  private classifyStructuralMetadataLabel(label: string): StructuralMetadataCategory {
+    const lowered = label.toLowerCase();
+    if (lowered === "status") return "status";
+    if (["date", "review date", "decision date", "execution date", "effective date"].includes(lowered)) return "date";
+    if (lowered === "scope") return "scope";
+    if (lowered === "state" || lowered === "lifecycle") return "state";
+    return "generic";
+  }
+
+  private isStrictIsoDate(value: string): boolean {
+    const match = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!match) return false;
+    const year = Number(match[1]);
+    const month = Number(match[2]);
+    const day = Number(match[3]);
+    const candidate = new Date(Date.UTC(year, month - 1, day));
+    return candidate.getUTCFullYear() === year && candidate.getUTCMonth() === month - 1 && candidate.getUTCDate() === day;
+  }
+
+  private parseExplicitRelationship(text: string): StructuralObservation["explicitRelationship"] {
+    if (!text || /[.!?].+[.!?]/.test(text)) return undefined;
+    const match = text.match(/^\s*(.+?)\s+(supersedes|is superseded by|replaces|is replaced by|amends|is amended by)\s+(.+?)[.!?]?\s*$/i);
+    if (!match || !match[1].trim() || !match[3].trim()) return undefined;
+
+    return {
+      subject: match[1].trim(),
+      verb: match[2].toLowerCase() as StructuralObservation["explicitRelationship"] extends { verb: infer Verb } ? Verb : never,
+      object: match[3].trim(),
+    };
+  }
+
+  private getCompleteRelationshipIdentityForDisagreement(
+    relationshipObservation: StructuralObservation,
+    disagreement: ComparativeRelationship,
+    observations: StructuralObservation[],
+  ): string | null {
+    const explicitRelationship = relationshipObservation.explicitRelationship;
+    if (!explicitRelationship) return null;
+
+    const disagreementObservationIds = new Set(disagreement.observationIds);
+    const participatingRecords = new Map<string, Set<string>>();
+
+    for (const observation of observations) {
+      if (!disagreementObservationIds.has(observation.id)) continue;
+      const identities = participatingRecords.get(observation.sourceId) ?? new Set<string>();
+      identities.add(observation.title);
+      identities.add(observation.sourceId);
+      identities.add(observation.sourcePath);
+      participatingRecords.set(observation.sourceId, identities);
+    }
+
+    if (participatingRecords.size < 2) return null;
+
+    const matchingSourceIds = (identity: string): string[] =>
+      [...participatingRecords.entries()]
+        .filter(([, identities]) => identities.has(identity))
+        .map(([sourceId]) => sourceId);
+    const subjectSourceIds = matchingSourceIds(explicitRelationship.subject);
+    const objectSourceIds = matchingSourceIds(explicitRelationship.object);
+    const coveredSourceIds = new Set([...subjectSourceIds, ...objectSourceIds]);
+
+    if (!(subjectSourceIds.length === 1 &&
+      objectSourceIds.length === 1 &&
+      subjectSourceIds[0] !== objectSourceIds[0] &&
+      coveredSourceIds.size === participatingRecords.size &&
+      [...participatingRecords.keys()].every((sourceId) => coveredSourceIds.has(sourceId)))) {
+      return null;
+    }
+
+    const passiveRelationship = explicitRelationship.verb === "is superseded by" ||
+      explicitRelationship.verb === "is replaced by" ||
+      explicitRelationship.verb === "is amended by";
+    const verbFamily = explicitRelationship.verb === "supersedes" || explicitRelationship.verb === "is superseded by"
+      ? "supersedes"
+      : explicitRelationship.verb === "replaces" || explicitRelationship.verb === "is replaced by"
+        ? "replaces"
+        : "amends";
+    const actorSourceId = passiveRelationship ? objectSourceIds[0] : subjectSourceIds[0];
+    const targetSourceId = passiveRelationship ? subjectSourceIds[0] : objectSourceIds[0];
+
+    return [verbFamily, actorSourceId, targetSourceId].join("\u0000");
+  }
+
+  private formComparativeUnderstanding(documents: RetrievedDocument[]): ComparativeUnderstanding {
+    const extractions = documents.map((document) => this.extractStructuralObservations(document));
+    const observations = extractions.flatMap((extraction) => extraction.observations);
+    const relationships: ComparativeRelationship[] = [];
+    const inferences: ComparativeInference[] = [];
+    const uncertainty: string[] = [];
+    const humanDecisionQuestions: HumanDecisionQuestion[] = [];
+    let relationshipOrdinal = 0;
+    let inferenceOrdinal = 0;
+
+    const addRelationship = (relationship: Omit<ComparativeRelationship, "id">): ComparativeRelationship => {
+      relationshipOrdinal += 1;
+      const complete = { ...relationship, id: `relationship-${relationshipOrdinal}` };
+      relationships.push(complete);
+      return complete;
+    };
+
+    const comparableObservations = observations.filter((observation) =>
+      observation.sourceId &&
+      observation.structurallyValid &&
+      (observation.kind === "metadata" || observation.kind === "paragraph" || observation.kind === "list-item"),
+    );
+    const directRelationships = comparableObservations.filter((observation) => observation.explicitRelationship);
+
+    for (const observation of directRelationships) {
+      const relationship = observation.explicitRelationship;
+      addRelationship({
+        kind: "explicit-authored-relationship",
+        statement: `${observation.sourcePath} explicitly states: ${observation.exactText}`,
+        observationIds: [observation.id],
+        direct: true,
+        inferenceBasis: relationship ? `${relationship.subject} ${relationship.verb} ${relationship.object}` : undefined,
+      });
+    }
+
+    const comparisonGroups = new Map<string, StructuralObservation[]>();
+    for (const observation of comparableObservations) {
+      const key = observation.metadataCategory && observation.metadataCategory !== "generic"
+        ? `metadata:${observation.metadataCategory}`
+        : `claim:${observation.exactText.trim().toLowerCase()}`;
+      const group = comparisonGroups.get(key) ?? [];
+      group.push(observation);
+      comparisonGroups.set(key, group);
+    }
+
+    for (const [key, group] of comparisonGroups) {
+      const sourceIds = new Set(group.map((observation) => observation.sourceId));
+      if (sourceIds.size < 2) continue;
+      const values = new Set(group.map((observation) => (observation.value ?? observation.exactText).trim().toLowerCase()));
+
+      if (values.size === 1) {
+        addRelationship({
+          kind: "agreement",
+          statement: `The supplied observations appear materially compatible for ${key.replace(/^(metadata|claim):/, "")}.`,
+          observationIds: group.map((observation) => observation.id),
+          direct: false,
+          inferenceBasis: "The attributable values are textually identical across more than one source.",
+          uncertainty: "Textual agreement does not independently establish organisational truth or current authority.",
+        });
+      } else if (key.startsWith("metadata:")) {
+        addRelationship({
+          kind: "apparent-disagreement",
+          statement: `The supplied observations contain different authored ${key.replace("metadata:", "")} values.`,
+          observationIds: group.map((observation) => observation.id),
+          direct: false,
+          inferenceBasis: "The attributable values differ for the same explicit metadata category.",
+          uncertainty: "The supplied Evidence does not establish which value governs.",
+        });
+      }
+    }
+
+    const apparentDisagreements = relationships.filter((relationship) => relationship.kind === "apparent-disagreement");
+    const humanDecisionBoundaries = new Set<string>();
+
+    for (const disagreement of apparentDisagreements) {
+      const disagreementObservationIds = new Set(disagreement.observationIds);
+      const participatingSourceIds = new Set(observations
+        .filter((observation) => disagreementObservationIds.has(observation.id))
+        .map((observation) => observation.sourceId));
+      const completeRelationshipIdentities = new Set(directRelationships
+        .map((observation) => this.getCompleteRelationshipIdentityForDisagreement(observation, disagreement, observations))
+        .filter((identity): identity is string => identity !== null));
+      const hasRelevantDirectRelationship = completeRelationshipIdentities.size === 1;
+      const dateObservations = observations.filter((observation) =>
+        participatingSourceIds.has(observation.sourceId) &&
+        observation.metadataCategory === "date" &&
+        observation.structurallyValid,
+      );
+      const scopeObservations = observations.filter((observation) =>
+        participatingSourceIds.has(observation.sourceId) &&
+        observation.metadataCategory === "scope" &&
+        observation.structurallyValid,
+      );
+
+      if (dateObservations.length > 0 || scopeObservations.length > 0) {
+        const qualificationObservations = [...dateObservations, ...scopeObservations];
+        addRelationship({
+          kind: "qualification",
+          statement: "Attributable date or structural-scope observations may qualify the apparent difference.",
+          observationIds: [...disagreement.observationIds, ...qualificationObservations.map((observation) => observation.id)],
+          direct: false,
+          inferenceBasis: "The supplied records contain explicit date or structural-scope metadata alongside differing claims.",
+          uncertainty: "Date and structural scope do not establish substantive scope, current control, truth, or authority.",
+        });
+      }
+
+      if (dateObservations.length >= 2 && !hasRelevantDirectRelationship) {
+        inferenceOrdinal += 1;
+        const possibleSupersession = addRelationship({
+          kind: "possible-supersession",
+          statement: "The date-separated difference permits only a possible-supersession Inference.",
+          observationIds: [...disagreement.observationIds, ...dateObservations.map((observation) => observation.id)],
+          direct: false,
+          inferenceBasis: "The authored values differ and the supplied records contain different valid dates.",
+          uncertainty: "A later date does not establish supersession, control, priority, or authority.",
+        });
+        inferences.push({
+          id: `inference-${inferenceOrdinal}`,
+          statement: possibleSupersession.statement,
+          supportingObservationIds: possibleSupersession.observationIds,
+          basis: possibleSupersession.inferenceBasis ?? "",
+          uncertainty: possibleSupersession.uncertainty ?? "",
+        });
+      }
+
+      if (!hasRelevantDirectRelationship) {
+        const unresolved = addRelationship({
+          kind: "unresolved-relationship",
+          statement: "The relationship among the differing authored positions remains unresolved.",
+          observationIds: disagreement.observationIds,
+          direct: false,
+          inferenceBasis: "No attributable explicit relationship establishes which position governs.",
+          uncertainty: "Organisational intent, current Context, or Authority is not present in the supplied Evidence.",
+        });
+        uncertainty.push(unresolved.uncertainty ?? "The relationship remains unresolved.");
+        const unresolvedObservations = unresolved.observationIds
+          .map((observationId) => observations.find((observation) => observation.id === observationId));
+        const humanDecisionSourceIds = [...new Set(unresolvedObservations
+          .filter((observation): observation is StructuralObservation => Boolean(observation?.sourceId))
+          .map((observation) => observation.sourceId))]
+          .sort();
+        const humanDecisionBoundary = unresolvedObservations.length === unresolved.observationIds.length &&
+          humanDecisionSourceIds.length >= 2
+          ? humanDecisionSourceIds.join("\u0000")
+          : null;
+
+        if (humanDecisionBoundary === null || !humanDecisionBoundaries.has(humanDecisionBoundary)) {
+          if (humanDecisionBoundary !== null) humanDecisionBoundaries.add(humanDecisionBoundary);
+          humanDecisionQuestions.push({
+            id: `human-decision-${humanDecisionQuestions.length + 1}`,
+            unresolvedRelationshipId: unresolved.id,
+            question: "The supplied records do not establish which position currently governs. A human needs to decide this.",
+            reason: "Resolving the relationship requires organisational intent, current Context, or Authority absent from the supplied records.",
+          });
+        }
+      }
+    }
+
+    if (relationships.length === 0) {
+      const insufficient = addRelationship({
+        kind: "insufficient-evidence",
+        statement: "The supplied records do not contain enough comparable attributable material to form a relationship.",
+        observationIds: comparableObservations.map((observation) => observation.id),
+        direct: false,
+        inferenceBasis: "No claim or governed metadata category is shared across at least two supplied sources.",
+        uncertainty: "The requested comparison cannot be completed from the supplied Evidence.",
+      });
+      uncertainty.push(insufficient.uncertainty ?? "Evidence is insufficient.");
+    }
+
+    for (const relationship of relationships) {
+      if (!relationship.direct && relationship.kind !== "possible-supersession" && relationship.inferenceBasis && relationship.uncertainty) {
+        inferenceOrdinal += 1;
+        inferences.push({
+          id: `inference-${inferenceOrdinal}`,
+          statement: relationship.statement,
+          supportingObservationIds: relationship.observationIds,
+          basis: relationship.inferenceBasis,
+          uncertainty: relationship.uncertainty,
+        });
+      }
+    }
+
+    return { observations, relationships, inferences, uncertainty, humanDecisionQuestions };
   }
 
   private buildInvestigationCompletion(investigationResults: InvestigationResult[]): InvestigationCompletion {
@@ -2322,21 +2925,7 @@ export class AndyDigitalColleague {
   private buildContextSummary(
     question: string,
     retrievedDocuments: RetrievedDocument[],
-    structuredUnderstanding?: {
-      task: string;
-      subQuestions: string[];
-      retrievalPlan: string[];
-      selectedDocuments: string[];
-      rejectedDocuments: string[];
-      evidenceQuality: string[];
-      known: string[];
-      unknown: string[];
-      recommendation: string;
-      prioritizedDocuments: RetrievedDocument[];
-      investigationResults: InvestigationResult[];
-      investigationComplete: boolean;
-      investigationCompletion: InvestigationCompletion;
-    },
+    structuredUnderstanding?: StructuredUnderstandingPlan,
   ): string[] {
     const summary: string[] = [];
 
@@ -2381,6 +2970,11 @@ export class AndyDigitalColleague {
       summary.push(
         `Investigation outcomes: ${structuredUnderstanding.investigationResults.map((result) => `${result.status.toUpperCase()}:${result.subQuestion}`).join(" | ")}`,
       );
+      if (structuredUnderstanding.comparativeUnderstanding) {
+        summary.push(
+          `Comparative understanding: observations=${structuredUnderstanding.comparativeUnderstanding.observations.length}; relationships=${structuredUnderstanding.comparativeUnderstanding.relationships.length}; inferences=${structuredUnderstanding.comparativeUnderstanding.inferences.length}; humanDecisionQuestions=${structuredUnderstanding.comparativeUnderstanding.humanDecisionQuestions.length}`,
+        );
+      }
     }
 
     for (const doc of retrievedDocuments) {
@@ -2408,22 +3002,7 @@ export class AndyDigitalColleague {
       responseMode: "acknowledge" | "answer" | "clarify" | "support" | "reassure";
       reason: string;
     },
-    structuredUnderstanding?: {
-      task: string;
-      subQuestions: string[];
-      retrievalPlan: string[];
-      selectedDocuments: string[];
-      rejectedDocuments: string[];
-      evidenceQuality: string[];
-      known: string[];
-      unknown: string[];
-      recommendation: string;
-      prioritizedDocuments: RetrievedDocument[];
-      investigationResults: InvestigationResult[];
-      investigationComplete: boolean;
-      investigationCompletion: InvestigationCompletion;
-      deliberationRecord: DeliberationRecord | null;
-    },
+    structuredUnderstanding?: StructuredUnderstandingPlan,
   ): string[] {
     const trace: string[] = [];
 
@@ -2469,6 +3048,11 @@ export class AndyDigitalColleague {
               : "Answered";
         trace.push(`Investigation: ${statusLabel} — ${result.subQuestion} — ${result.conclusion}`);
       });
+      if (structuredUnderstanding.comparativeUnderstanding) {
+        trace.push(
+          `Comparative understanding formed: observations=${structuredUnderstanding.comparativeUnderstanding.observations.length}; relationships=${structuredUnderstanding.comparativeUnderstanding.relationships.length}; inferences=${structuredUnderstanding.comparativeUnderstanding.inferences.length}; humanDecisionQuestions=${structuredUnderstanding.comparativeUnderstanding.humanDecisionQuestions.length}`,
+        );
+      }
     }
 
     trace.push(
@@ -2938,22 +3522,7 @@ export class AndyDigitalColleague {
       responseMode: "acknowledge" | "answer" | "clarify" | "support" | "reassure";
       reason: string;
     },
-    structuredUnderstanding?: {
-      task: string;
-      subQuestions: string[];
-      retrievalPlan: string[];
-      selectedDocuments: string[];
-      rejectedDocuments: string[];
-      evidenceQuality: string[];
-      known: string[];
-      unknown: string[];
-      recommendation: string;
-      prioritizedDocuments: RetrievedDocument[];
-      investigationResults: InvestigationResult[];
-      investigationComplete: boolean;
-      investigationCompletion: InvestigationCompletion;
-      deliberationRecord: DeliberationRecord | null;
-    },
+    structuredUnderstanding?: StructuredUnderstandingPlan,
   ): string {
     const loweredQuestion = question.trim().toLowerCase();
     const isSimpleCapabilityQuestion = conversationAnalysis.primaryCategory === "capability" && /what can you help me with|what sort of things can you help with|how can you help|what can you do/i.test(loweredQuestion);
@@ -2984,6 +3553,10 @@ export class AndyDigitalColleague {
     const investigationComplete = completionLine?.includes("complete=true") ?? false;
     const isReviewRecommendation = /review|recommend|needs next|what do you think helping hand needs next|next direction|priority/i.test(loweredQuestion);
     const deliberationRecord = structuredUnderstanding?.deliberationRecord ?? this.activeDeliberation;
+
+    if (structuredUnderstanding?.comparativeUnderstanding) {
+      return this.renderComparativeUnderstanding(structuredUnderstanding.comparativeUnderstanding);
+    }
 
     const lines: string[] = [];
 
@@ -3114,6 +3687,42 @@ export class AndyDigitalColleague {
       lines.push(
         "This recommendation is about evidence quality and governance coverage, not about replacing people.",
       );
+    }
+
+    return lines.join("\n");
+  }
+
+  private renderComparativeUnderstanding(understanding: ComparativeUnderstanding): string {
+    const lines: string[] = ["Source observations:"];
+    const authoredObservations = understanding.observations.filter((observation) =>
+      observation.kind !== "source" && observation.kind !== "heading",
+    );
+
+    for (const observation of authoredObservations) {
+      lines.push(`- Observation ${observation.id} (${observation.sourcePath}, lines ${observation.startLine}-${observation.endLine}): ${observation.exactText}`);
+    }
+
+    lines.push("Comparative relationships:");
+    for (const relationship of understanding.relationships) {
+      const label = relationship.kind.replace(/-/g, " ").toUpperCase();
+      lines.push(`- ${label}: ${relationship.statement}`);
+    }
+
+    if (understanding.inferences.length > 0) {
+      lines.push("Inferences:");
+      for (const inference of understanding.inferences) {
+        lines.push(`- Inference ${inference.id}: ${inference.statement} Basis: ${inference.basis} Supporting observations: ${inference.supportingObservationIds.join(", ")}. Uncertainty: ${inference.uncertainty}`);
+      }
+    }
+
+    if (understanding.uncertainty.length > 0) {
+      lines.push("Uncertainty:");
+      understanding.uncertainty.forEach((item) => lines.push(`- ${item}`));
+    }
+
+    if (understanding.humanDecisionQuestions.length > 0) {
+      lines.push("Human-decision questions:");
+      understanding.humanDecisionQuestions.forEach((item) => lines.push(`- ${item.question} ${item.reason}`));
     }
 
     return lines.join("\n");

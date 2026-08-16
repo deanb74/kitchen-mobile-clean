@@ -33,6 +33,14 @@ export interface ReflectionContext {
   actionDisposition: ActionDisposition;
   executionOutcome: ExecutionOutcome;
   executionEffect: ExecutionEffect;
+  /** Carries Understanding.contextSources forward so LearningEngine can detect origin. */
+  understandingContextSources?: string[];
+  /** Carries prior judgement disposition so LearningEngine can classify causation. */
+  priorJudgementDisposition?: import("../judgement/Judgement").JudgementDisposition;
+  /** Carries prior understanding confidence so LearningEngine can detect high-confidence failure. */
+  priorUnderstandingConfidence?: number;
+  /** Carries prior understanding completeness so LearningEngine can detect formation-gap failures. */
+  priorUnderstandingCompleteness?: import("../understanding/Understanding").UnderstandingCompleteness;
 }
 
 /**

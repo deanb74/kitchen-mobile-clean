@@ -17,6 +17,11 @@ export interface BuildActionInput {
   now?: string;
 }
 
+const HUMAN_SEEKING_COMMUNICATION_KINDS: readonly JudgementResponseKind[] = [
+  "ask",
+  "admit-uncertainty",
+];
+
 export class ActionEngine {
   build(input: BuildActionInput): Action {
     const { judgement, authority } = input;
@@ -51,9 +56,7 @@ export class ActionEngine {
       ];
 
     const judgementBaseline =
-      JUDGEMENT_DISPOSITION_TO_ACTION[
-        judgementCopy.disposition
-      ];
+      this.resolveJudgementConstraint(judgementCopy);
 
     const merged = this.mergeConstraints(
       authorityBaseline,
@@ -117,6 +120,29 @@ export class ActionEngine {
     }
 
     return "ready";
+  }
+
+  private resolveJudgementConstraint(judgement: Judgement): {
+    disposition: ActionDisposition;
+    state: Extract<ActionState, "ready" | "blocked">;
+  } {
+    const seeksRequiredHumanInput =
+      (judgement.disposition === "human-required" ||
+        judgement.disposition === "insufficient") &&
+      HUMAN_SEEKING_COMMUNICATION_KINDS.includes(
+        judgement.selected.kind,
+      );
+
+    if (seeksRequiredHumanInput) {
+      return {
+        disposition: "execute-with-caution",
+        state: "ready",
+      };
+    }
+
+    return JUDGEMENT_DISPOSITION_TO_ACTION[
+      judgement.disposition
+    ];
   }
 
   private buildInstruction(

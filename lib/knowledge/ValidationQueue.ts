@@ -3,6 +3,12 @@ import type {
     CandidateLearningStatus,
 } from "./CandidateLearning";
 
+/**
+ * @deprecated
+ *
+ * ValidationQueue is deprecated as an active learning pathway.
+ * See CandidateLearning.ts for full deprecation notice.
+ */
 export class ValidationQueue {
   private readonly candidates = new Map<string, CandidateLearning>();
 

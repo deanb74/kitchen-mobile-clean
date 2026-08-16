@@ -2,6 +2,8 @@ import type {
     Execution,
     ExecutionEvidence
 } from "../execution/Execution";
+import type { JudgementDisposition } from "../judgement/Judgement";
+import type { UnderstandingCompleteness } from "../understanding/Understanding";
 import type {
     Reflection,
     ReflectionContext,
@@ -13,12 +15,20 @@ export interface BuildReflectionInput {
   execution: Execution;
   reflectionId?: string;
   now?: string;
+  /** From Understanding.contextSources — carries source authority into the reflection chain. */
+  understandingContextSources?: string[];
+  /** From Judgement.disposition — carries prior judgement quality into reflection. */
+  priorJudgementDisposition?: JudgementDisposition;
+  /** From Understanding.confidence — carries prior understanding quality into reflection. */
+  priorUnderstandingConfidence?: number;
+  /** From Understanding.completeness — carries prior input adequacy into reflection. */
+  priorUnderstandingCompleteness?: UnderstandingCompleteness;
 }
 
 export class ReflectionEngine {
   reflect(input: BuildReflectionInput): Reflection {
     const now = input.now ?? new Date().toISOString();
-    const context = this.copyContext(input.execution);
+    const context = this.copyContext(input.execution, input);
     const evidence = this.copyEvidence(input.execution.evidence);
 
     const findings = this.deriveFindings(
@@ -76,7 +86,7 @@ export class ReflectionEngine {
     };
   }
 
-  private copyContext(execution: Execution): ReflectionContext {
+  private copyContext(execution: Execution, input: BuildReflectionInput): ReflectionContext {
     return {
       actionId: execution.action.id,
       executionId: execution.id,
@@ -86,6 +96,10 @@ export class ReflectionEngine {
       actionDisposition: execution.action.disposition,
       executionOutcome: execution.outcome,
       executionEffect: execution.effect,
+      understandingContextSources: input.understandingContextSources,
+      priorJudgementDisposition: input.priorJudgementDisposition,
+      priorUnderstandingConfidence: input.priorUnderstandingConfidence,
+      priorUnderstandingCompleteness: input.priorUnderstandingCompleteness,
     };
   }
 

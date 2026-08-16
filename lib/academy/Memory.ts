@@ -16,4 +16,18 @@ export class Memory {
       (record) => record.journeyId === journeyId,
     );
   }
+
+  learningRelevantTo(statement: string): MemoryRecord[] {
+    const words = statement
+      .toLowerCase()
+      .split(/\s+/)
+      .filter((word) => word.length > 4);
+
+    return this.records.filter((record) => {
+      const text = `${record.lesson} ${record.principles.join(" ")}`
+        .toLowerCase();
+
+      return words.some((word) => text.includes(word));
+    });
+  }
 }

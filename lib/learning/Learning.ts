@@ -48,6 +48,12 @@ export interface LearningContext {
   executionCompletedAt?: string;
   executionOutcome: Reflection["context"]["executionOutcome"];
   executionEffect: Reflection["context"]["executionEffect"];
+  /** Carries prior judgement disposition — used for causation classification. */
+  priorJudgementDisposition?: Reflection["context"]["priorJudgementDisposition"];
+  /** Carries prior understanding confidence — used for Case D (high-confidence failure) detection. */
+  priorUnderstandingConfidence?: number;
+  /** Carries prior understanding completeness — used for Case C (formation-gap) detection. */
+  priorUnderstandingCompleteness?: Reflection["context"]["priorUnderstandingCompleteness"];
 }
 
 /**
@@ -91,7 +97,33 @@ export interface LearningProposal {
    * Must be copied from Reflection, not shared by reference.
    */
   supportingEvidence: ReadonlyArray<LearningEvidence>;
+  /** Set when Understanding was informed by relationship memory — requires de-identification review. */
+  informedByPersonContext?: boolean;
+  /** Governed hypothesis about why this outcome warranted a learning proposal. */
+  causationCategory?: ProposalCausationCategory;
+  /** Governed hypothesis about how broadly this learning should be shared. Per PD-012, this is a proposal — the reviewer decides. */
+  proposedInheritanceScope?: ProposedInheritanceScope;
 }
+
+/**
+ * Governed hypothesis about how broadly a learning proposal should propagate.
+ * Per PD-012: a new learning defaults to venue scope; broader scope requires evidence breadth.
+ */
+export type ProposedInheritanceScope =
+  | "session"      // ephemeral — do not persist beyond session
+  | "venue"        // this venue only
+  | "profession"   // this profession — requires multi-source evidence
+  | "universal";   // all DCs — requires constitutional review
+
+/**
+ * Governed hypothesis about the cause of the outcome that produced this proposal.
+ * Per PD-011: a proposal is a hypothesis, not a conclusion.
+ */
+export type ProposalCausationCategory =
+  | "knowledge-gap"   // adequate understanding, failed due to missing professional knowledge
+  | "formation-gap"   // incomplete inputs caused the failure
+  | "situational"     // high-confidence failure — circumstances may have changed
+  | "unknown";        // insufficient prior context to determine
 
 /**
  * Human-governed validation metadata for a proposal.

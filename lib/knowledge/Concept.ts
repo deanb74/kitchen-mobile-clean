@@ -10,6 +10,9 @@ export type EvidenceLevel =
   | "multi-source"
   | "constitutional";
 
+// Alias for use in write guard without importing the full Concept interface.
+export type ConceptEvidenceLevel = EvidenceLevel;
+
 export type ConceptScope =
   | "universal"
   | "helping-hand"
@@ -66,4 +69,8 @@ export interface Concept {
 
   createdBy: string;
   confidence?: number;
+  /** Set only on changeIntent: "reinforce" — not on update, supersede, or retire. Edit ≠ confirmation. */
+  lastReinforcedAt?: string;
+  /** Governance record IDs of proposals that questioned this concept. A challenge signals review, not incorrectness. */
+  challengedBy?: string[];
 }

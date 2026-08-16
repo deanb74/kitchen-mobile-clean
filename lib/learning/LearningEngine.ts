@@ -1,3 +1,4 @@
+import { deriveProposedInheritanceScope } from "../knowledge-governance/inheritanceScopeFromLearning";
 import type {
     Reflection,
     ReflectionFinding,
@@ -7,6 +8,7 @@ import type {
     LearningDisposition,
     LearningEvidence,
     LearningProposal,
+    ProposalCausationCategory,
 } from "./Learning";
 
 export interface BuildLearningInput {
@@ -82,6 +84,9 @@ export class LearningEngine {
       executionCompletedAt: reflection.context.executionCompletedAt,
       executionOutcome: reflection.context.executionOutcome,
       executionEffect: reflection.context.executionEffect,
+      priorJudgementDisposition: reflection.context.priorJudgementDisposition,
+      priorUnderstandingConfidence: reflection.context.priorUnderstandingConfidence,
+      priorUnderstandingCompleteness: reflection.context.priorUnderstandingCompleteness,
     };
   }
 
@@ -151,6 +156,10 @@ export class LearningEngine {
     }
 
     if (reflection.disposition === "adjust") {
+      // Case D: high-confidence failure — require human review before proposing.
+      if (this.isHighConfidenceFailure(reflection)) {
+        return "observe";
+      }
       return this.canProposeFromAdjust(reflection)
         ? "propose"
         : "observe";
@@ -245,6 +254,14 @@ export class LearningEngine {
             "reflection-uncertainty",
           ],
         ),
+        informedByPersonContext:
+          reflection.context.understandingContextSources?.includes("relationship") || undefined,
+        causationCategory: this.deriveCausationCategory(reflection),
+        proposedInheritanceScope: deriveProposedInheritanceScope(
+          this.deriveCausationCategory(reflection),
+          "single-source",
+          this.isHighConfidenceFailure(reflection),
+        ),
       };
     }
 
@@ -264,7 +281,45 @@ export class LearningEngine {
           "reflection-evidence",
         ],
       ),
+      informedByPersonContext:
+        reflection.context.understandingContextSources?.includes("relationship") || undefined,
+      causationCategory: this.deriveCausationCategory(reflection),
+      proposedInheritanceScope: deriveProposedInheritanceScope(
+        this.deriveCausationCategory(reflection),
+        "single-source",
+        this.isHighConfidenceFailure(reflection),
+      ),
     };
+  }
+
+  // Case D: DC was confident and proceeding, yet outcome failed — require human review.
+  private isHighConfidenceFailure(reflection: Reflection): boolean {
+    return (
+      reflection.context.priorJudgementDisposition === "proceed" &&
+      (reflection.context.priorUnderstandingConfidence ?? 0) >= 0.75 &&
+      reflection.context.executionOutcome === "failed"
+    );
+  }
+
+  private deriveCausationCategory(reflection: Reflection): ProposalCausationCategory {
+    const priorDisposition   = reflection.context.priorJudgementDisposition;
+    const priorConfidence    = reflection.context.priorUnderstandingConfidence;
+    const priorCompleteness  = reflection.context.priorUnderstandingCompleteness;
+    const outcome            = reflection.context.executionOutcome;
+
+    if (!priorDisposition) return "unknown";
+
+    if (
+      priorDisposition === "proceed" &&
+      (priorConfidence ?? 0) >= 0.75 &&
+      outcome === "failed"
+    ) return "situational";
+
+    if (priorDisposition === "caution" || priorCompleteness === "partial") {
+      return "formation-gap";
+    }
+
+    return "knowledge-gap";
   }
 
   private pickWhatShouldChange(

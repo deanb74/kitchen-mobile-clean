@@ -24,6 +24,7 @@ export type AcademyContext = {
 export type MemoryRecall = {
   principles: string[];
   previousLearning: MemoryRecord[];
+  relevantLearning: MemoryRecord[];
 };
 
 export type Understanding = {
